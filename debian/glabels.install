@@ -1,0 +1,5 @@
+../../debian/glabels.xpm usr/share/pixmaps
+usr/bin
+usr/lib/*.so.*
+usr/share/applications
+usr/share/man
