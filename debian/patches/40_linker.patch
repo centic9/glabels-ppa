@@ -1,0 +1,49 @@
+Description: add '-lm' to linker arguments, otherwise the linking fails with binutils-golds or --no-add-needed
+Origin: vendor
+Forwarded: no
+Author: gregor herrmann <gregoa@debian.org>
+Last-Update: 2011-12-19
+
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -30,7 +30,8 @@
+ 	../libglabels/libglabels.la		\
+ 	mygal/libmygal.la			\
+ 	$(LIB_BARCODE_DIR)/libbarcode.la 	\
+-	$(LIB_IEC16022_DIR)/libiec16022.la
++	$(LIB_IEC16022_DIR)/libiec16022.la      \
++	-lm
+ 
+ glabels_batch_LDFLAGS = -export-dynamic
+ 
+@@ -38,7 +39,8 @@
+ 	$(GLABELS_LIBS)				\
+ 	../libglabels/libglabels.la		\
+ 	$(LIB_BARCODE_DIR)/libbarcode.la	\
+-	$(LIB_IEC16022_DIR)/libiec16022.la
++	$(LIB_IEC16022_DIR)/libiec16022.la      \
++	-lm
+ 
+ BUILT_SOURCES = 			\
+ 	marshal.c			\
+--- a/src/Makefile.in
++++ b/src/Makefile.in
+@@ -365,14 +365,16 @@
+ 	../libglabels/libglabels.la		\
+ 	mygal/libmygal.la			\
+ 	$(LIB_BARCODE_DIR)/libbarcode.la 	\
+-	$(LIB_IEC16022_DIR)/libiec16022.la
++	$(LIB_IEC16022_DIR)/libiec16022.la      \
++	-lm
+ 
+ glabels_batch_LDFLAGS = -export-dynamic
+ glabels_batch_LDADD = \
+ 	$(GLABELS_LIBS)				\
+ 	../libglabels/libglabels.la		\
+ 	$(LIB_BARCODE_DIR)/libbarcode.la	\
+-	$(LIB_IEC16022_DIR)/libiec16022.la
++	$(LIB_IEC16022_DIR)/libiec16022.la      \
++	-lm
+ 
+ BUILT_SOURCES = \
+ 	marshal.c			\

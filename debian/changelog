@@ -1,3 +1,37 @@
+glabels (2.2.8-3build1) precise; urgency=low
+
+  * Rebuild against latest evolution-data-server
+
+ -- Angel Abad <angelabad@ubuntu.com>  Thu, 12 Jan 2012 15:37:08 +0100
+
+glabels (2.2.8-3) unstable; urgency=low
+
+  * QA upload.
+  * Fix "FTBFS: plessey.c:151:9: error: format not a string literal and
+    no format arguments [-Werror=format-security]": new patch
+    30_Werror-format-security.patch: add format argument to sprintf call.
+    (Closes: #643390)
+  * New patch 40_linker.patch: add '-lm' to linker arguments, otherwise the
+    build fails with binutils-gold or --no-add-needed.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 19 Dec 2011 19:00:44 +0100
+
+glabels (2.2.8-2) unstable; urgency=low
+
+  [ Olivier Berger ]
+  * QA upload.
+  * Updated Standards-Version
+  * Added several small changes to get rid of some lintian warnings
+
+  [ Neil Williams ]
+  * Tweak standards version. Apply QA changes from 569335. Thanks to
+    Olivier Berger <oberger@ouvaton.org>
+  * Move to collab-maint to make it easier for QA work.
+  * Drop shlib:Depends variable from -dev package, not used.
+  * Drop uploaders rule, not used by QA.
+
+ -- Neil Williams <codehelp@debian.org>  Sat, 14 May 2011 19:24:23 +0100
+
 glabels (2.2.8-1) unstable; urgency=low
 
   * New upstream release:

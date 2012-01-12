@@ -1,0 +1,14 @@
+Author: Olivier Berger <oberger@ouvaton.org>
+
+Make lintian happy removing useless Encoding in dektop menu entry
+
+Index: glabels-2.2.8/data/desktop/glabels.desktop.in
+===================================================================
+--- glabels-2.2.8.orig/data/desktop/glabels.desktop.in	2011-04-12 10:26:33.000000000 +0200
++++ glabels-2.2.8/data/desktop/glabels.desktop.in	2011-04-12 10:26:48.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ _Name=gLabels Label Designer
+ _Comment=Create labels, business cards and media covers
+ Exec=glabels %F

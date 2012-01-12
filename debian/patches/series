@@ -1,1 +1,4 @@
+20_menu.patch
 10_manpage.patch
+30_Werror-format-security.patch
+40_linker.patch

@@ -1,7 +1,7 @@
 Source: glabels
 Section: gnome
 Priority: optional
-Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Maintainer: Debian QA Group <packages@qa.debian.org>
 Build-Depends: autotools-dev,
                cdbs,
                debhelper (>= 5.0),
@@ -18,11 +18,10 @@ Build-Depends: autotools-dev,
                libxml-parser-perl,
                scrollkeeper,
                dpkg-dev (>= 1.13.19)
-Uploaders: @GNOME_TEAM@
-Standards-Version: 3.8.4
+Standards-Version: 3.9.2
 Homepage: http://glabels.sourceforge.net/
-Vcs-Browser: http://svn.debian.org/viewsvn/pkg-gnome/packages/unstable/glabels/
-Vcs-Svn: svn://svn.debian.org/svn/pkg-gnome/packages/unstable/glabels/
+Vcs-Svn: svn://svn.debian.org/collab-maint/ext-maint/glabels/trunk
+Vcs-Browser: http://svn.debian.org/wsvn/collab-maint/ext-maint/glabels/trunk/?op=log
 
 Package: glabels
 Architecture: any
@@ -31,6 +30,7 @@ Depends: glabels-data (= ${source:Version}),
          ${misc:Depends}
 Suggests: evolution-data-server
 Replaces: glabels-data (<< 2.2.5-1)
+Provides: libglabels5
 Description: label, business card and media cover creation program for GNOME
  gLabels is a lightweight program for creating labels, barcodes, business 
  cards and media covers for the GNOME desktop environment. It is designed to 
@@ -58,9 +58,11 @@ Depends: glabels (= ${binary:Version}),
          glabels-data (= ${source:Version}),
          libglib2.0-dev,
          libxml2-dev,
-         ${misc:Depends},
-         ${shlibs:Depends}
+         ${misc:Depends}
 Replaces: glabels (<< 2.0.2)
 Description: development documentation and library files for gLabels
  gLabels is a lightweight program for creating labels, barcodes, business 
  cards and media covers for the GNOME desktop environment.
+ .
+ This package provides the development environment for libglabels,
+ which is meant to facilitate 3rd party use of glabels templates.
