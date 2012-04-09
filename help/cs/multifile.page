@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="multifile" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Jak otevřít více souborů naráz pomocí příkazového řádku.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Jak otevřít více souborů z příkazového řádku</title>
+
+      <p>Aplikaci <app>gLabels</app> můžete spustit z příkazového řádku a otevřít při tom jeden nebo více souborů. Pokud chcete otevřít z příkazového řádku více souborů, napište následující příkaz a zmáčkněte <key>Enter</key>:</p>
+
+      <p><cmd>glabels <var>soubor1.glabels soubor2.glabels soubor3.glabels</var></cmd></p>
+
+      <p>Po spuštění aplikace se každý ze zadaných souborů zobrazí v samostatném okně <application>gLabels</application>.</p>
+
+</page>

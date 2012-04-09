@@ -12,15 +12,16 @@
 include /usr/share/cdbs/1/class/gnome.mk
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/rules/utils.mk
-#include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
--include /usr/share/gnome-pkg-tools/1/rules/sf-get-source.mk
 
 # Compilation options
-DEB_CONFIGURE_EXTRA_FLAGS := --disable-update-desktopdb	\
-	--disable-update-mimedb --with-libebook
+DEB_CONFIGURE_EXTRA_FLAGS := --with-libebook
 
 # Remove excess dependencies
 DEB_CONFIGURE_SCRIPT_ENV += LDFLAGS=-Wl,--as-needed
 
 # Debhelper arguments
-DEB_DH_INSTALL_ARGS := --sourcedir=debian/tmp
+DEB_DH_INSTALL_ARGS := --sourcedir=debian/tmp --list-missing
+
+post-patches::
+	mkdir -p m4
+	autoreconf -i

@@ -1,55 +1,54 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  object-editor-image-page.c
+ *  Copyright (C) 2003-2009  Jim Evins <evins@snaught.com>.
  *
- *  object-editor.c:  object properties editor module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2003  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #include <config.h>
 
 #include "object-editor.h"
 
 #include <glib/gi18n.h>
-#include <gtk/gtkimage.h>
-#include <gtk/gtkfilechooserbutton.h>
-#include <gtk/gtkcombobox.h>
-#include <gtk/gtktogglebutton.h>
+#include <gtk/gtk.h>
 #include <math.h>
 
 #include "prefs.h"
-#include "util.h"
+#include "field-button.h"
+#include "builder-util.h"
 
 #include "object-editor-private.h"
 
 #include "debug.h"
 
+
 /*===========================================*/
 /* Private macros                            */
 /*===========================================*/
+
 
 /*===========================================*/
 /* Private data types                        */
 /*===========================================*/
 
+
 /*===========================================*/
 /* Private globals                           */
 /*===========================================*/
+
 
 /*===========================================*/
 /* Local function prototypes                 */
@@ -63,7 +62,7 @@ static void add_image_filters_to_chooser        (GtkFileChooser *file_chooser);
 
 static void img_selection_changed_cb (glObjectEditor *editor);
 
-
+
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Prepare image page.                                             */
 /*--------------------------------------------------------------------------*/
@@ -76,18 +75,19 @@ gl_object_editor_prepare_image_page (glObjectEditor *editor)
 	gl_debug (DEBUG_EDITOR, "START");
 
 	/* Extract widgets from XML tree. */
-	editor->priv->img_page_vbox    = glade_xml_get_widget (editor->priv->gui,
-							       "img_page_vbox");
-	editor->priv->img_file_radio   = glade_xml_get_widget (editor->priv->gui,
-							       "img_file_radio");
-	editor->priv->img_key_radio    = glade_xml_get_widget (editor->priv->gui,
-							       "img_key_radio");
-	editor->priv->img_file_button  = glade_xml_get_widget (editor->priv->gui,
-							       "img_file_button");
-	editor->priv->img_key_combo    = glade_xml_get_widget (editor->priv->gui,
-							       "img_key_combo");
+        gl_builder_util_get_widgets (editor->priv->builder,
+                                     "img_page_vbox",   &editor->priv->img_page_vbox,
+                                     "img_file_radio",  &editor->priv->img_file_radio,
+                                     "img_key_radio",   &editor->priv->img_key_radio,
+                                     "img_file_button", &editor->priv->img_file_button,
+                                     "img_key_hbox",    &editor->priv->img_key_hbox,
+                                     NULL);
 
-	gl_util_combo_box_add_text_model ( GTK_COMBO_BOX(editor->priv->img_key_combo));
+        editor->priv->img_key_combo = gl_field_button_new (NULL);
+        gtk_box_pack_start (GTK_BOX (editor->priv->img_key_hbox),
+                            editor->priv->img_key_combo,
+                            TRUE, TRUE, 0);
+
 
 	/* Modify file button properties. */
 	add_image_filters_to_chooser (GTK_FILE_CHOOSER (editor->priv->img_file_button));
@@ -121,14 +121,13 @@ gl_object_editor_prepare_image_page (glObjectEditor *editor)
 	gl_debug (DEBUG_EDITOR, "END");
 }
 
+
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  image radio callback.                                          */
 /*--------------------------------------------------------------------------*/
 static void
 img_radio_toggled_cb (glObjectEditor *editor)
 {
-        if (editor->priv->stop_signals) return;
-
         gl_debug (DEBUG_WDGT, "START");
  
 	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (editor->priv->img_file_radio))) {
@@ -139,11 +138,11 @@ img_radio_toggled_cb (glObjectEditor *editor)
                 gtk_widget_set_sensitive (editor->priv->img_key_combo, TRUE);
         }
  
-        /* Emit our "changed" signal */
-        g_signal_emit (G_OBJECT (editor), gl_object_editor_signals[CHANGED], 0);
+        gl_object_editor_changed_cb (editor);
  
         gl_debug (DEBUG_WDGT, "END");
 }
+
 
 /*****************************************************************************/
 /* Set image.                                                                */
@@ -155,39 +154,60 @@ gl_object_editor_set_image (glObjectEditor      *editor,
 {
         gl_debug (DEBUG_EDITOR, "START");
  
-        editor->priv->stop_signals = TRUE;
+
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->img_file_radio),
+                                         img_radio_toggled_cb, editor);
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->img_key_radio),
+                                         img_radio_toggled_cb, editor);
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->img_file_button),
+                                         img_selection_changed_cb, editor);
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->img_key_combo),
+                                         gl_object_editor_changed_cb, editor);
+
 
         gtk_widget_set_sensitive (editor->priv->img_key_radio, merge_flag);
  
-        if (!text_node->field_flag || !merge_flag) {
- 
-                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
-                                              (editor->priv->img_file_radio), TRUE); 
+        if (!text_node->field_flag || !merge_flag)
+        {
+                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (editor->priv->img_file_radio), TRUE); 
                 gtk_widget_set_sensitive (editor->priv->img_file_button, TRUE);
                 gtk_widget_set_sensitive (editor->priv->img_key_combo, FALSE);
  
-                if (text_node->data != NULL ) {
+                if (text_node->data != NULL )
+                {
 			gtk_file_chooser_set_filename (GTK_FILE_CHOOSER(editor->priv->img_file_button),
                                                        text_node->data);
-                } else {
+                }
+                else
+                {
 			gtk_file_chooser_unselect_all (GTK_FILE_CHOOSER(editor->priv->img_file_button));
                 }
-        } else {
-                                                                                
-                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON
-                                              (editor->priv->img_key_radio), TRUE);
+        }
+        else
+        {
+                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (editor->priv->img_key_radio), TRUE);
                                                                                 
                 gtk_widget_set_sensitive (editor->priv->img_file_button, FALSE);
                 gtk_widget_set_sensitive (editor->priv->img_key_combo, TRUE);
                                                                                 
-		gl_util_combo_box_set_active_text (GTK_COMBO_BOX (editor->priv->img_key_combo),
-						   text_node->data);
+		gl_field_button_set_key (GL_FIELD_BUTTON (editor->priv->img_key_combo),
+                                         text_node->data);
         }
                                                                                 
-        editor->priv->stop_signals = FALSE;
+
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->img_file_radio),
+                                           img_radio_toggled_cb, editor);
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->img_key_radio),
+                                           img_radio_toggled_cb, editor);
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->img_file_button),
+                                           img_selection_changed_cb, editor);
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->img_key_combo),
+                                           gl_object_editor_changed_cb, editor);
+
                                                                                 
         gl_debug (DEBUG_EDITOR, "END");
 }
+
 
 /*****************************************************************************/
 /* Query image.                                                              */
@@ -201,14 +221,17 @@ gl_object_editor_get_image (glObjectEditor      *editor)
  
         text_node = g_new0(glTextNode,1);
  
-        if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (editor->priv->img_file_radio))) {
+        if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (editor->priv->img_file_radio)))
+        {
                 text_node->field_flag = FALSE;
                 text_node->data =
 			gtk_file_chooser_get_filename (GTK_FILE_CHOOSER(editor->priv->img_file_button));
-        } else {
+        }
+        else
+        {
                 text_node->field_flag = TRUE;
                 text_node->data =
-			gtk_combo_box_get_active_text (GTK_COMBO_BOX (editor->priv->img_key_combo));
+			gl_field_button_get_key (GL_FIELD_BUTTON (editor->priv->img_key_combo));
         }
  
 	gl_debug (DEBUG_EDITOR, "text_node: field_flag=%d, data=%s",
@@ -219,6 +242,7 @@ gl_object_editor_get_image (glObjectEditor      *editor)
         return text_node;
 }
 
+
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Update preview image.                                          */
 /*--------------------------------------------------------------------------*/
@@ -228,26 +252,34 @@ update_preview_cb (GtkFileChooser *file_chooser, gpointer data)
         GtkWidget *preview;
         char *filename;
         GdkPixbuf *pixbuf;
-        gboolean have_preview;
+
+        gl_debug (DEBUG_EDITOR, "START");
 
         preview = GTK_WIDGET (data);
         filename = gtk_file_chooser_get_preview_filename (file_chooser);
 
-        if (filename) {
+        if (filename)
+        {
+                gl_debug (DEBUG_EDITOR, "filename =\"%s\"", filename);
                 pixbuf = gdk_pixbuf_new_from_file_at_size (filename, 128, 128, NULL);
-                have_preview = (pixbuf != NULL);
+                if (pixbuf != NULL)
+                {
+                        gtk_image_set_from_pixbuf (GTK_IMAGE (preview), pixbuf);
+                        g_object_unref (G_OBJECT (pixbuf));
+
+                        gtk_file_chooser_set_preview_widget_active (file_chooser,
+                                                                    TRUE);
+                }
                 g_free (filename);
-
-                gtk_image_set_from_pixbuf (GTK_IMAGE (preview), pixbuf);
-                if (pixbuf)
-                        gdk_pixbuf_unref (pixbuf);
-
-                gtk_file_chooser_set_preview_widget_active (file_chooser,
-                                                            have_preview);
-        } else {
+        }
+        else
+        {
                 gtk_file_chooser_set_preview_widget_active (file_chooser, FALSE);
         }
+
+        gl_debug (DEBUG_EDITOR, "END");
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Add filters to file chooser.                                   */
@@ -276,7 +308,8 @@ add_image_filters_to_chooser (GtkFileChooser *chooser)
 
 	/* Individual image filters */
 	formats = gdk_pixbuf_get_formats ();
-	for (it = formats; it != NULL; it = it->next) {
+	for (it = formats; it != NULL; it = it->next)
+        {
 		gchar *filter_name;
 		GdkPixbufFormat *format;
 		filter = gtk_file_filter_new ();
@@ -294,14 +327,16 @@ add_image_filters_to_chooser (GtkFileChooser *chooser)
 		g_free (filter_name);
 
 		mime_types = gdk_pixbuf_format_get_mime_types ((GdkPixbufFormat *) it->data);
-		for (i = 0; mime_types[i] != NULL; i++) {
+		for (i = 0; mime_types[i] != NULL; i++)
+                {
 			gtk_file_filter_add_mime_type (filter, mime_types[i]);
 			gtk_file_filter_add_mime_type (all_img_filter, mime_types[i]);
 		}
 		g_strfreev (mime_types);
  
 		pattern = gdk_pixbuf_format_get_extensions ((GdkPixbufFormat *) it->data);
-		for (i = 0; pattern[i] != NULL; i++) {
+		for (i = 0; pattern[i] != NULL; i++)
+                {
 			tmp = g_strconcat ("*.", pattern[i], NULL);
 			gtk_file_filter_add_pattern (filter, tmp);
 			gtk_file_filter_add_pattern (all_img_filter, tmp);
@@ -325,6 +360,7 @@ add_image_filters_to_chooser (GtkFileChooser *chooser)
 	g_slist_free (filters);
 }
 
+
 /*--------------------------------------------------------------------------*/
 /* PRIVATE. Selection changed callback.                                     */
 /*--------------------------------------------------------------------------*/
@@ -333,18 +369,25 @@ img_selection_changed_cb (glObjectEditor *editor)
 {
         gchar *filename;
 
-        if (editor->priv->stop_signals) return;
-
 	gl_debug (DEBUG_EDITOR, "START");
 
         filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER(editor->priv->img_file_button));
         if (filename != NULL)
         {
-                /* Emit our "changed" signal */
-                g_signal_emit (G_OBJECT (editor), gl_object_editor_signals[CHANGED], 0);
+                gl_object_editor_changed_cb (editor);
         }
         g_free (filename);
 
 	gl_debug (DEBUG_EDITOR, "END");
 }
 
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

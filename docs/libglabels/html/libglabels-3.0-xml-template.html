@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>XML Template Functions</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="LibGlabels 3.0 Reference Manual">
+<link rel="up" href="ch02.html" title="Working Directly With LibGlabels XML">
+<link rel="prev" href="libglabels-3.0-xml-category.html" title="XML Category Functions">
+<link rel="next" href="libglabels-3.0-xml-vendor.html" title="XML Vendor Functions">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libglabels-3.0-xml-category.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">LibGlabels 3.0 Reference Manual</th>
+<td><a accesskey="n" href="libglabels-3.0-xml-vendor.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libglabels-3.0-xml-template.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#libglabels-3.0-xml-template.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="libglabels-3.0-xml-template"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libglabels-3.0-xml-template.top_of_page"></a>XML Template Functions</span></h2>
+<p>XML Template Functions — Functions to create and parse glabels XML template nodes and files</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="libglabels-3.0-xml-template.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;libglabels/lgl-xml-templates.h&gt;
+
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-xml-template.html#lgl-xml-template-read-templates-from-file" title="lgl_xml_template_read_templates_from_file ()">lgl_xml_template_read_templates_from_file</a>
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *utf8_filename</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-xml-template.html#lgl-xml-template-parse-templates-doc" title="lgl_xml_template_parse_templates_doc ()">lgl_xml_template_parse_templates_doc</a>
+                                                        (<em class="parameter"><code>const <span class="type">xmlDocPtr</span> templates_doc</code></em>);
+<a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="returnvalue">lglTemplate</span></a> *       <a class="link" href="libglabels-3.0-xml-template.html#lgl-xml-template-parse-template-node" title="lgl_xml_template_parse_template_node ()">lgl_xml_template_parse_template_node</a>
+                                                        (<em class="parameter"><code>const <span class="type">xmlNodePtr</span> template_node</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="libglabels-3.0-xml-template.html#lgl-xml-template-write-templates-to-file" title="lgl_xml_template_write_templates_to_file ()">lgl_xml_template_write_templates_to_file</a>
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *templates</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *utf8_filename</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="libglabels-3.0-xml-template.html#lgl-xml-template-write-template-to-file" title="lgl_xml_template_write_template_to_file ()">lgl_xml_template_write_template_to_file</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> *template</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *utf8_filename</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-xml-template.html#lgl-xml-template-create-template-node" title="lgl_xml_template_create_template_node ()">lgl_xml_template_create_template_node</a>
+                                                        (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> *template</code></em>,
+                                                         <em class="parameter"><code><span class="type">xmlNodePtr</span> root</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlNsPtr</span> ns</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="libglabels-3.0-xml-template.description"></a><h2>Description</h2>
+<p>
+This section describes a number of functions for creating and parsing
+glabels XML template nodes and files.  Template nodes are used in both
+template files and document files.
+</p>
+</div>
+<div class="refsect1">
+<a name="libglabels-3.0-xml-template.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="lgl-xml-template-read-templates-from-file"></a><h3>lgl_xml_template_read_templates_from_file ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_xml_template_read_templates_from_file
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *utf8_filename</code></em>);</pre>
+<p>
+Read glabels templates from template file.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>utf8_filename</code></em> :</span></p></td>
+<td>Filename of papers file (name encoded as UTF-8)</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-xml-template-parse-templates-doc"></a><h3>lgl_xml_template_parse_templates_doc ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_xml_template_parse_templates_doc
+                                                        (<em class="parameter"><code>const <span class="type">xmlDocPtr</span> templates_doc</code></em>);</pre>
+<p>
+Read glabels templates from a libxml <span class="type">xmlDocPtr</span> tree.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>templates_doc</code></em> :</span></p></td>
+<td>libxml <span class="type">xmlDocPtr</span> tree, representing template file.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-xml-template-parse-template-node"></a><h3>lgl_xml_template_parse_template_node ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="returnvalue">lglTemplate</span></a> *       lgl_xml_template_parse_template_node
+                                                        (<em class="parameter"><code>const <span class="type">xmlNodePtr</span> template_node</code></em>);</pre>
+<p>
+Read a single glabels template from a libxml <span class="type">xmlNodePtr</span> node.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template_node</code></em> :</span></p></td>
+<td>libxml <span class="type">xmlNodePtr</span> template node from a <span class="type">xmlDocPtr</span> tree.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a pointer to a newly created <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> structure.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-xml-template-write-templates-to-file"></a><h3>lgl_xml_template_write_templates_to_file ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                lgl_xml_template_write_templates_to_file
+                                                        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *templates</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *utf8_filename</code></em>);</pre>
+<p>
+Write a list of <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> structures to a glabels XML template file.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>templates</code></em> :</span></p></td>
+<td>List of <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> structures</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>utf8_filename</code></em> :</span></p></td>
+<td>Filename of templates file (name encoded as UTF-8)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the number of bytes written or -1 in case of failure</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-xml-template-write-template-to-file"></a><h3>lgl_xml_template_write_template_to_file ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                lgl_xml_template_write_template_to_file
+                                                        (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> *template</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *utf8_filename</code></em>);</pre>
+<p>
+Write a single <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> structures to a glabels XML template file.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>
+<a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> structure to be written</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>utf8_filename</code></em> :</span></p></td>
+<td>Filename of templates file (name encoded as UTF-8)</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the number of bytes written or -1 in case of failure</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-xml-template-create-template-node"></a><h3>lgl_xml_template_create_template_node ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_xml_template_create_template_node
+                                                        (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> *template</code></em>,
+                                                         <em class="parameter"><code><span class="type">xmlNodePtr</span> root</code></em>,
+                                                         <em class="parameter"><code>const <span class="type">xmlNsPtr</span> ns</code></em>);</pre>
+<p>
+Add a single <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> child node to given <span class="type">xmlNodePtr</span>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>
+<a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> structure to be written</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>root</code></em> :</span></p></td>
+<td>parent node to receive new child node</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ns</code></em> :</span></p></td>
+<td>a libxml <span class="type">xmlNsPtr</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

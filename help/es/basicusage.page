@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="basicusage" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Manejar archivos y salir de la aplicación.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+   <title>Uso básico</title>
+    
+    <section>
+    <title>Abrir un archivo</title>
+
+      <p>Para abrir un archivo, elija  <guiseq><gui>Archivo</gui><gui>Abrir</gui></guiseq> para mostrar el diálogo de <gui>Abrir archivo</gui>. Seleccione el archivo que quiere abrir y pulse <gui>Aceptar</gui>. El archivo se muestra en el área de visualización de la ventana de <app>gLabels</app>.</p>
+
+      <p>Puede abrir múltiples archivos en <app>gLabels</app>. La aplicación crea una ventana de aplicación separada para cada archivo abierto.</p>
+
+      <p>La aplicación guarda las rutas y los nombres de archivo de los archivos más recientes que haya editado, y muestra los archivos como elementos del menú <guiseq><gui>Archivo</gui><gui>Archivos recientes</gui></guiseq>.</p>
+     </section>
+
+     <section id="closefile">
+    <title>Cerrar un archivo</title>
+
+      <p>Para cerrar el documento actual, elija <guiseq><gui>Archivo</gui><gui>Cerrar</gui></guiseq> para cerrar la ventana de la aplicación. Si el documento actual se ha modificado, se mostrará un diálogo de confirmación, permitiéndole guardar el documento o cancelar el comando. Si la ventana que va a cerrar es la única que está abierta, <app>gLabels</app> se cerrará.</p>
+     </section>
+     
+     <section>
+    <title>Guardar un archivo</title>
+
+      <p>Puede guardar archivos de cualquiera de estas maneras:</p>
+
+      <list><item>
+
+	  <p>Para guardar los cambios a un archivo existente, elija <guiseq><gui>Archivo</gui><gui>Guardar</gui></guiseq>.</p>
+
+	</item>
+        <item>
+
+	  <p>Para guardar un archivo nuevo o para guardar un archivo existente con un nombre de archivo nuevo, elija <guiseq><gui>Archivo</gui><gui>Guardar como</gui></guiseq>. Introduzca un nombre para el archivo en el cuadro de diálogo <gui>Guardar como</gui> y pulse <gui>Aceptar</gui>.</p>
+
+	</item>
+      </list>
+     </section>
+
+     <section>
+    <title>Salir de <application>gLabels</application></title>
+
+      <p>Para salir de <app>gLabels</app>, elija <guiseq><gui>Archivo</gui><gui>Quitar</gui></guiseq>. Esto es equivalente a cerrar todas las ventanas abiertas. Consulte la <link xref="basicusage#closefile"/>.</p>
+     </section>
+</page>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="createnew" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Comment créer de nouveaux objets dans un document.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+
+    <title>Création de nouveaux objets</title>
+
+      <p>Vous pouvez créer des objets en choisissant la fonction appropriée dans le sous-menu <guiseq><gui>Objets</gui><gui>Créer un objet</gui></guiseq> ou en cliquant sur l'icône correspondante de la barre d'outils <gui>Dessin</gui>. La zone d'affichage est alors mise en mode « création d'objet », mode indiqué par le changement d'aspect du pointeur de souris. Pour revenir au mode « sélection » par défaut sans création d'objet, choisissez <guiseq><gui>Objets</gui><gui>Mode sélection</gui></guiseq>. Le pointeur de souris reprend alors sa forme standard (flèche de sélection) dans la fenêtre active.</p>
+
+      <p>Voici la description du mode création d'objet pour chaque type d'objet :</p>
+
+	<section>
+	  <title>Texte</title>
+	    <p>Cliquez à l'emplacement souhaité pour le coin supérieur gauche de l'objet texte. Les nouveaux objets texte sont initialisés avec la chaîne « Texte ». Pour modifier cet intitulé ou ses autres propriétés, consultez la section <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Boîte</title>
+	    <p>Cliquez à l'emplacement souhaité pour le coin supérieur gauche de l'objet boîte, et faites glisser le pointeur jusqu'à l'emplacement désiré pour le coin inférieur droit. Un simple clic quelque part fait apparaître une boîte carrée. Pour modifier les propriétés d'un objet boîte, consultez la section <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Ligne</title>
+	    <p>Cliquez à l'emplacement souhaité pour l'origine de la ligne et faites glisser le pointeur jusqu'à l'emplacement souhaité pour l'extrémité. Un simple clic quelque part génère une ligne diagonale. Pour modifier les propriétés d'une ligne, consultez la section <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Ellipse</title>
+	    <p>Cliquez à l'emplacement souhaité pour le coin supérieur gauche du rectangle exinscrit de l'objet ellipse et faites glisser le pointeur de souris jusqu'à l'emplacement désiré pour le coin inférieur droit. Un simple clic quelque part génère un cercle. Pour modifier les propriétés d'une ellipse, consultez la section <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Image</title>
+	    <p>Cliquez à l'emplacement souhaité pour le coin supérieur gauche de l'objet image et faites glisser le pointeur jusqu'à l'emplacement désiré pour le coin inférieur droit. Un simple clic quelque part génère un emplacement carré. Les nouveaux objets image sont initialisés d'une simple image de damier. Pour modifier cette image ou ses propriétés, consultez la section <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Code-barre</title>
+	    <p>Cliquez à l'emplacement souhaité pour le coin supérieur gauche de l'objet code-barre. Les nouveaux objets code-barre sont initialisés avec des données valides de style POSTNET. Pour modifier ces données et leurs propriétés, consultez la section <link xref="editprop"/>.</p>
+	</section>
+
+</page>

@@ -1,41 +1,32 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  prefs-model.h
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  prefs-model.h:  Application preferences model module header file
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2003  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #ifndef __PREFS_MODEL_H__
 #define __PREFS_MODEL_H__
 
 #include <glib-object.h>
-#include <gconf/gconf-client.h>
 #include <pango/pango.h>
-#include <libglabels/enums.h>
+#include <libglabels/libglabels.h>
 
 G_BEGIN_DECLS
 
-typedef enum {
-	GL_TOOLBAR_SYSTEM = 0,
-	GL_TOOLBAR_ICONS,
-	GL_TOOLBAR_ICONS_AND_TEXT
-} glToolbarSetting;
 
 #define GL_TYPE_PREFS_MODEL              (gl_prefs_model_get_type ())
 #define GL_PREFS_MODEL(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GL_TYPE_PREFS_MODEL, glPrefsModel))
@@ -47,78 +38,147 @@ typedef enum {
 
 typedef struct _glPrefsModel          glPrefsModel;
 typedef struct _glPrefsModelClass     glPrefsModelClass;
-
 typedef struct _glPrefsModelPrivate   glPrefsModelPrivate;
 
 
 struct _glPrefsModel {
-	GObject           parent;
+	GObject              parent;
 
-	GConfClient      *gconf_client;
-
-	/* Units */
-	lglUnitsType      units;
-
-	/* Page size */
-	gchar            *default_page_size;
-
-	/* Text properties */
-	gchar            *default_font_family;
-	gdouble           default_font_size;
-	PangoWeight       default_font_weight;
-	gboolean          default_font_italic_flag;
-	guint             default_text_color;
-	PangoAlignment    default_text_alignment;
-	gdouble           default_text_line_spacing;
-	
-	/* Line properties */
-	gdouble           default_line_width;
-	guint             default_line_color;
-	
-	/* Fill properties */
-	guint             default_fill_color;
-
-	/* User Interface/Main Toolbar */
-	gboolean	  main_toolbar_visible;
-	glToolbarSetting  main_toolbar_buttons_style; 
-	gboolean	  main_toolbar_view_tooltips;
-
-	/* User Interface/Drawing Toolbar */
-	gboolean          drawing_toolbar_visible;
-	gboolean	  drawing_toolbar_view_tooltips;
-
-	/* User Interface/Property Toolbar */
-	gboolean          property_toolbar_visible;
-	gboolean	  property_toolbar_view_tooltips;
-
-	/* View properties */
-	gboolean          grid_visible;
-	gboolean          markup_visible;
-
-	/* Recent files */
-	gint              max_recents;
-
-	/* Recent templates */
-        GSList           *recent_templates;
-	gint              max_recent_templates;
+        glPrefsModelPrivate *priv;
 };
 
 struct _glPrefsModelClass {
-	GObjectClass     parent_class;
+	GObjectClass         parent_class;
 
-        void (*changed)          (glPrefsModel *prefs_model, gpointer user_data);
+        void (*changed) (glPrefsModel *prefs_model,
+                         gpointer      user_data);
 };
 
 
-GType         gl_prefs_model_get_type            (void) G_GNUC_CONST;
+GType          gl_prefs_model_get_type                      (void) G_GNUC_CONST;
 
-glPrefsModel *gl_prefs_model_new                 (void);
+glPrefsModel  *gl_prefs_model_new                           (void);
 
-void          gl_prefs_model_save_settings       (glPrefsModel   *prefs_model);
 
-void          gl_prefs_model_load_settings       (glPrefsModel   *prefs_model);
+void           gl_prefs_model_set_units                     (glPrefsModel     *this,
+                                                             lglUnits          units);
+
+lglUnits       gl_prefs_model_get_units                     (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_default_page_size         (glPrefsModel     *this,
+                                                             const gchar      *page_size);
+
+gchar         *gl_prefs_model_get_default_page_size         (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_default_font_family       (glPrefsModel     *this,
+                                                             const gchar      *family);
+
+gchar         *gl_prefs_model_get_default_font_family       (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_default_font_size         (glPrefsModel     *this,
+                                                             gdouble           size);
+
+gdouble        gl_prefs_model_get_default_font_size         (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_default_font_weight       (glPrefsModel     *this,
+                                                             PangoWeight       weight);
+
+PangoWeight    gl_prefs_model_get_default_font_weight       (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_default_font_italic_flag  (glPrefsModel     *this,
+                                                             gboolean          italic_flag);
+
+gboolean       gl_prefs_model_get_default_font_italic_flag  (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_default_text_color        (glPrefsModel     *this,
+                                                             guint             color);
+
+guint          gl_prefs_model_get_default_text_color        (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_default_text_alignment    (glPrefsModel     *this,
+                                                             PangoAlignment    alignment);
+
+PangoAlignment gl_prefs_model_get_default_text_alignment    (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_default_text_line_spacing (glPrefsModel     *this,
+                                                             gdouble           spacing);
+
+gdouble        gl_prefs_model_get_default_text_line_spacing (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_default_line_width        (glPrefsModel     *this,
+                                                             gdouble           width);
+
+gdouble        gl_prefs_model_get_default_line_width        (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_default_line_color        (glPrefsModel     *this,
+                                                             guint             color);
+
+guint          gl_prefs_model_get_default_line_color        (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_default_fill_color        (glPrefsModel     *this,
+                                                             guint             color);
+
+guint          gl_prefs_model_get_default_fill_color        (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_main_toolbar_visible      (glPrefsModel     *this,
+                                                             gboolean          visible);
+
+gboolean       gl_prefs_model_get_main_toolbar_visible      (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_drawing_toolbar_visible   (glPrefsModel     *this,
+                                                             gboolean          visible);
+
+gboolean       gl_prefs_model_get_drawing_toolbar_visible   (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_property_toolbar_visible  (glPrefsModel     *this,
+                                                             gboolean          visible);
+
+gboolean       gl_prefs_model_get_property_toolbar_visible  (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_grid_visible              (glPrefsModel     *this,
+                                                             gboolean          visible);
+
+gboolean       gl_prefs_model_get_grid_visible              (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_markup_visible            (glPrefsModel     *this,
+                                                             gboolean          visible);
+
+gboolean       gl_prefs_model_get_markup_visible            (glPrefsModel     *this);
+
+
+void           gl_prefs_model_set_max_recents               (glPrefsModel     *this,
+                                                             gint              max_recents);
+
+gint           gl_prefs_model_get_max_recents               (glPrefsModel     *this);
+
 
 G_END_DECLS
 
 #endif /* __PREFS_MODEL_H__ */
 
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

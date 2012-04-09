@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="basicusage" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Práce se soubory a ukončení aplikace.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+   <title>Základy používání</title>
+    
+    <section>
+    <title>Jak otevřít soubor</title>
+
+      <p>Soubor otevřete pomocí volby <guiseq><gui>Soubor</gui><gui>Otevřít</gui></guiseq>, která zobrazí dialogové okno <gui>Otevření souboru</gui>. Vyberte soubor, který chcete otevřít a klikněte na <gui>OK</gui>. Soubor se zobrazí v zobrazovací oblasti okna <app>gLabels</app>.</p>
+
+      <p>V aplikaci <app>gLabels</app> můžete otevřít i více souborů naráz. Aplikace pro každý otevřený soubor vytvoří samostatné okno.</p>
+
+      <p>Pro soubory nedávno otevřené k úpravě si aplikace zaznamenává cesty a názvy a tyto soubory potom zobrazuje v nabídce <guiseq><gui>Soubor</gui><gui>Otevřít nedávné soubory</gui></guiseq>.</p>
+     </section>
+
+     <section id="closefile">
+    <title>Jak zavřít soubor</title>
+
+      <p>Když chcete aktuální dokument zavřít, zvolte <guiseq><gui>Soubor</gui><gui>Zavřít</gui></guiseq> a zavřete tím aplikační okno. Pokud byl aktuální dokument změněn, zobrazí se potvrzovací dialogové okno, kde můžete dokument uložit nebo příkaz zrušit. Pokud je zavírané okno jediné otevřené, ukončí se celá aplikace <app>gLabels</app>.</p>
+     </section>
+     
+     <section>
+    <title>Jak uložit soubor</title>
+
+      <p>Soubory můžete uložit následujícími způsoby:</p>
+
+      <list><item>
+
+	  <p>Pro uložení změn do stávajícího souboru, zvolte <guiseq><gui>Soubor</gui><gui>Uložit</gui></guiseq>.</p>
+
+	</item>
+        <item>
+
+	  <p>Pro uložení nového souboru nebo uložení stávajícího souboru pod novým názvem, zvolte <guiseq><gui>Soubor</gui><gui>Uložit jako</gui></guiseq>. V dialogovém okně <gui>Uložení jako</gui> zadejte pro soubor název a klikněte na <gui>OK</gui>.</p>
+
+	</item>
+      </list>
+     </section>
+
+     <section>
+    <title>Jak ukončit <application>gLabels</application></title>
+
+      <p>Když chcete aplikaci <app>gLabels</app> ukončit, zvolte <guiseq><gui>Soubor</gui><gui>Ukončit</gui></guiseq>. Odpovídá to zavření všech otevřených oken. Viz <link xref="basicusage#closefile"/>.</p>
+     </section>
+</page>

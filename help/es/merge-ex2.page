@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="merge-ex2" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="merge#merge-ex"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Crear etiquetas de dirección desde un archivo CSV.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+    <title>Ejemplo 2: etiquetas de dirección</title>
+
+      <p>En este ejemplo se va a celebrar una fiesta y se necesitan imprimir etiquetas de dirección para nuestras invitaciones. Existe una lista con los amigos más cercamos que se ha creado en <app>gnumeric</app> y la se ha exportado como el siguiente archivo CSV. Debe tener en cuenta que no todo el mundo tiene una inicial intermedia o una dirección de dos líneas.</p>
+
+      <code>
+LAST,FIRST,MI,ADDR1,ADDR2,CITY,STATE,ZIP
+,,,,,,,
+Critter,Ess,S,"123 Faux St.",,Alexandria,VA,22310
+Doe,John,,"Apt 1X","451 Mystery St.",Trenton,NJ,08601
+Summers,Joyce,,"1630 Revello Dr",,Sunnydale,CA,95037
+McGarret,Steve,O,"404 Piikoi Street",,Honolulu,HI,96813
+Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
+      </code>
+
+      <p>En <app>glabels</app> se ha creado un documento de <app>glabels</app> nuevo usando la plantilla «Etiquetas de dirección» Avery 5512.Ahora se usa el elemento de menú <guiseq><gui>Objetos</gui><gui>Mezclar propiedades</gui></guiseq> para mostrar el diálogo <gui>propiedades de combinación de datos</gui>. Se usa este diálogo para seleccionar el tipo de fuente (en este caso, CSV con claves en la línea 1) y la fuente de combinación (nombre de archivo) como se muestra.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex2-1.png" mime="image/png" style="right">
+      		<p>Diálogo de propiedades de fusión</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Antes de aplicar la combinación de fuentes se ha desmarcado el primer registro , ya que sólo contiene campos vacíos. Esto es un artefacto de la hoja de cálculo de <app>gnumeric</app> original, y sólo desperdiciaríamos nuestra primera etiqueta. También se pueden deseleccionar cualquier otro registro para el que no se quiera imprimir una etiqueta.</p>
+
+      <p>También se puede ver cada registro con más detalle pulsando en el expansor adecuado (los triángulos pequeños), como se muestra. Una vez satisfecho con las selecciones, pulse <gui>Aceptar</gui> en este diálogo para aceptar los cambios.</p>
+
+      <p>Ahora puede añadir a añadir objetos al documento de<application>gLabels</application> como se muestra.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex2-2.png" mime="image/png" style="right">
+      		<p>Añadir objetos</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>En este ejemplo se tiene un único objeto de texto. El objeto de texto contiene todo sobre los campos combinados en múltiples línea como direcciones de correo. Tenga en cuenta que los campos ${ADDR1} y ${ADDR2} no están situados en otro texto en sus propias líneas. Cuando <app>glabels</app> encuentra un campo como el único texto de una línea, no expandirá la línea si el campo está vacío.</p>
+
+      <p>Ahora se pueden imprimir las etiquetas de dirección seleccionando el elemento de menú <guiseq><gui>Archivo</gui><gui>Imprimir</gui></guiseq>. Esto mostrará el diálogo de impresión como se muestra a continuación.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex2-3.png" mime="image/png" style="right">
+      		<p>Imprimir etiquetas de dirección</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Sólo para asegurarse de que las etiquetas se van a ver bien, seleccione la opción <gui>Imprimir contornos</gui> y pulse en <gui>Previsualizar la impresión</gui>. Esto mostrará un diálogo de vista previa, como se muestra a continuación.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex2-4.png" mime="image/png" style="right">
+      		<p>Vista previa de las etiquetas de dirección</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Todo parece correcto, así que ahora podemos cargar nuestra impresora con las etiquetas apropiadas, imprimir nuestras etiquetas de dirección y enviar por correo nuestras invitaciones a la fiesta.</p>
+
+</page>

@@ -1,52 +1,45 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  ui.c
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  ui.c:  GLabels ui module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2002  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #include <config.h>
 
 #include "ui.h"
 
 #include <glib/gi18n.h>
-#include <gconf/gconf-client.h>
-#include <gtk/gtkrecentchoosermenu.h>
-#include <gtk/gtkmenuitem.h>
-#include <gtk/gtkstock.h>
-#include <gtk/gtktoolbar.h>
-#include <gtk/gtkstatusbar.h>
+#include <gtk/gtk.h>
 #include <string.h>
 
 #include "ui-util.h"
 #include "ui-commands.h"
 #include "file.h"
 #include "prefs.h"
-#include "stock.h"
 #include "window.h"
 #include "recent.h" 
 
 #include "debug.h"
 
+
 /*==========================================================================*/
 /* Private macros and constants.                                            */
 /*==========================================================================*/
+
 
 /*==========================================================================*/
 /* Private types.                                                           */
@@ -65,6 +58,11 @@ static void set_app_main_toolbar_style 	   (GtkUIManager    *ui);
 static void set_app_drawing_toolbar_style  (GtkUIManager    *ui);
 
 static void set_view_style                 (GtkUIManager    *ui);
+
+static void descend_menu_set_always_show_image (GtkMenu *menu);
+
+static void set_additional_properties      (GtkUIManager    *ui);
+
 
 static void connect_proxy_cb               (GtkUIManager    *ui,
 					    GtkAction       *action,
@@ -101,8 +99,8 @@ static GtkActionEntry entries[] = {
 	{ "ObjectsCreateMenu",       NULL, N_("_Create") },
 	{ "ObjectsOrderMenu",        NULL, N_("_Order") },
 	{ "ObjectsRotateFlipMenu",   NULL, N_("_Rotate/Flip") },
-	{ "ObjectsAlignHorizMenu",   NULL, N_("Align _Horizontal") },
-	{ "ObjectsAlignVertMenu",    NULL, N_("Align _Vertical") },
+	{ "ObjectsAlignMenu",        NULL, N_("_Alignment") },
+	{ "ObjectsCenterMenu",        NULL, N_("C_enter") },
 	{ "HelpMenu",                NULL, N_("_Help") },
 
 	/* Popup entries. */
@@ -175,6 +173,20 @@ static GtkActionEntry entries[] = {
 
 
 	/* Edit action entries. */
+	{ "EditUndo",
+	  GTK_STOCK_UNDO,
+	  N_("Undo"),
+	  "<control>Z",
+	  N_("Undo"),
+	  G_CALLBACK (gl_ui_cmd_edit_undo) },
+
+	{ "EditRedo",
+	  GTK_STOCK_REDO,
+	  N_("Redo"),
+	  "<shift><control>Z",
+	  N_("Redo"),
+	  G_CALLBACK (gl_ui_cmd_edit_redo) },
+
 	{ "EditCut",
 	  GTK_STOCK_CUT,
 	  N_("Cut"),
@@ -257,154 +269,154 @@ static GtkActionEntry entries[] = {
 
 	/* Objects action entries. */
 	{ "ObjectsArrowMode",
-	  GL_STOCK_ARROW,
+	  "glabels-arrow",
 	  N_("Select Mode"),
 	  NULL,
 	  N_("Select, move and modify objects"),
 	  G_CALLBACK (gl_ui_cmd_objects_arrow_mode) },
 
 	{ "ObjectsCreateText",
-	  GL_STOCK_TEXT,
+	  "glabels-text",
 	  N_("Text"),
 	  NULL,
 	  N_("Create text object"),
 	  G_CALLBACK (gl_ui_cmd_objects_create_text) },
 
 	{ "ObjectsCreateBox",
-	  GL_STOCK_BOX,
+	  "glabels-box",
 	  N_("Box"),
 	  NULL,
 	  N_("Create box/rectangle object"),
 	  G_CALLBACK (gl_ui_cmd_objects_create_box) },
 
 	{ "ObjectsCreateLine",
-	  GL_STOCK_LINE,
+	  "glabels-line",
 	  N_("Line"),
 	  NULL,
 	  N_("Create line object"),
 	  G_CALLBACK (gl_ui_cmd_objects_create_line) },
 
 	{ "ObjectsCreateEllipse",
-	  GL_STOCK_ELLIPSE,
+	  "glabels-ellipse",
 	  N_("Ellipse"),
 	  NULL,
 	  N_("Create ellipse/circle object"),
 	  G_CALLBACK (gl_ui_cmd_objects_create_ellipse) },
 
 	{ "ObjectsCreateImage",
-	  GL_STOCK_IMAGE,
+	  "glabels-image",
 	  N_("Image"),
 	  NULL,
 	  N_("Create image object"),
 	  G_CALLBACK (gl_ui_cmd_objects_create_image) },
 
 	{ "ObjectsCreateBarcode",
-	  GL_STOCK_BARCODE,
+	  "glabels-barcode",
 	  N_("Barcode"),
 	  NULL,
 	  N_("Create barcode object"),
 	  G_CALLBACK (gl_ui_cmd_objects_create_barcode) },
 	
 	{ "ObjectsRaise",
-	  GL_STOCK_ORDER_TOP,
+	  "glabels-order-top",
 	  N_("Bring to front"),
 	  NULL,
 	  N_("Raise object to top"),
 	  G_CALLBACK (gl_ui_cmd_objects_raise) },
 
 	{ "ObjectsLower",
-	  GL_STOCK_ORDER_BOTTOM,
+	  "glabels-order-bottom",
 	  N_("Send to back"),
 	  NULL,
 	  N_("Lower object to bottom"),
 	  G_CALLBACK (gl_ui_cmd_objects_lower) },
 
 	{ "ObjectsRotateLeft",
-	  GL_STOCK_ROTATE_LEFT,
+	  "glabels-rotate-left",
 	  N_("Rotate left"),
 	  NULL,
 	  N_("Rotate object 90 degrees counter-clockwise"),
 	  G_CALLBACK (gl_ui_cmd_objects_rotate_left) },
 
 	{ "ObjectsRotateRight",
-	  GL_STOCK_ROTATE_RIGHT,
+	  "glabels-rotate-right",
 	  N_("Rotate right"),
 	  NULL,
 	  N_("Rotate object 90 degrees clockwise"),
 	  G_CALLBACK (gl_ui_cmd_objects_rotate_right) },
 
 	{ "ObjectsFlipHorizontal",
-	  GL_STOCK_FLIP_HORIZ,
+	  "glabels-flip-horiz",
 	  N_("Flip horizontally"),
 	  NULL,
 	  N_("Flip object horizontally"),
 	  G_CALLBACK (gl_ui_cmd_objects_flip_horiz) },
 
 	{ "ObjectsFlipVertical",
-	  GL_STOCK_FLIP_VERT,
+	  "glabels-flip-vert",
 	  N_("Flip vertically"),
 	  NULL,
 	  N_("Flip object vertically"),
 	  G_CALLBACK (gl_ui_cmd_objects_flip_vert) },
 
 	{ "ObjectsAlignLeft",
-	  GL_STOCK_ALIGN_LEFT,
+	  "glabels-align-left",
 	  N_("Align left"),
 	  NULL,
 	  N_("Align objects to left edges"),
 	  G_CALLBACK (gl_ui_cmd_objects_align_left) },
 
+	{ "ObjectsAlignHCenter",
+	  "glabels-align-hcenter",
+	  N_("Align center"),
+	  NULL,
+	  N_("Align objects to horizontal centers"),
+	  G_CALLBACK (gl_ui_cmd_objects_align_hcenter) },
+
 	{ "ObjectsAlignRight",
-	  GL_STOCK_ALIGN_RIGHT,
+	  "glabels-align-right",
 	  N_("Align right"),
 	  NULL,
 	  N_("Align objects to right edges"),
 	  G_CALLBACK (gl_ui_cmd_objects_align_right) },
 
-	{ "ObjectsAlignHCenter",
-	  GL_STOCK_ALIGN_HCENTER,
-	  N_("Align horizontal center"),
-	  NULL,
-	  N_("Align objects to horizontal centers"),
-	  G_CALLBACK (gl_ui_cmd_objects_align_hcenter) },
-
 	{ "ObjectsAlignTop",
-	  GL_STOCK_ALIGN_TOP,
-	  N_("Align tops"),
+	  "glabels-align-top",
+	  N_("Align top"),
 	  NULL,
 	  N_("Align objects to top edges"),
 	  G_CALLBACK (gl_ui_cmd_objects_align_top) },
 
-	{ "ObjectsAlignBottom",
-	  GL_STOCK_ALIGN_BOTTOM,
-	  N_("Align bottoms"),
-	  NULL,
-	  N_("Align objects to bottom edges"),
-	  G_CALLBACK (gl_ui_cmd_objects_align_bottom) },
-
 	{ "ObjectsAlignVCenter",
-	  GL_STOCK_ALIGN_VCENTER,
-	  N_("Align vertical center"),
+	  "glabels-align-vcenter",
+	  N_("Align middle"),
 	  NULL,
 	  N_("Align objects to vertical centers"),
 	  G_CALLBACK (gl_ui_cmd_objects_align_vcenter) },
 
+	{ "ObjectsAlignBottom",
+	  "glabels-align-bottom",
+	  N_("Align bottom"),
+	  NULL,
+	  N_("Align objects to bottom edges"),
+	  G_CALLBACK (gl_ui_cmd_objects_align_bottom) },
+
 	{ "ObjectsCenterHorizontal",
-	  GL_STOCK_CENTER_HORIZ,
+	  "glabels-center-horiz",
 	  N_("Center horizontally"),
 	  NULL,
 	  N_("Center objects to horizontal label center"),
 	  G_CALLBACK (gl_ui_cmd_objects_center_horiz) },
 
 	{ "ObjectsCenterVertical",
-	  GL_STOCK_CENTER_VERT,
+	  "glabels-center-vert",
 	  N_("Center vertically"),
 	  NULL,
 	  N_("Center objects to vertical label center"),
 	  G_CALLBACK (gl_ui_cmd_objects_center_vert) },
 
 	{ "ObjectsMergeProperties",
-	  GL_STOCK_MERGE,
+	  "glabels-merge",
 	  N_("Merge properties"),
 	  NULL,
 	  N_("Edit merge properties"),
@@ -437,14 +449,6 @@ static GtkToggleActionEntry toggle_entries[] = {
 	  NULL,
 	  N_("Change the visibility of the property toolbar in the current window"),
 	  G_CALLBACK (gl_ui_cmd_view_property_bar_toggle),
-	  TRUE },
-
-	{ "ViewPropertyToolBarToolTips",
-	  NULL,
-	  N_("Show tooltips"),
-	  NULL,
-	  N_("Show tooltips for property toolbar"),
-	  G_CALLBACK (gl_ui_cmd_view_property_bar_tips_toggle),
 	  TRUE },
 
 	{ "ViewGrid",
@@ -484,22 +488,6 @@ static GtkToggleActionEntry ui_toggle_entries[] = {
 	  G_CALLBACK (view_ui_item_toggled_cb),
 	  TRUE },
 
-	{ "ViewMainToolBarToolTips",
-	  NULL,
-	  N_("Show tooltips"),
-	  NULL,
-	  N_("Show tooltips for main toolbar"),
-	  G_CALLBACK (view_ui_item_toggled_cb),
-	  TRUE },
-
-	{ "ViewDrawingToolBarToolTips",
-	  NULL,
-	  N_("Show tooltips"),
-	  NULL,
-	  N_("Show tooltips for drawing toolbar"),
-	  G_CALLBACK (view_ui_item_toggled_cb),
-	  TRUE },
-
 };
 static guint n_ui_toggle_entries = G_N_ELEMENTS (ui_toggle_entries);
 
@@ -524,6 +512,9 @@ static const gchar *ui_info =
 "			<menuitem action='FileQuit' />"
 "		</menu>"
 "		<menu action='EditMenu'>"
+"			<menuitem action='EditUndo' />"
+"			<menuitem action='EditRedo' />"
+"			<separator />"
 "			<menuitem action='EditCut' />"
 "			<menuitem action='EditCopy' />"
 "			<menuitem action='EditPaste' />"
@@ -538,16 +529,6 @@ static const gchar *ui_info =
 "			<menuitem action='ViewMainToolBar' />"
 "			<menuitem action='ViewDrawingToolBar' />"
 "			<menuitem action='ViewPropertyToolBar' />"
-"			<separator />"
-"			<menu action='ViewMainToolBarMenu'>"
-"				<menuitem action='ViewMainToolBarToolTips' />"
-"			</menu>"
-"			<menu action='ViewDrawingToolBarMenu'>"
-"				<menuitem action='ViewDrawingToolBarToolTips' />"
-"			</menu>"
-"			<menu action='ViewPropertyToolBarMenu'>"
-"				<menuitem action='ViewPropertyToolBarToolTips' />"
-"			</menu>"
 "			<separator />"
 "			<menuitem action='ViewGrid' />"
 "			<menuitem action='ViewMarkup' />"
@@ -578,16 +559,17 @@ static const gchar *ui_info =
 "				<menuitem action='ObjectsFlipHorizontal' />"
 "				<menuitem action='ObjectsFlipVertical' />"
 "			</menu>"
-"			<menu action='ObjectsAlignHorizMenu'>"
+"			<menu action='ObjectsAlignMenu'>"
 "				<menuitem action='ObjectsAlignLeft' />"
 "				<menuitem action='ObjectsAlignHCenter' />"
 "				<menuitem action='ObjectsAlignRight' />"
-"				<menuitem action='ObjectsCenterHorizontal' />"
-"			</menu>"
-"			<menu action='ObjectsAlignVertMenu'>"
+"			        <separator />"
 "				<menuitem action='ObjectsAlignTop' />"
 "				<menuitem action='ObjectsAlignVCenter' />"
 "				<menuitem action='ObjectsAlignBottom' />"
+"			</menu>"
+"			<menu action='ObjectsCenterMenu'>"
+"				<menuitem action='ObjectsCenterHorizontal' />"
 "				<menuitem action='ObjectsCenterVertical' />"
 "			</menu>"
 "			<separator />"
@@ -640,16 +622,17 @@ static const gchar *ui_info =
 "			<menuitem action='ObjectsFlipHorizontal' />"
 "			<menuitem action='ObjectsFlipVertical' />"
 "		</menu>"
-"		<menu action='ObjectsAlignHorizMenu'>"
+"		<menu action='ObjectsAlignMenu'>"
 "			<menuitem action='ObjectsAlignLeft' />"
 "			<menuitem action='ObjectsAlignHCenter' />"
 "			<menuitem action='ObjectsAlignRight' />"
-"			<menuitem action='ObjectsCenterHorizontal' />"
-"		</menu>"
-"		<menu action='ObjectsAlignVertMenu'>"
+"			<separator />"
 "			<menuitem action='ObjectsAlignTop' />"
 "			<menuitem action='ObjectsAlignVCenter' />"
 "			<menuitem action='ObjectsAlignBottom' />"
+"		</menu>"
+"		<menu action='ObjectsCenterMenu'>"
+"			<menuitem action='ObjectsCenterHorizontal' />"
 "			<menuitem action='ObjectsCenterVertical' />"
 "		</menu>"
 "		<separator />"
@@ -672,9 +655,10 @@ static gchar* doc_verbs [] = {
 	"/ui/MenuBar/FileMenu/FileSaveAs",
 	"/ui/MenuBar/FileMenu/FilePrint",
 	"/ui/MenuBar/FileMenu/FileClose",
+	"/ui/MenuBar/EditMenu/EditUndo",
+	"/ui/MenuBar/EditMenu/EditRedo",
 	"/ui/MenuBar/EditMenu/EditCut",
 	"/ui/MenuBar/EditMenu/EditCopy",
-	"/ui/MenuBar/EditMenu/EditPaste",
 	"/ui/MenuBar/EditMenu/EditDelete",
 	"/ui/MenuBar/EditMenu/EditSelectAll",
 	"/ui/MenuBar/EditMenu/EditUnSelectAll",
@@ -685,26 +669,31 @@ static gchar* doc_verbs [] = {
 	"/ui/MenuBar/ViewMenu/ViewGrid",
 	"/ui/MenuBar/ViewMenu/ViewMarkup",
 	"/ui/MenuBar/ObjectsMenu/ObjectsArrowMode",
+	"/ui/MenuBar/ObjectsMenu/ObjectsCreateMenu",
 	"/ui/MenuBar/ObjectsMenu/ObjectsCreateMenu/ObjectsCreateText",
 	"/ui/MenuBar/ObjectsMenu/ObjectsCreateMenu/ObjectsCreateLine",
 	"/ui/MenuBar/ObjectsMenu/ObjectsCreateMenu/ObjectsCreateBox",
 	"/ui/MenuBar/ObjectsMenu/ObjectsCreateMenu/ObjectsCreateEllipse",
 	"/ui/MenuBar/ObjectsMenu/ObjectsCreateMenu/ObjectsCreateImage",
 	"/ui/MenuBar/ObjectsMenu/ObjectsCreateMenu/ObjectsCreateBarcode",
+	"/ui/MenuBar/ObjectsMenu/ObjectsOrderMenu",
 	"/ui/MenuBar/ObjectsMenu/ObjectsOrderMenu/ObjectsRaise",
 	"/ui/MenuBar/ObjectsMenu/ObjectsOrderMenu/ObjectsLower",
+	"/ui/MenuBar/ObjectsMenu/ObjectsRotateFlipMenu",
 	"/ui/MenuBar/ObjectsMenu/ObjectsRotateFlipMenu/ObjectsRotateLeft",
 	"/ui/MenuBar/ObjectsMenu/ObjectsRotateFlipMenu/ObjectsRotateRight",
 	"/ui/MenuBar/ObjectsMenu/ObjectsRotateFlipMenu/ObjectsFlipHorizontal",
 	"/ui/MenuBar/ObjectsMenu/ObjectsRotateFlipMenu/ObjectsFlipVertical",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignHorizMenu/ObjectsAlignLeft",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignHorizMenu/ObjectsAlignRight",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignHorizMenu/ObjectsAlignHCenter",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignHorizMenu/ObjectsCenterHorizontal",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignVertMenu/ObjectsAlignTop",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignVertMenu/ObjectsAlignBottom",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignVertMenu/ObjectsAlignVCenter",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignVertMenu/ObjectsCenterVertical",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignLeft",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignRight",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignHCenter",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignTop",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignBottom",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignVCenter",
+	"/ui/MenuBar/ObjectsMenu/ObjectsCenterMenu",
+	"/ui/MenuBar/ObjectsMenu/ObjectsCenterMenu/ObjectsCenterHorizontal",
+	"/ui/MenuBar/ObjectsMenu/ObjectsCenterMenu/ObjectsCenterVertical",
 	"/ui/MenuBar/ObjectsMenu/ObjectsMergeProperties",
 
 	NULL
@@ -716,19 +705,28 @@ static gchar* doc_modified_verbs [] = {
 	NULL
 };
 
+static gchar* paste_verbs [] = {
+	"/ui/MenuBar/EditMenu/EditPaste",
+
+	NULL
+};
+
 static gchar* selection_verbs [] = {
 	"/ui/MenuBar/EditMenu/EditCut",
 	"/ui/MenuBar/EditMenu/EditCopy",
 	"/ui/MenuBar/EditMenu/EditDelete",
 	"/ui/MenuBar/EditMenu/EditUnSelectAll",
+	"/ui/MenuBar/ObjectsMenu/ObjectsOrderMenu",
 	"/ui/MenuBar/ObjectsMenu/ObjectsOrderMenu/ObjectsRaise",
 	"/ui/MenuBar/ObjectsMenu/ObjectsOrderMenu/ObjectsLower",
+	"/ui/MenuBar/ObjectsMenu/ObjectsRotateFlipMenu",
 	"/ui/MenuBar/ObjectsMenu/ObjectsRotateFlipMenu/ObjectsRotateLeft",
 	"/ui/MenuBar/ObjectsMenu/ObjectsRotateFlipMenu/ObjectsRotateRight",
 	"/ui/MenuBar/ObjectsMenu/ObjectsRotateFlipMenu/ObjectsFlipHorizontal",
 	"/ui/MenuBar/ObjectsMenu/ObjectsRotateFlipMenu/ObjectsFlipVertical",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignHorizMenu/ObjectsCenterHorizontal",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignVertMenu/ObjectsCenterVertical",
+	"/ui/MenuBar/ObjectsMenu/ObjectsCenterMenu",
+	"/ui/MenuBar/ObjectsMenu/ObjectsCenterMenu/ObjectsCenterHorizontal",
+	"/ui/MenuBar/ObjectsMenu/ObjectsCenterMenu/ObjectsCenterVertical",
 
 	NULL
 };
@@ -739,12 +737,13 @@ static gchar* atomic_selection_verbs [] = {
 };
 
 static gchar* multi_selection_verbs [] = {
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignHorizMenu/ObjectsAlignLeft",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignHorizMenu/ObjectsAlignRight",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignHorizMenu/ObjectsAlignHCenter",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignVertMenu/ObjectsAlignTop",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignVertMenu/ObjectsAlignBottom",
-	"/ui/MenuBar/ObjectsMenu/ObjectsAlignVertMenu/ObjectsAlignVCenter",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignLeft",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignRight",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignHCenter",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignTop",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignBottom",
+	"/ui/MenuBar/ObjectsMenu/ObjectsAlignMenu/ObjectsAlignVCenter",
 
 	NULL
 };
@@ -808,12 +807,16 @@ gl_ui_new (glWindow *window)
 				   recent_menu);
 
 
+        set_additional_properties (ui);
+
 	gl_ui_util_set_verb_list_sensitive (ui, doc_verbs, FALSE);
+	gl_ui_util_set_verb_list_sensitive (ui, paste_verbs, FALSE);
 
 	gl_debug (DEBUG_UI, "END");
 
 	return ui;
 }
+
 
 /*****************************************************************************/
 /** Unref wrapper.                                                           */
@@ -827,6 +830,7 @@ gl_ui_unref (GtkUIManager *ui)
 
 	gl_debug (DEBUG_UI, "END");
 }
+
 
 /*****************************************************************************/
 /** Update all verbs of given UI component.                                  */
@@ -858,30 +862,18 @@ gl_ui_update_all (GtkUIManager *ui,
 				       !gl_view_is_zoom_min (view));
 
 	gl_ui_util_set_verb_list_sensitive (ui, selection_verbs,
-					    !gl_view_is_selection_empty (view));
+					    !gl_label_is_selection_empty (label));
 
 	gl_ui_util_set_verb_list_sensitive (ui, atomic_selection_verbs,
-					    gl_view_is_selection_atomic (view));
+					    gl_label_is_selection_atomic (label));
 
 	gl_ui_util_set_verb_list_sensitive (ui, multi_selection_verbs,
-					    !gl_view_is_selection_empty (view)
-					    && !gl_view_is_selection_atomic (view));
+					    !gl_label_is_selection_empty (label)
+					    && !gl_label_is_selection_atomic (label));
 
 	gl_debug (DEBUG_UI, "END");
 }
 
-/*****************************************************************************/
-/** Update all verbs of given UI component to "no document" state.           */
-/*****************************************************************************/
-void
-gl_ui_update_nodoc (GtkUIManager *ui)
-{
-	gl_debug (DEBUG_UI, "START");
-
-	gl_ui_util_set_verb_list_sensitive (ui, doc_verbs, FALSE);
-
-	gl_debug (DEBUG_UI, "END");
-}
 
 /*****************************************************************************/
 /** Update label modified verbs of given UI component.                       */
@@ -899,27 +891,39 @@ gl_ui_update_modified_verbs (GtkUIManager *ui,
 	gl_debug (DEBUG_UI, "END");
 }
 
+
 /*****************************************************************************/
 /** Update verbs associated with selection state of given UI component.      */
 /*****************************************************************************/
 void
 gl_ui_update_selection_verbs (GtkUIManager *ui,
-			      glView       *view)
+			      glView       *view,
+                              gboolean      has_focus)
 {
 	gl_debug (DEBUG_UI, "START");
 
-	gl_ui_util_set_verb_list_sensitive (ui, selection_verbs,
-					    !gl_view_is_selection_empty (view));
+        if ( has_focus )
+        {
+                gl_ui_util_set_verb_list_sensitive (ui, selection_verbs,
+                                                    !gl_label_is_selection_empty (view->label));
 
-	gl_ui_util_set_verb_list_sensitive (ui, atomic_selection_verbs,
-					    gl_view_is_selection_atomic (view));
+                gl_ui_util_set_verb_list_sensitive (ui, atomic_selection_verbs,
+                                                    gl_label_is_selection_atomic (view->label));
 
-	gl_ui_util_set_verb_list_sensitive (ui, multi_selection_verbs,
-					    !gl_view_is_selection_empty (view)
-					    && !gl_view_is_selection_atomic (view));
+                gl_ui_util_set_verb_list_sensitive (ui, multi_selection_verbs,
+                                                    !gl_label_is_selection_empty (view->label)
+                                                    && !gl_label_is_selection_atomic (view->label));
+        }
+        else
+        {
+                gl_ui_util_set_verb_list_sensitive (ui, selection_verbs, FALSE);
+                gl_ui_util_set_verb_list_sensitive (ui, atomic_selection_verbs, FALSE);
+                gl_ui_util_set_verb_list_sensitive (ui, multi_selection_verbs, FALSE);
+        }
 
 	gl_debug (DEBUG_UI, "END");
 }
+
 
 /*****************************************************************************/
 /** Update verbs associated with zoom level of given UI component.           */
@@ -938,6 +942,22 @@ gl_ui_update_zoom_verbs (GtkUIManager *ui,
 	gl_debug (DEBUG_UI, "END");
 }
 
+
+/*****************************************************************************/
+/** Update paste verbs of given UI component.                                */
+/*****************************************************************************/
+void
+gl_ui_update_paste_verbs (GtkUIManager      *ui,
+                          gboolean           can_paste)
+{
+	gl_debug (DEBUG_UI, "START");
+
+	gl_ui_util_set_verb_list_sensitive (ui, paste_verbs, can_paste);
+
+	gl_debug (DEBUG_UI, "END");
+}
+
+
 /*****************************************************************************/
 /** Update undo/redo verbs of given UI component.                            */
 /*****************************************************************************/
@@ -945,7 +965,25 @@ void
 gl_ui_update_undo_redo_verbs (GtkUIManager *ui,
 			      glLabel      *label)
 {
+        GtkWidget  *menu_item;
+        gchar      *description;
+        gchar      *menu_label;
+
 	gl_debug (DEBUG_UI, "START");
+
+        menu_item = gtk_ui_manager_get_widget (ui, "/MenuBar/EditMenu/EditUndo");
+        description = gl_label_get_undo_description (label);
+        menu_label = g_strdup_printf ("%s: %s", _("Undo"), description);
+        gtk_menu_item_set_label (GTK_MENU_ITEM (menu_item), menu_label);
+        g_free (menu_label);
+        g_free (description);
+
+        menu_item = gtk_ui_manager_get_widget (ui, "/MenuBar/EditMenu/EditRedo");
+        description = gl_label_get_redo_description (label);
+        menu_label = g_strdup_printf ("%s: %s", _("Redo"), description);
+        gtk_menu_item_set_label (GTK_MENU_ITEM (menu_item), menu_label);
+        g_free (menu_label);
+        g_free (description);
 
 	gl_ui_util_set_verb_sensitive (ui, "/ui/MenuBar/EditMenu/EditUndo",
 				       gl_label_can_undo (label));
@@ -955,6 +993,7 @@ gl_ui_update_undo_redo_verbs (GtkUIManager *ui,
 
 	gl_debug (DEBUG_UI, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  View menu item toggled callback.                               */
@@ -977,34 +1016,19 @@ view_ui_item_toggled_cb (GtkToggleAction *action,
 
 	if (strcmp (name, "ViewMainToolBar") == 0)
 	{
-		gl_prefs->main_toolbar_visible = state;
+                gl_prefs_model_set_main_toolbar_visible (gl_prefs, state);
 		set_app_main_toolbar_style (ui);
-		gl_prefs_model_save_settings (gl_prefs);
-	}
-
-	if (strcmp (name, "ViewMainToolBarToolTips") == 0)
-	{
-		gl_prefs->main_toolbar_view_tooltips = state;
-		set_app_main_toolbar_style (ui);
-		gl_prefs_model_save_settings (gl_prefs);
 	}
 
 	if (strcmp (name, "ViewDrawingToolBar") == 0)
 	{
-		gl_prefs->drawing_toolbar_visible = state;
+		gl_prefs_model_set_drawing_toolbar_visible (gl_prefs, state);
 		set_app_drawing_toolbar_style (ui);
-		gl_prefs_model_save_settings (gl_prefs);
-	}
-
-	if (strcmp (name, "ViewDrawingToolBarToolTips") == 0)
-	{
-		gl_prefs->drawing_toolbar_view_tooltips = state;
-		set_app_drawing_toolbar_style (ui);
-		gl_prefs_model_save_settings (gl_prefs);
 	}
 
 	gl_debug (DEBUG_UI, "");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  Set main toolbar style.                                        */
@@ -1020,21 +1044,11 @@ set_app_main_toolbar_style (GtkUIManager *ui)
 			
 	/* Updated view menu */
 	gl_ui_util_set_verb_state (ui, "/ui/ViewMenu/ViewMainToolBar",
-				   gl_prefs->main_toolbar_visible);
+				   gl_prefs_model_get_main_toolbar_visible (gl_prefs));
 
-	gl_ui_util_set_verb_sensitive (ui, "/ui/ViewMenu/ViewMainToolBarToolTips",
-				       gl_prefs->main_toolbar_visible);
-
-	gl_ui_util_set_verb_state (ui, "/ui/ViewMenu/ViewMainToolBarToolTips",
-				   gl_prefs->main_toolbar_view_tooltips);
-
-	
 	toolbar = gtk_ui_manager_get_widget (ui, "/MainToolBar");
 
-	gtk_toolbar_set_tooltips (GTK_TOOLBAR (toolbar),
-				  gl_prefs->main_toolbar_view_tooltips);
-
-	if (gl_prefs->main_toolbar_visible) {
+	if (gl_prefs_model_get_main_toolbar_visible (gl_prefs)) {
 		gtk_widget_show_all (toolbar);
 	} else {
 		gtk_widget_hide (toolbar);
@@ -1058,23 +1072,13 @@ set_app_drawing_toolbar_style (GtkUIManager *ui)
 			
 	/* Updated view menu */
 	gl_ui_util_set_verb_state (ui, "/ui/MenuBar/ViewMenu/ViewDrawingToolBar",
-				   gl_prefs->drawing_toolbar_visible);
+				   gl_prefs_model_get_drawing_toolbar_visible (gl_prefs));
 
-	gl_ui_util_set_verb_sensitive (ui, "/ui/MenuBar/ViewMenu/ViewDrawingToolBarToolTips",
-				       gl_prefs->drawing_toolbar_visible);
-
-	gl_ui_util_set_verb_state (ui, "/ui/MenuBar/ViewMenuDrawingToolBarToolTips",
-				   gl_prefs->drawing_toolbar_view_tooltips);
-
-	
 	toolbar = gtk_ui_manager_get_widget (ui, "/DrawingToolBar");
-
-	gtk_toolbar_set_tooltips (GTK_TOOLBAR (toolbar),
-				  gl_prefs->drawing_toolbar_view_tooltips);
 
 	gtk_toolbar_set_style (GTK_TOOLBAR (toolbar), GTK_TOOLBAR_ICONS);
 
-	if (gl_prefs->drawing_toolbar_visible) {
+	if (gl_prefs_model_get_drawing_toolbar_visible (gl_prefs)) {
 		gtk_widget_show_all (toolbar);
 	} else {
 		gtk_widget_hide (toolbar);
@@ -1082,6 +1086,7 @@ set_app_drawing_toolbar_style (GtkUIManager *ui)
 	
 	gl_debug (DEBUG_UI, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  Set visibility of grid and markup.                             */
@@ -1094,13 +1099,82 @@ set_view_style (GtkUIManager *ui)
 	g_return_if_fail (ui && GTK_IS_UI_MANAGER(ui));
 			
 	gl_ui_util_set_verb_state (ui, "/ui/MenuBar/ViewMenu/ViewGrid",
-				   gl_prefs->grid_visible);
+				   gl_prefs_model_get_grid_visible (gl_prefs));
 
 	gl_ui_util_set_verb_state (ui, "/ui/MenuBar/ViewMenu/ViewMarkup",
-				   gl_prefs->markup_visible);
+				   gl_prefs_model_get_markup_visible (gl_prefs));
 
 	gl_debug (DEBUG_UI, "END");
 }
+
+
+/*---------------------------------------------------------------------------*/
+/** PRIVATE.  Descend menu, set "always-show-image" for all image menu items.*/
+/*---------------------------------------------------------------------------*/
+static void
+descend_menu_set_always_show_image (GtkMenu *menu)
+{
+        GList       *children, *p;
+        GtkWidget   *submenu;
+        GtkWidget   *menu_item;
+
+        children = gtk_container_get_children (GTK_CONTAINER (menu));
+
+        for ( p = children; p != NULL; p = p->next )
+        {
+                menu_item = GTK_WIDGET (p->data);
+
+                submenu = gtk_menu_item_get_submenu (GTK_MENU_ITEM (menu_item));
+                if ( submenu )
+                {
+                        descend_menu_set_always_show_image (GTK_MENU (submenu));
+                }
+                else if ( GTK_IS_IMAGE_MENU_ITEM (menu_item) )
+                {
+                        g_object_set (menu_item, "always-show-image", TRUE, NULL);
+                }
+        }
+}
+
+
+/*---------------------------------------------------------------------------*/
+/** PRIVATE.  Set additional properties.                                     */
+/*---------------------------------------------------------------------------*/
+static void
+set_additional_properties (GtkUIManager *ui)
+{
+        GtkWidget  *menu;
+        GtkWidget  *menu_item;
+
+        /*
+         * Set "always-show-image" property for all Object menuitems.  This is
+         * necessary because, as of Gtk-2.18, images are not shown by default
+         * and you really need these visual cues for these menu items.
+         */
+        menu_item = gtk_ui_manager_get_widget (ui, "/MenuBar/ObjectsMenu/");
+        menu = gtk_menu_item_get_submenu (GTK_MENU_ITEM (menu_item));
+        descend_menu_set_always_show_image (GTK_MENU (menu));
+
+        menu_item = gtk_ui_manager_get_widget (ui, "/MenuBar/ObjectsMenu/ObjectsMergeProperties");
+        g_object_set (menu_item, "always-show-image", FALSE, NULL); /* Leave this one out. */
+
+        menu_item = gtk_ui_manager_get_widget (ui, "/ContextMenu/ObjectsOrderMenu/");
+        menu = gtk_menu_item_get_submenu (GTK_MENU_ITEM (menu_item));
+        descend_menu_set_always_show_image (GTK_MENU (menu));
+
+        menu_item = gtk_ui_manager_get_widget (ui, "/ContextMenu/ObjectsRotateFlipMenu/");
+        menu = gtk_menu_item_get_submenu (GTK_MENU_ITEM (menu_item));
+        descend_menu_set_always_show_image (GTK_MENU (menu));
+
+        menu_item = gtk_ui_manager_get_widget (ui, "/ContextMenu/ObjectsAlignMenu/");
+        menu = gtk_menu_item_get_submenu (GTK_MENU_ITEM (menu_item));
+        descend_menu_set_always_show_image (GTK_MENU (menu));
+
+        menu_item = gtk_ui_manager_get_widget (ui, "/ContextMenu/ObjectsCenterMenu/");
+        menu = gtk_menu_item_get_submenu (GTK_MENU_ITEM (menu_item));
+        descend_menu_set_always_show_image (GTK_MENU (menu));
+}
+
 
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  Connect proxy callback.                                        */
@@ -1120,6 +1194,7 @@ connect_proxy_cb (GtkUIManager *ui,
 	}
 }
 
+
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  Disconnect proxy callback.                                     */
 /*---------------------------------------------------------------------------*/
@@ -1137,6 +1212,7 @@ disconnect_proxy_cb (GtkUIManager *ui,
 			(proxy, G_CALLBACK (menu_item_deselect_cb), window);
 	}
 }
+
 
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  Menu item select callback.                                     */
@@ -1163,6 +1239,7 @@ menu_item_select_cb (GtkMenuItem *proxy,
 	}
 }
 
+
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  Menu item deselect callback.                                   */
 /*---------------------------------------------------------------------------*/
@@ -1177,3 +1254,13 @@ menu_item_deselect_cb (GtkMenuItem *proxy,
 			   window->menu_tips_context_id);
 }
 
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

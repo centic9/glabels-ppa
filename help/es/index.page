@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="index" xml:lang="es">
+
+  <info>
+    <title type="link">Diseñador de etiquetas y de tarjetas de visita gLabels.</title>
+    <title type="text">Diseñador de etiquetas y de tarjetas de visita gLabels.</title>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+  <title><media type="image" mime="image/png" src="figures/glabels-logo.png">logo de gLabels</media> Manual de gLabels</title>
+
+  <p>La aplicación <app>gLabels</app> es un programa ligero para crear etiquetas y tarjetas de visita para el entorno de escritorio GNOME. Está diseñado para trabajar con varias hojas de etiquetas láser/chorro de tinta que encontrará en la mayoría de las tiendas de suministros de oficina.</p>
+ 
+  <p><app>gLabels</app> se puede usar para diseñar etiquetas de dirección, de nombre, de precio, de CD/DVD o para cualquier otra cosa organizada según un patrón regular en una hoja de papel. Las etiquetas (o las tarjetas) pueden contener texto, imágenes, líneas, formas y códigos de barras. <app>gLabels</app> también incluye la característica de combinar documentos, que le permite imprimir una etiqueta única por cada registro de una fuente de datos externa, tal como un archivo CSV o una libreta de direcciones de <app>Evolution</app>.</p>
+
+  <figure>
+    <title>Ventana principal de <app>gLabels</app></title>
+    <desc>Ventana principal de <app>gLabels</app></desc>
+    <media type="image" src="figures/introduction-glabels-main-window.png" mime="image/png" style="right">
+      <p>Ventana principal de <app>gLabels</app>.</p>
+    </media>
+  </figure>
+
+  <section id="usage" style="2column">
+    <title>Uso</title>
+  </section>
+
+  <section id="merging" style="2column">
+    <title>Fusión de documentos</title>
+  </section>
+
+  <section id="advanced" style="2column">
+    <title>Uso avanzado</title>
+  </section>
+
+</page>

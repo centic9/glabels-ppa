@@ -37,15 +37,17 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 subdir = libglabels
-DIST_COMMON = $(libglabelsinclude_HEADERS) $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in $(srcdir)/libglabels.pc.in
+DIST_COMMON = $(libglabels_3_0include_HEADERS) \
+	$(libglabels_3_0subinclude_HEADERS) \
+	$(srcdir)/${LIBGLABELS_BRANCH}.pc.in $(srcdir)/Makefile.am \
+	$(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/configure.in
+am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = libglabels.pc
+CONFIG_CLEAN_FILES = ${LIBGLABELS_BRANCH}.pc
 CONFIG_CLEAN_VPATH_FILES =
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
@@ -69,43 +71,66 @@ am__base_list = \
   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
 am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfigdir)" \
-	"$(DESTDIR)$(libglabelsincludedir)"
+	"$(DESTDIR)$(libglabels_3_0includedir)" \
+	"$(DESTDIR)$(libglabels_3_0subincludedir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
-libglabels_la_LIBADD =
-am_libglabels_la_OBJECTS = db.lo paper.lo category.lo template.lo \
-	xml-paper.lo xml-category.lo xml-template.lo xml.lo str.lo
-libglabels_la_OBJECTS = $(am_libglabels_la_OBJECTS)
-libglabels_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-	$(libglabels_la_LDFLAGS) $(LDFLAGS) -o $@
+libglabels_3_0_la_LIBADD =
+am_libglabels_3_0_la_OBJECTS = lgl-db.lo lgl-units.lo lgl-paper.lo \
+	lgl-category.lo lgl-vendor.lo lgl-template.lo lgl-xml-paper.lo \
+	lgl-xml-category.lo lgl-xml-vendor.lo lgl-xml-template.lo \
+	lgl-xml.lo lgl-str.lo
+libglabels_3_0_la_OBJECTS = $(am_libglabels_3_0_la_OBJECTS)
+AM_V_lt = $(am__v_lt_$(V))
+am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
+am__v_lt_0 = --silent
+libglabels_3_0_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(AM_CFLAGS) $(CFLAGS) $(libglabels_3_0_la_LDFLAGS) $(LDFLAGS) \
+	-o $@
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
-	--mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
-	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+	$(AM_CFLAGS) $(CFLAGS)
+AM_V_CC = $(am__v_CC_$(V))
+am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
+am__v_CC_0 = @echo "  CC    " $@;
+AM_V_at = $(am__v_at_$(V))
+am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
+am__v_at_0 = @
 CCLD = $(CC)
-LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
-	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-	$(LDFLAGS) -o $@
-SOURCES = $(libglabels_la_SOURCES)
-DIST_SOURCES = $(libglabels_la_SOURCES)
+LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+AM_V_CCLD = $(am__v_CCLD_$(V))
+am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
+am__v_CCLD_0 = @echo "  CCLD  " $@;
+AM_V_GEN = $(am__v_GEN_$(V))
+am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))
+am__v_GEN_0 = @echo "  GEN   " $@;
+SOURCES = $(libglabels_3_0_la_SOURCES)
+DIST_SOURCES = $(libglabels_3_0_la_SOURCES)
 DATA = $(pkgconfig_DATA)
-HEADERS = $(libglabelsinclude_HEADERS)
+HEADERS = $(libglabels_3_0include_HEADERS) \
+	$(libglabels_3_0subinclude_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 ALL_LINGUAS = @ALL_LINGUAS@
 AMTAR = @AMTAR@
+AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 AR = @AR@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
 AWK = @AWK@
+CAIRO_REQUIRED = @CAIRO_REQUIRED@
 CATALOGS = @CATALOGS@
 CATOBJEXT = @CATOBJEXT@
 CC = @CC@
@@ -119,6 +144,7 @@ DEFS = @DEFS@
 DEPDIR = @DEPDIR@
 DISABLE_DEPRECATED_CFLAGS = @DISABLE_DEPRECATED_CFLAGS@
 DISTCHECK_CONFIGURE_FLAGS = @DISTCHECK_CONFIGURE_FLAGS@
+DLLTOOL = @DLLTOOL@
 DOC_USER_FORMATS = @DOC_USER_FORMATS@
 DSYMUTIL = @DSYMUTIL@
 DUMPBIN = @DUMPBIN@
@@ -128,17 +154,23 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 FGREP = @FGREP@
+GDK_PIXBUF_CSOURCE = @GDK_PIXBUF_CSOURCE@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
+GLABELS_BRANCH = @GLABELS_BRANCH@
 GLABELS_CFLAGS = @GLABELS_CFLAGS@
 GLABELS_LIBS = @GLABELS_LIBS@
+GLIB_COMPILE_SCHEMAS = @GLIB_COMPILE_SCHEMAS@
 GLIB_GENMARSHAL = @GLIB_GENMARSHAL@
 GLIB_REQUIRED = @GLIB_REQUIRED@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
 GREP = @GREP@
+GSETTINGS_DISABLE_SCHEMAS_COMPILE = @GSETTINGS_DISABLE_SCHEMAS_COMPILE@
 GTKDOC_CHECK = @GTKDOC_CHECK@
+GTKDOC_MKPDF = @GTKDOC_MKPDF@
+GTKDOC_REBASE = @GTKDOC_REBASE@
 GTK_REQUIRED = @GTK_REQUIRED@
-HAVE_XML_PARSE_HUGE = @HAVE_XML_PARSE_HUGE@
+GTK_UPDATE_ICON_CACHE = @GTK_UPDATE_ICON_CACHE@
 HELP_DIR = @HELP_DIR@
 HTML_DIR = @HTML_DIR@
 INSTALL = @INSTALL@
@@ -154,31 +186,45 @@ INTLTOOL_PERL = @INTLTOOL_PERL@
 INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 LD = @LD@
 LDFLAGS = @LDFLAGS@
+LIBBARCODE_CFLAGS = @LIBBARCODE_CFLAGS@
+LIBBARCODE_LIBS = @LIBBARCODE_LIBS@
+LIBBARCODE_REQUIRED = @LIBBARCODE_REQUIRED@
 LIBEBOOK_CFLAGS = @LIBEBOOK_CFLAGS@
 LIBEBOOK_LIBS = @LIBEBOOK_LIBS@
 LIBEBOOK_REQUIRED = @LIBEBOOK_REQUIRED@
+LIBGLABELS_API_VERSION = @LIBGLABELS_API_VERSION@
+LIBGLABELS_BRANCH = @LIBGLABELS_BRANCH@
 LIBGLABELS_CFLAGS = @LIBGLABELS_CFLAGS@
 LIBGLABELS_LIBS = @LIBGLABELS_LIBS@
-LIBGLABELS_VERSION_INFO = @LIBGLABELS_VERSION_INFO@
-LIBGLADE_REQUIRED = @LIBGLADE_REQUIRED@
-LIBGNOMEUI_REQUIRED = @LIBGNOMEUI_REQUIRED@
-LIBGNOME_REQUIRED = @LIBGNOME_REQUIRED@
+LIBGLBARCODE_API_VERSION = @LIBGLBARCODE_API_VERSION@
+LIBGLBARCODE_BRANCH = @LIBGLBARCODE_BRANCH@
+LIBGLBARCODE_CFLAGS = @LIBGLBARCODE_CFLAGS@
+LIBGLBARCODE_LIBS = @LIBGLBARCODE_LIBS@
+LIBIEC16022_CFLAGS = @LIBIEC16022_CFLAGS@
+LIBIEC16022_LIBS = @LIBIEC16022_LIBS@
+LIBIEC16022_REQUIRED = @LIBIEC16022_REQUIRED@
 LIBOBJS = @LIBOBJS@
+LIBQRENCODE_CFLAGS = @LIBQRENCODE_CFLAGS@
+LIBQRENCODE_LIBS = @LIBQRENCODE_LIBS@
+LIBQRENCODE_REQUIRED = @LIBQRENCODE_REQUIRED@
+LIBRSVG_REQUIRED = @LIBRSVG_REQUIRED@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
 LIBXML_REQUIRED = @LIBXML_REQUIRED@
+LIBZINT_CFLAGS = @LIBZINT_CFLAGS@
+LIBZINT_LIBS = @LIBZINT_LIBS@
+LIBZINT_REQUIRED = @LIBZINT_REQUIRED@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
+MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
 MSGFMT_OPTS = @MSGFMT_OPTS@
 MSGMERGE = @MSGMERGE@
-MYGAL_CFLAGS = @MYGAL_CFLAGS@
-MYGAL_LIBS = @MYGAL_LIBS@
 NM = @NM@
 NMEDIT = @NMEDIT@
 OBJDUMP = @OBJDUMP@
@@ -191,9 +237,13 @@ PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_NAME = @PACKAGE_NAME@
 PACKAGE_STRING = @PACKAGE_STRING@
 PACKAGE_TARNAME = @PACKAGE_TARNAME@
+PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
+PANGO_REQUIRED = @PANGO_REQUIRED@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 PKG_CONFIG = @PKG_CONFIG@
+PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
+PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
 POFILES = @POFILES@
 POSUB = @POSUB@
 PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
@@ -203,18 +253,15 @@ SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
-UPDATE_DESKTOP_DATABASE = @UPDATE_DESKTOP_DATABASE@
-UPDATE_MIME_DATABASE = @UPDATE_MIME_DATABASE@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
 WARN_CFLAGS = @WARN_CFLAGS@
 XGETTEXT = @XGETTEXT@
-XML_PARSE_HUGE_CFLAGS = @XML_PARSE_HUGE_CFLAGS@
-XML_PARSE_HUGE_LIBS = @XML_PARSE_HUGE_LIBS@
 abs_builddir = @abs_builddir@
 abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
 abs_top_srcdir = @abs_top_srcdir@
+ac_ct_AR = @ac_ct_AR@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_DUMPBIN = @ac_ct_DUMPBIN@
 am__include = @am__include@
@@ -234,6 +281,7 @@ datarootdir = @datarootdir@
 docdir = @docdir@
 dvidir = @dvidir@
 exec_prefix = @exec_prefix@
+gsettingsschemadir = @gsettingsschemadir@
 host = @host@
 host_alias = @host_alias@
 host_cpu = @host_cpu@
@@ -247,7 +295,6 @@ libdir = @libdir@
 libexecdir = @libexecdir@
 localedir = @localedir@
 localstatedir = @localstatedir@
-lt_ECHO = @lt_ECHO@
 mandir = @mandir@
 mkdir_p = @mkdir_p@
 oldincludedir = @oldincludedir@
@@ -263,60 +310,67 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-templatesdir = $(datadir)/glabels/templates
+configdir = $(datadir)/$(LIBGLABELS_BRANCH)
 INCLUDES = \
 	$(LIBGLABELS_CFLAGS)				\
-	-DDATADIR=\""$(datadir)"\"			\
-	-DLIBGLABELS_TEMPLATE_DIR=\""$(templatesdir)"\" \
+	-DLIBGLABELS_CONFIG_DIR=\""$(configdir)"\" \
 	$(DISABLE_DEPRECATED_CFLAGS)
 
-libglabels_la_LDFLAGS = \
-        -version-info $(LIBGLABELS_VERSION_INFO) \
+libglabels_3_0_la_LDFLAGS = \
+        -version-info $(LIBGLABELS_API_VERSION) \
         $(LIBGLABELS_LIBS) \
         -no-undefined 
 
-lib_LTLIBRARIES = libglabels.la
-libglabelsincludedir = $(includedir)/libglabels
-libglabels_la_SOURCES = \
+lib_LTLIBRARIES = libglabels-3.0.la
+libglabels_3_0_la_SOURCES = \
 	libglabels-private.h	\
-	db.h			\
-	db.c			\
-	enums.h			\
-	paper.h			\
-	paper.c			\
-	category.h		\
-	category.c		\
-	template.h		\
-	template.c		\
-	xml-paper.h		\
-	xml-paper.c		\
-	xml-category.h		\
-	xml-category.c		\
-	xml-template.h		\
-	xml-template.c		\
-	xml.h			\
-	xml.c			\
-	str.h			\
-	str.c
+	lgl-db.h		\
+	lgl-db.c		\
+	lgl-units.h		\
+	lgl-units.c		\
+	lgl-paper.h		\
+	lgl-paper.c		\
+	lgl-category.h		\
+	lgl-category.c		\
+	lgl-vendor.h		\
+	lgl-vendor.c		\
+	lgl-template.h		\
+	lgl-template.c		\
+	lgl-xml-paper.h		\
+	lgl-xml-paper.c		\
+	lgl-xml-category.h	\
+	lgl-xml-category.c	\
+	lgl-xml-vendor.h	\
+	lgl-xml-vendor.c	\
+	lgl-xml-template.h	\
+	lgl-xml-template.c	\
+	lgl-xml.h		\
+	lgl-xml.c		\
+	lgl-str.h		\
+	lgl-str.c
 
-libglabelsinclude_HEADERS = \
-	libglabels.h		\
-	db.h                    \
-	enums.h			\
-	paper.h			\
-	category.h		\
-	template.h		\
-	xml-paper.h		\
-	xml-category.h		\
-	xml-template.h		\
-	xml.h			\
-	str.h			
+libglabels_3_0includedir = $(includedir)/$(LIBGLABELS_BRANCH)
+libglabels_3_0include_HEADERS = \
+	libglabels.h
+
+libglabels_3_0subincludedir = $(includedir)/$(LIBGLABELS_BRANCH)/libglabels
+libglabels_3_0subinclude_HEADERS = \
+	lgl-db.h                \
+	lgl-units.h		\
+	lgl-paper.h		\
+	lgl-category.h		\
+	lgl-template.h		\
+	lgl-xml-paper.h		\
+	lgl-xml-category.h	\
+	lgl-xml-template.h	\
+	lgl-xml.h		\
+	lgl-str.h			
 
 EXTRA_DIST = \
-	libglabels.pc.in
+	$(LIBGLABELS_BRANCH).pc.in
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libglabels.pc
+pkgconfig_DATA = $(LIBGLABELS_BRANCH).pc
 all: all-am
 
 .SUFFIXES:
@@ -351,7 +405,7 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-libglabels.pc: $(top_builddir)/config.status $(srcdir)/libglabels.pc.in
+${LIBGLABELS_BRANCH}.pc: $(top_builddir)/config.status $(srcdir)/${LIBGLABELS_BRANCH}.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 install-libLTLIBRARIES: $(lib_LTLIBRARIES)
 	@$(NORMAL_INSTALL)
@@ -384,8 +438,8 @@ clean-libLTLIBRARIES:
 	  echo "rm -f \"$${dir}/so_locations\""; \
 	  rm -f "$${dir}/so_locations"; \
 	done
-libglabels.la: $(libglabels_la_OBJECTS) $(libglabels_la_DEPENDENCIES) 
-	$(libglabels_la_LINK) -rpath $(libdir) $(libglabels_la_OBJECTS) $(libglabels_la_LIBADD) $(LIBS)
+libglabels-3.0.la: $(libglabels_3_0_la_OBJECTS) $(libglabels_3_0_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libglabels_3_0_la_LINK) -rpath $(libdir) $(libglabels_3_0_la_OBJECTS) $(libglabels_3_0_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -393,33 +447,39 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/category.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/db.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/paper.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/str.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/template.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xml-category.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xml-paper.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xml-template.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xml.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-category.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-db.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-paper.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-str.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-template.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-units.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-vendor.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-xml-category.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-xml-paper.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-xml-template.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-xml-vendor.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lgl-xml.Plo@am__quote@
 
 .c.o:
-@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+@am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(COMPILE) -c $<
 
 .c.obj:
-@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+@am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-@am__fastdepCC_TRUE@	$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+@am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
@@ -449,26 +509,46 @@ uninstall-pkgconfigDATA:
 	test -n "$$files" || exit 0; \
 	echo " ( cd '$(DESTDIR)$(pkgconfigdir)' && rm -f" $$files ")"; \
 	cd "$(DESTDIR)$(pkgconfigdir)" && rm -f $$files
-install-libglabelsincludeHEADERS: $(libglabelsinclude_HEADERS)
+install-libglabels_3_0includeHEADERS: $(libglabels_3_0include_HEADERS)
 	@$(NORMAL_INSTALL)
-	test -z "$(libglabelsincludedir)" || $(MKDIR_P) "$(DESTDIR)$(libglabelsincludedir)"
-	@list='$(libglabelsinclude_HEADERS)'; test -n "$(libglabelsincludedir)" || list=; \
+	test -z "$(libglabels_3_0includedir)" || $(MKDIR_P) "$(DESTDIR)$(libglabels_3_0includedir)"
+	@list='$(libglabels_3_0include_HEADERS)'; test -n "$(libglabels_3_0includedir)" || list=; \
 	for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; \
 	done | $(am__base_list) | \
 	while read files; do \
-	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(libglabelsincludedir)'"; \
-	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(libglabelsincludedir)" || exit $$?; \
+	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(libglabels_3_0includedir)'"; \
+	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(libglabels_3_0includedir)" || exit $$?; \
 	done
 
-uninstall-libglabelsincludeHEADERS:
+uninstall-libglabels_3_0includeHEADERS:
 	@$(NORMAL_UNINSTALL)
-	@list='$(libglabelsinclude_HEADERS)'; test -n "$(libglabelsincludedir)" || list=; \
+	@list='$(libglabels_3_0include_HEADERS)'; test -n "$(libglabels_3_0includedir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	test -n "$$files" || exit 0; \
-	echo " ( cd '$(DESTDIR)$(libglabelsincludedir)' && rm -f" $$files ")"; \
-	cd "$(DESTDIR)$(libglabelsincludedir)" && rm -f $$files
+	echo " ( cd '$(DESTDIR)$(libglabels_3_0includedir)' && rm -f" $$files ")"; \
+	cd "$(DESTDIR)$(libglabels_3_0includedir)" && rm -f $$files
+install-libglabels_3_0subincludeHEADERS: $(libglabels_3_0subinclude_HEADERS)
+	@$(NORMAL_INSTALL)
+	test -z "$(libglabels_3_0subincludedir)" || $(MKDIR_P) "$(DESTDIR)$(libglabels_3_0subincludedir)"
+	@list='$(libglabels_3_0subinclude_HEADERS)'; test -n "$(libglabels_3_0subincludedir)" || list=; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(libglabels_3_0subincludedir)'"; \
+	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(libglabels_3_0subincludedir)" || exit $$?; \
+	done
+
+uninstall-libglabels_3_0subincludeHEADERS:
+	@$(NORMAL_UNINSTALL)
+	@list='$(libglabels_3_0subinclude_HEADERS)'; test -n "$(libglabels_3_0subincludedir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	test -n "$$files" || exit 0; \
+	echo " ( cd '$(DESTDIR)$(libglabels_3_0subincludedir)' && rm -f" $$files ")"; \
+	cd "$(DESTDIR)$(libglabels_3_0subincludedir)" && rm -f $$files
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \
@@ -556,7 +636,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(LTLIBRARIES) $(DATA) $(HEADERS)
 installdirs:
-	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(libglabelsincludedir)"; do \
+	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(libglabels_3_0includedir)" "$(DESTDIR)$(libglabels_3_0subincludedir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -607,8 +687,8 @@ info: info-am
 
 info-am:
 
-install-data-am: install-libglabelsincludeHEADERS \
-	install-pkgconfigDATA
+install-data-am: install-libglabels_3_0includeHEADERS \
+	install-libglabels_3_0subincludeHEADERS install-pkgconfigDATA
 
 install-dvi: install-dvi-am
 
@@ -655,7 +735,9 @@ ps: ps-am
 ps-am:
 
 uninstall-am: uninstall-libLTLIBRARIES \
-	uninstall-libglabelsincludeHEADERS uninstall-pkgconfigDATA
+	uninstall-libglabels_3_0includeHEADERS \
+	uninstall-libglabels_3_0subincludeHEADERS \
+	uninstall-pkgconfigDATA
 
 .MAKE: install-am install-strip
 
@@ -666,14 +748,17 @@ uninstall-am: uninstall-libLTLIBRARIES \
 	install install-am install-data install-data-am install-dvi \
 	install-dvi-am install-exec install-exec-am install-html \
 	install-html-am install-info install-info-am \
-	install-libLTLIBRARIES install-libglabelsincludeHEADERS \
-	install-man install-pdf install-pdf-am install-pkgconfigDATA \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-compile \
-	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
-	tags uninstall uninstall-am uninstall-libLTLIBRARIES \
-	uninstall-libglabelsincludeHEADERS uninstall-pkgconfigDATA
+	install-libLTLIBRARIES install-libglabels_3_0includeHEADERS \
+	install-libglabels_3_0subincludeHEADERS install-man \
+	install-pdf install-pdf-am install-pkgconfigDATA install-ps \
+	install-ps-am install-strip installcheck installcheck-am \
+	installdirs maintainer-clean maintainer-clean-generic \
+	mostlyclean mostlyclean-compile mostlyclean-generic \
+	mostlyclean-libtool pdf pdf-am ps ps-am tags uninstall \
+	uninstall-am uninstall-libLTLIBRARIES \
+	uninstall-libglabels_3_0includeHEADERS \
+	uninstall-libglabels_3_0subincludeHEADERS \
+	uninstall-pkgconfigDATA
 
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

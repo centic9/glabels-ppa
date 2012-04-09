@@ -1,61 +1,61 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  object-editor-edit-page.c
+ *  Copyright (C) 2003-2009  Jim Evins <evins@snaught.com>.
  *
- *  object-editor.c:  object properties editor module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2003  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #include <config.h>
 
 #include "object-editor.h"
 
 #include <glib/gi18n.h>
-#include <gtk/gtktextview.h>
-#include <gtk/gtkcombobox.h>
+#include <gtk/gtk.h>
 #include <math.h>
 
 #include "prefs.h"
-#include "mygal/widget-color-combo.h"
 #include "color.h"
-#include "util.h"
+#include "field-button.h"
+#include "builder-util.h"
 
 #include "object-editor-private.h"
 
 #include "debug.h"
 
+
 /*===========================================*/
 /* Private macros                            */
 /*===========================================*/
+
 
 /*===========================================*/
 /* Private data types                        */
 /*===========================================*/
 
+
 /*===========================================*/
 /* Private globals                           */
 /*===========================================*/
+
 
 /*===========================================*/
 /* Local function prototypes                 */
 /*===========================================*/
 
-static void insert_button_cb (glObjectEditor  *editor);
+static void key_selected_cb (glObjectEditor *editor, gchar *key);
 
 
 /*--------------------------------------------------------------------------*/
@@ -67,55 +67,54 @@ gl_object_editor_prepare_edit_page (glObjectEditor       *editor)
 	gl_debug (DEBUG_EDITOR, "START");
 
 	/* Extract widgets from XML tree. */
-	editor->priv->edit_page_vbox =
-		glade_xml_get_widget (editor->priv->gui, "edit_page_vbox");
-	editor->priv->edit_text_view =
-		glade_xml_get_widget (editor->priv->gui, "edit_text_view");
-	editor->priv->edit_key_label =
-		glade_xml_get_widget (editor->priv->gui, "edit_key_label");
-	editor->priv->edit_key_combo =
-		glade_xml_get_widget (editor->priv->gui, "edit_key_combo");
-	editor->priv->edit_insert_field_button =
-		glade_xml_get_widget (editor->priv->gui, "edit_insert_field_button");
+        gl_builder_util_get_widgets (editor->priv->builder,
+                                     "edit_page_vbox",           &editor->priv->edit_page_vbox,
+                                     "edit_text_view",           &editor->priv->edit_text_view,
+                                     "edit_insert_field_vbox",   &editor->priv->edit_insert_field_vbox,
+                                     NULL);
 
-	gl_util_combo_box_add_text_model ( GTK_COMBO_BOX(editor->priv->edit_key_combo));
+	editor->priv->edit_insert_field_button = gl_field_button_new (_("Insert merge field"));
+        gtk_box_pack_start (GTK_BOX (editor->priv->edit_insert_field_vbox),
+                            editor->priv->edit_insert_field_button, FALSE, FALSE, 0);
+
+        gtk_widget_set_can_focus (editor->priv->edit_insert_field_button, FALSE);
+        gtk_widget_set_can_default (editor->priv->edit_insert_field_button, FALSE);
 
 	/* Un-hide */
 	gtk_widget_show_all (editor->priv->edit_page_vbox);
 
 	/* Connect signals */
 	g_signal_connect_swapped (G_OBJECT (editor->priv->edit_insert_field_button),
-				  "clicked",
-				  G_CALLBACK (insert_button_cb),
+				  "key_selected",
+				  G_CALLBACK (key_selected_cb),
 				  G_OBJECT (editor));
 
 	gl_debug (DEBUG_EDITOR, "END");
 }
 
+
 /*--------------------------------------------------------------------------*/
-/* PRIVATE.  Alignment togglebutton callback.                               */
+/* PRIVATE.  Menu item activated callback.                                  */
 /*--------------------------------------------------------------------------*/
 static void
-insert_button_cb (glObjectEditor  *editor)
+key_selected_cb (glObjectEditor *editor, gchar *key)
 {
         GtkTextBuffer *buffer;
-        gchar *key, *field;
+        gchar *field_string;
  
         gl_debug (DEBUG_EDITOR, "START");
  
-	key = gtk_combo_box_get_active_text (GTK_COMBO_BOX (editor->priv->edit_key_combo));
-        field = g_strdup_printf ("${%s}", key);
-        gl_debug (DEBUG_WDGT, "Inserting %s", field);
+        field_string = g_strdup_printf ("${%s}", key);
+        gl_debug (DEBUG_WDGT, "Inserting %s", field_string);
  
         buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (editor->priv->edit_text_view));
-        gtk_text_buffer_insert_at_cursor (buffer, field, -1);
+        gtk_text_buffer_insert_at_cursor (buffer, field_string, -1);
  
-        g_free (field);
-        g_free (key);
- 
+        g_free (field_string);
  
         gl_debug (DEBUG_EDITOR, "END");
 }
+
 
 /*****************************************************************************/
 /* Set text buffer as model for text view/editor.                            */
@@ -131,3 +130,13 @@ gl_object_editor_set_text_buffer (glObjectEditor      *editor,
         gl_debug (DEBUG_EDITOR, "END");
 }
 
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

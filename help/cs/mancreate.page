@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mancreate" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Vytvářejte své šablony ručně.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title>Ruční vytváření nových šablon</title>
+
+
+
+  <!-- ****************** -->
+  <!-- BEGIN Introduction -->
+  <!-- ****************** -->
+  <p>Tato stránka je příručkou k ručnímu vytváření šablon <app>gLabels</app>. Šablony <app>gLabels</app> jsou definovány v jednoduchých souborech XML, které jsou popsány v DTD: <link href="http://glabels.org/xmlns/2.3/glabels-2.3.dtd.txt">glabels-2.3.dtd</link> (toto DTD popisuje i ostatní formáty XML používané v aplikaci <application>gLabels</application>).</p>
+
+  <p>Soubory s ručně vytvořenými šablonami by měly být umístěny ve složce <file>${HOME}/.glabels</file> a jejich název by měl mít příponu <file>.template</file>.</p>
+
+  <note style="advanced">
+    <p>Aplikace <app>gLabels</app> hledá šablony na několika další místech, konkrétně na těchto:</p>
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Umístění</p></td>
+        <td><p>Popis</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>
+        <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><file>${prefix}/share/libglabels-3.0/templates</file></p></td>
+        <td><p>Předdefinované šablony šířené s aplikací <app>gLabels</app>.</p>
+            <p><file>${prefix}</file> je obvykle <file>/usr</file> nebo <file>/usr/local</file> podle toho, kde je nainstalována vlastní aplikace <app>gLabels</app>.</p></td>
+      </tr>
+      <tr>
+        <td><p><file>${XDG_CONFIG_HOME}/libglabels/templates</file></p></td>
+        <td><p>Uživatelem definované šablony vytvořené pomocí <gui>Návrháře šablon</gui> <app>gLabels</app>. <em>Neumisťujte do této složky ručně vytvořené šablony.</em></p>
+            <p>Pokud není <file>${XDG_CONFIG_HOME}</file> definováno, použije se výchozí <file>${HOME}/.config</file>.</p></td>
+      </tr>
+      <tr>
+        <td><p><file>${HOME}/.glabels</file></p></td>
+        <td><p>Uživatelem definované šablony, které byly vytvořeny ručně, by měly být umístěny v této složce. Do této složky by ukládaly šablony také starší verze <gui>Návrháře šablon</gui> <app>gLabels</app> (před verzí 3.0).</p></td>
+      </tr>
+    </table>
+  </note>
+
+  <note><p>Soubory s hotovými šablonami můžete posílat do <link href="mailto:glabels-templates@lists.sourceforge.net">poštovní konference</link> o šablonách <app>gLabels</app> a možná budou zařazeny jako součást příští verze <app>gLabels</app>.</p>
+  </note>
+  <!-- ****************** -->
+  <!-- END Introduction   -->
+  <!-- ****************** -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Assumptions -->
+  <!-- ***************** -->
+  <section id="template-assumptions">
+    <title>Předpoklady/upozornění</title>
+    <list>
+      <item>
+        <p>Stránka obsahuje etiketu nebo vizitku pouze jedné velikosti (pokud má stránka obsahovat více než jednu velikost položky, můžete ji rozdělit do více šablon a vytisknout na vícekrát)</p>
+      </item>
+      <item>
+        <p>Rozměry mohou být uváděny v jednotkách <code translate="no">pt</code>, <code translate="no">in</code>, <code translate="no">mm</code>, <code translate="no">cm</code> nebo <code translate="no">pc</code> a s tečkou jako desetinným oddělovačem. Například: „<code translate="no">1.0in</code>“ nebo „<code translate="no">2.54cm</code>“. Pokud není žádná jednotka uvedená, budou předpokládány body <code translate="no">pt</code>  (1 <em>pt</em> = 1/72 <em>in</em> = 0,352778 <em>mm</em>).</p>
+      </item>
+    </list>
+  </section>
+  <!-- ***************** -->
+  <!-- END Assumptions   -->
+  <!-- ***************** -->
+
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Template Files -->
+  <!-- ******************** -->
+  <section id="template-file">
+    <title>Soubory šablon</title>
+
+    <p>Soubor se šablonou obsahuje jeden uzel nejvyšší úrovně <code translate="no">Glabels-templates</code>.</p>
+
+    <code mime="text/xml" translate="no">
+&lt;?xml version="1.0"?&gt;
+&lt;Glabels-templates&gt;
+
+   <replaceable>…šablony…</replaceable>
+
+&lt;/Glabels-templates&gt;</code>
+
+    <listing>
+      <title>Příklad šablony</title>
+      <desc>Příklad souboru se šablonou <app>gLabels</app> obsahujícího jeden uzel <code translate="no">Template</code>.</desc>
+      <code mime="text/xml" translate="no">
+&lt;?xml version="1.0"?&gt;
+&lt;Glabels-templates&gt;
+
+  &lt;Template brand="Avery" part="8160" size="US-Letter" description="Mailing Labels"&gt;
+    &lt;Meta category="label"/&gt;
+    &lt;Meta category="mail"/&gt;
+    &lt;Meta product_url="http://www.avery.com/avery/en_us/"/&gt;
+    &lt;Label-rectangle id="0" width="189pt" height="72pt" round="5pt"&gt;
+      &lt;Markup-margin size="5pt"/&gt;
+      &lt;Layout nx="3" ny="10" x0="11.25pt" y0="36pt" dx="200pt" dy="72pt"/&gt;
+    &lt;/Label-rectangle&gt;
+  &lt;/Template&gt;
+
+&lt;/Glabels-templates&gt;</code>
+    </listing>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Template Files   -->
+  <!-- ******************** -->
+
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Template Node  -->
+  <!-- ******************** -->
+  <section id="template-template-node">
+    <title>Uzel <span translate="no">Template</span></title>
+
+    <p>Uzel <code translate="no">Template</code> popisuje jeden pevně daný výrobek. Musí obsahovat jednu instanci libovolného uzlu Label (<code translate="no">Label-rectangle</code>, <code translate="no">Label-round</code> nebo <code translate="no">Label-cd</code>).</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Vlastnost</p></td>  <td><p>Popis</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">brand</code></p></td>  
+        <td><p>Značka nebo výrobce papírenského produktu. Např. "S&amp;K Label"</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">part</code></p></td>
+        <td><p>Produktové číslo nebo název papírenského produktu. Např. "8160"</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">size</code></p></td>
+        <td><p>Velikost stránky. Např. "<code translate="no">US-Letter</code>", "<code translate="no">A4</code>", …</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">description</code></p></td>
+        <td><p>Popis papírenského produktu. Např. "Mailing Labels."</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">_description</code></p></td>
+        <td><p>Popis papírenského produktu s možností překladu. Např. "Mailing Labels." (Použitelné pouze pro předdefinované šablony)</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Šířka stránky. Platné jen v případě, že size="Other"</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Výška stránky. Platné jen v případě, že size="Other"</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">equiv</code></p></td>
+        <td><p>Ekvivalentní produktové číslo. Pokud je tato vlastnost nastavena, je šablona klonem jiné šablony téže značky. Šablona pak dědí všechny vlastnosti z jiné šablony, vyjma značky a názvu. Tato vlastnost se musí odkazovat na šablonu definovanou dříve – aplikace <app>gLabels</app> v současnosti nepodporuje dopředné odkazy.</p></td>
+      </tr>
+    </table>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Template Node    -->
+  <!-- ******************** -->
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Meta Node      -->
+  <!-- ******************** -->
+  <section id="meta-template-node">
+    <title>Uzel <span translate="no">Meta</span></title>
+
+    <p>Uzel <code translate="no">Meta</code> obsahuje některé doplňující informace o šabloně. Uzel <code translate="no">Template</code> může obsahovat žádný nebo více uzlů <code translate="no">Meta</code>.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Podřízený uzel</p></td>  <td><p>Popis</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">category</code></p></td>
+        <td><p>Kategorie pro šablonu. Šablona může patřit do více kategorií jednoduše tak, že přidáte více uzlů <code translate="no">Meta</code> do rodičovského uzlu <code translate="no">Template</code>. Kategorie šablony využívá aplikace <app>gLabels</app> v dialogovém okně <gui>Nová etiketa či vizitka</gui>, aby vám mohla vyfiltrovat nalezené šablony.</p>
+
+            <p>Hodnota kategorie musí odpovídat jednomu z předdefinovaných ID kategorie ze souboru <file>${prefix}/libglabels-3.0/templates/categories.xml</file>. Aktuálně jsou definovány tato ID kategorií:</p>
+            <list>
+              <item><p><code translate="no">label (etiketa)</code></p></item>
+              <item><p><code translate="no">round-label (etiketa se zaoblenými rohy)</code></p></item>
+              <item><p><code translate="no">elliptical-label (eliptická etiketa)</code></p></item>
+              <item><p><code translate="no">square-label (čtvercová etiketa)</code></p></item>
+              <item><p><code translate="no">rectangle-label (obdélníková etiketa)</code></p></item>
+              <item><p><code translate="no">card (karta)</code></p></item>
+              <item><p><code translate="no">business-card (vizitka)</code></p></item>
+              <item><p><code translate="no">media (médium)</code></p></item>
+              <item><p><code translate="no">mail (poštovní)</code></p></item>
+              <item><p><code translate="no">foldable (přání)</code></p></item>
+              <item><p><code translate="no">photo (fotka)</code></p></item>
+            </list>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">product_url</code></p></td>
+        <td><p>Adresa URL odkazující na webovou stránku výrobce a to tu, pokud existuje, která se týká konkrétního výrobku.</p></td>
+      </tr>
+    </table>
+
+    <note><p>Doporučení na další kategorie můžete zasílat do vývojářské <link href="mailto:glabels-devel@lists.sourceforge.net">poštovní konference</link> aplikace <app>gLabels</app>.</p>
+          <p>Použití adresy URL výrobku může být omezené, protože adresa nemusí být trvalá.</p>
+    </note>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Meta Node        -->
+  <!-- ******************** -->
+
+
+  <!-- ************************** -->
+  <!-- BEGIN Label-rectangle Node -->
+  <!-- ************************** -->
+  <section id="template-label-rectangle-node">
+    <title>Uzel <span translate="no">Label-rectangle</span></title>
+
+    <p>Uzel <code translate="no">Label-rectangle</code> popisuje rozměry jedné etikety nebo vizitky, která má obdélníkový tvar (může mít zaoblené rohy).</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Vlastnost</p></td>  <td><p>Popis</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Rezervované pro pozdější použití. Vždy by mělo být nastavené  na 0.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Šířka etikety/vizitky</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Výška etikety/vizitky</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">round</code></p></td>
+        <td><p>Poloměr rohů. Pro položky s ostrými rohy (např. vizitky) by mělo být nastaveno na 0.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">x_waste</code></p></td>
+        <td><p>Velikost dovoleného vodorovného odsazení (umožňuje přetisk). To je užitečné kvůli zamezení problémům se zarovnáním v situaci, kdy se nepoužívá bílé pozadí, ale např. obrázkové.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">y_waste</code></p></td>
+        <td><p>Velikost dovoleného svislého odsazení (umožňuje přetisk). To je užitečné kvůli zamezení problémům se zarovnáním v situaci, kdy se nepoužívá bílé pozadí, ale např. obrázkové.</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Parametry uzlu <span translate="no">Label-rectangle</span></desc>
+      <media type="image" src="figures/glabels-template-rect-label.png" mime="image/png" style="right">
+        <p>Parametry uzlu <span translate="no">Label-rectangle</span></p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ************************** -->
+  <!-- END Label-rectangle Node   -->
+  <!-- ************************** -->
+
+
+  <!-- ************************ -->
+  <!-- BEGIN Label-ellipse Node -->
+  <!-- ************************ -->
+  <section id="template-label-ellipse-node">
+    <title>Uzel <span translate="no">Label-ellipse</span></title>
+
+    <p>Uzel <code translate="no">Label-ellipse</code> popisuje rozměry jedné etikety nebo vizitky, která má eliptický tvar.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Vlastnost</p></td>  <td><p>Popis</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Rezervované pro pozdější použití. Vždy by mělo být nastavené  na 0.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Šířka elipsy</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Výška elipsy</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">waste</code></p></td>
+        <td><p>Velikost dovoleného odsazení (umožňuje přetisk). To je užitečné kvůli zamezení problémům se zarovnáním v situaci, kdy se nepoužívá bílé pozadí, ale např. obrázkové.</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Parametry uzlu <span translate="no">Label-ellipse</span></desc>
+      <media type="image" src="figures/glabels-template-ellipse-label.png" mime="image/png" style="right">
+        <p>Parametry uzlu <span translate="no">Label-ellipse</span></p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ************************ -->
+  <!-- END Label-ellipse Node   -->
+  <!-- ************************ -->
+
+
+  <!-- ********************** -->
+  <!-- BEGIN Label-round Node -->
+  <!-- ********************** -->
+  <section id="template-label-round-node">
+    <title>Uzel <span translate="no">Label-round</span></title>
+
+    <p>Uzel <emphasis>Label-round</emphasis> popisuje rozměry jedné kulaté etikety (ale ne CD).</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Vlastnost</p></td>  <td><p>Popis</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Rezervované pro pozdější použití. Vždy by mělo být nastavené  na 0.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">radius</code></p></td>
+        <td><p>Poloměr (½ průměru) etikety.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">waste</code></p></td>
+        <td><p>Velikost dovoleného odsazení (umožňuje přetisk). To je užitečné kvůli zamezení problémům se zarovnáním v situaci, kdy se nepoužívá bílé pozadí, ale např. obrázkové.</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Parametry uzlu <span translate="no">Label-ellipse</span></desc>
+      <media type="image" src="figures/glabels-template-circle-label.png" mime="image/png" style="right">
+        <p>Parametry uzlu <span translate="no">Label-ellipse</span></p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ********************** -->
+  <!-- END Label-round Node   -->
+  <!-- ********************** -->
+
+
+  <!-- ******************* -->
+  <!-- BEGIN Label-cd Node -->
+  <!-- ******************* -->
+  <section id="template-label-cd-node">
+    <title>Uzel <span translate="no">Label-cd</span></title>
+
+    <p>Uzel <code translate="no">Label-cd</code> popisuje rozměry etiket na CD, DVD nebo vizitkové CD.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Vlastnost</p></td>  <td><p>Popis</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Rezervované pro pozdější použití. Vždy by mělo být nastavené  na 0.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">radius</code></p></td>
+        <td><p>Vnější poloměr etikety.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">hole</code></p></td>
+        <td><p>Poloměr středové díry.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Pokud je zadáno, bude etiketa oříznuta na uvedenou šířku. (Vhodné pro „vizitková CD“).</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Pokud je zadáno, bude etiketa oříznuta na uvedenou výšku. (Vhodné pro „vizitková CD“).</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">waste</code></p></td>
+        <td><p>Velikost dovoleného odsazení (umožňuje přetisk). To je užitečné kvůli zamezení problémům se zarovnáním v situaci, kdy se nepoužívá bílé pozadí, ale např. obrázkové.</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Parametry uzlu <span translate="no">Label-cd</span></desc>
+      <media type="image" src="figures/glabels-template-cd-label.png" mime="image/png" style="right">
+        <p>Parametry etiket na CD</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ******************* -->
+  <!-- END Label-cd Node   -->
+  <!-- ******************* -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Markup Node -->
+  <!-- ***************** -->
+  <section id="template-markup">
+    <title>Uzly <span translate="no">Markup</span></title>
+
+    <p>Šablona může volitelně obsahovat uzly se značkami. Tyto uzly se používají k popisu jednoduchých sad pomocných čar, které jsou viditelné na kreslící ploše aplikace <app>glabels</app>, ale netisknou se. Tyto čáry mohou představovat například okraje, přehyby, speciální oblasti a další pomůcky užitečné pro uživatele šablony.</p>
+
+
+    <!-- ======================== -->
+    <!-- BEGIN Markup-margin Node -->
+    <!-- ======================== -->
+    <section id="template-markup-margin-node">
+      <title><span translate="no">Markup-margin</span> Node</title>
+
+      <p>Uzel <code translate="no">Markup-margin</code> popisuje okraj podél všech hran etikety.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Vlastnost</p></td>  <td><p>Popis</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">size</code></p></td>
+          <td><p>Velikost okraje. Např. vzdálenost hranice okraje od hrany etikety/vizitky.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ======================== -->
+    <!-- END Markup-margin Node   -->
+    <!-- ======================== -->
+
+
+    <!-- ====================== -->
+    <!-- BEGIN Markup-line Node -->
+    <!-- ====================== -->
+    <section id="template-markup-line-node">
+      <title>Uzel <span translate="no">Markup-line</span></title>
+
+      <p>Uzel <code translate="no">Markup-line</code> popisuje značku v podobě čáry.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Vlastnost</p></td>  <td><p>Popis</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x1</code></p></td>
+          <td><p>x-ová souřadnice 1. koncového bodu úsečky.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y1</code></p></td>
+          <td><p>y-ová souřadnice 1. koncového bodu úsečky.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x2</code></p></td>
+          <td><p>x-ová souřadnice 2. koncového bodu úsečky.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y2</code></p></td>
+          <td><p>y-ová souřadnice 2. koncového bodu úsečky.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ====================== -->
+    <!-- END Markup-line Node   -->
+    <!-- ====================== -->
+
+
+    <!-- ======================== -->
+    <!-- BEGIN Markup-circle Node -->
+    <!-- ======================== -->
+    <section id="template-markup-circle-node">
+      <title>Uzel <span translate="no">Markup-circle</span></title>
+
+      <p>Uzel <code translate="no">Markup-circle</code> popisuje značku v podobě kruhu.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Vlastnost</p></td>  <td><p>Popis</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x0</code></p></td>
+          <td><p>x-ová souřadnice středu kruhu.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y0</code></p></td>
+          <td><p>y-ová souřadnice středu kruhu.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">radius</code></p></td>
+          <td><p>Poloměr kruhu.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ======================== -->
+    <!-- END Markup-circle Node   -->
+    <!-- ======================== -->
+
+
+    <!-- ====================== -->
+    <!-- BEGIN Markup-rect Node -->
+    <!-- ====================== -->
+    <section id="template-markup-rect-node">
+      <title>Uzel <span translate="no">Markup-rect</span></title>
+
+      <p>Uzel <code translate="no">Markup-rect</code> popisuje značku v podobě obdélníku.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Vlastnost</p></td>  <td><p>Popis</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x1</code></p></td>
+          <td><p>x-ová souřadnice levého horního rohu obdélníku.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y1</code></p></td>
+          <td><p>y-ová souřadnice levého horního rohu obdélníku.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">w</code></p></td>
+          <td><p>Šířka obdélníku.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">h</code></p></td>
+          <td><p>Výška obdélníku.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">r</code></p></td>
+          <td><p>Poloměr zakulacených rohů obdélníku.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ====================== -->
+    <!-- END Markup-rect Node   -->
+    <!-- ====================== -->
+
+
+    <!-- ========================= -->
+    <!-- BEGIN Markup-ellipse Node -->
+    <!-- ========================= -->
+    <section id="template-markup-ellipse-node">
+      <title>Uzel <span translate="no">Markup-ellipse</span></title>
+
+      <p>Uzel <code translate="no">Markup-ellipse</code> popisuje značku v podobě elipsy.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Vlastnost</p></td>  <td><p>Popis</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x1</code></p></td>
+          <td><p>x-ová souřadnice levého horního rohu elipsy.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y1</code></p></td>
+          <td><p>y-ová souřadnice levého horního rohu elipsy.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">w</code></p></td>
+          <td><p>Šířka elipsy.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">h</code></p></td>
+          <td><p>Výška elipsy.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ========================= -->
+    <!-- END Markup-ellipse Node   -->
+    <!-- ========================= -->
+
+  </section>
+  <!-- ***************** -->
+  <!-- END Markup Node   -->
+  <!-- ***************** -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Layout Node -->
+  <!-- ***************** -->
+  <section id="template-layout-node">
+    <title>Uzel <span translate="no">Layout</span></title>
+
+    <p>Uzel typu Label může obsahovat více potomků <code translate="no">Layout</code>. V případě, že jsou etikety rozmístěné do jednoduché pravidelné mřížky, postačuje jeden uzel Layout. Pokud jsou ale etikety rozmístěné ve více mřížkách, např. mají podobu cihlové zdi, musí se použít více značek <code translate="no">Layout</code>.</p>
+	<note style="tip">
+	<p>Jedna etiketa může být vždy považována za mřížku s jednou buňkou.</p>
+      </note>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Vlastnost</p></td>  <td><p>Popis</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">nx</code></p></td>
+        <td><p>Počet etiket/vizitek v mřížce (vodorovně).</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">ny</code></p></td>
+        <td><p>Počet etiket/vizitek v mřížce (svisle).</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">x0</code></p></td>
+        <td><p>Vzdálenost od levé hrany stránky k levé hraně levého sloupce etiket/vizitek v rozvržení.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">y0</code></p></td>
+        <td><p>Vzdálenost od horní hrany stránky k horní hraně horní řady etiket/vizitek v rozvržení.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">dx</code></p></td>
+        <td><p>Vodorovná rozteč mřížky.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">dy</code></p></td>
+        <td><p>Svislá rozteč mřížky.</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Parametry uzlu <span translate="no">Layout</span></desc>
+      <media type="image" src="figures/glabels-template-layout.png" mime="image/png" style="right">
+        <p>Parametry uzlu <span translate="no">Layout</span></p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ***************** -->
+  <!-- END Layout Node   -->
+  <!-- ***************** -->
+
+
+</page>

@@ -1,25 +1,21 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  window.c
+ *  Copyright (C) 2002-2009  Jim Evins <evins@snaught.com>.
  *
- *  window.c:  a gLabels app window
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2002  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <config.h>
@@ -27,20 +23,18 @@
 #include "window.h"
 
 #include <glib/gi18n.h>
-#include <gtk/gtkvbox.h>
-#include <gtk/gtkhbox.h>
-#include <gtk/gtklabel.h>
-#include <gtk/gtkframe.h>
-#include <gtk/gtkstatusbar.h>
+#include <gtk/gtk.h>
 
 #include "ui.h"
 #include "ui-commands.h"
-#include "util.h"
+#include "file-util.h"
 #include "xml-label.h"
 #include "prefs.h"
 #include "file.h"
+#include "units-util.h"
 
 #include "debug.h"
+
 
 /*===========================================================================*/
 /* Private macros and constants.                                             */
@@ -50,7 +44,8 @@
 #define DEFAULT_WINDOW_HEIGHT 600
 
 #define CURSOR_INFO_WIDTH     150
-#define ZOOM_INFO_WIDTH        50
+#define ZOOM_INFO_WIDTH        75
+
 
 /*===========================================================================*/
 /* Private globals                                                           */
@@ -64,7 +59,7 @@ static GList *window_list = NULL;
 /*===========================================================================*/
 
 static void     gl_window_finalize     (GObject       *object);
-static void     gl_window_destroy      (GtkObject     *gtk_object);
+static void     gl_window_dispose      (GObject       *object);
 
 static void     set_window_title       (glWindow *window,
 					glLabel  *label);
@@ -73,7 +68,7 @@ static gboolean window_delete_event_cb (glWindow      *window,
 					GdkEvent      *event,
 					gpointer       user_data);
 
-static void     selection_changed_cb   (glView        *view,
+static void     selection_changed_cb   (glLabel       *label,
 					glWindow      *window);
 
 static void   context_menu_activate_cb (glView       *view,
@@ -99,29 +94,42 @@ static void     name_changed_cb        (glLabel       *label,
 static void     modified_changed_cb    (glLabel       *label,
 					glWindow      *window);
 
-
+static void     clipboard_changed_cb   (GtkClipboard  *clipboard,
+                                        GdkEvent      *event,
+					glWindow      *window);
+
+static void     focus_widget_changed_cb(GtkWindow     *gtk_window,
+                                        GtkWidget     *widget,
+					glWindow      *window);
+
+static void     set_copy_paste_sensitivity  (glWindow      *window,
+                                             GtkWidget     *focus_widget);
+
+static void     label_changed_cb       (glLabel       *label,
+					glWindow      *window);
+
+
 /****************************************************************************/
 /* Boilerplate Object stuff.                                                */
 /****************************************************************************/
-G_DEFINE_TYPE (glWindow, gl_window, GTK_TYPE_WINDOW);
+G_DEFINE_TYPE (glWindow, gl_window, GTK_TYPE_WINDOW)
 
 
 static void
 gl_window_class_init (glWindowClass *class)
 {
 	GObjectClass   *object_class     = G_OBJECT_CLASS (class);
-	GtkObjectClass *gtk_object_class = GTK_OBJECT_CLASS (class);
 
 	gl_debug (DEBUG_WINDOW, "START");
 
 	gl_window_parent_class = g_type_class_peek_parent (class);
 
 	object_class->finalize = gl_window_finalize;
-
-	gtk_object_class->destroy = gl_window_destroy;
+	object_class->dispose  = gl_window_dispose;
 
 	gl_debug (DEBUG_WINDOW, "END");
 }
+
 
 static void
 gl_window_init (glWindow *window)
@@ -159,7 +167,6 @@ gl_window_init (glWindow *window)
 	gtk_box_pack_start (GTK_BOX (vbox1), status_hbox, FALSE, FALSE, 0);
 
 	window->status_bar = gtk_statusbar_new ();
-	gtk_statusbar_set_has_resize_grip (GTK_STATUSBAR (window->status_bar), FALSE);
 	gtk_box_pack_start (GTK_BOX (status_hbox),
 			    window->status_bar,
 			    TRUE, TRUE, 0);
@@ -206,6 +213,7 @@ gl_window_init (glWindow *window)
 	gl_debug (DEBUG_WINDOW, "END");
 }
 
+
 static void
 gl_window_finalize (GObject *object)
 {
@@ -219,17 +227,19 @@ gl_window_finalize (GObject *object)
 	gl_debug (DEBUG_WINDOW, "END");
 }
 
+
 static void
-gl_window_destroy (GtkObject *gtk_object)
+gl_window_dispose (GObject *object)
 {
-	glWindow *window;
+	glWindow          *window;
+        GtkClipboard      *clipboard;
 
 	gl_debug (DEBUG_WINDOW, "START");
 
-	g_return_if_fail (gtk_object != NULL);
-	g_return_if_fail (GL_IS_WINDOW (gtk_object));
+	g_return_if_fail (object != NULL);
+	g_return_if_fail (GL_IS_WINDOW (object));
 
-	window = GL_WINDOW (gtk_object);
+	window = GL_WINDOW (object);
 	window_list = g_list_remove (window_list, window);
 
         if (window->ui) {
@@ -237,8 +247,20 @@ gl_window_destroy (GtkObject *gtk_object)
 		window->ui = NULL;
         }
 
-	if (GTK_OBJECT_CLASS (gl_window_parent_class)->destroy) {
-		GTK_OBJECT_CLASS (gl_window_parent_class)->destroy (gtk_object);
+        if (window->label)
+        {
+                clipboard = gtk_widget_get_clipboard (GTK_WIDGET (window),
+                                                      GDK_SELECTION_CLIPBOARD);
+
+                g_signal_handlers_disconnect_by_func (G_OBJECT (clipboard),
+                                                      G_CALLBACK (clipboard_changed_cb),
+                                                      window);
+
+		g_object_unref (window->label);
+        }
+
+	if (G_OBJECT_CLASS (gl_window_parent_class)->dispose) {
+		G_OBJECT_CLASS (gl_window_parent_class)->dispose (object);
 	}
 
 	gl_debug (DEBUG_WINDOW, "END");
@@ -267,6 +289,7 @@ gl_window_new (void)
 	return GTK_WIDGET(window);
 }
 
+
 /****************************************************************************/
 /** Create a glabels window from a label.                                   */
 /****************************************************************************/
@@ -286,6 +309,7 @@ gl_window_new_from_label (glLabel *label)
 	return GTK_WIDGET(window);
 }
 
+
 /****************************************************************************/
 /** Create a glabels window from a glabels file.                            */
 /****************************************************************************/
@@ -301,7 +325,7 @@ gl_window_new_from_file (const gchar *filename)
 
 	window = GL_WINDOW (gl_window_new ());
 
-	abs_filename = gl_util_make_absolute (filename);
+	abs_filename = gl_file_util_make_absolute (filename);
 	label = gl_xml_label_open (abs_filename, &status);
 	g_free (abs_filename);
 
@@ -311,6 +335,7 @@ gl_window_new_from_file (const gchar *filename)
 
 	return GTK_WIDGET(window);
 }
+
 
 /****************************************************************************/
 /** Is window empty?                                                        */
@@ -324,6 +349,7 @@ gl_window_is_empty (glWindow    *window)
 	return ( window->view == NULL );
 }
 
+
 /****************************************************************************/
 /** Create view from label and place in window.                             */
 /****************************************************************************/
@@ -331,12 +357,16 @@ void
 gl_window_set_label (glWindow    *window,
 		     glLabel     *label)
 {
-	gchar *string;
+	gchar             *string;
+        GtkClipboard      *clipboard;
+        GtkWidget         *focus_widget;
 
 	gl_debug (DEBUG_WINDOW, "START");
 
 	g_return_if_fail (GL_IS_WINDOW (window));
 	g_return_if_fail (GL_IS_LABEL (label));
+
+        window->label = g_object_ref (label);
 
 	gl_label_clear_modified (label);
 
@@ -348,19 +378,19 @@ gl_window_set_label (glWindow    *window,
 	}
 
 	window->view = gl_view_new (label);
-	gtk_box_pack_start (GTK_BOX (window->hbox), window->view,TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (window->hbox), window->view, TRUE, TRUE, 0);
 
 	gtk_widget_show_all (window->view);
 
 	gl_view_zoom_to_fit (GL_VIEW(window->view));
 
-	if (gl_prefs->grid_visible) {
+	if (gl_prefs_model_get_grid_visible (gl_prefs)) {
 		gl_view_show_grid (GL_VIEW(window->view));
 	} else {
 		gl_view_hide_grid (GL_VIEW(window->view));
 	}
 
-	if (gl_prefs->markup_visible) {
+	if (gl_prefs_model_get_markup_visible (gl_prefs)) {
 		gl_view_show_markup (GL_VIEW(window->view));
 	} else {
 		gl_view_hide_markup (GL_VIEW(window->view));
@@ -368,15 +398,20 @@ gl_window_set_label (glWindow    *window,
 
 	gl_ui_update_all (window->ui, GL_VIEW(window->view));
 
-	gl_ui_property_bar_set_view (window->property_bar, GL_VIEW(window->view));
-	gl_ui_sidebar_set_view (window->sidebar, GL_VIEW(window->view));
+	gl_ui_property_bar_set_label (window->property_bar, window->label);
+	gl_ui_sidebar_set_label (window->sidebar, window->label);
 
 	string = g_strdup_printf ("%3.0f%%",
 				  100.0*gl_view_get_zoom (GL_VIEW(window->view)));
 	gtk_label_set_text (GTK_LABEL(window->zoom_info), string);
 	g_free (string);
 
-	g_signal_connect (G_OBJECT(window->view), "selection_changed",
+
+        clipboard = gtk_widget_get_clipboard (GTK_WIDGET (window),
+                                              GDK_SELECTION_CLIPBOARD);
+
+
+	g_signal_connect (G_OBJECT(window->label), "selection_changed",
 			  G_CALLBACK(selection_changed_cb), window);
 
 	g_signal_connect (G_OBJECT(window->view), "context_menu_activate",
@@ -397,8 +432,22 @@ gl_window_set_label (glWindow    *window,
 	g_signal_connect (G_OBJECT(label), "modified_changed",
 			  G_CALLBACK(modified_changed_cb), window);
 
+	g_signal_connect (G_OBJECT(clipboard), "owner_change",
+			  G_CALLBACK(clipboard_changed_cb), window);
+
+	g_signal_connect (G_OBJECT(window), "set_focus",
+			  G_CALLBACK(focus_widget_changed_cb), window);
+
+        /* Initialize "Paste" sensitivity. */
+        focus_widget = gtk_window_get_focus (GTK_WINDOW (window));
+        set_copy_paste_sensitivity (window, focus_widget);
+
+	g_signal_connect (G_OBJECT(label), "changed",
+			  G_CALLBACK(label_changed_cb), window);
+
 	gl_debug (DEBUG_WINDOW, "END");
 }
+
 
 /****************************************************************************/
 /** Return list of glabels windows.                                         */
@@ -409,6 +458,7 @@ gl_window_get_window_list (void)
 	gl_debug (DEBUG_WINDOW, "");
 	return window_list;
 }
+
 
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  Set window title based on name and state of label.             */
@@ -442,6 +492,7 @@ set_window_title (glWindow *window,
 	gl_debug (DEBUG_WINDOW, "END");
 }
 
+
 /*-------------------------------------------------------------------------*/
 /** PRIVATE.  Window "delete-event" callback.                              */
 /*-------------------------------------------------------------------------*/
@@ -461,22 +512,24 @@ window_delete_event_cb (glWindow      *window,
 	return TRUE;
 }
 
+
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  View "selection state changed" callback.                       */
 /*---------------------------------------------------------------------------*/
 static void 
-selection_changed_cb (glView   *view,
+selection_changed_cb (glLabel  *label,
 		      glWindow *window)
 {
 	gl_debug (DEBUG_WINDOW, "START");
 
-	g_return_if_fail (view && GL_IS_VIEW (view));
+	g_return_if_fail (label && GL_IS_LABEL (label));
 	g_return_if_fail (window && GL_IS_WINDOW (window));
 
-	gl_ui_update_selection_verbs (window->ui, view);
+        gl_ui_update_selection_verbs (window->ui, GL_VIEW (window->view), TRUE);
 
 	gl_debug (DEBUG_WINDOW, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  View "context menu activate" callback.                         */
@@ -492,7 +545,7 @@ context_menu_activate_cb (glView       *view,
         g_return_if_fail (view && GL_IS_VIEW (view));
 	g_return_if_fail (window && GL_IS_WINDOW (window));
 
-        if (gl_view_is_selection_empty (view)) {
+        if (gl_label_is_selection_empty (view->label)) {
 
 		gtk_menu_popup (GTK_MENU (window->empty_selection_context_menu),
 				NULL, NULL, NULL, NULL, button, activate_time);
@@ -506,6 +559,7 @@ context_menu_activate_cb (glView       *view,
 
         gl_debug (DEBUG_WINDOW, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  View "zoom state changed" callback.                            */
@@ -531,6 +585,7 @@ zoom_changed_cb (glView   *view,
 	gl_debug (DEBUG_WINDOW, "END");
 }
 
+
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  View "pointer moved" callback.                                 */
 /*---------------------------------------------------------------------------*/
@@ -540,17 +595,19 @@ pointer_moved_cb (glView   *view,
 		  gdouble   y,
 		  glWindow *window)
 {
-	gchar *string;
-	gdouble units_per_point;
-	gint    units_precision;
+	gchar    *string;
+        lglUnits  units;
+	gdouble   units_per_point;
+	gint      units_precision;
 
 	gl_debug (DEBUG_WINDOW, "START");
 
 	g_return_if_fail (view && GL_IS_VIEW (view));
 	g_return_if_fail (window && GL_IS_WINDOW (window));
 
-	units_per_point = gl_prefs_get_units_per_point ();
-	units_precision = gl_prefs_get_units_precision ();
+        units = gl_prefs_model_get_units (gl_prefs);
+	units_per_point = lgl_units_get_units_per_point (units);
+	units_precision = gl_units_util_get_precision (units);
 
 	string = g_strdup_printf ("%.*f, %.*f",
 				  units_precision, x*units_per_point,
@@ -560,6 +617,7 @@ pointer_moved_cb (glView   *view,
 
 	gl_debug (DEBUG_WINDOW, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  View "pointer exit" callback.                                  */
@@ -578,6 +636,7 @@ pointer_exit_cb (glView   *view,
 	gl_debug (DEBUG_WINDOW, "END");
 }
 
+
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  Label "name changed" callback.                                 */
 /*---------------------------------------------------------------------------*/
@@ -594,6 +653,7 @@ name_changed_cb (glLabel  *label,
 
 	gl_debug (DEBUG_WINDOW, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /** PRIVATE.  Label "modified state changed" callback.                       */
@@ -614,3 +674,104 @@ modified_changed_cb (glLabel  *label,
 	gl_debug (DEBUG_WINDOW, "END");
 }
 
+
+/*---------------------------------------------------------------------------*/
+/** PRIVATE.  Label "changed" callback.                                      */
+/*---------------------------------------------------------------------------*/
+static void
+label_changed_cb (glLabel  *label,
+                  glWindow *window)
+{
+	gl_debug (DEBUG_WINDOW, "START");
+
+	g_return_if_fail (label && GL_IS_LABEL (label));
+	g_return_if_fail (window && GL_IS_WINDOW (window));
+
+	gl_ui_update_undo_redo_verbs (window->ui, label);
+
+	gl_debug (DEBUG_WINDOW, "END");
+}
+
+
+
+/*---------------------------------------------------------------------------*/
+/** PRIVATE.  Clipboard "owner change" callback.                             */
+/*---------------------------------------------------------------------------*/
+static void
+clipboard_changed_cb (GtkClipboard *clipboard,
+                      GdkEvent     *event,
+                      glWindow     *window)
+{
+        GtkWidget    *focus_widget;
+
+	gl_debug (DEBUG_WINDOW, "START");
+
+	g_return_if_fail (window && GL_IS_WINDOW (window));
+
+        focus_widget = gtk_window_get_focus (GTK_WINDOW (window));
+        set_copy_paste_sensitivity (window, focus_widget);
+
+	gl_debug (DEBUG_WINDOW, "END");
+}
+
+
+/*---------------------------------------------------------------------------*/
+/** PRIVATE.  Window "set-focus" callback.                                   */
+/*---------------------------------------------------------------------------*/
+static void
+focus_widget_changed_cb (GtkWindow *gtk_window,
+                         GtkWidget *widget,
+                         glWindow  *window)
+{
+	gl_debug (DEBUG_WINDOW, "START");
+
+	g_return_if_fail (window && GL_IS_WINDOW (window));
+
+        if (widget)
+        {
+                gl_debug (DEBUG_WINDOW, "SET-FOCUS %x %s\n",
+                          widget,
+                          G_OBJECT_TYPE_NAME (widget));
+
+                set_copy_paste_sensitivity (window, widget);
+        }
+
+	gl_debug (DEBUG_WINDOW, "END");
+}
+
+
+/*---------------------------------------------------------------------------*/
+/** PRIVATE.  Set paste sensitivity.                                         */
+/*---------------------------------------------------------------------------*/
+static void
+set_copy_paste_sensitivity (glWindow  *window,
+                            GtkWidget *focus_widget)
+{
+	gl_debug (DEBUG_WINDOW, "START");
+
+	g_return_if_fail (window && GL_IS_WINDOW (window));
+
+        if ( focus_widget == GL_VIEW(window->view)->canvas )
+        {
+                gl_ui_update_selection_verbs (window->ui, GL_VIEW (window->view), TRUE);
+
+                gl_ui_update_paste_verbs (window->ui, gl_label_can_paste (window->label));
+        }
+        else
+        {
+                gl_ui_update_selection_verbs (window->ui, GL_VIEW (window->view), FALSE);
+                gl_ui_update_paste_verbs (window->ui, FALSE);
+        }
+
+	gl_debug (DEBUG_WINDOW, "END");
+}
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

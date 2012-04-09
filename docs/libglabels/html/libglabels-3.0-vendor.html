@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The lglVendor Structure</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="LibGlabels 3.0 Reference Manual">
+<link rel="up" href="ch01.html" title="Basic LibGlabels Usage">
+<link rel="prev" href="libglabels-3.0-category.html" title="The lglCategory Structure">
+<link rel="next" href="ch02.html" title="Working Directly With LibGlabels XML">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libglabels-3.0-category.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">LibGlabels 3.0 Reference Manual</th>
+<td><a accesskey="n" href="ch02.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libglabels-3.0-vendor.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#libglabels-3.0-vendor.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="libglabels-3.0-vendor"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libglabels-3.0-vendor.top_of_page"></a>The lglVendor Structure</span></h2>
+<p>The lglVendor Structure — Vendor definitions</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="libglabels-3.0-vendor.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;libglabels/lgl-vendor.h&gt;
+
+struct              <a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor">lglVendor</a>;
+<a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="returnvalue">lglVendor</span></a> *         <a class="link" href="libglabels-3.0-vendor.html#lgl-vendor-new" title="lgl_vendor_new ()">lgl_vendor_new</a>                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="returnvalue">lglVendor</span></a> *         <a class="link" href="libglabels-3.0-vendor.html#lgl-vendor-dup" title="lgl_vendor_dup ()">lgl_vendor_dup</a>                      (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> *orig</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-vendor.html#lgl-vendor-free" title="lgl_vendor_free ()">lgl_vendor_free</a>                     (<em class="parameter"><code><a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> *vendor</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="libglabels-3.0-vendor.description"></a><h2>Description</h2>
+<p>
+This section describes a structure for representing vendor data.
+</p>
+</div>
+<div class="refsect1">
+<a name="libglabels-3.0-vendor.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="lglVendor"></a><h3>struct lglVendor</h3>
+<pre class="programlisting">struct lglVendor {
+        gchar               *name;           /* Vendor name */
+        gchar               *url;            /* Vendor URL */
+};
+</pre>
+<p>
+This structure defines a vendor.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglVendor.name"></a>name</code></em>;</span></p></td>
+<td>Vendor name.  (e.g. "Avery")</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglVendor.url"></a>url</code></em>;</span></p></td>
+<td>URL to vendor website</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-vendor-new"></a><h3>lgl_vendor_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="returnvalue">lglVendor</span></a> *         lgl_vendor_new                      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Allocates and constructs a new <a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> structure.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>Localized name of vendor.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a pointer to a newly allocated <a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> structure.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-vendor-dup"></a><h3>lgl_vendor_dup ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="returnvalue">lglVendor</span></a> *         lgl_vendor_dup                      (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> *orig</code></em>);</pre>
+<p>
+Duplicates an existing <a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> structure.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>orig</code></em> :</span></p></td>
+<td>
+<a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> structure to be duplicated.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a pointer to a newly allocated <a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> structure.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-vendor-free"></a><h3>lgl_vendor_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_vendor_free                     (<em class="parameter"><code><a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> *vendor</code></em>);</pre>
+<p>
+Free all memory associated with an existing <a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> structure.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>vendor</code></em> :</span></p></td>
+<td>pointer to <a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> structure to be freed.</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="mergeskipfields" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Überspringen von leeren Adresszeilen bei der Ausführung einer Dokumentmischung.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title>Überspringen leerer Adresszeilen</title>
+
+  <p>Dieses Funktionsmerkmal lässt sich am besten anhand eines einfachen Beispiels beschreiben. In der folgenden CSV-Datei enthält die Spalte 5 (ADDR2) die zweite Adresszeile jedes Datensatzes. Dieses Feld ist in den Datensätzen 1 und 2 leer, nicht jedoch in Datensatz 3. Damit dies auch funktioniert, muss das Feld wirklich vollständig leer sein. Jeglicher Text, selbst wenn es auch nur Leerzeichen sein sollten, wird diese Funktion scheitern lassen.</p>
+
+  <code>
+  LAST,FIRST,MI,ADDR1,ADDR2,CITY,STATE,ZIP
+  Summers,Joyce,,"1630 Revello Dr",,Sunnydale,CA,95037
+  McGarret,Steve,O,"404 Piikoi Street",,Honolulu,HI,96813
+  Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
+  </code>
+
+  <p>Im folgenden Bildschirmfoto wurde ein mehrzeiliges Textobjekt erzeugt, um diese Adressen zu formatieren. Beachten Sie, dass ${ADDR2}, welches die zweite Adresszeile darstellt, in einer eigenen Zeile steht. Jeder zusätzliche Text, auch Leerzeichen, lassen diese Funktion scheitern.</p>
+
+  <media type="image" src="figures/skip-fields-screenshot.png" mime="image/png" style="right">
+  <p>Mehrzeilige Adressen</p>
+  </media>
+
+  <p>Durch Drucken der Etiketten erhalten Sie folgende Ausgabe. Beachten Sie, dass die Zeile, welche das Feld ${ADDR2} enthält, für die ersten zwei Datensätze komplett übersprungen wurde, ohne dass eine leere Zeile gedruckt wird.</p>
+
+  <media type="image" src="figures/skip-fields-output.png" mime="image/png" style="right">
+  <p>Ausgabe</p>
+  </media>
+
+</page>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="merge-ex1" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="merge#merge-ex"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Vytvoření jmenovek ze souboru CSV.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Příklad 1: Jmenovky</title>
+
+      <p>V tomto příkladu pořádáme seznamovací párty pro nové členy osádky naší lodi. Máme seznam nováčků v osádce, který jsme vytvořili v aplikaci <app>gnumeric</app> a následně jej vyexportovali do souboru CSV. Mohli bychom jej vytvořit i v textovém editoru, ale žijeme přece v 21. století.</p>
+
+      <code>
+jmeno,zarazeni,cislo
+"Jiří Kroupa",vedení,"SC937-0176 CEC"
+"prof. Hrbolek",vědec,S179-276SP
+"MUDr. Kroupová",lékař,unknown
+"Viktor Hujer",technik,SE-197-54T
+      </code>
+
+      <p>V aplikaci <app>gLabels</app> máme vytvořený dokument vycházející ze šablony Avery 5395 „Etikety na jmenovky“. Nyní použijeme položku nabídky <guiseq><gui>Objekty</gui><gui>Vlastnosti slučování</gui></guiseq> a zobrazí se nám dialogové okno <gui>vlastnosti slučování</gui>. Toto dialogové okno použijeme k výběru typu zdroje (v našem případě CSV s klíči na 1. řádku) a vlastního zdroje (souboru), jak můžete vidět níže.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-1.png" mime="image/png" style="right">
+      		<p>Dialogové okno vlastností slučování</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>U každého záznamu si také můžeme prohlédnou všechny údaje po jeho rozbalení kliknutím na malý trojúhelníček. Až jsme s výběrem v dialogovém okně spokojení, klikneme na <gui>OK</gui> a změny se použijí.</p>
+
+      <p>Nyní můžeme začít s přidáváním objektů do svého dokumentu <app>glabels</app>, jak je ukázáno níže.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-2.png" mime="image/png" style="right">
+      		<p>Přidávání objektů</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>V tomto příkladu máme přidané tři textové objekty a čárový kód. První textový objekt obsahuje pouze prostý text („Ahoj, jmenuji se“). Druhý textový objekt obsahuje jedno slučované pole („${jmeno}“), které odpovídá prvnímu poli v záznamu (první sloupec v řádku) a které obsahuje celé jméno nového člena osádky. Třetí textové pole obsahuje jak text („Zařazení: “), tak za ním následuje jedno slučované pole („${zarazeni}“), které odpovídá druhému poli se zařazením člena posádky. Objekt s čárovým kódem je nastavený na použití pole (klíče) „cislo“, které obsahuje identifikační číslo člena posádky.</p>
+
+      <p>Nyní můžeme své jmenovky vytisknout pomocí položky nabídky <guiseq><gui>Soubor</gui><gui>Tisk</gui></guiseq>. Zobrazí se dialogové okno jako na následujícím obrázku.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-3.png" mime="image/png" style="right">
+      		<p>Tisk jmenovek</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Nyní zkontrolujeme, zda vypadají etikety jak mají. Vybereme možnost <gui>Tisk obrysů</gui> a klikneme na <gui>Náhled tisku</gui>. Zobrazí se dialogové okno s náhledem tisku, stejně jako na následujícím obrázku.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-4.png" mime="image/png" style="right">
+      		<p>Náhled jmenovek</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Vše vypadá v pořádku, takže můžeme do tiskárny vložit správný list s etiketami, vytisknout jmenovky a vzhůru na palubu nalodit naše hosty.</p>
+
+
+</page>

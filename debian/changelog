@@ -1,8 +1,40 @@
-glabels (2.2.8-3build1) precise; urgency=low
+glabels (3.0.0-3) unstable; urgency=low
 
-  * Rebuild against latest evolution-data-server
+  * Remove obsolete configure options
+  * Remove broken man page symlink
+  * Remove Replaces for glabels 2.0 transition
+  * Depend on gnome-desktop-data for licenses in GNOME help
+  * New patches:
+    - 0006-Fix-schema-references.patch
+    - 0007-Ignore-license.page.patch
 
- -- Angel Abad <angelabad@ubuntu.com>  Thu, 12 Jan 2012 15:37:08 +0100
+ -- Jakob Haufe <sur5r@sur5r.net>  Mon, 09 Apr 2012 18:02:07 +0200
+
+glabels (3.0.0-2) unstable; urgency=low
+
+  * Bump Standards-Version (no changes needed)
+
+ -- Jakob Haufe <sur5r@sur5r.net>  Sun, 08 Apr 2012 20:48:09 +0200
+
+glabels (3.0.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #665535)
+  * Recreate debian/patches/* for 3.0.0
+    - Names changed due to use of gbp-pq
+    - Drop 30_Werror-format-security.patch as glables now uses
+      external barcode
+    - Drop 40_linker.patch (Change adopted upstream)
+  * New patches:
+    - 0003-libglbarcode-uses-pangocairo-not-plain-pango.patch
+    - 0004-libglabels-silently-uses-gobject-fix-linkage.patch
+    - 0005-Ignore-unused-screenshot.patch
+  * Update lintian override for 3.0.0
+  * Update debian/copyright for 3.0.0
+  * Recommend evince (Closes: #560899)
+  * Temporarily ship own .desktop file (Closes: #660642)
+  * Adopt package (Closes: #569335)
+
+ -- Jakob Haufe <sur5r@sur5r.net>  Mon, 12 Mar 2012 00:11:13 +0100
 
 glabels (2.2.8-3) unstable; urgency=low
 

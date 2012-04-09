@@ -42,6 +42,17 @@ extern void gl_marshal_VOID__DOUBLE_DOUBLE (GClosure     *closure,
 /* VOID:OBJECT (marshal.list:7) */
 #define gl_marshal_VOID__OBJECT	g_cclosure_marshal_VOID__OBJECT
 
+/* VOID:STRING (marshal.list:8) */
+#define gl_marshal_VOID__STRING	g_cclosure_marshal_VOID__STRING
+
+/* VOID:UINT,BOOLEAN (marshal.list:9) */
+extern void gl_marshal_VOID__UINT_BOOLEAN (GClosure     *closure,
+                                           GValue       *return_value,
+                                           guint         n_param_values,
+                                           const GValue *param_values,
+                                           gpointer      invocation_hint,
+                                           gpointer      marshal_data);
+
 G_END_DECLS
 
 #endif /* __gl_marshal_MARSHAL_H__ */

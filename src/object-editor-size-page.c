@@ -1,53 +1,55 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  object-editor-size-page.c
+ *  Copyright (C) 2003-2009  Jim Evins <evins@snaught.com>.
  *
- *  object-editor.c:  object properties editor module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2003  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #include <config.h>
 
 #include "object-editor.h"
 
 #include <glib/gi18n.h>
-#include <gtk/gtklabel.h>
-#include <gtk/gtkspinbutton.h>
+#include <gtk/gtk.h>
 #include <math.h>
 
 #include "prefs.h"
 #include "wdgt-chain-button.h"
+#include "builder-util.h"
+#include "units-util.h"
 
 #include "object-editor-private.h"
 
 #include "debug.h"
 
+
 /*===========================================*/
 /* Private macros                            */
 /*===========================================*/
+
 
 /*===========================================*/
 /* Private data types                        */
 /*===========================================*/
 
+
 /*===========================================*/
 /* Private globals                           */
 /*===========================================*/
+
 
 /*===========================================*/
 /* Local function prototypes                 */
@@ -63,9 +65,9 @@ static void h_spin_cb                           (glObjectEditor        *editor);
 /* PRIVATE.  Prepare size page.                                             */
 /*--------------------------------------------------------------------------*/
 void
-gl_object_editor_prepare_size_page (glObjectEditor       *editor,
-				    glObjectEditorOption  option)
+gl_object_editor_prepare_size_page (glObjectEditor       *editor)
 {
+        lglUnits      units;
 	const gchar  *units_string;
 	gdouble       climb_rate;
 	gint          digits;
@@ -73,26 +75,31 @@ gl_object_editor_prepare_size_page (glObjectEditor       *editor,
 	gl_debug (DEBUG_EDITOR, "START");
 
 	/* Extract widgets from XML tree. */
-	editor->priv->size_page_vbox =
-		glade_xml_get_widget (editor->priv->gui, "size_page_vbox");
-	editor->priv->size_w_spin =
-		glade_xml_get_widget (editor->priv->gui, "size_w_spin");
-	editor->priv->size_h_spin =
-		glade_xml_get_widget (editor->priv->gui, "size_h_spin");
-	editor->priv->size_w_units_label =
-		glade_xml_get_widget (editor->priv->gui, "size_w_units_label");
-	editor->priv->size_h_units_label =
-		glade_xml_get_widget (editor->priv->gui, "size_h_units_label");
-	editor->priv->size_aspect_checkbutton =
-		glade_xml_get_widget (editor->priv->gui, "size_aspect_checkbutton");
-	editor->priv->size_reset_image_button =
-		glade_xml_get_widget (editor->priv->gui, "size_reset_image_button");
+        gl_builder_util_get_widgets (editor->priv->builder,
+                                     "size_page_vbox",          &editor->priv->size_page_vbox,
+                                     "size_w_spin",             &editor->priv->size_w_spin,
+                                     "size_h_spin",             &editor->priv->size_h_spin,
+                                     "size_w_units_label",      &editor->priv->size_w_units_label,
+                                     "size_h_units_label",      &editor->priv->size_h_units_label,
+                                     "size_aspect_vbox",        &editor->priv->size_aspect_vbox,
+                                     "size_reset_image_button", &editor->priv->size_reset_image_button,
+                                     NULL);
+
+	editor->priv->size_aspect_checkbutton = gl_wdgt_chain_button_new (GL_WDGT_CHAIN_RIGHT);
+        gtk_widget_set_tooltip_text (editor->priv->size_aspect_checkbutton, _("Lock aspect ratio."));
+	gl_wdgt_chain_button_set_active (GL_WDGT_CHAIN_BUTTON(editor->priv->size_aspect_checkbutton),
+                                         TRUE);
+        gtk_box_pack_start (GTK_BOX (editor->priv->size_aspect_vbox),
+                            editor->priv->size_aspect_checkbutton,
+                            TRUE, TRUE, 0);
+
 
 	/* Get configuration information */
-	units_string = gl_prefs_get_units_string ();
-	editor->priv->units_per_point = gl_prefs_get_units_per_point ();
-	climb_rate = gl_prefs_get_units_step_size ();
-	digits = gl_prefs_get_units_precision ();
+        units = gl_prefs_model_get_units (gl_prefs);
+	units_string = lgl_units_get_name (units);
+	editor->priv->units_per_point = lgl_units_get_units_per_point (units);
+	climb_rate = gl_units_util_get_step_size (units);
+	digits = gl_units_util_get_precision (units);
 
 	/* Modify widgets based on configuration */
 	gtk_spin_button_set_digits (GTK_SPIN_BUTTON(editor->priv->size_w_spin), digits);
@@ -104,11 +111,6 @@ gl_object_editor_prepare_size_page (glObjectEditor       *editor,
 					climb_rate, 10.0*climb_rate);
 	gtk_label_set_text (GTK_LABEL(editor->priv->size_h_units_label), units_string);
 
-	/* Un-hide */
-	gtk_widget_show_all (editor->priv->size_page_vbox);
-	if (option != GL_OBJECT_EDITOR_SIZE_IMAGE_PAGE) {
-		gtk_widget_hide (editor->priv->size_reset_image_button);
-	}
 
 	/* Connect signals */
 	g_signal_connect_swapped (G_OBJECT (editor->priv->size_aspect_checkbutton),
@@ -116,23 +118,21 @@ gl_object_editor_prepare_size_page (glObjectEditor       *editor,
 				  G_CALLBACK (aspect_toggle_cb),
 				  G_OBJECT (editor));
 	g_signal_connect_swapped (G_OBJECT (editor->priv->size_w_spin),
-				  "changed",
+				  "value-changed",
 				  G_CALLBACK (w_spin_cb),
 				  G_OBJECT (editor));
 	g_signal_connect_swapped (G_OBJECT (editor->priv->size_h_spin),
-				  "changed",
+				  "value-changed",
 				  G_CALLBACK (h_spin_cb),
 				  G_OBJECT (editor));
-
-	if (option == GL_OBJECT_EDITOR_SIZE_IMAGE_PAGE) {
-		g_signal_connect_swapped (G_OBJECT (editor->priv->size_reset_image_button),
-					  "clicked",
-					  G_CALLBACK (size_reset_cb),
-					  G_OBJECT (editor));
-	}
+        g_signal_connect_swapped (G_OBJECT (editor->priv->size_reset_image_button),
+                                  "clicked",
+                                  G_CALLBACK (size_reset_cb),
+                                  G_OBJECT (editor));
 
 	gl_debug (DEBUG_EDITOR, "END");
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Maintain aspect ratio checkbox callback.                       */
@@ -142,8 +142,6 @@ aspect_toggle_cb (glObjectEditor *editor)
 {
         glWdgtChainButton *toggle;
 	gdouble            w, h;
-
-        if (editor->priv->stop_signals) return;
 
 	gl_debug (DEBUG_EDITOR, "START");
 
@@ -161,6 +159,7 @@ aspect_toggle_cb (glObjectEditor *editor)
 	gl_debug (DEBUG_EDITOR, "END");
 }
 
+
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  W spin button changed callback.                                */
 /*--------------------------------------------------------------------------*/
@@ -169,8 +168,6 @@ w_spin_cb (glObjectEditor *editor)
 {
 	gdouble            w, h;
         glWdgtChainButton *toggle;
-
-        if (editor->priv->stop_signals) return;
 
 	gl_debug (DEBUG_EDITOR, "START");
 
@@ -183,17 +180,16 @@ w_spin_cb (glObjectEditor *editor)
                 h = w * editor->priv->size_aspect_ratio;
                                                                                 
                 /* Update our sibling control, blocking recursion. */
-                editor->priv->stop_signals = TRUE;
+                g_signal_handlers_block_by_func (G_OBJECT (editor->priv->size_h_spin), h_spin_cb, editor);
                 gtk_spin_button_set_value (GTK_SPIN_BUTTON (editor->priv->size_h_spin), h);
-                editor->priv->stop_signals = FALSE;
+                g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->size_h_spin), h_spin_cb, editor);
         }
                                                                                 
-        /* Emit our "changed" signal */
-        g_signal_emit (G_OBJECT (editor), gl_object_editor_signals[CHANGED], 0);
-        g_signal_emit (G_OBJECT (editor), gl_object_editor_signals[SIZE_CHANGED], 0);
+        gl_object_editor_size_changed_cb (editor);
                                                                                 
 	gl_debug (DEBUG_EDITOR, "END");
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  H spin button changed callback.                                */
@@ -203,8 +199,6 @@ h_spin_cb (glObjectEditor *editor)
 {
 	gdouble            w, h;
         glWdgtChainButton *toggle;
-
-        if (editor->priv->stop_signals) return;
 
 	gl_debug (DEBUG_EDITOR, "START");
 
@@ -217,17 +211,16 @@ h_spin_cb (glObjectEditor *editor)
                 w = h / editor->priv->size_aspect_ratio;
                                                                                 
                 /* Update our sibling control, blocking recursion. */
-                editor->priv->stop_signals = TRUE;
+                g_signal_handlers_block_by_func (G_OBJECT (editor->priv->size_w_spin), w_spin_cb, editor);
                 gtk_spin_button_set_value (GTK_SPIN_BUTTON (editor->priv->size_w_spin), w);
-                editor->priv->stop_signals = FALSE;
+                g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->size_w_spin), w_spin_cb, editor);
         }
                                                                                 
-        /* Emit our "changed" signal */
-        g_signal_emit (G_OBJECT (editor), gl_object_editor_signals[CHANGED], 0);
-        g_signal_emit (G_OBJECT (editor), gl_object_editor_signals[SIZE_CHANGED], 0);
+        gl_object_editor_size_changed_cb (editor);
                                                                                 
 	gl_debug (DEBUG_EDITOR, "END");
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Reset image size callback.                                     */
@@ -239,11 +232,12 @@ size_reset_cb (glObjectEditor *editor)
 	gdouble w_max, h_max, wh_max;
 	gdouble aspect_ratio;
 
-        if (editor->priv->stop_signals) return;
-
 	gl_debug (DEBUG_EDITOR, "START");
 
-        editor->priv->stop_signals = TRUE;
+
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->size_w_spin), w_spin_cb, editor);
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->size_h_spin), h_spin_cb, editor);
+
 
 	w_base = editor->priv->w_base;
 	h_base = editor->priv->h_base;
@@ -274,26 +268,31 @@ size_reset_cb (glObjectEditor *editor)
 	gtk_spin_button_set_value (GTK_SPIN_BUTTON (editor->priv->size_h_spin),
 				   h_base);
 
-        /* Emit our "changed" signal */
-        g_signal_emit (G_OBJECT (editor), gl_object_editor_signals[CHANGED], 0);
-        g_signal_emit (G_OBJECT (editor), gl_object_editor_signals[SIZE_CHANGED], 0);
 
-        editor->priv->stop_signals = FALSE;
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->size_w_spin), w_spin_cb, editor);
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->size_h_spin), h_spin_cb, editor);
+
+
+        gl_object_editor_size_changed_cb (editor);
 
 	gl_debug (DEBUG_EDITOR, "END");
 }
+
 
 /*****************************************************************************/
 /* Set size.                                                                 */
 /*****************************************************************************/
 void
 gl_object_editor_set_size (glObjectEditor      *editor,
-			     gdouble                w,
-			     gdouble                h)
+                           gdouble              w,
+                           gdouble              h)
 {
 	gl_debug (DEBUG_EDITOR, "START");
 
-        editor->priv->stop_signals = TRUE;
+
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->size_w_spin), w_spin_cb, editor);
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->size_h_spin), h_spin_cb, editor);
+
 
 	/* save a copy in internal units */
 	editor->priv->w = w;
@@ -312,10 +311,14 @@ gl_object_editor_set_size (glObjectEditor      *editor,
 	/* Update aspect ratio */
 	editor->priv->size_aspect_ratio = h / w;
 
-        editor->priv->stop_signals = FALSE;
+
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->size_w_spin), w_spin_cb, editor);
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->size_h_spin), h_spin_cb, editor);
+
 
 	gl_debug (DEBUG_EDITOR, "END");
 }
+
 
 /*****************************************************************************/
 /* Set maximum size.                                                         */
@@ -330,38 +333,40 @@ gl_object_editor_set_max_size (glObjectEditor      *editor,
 
 	gl_debug (DEBUG_EDITOR, "START");
 
-        if (editor->priv->size_page_vbox)
-        {
 
-                editor->priv->stop_signals = TRUE;
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->size_w_spin), w_spin_cb, editor);
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->size_h_spin), h_spin_cb, editor);
 
-                /* save a copy in internal units */
-                editor->priv->w_max = w_max;
-                editor->priv->h_max = h_max;
 
-                /* convert internal units to displayed units */
-                gl_debug (DEBUG_EDITOR, "internal w_max,h_max = %g, %g", w_max, h_max);
-                w_max *= editor->priv->units_per_point;
-                h_max *= editor->priv->units_per_point;
-                wh_max = MAX( w_max, h_max );
-                gl_debug (DEBUG_EDITOR, "display w_max,h_max = %g, %g", w_max, h_max);
+        /* save a copy in internal units */
+        editor->priv->w_max = w_max;
+        editor->priv->h_max = h_max;
 
-                /* Set widget values */
-                tmp = gtk_spin_button_get_value (GTK_SPIN_BUTTON (editor->priv->size_w_spin));
-                gtk_spin_button_set_range (GTK_SPIN_BUTTON (editor->priv->size_w_spin),
-                                           0.0, 2.0*wh_max);
-                gtk_spin_button_set_value (GTK_SPIN_BUTTON (editor->priv->size_w_spin), tmp);
-                tmp = gtk_spin_button_get_value (GTK_SPIN_BUTTON (editor->priv->size_h_spin));
-                gtk_spin_button_set_range (GTK_SPIN_BUTTON (editor->priv->size_h_spin),
-                                           0.0, 2.0*wh_max);
-                gtk_spin_button_set_value (GTK_SPIN_BUTTON (editor->priv->size_h_spin), tmp);
+        /* convert internal units to displayed units */
+        gl_debug (DEBUG_EDITOR, "internal w_max,h_max = %g, %g", w_max, h_max);
+        w_max *= editor->priv->units_per_point;
+        h_max *= editor->priv->units_per_point;
+        wh_max = MAX( w_max, h_max );
+        gl_debug (DEBUG_EDITOR, "display w_max,h_max = %g, %g", w_max, h_max);
 
-                editor->priv->stop_signals = FALSE;
+        /* Set widget values */
+        tmp = gtk_spin_button_get_value (GTK_SPIN_BUTTON (editor->priv->size_w_spin));
+        gtk_spin_button_set_range (GTK_SPIN_BUTTON (editor->priv->size_w_spin),
+                                   0.0, 2.0*wh_max);
+        gtk_spin_button_set_value (GTK_SPIN_BUTTON (editor->priv->size_w_spin), tmp);
+        tmp = gtk_spin_button_get_value (GTK_SPIN_BUTTON (editor->priv->size_h_spin));
+        gtk_spin_button_set_range (GTK_SPIN_BUTTON (editor->priv->size_h_spin),
+                                   0.0, 2.0*wh_max);
+        gtk_spin_button_set_value (GTK_SPIN_BUTTON (editor->priv->size_h_spin), tmp);
 
-        }
+
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->size_w_spin), w_spin_cb, editor);
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->size_h_spin), h_spin_cb, editor);
+
 
 	gl_debug (DEBUG_EDITOR, "END");
 }
+
 
 /*****************************************************************************/
 /* Set base or natural size of image.                                        */
@@ -377,6 +382,7 @@ gl_object_editor_set_base_size    (glObjectEditor      *editor,
 	editor->priv->w_base = w_base;
 	editor->priv->h_base = h_base;
 }
+
 
 /*****************************************************************************/
 /* Query size.                                                               */
@@ -404,35 +410,39 @@ gl_object_editor_get_size (glObjectEditor      *editor,
 	gl_debug (DEBUG_EDITOR, "END");
 }
 
+
 /*****************************************************************************/
 /* PRIVATE. Prefs changed callback.  Update units related items.            */
 /*****************************************************************************/
 void
 size_prefs_changed_cb (glObjectEditor *editor)
 {
+        lglUnits      units;
 	const gchar  *units_string;
 	gdouble       climb_rate;
 	gint          digits;
 
 	gl_debug (DEBUG_EDITOR, "START");
 
+
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->size_w_spin), w_spin_cb, editor);
+        g_signal_handlers_block_by_func (G_OBJECT (editor->priv->size_h_spin), h_spin_cb, editor);
+
+
         /* Get new configuration information */
-        units_string = gl_prefs_get_units_string ();
-        editor->priv->units_per_point = gl_prefs_get_units_per_point ();
-        climb_rate = gl_prefs_get_units_step_size ();
-        digits = gl_prefs_get_units_precision ();
+        units = gl_prefs_model_get_units (gl_prefs);
+        units_string = lgl_units_get_name (units);
+        editor->priv->units_per_point = lgl_units_get_units_per_point (units);
+        climb_rate = gl_units_util_get_step_size (units);
+        digits = gl_units_util_get_precision (units);
 
 	/* Update characteristics of w_spin/h_spin */
-        editor->priv->stop_signals = TRUE;
-	gtk_spin_button_set_digits (GTK_SPIN_BUTTON(editor->priv->size_w_spin),
-				    digits);
-	gtk_spin_button_set_digits (GTK_SPIN_BUTTON(editor->priv->size_h_spin),
-				    digits);
+	gtk_spin_button_set_digits (GTK_SPIN_BUTTON(editor->priv->size_w_spin), digits);
+	gtk_spin_button_set_digits (GTK_SPIN_BUTTON(editor->priv->size_h_spin), digits);
 	gtk_spin_button_set_increments (GTK_SPIN_BUTTON(editor->priv->size_w_spin),
 					climb_rate, 10.0*climb_rate);
 	gtk_spin_button_set_increments (GTK_SPIN_BUTTON(editor->priv->size_h_spin),
 					climb_rate, 10.0*climb_rate);
-        editor->priv->stop_signals = FALSE;
 
 	/* Update units_labels */
 	gtk_label_set_text (GTK_LABEL(editor->priv->size_w_units_label),
@@ -441,13 +451,24 @@ size_prefs_changed_cb (glObjectEditor *editor)
 			    units_string);
 
 	/* Update values of w_spin/h_spin */
-	gl_object_editor_set_size (editor,
-				   editor->priv->w,
-				   editor->priv->h);
-	gl_object_editor_set_max_size (editor,
-				       editor->priv->w_max,
-				       editor->priv->h_max);
+	gl_object_editor_set_size (editor, editor->priv->w, editor->priv->h);
+	gl_object_editor_set_max_size (editor, editor->priv->w_max, editor->priv->h_max);
+
+
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->size_w_spin), w_spin_cb, editor);
+        g_signal_handlers_unblock_by_func (G_OBJECT (editor->priv->size_h_spin), h_spin_cb, editor);
+
 
 	gl_debug (DEBUG_EDITOR, "END");
 }
 
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

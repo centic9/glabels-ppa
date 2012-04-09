@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="select" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Objekte auswählen.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Auswählen von Objekten</title>
+
+      <p>Eine Voraussetzung zum Ausführen von Operationen auf Objekten ist die Auswahl individueller Objekte oder Gruppen von Objekten. Der Anzeigebereich muss sich im Objektauswahlmodus befinden, was durch einen pfeilförmigen Mauszeiger angezeigt wird. Der Objektauswahlmodus wird über den Menüeintrag <guiseq><gui>Objekte</gui><gui>Auswahlmodus</gui></guiseq> aktiviert oder über das entsprechende Objekt in der <gui>Zeichenwerkzeugleiste</gui>.</p>
+
+      <section>
+	  <title>Auswahl eines einzelnen Objekts</title>
+	    <p>Ein einzelnes Objekt können Sie auswählen, indem Sie das gewünschte Objekt im Anzeigebereich anklicken. Nach dem Anklicken wird das Objekt durch Anfasspunkte zur Größenänderung hervorgehoben.</p>
+	</section>
+
+	<section>
+	  <title>Auswahl mehrerer Objekte</title>
+	    <p>Sie können mehrere Objekte auswählen, indem Sie zunächst das erste Objekt auswählen, wie oben beschrieben. Halten Sie dann bei der Auswahl weiterer Objekte die <key>Strg</key>-Taste gedrückt. Zusätzliche Objekte können Sie jederzeit zur Auswahl hinzufügen, wenn Sie wiederum die <key>Strg</key>-Taste gedrückt halten und die gewünschten Objekte auswählen. Alle Objekte lassen sich über den Menüeintrag <guiseq><gui>Bearbeiten</gui><gui>Alle auswählen</gui></guiseq> auswählen. Alle Objekte in einer zusammenhängenden Objektauswahl werden hervorgehoben dargestellt.</p>
+	</section>
+
+	<section>
+	  <title>Bereichsauswahl</title>
+	  
+	    <p>Sie können auch mehrere Objekte auswählen, indem Sie in einen leeren Bereich klicken und mit der Maus die Form eines Rechtecks aufziehen. Daraufhin bilden alle Objekte in diesem Bereich eine zusammenhängende Auswahl. Eine Bereichsauswahl kann zum Hinzufügen einer vorhandenen Auswahl benutzt werden, wenn Sie bei der Auswahl die <key>Strg</key>-Taste gedrückt halten.</p>
+	  
+	</section>
+
+	<section>
+	  <title>Auswahl von Objekten aufheben</title>
+	  
+	    <p>Sie können individuelle Objekte aus einer vorhandenen Auswahl entfernen, wenn Sie beim Klicken auf ein zuvor ausgewähltes Objekt die <key>Strg</key>-Taste gedrückt halten. Die gesamte Auswahl können Sie rückgängig machen, indem Sie im Menü <guiseq><gui>Bearbeiten</gui><gui>Alle Markierungen löschen</gui></guiseq> wählen. Sobald ein Objekt nicht mehr ausgewählt ist, wird es nicht mehr hervorgehoben dargestellt.</p>
+	  
+	</section>
+
+    <section id="clipboard"> 
+      <title>Befehle für die Zwischenablage</title>
+
+      <p>Objektauswahlen können durch die Standardoperationen der Zwischenablage <gui>Ausschneiden</gui>, <gui>Kopieren</gui>, <gui>Einfügen</gui> und <gui>Löschen</gui> manipuliert werden.</p>
+
+	<section>
+	  <title><gui>Ausschneiden</gui> (<keyseq><key>Strg</key><key>X</key></keyseq>)</title>
+	  
+	    <p>Verschiebt die ausgewählten Objekte in die Zwischenablage. Diese Objekte sind dann verfügbar, um später in das aktuelle Dokument oder ein anderes Dokument eingefügt zu werden.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Kopieren</gui> (<keyseq><key>Strg</key><key>C</key></keyseq>)</title>
+	  
+	    <p>Kopiert die ausgewählten Objekte in die Zwischenablage, ohne sie zu entfernen. Diese Objekte sind dann verfügbar, um später in das aktuelle Dokument oder ein anderes Dokument eingefügt zu werden.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Einfügen</gui> (<keyseq><key>Strg</key><key>V</key></keyseq>)</title>
+	  
+	    <p>Fügt Objekte aus der Zwischenablage in das aktuelle Dokument ein. <app>gLabels</app> kann nur Objekte aus anderen <app>gLabels</app>-Dokumenten einfügen.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Löschen</gui> (<key>Entf</key>)</title>
+	  
+	    <p>Entfernt die ausgewählten Objekte, ohne sie in die Zwischenablage zu verschieben.</p>
+	  
+	</section>
+       </section>
+
+</page>

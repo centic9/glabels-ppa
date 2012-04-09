@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="LibGlabels 3.0 Reference Manual" link="index.html" author="" name="libglabels-3.0">
+  <chapters>
+    <sub name="Basic LibGlabels Usage" link="ch01.html">
+      <sub name="Database" link="libglabels-3.0-db.html"/>
+      <sub name="The lglTemplate Structure" link="libglabels-3.0-template.html"/>
+      <sub name="The lglPaper Structure" link="libglabels-3.0-paper.html"/>
+      <sub name="The lglCategory Structure" link="libglabels-3.0-category.html"/>
+      <sub name="The lglVendor Structure" link="libglabels-3.0-vendor.html"/>
+    </sub>
+    <sub name="Working Directly With LibGlabels XML" link="ch02.html">
+      <sub name="XML Paper Functions" link="libglabels-3.0-xml-paper.html"/>
+      <sub name="XML Category Functions" link="libglabels-3.0-xml-category.html"/>
+      <sub name="XML Template Functions" link="libglabels-3.0-xml-template.html"/>
+      <sub name="XML Vendor Functions" link="libglabels-3.0-xml-vendor.html"/>
+      <sub name="XML Helper Functions" link="libglabels-3.0-xml.html"/>
+    </sub>
+    <sub name="Miscellaneous" link="ch03.html">
+      <sub name="Units" link="libglabels-3.0-units.html"/>
+      <sub name="String Utility Functions" link="libglabels-3.0-str.html"/>
+    </sub>
+  </chapters>
+  <functions>
+    <function name="enum lglDbRegStatus" link="libglabels-3.0-db.html#lglDbRegStatus"/>
+    <function name="enum lglDbDeleteStatus" link="libglabels-3.0-db.html#lglDbDeleteStatus"/>
+    <function name="lgl_db_init ()" link="libglabels-3.0-db.html#lgl-db-init"/>
+    <function name="lglDbNotifyFunc ()" link="libglabels-3.0-db.html#lglDbNotifyFunc"/>
+    <function name="lgl_db_notify_add ()" link="libglabels-3.0-db.html#lgl-db-notify-add"/>
+    <function name="lgl_db_notify_remove ()" link="libglabels-3.0-db.html#lgl-db-notify-remove"/>
+    <function name="lgl_db_get_paper_id_list ()" link="libglabels-3.0-db.html#lgl-db-get-paper-id-list"/>
+    <function name="lgl_db_free_paper_id_list ()" link="libglabels-3.0-db.html#lgl-db-free-paper-id-list"/>
+    <function name="lgl_db_get_paper_name_list ()" link="libglabels-3.0-db.html#lgl-db-get-paper-name-list"/>
+    <function name="lgl_db_free_paper_name_list ()" link="libglabels-3.0-db.html#lgl-db-free-paper-name-list"/>
+    <function name="lgl_db_lookup_paper_from_id ()" link="libglabels-3.0-db.html#lgl-db-lookup-paper-from-id"/>
+    <function name="lgl_db_lookup_paper_from_name ()" link="libglabels-3.0-db.html#lgl-db-lookup-paper-from-name"/>
+    <function name="lgl_db_lookup_paper_id_from_name ()" link="libglabels-3.0-db.html#lgl-db-lookup-paper-id-from-name"/>
+    <function name="lgl_db_lookup_paper_name_from_id ()" link="libglabels-3.0-db.html#lgl-db-lookup-paper-name-from-id"/>
+    <function name="lgl_db_is_paper_id_known ()" link="libglabels-3.0-db.html#lgl-db-is-paper-id-known"/>
+    <function name="lgl_db_is_paper_id_other ()" link="libglabels-3.0-db.html#lgl-db-is-paper-id-other"/>
+    <function name="lgl_db_get_category_id_list ()" link="libglabels-3.0-db.html#lgl-db-get-category-id-list"/>
+    <function name="lgl_db_free_category_id_list ()" link="libglabels-3.0-db.html#lgl-db-free-category-id-list"/>
+    <function name="lgl_db_get_category_name_list ()" link="libglabels-3.0-db.html#lgl-db-get-category-name-list"/>
+    <function name="lgl_db_free_category_name_list ()" link="libglabels-3.0-db.html#lgl-db-free-category-name-list"/>
+    <function name="lgl_db_lookup_category_from_id ()" link="libglabels-3.0-db.html#lgl-db-lookup-category-from-id"/>
+    <function name="lgl_db_lookup_category_from_name ()" link="libglabels-3.0-db.html#lgl-db-lookup-category-from-name"/>
+    <function name="lgl_db_lookup_category_id_from_name ()" link="libglabels-3.0-db.html#lgl-db-lookup-category-id-from-name"/>
+    <function name="lgl_db_lookup_category_name_from_id ()" link="libglabels-3.0-db.html#lgl-db-lookup-category-name-from-id"/>
+    <function name="lgl_db_is_category_id_known ()" link="libglabels-3.0-db.html#lgl-db-is-category-id-known"/>
+    <function name="lgl_db_get_brand_list ()" link="libglabels-3.0-db.html#lgl-db-get-brand-list"/>
+    <function name="lgl_db_free_brand_list ()" link="libglabels-3.0-db.html#lgl-db-free-brand-list"/>
+    <function name="lgl_db_register_template ()" link="libglabels-3.0-db.html#lgl-db-register-template"/>
+    <function name="lgl_db_delete_template_by_brand_part ()" link="libglabels-3.0-db.html#lgl-db-delete-template-by-brand-part"/>
+    <function name="lgl_db_delete_template_by_name ()" link="libglabels-3.0-db.html#lgl-db-delete-template-by-name"/>
+    <function name="lgl_db_does_template_exist ()" link="libglabels-3.0-db.html#lgl-db-does-template-exist"/>
+    <function name="lgl_db_does_template_name_exist ()" link="libglabels-3.0-db.html#lgl-db-does-template-name-exist"/>
+    <function name="lgl_db_get_template_name_list_all ()" link="libglabels-3.0-db.html#lgl-db-get-template-name-list-all"/>
+    <function name="lgl_db_get_similar_template_name_list ()" link="libglabels-3.0-db.html#lgl-db-get-similar-template-name-list"/>
+    <function name="lgl_db_free_template_name_list ()" link="libglabels-3.0-db.html#lgl-db-free-template-name-list"/>
+    <function name="lgl_db_lookup_template_from_name ()" link="libglabels-3.0-db.html#lgl-db-lookup-template-from-name"/>
+    <function name="lgl_db_lookup_template_from_brand_part ()" link="libglabels-3.0-db.html#lgl-db-lookup-template-from-brand-part"/>
+    <function name="lgl_db_get_vendor_name_list ()" link="libglabels-3.0-db.html#lgl-db-get-vendor-name-list"/>
+    <function name="lgl_db_free_vendor_name_list ()" link="libglabels-3.0-db.html#lgl-db-free-vendor-name-list"/>
+    <function name="lgl_db_is_vendor_name_known ()" link="libglabels-3.0-db.html#lgl-db-is-vendor-name-known"/>
+    <function name="lgl_db_lookup_vendor_from_name ()" link="libglabels-3.0-db.html#lgl-db-lookup-vendor-from-name"/>
+    <function name="lgl_db_print_known_papers ()" link="libglabels-3.0-db.html#lgl-db-print-known-papers"/>
+    <function name="lgl_db_print_known_categories ()" link="libglabels-3.0-db.html#lgl-db-print-known-categories"/>
+    <function name="lgl_db_print_known_templates ()" link="libglabels-3.0-db.html#lgl-db-print-known-templates"/>
+    <function name="lgl_db_print_known_vendors ()" link="libglabels-3.0-db.html#lgl-db-print-known-vendors"/>
+    <function name="struct lglTemplate" link="libglabels-3.0-template.html#lglTemplate"/>
+    <function name="enum lglTemplateFrameShape" link="libglabels-3.0-template.html#lglTemplateFrameShape"/>
+    <function name="union lglTemplateFrame" link="libglabels-3.0-template.html#lglTemplateFrame"/>
+    <function name="struct lglTemplateFrameAll" link="libglabels-3.0-template.html#lglTemplateFrameAll"/>
+    <function name="struct lglTemplateFrameRect" link="libglabels-3.0-template.html#lglTemplateFrameRect"/>
+    <function name="struct lglTemplateFrameEllipse" link="libglabels-3.0-template.html#lglTemplateFrameEllipse"/>
+    <function name="struct lglTemplateFrameRound" link="libglabels-3.0-template.html#lglTemplateFrameRound"/>
+    <function name="struct lglTemplateFrameCD" link="libglabels-3.0-template.html#lglTemplateFrameCD"/>
+    <function name="struct lglTemplateLayout" link="libglabels-3.0-template.html#lglTemplateLayout"/>
+    <function name="enum lglTemplateMarkupType" link="libglabels-3.0-template.html#lglTemplateMarkupType"/>
+    <function name="union lglTemplateMarkup" link="libglabels-3.0-template.html#lglTemplateMarkup"/>
+    <function name="struct lglTemplateMarkupMargin" link="libglabels-3.0-template.html#lglTemplateMarkupMargin"/>
+    <function name="struct lglTemplateMarkupLine" link="libglabels-3.0-template.html#lglTemplateMarkupLine"/>
+    <function name="struct lglTemplateMarkupCircle" link="libglabels-3.0-template.html#lglTemplateMarkupCircle"/>
+    <function name="struct lglTemplateMarkupRect" link="libglabels-3.0-template.html#lglTemplateMarkupRect"/>
+    <function name="struct lglTemplateMarkupEllipse" link="libglabels-3.0-template.html#lglTemplateMarkupEllipse"/>
+    <function name="struct lglTemplateOrigin" link="libglabels-3.0-template.html#lglTemplateOrigin"/>
+    <function name="lgl_template_new ()" link="libglabels-3.0-template.html#lgl-template-new"/>
+    <function name="lgl_template_new_from_equiv ()" link="libglabels-3.0-template.html#lgl-template-new-from-equiv"/>
+    <function name="lgl_template_dup ()" link="libglabels-3.0-template.html#lgl-template-dup"/>
+    <function name="lgl_template_free ()" link="libglabels-3.0-template.html#lgl-template-free"/>
+    <function name="lgl_template_add_category ()" link="libglabels-3.0-template.html#lgl-template-add-category"/>
+    <function name="lgl_template_add_frame ()" link="libglabels-3.0-template.html#lgl-template-add-frame"/>
+    <function name="lgl_template_get_name ()" link="libglabels-3.0-template.html#lgl-template-get-name"/>
+    <function name="lgl_template_do_templates_match ()" link="libglabels-3.0-template.html#lgl-template-do-templates-match"/>
+    <function name="lgl_template_does_brand_match ()" link="libglabels-3.0-template.html#lgl-template-does-brand-match"/>
+    <function name="lgl_template_does_page_size_match ()" link="libglabels-3.0-template.html#lgl-template-does-page-size-match"/>
+    <function name="lgl_template_does_category_match ()" link="libglabels-3.0-template.html#lgl-template-does-category-match"/>
+    <function name="lgl_template_are_templates_identical ()" link="libglabels-3.0-template.html#lgl-template-are-templates-identical"/>
+    <function name="lgl_template_frame_rect_new ()" link="libglabels-3.0-template.html#lgl-template-frame-rect-new"/>
+    <function name="lgl_template_frame_ellipse_new ()" link="libglabels-3.0-template.html#lgl-template-frame-ellipse-new"/>
+    <function name="lgl_template_frame_round_new ()" link="libglabels-3.0-template.html#lgl-template-frame-round-new"/>
+    <function name="lgl_template_frame_cd_new ()" link="libglabels-3.0-template.html#lgl-template-frame-cd-new"/>
+    <function name="lgl_template_frame_dup ()" link="libglabels-3.0-template.html#lgl-template-frame-dup"/>
+    <function name="lgl_template_frame_free ()" link="libglabels-3.0-template.html#lgl-template-frame-free"/>
+    <function name="lgl_template_frame_add_layout ()" link="libglabels-3.0-template.html#lgl-template-frame-add-layout"/>
+    <function name="lgl_template_frame_add_markup ()" link="libglabels-3.0-template.html#lgl-template-frame-add-markup"/>
+    <function name="lgl_template_frame_get_size ()" link="libglabels-3.0-template.html#lgl-template-frame-get-size"/>
+    <function name="lgl_template_frame_get_n_labels ()" link="libglabels-3.0-template.html#lgl-template-frame-get-n-labels"/>
+    <function name="lgl_template_frame_get_origins ()" link="libglabels-3.0-template.html#lgl-template-frame-get-origins"/>
+    <function name="lgl_template_frame_get_layout_description ()" link="libglabels-3.0-template.html#lgl-template-frame-get-layout-description"/>
+    <function name="lgl_template_frame_get_size_description ()" link="libglabels-3.0-template.html#lgl-template-frame-get-size-description"/>
+    <function name="lgl_template_layout_new ()" link="libglabels-3.0-template.html#lgl-template-layout-new"/>
+    <function name="lgl_template_layout_dup ()" link="libglabels-3.0-template.html#lgl-template-layout-dup"/>
+    <function name="lgl_template_layout_free ()" link="libglabels-3.0-template.html#lgl-template-layout-free"/>
+    <function name="lgl_template_markup_margin_new ()" link="libglabels-3.0-template.html#lgl-template-markup-margin-new"/>
+    <function name="lgl_template_markup_line_new ()" link="libglabels-3.0-template.html#lgl-template-markup-line-new"/>
+    <function name="lgl_template_markup_circle_new ()" link="libglabels-3.0-template.html#lgl-template-markup-circle-new"/>
+    <function name="lgl_template_markup_rect_new ()" link="libglabels-3.0-template.html#lgl-template-markup-rect-new"/>
+    <function name="lgl_template_markup_ellipse_new ()" link="libglabels-3.0-template.html#lgl-template-markup-ellipse-new"/>
+    <function name="lgl_template_markup_dup ()" link="libglabels-3.0-template.html#lgl-template-markup-dup"/>
+    <function name="lgl_template_markup_free ()" link="libglabels-3.0-template.html#lgl-template-markup-free"/>
+    <function name="lgl_template_print ()" link="libglabels-3.0-template.html#lgl-template-print"/>
+    <function name="struct lglPaper" link="libglabels-3.0-paper.html#lglPaper"/>
+    <function name="lgl_paper_new ()" link="libglabels-3.0-paper.html#lgl-paper-new"/>
+    <function name="lgl_paper_dup ()" link="libglabels-3.0-paper.html#lgl-paper-dup"/>
+    <function name="lgl_paper_free ()" link="libglabels-3.0-paper.html#lgl-paper-free"/>
+    <function name="struct lglCategory" link="libglabels-3.0-category.html#lglCategory"/>
+    <function name="lgl_category_new ()" link="libglabels-3.0-category.html#lgl-category-new"/>
+    <function name="lgl_category_dup ()" link="libglabels-3.0-category.html#lgl-category-dup"/>
+    <function name="lgl_category_free ()" link="libglabels-3.0-category.html#lgl-category-free"/>
+    <function name="struct lglVendor" link="libglabels-3.0-vendor.html#lglVendor"/>
+    <function name="lgl_vendor_new ()" link="libglabels-3.0-vendor.html#lgl-vendor-new"/>
+    <function name="lgl_vendor_dup ()" link="libglabels-3.0-vendor.html#lgl-vendor-dup"/>
+    <function name="lgl_vendor_free ()" link="libglabels-3.0-vendor.html#lgl-vendor-free"/>
+    <function name="lgl_xml_paper_read_papers_from_file ()" link="libglabels-3.0-xml-paper.html#lgl-xml-paper-read-papers-from-file"/>
+    <function name="lgl_xml_paper_parse_papers_doc ()" link="libglabels-3.0-xml-paper.html#lgl-xml-paper-parse-papers-doc"/>
+    <function name="lgl_xml_paper_parse_paper_node ()" link="libglabels-3.0-xml-paper.html#lgl-xml-paper-parse-paper-node"/>
+    <function name="lgl_xml_category_read_categories_from_file ()" link="libglabels-3.0-xml-category.html#lgl-xml-category-read-categories-from-file"/>
+    <function name="lgl_xml_category_parse_categories_doc ()" link="libglabels-3.0-xml-category.html#lgl-xml-category-parse-categories-doc"/>
+    <function name="lgl_xml_category_parse_category_node ()" link="libglabels-3.0-xml-category.html#lgl-xml-category-parse-category-node"/>
+    <function name="lgl_xml_template_read_templates_from_file ()" link="libglabels-3.0-xml-template.html#lgl-xml-template-read-templates-from-file"/>
+    <function name="lgl_xml_template_parse_templates_doc ()" link="libglabels-3.0-xml-template.html#lgl-xml-template-parse-templates-doc"/>
+    <function name="lgl_xml_template_parse_template_node ()" link="libglabels-3.0-xml-template.html#lgl-xml-template-parse-template-node"/>
+    <function name="lgl_xml_template_write_templates_to_file ()" link="libglabels-3.0-xml-template.html#lgl-xml-template-write-templates-to-file"/>
+    <function name="lgl_xml_template_write_template_to_file ()" link="libglabels-3.0-xml-template.html#lgl-xml-template-write-template-to-file"/>
+    <function name="lgl_xml_template_create_template_node ()" link="libglabels-3.0-xml-template.html#lgl-xml-template-create-template-node"/>
+    <function name="lgl_xml_vendor_read_vendors_from_file ()" link="libglabels-3.0-xml-vendor.html#lgl-xml-vendor-read-vendors-from-file"/>
+    <function name="lgl_xml_vendor_parse_vendors_doc ()" link="libglabels-3.0-xml-vendor.html#lgl-xml-vendor-parse-vendors-doc"/>
+    <function name="lgl_xml_vendor_parse_vendor_node ()" link="libglabels-3.0-xml-vendor.html#lgl-xml-vendor-parse-vendor-node"/>
+    <function name="LGL_XML_NAME_SPACE" link="libglabels-3.0-xml.html#LGL-XML-NAME-SPACE:CAPS"/>
+    <function name="lgl_xml_get_prop_string ()" link="libglabels-3.0-xml.html#lgl-xml-get-prop-string"/>
+    <function name="lgl_xml_get_prop_i18n_string ()" link="libglabels-3.0-xml.html#lgl-xml-get-prop-i18n-string"/>
+    <function name="lgl_xml_get_prop_double ()" link="libglabels-3.0-xml.html#lgl-xml-get-prop-double"/>
+    <function name="lgl_xml_get_prop_boolean ()" link="libglabels-3.0-xml.html#lgl-xml-get-prop-boolean"/>
+    <function name="lgl_xml_get_prop_int ()" link="libglabels-3.0-xml.html#lgl-xml-get-prop-int"/>
+    <function name="lgl_xml_get_prop_uint ()" link="libglabels-3.0-xml.html#lgl-xml-get-prop-uint"/>
+    <function name="lgl_xml_get_prop_length ()" link="libglabels-3.0-xml.html#lgl-xml-get-prop-length"/>
+    <function name="lgl_xml_set_prop_string ()" link="libglabels-3.0-xml.html#lgl-xml-set-prop-string"/>
+    <function name="lgl_xml_set_prop_double ()" link="libglabels-3.0-xml.html#lgl-xml-set-prop-double"/>
+    <function name="lgl_xml_set_prop_boolean ()" link="libglabels-3.0-xml.html#lgl-xml-set-prop-boolean"/>
+    <function name="lgl_xml_set_prop_int ()" link="libglabels-3.0-xml.html#lgl-xml-set-prop-int"/>
+    <function name="lgl_xml_set_prop_uint_hex ()" link="libglabels-3.0-xml.html#lgl-xml-set-prop-uint-hex"/>
+    <function name="lgl_xml_set_prop_length ()" link="libglabels-3.0-xml.html#lgl-xml-set-prop-length"/>
+    <function name="lgl_xml_is_node ()" link="libglabels-3.0-xml.html#lgl-xml-is-node"/>
+    <function name="lgl_xml_get_node_content ()" link="libglabels-3.0-xml.html#lgl-xml-get-node-content"/>
+    <function name="lgl_xml_set_default_units ()" link="libglabels-3.0-xml.html#lgl-xml-set-default-units"/>
+    <function name="enum lglUnits" link="libglabels-3.0-units.html#lglUnits"/>
+    <function name="lgl_units_get_id ()" link="libglabels-3.0-units.html#lgl-units-get-id"/>
+    <function name="lgl_units_from_id ()" link="libglabels-3.0-units.html#lgl-units-from-id"/>
+    <function name="lgl_units_get_name ()" link="libglabels-3.0-units.html#lgl-units-get-name"/>
+    <function name="lgl_units_from_name ()" link="libglabels-3.0-units.html#lgl-units-from-name"/>
+    <function name="lgl_units_get_points_per_unit ()" link="libglabels-3.0-units.html#lgl-units-get-points-per-unit"/>
+    <function name="lgl_units_get_units_per_point ()" link="libglabels-3.0-units.html#lgl-units-get-units-per-point"/>
+    <function name="lgl_str_utf8_casecmp ()" link="libglabels-3.0-str.html#lgl-str-utf8-casecmp"/>
+    <function name="lgl_str_part_name_cmp ()" link="libglabels-3.0-str.html#lgl-str-part-name-cmp"/>
+    <function name="lgl_str_format_fraction ()" link="libglabels-3.0-str.html#lgl-str-format-fraction"/>
+  </functions>
+</book>

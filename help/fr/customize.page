@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="customize" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Comment personnaliser <app>gLabels</app> pour l'adapter à vos besoins.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+    
+  <!-- ============= Customization ============================= -->
+  <!-- Use this section to describe how to customize the application. -->
+    <title>Paramétrage</title> 
+    <p>Pour configurer <app>gLabels</app>, allez dans le menu <guiseq><gui>Édition</gui><gui>Préférences</gui></guiseq>. La boîte de dialogue <gui>Préférences</gui> contient les onglets suivants :</p>
+
+  <section id="prefs-locale" style="2column">
+    <title>Localisation</title>
+	<section>
+	<title>Unités</title>
+	<p>Ce groupe de boutons radio permet d'indiquer les unités de mesure que vous préférez. Cochez l'une des options suivantes :</p>
+	   <list>
+		<item>
+		<p><gui>Points</gui></p>
+		<p>Utilisation du point (1 point = 1/72e de pouce = 0,352778 mm).</p>
+		</item>
+		<item>
+		<p><gui>Pouces</gui></p>
+		<p>Utilisation du pouce.</p>
+		</item>
+		<item>
+		<p><gui>Millimètres</gui></p>
+		<p>Utilisation du millimètre.</p>
+		</item>
+	   </list>
+	   <p>Unité par défaut : le <gui>pouce</gui>.</p>
+	</section>
+
+	<section>
+	<title>Taille de page par défaut</title>
+	<p>Ce groupe de boutons radio permet d'indiquer le format de page que vous préférez. Ceci vous aide à trouver plus rapidement des types de support lors de la création d'une nouvelle étiquette ou carte.</p>
+	   <list>
+		<item>
+		<p><gui>Lettre US</gui></p>
+		<p>Si la plupart de vos supports sont au format de lettre US (8.5 x 11 pouces).</p>
+		</item>
+		<item>
+		<p><gui>ISO A4</gui></p>
+		<p>Si la plupart de vos supports sont au format ISO A4 (210 x 297 mm).</p>
+		</item>
+	   </list>
+	   <p>Support par défaut : <gui>Lettre US</gui>.</p>		
+	</section>
+    </section>
+
+  <section id="prefs-defaults" style="2column">
+    <title>Paramètres par défaut pour les objets</title>
+
+	<section>
+	<title>Texte</title>
+	<p>Utilisez ces contrôles pour définir les paramètres par défaut des nouveaux objets texte. Ces propriétés sont :</p>
+	   <list>
+		<item>
+		<p><gui>Police</gui></p>
+		<p>Permet de sélectionner la famille de police et sa taille, et si elle doit être en gras ou en italique.</p>
+		</item>
+		<item>
+		<p><gui>Couleur</gui></p>
+		<p>Définit la couleur par défaut du texte.</p>
+		</item>
+		<item>
+		<p><gui>Alignement</gui></p>
+		<p>Définit l'alignement par défaut du texte : à gauche, centré ou à droite.</p>
+		</item>
+	   </list>
+	</section>
+
+	<section>
+	<title>Ligne</title>
+	<p>Utilisez ces contrôles pour définir les propriétés par défaut des lignes et bordures de nouveaux objets. Ces propriétés sont :</p>
+	   <list>
+		<item>
+		<p><gui>Épaisseur</gui></p>
+		<p>Définit l'épaisseur par défaut des lignes.</p>
+		</item>
+		<item>
+		<p><gui>Couleur</gui></p>
+		<p>Définit la couleur par défaut des lignes.</p>
+		</item>
+	   </list>
+	</section>
+
+	<section>
+	<title>Remplissage</title>
+	<p>Utilisez ce contrôle pour définir la couleur de remplissage par défaut des nouveaux objets. Cette propriété est :</p>
+	   <list>
+		<item>
+		<p><gui>Couleur</gui></p>
+		<p>Définit la couleur par défaut des remplissages.</p>
+		</item>
+	   </list>
+	</section>
+	</section>
+
+</page>

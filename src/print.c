@@ -1,26 +1,23 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  print.c
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  print.c:  Print module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2007  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #include <config.h>
 
 #include "print.h"
@@ -30,11 +27,12 @@
 #include <time.h>
 #include <ctype.h>
 
+#include <libglabels.h>
 #include "label.h"
-#include <libglabels/template.h>
 #include "cairo-label-path.h"
 
 #include "debug.h"
+
 
 /*===========================================*/
 /* Private macros and constants.             */
@@ -47,6 +45,7 @@
 #define TICK_OFFSET  2.25
 #define TICK_LENGTH 18.0
 
+
 /*=========================================================================*/
 /* Private types.                                                          */
 /*=========================================================================*/
@@ -55,8 +54,8 @@ typedef struct _PrintInfo {
         cairo_t    *cr;
 
 	/* gLabels Template */
-	lglTemplate *template;
-	gboolean     label_rotate_flag;
+	const lglTemplate *template;
+	gboolean           rotate_flag;
 
 	/* page size */
 	gdouble page_width;
@@ -91,7 +90,6 @@ static void       clip_to_outline             (PrintInfo        *pi,
 					       glLabel          *label);
 
 
-
 /*****************************************************************************/
 /* Print simple sheet (no merge data) command.                               */
 /*****************************************************************************/
@@ -136,6 +134,7 @@ gl_print_simple_sheet (glLabel          *label,
 
 	gl_debug (DEBUG_PRINT, "END");
 }
+
 
 /*****************************************************************************/
 /* Print collated merge sheet command                                        */
@@ -227,6 +226,7 @@ gl_print_collated_merge_sheet   (glLabel          *label,
 
 	gl_debug (DEBUG_PRINT, "END");
 }
+
 
 /*****************************************************************************/
 /* Print uncollated merge sheet command                                      */
@@ -321,6 +321,7 @@ gl_print_uncollated_merge_sheet (glLabel          *label,
 	gl_debug (DEBUG_PRINT, "END");
 }
 
+
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  new print info structure                                        */
 /*---------------------------------------------------------------------------*/
@@ -329,31 +330,37 @@ print_info_new (cairo_t          *cr,
 		glLabel          *label)
 {
 	PrintInfo            *pi = g_new0 (PrintInfo, 1);
+        const lglTemplate    *template;
+        gboolean              rotate_flag;
 
 	gl_debug (DEBUG_PRINT, "START");
 
 	g_return_val_if_fail (label && GL_IS_LABEL (label), NULL);
 
-	g_return_val_if_fail (label->template, NULL);
-	g_return_val_if_fail (label->template->paper_id, NULL);
-	g_return_val_if_fail (label->template->page_width > 0, NULL);
-	g_return_val_if_fail (label->template->page_height > 0, NULL);
+        template    = gl_label_get_template (label);
+        rotate_flag = gl_label_get_rotate_flag (label);
+
+	g_return_val_if_fail (template, NULL);
+	g_return_val_if_fail (template->paper_id, NULL);
+	g_return_val_if_fail (template->page_width > 0, NULL);
+	g_return_val_if_fail (template->page_height > 0, NULL);
 
 	pi->cr = cr;
 
 	gl_debug (DEBUG_PRINT,
-		  "setting page size = \"%s\"", label->template->paper_id);
+		  "setting page size = \"%s\"", template->paper_id);
 
-	pi->page_width  = label->template->page_width;
-	pi->page_height = label->template->page_height;
+	pi->page_width  = template->page_width;
+	pi->page_height = template->page_height;
 
-	pi->template = label->template;
-	pi->label_rotate_flag = label->rotate_flag;
+	pi->template = template;
+	pi->rotate_flag = rotate_flag;
 
 	gl_debug (DEBUG_PRINT, "END");
 
 	return pi;
 }
+
 
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  free print info structure                                       */
@@ -369,6 +376,7 @@ print_info_free (PrintInfo **pi)
 
 	gl_debug (DEBUG_PRINT, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Print crop tick marks.                                          */
@@ -478,6 +486,7 @@ print_crop_marks (PrintInfo *pi)
 	gl_debug (DEBUG_PRINT, "END");
 }
 
+
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Print i'th label.                                               */
 /*---------------------------------------------------------------------------*/
@@ -490,12 +499,9 @@ print_label (PrintInfo     *pi,
 	     gboolean       outline_flag,
 	     gboolean       reverse_flag)
 {
-	const lglTemplateFrame *frame;
 	gdouble                 width, height;
 
 	gl_debug (DEBUG_PRINT, "START");
-
-        frame = (lglTemplateFrame *)pi->template->frames->data;
 
 	gl_label_get_size (label, &width, &height);
 
@@ -505,15 +511,17 @@ print_label (PrintInfo     *pi,
 	/* of the current label */
 	cairo_translate (pi->cr, x, y);
 
+	cairo_save (pi->cr);
+
 	clip_to_outline (pi, label);
 
 	cairo_save (pi->cr);
 
         /* Special transformations. */
-	if (label->rotate_flag) {
+	if (pi->rotate_flag) {
 		gl_debug (DEBUG_PRINT, "Rotate flag set");
-		cairo_rotate (pi->cr, -M_PI/2.0);
-		cairo_translate (pi->cr, -width, 0.0);
+		cairo_rotate (pi->cr, G_PI/2.0);
+		cairo_translate (pi->cr, 0.0, -height);
 	}
 	if ( reverse_flag ) {
 		cairo_translate (pi->cr, width, 0.0);
@@ -524,6 +532,8 @@ print_label (PrintInfo     *pi,
 
 	cairo_restore (pi->cr); /* From special transformations. */
 
+	cairo_restore (pi->cr); /* From clip to outline. */
+
 	if (outline_flag) {
 		draw_outline (pi, label);
 	}
@@ -532,6 +542,7 @@ print_label (PrintInfo     *pi,
 
 	gl_debug (DEBUG_PRINT, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Draw outline.                                                   */
@@ -547,7 +558,7 @@ draw_outline (PrintInfo *pi,
 	cairo_set_source_rgb (pi->cr, OUTLINE_RGB_ARGS);
 	cairo_set_line_width (pi->cr, OUTLINE_WIDTH);
 
-        gl_cairo_label_path (pi->cr, label->template, FALSE, FALSE);
+        gl_cairo_label_path (pi->cr, pi->template, FALSE, FALSE);
 
         cairo_stroke (pi->cr);
 
@@ -555,6 +566,7 @@ draw_outline (PrintInfo *pi,
 
 	gl_debug (DEBUG_PRINT, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Clip to outline.                                                */
@@ -565,7 +577,7 @@ clip_to_outline (PrintInfo *pi,
 {
 	gl_debug (DEBUG_PRINT, "START");
 
-        gl_cairo_label_path (pi->cr, label->template, FALSE, TRUE);
+        gl_cairo_label_path (pi->cr, pi->template, FALSE, TRUE);
 
         cairo_set_fill_rule (pi->cr, CAIRO_FILL_RULE_EVEN_ODD);
         cairo_clip (pi->cr);
@@ -573,3 +585,15 @@ clip_to_outline (PrintInfo *pi,
 	gl_debug (DEBUG_PRINT, "END");
 }
 
+
+
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

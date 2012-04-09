@@ -1,33 +1,27 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  window.h
+ *  Copyright (C) 2002-2009  Jim Evins <evins@snaught.com>.
  *
- *  window.h:  a gLabels app window
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2002  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #ifndef __WINDOW_H__
 #define __WINDOW_H__
 
-#include <gtk/gtkwindow.h>
-#include <gtk/gtkuimanager.h>
-#include <gtk/gtkmenu.h>
+#include <gtk/gtk.h>
 
 #include "view.h"
 #include "label.h"
@@ -40,13 +34,13 @@ G_BEGIN_DECLS
 
 #define GL_TYPE_WINDOW (gl_window_get_type ())
 #define GL_WINDOW(obj) \
-        (GTK_CHECK_CAST((obj), GL_TYPE_WINDOW, glWindow ))
+        (G_TYPE_CHECK_INSTANCE_CAST((obj), GL_TYPE_WINDOW, glWindow ))
 #define GL_WINDOW_CLASS(klass) \
-        (GTK_CHECK_CLASS_CAST ((klass), GL_TYPE_WINDOW, glWindowClass))
+        (G_TYPE_CHECK_CLASS_CAST ((klass), GL_TYPE_WINDOW, glWindowClass))
 #define GL_IS_WINDOW(obj) \
-        (GTK_CHECK_TYPE ((obj), GL_TYPE_WINDOW))
+        (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GL_TYPE_WINDOW))
 #define GL_IS_WINDOW_CLASS(klass) \
-        (GTK_CHECK_CLASS_TYPE ((klass), GL_TYPE_WINDOW))
+        (G_TYPE_CHECK_CLASS_TYPE ((klass), GL_TYPE_WINDOW))
 
 typedef struct _glWindow      glWindow;
 typedef struct _glWindowClass glWindowClass;
@@ -56,10 +50,11 @@ struct _glWindow {
 
 	GtkUIManager            *ui;
 
-	GtkWidget               *view;
-
 	GtkWidget               *hbox;
 
+	glLabel                 *label;
+
+	GtkWidget               *view;
 	glUIPropertyBar         *property_bar;
 	glUISidebar             *sidebar;
 
@@ -99,3 +94,14 @@ const GList *gl_window_get_window_list   (void);
 G_END_DECLS
 
 #endif /* __WINDOW_H__ */
+
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

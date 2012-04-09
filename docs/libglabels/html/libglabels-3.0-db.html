@@ -1,0 +1,1024 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Database</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="LibGlabels 3.0 Reference Manual">
+<link rel="up" href="ch01.html" title="Basic LibGlabels Usage">
+<link rel="prev" href="ch01.html" title="Basic LibGlabels Usage">
+<link rel="next" href="libglabels-3.0-template.html" title="The lglTemplate Structure">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">LibGlabels 3.0 Reference Manual</th>
+<td><a accesskey="n" href="libglabels-3.0-template.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libglabels-3.0-db.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#libglabels-3.0-db.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="libglabels-3.0-db"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libglabels-3.0-db.top_of_page"></a>Database</span></h2>
+<p>Database — Database of pre-defined templates</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="libglabels-3.0-db.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;libglabels/lgl-db.h&gt;
+
+enum                <a class="link" href="libglabels-3.0-db.html#lglDbRegStatus" title="enum lglDbRegStatus">lglDbRegStatus</a>;
+enum                <a class="link" href="libglabels-3.0-db.html#lglDbDeleteStatus" title="enum lglDbDeleteStatus">lglDbDeleteStatus</a>;
+
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-init" title="lgl_db_init ()">lgl_db_init</a>                         (<em class="parameter"><code><span class="type">void</span></code></em>);
+
+<span class="returnvalue">void</span>                (<a class="link" href="libglabels-3.0-db.html#lglDbNotifyFunc" title="lglDbNotifyFunc ()">*lglDbNotifyFunc</a>)                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gulong"><span class="returnvalue">gulong</span></a>              <a class="link" href="libglabels-3.0-db.html#lgl-db-notify-add" title="lgl_db_notify_add ()">lgl_db_notify_add</a>                   (<em class="parameter"><code><a class="link" href="libglabels-3.0-db.html#lglDbNotifyFunc" title="lglDbNotifyFunc ()"><span class="type">lglDbNotifyFunc</span></a> func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-notify-remove" title="lgl_db_notify_remove ()">lgl_db_notify_remove</a>                (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> id</code></em>);
+
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-get-paper-id-list" title="lgl_db_get_paper_id_list ()">lgl_db_get_paper_id_list</a>            (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-free-paper-id-list" title="lgl_db_free_paper_id_list ()">lgl_db_free_paper_id_list</a>           (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *ids</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-get-paper-name-list" title="lgl_db_get_paper_name_list ()">lgl_db_get_paper_name_list</a>          (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-free-paper-name-list" title="lgl_db_free_paper_name_list ()">lgl_db_free_paper_name_list</a>         (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *names</code></em>);
+<a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *          <a class="link" href="libglabels-3.0-db.html#lgl-db-lookup-paper-from-id" title="lgl_db_lookup_paper_from_id ()">lgl_db_lookup_paper_from_id</a>         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);
+<a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *          <a class="link" href="libglabels-3.0-db.html#lgl-db-lookup-paper-from-name" title="lgl_db_lookup_paper_from_name ()">lgl_db_lookup_paper_from_name</a>       (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-lookup-paper-id-from-name" title="lgl_db_lookup_paper_id_from_name ()">lgl_db_lookup_paper_id_from_name</a>    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-lookup-paper-name-from-id" title="lgl_db_lookup_paper_name_from_id ()">lgl_db_lookup_paper_name_from_id</a>    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="libglabels-3.0-db.html#lgl-db-is-paper-id-known" title="lgl_db_is_paper_id_known ()">lgl_db_is_paper_id_known</a>            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="libglabels-3.0-db.html#lgl-db-is-paper-id-other" title="lgl_db_is_paper_id_other ()">lgl_db_is_paper_id_other</a>            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);
+
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-get-category-id-list" title="lgl_db_get_category_id_list ()">lgl_db_get_category_id_list</a>         (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-free-category-id-list" title="lgl_db_free_category_id_list ()">lgl_db_free_category_id_list</a>        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *ids</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-get-category-name-list" title="lgl_db_get_category_name_list ()">lgl_db_get_category_name_list</a>       (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-free-category-name-list" title="lgl_db_free_category_name_list ()">lgl_db_free_category_name_list</a>      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *names</code></em>);
+<a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="returnvalue">lglCategory</span></a> *       <a class="link" href="libglabels-3.0-db.html#lgl-db-lookup-category-from-id" title="lgl_db_lookup_category_from_id ()">lgl_db_lookup_category_from_id</a>      (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);
+<a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="returnvalue">lglCategory</span></a> *       <a class="link" href="libglabels-3.0-db.html#lgl-db-lookup-category-from-name" title="lgl_db_lookup_category_from_name ()">lgl_db_lookup_category_from_name</a>    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-lookup-category-id-from-name" title="lgl_db_lookup_category_id_from_name ()">lgl_db_lookup_category_id_from_name</a> (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-lookup-category-name-from-id" title="lgl_db_lookup_category_name_from_id ()">lgl_db_lookup_category_name_from_id</a> (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="libglabels-3.0-db.html#lgl-db-is-category-id-known" title="lgl_db_is_category_id_known ()">lgl_db_is_category_id_known</a>         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);
+
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-get-brand-list" title="lgl_db_get_brand_list ()">lgl_db_get_brand_list</a>               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *paper_id</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *category_id</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-free-brand-list" title="lgl_db_free_brand_list ()">lgl_db_free_brand_list</a>              (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *brands</code></em>);
+
+<a class="link" href="libglabels-3.0-db.html#lglDbRegStatus" title="enum lglDbRegStatus"><span class="returnvalue">lglDbRegStatus</span></a>      <a class="link" href="libglabels-3.0-db.html#lgl-db-register-template" title="lgl_db_register_template ()">lgl_db_register_template</a>            (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> *template</code></em>);
+<a class="link" href="libglabels-3.0-db.html#lglDbDeleteStatus" title="enum lglDbDeleteStatus"><span class="returnvalue">lglDbDeleteStatus</span></a>   <a class="link" href="libglabels-3.0-db.html#lgl-db-delete-template-by-brand-part" title="lgl_db_delete_template_by_brand_part ()">lgl_db_delete_template_by_brand_part</a>
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *brand</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>);
+<a class="link" href="libglabels-3.0-db.html#lglDbDeleteStatus" title="enum lglDbDeleteStatus"><span class="returnvalue">lglDbDeleteStatus</span></a>   <a class="link" href="libglabels-3.0-db.html#lgl-db-delete-template-by-name" title="lgl_db_delete_template_by_name ()">lgl_db_delete_template_by_name</a>      (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="libglabels-3.0-db.html#lgl-db-does-template-exist" title="lgl_db_does_template_exist ()">lgl_db_does_template_exist</a>          (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *brand</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="libglabels-3.0-db.html#lgl-db-does-template-name-exist" title="lgl_db_does_template_name_exist ()">lgl_db_does_template_name_exist</a>     (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-get-template-name-list-all" title="lgl_db_get_template_name_list_all ()">lgl_db_get_template_name_list_all</a>   (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *brand</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *paper_id</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *category_id</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-get-similar-template-name-list" title="lgl_db_get_similar_template_name_list ()">lgl_db_get_similar_template_name_list</a>
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-free-template-name-list" title="lgl_db_free_template_name_list ()">lgl_db_free_template_name_list</a>      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *names</code></em>);
+<a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="returnvalue">lglTemplate</span></a> *       <a class="link" href="libglabels-3.0-db.html#lgl-db-lookup-template-from-name" title="lgl_db_lookup_template_from_name ()">lgl_db_lookup_template_from_name</a>    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="returnvalue">lglTemplate</span></a> *       <a class="link" href="libglabels-3.0-db.html#lgl-db-lookup-template-from-brand-part" title="lgl_db_lookup_template_from_brand_part ()">lgl_db_lookup_template_from_brand_part</a>
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *brand</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>);
+
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             <a class="link" href="libglabels-3.0-db.html#lgl-db-get-vendor-name-list" title="lgl_db_get_vendor_name_list ()">lgl_db_get_vendor_name_list</a>         (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-free-vendor-name-list" title="lgl_db_free_vendor_name_list ()">lgl_db_free_vendor_name_list</a>        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *names</code></em>);
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="libglabels-3.0-db.html#lgl-db-is-vendor-name-known" title="lgl_db_is_vendor_name_known ()">lgl_db_is_vendor_name_known</a>         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+<a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="returnvalue">lglVendor</span></a> *         <a class="link" href="libglabels-3.0-db.html#lgl-db-lookup-vendor-from-name" title="lgl_db_lookup_vendor_from_name ()">lgl_db_lookup_vendor_from_name</a>      (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);
+
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-print-known-papers" title="lgl_db_print_known_papers ()">lgl_db_print_known_papers</a>           (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-print-known-categories" title="lgl_db_print_known_categories ()">lgl_db_print_known_categories</a>       (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-print-known-templates" title="lgl_db_print_known_templates ()">lgl_db_print_known_templates</a>        (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-db.html#lgl-db-print-known-vendors" title="lgl_db_print_known_vendors ()">lgl_db_print_known_vendors</a>          (<em class="parameter"><code><span class="type">void</span></code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="libglabels-3.0-db.description"></a><h2>Description</h2>
+<p>
+This section describes a set of functions to locate and add templates and related information in
+the LibGlabels template database.
+</p>
+</div>
+<div class="refsect1">
+<a name="libglabels-3.0-db.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="lglDbRegStatus"></a><h3>enum lglDbRegStatus</h3>
+<pre class="programlisting">typedef enum
+{
+        LGL_DB_REG_OK                =  0,
+        LGL_DB_REG_BAD_PAPER_ID      = -1,
+        LGL_DB_REG_BRAND_PART_EXISTS = -2,
+        LGL_DB_REG_FILE_WRITE_ERROR  = -3
+} lglDbRegStatus;
+</pre>
+<p>
+This enumeration defines a set of possible return values for <a class="link" href="libglabels-3.0-db.html#lgl-db-register-template" title="lgl_db_register_template ()"><code class="function">lgl_db_register_template()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="LGL-DB-REG-OK:CAPS"></a><span class="term"><code class="literal">LGL_DB_REG_OK</code></span></p></td>
+<td>Registration successful.
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-DB-REG-BAD-PAPER-ID:CAPS"></a><span class="term"><code class="literal">LGL_DB_REG_BAD_PAPER_ID</code></span></p></td>
+<td> Registration failed because paper id is unknown.
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-DB-REG-BRAND-PART-EXISTS:CAPS"></a><span class="term"><code class="literal">LGL_DB_REG_BRAND_PART_EXISTS</code></span></p></td>
+<td>Registration failed because template with same brand and part name/number already exists.
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-DB-REG-FILE-WRITE-ERROR:CAPS"></a><span class="term"><code class="literal">LGL_DB_REG_FILE_WRITE_ERROR</code></span></p></td>
+<td>Registration failed because an error while writing to disk.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lglDbDeleteStatus"></a><h3>enum lglDbDeleteStatus</h3>
+<pre class="programlisting">typedef enum
+{
+        LGL_DB_DELETE_OK                =  0,
+        LGL_DB_DELETE_DOES_NOT_EXIST    = -1,
+        LGL_DB_DELETE_NOT_USER_DEFINED  = -2,
+        LGL_DB_DELETE_FILE_ERROR        = -3
+} lglDbDeleteStatus;
+</pre>
+<p>
+This enumeration defines a set of possible return values for <a class="link" href="libglabels-3.0-db.html#lgl-db-delete-template-by-name" title="lgl_db_delete_template_by_name ()"><code class="function">lgl_db_delete_template_by_name()</code></a> or <a class="link" href="libglabels-3.0-db.html#lgl-db-delete-template-by-brand-part" title="lgl_db_delete_template_by_brand_part ()"><code class="function">lgl_db_delete_template_by_brand_part()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="LGL-DB-DELETE-OK:CAPS"></a><span class="term"><code class="literal">LGL_DB_DELETE_OK</code></span></p></td>
+<td>Deletion successful.
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-DB-DELETE-DOES-NOT-EXIST:CAPS"></a><span class="term"><code class="literal">LGL_DB_DELETE_DOES_NOT_EXIST</code></span></p></td>
+<td>Deletion failed because template with given brand and part name/number does not exist.
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-DB-DELETE-NOT-USER-DEFINED:CAPS"></a><span class="term"><code class="literal">LGL_DB_DELETE_NOT_USER_DEFINED</code></span></p></td>
+<td>Deletion failed because given template is not a user defined template.
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-DB-DELETE-FILE-ERROR:CAPS"></a><span class="term"><code class="literal">LGL_DB_DELETE_FILE_ERROR</code></span></p></td>
+<td>Deletion failed because of an error while attempting to remove template from disk.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-init"></a><h3>lgl_db_init ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_init                         (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Initialize all libglabels subsystems.  It is not necessary for an application to call
+<a class="link" href="libglabels-3.0-db.html#lgl-db-init" title="lgl_db_init ()"><code class="function">lgl_db_init()</code></a>, because libglabels will initialize on demand.  An application programmer may
+choose to call <a class="link" href="libglabels-3.0-db.html#lgl-db-init" title="lgl_db_init ()"><code class="function">lgl_db_init()</code></a> at startup to minimize the impact of the first libglabels call
+on GUI response time.
+</p>
+<p>
+This function initializes its paper definitions, category definitions, vendor definitions,
+and its template database. It will search both system and user template directories to locate
+this data.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lglDbNotifyFunc"></a><h3>lglDbNotifyFunc ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                (*lglDbNotifyFunc)                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+Defines the type of notify callback function to be called when database changes.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>Pointer to user data that is passed to the notify function.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-notify-add"></a><h3>lgl_db_notify_add ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gulong"><span class="returnvalue">gulong</span></a>              lgl_db_notify_add                   (<em class="parameter"><code><a class="link" href="libglabels-3.0-db.html#lglDbNotifyFunc" title="lglDbNotifyFunc ()"><span class="type">lglDbNotifyFunc</span></a> func</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>
+Register a notification callback function to be called when the database changes.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>Callback function to be called when database changes.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>Passback user data to supply to callback function.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>an ID for this notification registration.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-notify-remove"></a><h3>lgl_db_notify_remove ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_notify_remove                (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> id</code></em>);</pre>
+<p>
+Cancel a previous registration a notification callback function.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>ID of notification registration to cancel (see <a class="link" href="libglabels-3.0-db.html#lgl-db-notify-add" title="lgl_db_notify_add ()"><code class="function">lgl_db_notify_add()</code></a>).</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-get-paper-id-list"></a><h3>lgl_db_get_paper_id_list ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             lgl_db_get_paper_id_list            (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Get a list of all paper ids known to libglabels.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a list of paper ids.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-free-paper-id-list"></a><h3>lgl_db_free_paper_id_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_free_paper_id_list           (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *ids</code></em>);</pre>
+<p>
+Free up all storage associated with an id list obtained with
+<a class="link" href="libglabels-3.0-db.html#lgl-db-get-paper-id-list" title="lgl_db_get_paper_id_list ()"><code class="function">lgl_db_get_paper_id_list()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>ids</code></em> :</span></p></td>
+<td>List of id strings to be freed.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-get-paper-name-list"></a><h3>lgl_db_get_paper_name_list ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             lgl_db_get_paper_name_list          (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Get a list of all localized paper names known to libglabels.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a list of localized paper names.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-free-paper-name-list"></a><h3>lgl_db_free_paper_name_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_free_paper_name_list         (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *names</code></em>);</pre>
+<p>
+Free up all storage associated with a name list obtained with
+<a class="link" href="libglabels-3.0-db.html#lgl-db-get-paper-name-list" title="lgl_db_get_paper_name_list ()"><code class="function">lgl_db_get_paper_name_list()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>names</code></em> :</span></p></td>
+<td>List of localized paper name strings to be freed.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-lookup-paper-from-id"></a><h3>lgl_db_lookup_paper_from_id ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *          lgl_db_lookup_paper_from_id         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+<p>
+Lookup paper definition from id string.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>paper id string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to a newly allocated <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-lookup-paper-from-name"></a><h3>lgl_db_lookup_paper_from_name ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *          lgl_db_lookup_paper_from_name       (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Lookup paper definition from localized paper name string.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>localized paper name string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to a newly allocated <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-lookup-paper-id-from-name"></a><h3>lgl_db_lookup_paper_id_from_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             lgl_db_lookup_paper_id_from_name    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Lookup paper name string from localized paper name string.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>localized paper name stringp</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to a newly allocated id string.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-lookup-paper-name-from-id"></a><h3>lgl_db_lookup_paper_name_from_id ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             lgl_db_lookup_paper_name_from_id    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+<p>
+Lookup localized paper name string from paper id string.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>paper id string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to a newly allocated localized paper name string.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-is-paper-id-known"></a><h3>lgl_db_is_paper_id_known ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            lgl_db_is_paper_id_known            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+<p>
+Determine if given paper id is known to libglabels.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>paper id to test</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if id is known, otherwise FALSE.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-is-paper-id-other"></a><h3>lgl_db_is_paper_id_other ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            lgl_db_is_paper_id_other            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+<p>
+Determine if given paper id is the special id "Other."
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>paper id to test</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if id is "Other", otherwise FALSE.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-get-category-id-list"></a><h3>lgl_db_get_category_id_list ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             lgl_db_get_category_id_list         (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Get a list of all category ids known to libglabels.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a list of category ids.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-free-category-id-list"></a><h3>lgl_db_free_category_id_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_free_category_id_list        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *ids</code></em>);</pre>
+<p>
+Free up all storage associated with an id list obtained with
+<a class="link" href="libglabels-3.0-db.html#lgl-db-get-category-id-list" title="lgl_db_get_category_id_list ()"><code class="function">lgl_db_get_category_id_list()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>ids</code></em> :</span></p></td>
+<td>List of id strings to be freed.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-get-category-name-list"></a><h3>lgl_db_get_category_name_list ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             lgl_db_get_category_name_list       (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Get a list of all localized category names known to libglabels.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a list of localized category names.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-free-category-name-list"></a><h3>lgl_db_free_category_name_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_free_category_name_list      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *names</code></em>);</pre>
+<p>
+Free up all storage associated with a name list obtained with
+<a class="link" href="libglabels-3.0-db.html#lgl-db-get-category-name-list" title="lgl_db_get_category_name_list ()"><code class="function">lgl_db_get_category_name_list()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>names</code></em> :</span></p></td>
+<td>List of localized category name strings to be freed.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-lookup-category-from-id"></a><h3>lgl_db_lookup_category_from_id ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="returnvalue">lglCategory</span></a> *       lgl_db_lookup_category_from_id      (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+<p>
+Lookup category definition from id string.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>category id string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to a newly allocated <a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="type">lglCategory</span></a> structure.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-lookup-category-from-name"></a><h3>lgl_db_lookup_category_from_name ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="returnvalue">lglCategory</span></a> *       lgl_db_lookup_category_from_name    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Lookup category definition from localized category name string.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>localized category name string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to a newly allocated <a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="type">lglCategory</span></a> structure.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-lookup-category-id-from-name"></a><h3>lgl_db_lookup_category_id_from_name ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             lgl_db_lookup_category_id_from_name (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Lookup category name string from localized category name string.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>localized category name stringp</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to a newly allocated id string.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-lookup-category-name-from-id"></a><h3>lgl_db_lookup_category_name_from_id ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             lgl_db_lookup_category_name_from_id (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+<p>
+Lookup localized category name string from category id string.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>category id string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to a newly allocated localized category name string.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-is-category-id-known"></a><h3>lgl_db_is_category_id_known ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            lgl_db_is_category_id_known         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+<p>
+Determine if given category id is known to libglabels.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>category id to test</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if id is known, otherwise FALSE.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-get-brand-list"></a><h3>lgl_db_get_brand_list ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             lgl_db_get_brand_list               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *paper_id</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *category_id</code></em>);</pre>
+<p>
+Get a list of all valid brands of templates in the template database.
+Results can be filtered by page size and/or template category.  A list of valid page
+sizes can be obtained using <a class="link" href="libglabels-3.0-db.html#lgl-db-get-paper-id-list" title="lgl_db_get_paper_id_list ()"><code class="function">lgl_db_get_paper_id_list()</code></a>.  A list of valid template
+categories can be obtained using <a class="link" href="libglabels-3.0-db.html#lgl-db-get-category-id-list" title="lgl_db_get_category_id_list ()"><code class="function">lgl_db_get_category_id_list()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>paper_id</code></em> :</span></p></td>
+<td>If non NULL, limit results to given page size.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>category_id</code></em> :</span></p></td>
+<td>If non NULL, limit results to given template category.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a list of brands</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-free-brand-list"></a><h3>lgl_db_free_brand_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_free_brand_list              (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *brands</code></em>);</pre>
+<p>
+Free up all storage associated with a list of template names obtained with
+<a class="link" href="libglabels-3.0-db.html#lgl-db-get-brand-list" title="lgl_db_get_brand_list ()"><code class="function">lgl_db_get_brand_list()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>brands</code></em> :</span></p></td>
+<td>List of template brand strings to be freed.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-register-template"></a><h3>lgl_db_register_template ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-db.html#lglDbRegStatus" title="enum lglDbRegStatus"><span class="returnvalue">lglDbRegStatus</span></a>      lgl_db_register_template            (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> *template</code></em>);</pre>
+<p>
+Register a template.  This function adds a template to the template database.
+The template will be stored in an individual XML file in the user template directory.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>Pointer to a template structure to add to database.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Status of registration attempt (<a class="link" href="libglabels-3.0-db.html#lglDbRegStatus" title="enum lglDbRegStatus"><span class="type">lglDbRegStatus</span></a>)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-delete-template-by-brand-part"></a><h3>lgl_db_delete_template_by_brand_part ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-db.html#lglDbDeleteStatus" title="enum lglDbDeleteStatus"><span class="returnvalue">lglDbDeleteStatus</span></a>   lgl_db_delete_template_by_brand_part
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *brand</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>);</pre>
+<p>
+Delete a user defined template.  This function deletes a template from
+the template database. The individual XML file in the user template
+directory will also be removed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>brand</code></em> :</span></p></td>
+<td>Brand name or vendor of template to be deleted.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>part</code></em> :</span></p></td>
+<td>Part name or number of template to be deleted.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Status of registration attempt (<a class="link" href="libglabels-3.0-db.html#lglDbDeleteStatus" title="enum lglDbDeleteStatus"><span class="type">lglDbDeleteStatus</span></a>)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-delete-template-by-name"></a><h3>lgl_db_delete_template_by_name ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-db.html#lglDbDeleteStatus" title="enum lglDbDeleteStatus"><span class="returnvalue">lglDbDeleteStatus</span></a>   lgl_db_delete_template_by_name      (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Delete a user defined template.  This function deletes a template from
+the template database. The individual XML file in the user template
+directory will also be removed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>Name of template to be deleted.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Status of registration attempt (<a class="link" href="libglabels-3.0-db.html#lglDbDeleteStatus" title="enum lglDbDeleteStatus"><span class="type">lglDbDeleteStatus</span></a>)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-does-template-exist"></a><h3>lgl_db_does_template_exist ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            lgl_db_does_template_exist          (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *brand</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>);</pre>
+<p>
+This function tests whether a template with the given brand and part name/number exists.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>brand</code></em> :</span></p></td>
+<td>Brand name.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>part</code></em> :</span></p></td>
+<td>Part name/number.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if such a template exists in the database.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-does-template-name-exist"></a><h3>lgl_db_does_template_name_exist ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            lgl_db_does_template_name_exist     (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+This function test whether a template with the given name exists.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>name string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if such a template exists in the database.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-get-template-name-list-all"></a><h3>lgl_db_get_template_name_list_all ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             lgl_db_get_template_name_list_all   (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *brand</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *paper_id</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *category_id</code></em>);</pre>
+<p>
+Get a list of all valid names of templates in the template database.
+Results can be filtered by page size and/or template category.  A list of valid page
+sizes can be obtained using <a class="link" href="libglabels-3.0-db.html#lgl-db-get-paper-id-list" title="lgl_db_get_paper_id_list ()"><code class="function">lgl_db_get_paper_id_list()</code></a>.  A list of valid template
+categories can be obtained using <a class="link" href="libglabels-3.0-db.html#lgl-db-get-category-id-list" title="lgl_db_get_category_id_list ()"><code class="function">lgl_db_get_category_id_list()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>brand</code></em> :</span></p></td>
+<td>If non NULL, limit results to given brand</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>paper_id</code></em> :</span></p></td>
+<td>If non NULL, limit results to given page size.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>category_id</code></em> :</span></p></td>
+<td>If non NULL, limit results to given template category.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a list of template names.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-get-similar-template-name-list"></a><h3>lgl_db_get_similar_template_name_list ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             lgl_db_get_similar_template_name_list
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Get a list of all valid names of templates in the template database that
+have the same size and layout characteristics as the given template.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>Name of template under test.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a list of template names.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-free-template-name-list"></a><h3>lgl_db_free_template_name_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_free_template_name_list      (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *names</code></em>);</pre>
+<p>
+Free up all storage associated with a list of template names obtained with
+<a class="link" href="libglabels-3.0-db.html#lgl-db-get-template-name-list-all" title="lgl_db_get_template_name_list_all ()"><code class="function">lgl_db_get_template_name_list_all()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>names</code></em> :</span></p></td>
+<td>List of template name strings to be freed.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-lookup-template-from-name"></a><h3>lgl_db_lookup_template_from_name ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="returnvalue">lglTemplate</span></a> *       lgl_db_lookup_template_from_name    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Lookup template in template database from name string.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>name string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to a newly allocated <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> structure.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-lookup-template-from-brand-part"></a><h3>lgl_db_lookup_template_from_brand_part ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="returnvalue">lglTemplate</span></a> *       lgl_db_lookup_template_from_brand_part
+                                                        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *brand</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *part</code></em>);</pre>
+<p>
+Lookup template in template database from brand and part strings.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>brand</code></em> :</span></p></td>
+<td>brand name string</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>part</code></em> :</span></p></td>
+<td>part name string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to a newly allocated <a class="link" href="libglabels-3.0-template.html#lglTemplate" title="struct lglTemplate"><span class="type">lglTemplate</span></a> structure.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-get-vendor-name-list"></a><h3>lgl_db_get_vendor_name_list ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             lgl_db_get_vendor_name_list         (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Get a list of all localized vendor names known to libglabels.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a list of localized vendor names.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-free-vendor-name-list"></a><h3>lgl_db_free_vendor_name_list ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_free_vendor_name_list        (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *names</code></em>);</pre>
+<p>
+Free up all storage associated with a name list obtained with
+<a class="link" href="libglabels-3.0-db.html#lgl-db-get-vendor-name-list" title="lgl_db_get_vendor_name_list ()"><code class="function">lgl_db_get_vendor_name_list()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>names</code></em> :</span></p></td>
+<td>List of localized vendor name strings to be freed.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-is-vendor-name-known"></a><h3>lgl_db_is_vendor_name_known ()</h3>
+<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            lgl_db_is_vendor_name_known         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Determine if given vendor id is known to libglabels.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>vendor name to test</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>TRUE if id is known, otherwise FALSE.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-lookup-vendor-from-name"></a><h3>lgl_db_lookup_vendor_from_name ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="returnvalue">lglVendor</span></a> *         lgl_db_lookup_vendor_from_name      (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+<p>
+Lookup vendor definition from localized vendor name string.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>localized vendor name string</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>pointer to a newly allocated <a class="link" href="libglabels-3.0-vendor.html#lglVendor" title="struct lglVendor"><span class="type">lglVendor</span></a> structure.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-print-known-papers"></a><h3>lgl_db_print_known_papers ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_print_known_papers           (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+For debugging purposes: print a list of all paper definitions known to
+libglabels.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-print-known-categories"></a><h3>lgl_db_print_known_categories ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_print_known_categories       (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+For debugging purposes: print a list of all category definitions known to
+libglabels.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-print-known-templates"></a><h3>lgl_db_print_known_templates ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_print_known_templates        (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Print all known templates (for debugging purposes).
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-db-print-known-vendors"></a><h3>lgl_db_print_known_vendors ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_db_print_known_vendors          (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+For debugging purposes: print a list of all vendor definitions known to
+libglabels.
+</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

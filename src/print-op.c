@@ -1,45 +1,39 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  print-op.c
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  print-op.c:  Print operation module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2007  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #include <config.h>
 
 #include "print-op.h"
 
 #include <glib/gi18n.h>
-#include <glade/glade-xml.h>
+#include <gtk/gtk.h>
 #include <math.h>
 #include <time.h>
 #include <ctype.h>
-#include <gtk/gtktogglebutton.h>
 
-#include <libglabels/db.h>
+#include <libglabels.h>
 #include "print.h"
 #include "label.h"
 
-#include "wdgt-print-copies.h"
-#include "wdgt-print-merge.h"
-
 #include "debug.h"
+
 
 /*===========================================*/
 /* Private data types                        */
@@ -48,18 +42,6 @@
 struct _glPrintOpPrivate {
 
 	glLabel   *label;
-
-	GtkWidget *simple_frame;
-	GtkWidget *copies_vbox;
-	GtkWidget *copies;
-
-	GtkWidget *merge_frame;
-	GtkWidget *prmerge_vbox;
-	GtkWidget *prmerge;
-
-	GtkWidget *outline_check;
-	GtkWidget *reverse_check;
-	GtkWidget *crop_marks_check;
 
         gboolean   force_outline_flag;
 
@@ -101,35 +83,15 @@ struct _glPrintOpSettings
 /* Private globals                           */
 /*===========================================*/
 
+
 /*===========================================*/
 /* Local function prototypes                 */
 /*===========================================*/
 
-static void     gl_print_op_finalize      (GObject            *object);
-
-static void     gl_print_op_construct       (glPrintOp          *op,
-                                             glLabel            *label);
-
-static void     gl_print_op_construct_batch (glPrintOp          *op,
-                                             glLabel            *label,
-                                             gchar              *filename,
-                                             gint                n_sheets,
-                                             gint                n_copies,
-                                             gint                first,
-                                             gboolean            outline_flag,
-                                             gboolean            reverse_flag,
-                                             gboolean            crop_marks_flag);
-
+static void     gl_print_op_finalize          (GObject           *object);
 
 static void     set_page_size                 (glPrintOp         *op,
                                                glLabel           *label);
-
-static GObject *create_custom_widget_cb       (GtkPrintOperation *operation,
-                                               gpointer           user_data);
-
-static void     custom_widget_apply_cb        (GtkPrintOperation *operation,
-                                               GtkWidget         *widget,
-                                               gpointer           user_data);
 
 static void     begin_print_cb                (GtkPrintOperation *operation,
                                                GtkPrintContext   *context,
@@ -141,12 +103,11 @@ static void     draw_page_cb                  (GtkPrintOperation *operation,
                                                gpointer           user_data);
 
 
-
-
 /*****************************************************************************/
 /* Boilerplate object stuff.                                                 */
 /*****************************************************************************/
-G_DEFINE_TYPE (glPrintOp, gl_print_op, GTK_TYPE_PRINT_OPERATION);
+G_DEFINE_TYPE (glPrintOp, gl_print_op, GTK_TYPE_PRINT_OPERATION)
+
 
 static void
 gl_print_op_class_init (glPrintOpClass *class)
@@ -159,6 +120,7 @@ gl_print_op_class_init (glPrintOpClass *class)
 
   	object_class->finalize = gl_print_op_finalize;
 }
+
 
 static void
 gl_print_op_init (glPrintOp *op)
@@ -173,10 +135,11 @@ gl_print_op_init (glPrintOp *op)
 
 }
 
+
 static void 
 gl_print_op_finalize (GObject *object)
 {
-	glPrintOp* op = GL_PRINT_OP (object);
+	glPrintOp *op = GL_PRINT_OP (object);
 	
 	gl_debug (DEBUG_PRINT, "");
 
@@ -184,9 +147,7 @@ gl_print_op_finalize (GObject *object)
         g_return_if_fail (GL_IS_PRINT_OP (op));
 	g_return_if_fail (op->priv != NULL);
 
-	if (op->priv->label) {
-		g_object_unref (G_OBJECT(op->priv->label));
-	}
+        g_object_unref (G_OBJECT(op->priv->label));
         g_free (op->priv->filename);
 	g_free (op->priv);
 
@@ -194,6 +155,7 @@ gl_print_op_finalize (GObject *object)
 
 	g_free (op->priv);
 }
+
 
 /*****************************************************************************/
 /* NEW print op.                                                         */
@@ -212,20 +174,26 @@ gl_print_op_new (glLabel      *label)
 	return op;
 }
 
-/*--------------------------------------------------------------------------*/
-/* PRIVATE.  Construct op.                                              */
-/*--------------------------------------------------------------------------*/
-static void
+
+/*****************************************************************************/
+/* Construct print op.                                                       */
+/*****************************************************************************/
+void
 gl_print_op_construct (glPrintOp      *op,
                        glLabel        *label)
 {
+        glMerge                *merge = NULL;
+        const lglTemplate      *template;
         const lglTemplateFrame *frame;
 
 	op->priv->label              = label;
 	op->priv->force_outline_flag = FALSE;
 
-        frame = (lglTemplateFrame *)label->template->frames->data;
+        merge    = gl_label_get_merge (label);
+        template = gl_label_get_template (label);
+        frame    = (lglTemplateFrame *)template->frames->data;
 
+        op->priv->merge_flag         = (merge != NULL);
         op->priv->n_sheets           = 1;
         op->priv->first              = 1;
         op->priv->last               = lgl_template_frame_get_n_labels (frame);
@@ -236,12 +204,6 @@ gl_print_op_construct (glPrintOp      *op,
 	gtk_print_operation_set_custom_tab_label ( GTK_PRINT_OPERATION (op),
 						   _("Labels"));
 
-	g_signal_connect (G_OBJECT (op), "create-custom-widget",
-			  G_CALLBACK (create_custom_widget_cb), label);
-
-	g_signal_connect (G_OBJECT (op), "custom-widget-apply",
-			  G_CALLBACK (custom_widget_apply_cb), label);
-
 	g_signal_connect (G_OBJECT (op), "begin-print",
 			  G_CALLBACK (begin_print_cb), label);
 
@@ -249,37 +211,230 @@ gl_print_op_construct (glPrintOp      *op,
 			  G_CALLBACK (draw_page_cb), label);
 }
 
+
 /*****************************************************************************/
-/* NEW batch print operation.                                                */
+/* Set outline flag/checkbox.                                                */
 /*****************************************************************************/
-glPrintOp *
-gl_print_op_new_batch (glLabel       *label,
-                       gchar         *filename,
-                       gint           n_sheets,
-                       gint           n_copies,
-                       gint           first,
-                       gboolean       outline_flag,
-                       gboolean       reverse_flag,
-                       gboolean       crop_marks_flag)
+void
+gl_print_op_force_outline (glPrintOp *op)
 {
-	glPrintOp *op;
-
-	gl_debug (DEBUG_PRINT, "");
-
-	op = GL_PRINT_OP (g_object_new (GL_TYPE_PRINT_OP, NULL));
-
-	gl_print_op_construct_batch (GL_PRINT_OP(op),
-                                         label,
-                                         filename,
-                                         n_sheets,
-                                         n_copies,
-                                         first,
-                                         outline_flag,
-                                         reverse_flag,
-                                         crop_marks_flag);
-
-	return op;
+        op->priv->force_outline_flag = TRUE;
 }
+
+
+/*****************************************************************************/
+/* Set outline flag/checkbox.                                                */
+/*****************************************************************************/
+gboolean
+gl_print_op_is_outline_forced (glPrintOp *op)
+{
+        return op->priv->force_outline_flag;
+}
+
+
+/*****************************************************************************/
+/* Set job parameters.                                                       */
+/*****************************************************************************/
+void
+gl_print_op_set_filename (glPrintOp *op,
+                          gchar     *filename)
+{
+        gtk_print_operation_set_export_filename (GTK_PRINT_OPERATION (op),
+                                                 filename);
+}
+
+
+void
+gl_print_op_set_n_sheets (glPrintOp *op,
+                          gint       n_sheets)
+{
+        op->priv->n_sheets = n_sheets;
+}
+
+
+void
+gl_print_op_set_n_copies (glPrintOp *op,
+                          gint       n_copies)
+{
+        op->priv->n_copies = n_copies;
+}
+
+
+void
+gl_print_op_set_first (glPrintOp *op,
+                       gint       first)
+{
+        op->priv->first = first;
+}
+
+
+void
+gl_print_op_set_last (glPrintOp *op,
+                      gint       last)
+{
+        op->priv->last = last;
+}
+
+
+void
+gl_print_op_set_collate_flag (glPrintOp *op,
+                              gboolean   collate_flag)
+{
+        op->priv->collate_flag = collate_flag;
+}
+
+
+void
+gl_print_op_set_outline_flag (glPrintOp *op,
+                              gboolean   outline_flag)
+{
+        op->priv->outline_flag = outline_flag;
+}
+
+
+void
+gl_print_op_set_reverse_flag (glPrintOp *op,
+                              gboolean   reverse_flag)
+{
+        op->priv->reverse_flag = reverse_flag;
+}
+
+
+void
+gl_print_op_set_crop_marks_flag (glPrintOp *op,
+                                 gboolean   crop_marks_flag)
+{
+        op->priv->crop_marks_flag = crop_marks_flag;
+}
+
+
+/*****************************************************************************/
+/* Get job parameters.                                                       */
+/*****************************************************************************/
+gchar *
+gl_print_op_get_filename (glPrintOp *op)
+{
+        gchar *filename = NULL;
+
+        g_object_get (G_OBJECT (op),
+                      "export_filename", filename,
+                      NULL);
+
+        return filename;
+}
+
+
+gint
+gl_print_op_get_n_sheets (glPrintOp *op)
+{
+        return op->priv->n_sheets;
+}
+
+
+gint
+gl_print_op_get_n_copies (glPrintOp *op)
+{
+        return op->priv->n_copies;
+}
+
+
+gint
+gl_print_op_get_first (glPrintOp *op)
+{
+        return op->priv->first;
+}
+
+
+gint
+gl_print_op_get_last (glPrintOp *op)
+{
+        return op->priv->last;
+}
+
+
+gboolean
+gl_print_op_get_collate_flag (glPrintOp *op)
+{
+        return op->priv->collate_flag;
+}
+
+
+gboolean
+gl_print_op_get_outline_flag (glPrintOp *op)
+{
+        return op->priv->outline_flag;
+}
+
+
+gboolean
+gl_print_op_get_reverse_flag (glPrintOp *op)
+{
+        return op->priv->reverse_flag;
+}
+
+
+gboolean
+gl_print_op_get_crop_marks_flag (glPrintOp *op)
+{
+        return op->priv->crop_marks_flag;
+}
+
+
+/*--------------------------------------------------------------------------*/
+/* PRIVATE.  Set page size.                                                 */
+/*--------------------------------------------------------------------------*/
+static void
+set_page_size (glPrintOp  *op,
+               glLabel    *label)
+{
+        const lglTemplate *template;
+        GtkPaperSize      *psize;
+        GtkPageSetup      *su;
+        lglPaper          *paper;
+
+	gl_debug (DEBUG_PRINT, "begin");
+
+        template = gl_label_get_template (label);
+        paper = lgl_db_lookup_paper_from_id (template->paper_id);
+
+        if (!paper)
+        {
+                const gchar *name;
+
+                name = gtk_paper_size_get_default ();
+                psize = gtk_paper_size_new (name);
+
+                gl_debug (DEBUG_PRINT, "Using default size = \"%s\"", name);
+        }
+        else if (lgl_db_is_paper_id_other (paper->id))
+        {
+                psize = gtk_paper_size_new_custom (paper->id,
+                                                   paper->name,
+                                                   template->page_width,
+                                                   template->page_height,
+                                                   GTK_UNIT_POINTS);
+                gl_debug (DEBUG_PRINT, "Using custom size = %g x %g points",
+                          template->page_width,
+                          template->page_height);
+
+        }
+        else
+        {
+                psize = gtk_paper_size_new (paper->pwg_size);
+                gl_debug (DEBUG_PRINT, "Using PWG size \"%s\"", paper->pwg_size);
+        }
+        lgl_paper_free (paper);
+
+        su = gtk_page_setup_new ();
+        gtk_page_setup_set_paper_size (su, psize);
+        gtk_print_operation_set_default_page_setup (GTK_PRINT_OPERATION (op), su);
+        g_object_unref (su);
+
+        gtk_paper_size_free (psize);
+
+	gl_debug (DEBUG_PRINT, "end");
+}
+
 
 /*****************************************************************************/
 /* Get print operation settings.                                             */
@@ -310,6 +465,7 @@ gl_print_op_get_settings (glPrintOp         *print_op)
         return settings;
 }
 
+
 /*****************************************************************************/
 /* Set print operation settings.                                             */
 /*****************************************************************************/
@@ -334,7 +490,8 @@ gl_print_op_set_settings (glPrintOp         *print_op,
                 print_op->priv->n_copies         = settings->n_copies;
         }
 
- }
+}
+
 
 /*****************************************************************************/
 /* Free print operation settings structure.                                  */
@@ -354,259 +511,6 @@ gl_print_op_free_settings(glPrintOpSettings *settings)
         }
 }
 
-/*--------------------------------------------------------------------------*/
-/* PRIVATE.  Construct op.                                                  */
-/*--------------------------------------------------------------------------*/
-static void
-gl_print_op_construct_batch (glPrintOp      *op,
-                             glLabel        *label,
-                             gchar          *filename,
-                             gint            n_sheets,
-                             gint            n_copies,
-                             gint            first,
-                             gboolean        outline_flag,
-                             gboolean        reverse_flag,
-                             gboolean        crop_marks_flag)
-
-{
-        glMerge                *merge = NULL;
-        const lglTemplateFrame *frame = NULL;
-
-	op->priv->label              = label;
-	op->priv->force_outline_flag = FALSE;
-        op->priv->filename           = g_strdup (filename);
-        op->priv->n_sheets           = n_sheets;
-        op->priv->n_copies           = n_copies;
-        op->priv->first              = first;
-        op->priv->outline_flag       = outline_flag;
-        op->priv->reverse_flag       = reverse_flag;
-        op->priv->crop_marks_flag    = crop_marks_flag;
-
-        merge = gl_label_get_merge (label);
-
-        frame = (lglTemplateFrame *)label->template->frames->data;
-        if (merge == NULL)
-        {
-                op->priv->merge_flag = FALSE;
-
-                op->priv->last = lgl_template_frame_get_n_labels (frame);
-
-        }
-        else
-        {
-                op->priv->merge_flag = TRUE;
-
-                op->priv->n_sheets =
-                        ceil ((double)(first-1 + n_copies * gl_merge_get_record_count(merge))
-                              / lgl_template_frame_get_n_labels (frame));;
-
-                g_object_unref (G_OBJECT(merge));
-
-        }
-
-        set_page_size (op, label);
-
-        gtk_print_operation_set_export_filename (GTK_PRINT_OPERATION (op),
-                                                 filename);
-
-	g_signal_connect (G_OBJECT (op), "begin-print",
-			  G_CALLBACK (begin_print_cb), label);
-
-	g_signal_connect (G_OBJECT (op), "draw-page",
-			  G_CALLBACK (draw_page_cb), label);
-}
-
-/*--------------------------------------------------------------------------*/
-/* PRIVATE.  Set page size.                                                 */
-/*--------------------------------------------------------------------------*/
-static void
-set_page_size (glPrintOp  *op,
-               glLabel    *label)
-{
-        GtkPaperSize *psize;
-        GtkPageSetup *su;
-        lglPaper     *paper;
-
-	gl_debug (DEBUG_PRINT, "begin");
-
-        paper = lgl_db_lookup_paper_from_id (label->template->paper_id);
-
-        if (!paper)
-        {
-                const gchar *name;
-
-                name = gtk_paper_size_get_default ();
-                psize = gtk_paper_size_new (name);
-
-                gl_debug (DEBUG_PRINT, "Using default size = \"%s\"", name);
-        }
-        else if (lgl_db_is_paper_id_other (paper->id))
-        {
-                psize = gtk_paper_size_new_custom (paper->id,
-                                                   paper->name,
-                                                   label->template->page_width,
-                                                   label->template->page_height,
-                                                   GTK_UNIT_POINTS);
-                gl_debug (DEBUG_PRINT, "Using custom size = %g x %g points",
-                          label->template->page_width,
-                          label->template->page_height);
-
-        }
-        else
-        {
-                psize = gtk_paper_size_new (paper->pwg_size);
-                gl_debug (DEBUG_PRINT, "Using PWG size \"%s\"", paper->pwg_size);
-        }
-        lgl_paper_free (paper);
-
-        su = gtk_page_setup_new ();
-        gtk_page_setup_set_paper_size (su, psize);
-        gtk_print_operation_set_default_page_setup (GTK_PRINT_OPERATION (op), su);
-        g_object_unref (su);
-
-        gtk_paper_size_free (psize);
-
-	gl_debug (DEBUG_PRINT, "end");
-}
-
-/*--------------------------------------------------------------------------*/
-/* PRIVATE.  "Create custom widget" callback                                */
-/*--------------------------------------------------------------------------*/
-static GObject *
-create_custom_widget_cb (GtkPrintOperation *operation,
-			 gpointer           user_data)
-{
-	GladeXML      *gui;
-	glPrintOp     *op = GL_PRINT_OP (operation);
-	glLabel       *label  = GL_LABEL (user_data);
-	GtkWidget     *vbox;
-        glMerge       *merge = NULL;
-
-	gui = glade_xml_new (GLABELS_GLADE_DIR "print-custom-widget.glade",
-                             "print_custom_widget_vbox", NULL);
-
-	if (!gui) {
-		g_warning ("Could not open print-op.glade, reinstall glabels!");
-		return NULL;
-	}
-
-	vbox = glade_xml_get_widget (gui, "print_custom_widget_vbox");
-
-	/* ----- Simple print control ----- */
-	op->priv->simple_frame = glade_xml_get_widget (gui, "simple_frame");
-	op->priv->copies_vbox  = glade_xml_get_widget (gui, "copies_vbox");
-	op->priv->copies = gl_wdgt_print_copies_new (label);
-	gtk_box_pack_start (GTK_BOX(op->priv->copies_vbox),
-			    op->priv->copies, FALSE, FALSE, 0);
-
-	/* ----- Merge print control ----- */
-	op->priv->merge_frame  = glade_xml_get_widget (gui, "merge_frame");
-	op->priv->prmerge_vbox = glade_xml_get_widget (gui, "prmerge_vbox");
-	op->priv->prmerge = gl_wdgt_print_merge_new (label);
-	gtk_box_pack_start (GTK_BOX(op->priv->prmerge_vbox),
-			    op->priv->prmerge, FALSE, FALSE, 0);
-
-	/* ----- Options ----------------- */
-	op->priv->outline_check    = glade_xml_get_widget (gui, "outline_check");
-	op->priv->reverse_check    = glade_xml_get_widget (gui, "reverse_check");
-	op->priv->crop_marks_check = glade_xml_get_widget (gui, "crop_marks_check");
-
-        g_object_unref (gui);
-
-        /* ---- Activate either simple or merge print control widgets. ---- */
-        merge = gl_label_get_merge (op->priv->label);
-	if (merge == NULL) {
-
-                gl_wdgt_print_copies_set_range (GL_WDGT_PRINT_COPIES (op->priv->copies),
-                                                op->priv->n_sheets,
-                                                op->priv->first,
-                                                op->priv->last);
-
-		gtk_widget_show_all (op->priv->simple_frame);
-		gtk_widget_hide_all (op->priv->merge_frame);
-
-	} else {
-
-		gint n_records = gl_merge_get_record_count( merge );
-                gl_wdgt_print_merge_set_copies (GL_WDGT_PRINT_MERGE (op->priv->prmerge),
-                                                op->priv->n_copies,
-                                                op->priv->first,
-                                                n_records,
-                                                op->priv->collate_flag);
-		g_object_unref (G_OBJECT(merge));
-
-		gtk_widget_hide_all (op->priv->simple_frame);
-		gtk_widget_show_all (op->priv->merge_frame);
-	}
-
-        /* --- Set options --- */
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (op->priv->outline_check),
-                                      op->priv->outline_flag);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (op->priv->reverse_check),
-                                      op->priv->reverse_flag);
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (op->priv->crop_marks_check),
-                                      op->priv->crop_marks_flag);
-
-        /* --- Do we need to force the outline flag --- */
-        if (op->priv->force_outline_flag)
-        {
-                gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON(op->priv->outline_check),
-                                              TRUE);
-
-                gtk_widget_set_sensitive (op->priv->outline_check, FALSE);
-                gtk_widget_set_sensitive (op->priv->reverse_check, FALSE);
-                gtk_widget_set_sensitive (op->priv->crop_marks_check, FALSE);
-        }
-
-	return G_OBJECT (vbox);
-}
-
-/*--------------------------------------------------------------------------*/
-/* PRIVATE.  "Custom widget apply" callback                                 */
-/*--------------------------------------------------------------------------*/
-static void
-custom_widget_apply_cb (GtkPrintOperation *operation,
-                        GtkWidget         *widget,
-                        gpointer           user_data)
-{
-        glPrintOp *op = GL_PRINT_OP (operation);
-        glMerge       *merge = NULL;
-
-
-        op->priv->outline_flag =
-                gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON
-                                              (op->priv->outline_check));
-        op->priv->reverse_flag =
-                gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON
-                                              (op->priv->reverse_check));
-        op->priv->crop_marks_flag =
-                gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON
-                                              (op->priv->crop_marks_check));
-
-        merge = gl_label_get_merge (op->priv->label);
-
-        if (merge == NULL)
-        {
-
-                op->priv->merge_flag = FALSE;
-                gl_wdgt_print_copies_get_range (GL_WDGT_PRINT_COPIES (op->priv->copies),
-                                                &op->priv->n_sheets,
-                                                &op->priv->first,
-                                                &op->priv->last);
-        }
-        else
-        {
-
-                op->priv->merge_flag = TRUE;
-                gl_wdgt_print_merge_get_copies (GL_WDGT_PRINT_MERGE (op->priv->prmerge),
-                                                &op->priv->n_copies,
-                                                &op->priv->first,
-                                                &op->priv->collate_flag,
-                                                &op->priv->n_sheets);
-                g_object_unref (G_OBJECT(merge));
-        }
-
-}
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  "Begin print" callback                                         */
@@ -621,6 +525,7 @@ begin_print_cb (GtkPrintOperation *operation,
         gtk_print_operation_set_n_pages (operation, op->priv->n_sheets);
 
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  "Draw page" callback.                                          */
@@ -678,13 +583,13 @@ draw_page_cb (GtkPrintOperation *operation,
 }
 
 
-/*****************************************************************************/
-/* Set outline flag/checkbox.                                                */
-/*****************************************************************************/
-void
-gl_print_op_force_outline_flag (glPrintOp *op)
-{
-        op->priv->force_outline_flag = TRUE;
-}
 
 
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

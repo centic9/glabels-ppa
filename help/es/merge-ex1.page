@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="merge-ex1" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="merge#merge-ex"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Crear etiquetas de nombre desde un archivo CSV.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+    <title>Ejemplo 1: etiquetas de nombre</title>
+
+      <p>En este ejemplo se está organizando una fiesta de orientación para los nuevos miembros de la tripulación. Existe una lista de los miembros novatos de la tripulación que se ha creado en <app>gnumeric</app> y exportado en el siguiente archivo CSV. Se podría haber creado este archivo utilizando un editor de texto, pero diablos, es el siglo XXIII.</p>
+
+      <code>
+Name,Department,SN
+"Jim Kirk",Management,"SC937-0176 CEC"
+"Mr. Spock",Sciences,S179-276SP
+"Leonard McCoy",Medicine,unknown
+"Montgomery Scott",Engineering,SE-197-54T
+      </code>
+
+      <p>En <app>glabels</app> se ha creado un documento de <app>glabels</app> nuevo usando la plantilla «Etiquetas de nombre de placa» Avery 5395. Ahora se usa el elemento de menú <guiseq><gui>Objetos</gui><gui>Mezclar propiedades</gui></guiseq> para mostrar el diálogo <gui>propiedades de combinación de datos</gui>. Use este diálogo para seleccionar el tipo de fuente (en este caso, CSV con claves en la línea 1) y la fuente de combinación (nombre de archivo) como se muestra.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-1.png" mime="image/png" style="right">
+      		<p>Diálogo de propiedades de fusión</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>También se puede ver cada registro con más detalle pulsando en el expansor adecuado (los triángulos pequeños), como se muestra. Una vez satisfecho con las selecciones, pulse <gui>Aceptar</gui> en este diálogo para aceptar los cambios.</p>
+
+      <p>Ahora puede añadir a añadir objetos al documento de<application>gLabels</application> como se muestra.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-2.png" mime="image/png" style="right">
+      		<p>Añadir objetos</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>En este ejemplo se han añadido tres objetos de texto y un objeto de código de barras. El primer objeto de texto contiene sólo un texto literal («Hola, mi nombre es»). El segundo objeto de texto contiene un único campo combinado ("${Nombre}") correspondiente al primer campo de un registro (primera columna de una línea) que contiene el nombre completo de los nuevos miembros de la tripulación. El tercer campo de texto contiene un texto literal («Departamento») seguido de un único campo combinado ("${Departmento}") correspondiente al segundo campo del departamento de los nuevos miembros de la tripulación. El objeto de código de barras está configurado para usar el campo (o la clave) «SN», que contiene los números de serie de la flota estelar de los miembros de la tripulación.</p>
+
+      <p>Ahora se pueden imprimir las etiquetas de nombre seleccionando el elemento de menú <guiseq><gui>Archivo</gui><gui>Imprimir</gui></guiseq>. Esto mostrará el diálogo de impresión como se muestra a continuación.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-3.png" mime="image/png" style="right">
+      		<p>Imprimir etiquetas de nombre</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Sólo para asegurarse de que las etiquetas se van a ver bien, seleccione la opción <gui>Imprimir contornos</gui> y pulse en <gui>Previsualizar la impresión</gui>. Esto mostrará un diálogo de vista previa, como se muestra a continuación.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-4.png" mime="image/png" style="right">
+      		<p>Vista previa de las etiquetas de nombre</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Todo parece correcto, así que ahora puede cargar su impresora con las etiquetas apropiadas, imprimir sus etiquetas de nombre e invitar a sus invitados a bordo.</p>
+
+
+</page>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="mergeskipfields" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Cómo omitir líneas de dirección en blanco al fusionar un documento.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+  <title>Omitir líneas de dirección vacías</title>
+
+  <p>Esta característica se describe mejor con un ejemplo. En el siguiente archivo CSV, la columna 5 (ADDR2) contiene la segunda línea de dirección para cada registro. Este campo está vacío en los registros 1 y 2, pero no en el 3. (Para que esta característica funcione, el campo no debe contener ningún texto, ni siquiera espacios.)</p>
+
+  <code>
+  LAST,FIRST,MI,ADDR1,ADDR2,CITY,STATE,ZIP
+  Summers,Joyce,,"1630 Revello Dr",,Sunnydale,CA,95037
+  McGarret,Steve,O,"404 Piikoi Street",,Honolulu,HI,96813
+  Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
+  </code>
+
+  <p>En la siguiente captura de pantalla, se ha creado un único objeto de texto multilínea para formatear estas direcciones. Tenga en cuenta que ${ADDR2} representa por sí misma la segunda línea de la dirección. (Cualquier texto adicional en esta línea, incluyendo los espacios, anularía esta característica.)</p>
+
+  <media type="image" src="figures/skip-fields-screenshot.png" mime="image/png" style="right">
+  <p>Dirección multilínea</p>
+  </media>
+
+  <p>Al imprimir esta etiqueta se obtiene el siguiente resultado. Tenga en cuenta que la línea que contiene el campo  ${ADDR2} se omite completamente para los dos primeros registros, sin imprimir una línea en blanco.</p>
+
+  <media type="image" src="figures/skip-fields-output.png" mime="image/png" style="right">
+  <p>Salida</p>
+  </media>
+
+</page>

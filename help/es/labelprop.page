@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="labelprop" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Cómo cambiar las propiedades de una etiqueta o de una tarjeta de visita.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+    <title>Cambiar las propiedades de la etiqueta</title>
+
+      <p>Para cambiar el tipo de medio y/o la orientación de una etiqueta, seleccione <guiseq><gui>Archivo</gui><gui>Propiedades</gui></guiseq> para mostrar el diálogo <gui>Propiedades de la etiqueta</gui>. Seleccione el tipo de medio y la orientación nuevas y pulse <gui>Aceptar</gui>.</p>
+
+</page>

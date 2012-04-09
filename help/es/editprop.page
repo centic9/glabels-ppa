@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="editprop" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Cambiar las propiedades de objetos.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+    <title>Editar las propiedades del objeto</title>
+
+    <section id="glabels-object-properties">
+
+      <p>La mayoría de las propiedades de un objeto se pueden modificar a través de la barra lateral del editor de objetos. Para usar el editor de objetos, se debe seleccionar primero un objeto. Consulte la <link xref="select"/>.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/object-editor-sidebar.png" mime="image/png" style="right">
+      		<p>Controles de impresión de copia</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>El editor de objetos contendrá un subconjunto de las siguientes secciones en pestañas, dependiendo del tipo de objeto:</p>
+
+      <section id="object-editor-text">
+	<title>Sección de texto en pestañas (objetos de texto)</title>
+
+	<p>Esta sección contiene un pequeño editor para cambiar el contenido de un objeto de texto. También contiene un menú desplegable con las claves combinadas del documento disponibles, que se pueden insertar en el texto.</p>
+
+      </section>
+
+      <section id="object-editor-image">
+	<title>Sección de imagen en pestañas (objetos de imagen)</title>
+
+	<p>Esta sección contiene una entrada de archivo con vista previa para seleccionar los archivos de imagen. El botón de exploración se puede usar fácilmente para encontrar archivos de imágenes. Alternativamente, se puede usar la clave de combinación de un documento para proporcionar un nombre de archivo a la hora de imprimir.</p>
+
+      </section>
+
+      <section id="object-editor-data">
+	<title>Sección de datos en pestañas (objetos de código de barras)</title>
+
+	<p>Esta sección contiene una entrada de texto para introducir datos de un código de barras literalmente. Alternativamente, se puede usar la clave de combinación de un documento para proporcionar este dato a la hora de imprimir.</p>
+
+      </section>
+
+      <section id="object-editor-style">
+	<title>Sección de estilo en pestañas (objetos de texto)</title>
+
+	<p>Esta sección contiene controles para seleccionar las propiedades del texto, incluyendo la familia tipográfica, tamaño, peso, color y justificación del texto.</p>
+
+      </section>
+
+      <section id="object-editor-barcode">
+	<title>Sección de estilo en pestañas (objetos de código de barras)</title>
+
+	<p>Esta sección contiene controles para seleccionar las propiedades del código de barras, incluyendo su estilo, color, si se debe imprimir texto y si se debe incluir un dígito de control.</p>
+
+      </section>
+
+      <section id="object-editor-line">
+	<title>Sección de línea en pestañas</title>
+
+	<p>Esta sección contiene controles para seleccionar las propiedades de las líneas y de los márgenes. Estas propiedades incluyen el ancho de línea y el color.</p>
+
+      </section>
+
+      <section id="object-editor-fill">
+	<title>Sección de relleno en pestañas</title>
+
+	<p>Esta sección contiene controles para seleccionar las propiedades de relleno de objetos de caja y de elipse. Actualmente, la única propiedad del relleno es el color.</p>
+
+      </section>
+
+      <section id="object-editor-size">
+	<title>Sección de tamaño en pestañas (todos excepto los objetos de línea)</title>
+
+	<p>Esta sección contiene controles para seleccionar la anchura y la altura de un objeto. Se proporciona una casilla, por lo que la relación de aspecto actual se puede bloquear mientras se manipulan los controles de anchura y altura. Los objetos de imagen también proporcionan un botón para reiniciar el tamaño al original de la imagen (se asumen 72DPI)</p>
+
+      </section>
+
+      <section id="object-editor-size-line">
+	<title>Sección de tamaño en pestañas (objetos de línea)</title>
+
+	<p>Esta sección contiene controles para seleccionar la longitud y el ángulo de un objeto de línea.</p>
+
+      </section>
+
+      <section id="object-editor-position">
+	<title>Sección de posición en pestañas</title>
+
+	<p>Esta sección contiene controles para cambiar la posición de un objeto.</p>
+
+      </section>
+
+
+      <section id="object-editor-shadow">
+	<title>Sección de sombra en pestañas (todos excepto los objetos de código de barras)</title>
+
+	<p>Esta sección contiene controles para añadir sombre a un objeto.</p>
+
+      </section>
+
+
+    </section>
+
+<!-- ============= Other Manipulations of Objects ========= -->
+    <section id="glabels-object-manipulation"> 
+      <title>Otras manipulaciones de objetos</title>
+
+      <p>Los objetos se pueden manipular de las siguientes maneras.</p>
+
+      <section id="other-moving-resizing">
+	<title>Mover y redimensionar objetos</title>
+
+	<p>Los objetos se pueden mover simplemente pulsando en un objeto seleccionado y arrastrando el objeto a su nueva ubicación. Si el objeto es parte de una selección agregada, todos los objetos en la selección se moverán junto al objeto que se arrastra, manteniendo su posición relativa respecto a los otros. Si no se selecciona ningún objeto, al pulsar sobre un objeto se creará una selección nueva que contenga a ese objeto. Consulte la <link xref="select"/>.</p>
+
+	<p>Un objeto seleccionado se puede redimensionar pulsando una vez sobre su controlador de tamaño y arrastrándolo para obtener el nuevo tamaño.</p>
+
+      </section>
+
+      <section id="other-stacking-order">
+	<title>Cambiar el orden de apilamiento</title>
+
+	<p>El orden de apilamiento se refiere a la posición relativa en el eje z de los objetos. Esto es cuando los objetos se solapan, qué objeto aparecerá encima de otro. De manera predeterminada, los objetos nuevos aparecerán encima de los objetos más antiguos. Para cambiar este orden, seleccione uno o más objetos y elija <guiseq><gui>Objetos</gui><gui>Orden</gui><gui>Traer al frente</gui></guiseq> para subir la selección hasta la parte superior del orden de apilamiento, o elija <guiseq><gui>Objetos</gui><gui>Orden</gui><gui>Enviar al fondo</gui></guiseq> para bajar la selección hasta la parte inferior del orden de apilamiento. Estos elementos de menú también están disponibles pulsando con el botón derecho en el área de visualización cuando no hay una selección vacía.</p>
+
+      </section>
+
+      <section id="other-rotating-flipping">
+	<title>Rotar y voltear objetos</title>
+
+	<p>Los objetos se pueden rotar 90 grados en cualquier dirección o voltearse horizontal o verticalmente eligiendo el elemento de menú adecuado en el submenú <guiseq><gui>Objetos</gui><gui>Rotar/Voltear</gui></guiseq>. Estos elementos de menú también están disponibles pulsando con el botón derecho en el área de visualización cuando no hay una selección vacía.</p>
+
+         <note>
+         <p>Esta característica puede ser útil cuando diseñe carátulas interiores de CD. Para el texto circular necesita texto alineado verticalmente. Después de que haya creado la caja de texto básica, elija <guiseq><gui>Objetos</gui><gui>Rotar/Voltear</gui></guiseq> para rotar la caja de texto de acuerdo a sus necesidades.</p>
+         </note>
+
+      </section>
+
+      <section id="other-alignment">
+	<title>Alinear objetos</title>
+
+	<p>Los objetos se pueden alinear horizontal o verticalmente, relativo a otro o relativo a la línea central de la etiqueta, eligiendo el elemento de menú apropiado de los submenús <guiseq><gui>Objetos</gui><gui>Alineación horizontal</gui></guiseq> o <guiseq><gui>Objetos</gui><gui>Alineación vertical</gui></guiseq>. Estos elementos de menú también están disponibles pulsando con el botón derecho en el área de visualización cuando no hay una selección vacía.</p>
+
+      </section>
+
+      <section id="other-property-bar">
+	<title>Usar la barra de propiedades</title>
+
+	<p>La barra de propiedades se puede usar para cambiar en masa algunas propiedades de los archivos. Estas propiedades incluyen la familia tipográfica, el tamaño de la tipografía, su peso, la alineación del texto, el color de relleno, de la línea o del contorno y el ancho de la línea. La barra de propiedades también controla los valores predeterminados de estas propiedades para cualquier objeto nuevo creado.</p>
+
+      </section>
+
+
+
+    </section>
+
+</page>

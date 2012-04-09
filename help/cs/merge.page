@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="merge" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Jak slučovat zdroje dat při vytváření více dokumentů.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Výuka slučování dokumentů</title>
+
+    <p>Slučování dokumentů (někdy také nazývané „hromadná korespondence“) je mocná funkce, díky které můžete tisknout odlišné etikety nebo vizitky pro každý záznam v externím zdroji dat. Je však také ze všech funkcí aplikace <app>gLabels</app> nejnáročnější na pochopení. Následující příklady vás provedou několika obvyklými úlohami, které používají funkci slučování dokumentů.</p>
+
+  <section id="merge-ex" style="2column">
+  </section>
+
+</page>

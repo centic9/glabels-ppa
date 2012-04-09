@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="mergeskipfields" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Jak přeskakovat prázdné řádky v adresách při slučování dokumentu.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title>Přeskakování prázdných řádků v adresách</title>
+
+  <p>Tuto funkci bude nejlepší popsat příkladem. V následujícím souboru CSV obsahuje sloupec 2 (OSOBA) konkrétní osobu v adrese do firmy pro každý záznam. Toto pole je v záznamech 1 a 2 prázdné, ale ve 3. záznamu ne. (Aby tato funkce pracovala, musí být pole úplně prázdné – jakýkoliv text, a to včetně mezer, překazí použití této funkce.)</p>
+
+  <code>
+  FIRMA,OSOBA,ADR,MESTO,PSC
+  "Stolařství Novák &amp; syn",,"Pod Lesem 4","Ústí nad Orlicí","562 03"
+  "Dřevolak s.r.o.",,"Barvírenská 78/436",Třešť,"589 01"
+  "Nábytek holding a.s.","Ing. Jiří Procházka","Vídeňská 95",Brno,"619 00"
+  </code>
+
+  <p>Na následujícím snímku obrazovky byl pro formátování těchto adres vytvořen textový objekt s více řádky. Všimněte si, že ${OSOBA} představující osobu v adres do firmy, je na svém vlastním řádku. (Jakýkoliv další text na stejném řádku, a to včetně mezer, by překazil tuto funkci.)</p>
+
+  <media type="image" src="figures/skip-fields-screenshot.png" mime="image/png" style="right">
+  <p>Adresa na víc řádků</p>
+  </media>
+
+  <p>Výsledky tisku můžete vidět na následujícím výstupu. Všimněte si, že řádek obsahující pole ${OSOBA} byl u prvních dvou záznamů zcela vynechán, nevytiskl se ani prázdný řádek.</p>
+
+  <media type="image" src="figures/skip-fields-output.png" mime="image/png" style="right">
+  <p>Výstup</p>
+  </media>
+
+</page>

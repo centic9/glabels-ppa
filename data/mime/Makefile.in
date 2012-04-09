@@ -37,13 +37,19 @@ host_triplet = @host@
 subdir = data/mime
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/configure.in
+am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
+AM_V_GEN = $(am__v_GEN_$(V))
+am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))
+am__v_GEN_0 = @echo "  GEN   " $@;
+AM_V_at = $(am__v_at_$(V))
+am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
+am__v_at_0 = @
 SOURCES =
 DIST_SOURCES =
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
@@ -67,18 +73,19 @@ am__nobase_list = $(am__nobase_strip_setup); \
 am__base_list = \
   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
-am__installdirs = "$(DESTDIR)$(appdir)" "$(DESTDIR)$(mimedir)" \
-	"$(DESTDIR)$(newmimedir)"
-DATA = $(app_DATA) $(mime_DATA) $(newmime_DATA)
+am__installdirs = "$(DESTDIR)$(mimedir)"
+DATA = $(mime_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 ALL_LINGUAS = @ALL_LINGUAS@
 AMTAR = @AMTAR@
+AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 AR = @AR@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
 AWK = @AWK@
+CAIRO_REQUIRED = @CAIRO_REQUIRED@
 CATALOGS = @CATALOGS@
 CATOBJEXT = @CATOBJEXT@
 CC = @CC@
@@ -92,6 +99,7 @@ DEFS = @DEFS@
 DEPDIR = @DEPDIR@
 DISABLE_DEPRECATED_CFLAGS = @DISABLE_DEPRECATED_CFLAGS@
 DISTCHECK_CONFIGURE_FLAGS = @DISTCHECK_CONFIGURE_FLAGS@
+DLLTOOL = @DLLTOOL@
 DOC_USER_FORMATS = @DOC_USER_FORMATS@
 DSYMUTIL = @DSYMUTIL@
 DUMPBIN = @DUMPBIN@
@@ -101,17 +109,23 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 FGREP = @FGREP@
+GDK_PIXBUF_CSOURCE = @GDK_PIXBUF_CSOURCE@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
+GLABELS_BRANCH = @GLABELS_BRANCH@
 GLABELS_CFLAGS = @GLABELS_CFLAGS@
 GLABELS_LIBS = @GLABELS_LIBS@
+GLIB_COMPILE_SCHEMAS = @GLIB_COMPILE_SCHEMAS@
 GLIB_GENMARSHAL = @GLIB_GENMARSHAL@
 GLIB_REQUIRED = @GLIB_REQUIRED@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
 GREP = @GREP@
+GSETTINGS_DISABLE_SCHEMAS_COMPILE = @GSETTINGS_DISABLE_SCHEMAS_COMPILE@
 GTKDOC_CHECK = @GTKDOC_CHECK@
+GTKDOC_MKPDF = @GTKDOC_MKPDF@
+GTKDOC_REBASE = @GTKDOC_REBASE@
 GTK_REQUIRED = @GTK_REQUIRED@
-HAVE_XML_PARSE_HUGE = @HAVE_XML_PARSE_HUGE@
+GTK_UPDATE_ICON_CACHE = @GTK_UPDATE_ICON_CACHE@
 HELP_DIR = @HELP_DIR@
 HTML_DIR = @HTML_DIR@
 INSTALL = @INSTALL@
@@ -127,31 +141,45 @@ INTLTOOL_PERL = @INTLTOOL_PERL@
 INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 LD = @LD@
 LDFLAGS = @LDFLAGS@
+LIBBARCODE_CFLAGS = @LIBBARCODE_CFLAGS@
+LIBBARCODE_LIBS = @LIBBARCODE_LIBS@
+LIBBARCODE_REQUIRED = @LIBBARCODE_REQUIRED@
 LIBEBOOK_CFLAGS = @LIBEBOOK_CFLAGS@
 LIBEBOOK_LIBS = @LIBEBOOK_LIBS@
 LIBEBOOK_REQUIRED = @LIBEBOOK_REQUIRED@
+LIBGLABELS_API_VERSION = @LIBGLABELS_API_VERSION@
+LIBGLABELS_BRANCH = @LIBGLABELS_BRANCH@
 LIBGLABELS_CFLAGS = @LIBGLABELS_CFLAGS@
 LIBGLABELS_LIBS = @LIBGLABELS_LIBS@
-LIBGLABELS_VERSION_INFO = @LIBGLABELS_VERSION_INFO@
-LIBGLADE_REQUIRED = @LIBGLADE_REQUIRED@
-LIBGNOMEUI_REQUIRED = @LIBGNOMEUI_REQUIRED@
-LIBGNOME_REQUIRED = @LIBGNOME_REQUIRED@
+LIBGLBARCODE_API_VERSION = @LIBGLBARCODE_API_VERSION@
+LIBGLBARCODE_BRANCH = @LIBGLBARCODE_BRANCH@
+LIBGLBARCODE_CFLAGS = @LIBGLBARCODE_CFLAGS@
+LIBGLBARCODE_LIBS = @LIBGLBARCODE_LIBS@
+LIBIEC16022_CFLAGS = @LIBIEC16022_CFLAGS@
+LIBIEC16022_LIBS = @LIBIEC16022_LIBS@
+LIBIEC16022_REQUIRED = @LIBIEC16022_REQUIRED@
 LIBOBJS = @LIBOBJS@
+LIBQRENCODE_CFLAGS = @LIBQRENCODE_CFLAGS@
+LIBQRENCODE_LIBS = @LIBQRENCODE_LIBS@
+LIBQRENCODE_REQUIRED = @LIBQRENCODE_REQUIRED@
+LIBRSVG_REQUIRED = @LIBRSVG_REQUIRED@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
 LIBXML_REQUIRED = @LIBXML_REQUIRED@
+LIBZINT_CFLAGS = @LIBZINT_CFLAGS@
+LIBZINT_LIBS = @LIBZINT_LIBS@
+LIBZINT_REQUIRED = @LIBZINT_REQUIRED@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
+MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
 MSGFMT_OPTS = @MSGFMT_OPTS@
 MSGMERGE = @MSGMERGE@
-MYGAL_CFLAGS = @MYGAL_CFLAGS@
-MYGAL_LIBS = @MYGAL_LIBS@
 NM = @NM@
 NMEDIT = @NMEDIT@
 OBJDUMP = @OBJDUMP@
@@ -164,9 +192,13 @@ PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_NAME = @PACKAGE_NAME@
 PACKAGE_STRING = @PACKAGE_STRING@
 PACKAGE_TARNAME = @PACKAGE_TARNAME@
+PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
+PANGO_REQUIRED = @PANGO_REQUIRED@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 PKG_CONFIG = @PKG_CONFIG@
+PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
+PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
 POFILES = @POFILES@
 POSUB = @POSUB@
 PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
@@ -176,18 +208,15 @@ SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
-UPDATE_DESKTOP_DATABASE = @UPDATE_DESKTOP_DATABASE@
-UPDATE_MIME_DATABASE = @UPDATE_MIME_DATABASE@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
 WARN_CFLAGS = @WARN_CFLAGS@
 XGETTEXT = @XGETTEXT@
-XML_PARSE_HUGE_CFLAGS = @XML_PARSE_HUGE_CFLAGS@
-XML_PARSE_HUGE_LIBS = @XML_PARSE_HUGE_LIBS@
 abs_builddir = @abs_builddir@
 abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
 abs_top_srcdir = @abs_top_srcdir@
+ac_ct_AR = @ac_ct_AR@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_DUMPBIN = @ac_ct_DUMPBIN@
 am__include = @am__include@
@@ -207,6 +236,7 @@ datarootdir = @datarootdir@
 docdir = @docdir@
 dvidir = @dvidir@
 exec_prefix = @exec_prefix@
+gsettingsschemadir = @gsettingsschemadir@
 host = @host@
 host_alias = @host_alias@
 host_cpu = @host_cpu@
@@ -220,7 +250,6 @@ libdir = @libdir@
 libexecdir = @libexecdir@
 localedir = @localedir@
 localstatedir = @localstatedir@
-lt_ECHO = @lt_ECHO@
 mandir = @mandir@
 mkdir_p = @mkdir_p@
 oldincludedir = @oldincludedir@
@@ -236,24 +265,16 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-keys_in_files = glabels.keys.in
-keys_files = $(keys_in_files:.keys.in=.keys)
-xml_in_files = glabels.xml.in
+xml_in_files = $(GLABELS_BRANCH).xml.in
 xml_files = $(xml_in_files:.xml.in=.xml)
-mimedir = $(datadir)/mime-info
-mime_DATA = $(keys_files) glabels.mime
-appdir = $(datadir)/application-registry
-app_DATA = glabels.applications
-newmimedir = $(datadir)/mime/packages
-newmime_DATA = $(xml_files)
+mimedir = $(datadir)/mime/packages
+mime_DATA = $(xml_files)
 EXTRA_DIST = \
-	$(keys_in_files)	\
-	$(mime_DATA)            \
-	$(app_DATA)		\
-	$(xml_in_files)		\
-	$(newmime_DATA)
+	$(xml_in_files)
 
-CLEANFILES = $(keys_files) $(xml_files)
+CLEANFILES = \
+	$(xml_files)
+
 all: all-am
 
 .SUFFIXES:
@@ -293,26 +314,6 @@ mostlyclean-libtool:
 
 clean-libtool:
 	-rm -rf .libs _libs
-install-appDATA: $(app_DATA)
-	@$(NORMAL_INSTALL)
-	test -z "$(appdir)" || $(MKDIR_P) "$(DESTDIR)$(appdir)"
-	@list='$(app_DATA)'; test -n "$(appdir)" || list=; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(appdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(appdir)" || exit $$?; \
-	done
-
-uninstall-appDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(app_DATA)'; test -n "$(appdir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	test -n "$$files" || exit 0; \
-	echo " ( cd '$(DESTDIR)$(appdir)' && rm -f" $$files ")"; \
-	cd "$(DESTDIR)$(appdir)" && rm -f $$files
 install-mimeDATA: $(mime_DATA)
 	@$(NORMAL_INSTALL)
 	test -z "$(mimedir)" || $(MKDIR_P) "$(DESTDIR)$(mimedir)"
@@ -333,26 +334,6 @@ uninstall-mimeDATA:
 	test -n "$$files" || exit 0; \
 	echo " ( cd '$(DESTDIR)$(mimedir)' && rm -f" $$files ")"; \
 	cd "$(DESTDIR)$(mimedir)" && rm -f $$files
-install-newmimeDATA: $(newmime_DATA)
-	@$(NORMAL_INSTALL)
-	test -z "$(newmimedir)" || $(MKDIR_P) "$(DESTDIR)$(newmimedir)"
-	@list='$(newmime_DATA)'; test -n "$(newmimedir)" || list=; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(newmimedir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(newmimedir)" || exit $$?; \
-	done
-
-uninstall-newmimeDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(newmime_DATA)'; test -n "$(newmimedir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	test -n "$$files" || exit 0; \
-	echo " ( cd '$(DESTDIR)$(newmimedir)' && rm -f" $$files ")"; \
-	cd "$(DESTDIR)$(newmimedir)" && rm -f $$files
 tags: TAGS
 TAGS:
 
@@ -394,7 +375,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(appdir)" "$(DESTDIR)$(mimedir)" "$(DESTDIR)$(newmimedir)"; do \
+	for dir in "$(DESTDIR)$(mimedir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -443,9 +424,8 @@ info: info-am
 
 info-am:
 
-install-data-am: install-appDATA install-mimeDATA install-newmimeDATA
-	@$(NORMAL_INSTALL)
-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+install-data-am: install-mimeDATA
+
 install-dvi: install-dvi-am
 
 install-dvi-am:
@@ -488,36 +468,23 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-appDATA uninstall-mimeDATA \
-	uninstall-newmimeDATA
-	@$(NORMAL_INSTALL)
-	$(MAKE) $(AM_MAKEFLAGS) uninstall-hook
-.MAKE: install-am install-data-am install-strip uninstall-am
+uninstall-am: uninstall-mimeDATA
+
+.MAKE: install-am install-strip
 
 .PHONY: all all-am check check-am clean clean-generic clean-libtool \
 	distclean distclean-generic distclean-libtool distdir dvi \
 	dvi-am html html-am info info-am install install-am \
-	install-appDATA install-data install-data-am install-data-hook \
-	install-dvi install-dvi-am install-exec install-exec-am \
-	install-html install-html-am install-info install-info-am \
-	install-man install-mimeDATA install-newmimeDATA install-pdf \
-	install-pdf-am install-ps install-ps-am install-strip \
-	installcheck installcheck-am installdirs maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-generic \
-	mostlyclean-libtool pdf pdf-am ps ps-am uninstall uninstall-am \
-	uninstall-appDATA uninstall-hook uninstall-mimeDATA \
-	uninstall-newmimeDATA
+	install-data install-data-am install-dvi install-dvi-am \
+	install-exec install-exec-am install-html install-html-am \
+	install-info install-info-am install-man install-mimeDATA \
+	install-pdf install-pdf-am install-ps install-ps-am \
+	install-strip installcheck installcheck-am installdirs \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+	uninstall uninstall-am uninstall-mimeDATA
 
-@INTLTOOL_KEYS_RULE@
 @INTLTOOL_XML_RULE@
-
-install-data-hook:
-@ENABLE_UPDATE_MIMEDB_TRUE@@HAVE_NEW_MIME_TRUE@	$(UPDATE_MIME_DATABASE) "$(DESTDIR)$(datadir)/mime"
-@ENABLE_UPDATE_DESKTOPDB_TRUE@@HAVE_NEWER_MIME_TRUE@	$(UPDATE_DESKTOP_DATABASE) 
-
-uninstall-hook:
-@ENABLE_UPDATE_MIMEDB_TRUE@@HAVE_NEW_MIME_TRUE@	$(UPDATE_MIME_DATABASE) "$(DESTDIR)$(datadir)/mime"
-@ENABLE_UPDATE_DESKTOPDB_TRUE@@HAVE_NEWER_MIME_TRUE@	$(UPDATE_DESKTOP_DATABASE) 
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

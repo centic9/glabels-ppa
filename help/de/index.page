@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="index" xml:lang="de">
+
+  <info>
+    <title type="link">gLabels Etiketten- und Visitenkarten-Designer</title>
+    <title type="text">gLabels Etiketten- und Visitenkarten-Designer</title>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title><media type="image" mime="image/png" src="figures/glabels-logo.png">gLabels logo</media> gLabels-Handbuch</title>
+
+  <p>Die Anwendung <app>gLabels</app> ist ein ressourcenschonendes Programm zum Erstellen von Etiketten und Visitenkarten für die GNOME-Arbeitsumgebung. Es wurde für die verschiedensten mit Laser- oder Tintenstrahldruckern bedruckbaren (auch selbstklebenden) Etiketten sowie Visitenkarten entworfen, so wie Sie sie in den meisten Schreibwarengeschäften finden.</p>
+ 
+  <p><app>gLabels</app> kann zum Enwerfen von Adressaufklebern, Namens- und Preisschildern, Etiketten für CDs und DVDs oder für alles Andere verwendet werden, was mit dem Bedrucken von Papieren zu tun hat, die Etiketten oder Karten in einer regulären Anordnung enthalten. Die Etiketten oder Karten können Text, Bilder, Linien, Formen oder Strichcodes enthalten. <app>gLabels</app> verfügt auch über ein Funktionsmerkmal zur Dokumentmischung. Das bedeutet, dass Sie eine externe Datenquelle dazu verwenden können, ein Etikett für jeden Datensatz zu drucken. Als Datenquelle kann dabei beispielsweise eine CSV-Datei oder das Adressbuch von <app>Evolution</app> genutzt werden.</p>
+
+  <figure>
+    <title><app>gLabels</app>-Hauptfenster</title>
+    <desc><app>gLabels</app>-Hauptfenster</desc>
+    <media type="image" src="figures/introduction-glabels-main-window.png" mime="image/png" style="right">
+      <p><app>gLabels</app>-Hauptfenster</p>
+    </media>
+  </figure>
+
+  <section id="usage" style="2column">
+    <title>Benutzung</title>
+  </section>
+
+  <section id="merging" style="2column">
+    <title>Dokumentmischung</title>
+  </section>
+
+  <section id="advanced" style="2column">
+    <title>Fortgeschrittene Verwendung</title>
+  </section>
+
+</page>

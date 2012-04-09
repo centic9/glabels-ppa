@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="editprop" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Ändern der Eigenschaften von Objekten.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Bearbeiten der Objekteigenschaften</title>
+
+    <section id="glabels-object-properties">
+
+      <p>Die meisten Objekteigenschaften können Sie über die Objekteditor-Seitenleiste verändern, wie unten illustriert. Um den Objekteditor zu verwenden, muss zunächst ein einzelnes Objekt ausgewählt werden. Siehe <link xref="select"/>.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/object-editor-sidebar.png" mime="image/png" style="right">
+      		<p>Angeben der Kopien</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Der Objekteditor bietet eine Auswahl der folgenden Reiter, abhängig vom Objekttyp:</p>
+
+      <section id="object-editor-text">
+	<title>Text-Reiter (Textobjekte)</title>
+
+	<p>Dieser Abschnitt bietet einen kleinen Editor zum Bearbeiten des Inhalts eines Textobjekts. Weiterhin ist ein Ausklappmenü mit den verfügbaren Schlüsseln zur Dokumentmischung enthalten, die in den Text eingefügt werden können.</p>
+
+      </section>
+
+      <section id="object-editor-image">
+	<title>Bild-Reiter (Bild-Objekte)</title>
+
+	<p>Dieser Abschnitt enthält einen Dateiwähler mit Vorschau zur Auswahl von Bilddateien. Der »Durchsuchen«-Knopf kann zum Suchen von Bilddateien benutzt werden. Alternativ können Sie einen Schlüssel zur Dokumenteinmischung anstelle eines Dateinamens angeben, der bei der Ausgabe des Dokuments ersetzt wird.</p>
+
+      </section>
+
+      <section id="object-editor-data">
+	<title>Daten-Reiter (Strichcode-Objekte)</title>
+
+	<p>Dieser Abschnitt enthält ein Textfeld zur Eingabe von Strichcode-Daten. Alternativ kann hier ein Schlüssel zur Dokumentmischung eingetragen werden, der beim Druck für die Bereitstellung der richtigen Daten sorgt.</p>
+
+      </section>
+
+      <section id="object-editor-style">
+	<title>Stil-Reiter (Text-Objekte)</title>
+
+	<p>Dieser Abschnitt enthält Einstellmöglichkeiten für die Texteigenschaften, wie Schriftfamilie, Schriftgröße, Schriftstärke, Schriftfarbe und Ausrichtung des Texts.</p>
+
+      </section>
+
+      <section id="object-editor-barcode">
+	<title>Stil-Reiter (Strichcode-Objekte)</title>
+
+	<p>Dieser Abschnitt enthält Einstellmöglichkeiten für die Eigenschaften des Strichcodes, wie Stil, Farbe, Drucken von Text oder Beinhalten einer Prüfsumme.</p>
+
+      </section>
+
+      <section id="object-editor-line">
+	<title>Linie-Reiter</title>
+
+	<p>Dieser Abschnitt enthält Einstellmöglichkeiten für die Auswahl von Eigenschaften von Linien und Begrenzungen, wie Linienbreite und -farbe.</p>
+
+      </section>
+
+      <section id="object-editor-fill">
+	<title>Füllung-Reiter</title>
+
+	<p>Dieser Abschnitt enthält Einstellmöglichkeiten für die Auswahl der Füllungseigenschaften von Rechteck- und Ellipsenobjekten. Derzeit ist nur die Einstellung der Füllungsfarbe möglich.</p>
+
+      </section>
+
+      <section id="object-editor-size">
+	<title>Reiter »Größe« (alle außer Linienobjekte)</title>
+
+	<p>Dieser Abschnitt enthält Einstellmöglichkeiten für die Höhe und die Breite eines Objekts. Mit einem Ankreuzfeld können Sie die Werte aneinander koppeln, so dass das Seitenverhältnis beim Ändern der Höhe oder Breite erhalten bleibt. Für Bildobjekte gibt es außerdem einen Knopf zum Zurücksetzen des Bildes auf Originalgröße, wobei eine Auflösung von 72 dpi angenommen wird.</p>
+
+      </section>
+
+      <section id="object-editor-size-line">
+	<title>Reiter »Größe« (Linienobjekte)</title>
+
+	<p>Dieser Abschnitt enthält Einstellmöglichkeiten für die Länge und den Winkel eines Linienobjekts.</p>
+
+      </section>
+
+      <section id="object-editor-position">
+	<title>Reiter »Position«</title>
+
+	<p>Dieser Abschnitt beschreibt die Möglichkeiten zur Positionierung eines Objekts.</p>
+
+      </section>
+
+
+      <section id="object-editor-shadow">
+	<title>Reiter »Schattierung« (alle außer Strichcodeobjekten)</title>
+
+	<p>Dieser Abschnitt enthält Einstellmöglichkeiten für die Schattierung eines Objekts.</p>
+
+      </section>
+
+
+    </section>
+
+<!-- ============= Other Manipulations of Objects ========= -->
+    <section id="glabels-object-manipulation"> 
+      <title>Andere Manipulationen von Objekten</title>
+
+      <p>Objekte können auf die folgenden Arten manipuliert werden.</p>
+
+      <section id="other-moving-resizing">
+	<title>Verschieben und Größenänderung von Objekten</title>
+
+	<p>Objekte können Sie durch einfaches Anklicken und Ziehen des ausgewählten Objekts zur neuen Position verschieben. Falls dieses Objekt Teil einer Mehrfachauswahl ist, werden durch Ziehen dieses Objektes alle Objekte verschoben, wobei deren Abstände untereinander erhalten bleiben. Falls kein Objekt ausgewählt ist, wird durch Anklicken eines Objekts eine neue Auswahl erzeugt, die dieses Objekt enthält. Siehe <link xref="select"/>.</p>
+
+	<p>Die Größe eines ausgewählten Objekts kann geändert werden, indem Sie auf einen der Größenänderungs-Anfasspunkte klicken und diesen ziehen, um die gewünschte Größe zu erreichen.</p>
+
+      </section>
+
+      <section id="other-stacking-order">
+	<title>Ändern der Reihenfolge der Ebenen</title>
+
+	<p>Die Stapelreihenfolge bezieht sich auf die relative Position in der Z-Achse von Objekten. Das beschreibt beim Überlappen von Objekten, welches der Objekte über den anderen erscheint. Per Vorgabe werden neue Objekte immer oberhalb von bereits vorhandenen Objekten platziert. Um diese Anordnung zu ändern, wählen Sie <guiseq><gui>Objekte</gui><gui>Anordnung</gui><gui>Ganz nach vorn</gui></guiseq>, um die Auswahl im Stapel nach oben zu verschieben, oder <guiseq><gui>Objekte</gui><gui>Anordnung</gui><gui>Ganz nach hinten</gui></guiseq>, um die Auswahl im Stapel nach unten zu verschieben. Diese Menüeinträge sind auch durch einen Klick mit der rechten Maustaste auf den Ansichtsbereich verfügbar, falls sich dort eine nicht leere Auswahl befindet.</p>
+
+      </section>
+
+      <section id="other-rotating-flipping">
+	<title>Drehen und Spiegeln von Objekten</title>
+
+	<p>Objekte können um 90 Grad in jeder Richtung gedreht oder horizontal oder vertikal gespiegelt werden. Wählen Sie hierzu den entsprechenden Eintrag im Menü <guiseq><gui>Objekte</gui><gui>Drehen/Spiegeln</gui></guiseq>. Diese Menüeinträge sind auch verfügbar, wenn Sie mit der rechten Maustaste in eine nicht leere Auswahl im Ansichtsbereich klicken.</p>
+
+         <note>
+         <p>Dieses Funktionsmerkmal kann nützlich sein, wenn Sie Einleger für CD-Boxen entwerfen. Für die Beschriftung der Schmalseite benötigen sie vertikal laufenden Text. Nachdem Sie das Textobjekt erstellt haben, wählen Sie <guiseq><gui>Objekte</gui><gui>Drehen/Spiegeln</gui></guiseq>, um das Textobjekt Ihren Erfordernissen entsprechend auszurichten.</p>
+         </note>
+
+      </section>
+
+      <section id="other-alignment">
+	<title>Ausrichten von Objekten</title>
+
+	<p>Objekte können horizontal oder vertikal zu einem anderen Objekt oder relativ zu einer Mittellinie des Etiketts angeordnet werden, indem Sie <guiseq><gui>Objekte</gui><gui>Horizontal ausrichten</gui></guiseq> oder <guiseq><gui>Objekte</gui><gui>Vertikal ausrichten</gui></guiseq> wählen. Diese Menüeinträge sind auch verfügbar, wenn Sie mit der rechten Maustaste in eine nicht leere Auswahl im Ansichtsbereich klicken.</p>
+
+      </section>
+
+      <section id="other-property-bar">
+	<title>Verwendung der Eigenschaftsleiste</title>
+
+	<p>Mit der Eigenschaftsleiste können Sie einige Eigenschaften von Objekten in einem Arbeitsgang ändern. Diese Eigenschaften umfassen Schriftfamilie, Schriftgröße, Schriftstärke, Textausrichtung, Textfarbe, Füllfarbe, Farbe von Linien oder Begrenzungen sowie Linienbreiten. Die Eigenschaftsleiste regelt auch die Vorgaben für diese Eigenschaften, wenn neue Objekte erzeugt werden.</p>
+
+      </section>
+
+
+
+    </section>
+
+</page>

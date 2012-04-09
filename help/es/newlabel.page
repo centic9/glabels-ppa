@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="newlabel" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Crear una etiqueta o tarjeta nuevas en <app>gLabels</app>.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+    <title>Crear una etiqueta nueva o una tarjeta</title>
+
+    <p>Para crear una etiqueta nueva o una tarjeta de visita, elija<guiseq><gui>Archivo</gui><gui>Nuevo</gui></guiseq> para mostrar el diálogo <gui>Nueva etiqueta o tarjeta</gui>. Seleccione el tipo de medio y la orientación para el documento nuevo y pulse <gui>Aceptar</gui>. Se mostrará un documento nuevo en el área de visualización de la ventana ventana de <app>gLabels</app>.</p>
+
+</page>

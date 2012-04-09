@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="editprop" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Jak upravit vlastnosti objektu.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Změna vlastností objektů</title>
+
+    <section id="glabels-object-properties">
+
+      <p>Většinu vlastností objektů lze upravit přes editor objektů v postranní liště, který je vyobrazený níže. Abyste mohli editor objektů používat, musíte nejdříve vybrat jeden objekt. Viz <link xref="select"/>.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/object-editor-sidebar.png" mime="image/png" style="right">
+      		<p>Ovládací prvky tisku kopií</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Editor objektů bude obsahovat některé z následujících karet, které závisí na typu objektu:</p>
+
+      <section id="object-editor-text">
+	<title>Karta Text (textové objekty)</title>
+
+	<p>Tato karta obsahuje malý editor na úpravu obsahu textového objektu. Rovněž obsahuje vyskakovací nabídku dostupných klíčů slučování dokumentů, které lze do textu vkládat.</p>
+
+      </section>
+
+      <section id="object-editor-image">
+	<title>Karta Obrázek (obrázkové objekty)</title>
+
+	<p>Tato karta obsahuje pole na zadání souboru s obrázkem. Přes tlačítko procházení můžete soubor snadno najít. Druhou možností je použití klíče pro slučování dokumentů, který poskytne název souboru až během tisku.</p>
+
+      </section>
+
+      <section id="object-editor-data">
+	<title>Karta Data (objekty čárových kódů)</title>
+
+	<p>Tato karta obsahuje textové pole na zadání dat pro čárový kód. Druhou možností je použití klíče pro slučování dokumentů, přes který jsou data poskytována až během tisku.</p>
+
+      </section>
+
+      <section id="object-editor-style">
+	<title>Karta Styl (textové objekty)</title>
+
+	<p>Tato karta obsahuje ovládací prvky na výběr vlastností textu, včetně typu písma, velikosti písma, tloušťky písma, barvy a zarovnání textu.</p>
+
+      </section>
+
+      <section id="object-editor-barcode">
+	<title>Karta Styl (objekty čárových kódů)</title>
+
+	<p>Tato karta obsahuje ovládací prvky na výběr vlastností čárového kódu, včetně stylu čárového kódu, barvy, zda tisknout text a zda vkládat číslo s kontrolním součtem.</p>
+
+      </section>
+
+      <section id="object-editor-line">
+	<title>Karta Čára</title>
+
+	<p>Tato karta obsahuje ovládací prvky na výběr vlastností čar a obrysů. Tyto vlastnosti zahrnují tloušťku čáry a její barvu.</p>
+
+      </section>
+
+      <section id="object-editor-fill">
+	<title>Karta Výplň</title>
+
+	<p>Tato karta obsahuje ovládací prvky na výběr vlastností výplně objektů obdélníků a elips. V současnosti obsahuje pouze barvu výplně.</p>
+
+      </section>
+
+      <section id="object-editor-size">
+	<title>Karta Velikost (všechny objekty vyjma čar)</title>
+
+	<p>Tato karta obsahuje ovládací prvky na výběr šířky a výšky objektu. K dispozici je zaškrtávací pole, kterým můžete zamknout poměr stran během úprav šířky a výšky. U obrázků je k dispozici rovněž tlačítko, kterým můžete nastavit reálné rozměry obrázku (předpokládá se 72 DPI).</p>
+
+      </section>
+
+      <section id="object-editor-size-line">
+	<title>Karta Velikost (objekty čar)</title>
+
+	<p>Tato karta obsahuje ovládací prvky pro výběr délky a úhlu čáry.</p>
+
+      </section>
+
+      <section id="object-editor-position">
+	<title>Karta Pozice</title>
+
+	<p>Tato karta obsahuje ovládací prvky pro změnu pozice objektu.</p>
+
+      </section>
+
+
+      <section id="object-editor-shadow">
+	<title>Karta Stín (všechny objekty vyjma čárových kódů)</title>
+
+	<p>Tato karta obsahuje ovládací prvky pro přidání stínu k objektu.</p>
+
+      </section>
+
+
+    </section>
+
+<!-- ============= Other Manipulations of Objects ========= -->
+    <section id="glabels-object-manipulation"> 
+      <title>Ostatní manipulace s objekty</title>
+
+      <p>S objekty lze manipulovat ještě následujícími způsoby:</p>
+
+      <section id="other-moving-resizing">
+	<title>Přesouvání a změna velikosti objektů</title>
+
+	<p>Objekty lze přesunout kliknutím na vybraný objekt a tažením objektu na nové místo. Pokud je objekt součástí skupiny označených objektů, budou se s objektem přesouvat všechny vybrané objekty, ale jejich vzájemná pozice zůstane zachovaná. Pokud není žádný objekt vybraný, kliknutí na objekt provede nový výběr tohoto objektu. Viz <link xref="select"/>.</p>
+
+	<p>U vybraných objektů můžete měnit jejich velikost kliknutím na úchyt pro změnu velikosti a jeho tažením tak, abyste dosáhli správné velikost.</p>
+
+      </section>
+
+      <section id="other-stacking-order">
+	<title>Změna pořadí objektů</title>
+
+	<p>Pořadí objektů představuje jejich relativní polohu v ose z. Prakticky to určuje při překrývání objektů, který z nich bude nahoře a který vespod. Standardně se nové objekty vytvářejí nad staršími objekty. Když chcete toto pořadí změnit, jeden nebo více objektů vyberte a zvolte <guiseq><gui>Objekty</gui><gui>Pořadí</gui><gui>Přenést dopředu</gui></guiseq> pro vynesení výběru na nejvyšší pozici nebo <guiseq><gui>Objekty</gui><gui>Pořadí</gui><gui>Odsunout dozadu</gui></guiseq> pro zatlačení výběru úplně dospod. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</p>
+
+      </section>
+
+      <section id="other-rotating-flipping">
+	<title>Otáčení a překlápění objektů</title>
+
+	<p>Objekty lze otáčet po 90stupňových krocích v obou směrech nebo je překlápět svisle či vodorovně a to volbou příslušné položky v podnabídce <guiseq><gui>Objekty</gui><gui>Otočit/Překlopit</gui></guiseq>. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</p>
+
+         <note>
+         <p>Tato funkce je užitečná, když navrhujete vložky do krabičky na CD. Pro text na hřbetu potřebujete svisle uspořádaný text. Po té co vytvoříte rámec se základním textem, zvolte <guiseq><gui>Objekty</gui><gui>Otočit/překlopit</gui></guiseq>, abyste textový rámec natočili podle svých požadavků.</p>
+         </note>
+
+      </section>
+
+      <section id="other-alignment">
+	<title>Zarovnávání objektů</title>
+
+	<p>Objekty lze zarovnávat vodorovně nebo svisle, relativně vůči sobě nebo relativně ke středové čáře etikety, volbou příslušné položky z podnabídky <guiseq><gui>Objekty</gui><gui>Zarovnat vodorovně</gui></guiseq> nebo <guiseq><gui>Objekty</gui><gui>Zarovnat svisle</gui></guiseq>. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</p>
+
+      </section>
+
+      <section id="other-property-bar">
+	<title>Používání lišty vlastností</title>
+
+	<p>Lištu vlastností lze použít ke změně některých běžných vlastností objektů jako celku. Tyto vlastnosti zahrnují typ písma, velikost písma, tloušťku písma, zarovnání textu, barvu textu, barvu výplně, barvu čáry nebo obrysu a tloušťku čáry. Přes panel vlastností může také zadat výchozí hodnoty těchto vlastností pro nově vytvářené objekty.</p>
+
+      </section>
+
+
+
+    </section>
+
+</page>

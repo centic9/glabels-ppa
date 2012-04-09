@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="merge-ex3" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="merge#merge-ex"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Créer des étiquettes adresses à partir des enregistrements du carnet d'adresses d'<app>Evolution</app>.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+
+    <title>Exemple 3 : étiquettes d'adresses avec la liste des contacts d'<app>Evolution</app> </title>
+
+      <p>Notre précédente soirée a été un grand succès et nous voulons maintenant imprimer des étiquettes d'adresses pour lancer des invitations pour en organiser une autre. Pour simplifier l'opération, nous allons utiliser le carnet d'adresses d'<app>Evolution</app>, car les coordonnées de tous nos amis y figurent.</p>
+
+      <note>
+	<p>Selon la manière dont la copie de <app>gLabels</app> a été empaquetée, cette fonctionnalité peut ne pas être disponible. La prise en charge du carnet d'adresses d'<app>Evolution</app> n'est disponible que si <app>evolution-data-server</app> et ses fichiers de développement étaient présents lors de la compilation de <application>gLabels</application>. N'oubliez pas cela si vous construisez <application>gLabels</application> directement à partir des sources.</p>
+	
+	<p>Si le paquet <app>gLabels</app> de votre distribution ne comporte pas cette prise en charge, vous pouvez essayer de contacter le responsable du paquet ou envoyer un rapport d'anomalie pour demander l'ajout de cette fonctionnalité.</p>
+      </note>
+
+      <p>Dans <app>gLabels</app>, nous créons un nouveau document fondé sur le modèle des « Étiquettes adresses » AVERY 5512. Puis, avec l'élément de menu <guiseq><gui>Objets</gui><gui>Propriétés de fusion</gui></guiseq> nous affichons la boîte de dialogue <gui>Propriétés de fusion</gui> avec laquelle nous sélectionnons le type de source (ici <gui>Données du carnet d'adresses Evolution par défaut</gui>) comme illustré ci-après.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-1.png" mime="image/png" style="right">
+      		<p>Boîte de dialogue « Propriétés de fusion »</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Après avoir choisi <gui>Données du carnet d'adresses Evolution par défaut</gui> comme source de fusion, nous obtenons la liste complète de son contenu. Par défaut, tous les enregistrements sont cochées. Nous pourrions organiser une soirée géante en laissant cette sélection telle que. Mais ne perdons pas de vue le budget. Nous allons donc retenir ou éliminer des participations en ajustant la coche des enregistrements d'un clic dans la case correspondante. Nous pouvons nous servir des boutons <gui>Sélectionner tout</gui> ou <gui>Désélectionner tout</gui> pour activer ou désactiver d'un coup toutes les entrées du carnet.</p>
+ 
+      <p>Nous pouvons aussi développer le contenu de chaque enregistrement en cliquant sur l'icône d'extension correspondante (le petit triangle) comme illustré. Une fois les choix arrêtés dans cette boîte de dialogue, cliquez <gui>Valider</gui> pour confirmer les modifications.</p>
+
+      <p>Nous allons maintenant ajouter des objets au document <app>gLabels</app> comme indiqué ci-dessous.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-2.png" mime="image/png" style="right">
+      		<p>Ajout d'objets</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Dans cet exemple, nous avons à nouveau un seul objet texte contenant tous les champs de fusion disposés sur plusieurs lignes comme sur une adresse postale.</p>
+
+      <p>Nous pouvons maintenant imprimer les étiquettes d'adresses en cliquant sur l'élément de menu <guiseq><gui>Fichier</gui><gui>Imprimer</gui></guiseq>. La boîte de dialogue « Imprimer » s'affiche comme indiqué ci-dessous.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-3.png" mime="image/png" style="right">
+      		<p>Impression des étiquettes d'adresses</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Pour s'assurer que les étiquettes auront bel aspect, nous activons l'option <gui>Imprimer des bordures</gui> et cliquons sur <gui>Aperçu avant impression</gui>. Cela déclenche l'affichage d'une fenêtre d'aperçu comme ci-dessous.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-4.png" mime="image/png" style="right">
+      		<p>Aperçu des étiquettes d'adresses</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Tout paraît correct, nous pouvons donc maintenant charger le paquet d'étiquettes adéquates dans l'imprimante, imprimer les adresses et commencer à envoyer les invitations à la soirée.</p>
+
+
+</page>

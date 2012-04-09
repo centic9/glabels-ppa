@@ -34,11 +34,11 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-bin_PROGRAMS = glabels$(EXEEXT) glabels-batch$(EXEEXT)
+bin_PROGRAMS = glabels-3$(EXEEXT) glabels-3-batch$(EXEEXT)
 subdir = src
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/configure.in
+am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
@@ -48,14 +48,14 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__objects_1 = marshal.$(OBJEXT)
-am_glabels_OBJECTS = glabels.$(OBJEXT) warning-handler.$(OBJEXT) \
-	critical-error-handler.$(OBJEXT) window.$(OBJEXT) \
-	stock.$(OBJEXT) ui.$(OBJEXT) ui-util.$(OBJEXT) \
-	ui-commands.$(OBJEXT) ui-property-bar.$(OBJEXT) \
-	ui-sidebar.$(OBJEXT) file.$(OBJEXT) new-label-dialog.$(OBJEXT) \
+am_glabels_3_OBJECTS = glabels.$(OBJEXT) warning-handler.$(OBJEXT) \
+	critical-error-handler.$(OBJEXT) window.$(OBJEXT) ui.$(OBJEXT) \
+	ui-util.$(OBJEXT) ui-commands.$(OBJEXT) \
+	ui-property-bar.$(OBJEXT) ui-sidebar.$(OBJEXT) file.$(OBJEXT) \
+	file-util.$(OBJEXT) new-label-dialog.$(OBJEXT) \
 	recent.$(OBJEXT) prefs.$(OBJEXT) prefs-model.$(OBJEXT) \
-	prefs-dialog.$(OBJEXT) view.$(OBJEXT) view-object.$(OBJEXT) \
-	view-box.$(OBJEXT) view-ellipse.$(OBJEXT) view-line.$(OBJEXT) \
+	prefs-dialog.$(OBJEXT) view.$(OBJEXT) view-box.$(OBJEXT) \
+	view-ellipse.$(OBJEXT) view-line.$(OBJEXT) \
 	view-image.$(OBJEXT) view-text.$(OBJEXT) \
 	view-barcode.$(OBJEXT) merge-properties-dialog.$(OBJEXT) \
 	object-editor.$(OBJEXT) object-editor-position-page.$(OBJEXT) \
@@ -69,69 +69,108 @@ am_glabels_OBJECTS = glabels.$(OBJEXT) warning-handler.$(OBJEXT) \
 	object-editor-bc-page.$(OBJEXT) \
 	object-editor-data-page.$(OBJEXT) \
 	object-editor-shadow-page.$(OBJEXT) print.$(OBJEXT) \
-	print-op.$(OBJEXT) template-designer.$(OBJEXT) bc.$(OBJEXT) \
-	bc-gnubarcode.$(OBJEXT) bc-postnet.$(OBJEXT) \
-	bc-iec16022.$(OBJEXT) label.$(OBJEXT) label-object.$(OBJEXT) \
-	label-text.$(OBJEXT) label-box.$(OBJEXT) label-line.$(OBJEXT) \
-	label-ellipse.$(OBJEXT) label-image.$(OBJEXT) \
-	label-barcode.$(OBJEXT) xml-label.$(OBJEXT) \
-	xml-label-04.$(OBJEXT) pixbuf-cache.$(OBJEXT) base64.$(OBJEXT) \
-	merge.$(OBJEXT) merge-init.$(OBJEXT) merge-text.$(OBJEXT) \
-	merge-evolution.$(OBJEXT) merge-vcard.$(OBJEXT) \
-	text-node.$(OBJEXT) mini-preview-pixbuf.$(OBJEXT) \
-	mini-preview-pixbuf-cache.$(OBJEXT) \
-	wdgt-print-copies.$(OBJEXT) wdgt-print-merge.$(OBJEXT) \
-	wdgt-media-select.$(OBJEXT) wdgt-mini-preview.$(OBJEXT) \
-	wdgt-rotate-label.$(OBJEXT) wdgt-chain-button.$(OBJEXT) \
-	cairo-label-path.$(OBJEXT) cairo-markup-path.$(OBJEXT) \
-	cairo-ellipse-path.$(OBJEXT) util.$(OBJEXT) color.$(OBJEXT) \
-	debug.$(OBJEXT) $(am__objects_1)
-glabels_OBJECTS = $(am_glabels_OBJECTS)
-am__DEPENDENCIES_1 =
-glabels_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-	../libglabels/libglabels.la mygal/libmygal.la \
-	$(LIB_BARCODE_DIR)/libbarcode.la \
-	$(LIB_IEC16022_DIR)/libiec16022.la
-glabels_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
-	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(glabels_LDFLAGS) \
-	$(LDFLAGS) -o $@
-am_glabels_batch_OBJECTS = glabels-batch.$(OBJEXT) print.$(OBJEXT) \
-	print-op.$(OBJEXT) bc.$(OBJEXT) bc-gnubarcode.$(OBJEXT) \
-	bc-postnet.$(OBJEXT) bc-iec16022.$(OBJEXT) label.$(OBJEXT) \
+	print-op.$(OBJEXT) print-op-dialog.$(OBJEXT) \
+	template-designer.$(OBJEXT) bc-backends.$(OBJEXT) \
+	bc-builtin.$(OBJEXT) bc-gnubarcode.$(OBJEXT) bc-zint.$(OBJEXT) \
+	bc-iec16022.$(OBJEXT) bc-iec18004.$(OBJEXT) label.$(OBJEXT) \
 	label-object.$(OBJEXT) label-text.$(OBJEXT) \
 	label-box.$(OBJEXT) label-line.$(OBJEXT) \
 	label-ellipse.$(OBJEXT) label-image.$(OBJEXT) \
-	label-barcode.$(OBJEXT) xml-label.$(OBJEXT) \
-	xml-label-04.$(OBJEXT) pixbuf-cache.$(OBJEXT) base64.$(OBJEXT) \
-	merge.$(OBJEXT) merge-init.$(OBJEXT) merge-text.$(OBJEXT) \
+	label-barcode.$(OBJEXT) pixbuf-util.$(OBJEXT) \
+	xml-label.$(OBJEXT) xml-label-04.$(OBJEXT) \
+	pixbuf-cache.$(OBJEXT) svg-cache.$(OBJEXT) merge.$(OBJEXT) \
+	merge-init.$(OBJEXT) merge-text.$(OBJEXT) \
+	merge-evolution.$(OBJEXT) merge-vcard.$(OBJEXT) \
+	text-node.$(OBJEXT) mini-preview-pixbuf.$(OBJEXT) \
+	mini-preview-pixbuf-cache.$(OBJEXT) media-select.$(OBJEXT) \
+	message-bar.$(OBJEXT) template-history.$(OBJEXT) \
+	template-history-model.$(OBJEXT) mini-preview.$(OBJEXT) \
+	mini-label-preview.$(OBJEXT) wdgt-chain-button.$(OBJEXT) \
+	field-button.$(OBJEXT) field-button-menu.$(OBJEXT) \
+	color-combo.$(OBJEXT) color-combo-button.$(OBJEXT) \
+	color-combo-menu.$(OBJEXT) \
+	color-combo-color-menu-item.$(OBJEXT) \
+	color-history-model.$(OBJEXT) color-swatch.$(OBJEXT) \
+	font-combo.$(OBJEXT) font-combo-menu.$(OBJEXT) \
+	font-combo-menu-item.$(OBJEXT) font-sample.$(OBJEXT) \
+	font-util.$(OBJEXT) font-history.$(OBJEXT) \
+	font-history-model.$(OBJEXT) cairo-label-path.$(OBJEXT) \
+	cairo-markup-path.$(OBJEXT) cairo-ellipse-path.$(OBJEXT) \
+	combo-util.$(OBJEXT) builder-util.$(OBJEXT) \
+	units-util.$(OBJEXT) str-util.$(OBJEXT) color.$(OBJEXT) \
+	debug.$(OBJEXT) $(am__objects_1)
+glabels_3_OBJECTS = $(am_glabels_3_OBJECTS)
+am__DEPENDENCIES_1 =
+glabels_3_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+	../libglabels/$(LIBGLABELS_BRANCH).la \
+	../libglbarcode/$(LIBGLBARCODE_BRANCH).la \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
+AM_V_lt = $(am__v_lt_$(V))
+am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
+am__v_lt_0 = --silent
+glabels_3_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(glabels_3_LDFLAGS) $(LDFLAGS) -o $@
+am_glabels_3_batch_OBJECTS = glabels-batch.$(OBJEXT) \
+	file-util.$(OBJEXT) print.$(OBJEXT) print-op.$(OBJEXT) \
+	bc-backends.$(OBJEXT) bc-builtin.$(OBJEXT) \
+	bc-gnubarcode.$(OBJEXT) bc-zint.$(OBJEXT) \
+	bc-iec16022.$(OBJEXT) bc-iec18004.$(OBJEXT) label.$(OBJEXT) \
+	label-object.$(OBJEXT) label-text.$(OBJEXT) \
+	label-box.$(OBJEXT) label-line.$(OBJEXT) \
+	label-ellipse.$(OBJEXT) label-image.$(OBJEXT) \
+	label-barcode.$(OBJEXT) pixbuf-util.$(OBJEXT) \
+	xml-label.$(OBJEXT) xml-label-04.$(OBJEXT) \
+	pixbuf-cache.$(OBJEXT) svg-cache.$(OBJEXT) merge.$(OBJEXT) \
+	merge-init.$(OBJEXT) merge-text.$(OBJEXT) \
 	merge-evolution.$(OBJEXT) merge-vcard.$(OBJEXT) \
 	text-node.$(OBJEXT) prefs.$(OBJEXT) prefs-model.$(OBJEXT) \
-	util.$(OBJEXT) color.$(OBJEXT) debug.$(OBJEXT) \
-	wdgt-print-copies.$(OBJEXT) wdgt-print-merge.$(OBJEXT) \
-	wdgt-mini-preview.$(OBJEXT) cairo-label-path.$(OBJEXT) \
+	font-util.$(OBJEXT) font-history.$(OBJEXT) \
+	font-history-model.$(OBJEXT) template-history.$(OBJEXT) \
+	template-history-model.$(OBJEXT) str-util.$(OBJEXT) \
+	color.$(OBJEXT) debug.$(OBJEXT) cairo-label-path.$(OBJEXT) \
 	cairo-ellipse-path.$(OBJEXT) $(am__objects_1)
-glabels_batch_OBJECTS = $(am_glabels_batch_OBJECTS)
-glabels_batch_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-	../libglabels/libglabels.la $(LIB_BARCODE_DIR)/libbarcode.la \
-	$(LIB_IEC16022_DIR)/libiec16022.la
-glabels_batch_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-	$(glabels_batch_LDFLAGS) $(LDFLAGS) -o $@
+glabels_3_batch_OBJECTS = $(am_glabels_3_batch_OBJECTS)
+glabels_3_batch_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+	../libglabels/$(LIBGLABELS_BRANCH).la \
+	../libglbarcode/$(LIBGLBARCODE_BRANCH).la \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
+glabels_3_batch_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+	$(AM_CFLAGS) $(CFLAGS) $(glabels_3_batch_LDFLAGS) $(LDFLAGS) \
+	-o $@
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
-	--mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
-	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+	$(AM_CFLAGS) $(CFLAGS)
+AM_V_CC = $(am__v_CC_$(V))
+am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
+am__v_CC_0 = @echo "  CC    " $@;
+AM_V_at = $(am__v_at_$(V))
+am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
+am__v_at_0 = @
 CCLD = $(CC)
-LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
-	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-	$(LDFLAGS) -o $@
-SOURCES = $(glabels_SOURCES) $(glabels_batch_SOURCES)
-DIST_SOURCES = $(glabels_SOURCES) $(glabels_batch_SOURCES)
+LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+AM_V_CCLD = $(am__v_CCLD_$(V))
+am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
+am__v_CCLD_0 = @echo "  CCLD  " $@;
+AM_V_GEN = $(am__v_GEN_$(V))
+am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))
+am__v_GEN_0 = @echo "  GEN   " $@;
+SOURCES = $(glabels_3_SOURCES) $(glabels_3_batch_SOURCES)
+DIST_SOURCES = $(glabels_3_SOURCES) $(glabels_3_batch_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
 	html-recursive info-recursive install-data-recursive \
 	install-dvi-recursive install-exec-recursive \
@@ -176,11 +215,13 @@ am__relativize = \
 ACLOCAL = @ACLOCAL@
 ALL_LINGUAS = @ALL_LINGUAS@
 AMTAR = @AMTAR@
+AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 AR = @AR@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
 AWK = @AWK@
+CAIRO_REQUIRED = @CAIRO_REQUIRED@
 CATALOGS = @CATALOGS@
 CATOBJEXT = @CATOBJEXT@
 CC = @CC@
@@ -194,6 +235,7 @@ DEFS = @DEFS@
 DEPDIR = @DEPDIR@
 DISABLE_DEPRECATED_CFLAGS = @DISABLE_DEPRECATED_CFLAGS@
 DISTCHECK_CONFIGURE_FLAGS = @DISTCHECK_CONFIGURE_FLAGS@
+DLLTOOL = @DLLTOOL@
 DOC_USER_FORMATS = @DOC_USER_FORMATS@
 DSYMUTIL = @DSYMUTIL@
 DUMPBIN = @DUMPBIN@
@@ -203,17 +245,23 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 FGREP = @FGREP@
+GDK_PIXBUF_CSOURCE = @GDK_PIXBUF_CSOURCE@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
+GLABELS_BRANCH = @GLABELS_BRANCH@
 GLABELS_CFLAGS = @GLABELS_CFLAGS@
 GLABELS_LIBS = @GLABELS_LIBS@
+GLIB_COMPILE_SCHEMAS = @GLIB_COMPILE_SCHEMAS@
 GLIB_GENMARSHAL = @GLIB_GENMARSHAL@
 GLIB_REQUIRED = @GLIB_REQUIRED@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
 GREP = @GREP@
+GSETTINGS_DISABLE_SCHEMAS_COMPILE = @GSETTINGS_DISABLE_SCHEMAS_COMPILE@
 GTKDOC_CHECK = @GTKDOC_CHECK@
+GTKDOC_MKPDF = @GTKDOC_MKPDF@
+GTKDOC_REBASE = @GTKDOC_REBASE@
 GTK_REQUIRED = @GTK_REQUIRED@
-HAVE_XML_PARSE_HUGE = @HAVE_XML_PARSE_HUGE@
+GTK_UPDATE_ICON_CACHE = @GTK_UPDATE_ICON_CACHE@
 HELP_DIR = @HELP_DIR@
 HTML_DIR = @HTML_DIR@
 INSTALL = @INSTALL@
@@ -229,31 +277,45 @@ INTLTOOL_PERL = @INTLTOOL_PERL@
 INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 LD = @LD@
 LDFLAGS = @LDFLAGS@
+LIBBARCODE_CFLAGS = @LIBBARCODE_CFLAGS@
+LIBBARCODE_LIBS = @LIBBARCODE_LIBS@
+LIBBARCODE_REQUIRED = @LIBBARCODE_REQUIRED@
 LIBEBOOK_CFLAGS = @LIBEBOOK_CFLAGS@
 LIBEBOOK_LIBS = @LIBEBOOK_LIBS@
 LIBEBOOK_REQUIRED = @LIBEBOOK_REQUIRED@
+LIBGLABELS_API_VERSION = @LIBGLABELS_API_VERSION@
+LIBGLABELS_BRANCH = @LIBGLABELS_BRANCH@
 LIBGLABELS_CFLAGS = @LIBGLABELS_CFLAGS@
 LIBGLABELS_LIBS = @LIBGLABELS_LIBS@
-LIBGLABELS_VERSION_INFO = @LIBGLABELS_VERSION_INFO@
-LIBGLADE_REQUIRED = @LIBGLADE_REQUIRED@
-LIBGNOMEUI_REQUIRED = @LIBGNOMEUI_REQUIRED@
-LIBGNOME_REQUIRED = @LIBGNOME_REQUIRED@
+LIBGLBARCODE_API_VERSION = @LIBGLBARCODE_API_VERSION@
+LIBGLBARCODE_BRANCH = @LIBGLBARCODE_BRANCH@
+LIBGLBARCODE_CFLAGS = @LIBGLBARCODE_CFLAGS@
+LIBGLBARCODE_LIBS = @LIBGLBARCODE_LIBS@
+LIBIEC16022_CFLAGS = @LIBIEC16022_CFLAGS@
+LIBIEC16022_LIBS = @LIBIEC16022_LIBS@
+LIBIEC16022_REQUIRED = @LIBIEC16022_REQUIRED@
 LIBOBJS = @LIBOBJS@
+LIBQRENCODE_CFLAGS = @LIBQRENCODE_CFLAGS@
+LIBQRENCODE_LIBS = @LIBQRENCODE_LIBS@
+LIBQRENCODE_REQUIRED = @LIBQRENCODE_REQUIRED@
+LIBRSVG_REQUIRED = @LIBRSVG_REQUIRED@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
 LIBXML_REQUIRED = @LIBXML_REQUIRED@
+LIBZINT_CFLAGS = @LIBZINT_CFLAGS@
+LIBZINT_LIBS = @LIBZINT_LIBS@
+LIBZINT_REQUIRED = @LIBZINT_REQUIRED@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
+MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
 MSGFMT_OPTS = @MSGFMT_OPTS@
 MSGMERGE = @MSGMERGE@
-MYGAL_CFLAGS = @MYGAL_CFLAGS@
-MYGAL_LIBS = @MYGAL_LIBS@
 NM = @NM@
 NMEDIT = @NMEDIT@
 OBJDUMP = @OBJDUMP@
@@ -266,9 +328,13 @@ PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_NAME = @PACKAGE_NAME@
 PACKAGE_STRING = @PACKAGE_STRING@
 PACKAGE_TARNAME = @PACKAGE_TARNAME@
+PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
+PANGO_REQUIRED = @PANGO_REQUIRED@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 PKG_CONFIG = @PKG_CONFIG@
+PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
+PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
 POFILES = @POFILES@
 POSUB = @POSUB@
 PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
@@ -278,18 +344,15 @@ SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
-UPDATE_DESKTOP_DATABASE = @UPDATE_DESKTOP_DATABASE@
-UPDATE_MIME_DATABASE = @UPDATE_MIME_DATABASE@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
 WARN_CFLAGS = @WARN_CFLAGS@
 XGETTEXT = @XGETTEXT@
-XML_PARSE_HUGE_CFLAGS = @XML_PARSE_HUGE_CFLAGS@
-XML_PARSE_HUGE_LIBS = @XML_PARSE_HUGE_LIBS@
 abs_builddir = @abs_builddir@
 abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
 abs_top_srcdir = @abs_top_srcdir@
+ac_ct_AR = @ac_ct_AR@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_DUMPBIN = @ac_ct_DUMPBIN@
 am__include = @am__include@
@@ -309,6 +372,7 @@ datarootdir = @datarootdir@
 docdir = @docdir@
 dvidir = @dvidir@
 exec_prefix = @exec_prefix@
+gsettingsschemadir = @gsettingsschemadir@
 host = @host@
 host_alias = @host_alias@
 host_cpu = @host_cpu@
@@ -322,7 +386,6 @@ libdir = @libdir@
 libexecdir = @libexecdir@
 localedir = @localedir@
 localstatedir = @localstatedir@
-lt_ECHO = @lt_ECHO@
 mandir = @mandir@
 mkdir_p = @mkdir_p@
 oldincludedir = @oldincludedir@
@@ -338,47 +401,58 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-LIB_BARCODE_DIR = ../barcode-0.98
-LIB_IEC16022_DIR = ../iec16022-0.2.1
-SUBDIRS = pixmaps stock-pixmaps mygal
+SUBDIRS = \
+	pixmaps \
+	cursors
+
 INCLUDES = \
-	-I$(top_srcdir) 					\
-	-I$(top_builddir) 					\
-	-I$(LIB_BARCODE_DIR)					\
-	-I$(LIB_IEC16022_DIR)					\
+	-I$(top_srcdir)						\
+	-I$(top_builddir)					\
+	-I$(top_srcdir)/libglabels				\
+	-I$(top_builddir)/libglabels				\
+	-I$(top_srcdir)/libglbarcode				\
+	-I$(top_builddir)/libglbarcode				\
 	$(GLABELS_CFLAGS) 					\
-	$(HAVE_XML_PARSE_HUGE)					\
+	$(LIBEBOOK_CFLAGS)					\
+	$(LIBBARCODE_CFLAGS)					\
+	$(LIBZINT_CFLAGS)					\
+	$(LIBQRENCODE_CFLAGS)					\
+	$(LIBIEC16022_CFLAGS)					\
 	$(DISABLE_DEPRECATED_CFLAGS)				\
-	-DPREFIX=\""$(prefix)"\"                        	\
-	-DSYSCONFDIR=\""$(sysconfdir)"\"                	\
-	-DDATADIR=\""$(datadir)"\"                      	\
-	-DLIBDIR=\""$(libdir)"\"                        	\
-	-DGLABELS_LOCALEDIR=\""$(datadir)/locale"\" 		\
-	-DGLABELS_GLADE_DIR=\""$(datadir)/glabels/glade/"\"	\
-	-DGLABELS_ICON_DIR=\""$(datadir)/pixmaps/"\"	\
-	-DGLABELS_PIXMAP_DIR=\""$(datadir)/pixmaps/glabels/"\"	\
+	-DGLABELS_LOCALE_DIR=\""$(datadir)/locale"\" 		\
+	-DGLABELS_DATA_DIR=\""$(datadir)/$(GLABELS_BRANCH)"\"	\
+	-DGLABELS_ICON_NAME=\""$(GLABELS_BRANCH)\""		\
 	-DG_LOG_DOMAIN=\""glabels\""
 
-glabels_LDFLAGS = -export-dynamic
-glabels_LDADD = \
+glabels_3_LDFLAGS = -export-dynamic
+glabels_3_LDADD = \
 	$(GLABELS_LIBS)				\
-	../libglabels/libglabels.la		\
-	mygal/libmygal.la			\
-	$(LIB_BARCODE_DIR)/libbarcode.la 	\
-	$(LIB_IEC16022_DIR)/libiec16022.la
+	../libglabels/$(LIBGLABELS_BRANCH).la	\
+	../libglbarcode/$(LIBGLBARCODE_BRANCH).la	\
+	$(LIBEBOOK_LIBS)		 	\
+	$(LIBBARCODE_LIBS)		 	\
+	$(LIBZINT_LIBS)				\
+	$(LIBQRENCODE_LIBS)			\
+	$(LIBIEC16022_LIBS)			\
+	-lm
 
-glabels_batch_LDFLAGS = -export-dynamic
-glabels_batch_LDADD = \
+glabels_3_batch_LDFLAGS = -export-dynamic
+glabels_3_batch_LDADD = \
 	$(GLABELS_LIBS)				\
-	../libglabels/libglabels.la		\
-	$(LIB_BARCODE_DIR)/libbarcode.la	\
-	$(LIB_IEC16022_DIR)/libiec16022.la
+	../libglabels/$(LIBGLABELS_BRANCH).la	\
+	../libglbarcode/$(LIBGLBARCODE_BRANCH).la	\
+	$(LIBEBOOK_LIBS)		 	\
+	$(LIBBARCODE_LIBS)		 	\
+	$(LIBZINT_LIBS)				\
+	$(LIBQRENCODE_LIBS)			\
+	$(LIBIEC16022_LIBS)			\
+	-lm
 
 BUILT_SOURCES = \
 	marshal.c			\
 	marshal.h			
 
-glabels_SOURCES = \
+glabels_3_SOURCES = \
 	glabels.c			\
 	warning-handler.c		\
 	warning-handler.h		\
@@ -386,8 +460,6 @@ glabels_SOURCES = \
 	critical-error-handler.h	\
 	window.c			\
 	window.h			\
-	stock.c				\
-	stock.h				\
 	ui.h				\
 	ui.c				\
 	ui-util.h			\
@@ -400,6 +472,8 @@ glabels_SOURCES = \
 	ui-sidebar.c			\
 	file.h				\
 	file.c				\
+	file-util.h			\
+	file-util.c			\
 	new-label-dialog.h		\
 	new-label-dialog.c		\
 	recent.h			\
@@ -410,11 +484,8 @@ glabels_SOURCES = \
 	prefs-model.h 			\
 	prefs-dialog.c 			\
 	prefs-dialog.h 			\
-	hig.h				\
 	view.c				\
 	view.h				\
-	view-object.c			\
-	view-object.h			\
 	view-box.c			\
 	view-box.h			\
 	view-ellipse.c			\
@@ -447,16 +518,22 @@ glabels_SOURCES = \
 	print.h				\
 	print-op.c			\
 	print-op.h			\
+	print-op-dialog.c		\
+	print-op-dialog.h		\
 	template-designer.c		\
 	template-designer.h		\
-	bc.c				\
-	bc.h				\
+	bc-backends.c			\
+	bc-backends.h			\
+	bc-builtin.c			\
+	bc-builtin.h			\
 	bc-gnubarcode.c			\
 	bc-gnubarcode.h			\
-	bc-postnet.c			\
-	bc-postnet.h			\
+	bc-zint.c			\
+	bc-zint.h 			\
 	bc-iec16022.c			\
 	bc-iec16022.h			\
+	bc-iec18004.c			\
+	bc-iec18004.h			\
 	label.c				\
 	label.h				\
 	label-object.c			\
@@ -473,14 +550,16 @@ glabels_SOURCES = \
 	label-image.h			\
 	label-barcode.c			\
 	label-barcode.h			\
+	pixbuf-util.c			\
+	pixbuf-util.h			\
 	xml-label.c			\
 	xml-label.h			\
 	xml-label-04.c			\
 	xml-label-04.h			\
 	pixbuf-cache.c			\
 	pixbuf-cache.h			\
-	base64.c			\
-	base64.h			\
+	svg-cache.c			\
+	svg-cache.h			\
 	merge.c				\
 	merge.h				\
 	merge-init.c			\
@@ -497,46 +576,90 @@ glabels_SOURCES = \
 	mini-preview-pixbuf.h		\
 	mini-preview-pixbuf-cache.c	\
 	mini-preview-pixbuf-cache.h	\
-	wdgt-print-copies.c		\
-	wdgt-print-copies.h		\
-	wdgt-print-merge.c		\
-	wdgt-print-merge.h		\
-	wdgt-media-select.c		\
-	wdgt-media-select.h		\
-	wdgt-mini-preview.c		\
-	wdgt-mini-preview.h		\
-	wdgt-rotate-label.c		\
-	wdgt-rotate-label.h		\
+	media-select.c			\
+	media-select.h			\
+	message-bar.c			\
+	message-bar.h			\
+	template-history.c		\
+	template-history.h		\
+	template-history-model.c	\
+	template-history-model.h	\
+	mini-preview.c			\
+	mini-preview.h			\
+	mini-label-preview.c		\
+	mini-label-preview.h		\
 	wdgt-chain-button.c		\
 	wdgt-chain-button.h		\
+	field-button.c			\
+	field-button.h			\
+	field-button-menu.c		\
+	field-button-menu.h		\
+	color-combo.c			\
+	color-combo.h			\
+	color-combo-button.c		\
+	color-combo-button.h		\
+	color-combo-menu.c		\
+	color-combo-menu.h		\
+	color-combo-color-menu-item.c	\
+	color-combo-color-menu-item.h	\
+	color-history-model.c		\
+	color-history-model.h		\
+	color-swatch.c			\
+	color-swatch.h			\
+	font-combo.c			\
+	font-combo.h			\
+	font-combo-menu.c		\
+	font-combo-menu.h		\
+	font-combo-menu-item.c		\
+	font-combo-menu-item.h		\
+	font-sample.c			\
+	font-sample.h			\
+	font-util.c			\
+	font-util.h			\
+	font-history.c			\
+	font-history.h			\
+	font-history-model.c		\
+	font-history-model.h		\
 	cairo-label-path.c		\
 	cairo-label-path.h		\
 	cairo-markup-path.c		\
 	cairo-markup-path.h		\
 	cairo-ellipse-path.c		\
 	cairo-ellipse-path.h		\
-	util.c				\
-	util.h				\
+	combo-util.c			\
+	combo-util.h			\
+	builder-util.c			\
+	builder-util.h			\
+	units-util.c			\
+	units-util.h			\
+	str-util.c			\
+	str-util.h			\
 	color.c				\
 	color.h				\
 	debug.c 			\
 	debug.h 			\
 	$(BUILT_SOURCES)
 
-glabels_batch_SOURCES = \
+glabels_3_batch_SOURCES = \
 	glabels-batch.c			\
+	file-util.h			\
+	file-util.c			\
 	print.c				\
 	print.h				\
 	print-op.c			\
 	print-op.h			\
-	bc.c				\
-	bc.h				\
+	bc-backends.c			\
+	bc-backends.h			\
+	bc-builtin.c			\
+	bc-builtin.h			\
 	bc-gnubarcode.c			\
 	bc-gnubarcode.h			\
-	bc-postnet.c			\
-	bc-postnet.h			\
+	bc-zint.c			\
+	bc-zint.h			\
 	bc-iec16022.c			\
 	bc-iec16022.h			\
+	bc-iec18004.c			\
+	bc-iec18004.h			\
 	label.c				\
 	label.h				\
 	label-object.c			\
@@ -553,14 +676,16 @@ glabels_batch_SOURCES = \
 	label-image.h			\
 	label-barcode.c			\
 	label-barcode.h			\
+	pixbuf-util.c			\
+	pixbuf-util.h			\
 	xml-label.c			\
 	xml-label.h			\
 	xml-label-04.c			\
 	xml-label-04.h			\
 	pixbuf-cache.c			\
 	pixbuf-cache.h			\
-	base64.c			\
-	base64.h			\
+	svg-cache.c			\
+	svg-cache.h			\
 	merge.c				\
 	merge.h				\
 	merge-init.c			\
@@ -577,19 +702,22 @@ glabels_batch_SOURCES = \
 	prefs.h 			\
 	prefs-model.c 			\
 	prefs-model.h 			\
-	util.c				\
-	util.h				\
+	font-util.c			\
+	font-util.h			\
+	font-history.c			\
+	font-history.h			\
+	font-history-model.c		\
+	font-history-model.h		\
+	template-history.c		\
+	template-history.h		\
+	template-history-model.c	\
+	template-history-model.h	\
+	str-util.c			\
+	str-util.h			\
 	color.c				\
 	color.h				\
 	debug.c 			\
 	debug.h 			\
-	wdgt-print-copies.c		\
-	wdgt-print-copies.h		\
-	wdgt-print-merge.c		\
-	wdgt-print-merge.h		\
-	wdgt-mini-preview.c		\
-	wdgt-mini-preview.h		\
-	hig.h				\
 	cairo-label-path.c		\
 	cairo-label-path.h		\
 	cairo-ellipse-path.c		\
@@ -678,12 +806,12 @@ clean-binPROGRAMS:
 	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
 	echo " rm -f" $$list; \
 	rm -f $$list
-glabels$(EXEEXT): $(glabels_OBJECTS) $(glabels_DEPENDENCIES) 
-	@rm -f glabels$(EXEEXT)
-	$(glabels_LINK) $(glabels_OBJECTS) $(glabels_LDADD) $(LIBS)
-glabels-batch$(EXEEXT): $(glabels_batch_OBJECTS) $(glabels_batch_DEPENDENCIES) 
-	@rm -f glabels-batch$(EXEEXT)
-	$(glabels_batch_LINK) $(glabels_batch_OBJECTS) $(glabels_batch_LDADD) $(LIBS)
+glabels-3$(EXEEXT): $(glabels_3_OBJECTS) $(glabels_3_DEPENDENCIES) 
+	@rm -f glabels-3$(EXEEXT)
+	$(AM_V_CCLD)$(glabels_3_LINK) $(glabels_3_OBJECTS) $(glabels_3_LDADD) $(LIBS)
+glabels-3-batch$(EXEEXT): $(glabels_3_batch_OBJECTS) $(glabels_3_batch_DEPENDENCIES) 
+	@rm -f glabels-3-batch$(EXEEXT)
+	$(AM_V_CCLD)$(glabels_3_batch_LINK) $(glabels_3_batch_OBJECTS) $(glabels_3_batch_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -691,18 +819,37 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/base64.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bc-backends.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bc-builtin.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bc-gnubarcode.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bc-iec16022.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bc-postnet.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bc.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bc-iec18004.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bc-zint.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/builder-util.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cairo-ellipse-path.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cairo-label-path.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cairo-markup-path.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/color-combo-button.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/color-combo-color-menu-item.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/color-combo-menu.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/color-combo.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/color-history-model.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/color-swatch.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/color.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/combo-util.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/critical-error-handler.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/debug.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/field-button-menu.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/field-button.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/file-util.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/file.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/font-combo-menu-item.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/font-combo-menu.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/font-combo.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/font-history-model.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/font-history.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/font-sample.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/font-util.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/glabels-batch.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/glabels.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/label-barcode.Po@am__quote@
@@ -714,14 +861,18 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/label-text.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/label.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/marshal.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/media-select.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/merge-evolution.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/merge-init.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/merge-properties-dialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/merge-text.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/merge-vcard.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/merge.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/message-bar.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mini-label-preview.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mini-preview-pixbuf-cache.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mini-preview-pixbuf.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mini-preview.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/new-label-dialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/object-editor-bc-page.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/object-editor-data-page.Po@am__quote@
@@ -736,57 +887,59 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/object-editor-text-page.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/object-editor.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pixbuf-cache.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pixbuf-util.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/prefs-dialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/prefs-model.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/prefs.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/print-op-dialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/print-op.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/print.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/recent.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stock.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/str-util.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/svg-cache.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/template-designer.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/template-history-model.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/template-history.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/text-node.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ui-commands.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ui-property-bar.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ui-sidebar.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ui-util.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ui.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/util.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/units-util.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/view-barcode.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/view-box.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/view-ellipse.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/view-image.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/view-line.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/view-object.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/view-text.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/view.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/warning-handler.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wdgt-chain-button.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wdgt-media-select.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wdgt-mini-preview.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wdgt-print-copies.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wdgt-print-merge.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wdgt-rotate-label.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/window.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xml-label-04.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xml-label.Po@am__quote@
 
 .c.o:
-@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+@am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(COMPILE) -c $<
 
 .c.obj:
-@am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+@am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-@am__fastdepCC_TRUE@	$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
+@am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
@@ -1119,24 +1272,19 @@ uninstall-am: uninstall-binPROGRAMS
 
 
 marshal.h: marshal.list $(GLIB_GENMARSHAL)
-	$(GLIB_GENMARSHAL) $< --header --prefix=gl_marshal > $@
+	$(AM_V_GEN) $(GLIB_GENMARSHAL) $< --header --prefix=gl_marshal > $@
 
 marshal.c: marshal.list $(GLIB_GENMARSHAL)
-	echo "#include \"marshal.h\"" > $@ && \
+	$(AM_V_GEN) echo "#include \"marshal.h\"" > $@ && \
 	$(GLIB_GENMARSHAL) $< --body --prefix=gl_marshal >> $@
 
-$(bin_PROGRAMS): $(LIB_BARCODE_DIR)/libbarcode.la \
-		 $(LIB_IEC16022_DIR)/libiec16022.la \
-		 ../libglabels/libglabels.la
+$(bin_PROGRAMS): ../libglabels/$(LIBGLABELS_BRANCH).la ../libglbarcode/$(LIBGLBARCODE_BRANCH).la
 
-$(LIB_BARCODE_DIR)/libbarcode.la:
-	cd $(LIB_BARCODE_DIR); $(MAKE)
-
-$(LIB_IEC16022_DIR)/libiec16022.la:
-	cd $(LIB_IEC16022_DIR); $(MAKE)
-
-../libglabels/libglabels.la:
+../libglabels/$(LIBGLABELS_BRANCH).la:
 	cd ../libglabels; $(MAKE)
+
+../libglbarcode/$(LIBGLBARCODE_BRANCH).la:
+	cd ../libglbarcode; $(MAKE)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

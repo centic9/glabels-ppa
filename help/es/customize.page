@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="customize" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Personalizar <app>gLabels</app> para ajustarlo a sus necesidades.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+    
+  <!-- ============= Customization ============================= -->
+  <!-- Use this section to describe how to customize the application. -->
+    <title>Configuración</title> 
+    <p>Para configurar <app>gLabels</app>, elija <guiseq><gui>Configuración</gui><gui>Preferencias</gui></guiseq>. El diálogo <gui>Preferencias</gui> contiene las siguientes secciones en pestañas:</p>
+
+  <section id="prefs-locale" style="2column">
+    <title>Región</title>
+	<section>
+	<title>Unidades</title>
+	<p>Use este grupo de botones de radio para especificar sus unidades favoritas. Seleccione una de las siguientes opciones:</p>
+	   <list>
+		<item>
+		<p><gui>Puntos</gui></p>
+		<p>Usar puntos (1 punto = 1/72 pulgadas = 0.352778 mm).</p>
+		</item>
+		<item>
+		<p><gui>Pulgadas</gui></p>
+		<p>Usar pulgadas.</p>
+		</item>
+		<item>
+		<p><gui>Milímetros</gui></p>
+		<p>Usar milímetros.</p>
+		</item>
+	   </list>
+	   <p>Predeterminado: <gui>pulgadas</gui>.</p>
+	</section>
+
+	<section>
+	<title>Tamaño de página predeterminado</title>
+	<p>Use este grupo de botones de radio para especificar su tamaño de página favorito. Esto hará que localice más rápidamente los tipos de medios cuando crea una etiqueta o una tarjeta nuevas.</p>
+	   <list>
+		<item>
+		<p><gui>Carta</gui></p>
+		<p>La mayoría de sus medios serán tendrán un tamaño de página «Carta» (8.5 x 11 pulgadas).</p>
+		</item>
+		<item>
+		<p><gui>ISO A4</gui></p>
+		<p>La mayoría de sus medios serán del tamaño de página ISO A4 (210 x 297 mm).</p>
+		</item>
+	   </list>
+	   <p>Predeterminado: <gui>Carta</gui>.</p>		
+	</section>
+    </section>
+
+  <section id="prefs-defaults" style="2column">
+    <title>Opciones predeterminadas para el objeto</title>
+
+	<section>
+	<title>Texto</title>
+	<p>Use estos controles para configurar las propiedades predeterminadas de los objetos de texto nuevos. Estas propiedades son:</p>
+	   <list>
+		<item>
+		<p><gui>Tipografía</gui></p>
+		<p>Estos controles se usan para seleccionar la familia tipográfica y su tamaño, y si la tipografía debe ser negrita o cursiva.</p>
+		</item>
+		<item>
+		<p><gui>Color</gui></p>
+		<p>Este control selecciona el color predeterminado del texto.</p>
+		</item>
+		<item>
+		<p><gui>Alineación</gui></p>
+		<p>Estos controles se usan para seleccionar la alineación predeterminada del texto (izquierda, centrado o derecha).</p>
+		</item>
+	   </list>
+	</section>
+
+	<section>
+	<title>Línea</title>
+	<p>Use estos controles para establecer las propiedades predeterminadas de las líneas y los márgenes de los objetos nuevos. Estas propiedades son:</p>
+	   <list>
+		<item>
+		<p><gui>Anchura</gui></p>
+		<p>Este control selecciona la anchura predeterminada de la línea.</p>
+		</item>
+		<item>
+		<p><gui>Color</gui></p>
+		<p>Este control selecciona el color predeterminado de la línea.</p>
+		</item>
+	   </list>
+	</section>
+
+	<section>
+	<title>Relleno</title>
+	<p>Use este control para establecer la propiedad predeterminada de relleno de los objetos nuevos. Esta propiedad es:</p>
+	   <list>
+		<item>
+		<p><gui>Color</gui></p>
+		<p>Este control selecciona el color predeterminado de relleno.</p>
+		</item>
+	   </list>
+	</section>
+	</section>
+
+</page>

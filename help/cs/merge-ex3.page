@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="merge-ex3" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="merge#merge-ex"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Vytvoření adresních štítků ze záznamů adresáře aplikace <app>Evolution</app>.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Příklad 3: Adresní štítky z adresáře aplikace <app>Evolution</app></title>
+
+      <p>Náš předchozí večírek měl velký úspěch a my nyní chceme vytisknout adresní štítky pro pozvánky na další takový. Abychom si to zjednodušili, můžeme použít adresář aplikace <app>Evolution</app>, protože adresy všech našich přátel máme uložené v něm.</p>
+
+      <note>
+	<p>V závislosti na tom, jak byl připravený váš balíček <app>gLabels</app>, nemusí být tato funkčnost dostupná. Podpora pro adresář <app>Evolution</app> je dostupná jen v případě, že byl při překladu aplikace <app>gLabels</app> k dispozici <app>evolution-data-server</app> a k němu vývojářské soubory. Mějte toto na paměti, pokud si aplikaci překládáte sami ze zdrojových kódů.</p>
+	
+	<p>Pokud balíček <app>gLabels</app> ve vaší distribuci tuto podporu postrádá, můžete zkusit kontaktovat správce balíčku nebo to zkusit nahlásit jako požadavek do systému pro hlášení chyb.</p>
+      </note>
+
+      <p>V aplikaci <app>glabels</app> vytvoříme nový dokument ze šablony Avery L7162 „Poštovní etikety“. Potom v nabídce zvolíme <guiseq><gui>Objekty</gui><gui>Vlastnosti slučování</gui></guiseq>, aby se nám zobrazilo dialogové okno <gui>Vlastnosti slučování</gui>. V něm vybereme typ zdroje (v našem případě <gui>Data z výchozího adresáře Evolution</gui>), jak je ukázáno na obrázku.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-1.png" mime="image/png" style="right">
+      		<p>Dialogové okno vlastností slučování</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Když máme jako zdroj slučování vybráno <gui>Data z výchozího adresáře Evolution</gui>, obdržíme úplný seznam jeho obsahu. Na začátku jsou zaškrtnuté všechny položky. Předpokládá se, že budeme pořádat opravdu velký večírek a tak bychom mohli ponechat výběr jak je (ale uvědomte si kolik to bude stát). Nyní některé záznamy kliknutím na příslušné zaškrtávací políčko vyřadíme nebo naopak vybereme, případně můžeme použít tlačítka <gui>Vybrat vše</gui> a <gui>Zrušit výběr</gui> pro aktivování nebo deaktivování všech záznamů v adresáři.</p>
+ 
+      <p>U každého záznamu si také můžeme prohlédnou všechny údaje po jeho rozbalení kliknutím na malý trojúhelníček. Až jsme s výběrem v dialogovém okně spokojení, klikneme na <gui>OK</gui> a změny se použijí.</p>
+
+      <p>Nyní můžeme začít s přidáváním objektů do svého dokumentu <app>glabels</app>, jak je ukázáno níže.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-2.png" mime="image/png" style="right">
+      		<p>Přidávání objektů</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>V tomto příkladu máme opět jen jeden textový objekt. Ten obsahuje všechna slučovaná pole uspořádaná v několika řádcích, představujících poštovní adresy.</p>
+
+      <p>Nyní můžeme své etikety s adresami vytisknout volbou položky nabídky <guiseq><gui>Soubor</gui><gui>Tisk</gui></guiseq>. Zobrazí se dialogové okno tisku, jak jej můžete vidět níže.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-3.png" mime="image/png" style="right">
+      		<p>Tisk etiket s adresami</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Nyní zkontrolujeme, zda vypadají etikety jak mají. Vybereme možnost <gui>Tisk obrysů</gui> a klikneme na <gui>Náhled tisku</gui>. Zobrazí se dialogové okno s náhledem tisku, stejně jako na následujícím obrázku.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-4.png" mime="image/png" style="right">
+      		<p>Náhled etiket s adresami</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Vše vypadá dobře a tak můžeme vložit do tiskárny správný list s etiketami, vytisknout adresní štítky a začít rozesílat pozvánky na večírek.</p>
+
+
+</page>

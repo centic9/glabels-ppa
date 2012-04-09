@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="basicusage" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Comment gérer les fichiers et quitter l'application.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+
+   <title>Utilisation élémentaire</title>
+    
+    <section>
+    <title>Ouverture d'un fichier</title>
+
+      <p>Pour ouvrir un fichier, choisissez <guiseq><gui>Fichier</gui><gui>Ouvrir</gui></guiseq> pour afficher la boîte de dialogue <gui>Ouvrir un fichier</gui>. Choisissez le fichier à ouvrir, puis cliquez sur <gui>Valider</gui>. Le fichier apparaît dans la zone d'affichage de la fenêtre de <app>gLabels</app>.</p>
+
+      <p>Vous pouvez aussi ouvrir plusieurs fichiers avec <app>gLabels</app>. L'application crée une fenêtre séparée pour chaque fichier ouvert.</p>
+
+      <p>L'application enregistre les chemins et les noms des fichiers récemment modifiés et les affiche en tant qu'éléments de menu dans <guiseq><gui>Fichier</gui><gui>Fichiers récents</gui></guiseq>.</p>
+     </section>
+
+     <section id="closefile">
+    <title>Fermeture d'un fichier</title>
+
+      <p>Pour fermer le document en cours, choisissez <guiseq><gui>Fichier</gui><gui>Fermer</gui></guiseq>. Si le document a été modifié, vous devez confirmer dans une boîte de dialogue si vous souhaitez enregistrer les modifications avant de quitter ou si vous souhaitez annuler la commande. S'il n'y a qu'une seule fenêtre active, <app>gLabels</app> se ferme.</p>
+     </section>
+     
+     <section>
+    <title>Enregistrement d'un fichier</title>
+
+      <p>Vous pouvez enregistrer vos fichiers de différentes façons :</p>
+
+      <list><item>
+
+	  <p>Pour enregistrer les modifications d'un fichier existant, choisissez <guiseq><gui>Fichier</gui><gui>Enregistrer</gui></guiseq>.</p>
+
+	</item>
+        <item>
+
+	  <p>Pour enregistrer un nouveau fichier ou changer le nom d'un fichier existant, choisissez <guiseq><gui>Fichier</gui><gui>Enregistrer sous...</gui></guiseq>. Saisissez un nom de fichier dans la boîte de dialogue <gui>Enregistrer sous</gui> et cliquez sur <gui>Valider</gui>.</p>
+
+	</item>
+      </list>
+     </section>
+
+     <section>
+    <title>Arrêt de <app>gLabels</app></title>
+
+      <p>Pour quitter <app>gLabels</app>, choisissez <guiseq><gui>Fichier</gui><gui>Quitter</gui></guiseq>. Cette commande équivaut à fermer toutes les fenêtres ouvertes. Consultez la section <link xref="basicusage#closefile"/>.</p>
+     </section>
+</page>
