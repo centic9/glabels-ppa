@@ -1,3 +1,18 @@
+glabels (3.0.0-3ubuntu1) quantal; urgency=low
+
+  * debian/patches/0008-build-with-new-eds.patch:
+    - build with latest e-d-s/ebook API
+  * debian/control:
+    - build-dep on latest API for evolution
+
+ -- Didier Roche <didrocks@ubuntu.com>  Wed, 12 Sep 2012 15:41:07 +0200
+
+glabels (3.0.0-3build1) quantal; urgency=low
+
+  * Rebuild against latest libebook.
+
+ -- Bhavani Shankar <bhavi@ubuntu.com>  Mon, 28 May 2012 11:06:55 +0530
+
 glabels (3.0.0-3) unstable; urgency=low
 
   * Remove obsolete configure options

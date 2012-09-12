@@ -1,7 +1,8 @@
 Source: glabels
 Section: gnome
 Priority: optional
-Maintainer: Jakob Haufe <sur5r@sur5r.net>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Jakob Haufe <sur5r@sur5r.net>
 Build-Depends: autotools-dev,
                cdbs,
                debhelper (>= 5.0),
@@ -14,7 +15,7 @@ Build-Depends: autotools-dev,
                librsvg2-dev (>= 2.32.0),
                libcairo2-dev (>= 1.10.0),
                libpango1.0-dev (>= 1.28.1),
-               libebook1.2-dev (>= 2.30.3),
+               libebook1.2-dev (>= 3.5.3),
                barcode (>= 0.98),
                libqrencode-dev (>= 3.1.0),
                libiec16022-dev (>= 0.2.4)
