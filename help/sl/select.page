@@ -4,9 +4,7 @@
   <info>
     <link type="guide" xref="index#usage"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>
-      How to select objects.
-    </desc>
+    <desc>Kako izberemo predmete.</desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
@@ -20,7 +18,7 @@
     </license>    
   </info>
 
-    <title>To select objects</title>
+    <title>Izbiranje predmetov</title>
 
       <p>A prerequisite for performing operations on objects is the
         selection of individual objects or groups of objects.  The
@@ -33,7 +31,7 @@
         Toolbar</gui>.</p>
 
       <section>
-	  <title>Selecting a single object</title>
+	  <title>Izbor posameznega predmeta</title>
 	    <p>A single object can be selected simply by clicking
              on the desired object in the display area.
              Once selected the object will be highlighted with a set of
@@ -67,7 +65,7 @@
 	</section>
 
 	<section>
-	  <title>Unselecting objects</title>
+	  <title>Preklic izbora predmetov</title>
 	  
 	    <p>Individual objects can be removed from an existing
               selection by holding the <key>Ctrl</key> key while
@@ -81,7 +79,7 @@
 	</section>
 
     <section id="clipboard"> 
-      <title>Clipboard Commands</title>
+      <title>Ukazi odložišča</title>
 
       <p>Object selections can be manipulated using the standard clipboard
         operations <gui>Cut</gui>,
@@ -89,37 +87,30 @@
         and <gui>Delete</gui>.</p>
 
 	<section>
-	  <title><gui>Cut</gui> (<keyseq><key>Ctrl</key><key>X</key></keyseq>)</title>
+	  <title><gui>Izreži</gui> (<keyseq><key>Ctrl</key><key>X</key></keyseq>)</title>
 	  
-	    <p>Moves selected objects to the clipboard.  The objects are
-              then available for pasting back into the current document or
-              another document.</p>
+	    <p>Premakne izbrane predmete na odložišče. Predmeti so tako na voljo za lepljenje v trenutni ali drug dokument.</p>
 	  
 	</section>
 
 	<section>
-	  <title><gui>Copy</gui> (<keyseq><key>Ctrl</key><key>C</key></keyseq>)</title>
+	  <title><gui>Kopiraj</gui> (<keyseq><key>Ctrl</key><key>C</key></keyseq>)</title>
 	  
-	    <p>Copies selected objects to the clipboard without deleting
-              them.  The objects are then available for pasting back into
-              the current document or another document.</p>
+	    <p>Kopira izbrane predmete na odložišče brez brisanja. Predmeti so tako na voljo za lepljenje v trenutni ali drug dokument.</p>
 	  
 	</section>
 
 	<section>
-	  <title><gui>Paste</gui> (<keyseq><key>Ctrl</key><key>V</key></keyseq>)</title>
+	  <title><gui>Prilepi</gui> (<keyseq><key>Ctrl</key><key>V</key></keyseq>)</title>
 	  
-	    <p>Pastes objects from the clipboard into the current document.
-              <app>gLabels</app> can only paste objects from
-              another <app>gLabels</app> document.</p>
+	    <p>Prilepi izbrane predmete z odložišča v trenutni dokument.  <app>gLabels</app> lahko lepi le predmete iz drugih dokumentov <app>gLabels</app>.</p>
 	  
 	</section>
 
 	<section>
-	  <title><gui>Delete</gui> (<key>Del</key>)</title>
+	  <title><gui>Izbriši</gui> (<key>Del</key>)</title>
 	  
-	    <p>Deletes selected objects without placing them on the
-              clipboard.</p>
+	    <p>Izbriše izbrane predmete, pri čemer jih ne pusti na odložišču.</p>
 	  
 	</section>
        </section>

@@ -4,6 +4,7 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <revision pkgversion="3.0.1" version="0.1" date="2011-06-20" status="incomplete"/>
     <desc>Crear sus plantillas manualmente.</desc>
     <credit type="author">
       <name>Jim Evins</name>
@@ -638,6 +639,23 @@
     <title>Nodo <span translate="no">Layout</span></title>
 
     <p>Un nodo de etiqueta puede contener varios hijos <code translate="no">Layout</code>. Si las etiquetas se colocan en un patrón de rejilla, sólo se necesita un diseño. sin embargo, si las etiquetas se colocan en varias rejillas, como un patrón de unión, se pueden usar múltiples etiquetas <code translate="no">Layout</code>.</p>
+    <p>Un ejemplo común de varios diseños es una hoja con etiquetas para CD:</p>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Hoja de etiquetas de CD</desc>
+      <media type="image" src="figures/layouts-cdlabel.png" mime="image/png" style="right">
+        <p>Hoja de etiquetas de CD</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+    <p>Las dos etiquetas del borde izquierdo se pueden asignar a una cuadrícula, asumiendo que se puede definir correctamente la coordenada de la etiqueta superior izquierda y la distancia hasta la segunda etiqueta. La distancia al borde izquierdo es común en estas etiquetas. La tercera en el borde derecho no tiene valores de distancias comunes con las demás, por lo que se debe definir un segundo diseño, con coordenadas únicas para la esquina superior izquierda de esa etiqueta.</p>
+
+	<note style="tip">
+	<p>Sólo puede definir varios diseños si las etiquetas en la hoja tienen la misma forma. si su hoja contiene diferentes formas, puede definir cada forma en otra plantilla aparte. Las versiones futuras de <app>gLabels</app>, probablemente podrán concatenar estas hojas con diferentes formas en una única plantilla.</p>
+      </note>
+
 	<note style="tip">
 	<p>Una única etiqueta se puede tratar con una rejilla de una.</p>
       </note>

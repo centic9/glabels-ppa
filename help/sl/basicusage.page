@@ -20,10 +20,10 @@
     </license>    
   </info>
 
-   <title>Basic usage</title>
+   <title>Osnovna raba</title>
     
     <section>
-    <title>To open a file</title>
+    <title>Kako odpremo datoteko</title>
 
       <p>To open a file, choose 
         <guiseq><gui>File</gui><gui>Open</gui>
@@ -43,7 +43,7 @@
      </section>
 
      <section id="closefile">
-    <title>To close a file</title>
+    <title>Kako zapremo datoteko</title>
 
       <p>To close the current document, choose
         <guiseq><gui>File</gui>
@@ -55,9 +55,9 @@
      </section>
      
      <section>
-    <title>To save a file</title>
+    <title>Kako shranimo datoteko</title>
 
-      <p>You can save files in the following ways:</p>
+      <p>Datoteke lahko shranjujete na sledeče načine:</p>
 
       <list><item>
 
@@ -79,7 +79,7 @@
      </section>
 
      <section>
-    <title>To quit <app>gLabels</app></title>
+    <title>Izhod iz <app>gLabels</app></title>
 
       <p>To quit <app>gLabels</app>, choose <guiseq><gui>File</gui>
         <gui>Quit</gui></guiseq>. This is equivalent to closing all open windows. 

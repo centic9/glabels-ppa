@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="select" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Bagaimana memilih objek.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Untuk memilih objek</title>
+
+      <p>Persyaratan bagi pelaksanaan operasi pada objek adalah pemilihan individu objek atau kelompok objek. Area tampilan mesti berada dalam mode pemilihan objek untuk membuat pilihan baru, sebagaimana ditunjukkan oleh kursor panah. Mode pemilihan objek dipilih oleh butir menu <guiseq><gui>Objek</gui><gui>Pilih Mode</gui></guiseq>, atau perintah yang bersesuaian pada <gui>bilah Perkakas Menggambar</gui>.</p>
+
+      <section>
+	  <title>Memilih objek tunggal</title>
+	    <p>Sebuah objek tunggal dapat dipilih hanya dengan mengklik objek yang diinginkan pada area tampilan. Sekali dipilih, objek akan ditandai dengan sekumpulan tangan pengubah ukuran.</p>
+	</section>
+
+	<section>
+	  <title>Mengagregasi pilihan objek</title>
+	    <p>Beberapa objek dapat dipilih dengan cara, pertama memilih objek pertama seperti di atas lalu dengan menahan <key>Ctrl</key> ketika memilih objek-objek tambahan. Objek individu dapat ditambahkan ke pilihan yang telah ada kapanpun dengan menahan <key>Ctrl</key> ketika memilih objek-objek yang diinginkan. Semua objek juga dapat dipilih dengan memakai butir menu <guiseq><gui>Sunting</gui><gui>Pilih Semua</gui></guiseq>. Semua objek dalam suatu pilihan objek agregat akan disorot.</p>
+	</section>
+
+	<section>
+	  <title>Pemilihan area</title>
+	  
+	    <p>Beberapa objek juga dapat dipilih sekaligus dengan mengklik area kosong dan menyeret untuk membentuk suatu area persegi. Ketika dilepas, semua objek yang tercakup dalam area akan membentuk agregasi pilihan. Suatu pilihan area dapat dipakai untuk menambah ke pilihan yang telah ada dengan menahan tombol <key>Ctrl</key> ketika melakukan pemilihan.</p>
+	  
+	</section>
+
+	<section>
+	  <title>Mengeluarkan objek dari pilihan</title>
+	  
+	    <p>Individual objects can be removed from an existing
+              selection by holding the <key>Ctrl</key> key while
+              clicking on a previously selected object.  An entire selection
+              can be dismissed by using the <guiseq>
+	      <gui>Edit</gui> <gui>Un-select All</gui>
+              </guiseq> menu item
+              or by simply clicking any empty space in the display area.
+              Once an object is unselected its highlight is removed.</p>
+	  
+	</section>
+
+    <section id="clipboard"> 
+      <title>Perintah Papan Klip</title>
+
+      <p>Object selections can be manipulated using the standard clipboard
+        operations <gui>Cut</gui>,
+        <gui>Copy</gui>, <gui>Paste</gui>,
+        and <gui>Delete</gui>.</p>
+
+	<section>
+	  <title><gui>Cut</gui> (<keyseq><key>Ctrl</key><key>X</key></keyseq>)</title>
+	  
+	    <p>Moves selected objects to the clipboard.  The objects are
+              then available for pasting back into the current document or
+              another document.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Copy</gui> (<keyseq><key>Ctrl</key><key>C</key></keyseq>)</title>
+	  
+	    <p>Copies selected objects to the clipboard without deleting
+              them.  The objects are then available for pasting back into
+              the current document or another document.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Paste</gui> (<keyseq><key>Ctrl</key><key>V</key></keyseq>)</title>
+	  
+	    <p>Pastes objects from the clipboard into the current document.
+              <app>gLabels</app> can only paste objects from
+              another <app>gLabels</app> document.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Delete</gui> (<key>Del</key>)</title>
+	  
+	    <p>Deletes selected objects without placing them on the
+              clipboard.</p>
+	  
+	</section>
+       </section>
+
+</page>

@@ -4,9 +4,7 @@
   <info>
     <link type="guide" xref="index#usage"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>
-      Create new objects within your document.
-    </desc>
+    <desc>Ustvarite nove predmete v svojem dokumentu.</desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
@@ -20,7 +18,7 @@
     </license>    
   </info>
 
-    <title>To create new objects</title>
+    <title>Kako ustvarimo nov predmet</title>
 
       <p>Objects are created by choosing the appropriate selection under
         the <guiseq><gui>Objects</gui><gui>Create Object</gui></guiseq> submenu
@@ -30,11 +28,10 @@
         <guiseq><gui>Objects</gui><gui>Select Mode</gui></guiseq>.  This will
         return the display area's cursor to the default selection arrow.</p>
 
-      <p>The following describes the object creation mode for each object
-        type:</p>
+      <p>Naslednje opisuje način ustvarjanja predmetov za vsako vrsto predmetov posebej:</p>
 
 	<section>
-	  <title>Text</title>
+	  <title>Besedilo</title>
 	    <p>Click the desired location of the upper left corner of the
               text object.  New text objects are initialized with the
               string "Text."  To change this text, or other properties, see
@@ -42,7 +39,7 @@
 	</section>
 
 	<section>
-	  <title>Box</title>
+	  <title>Okvir</title>
 	    <p>Click the desired location of the upper left corner of the
               box object and drag to the desired location of the lower right
               corner.  If you simply click in a single location, a square
@@ -51,7 +48,7 @@
 	</section>
 
 	<section>
-	  <title>Line</title>
+	  <title>Črta</title>
 	    <p>Click the desired location of one end of the
               line object and drag to the desired location of the other end.
               If you simply click in a single location, a diagonal line
@@ -60,7 +57,7 @@
 	</section>
 
 	<section>
-	  <title>Ellipse</title>
+	  <title>Elipsa</title>
 	    <p>Click the desired location of the upper left corner of the
               ellipse object and drag to the desired location of the lower
               right corner.  If you simply click in a single location, a circle
@@ -69,7 +66,7 @@
 	</section>
 
 	<section>
-	  <title>Image</title>
+	  <title>Slika</title>
 	    <p>Click the desired location of the upper left corner of the
               image object and drag to the desired location of the lower
               right corner.  If you simply click in a single location, a square
@@ -80,7 +77,7 @@
 	</section>
 
 	<section>
-	  <title>Barcode</title>
+	  <title>Črtna koda</title>
 	    <p>Click the desired location of the upper left corner of the
               barcode object.  New barcode objects are initialized to a
               POSTNET barcode with representative data.  To change data

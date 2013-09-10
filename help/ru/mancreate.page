@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mancreate" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <revision pkgversion="3.0.1" version="0.1" date="2011-06-20" status="incomplete"/>
+    <desc>Создание шаблона вручную.</desc>
+    <credit type="author">
+      <name>Джим Эвинс (Jim Evins)</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Марио Блатерман (Mario Blättermann)</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title>Создание шаблона вручную</title>
+
+
+
+  <!-- ****************** -->
+  <!-- BEGIN Introduction -->
+  <!-- ****************** -->
+  <p>Эта страница служит в качестве справочного руководства по созданию шаблонов в <app>gLabels</app>. Шаблоны <app>gLabels</app> определяются в обычных XML-файлах, описание которых (DTD) можно найти <link href="http://glabels.org/xmlns/2.3/glabels-2.3.dtd.txt">здесь</link>. DTD описывает и другие файлы XML, которые используются в <app>gLabels</app>.</p>
+
+  <p>Созданный вручную файл шаблона должен быть помещён в каталог <file>${HOME}/.glabels</file> и иметь расширение <file>.template</file>.</p>
+
+  <note style="advanced">
+    <p><app>gLabels</app> ищет шаблоны в нескольких каталогах:</p>
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Местоположение</p></td>
+        <td><p>Описание</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>
+        <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><file>${prefix}/share/libglabels-3.0/templates</file></p></td>
+        <td><p>Шаблоны, поставляемые с <app>gLabels</app>.</p>
+            <p><file>${prefix}</file> — это чаще всего каталог <file>/usr</file> или <file>/usr/local</file> в зависимости от того, куда был установлен <app>gLabels</app>.</p></td>
+      </tr>
+      <tr>
+        <td><p><file>${XDG_CONFIG_HOME}/libglabels/templates</file></p></td>
+        <td><p>Пользовательские шаблоны <app>gLabels</app> создаются при помощи <gui>Дизайнера шаблонов</gui>. <em>Не помещайте в этот каталог шаблоны, созданные вручную.</em></p>
+            <p>Если переменная <file>${XDG_CONFIG_HOME}</file> не определена, то используется каталог по умолчанию <file>${HOME}/.config</file>.</p></td>
+      </tr>
+      <tr>
+        <td><p><file>${HOME}/.glabels</file></p></td>
+        <td><p>Шаблоны, созданные пользователем вручную, должны помещаться в этот каталог. Более старые версии <gui>Дизайнера шаблонов</gui> (до версии 3.0) также помещали шаблоны в этот каталог.</p></td>
+      </tr>
+    </table>
+  </note>
+
+  <note><p>Окончательные файлы шаблонов можно отправить в <link href="mailto:glabels-templates@lists.sourceforge.net">список рассылки</link>, чтобы этот шаблон мог быть включён в последующие версии <app>gLabels</app>.</p>
+  </note>
+  <!-- ****************** -->
+  <!-- END Introduction   -->
+  <!-- ****************** -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Assumptions -->
+  <!-- ***************** -->
+  <section id="template-assumptions">
+    <title>Предварительные сведения</title>
+    <list>
+      <item>
+        <p>На листе могут находиться этикетки или визитки только одного и того же размера (если на листе находится несколько этикеток или визиток с разными размерами, их можно разбить на несколько шаблонов)</p>
+      </item>
+      <item>
+        <p>Расстояния могут измеряться в <code translate="no">точках</code>, <code translate="no">дюймах</code>, <code translate="no">милиметрах</code>, <code translate="no">сантиметрах</code> или <code translate="no">pc</code>. Например: "<code translate="no">1.0in</code>" или "<code translate="no">2.54cm</code>". Если единицы измерения не указаны, будут использоваться точки (<code translate="no">pt</code>). 1 <em>pt</em> = 1/72 <em>in</em> = 0.352778 <em>mm</em>).</p>
+      </item>
+    </list>
+  </section>
+  <!-- ***************** -->
+  <!-- END Assumptions   -->
+  <!-- ***************** -->
+
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Template Files -->
+  <!-- ******************** -->
+  <section id="template-file">
+    <title>Файлы шаблонов</title>
+
+    <p>Файл шаблона содержит один элемент верхнего уровня <code translate="no">Glabels-templates</code></p>
+
+    <code mime="text/xml" translate="no">
+&lt;?xml version="1.0"?&gt;
+&lt;Glabels-templates&gt;
+
+   <var translate="yes">...шаблоны...</var>
+
+&lt;/Glabels-templates&gt;</code>
+
+    <listing>
+      <title>Пример шаблона</title>
+      <desc>Пример шаблона <app>gLabels</app>, содержащего один элемент <code translate="no">Template</code>.</desc>
+      <code mime="text/xml" translate="no">
+&lt;?xml version="1.0"?&gt;
+&lt;Glabels-templates&gt;
+
+  &lt;Template brand="Avery" part="8160" size="US-Letter" description="Mailing Labels"&gt;
+    &lt;Meta category="label"/&gt;
+    &lt;Meta category="mail"/&gt;
+    &lt;Meta product_url="http://www.avery.com/avery/en_us/"/&gt;
+    &lt;Label-rectangle id="0" width="189pt" height="72pt" round="5pt"&gt;
+      &lt;Markup-margin size="5pt"/&gt;
+      &lt;Layout nx="3" ny="10" x0="11.25pt" y0="36pt" dx="200pt" dy="72pt"/&gt;
+    &lt;/Label-rectangle&gt;
+  &lt;/Template&gt;
+
+&lt;/Glabels-templates&gt;</code>
+    </listing>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Template Files   -->
+  <!-- ******************** -->
+
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Template Node  -->
+  <!-- ******************** -->
+  <section id="template-template-node">
+    <title>Узел <span translate="no">Template</span></title>
+
+    <p>Узел <code translate="no">Template</code> описывает канцелярское изделие. Для каждого типа узла Label должна быть своя запись (<code translate="no">Label-rectangle</code>, <code translate="no">Label-round</code> или <code translate="no">Label-cd</code>).</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Свойства</p></td>  <td><p>Описание</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">brand</code></p></td>  
+        <td><p>Брэнд или производитель канцелярского изделия. Например, «Avery».</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">part</code></p></td>
+        <td><p>Шифр компонента или название канцелярского изделия. Например, «8160».</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">размер</code></p></td>
+        <td><p>Размер бумаги. Например, «<code translate="no">US-Letter</code>", "<code translate="no">A4</code>, ...»</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">описание</code></p></td>
+        <td><p>Описание канцелярского изделия. Например, «Mailing Labels» (почтовые ярлыки).</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">description</code></p></td>
+        <td><p>Описание канцелярского изделия, которое можно переводить. Например, «Mailing Labels.» (почтовые ярлыки). Это полезно только для предустановленных шаблонов.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Ширина страницы. Применяется только в том случае, если значение атрибута size равно «Other»</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Высота страницы. Применяется только в том случае, если значение атрибута size равно «Other»</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">equiv</code></p></td>
+        <td><p>Эквивалентный шифр компонента. Если это свойство присутствует, то шаблон является копией другого шаблона того же самого брэнда. Шаблон наследует все свойства за исключением брэнда и названия. Это свойство должно ссылаться на предыдущий шаблон. <app>gLabels</app> пока что не поддерживает опережающие ссылки.</p></td>
+      </tr>
+    </table>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Template Node    -->
+  <!-- ******************** -->
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Meta Node      -->
+  <!-- ******************** -->
+  <section id="meta-template-node">
+    <title>Узел <span translate="no">Meta</span></title>
+
+    <p>Узел <code translate="no">Meta</code> содержит некоторую дополнительную информацию о шаблоне. Узел <code translate="no">Template</code> может содержать произвольное количество узлов <code translate="no">Meta</code>.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Подчинённый узел</p></td>  <td><p>Описание</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">category</code></p></td>
+        <td><p>Категория шаблона. Шаблон может принадлежать нескольким категориям, для этого необходимо добавить несколько узлов <code translate="no">Meta</code> в родительский узел <code translate="no">Template</code>. Категории шаблонов используются <app>gLabels</app><gui>New Label Dialog</gui> для фильтрации результатов при поиске шаблонов.</p>
+
+            <p>Значение этой категории должно совпадать с предопределённым идентификатором категории в файле <file>${prefix}/libglabels-3.0/templates/categories.xml</file>. Текущие определённые идентификаторы категорий включают в себя:</p>
+            <list>
+              <item><p><code translate="no">label</code></p></item>
+              <item><p><code translate="no">round-label</code></p></item>
+              <item><p><code translate="no">elliptical-label</code></p></item>
+              <item><p><code translate="no">square-label</code></p></item>
+              <item><p><code translate="no">rectangle-label</code></p></item>
+              <item><p><code translate="no">card</code></p></item>
+              <item><p><code translate="no">business-card</code></p></item>
+              <item><p><code translate="no">media</code></p></item>
+              <item><p><code translate="no">mail</code></p></item>
+              <item><p><code translate="no">foldable</code></p></item>
+              <item><p><code translate="no">photo</code></p></item>
+            </list>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">product_url</code></p></td>
+        <td><p>Адрес URL, указывающий на веб-страницу изделия (если есть).</p></td>
+      </tr>
+    </table>
+
+    <note><p>Предложения по дополнительным категориям можно отправлять в <link href="mailto:glabels-devel@lists.sourceforge.net">список рассылки</link> разработчиков <app>gLabels</app>.</p>
+          <p>URL изделия имеет ограниченное применение, т. к. этот адрес может быть непостоянным.</p>
+    </note>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Meta Node        -->
+  <!-- ******************** -->
+
+
+  <!-- ************************** -->
+  <!-- BEGIN Label-rectangle Node -->
+  <!-- ************************** -->
+  <section id="template-label-rectangle-node">
+    <title>Узел <span translate="no">Label-rectangle</span></title>
+
+    <p>Узел <code translate="no">Label-rectangle</code> описывает размеры этикетки или визитной карточки прямоугольной формы (возможно, с закруглёнными углами).</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Свойства</p></td>  <td><p>Описание</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Зарезервировано для использования в будущем. Всегда должно иметь нулевое (0) значение.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Ширина этикетки/визитки</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Высота этикетки/визитки</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">round</code></p></td>
+        <td><p>Радиус закругления углов. Для элементов с прямоугольными гранями (визитные карточки) радиус должен иметь нулевое (0) значение.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">x_waste</code></p></td>
+        <td><p>Горизонтальный отступ. Полезно для минимизации проблем при выравнивании, когда используется фон, отличный от белого (например, изображение).</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">y_waste</code></p></td>
+        <td><p>Вертикальный отступ. Полезно для минимизации проблем при выравнивании, когда используется фон, отличный от белого (например, изображение).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Параметры <span translate="no">Label-rectangle</span></desc>
+      <media type="image" src="figures/glabels-template-rect-label.png" mime="image/png" style="right">
+        <p>Параметры <span translate="no">Label-rectangle</span></p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ************************** -->
+  <!-- END Label-rectangle Node   -->
+  <!-- ************************** -->
+
+
+  <!-- ************************ -->
+  <!-- BEGIN Label-ellipse Node -->
+  <!-- ************************ -->
+  <section id="template-label-ellipse-node">
+    <title>Узел <span translate="no">Label-ellipse</span></title>
+
+    <p>Узел <code translate="no">Label-ellipse</code> описывает размеры одной этикетки или визитки эллиптической формы.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Свойства</p></td>  <td><p>Описание</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Зарезервировано для использования в будущем. Всегда должно иметь нулевое (0) значение.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Ширина эллипса</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Высота эллипса</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">waste</code></p></td>
+        <td><p>Отступ. Полезно для минимизации проблем при выравнивании, когда используется фон, отличный от белого (например, изображение).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Параметры <span translate="no">Label-ellipse</span></desc>
+      <media type="image" src="figures/glabels-template-ellipse-label.png" mime="image/png" style="right">
+        <p>Параметры <span translate="no">Label-ellipse</span></p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ************************ -->
+  <!-- END Label-ellipse Node   -->
+  <!-- ************************ -->
+
+
+  <!-- ********************** -->
+  <!-- BEGIN Label-round Node -->
+  <!-- ********************** -->
+  <section id="template-label-round-node">
+    <title>Узел <span translate="no">Label-round</span></title>
+
+    <p>Узел <code translate="no">Label-round</code> описывает размеры простой круглой этикетки (не CD).</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Свойства</p></td>  <td><p>Описание</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Зарезервировано для использования в будущем. Всегда должно иметь нулевое (0) значение.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">radius</code></p></td>
+        <td><p>Радиус (половина диаметра) этикетки</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">waste</code></p></td>
+        <td><p>Отступ. Полезно для минимизации проблем при выравнивании, когда используется фон, отличный от белого (например, изображение).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Параметры <span translate="no">Label-ellipse</span></desc>
+      <media type="image" src="figures/glabels-template-circle-label.png" mime="image/png" style="right">
+        <p>Параметры <span translate="no">Label-ellipse</span></p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ********************** -->
+  <!-- END Label-round Node   -->
+  <!-- ********************** -->
+
+
+  <!-- ******************* -->
+  <!-- BEGIN Label-cd Node -->
+  <!-- ******************* -->
+  <section id="template-label-cd-node">
+    <title>Узел <span translate="no">Label-cd</span></title>
+
+    <p>Узел <code translate="no">Label-cd</code> описывает размеры CD, DVD или визиток для CD.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Свойства</p></td>  <td><p>Описание</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Зарезервировано для использования в будущем. Всегда должно иметь нулевое (0) значение.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">radius</code></p></td>
+        <td><p>Внешний радиус этикетки</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">hole</code></p></td>
+        <td><p>Радиус концентрической окружности</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Если присутствует, этикетка будет обрезана по указанной ширине. Полезно для дисков в форме визиток.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Если присутствует, этикетка будет обрезана по указанной высоте. Полезно для дисков в форме визиток.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">waste</code></p></td>
+        <td><p>Отступ. Полезно для минимизации проблем при выравнивании, когда используется фон, отличный от белого (например, изображение).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Параметры <span translate="no">Label-cd</span></desc>
+      <media type="image" src="figures/glabels-template-cd-label.png" mime="image/png" style="right">
+        <p>Параметры вкладыша для CD</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ******************* -->
+  <!-- END Label-cd Node   -->
+  <!-- ******************* -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Markup Node -->
+  <!-- ***************** -->
+  <section id="template-markup">
+    <title>Узлы <span translate="no">Markup</span></title>
+
+    <p>Шаблоны могут содержать необязательные узлы разметки. Эти узлы применяются для описания разметочных линий, которые будут показаны в области рисования <app>glabels</app>, но не выводятся на печать. Эти линии могут использоваться для отступов, линий сгибов, центральных линий, особых зон и других полезных элементов.</p>
+
+
+    <!-- ======================== -->
+    <!-- BEGIN Markup-margin Node -->
+    <!-- ======================== -->
+    <section id="template-markup-margin-node">
+      <title>Узел <span translate="no">Markup-margin</span></title>
+
+      <p><code translate="no">Markup-margin</code> описывает поля для границ этикетки.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Свойства</p></td>  <td><p>Описание</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">размер</code></p></td>
+          <td><p>Размер поря, т. е. расстояние до границы этикетки.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ======================== -->
+    <!-- END Markup-margin Node   -->
+    <!-- ======================== -->
+
+
+    <!-- ====================== -->
+    <!-- BEGIN Markup-line Node -->
+    <!-- ====================== -->
+    <section id="template-markup-line-node">
+      <title>Узел <span translate="no">Markup-line</span></title>
+
+      <p>Узел <code translate="no">Markup-line</code> описывает разметку линии.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Свойства</p></td>  <td><p>Описание</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x1</code></p></td>
+          <td><p>Координата по оси X первой точки линейного сегмента.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y1</code></p></td>
+          <td><p>Координата по оси Y первой точки линейного сегмента.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x2</code></p></td>
+          <td><p>Координата по оси X второй точки линейного сегмента.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y2</code></p></td>
+          <td><p>Координата по оси Y второй точки линейного сегмента.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ====================== -->
+    <!-- END Markup-line Node   -->
+    <!-- ====================== -->
+
+
+    <!-- ======================== -->
+    <!-- BEGIN Markup-circle Node -->
+    <!-- ======================== -->
+    <section id="template-markup-circle-node">
+      <title>Узел <span translate="no">Markup-circle</span></title>
+
+      <p>Узел <code translate="no">Markup-line</code> описывает круговую разметку.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Свойства</p></td>  <td><p>Описание</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x0</code></p></td>
+          <td><p>Координата по оси X исходной окружности (центр).</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y0</code></p></td>
+          <td><p>Координата по оси Y исходной окружности (центр).</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">radius</code></p></td>
+          <td><p>Радиус окружности.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ======================== -->
+    <!-- END Markup-circle Node   -->
+    <!-- ======================== -->
+
+
+    <!-- ====================== -->
+    <!-- BEGIN Markup-rect Node -->
+    <!-- ====================== -->
+    <section id="template-markup-rect-node">
+      <title>Узел <span translate="no">Markup-rect</span></title>
+
+      <p>Узел <code translate="no">Markup-line</code> описывает прямоугольную разметку.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Свойства</p></td>  <td><p>Описание</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x1</code></p></td>
+          <td><p>Координата по оси X левого верхнего угла прямоугольника.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y1</code></p></td>
+          <td><p>Координата по оси Y левого верхнего угла прямоугольника.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">w</code></p></td>
+          <td><p>Ширина прямоугольника.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">h</code></p></td>
+          <td><p>Высота прямоугольника</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">r</code></p></td>
+          <td><p>Радиус закругления углов.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ====================== -->
+    <!-- END Markup-rect Node   -->
+    <!-- ====================== -->
+
+
+    <!-- ========================= -->
+    <!-- BEGIN Markup-ellipse Node -->
+    <!-- ========================= -->
+    <section id="template-markup-ellipse-node">
+      <title>Узел <span translate="no">Markup-ellipse</span></title>
+
+      <p><code translate="no">Markup-ellipse</code> описывает эллипс.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Свойства</p></td>  <td><p>Описание</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x1</code></p></td>
+          <td><p>Координата по оси X левого верхнего угла эллипса.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y1</code></p></td>
+          <td><p>Координата по оси Y левого верхнего угла эллипса.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">w</code></p></td>
+          <td><p>Ширина эллипса.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">h</code></p></td>
+          <td><p>Высота эллипса.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ========================= -->
+    <!-- END Markup-ellipse Node   -->
+    <!-- ========================= -->
+
+  </section>
+  <!-- ***************** -->
+  <!-- END Markup Node   -->
+  <!-- ***************** -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Layout Node -->
+  <!-- ***************** -->
+  <section id="template-layout-node">
+    <title>Узел <span translate="no">Layout</span></title>
+
+    <p>Узел может содержать несколько дочерних узлов <code translate="no">Layout</code>. Если этикетки располагаются в виде обычной сетки, то в этом случае потребуется только один узел. Если же этикетки располагаются в виде нескольких сеток, необходимо использовать несколько узлов <code translate="no">Layout</code>.</p>
+    <p>Примером использования нескольких слоёв может служить лист с тремя этикетками для CD:</p>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Страница с этикеткой для CD</desc>
+      <media type="image" src="figures/layouts-cdlabel.png" mime="image/png" style="right">
+        <p>Страница с этикеткой для CD</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+    <p>Две этикетки с левой стороны могут быть включены в сетки, предположим, что мы можем определить координаты левой верхней этикетки и расстояние до второй этикетки. Расстояние до границы слева — общая величина для этих этикеток. У третьей этикетки справа нет общих значений расстояния с другими этикетками, поэтому необходимо задать второй слой со своими координатами для левого верхнего угла этикетки.</p>
+
+	<note style="tip">
+	<p>Установка нескольких слоёв возможна только в том случае, если этикетки на странице имеют одну и ту же форму. Если на странице расположены различные этикетки, для каждой формы необходимо определить свой отдельный шаблон. В будущих версиях <app>gLabels</app> может быть появится возможность объединять различные формы в одном шаблоне.</p>
+      </note>
+
+	<note style="tip">
+	<p>Одну этикетку можно рассматривать как сетку с одним элементом.</p>
+      </note>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Свойства</p></td>  <td><p>Описание</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">nx</code></p></td>
+        <td><p>Количество этикеток/визиток в сетке (по горизонтали)</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">ny</code></p></td>
+        <td><p>Количество этикеток/визиток в сетке (по вертикали)</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">x0</code></p></td>
+        <td><p>Расстояние от левой границы листа до левой границы левого столбца с этикетками или визитками.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">y0</code></p></td>
+        <td><p>Расстояние от верхней границы листа до верхней границы верхней строки с этикетками или визитками.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">dx</code></p></td>
+        <td><p>Горизонтальный шаг сетки.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">dy</code></p></td>
+        <td><p>Вертикальный шаг сетки.</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Параметры <span translate="no">Layout</span></desc>
+      <media type="image" src="figures/glabels-template-layout.png" mime="image/png" style="right">
+        <p>Параметры <span translate="no">Layout</span></p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ***************** -->
+  <!-- END Layout Node   -->
+  <!-- ***************** -->
+
+
+</page>

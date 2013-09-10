@@ -4,9 +4,7 @@
   <info>
     <link type="guide" xref="merge#merge-ex"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>
-       Create address labels from the <app>Evolution</app> address book entries.
-    </desc>
+    <desc>Ustvarite nalepke z naslovi iz adresarja programa <app>Evolution</app>.</desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
@@ -20,7 +18,7 @@
     </license>    
   </info>
 
-    <title>Example 3: Address Labels Using the <app>Evolution</app> Addressbook</title>
+    <title>Primer 3: Nalepke z naslovi iz adresarja programa <app>Evolution</app></title>
 
       <p>Our last party was a great success, and now we need to print mailing
         address labels for the invitations to a new one. To simplify this, we can use
@@ -70,7 +68,7 @@
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-2.png" mime="image/png" style="right">
-      		<p>Adding objects</p>
+      		<p>Dodajanje predmetov</p>
     		</media>
       <!-- ==== End of Figure ==== -->
 
@@ -84,7 +82,7 @@
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-3.png" mime="image/png" style="right">
-      		<p>Printing address labels</p>
+      		<p>Tiskanje nalepk naslovov</p>
     		</media>
       <!-- ==== End of Figure ==== -->
 
@@ -95,7 +93,7 @@
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-4.png" mime="image/png" style="right">
-      		<p>Addess labels preview</p>
+      		<p>Predogled nalepk naslovov</p>
     		</media>
       <!-- ==== End of Figure ==== -->
 

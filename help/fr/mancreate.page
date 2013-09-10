@@ -4,6 +4,7 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <revision pkgversion="3.0.1" version="0.1" date="2011-06-20" status="incomplete"/>
     <desc>Comment créer vos propres modèles à la main.</desc>
     <credit type="author">
       <name>Jim Evins</name>
@@ -639,6 +640,23 @@
     <title>Nœud <span translate="no">Layout</span></title>
 
     <p>Un nœud <span translate="no">Label</span> peut contenir plusieurs nœuds <code translate="no">Layout</code> enfants. Si les étiquettes sont placées dans une trame de grille simple, un seul nœud suffit. Si les étiquettes sont disposées dans plusieurs grilles, comme pour le motif décalé d'un mur de briques, plusieurs nœuds <code translate="no">Layout</code> seront nécessaires.</p>
+    <p>Un exemple courant d'agencement multiple est une feuille contenant trois étiquettes de CD :</p>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Page d'étiquettes pour CD</desc>
+      <media type="image" src="figures/layouts-cdlabel.png" mime="image/png" style="right">
+        <p>Page d'étiquettes pour CD</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+    <p>Il est possible d'attribuer les deux étiquettes de gauche à une grille en supposant qu'il est possible de définir correctement les coordonnées de l'étiquette supérieure gauche et la distance à la deuxième étiquette. La distance par rapport au bord gauche est commune aux deux étiquettes. La troisième sur le côté droite n'a aucune distance en commun avec les autres, c'est pourquoi il faut définir un deuxième agencement avec des coordonnées spécifiques pour le coin supérieur gauche de cette étiquette.</p>
+
+	<note style="tip">
+	<p>Vous pouvez définir plusieurs agencements uniquement si les étiquettes sur la feuille ont la même forme. Si votre feuille contient des formes différentes, vous devez définir chaque forme séparément dans un autre modèle. Les versions futures de <app>gLabels</app> seront probablement capables de concaténer de telles feuilles contenant des formes différentes dans un seul modèle.</p>
+      </note>
+
 	<note style="tip">
 	<p>Une étiquette unique peut toujours être considérée comme une grille à un seul élément.</p>
       </note>

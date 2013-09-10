@@ -1,0 +1,423 @@
+<!-- ##### SECTION Title ##### -->
+Database
+
+<!-- ##### SECTION Short_Description ##### -->
+Database of pre-defined templates
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+This section describes a set of functions to locate and add templates and related information in
+the LibGlabels template database.
+</para>
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM lglDbRegStatus ##### -->
+<para>
+This enumeration defines a set of possible return values for lgl_db_register_template().
+</para>
+
+@LGL_DB_REG_OK: Registration successful.
+@LGL_DB_REG_BAD_PAPER_ID:  Registration failed because paper id is unknown.
+@LGL_DB_REG_BRAND_PART_EXISTS: Registration failed because template with same brand and part name/number already exists.
+@LGL_DB_REG_FILE_WRITE_ERROR: Registration failed because an error while writing to disk.
+
+<!-- ##### ENUM lglDbDeleteStatus ##### -->
+<para>
+This enumeration defines a set of possible return values for lgl_db_delete_template_by_name() or lgl_db_delete_template_by_brand_part().
+</para>
+
+@LGL_DB_DELETE_OK: Deletion successful.
+@LGL_DB_DELETE_DOES_NOT_EXIST: Deletion failed because template with given brand and part name/number does not exist.
+@LGL_DB_DELETE_NOT_USER_DEFINED: Deletion failed because given template is not a user defined template.
+@LGL_DB_DELETE_FILE_ERROR: Deletion failed because of an error while attempting to remove template from disk.
+
+<!-- ##### FUNCTION lgl_db_init ##### -->
+<para>
+
+</para>
+
+@void: 
+
+
+<!-- ##### USER_FUNCTION lglDbNotifyFunc ##### -->
+<para>
+Defines the type of notify callback function to be called when database changes.
+</para>
+
+@user_data: Pointer to user data that is passed to the notify function.
+
+
+<!-- ##### FUNCTION lgl_db_notify_add ##### -->
+<para>
+
+</para>
+
+@func: 
+@user_data: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_notify_remove ##### -->
+<para>
+
+</para>
+
+@id: 
+
+
+<!-- ##### FUNCTION lgl_db_get_paper_id_list ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_free_paper_id_list ##### -->
+<para>
+
+</para>
+
+@ids: 
+
+
+<!-- ##### FUNCTION lgl_db_get_paper_name_list ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_free_paper_name_list ##### -->
+<para>
+
+</para>
+
+@names: 
+
+
+<!-- ##### FUNCTION lgl_db_lookup_paper_from_id ##### -->
+<para>
+
+</para>
+
+@id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_lookup_paper_from_name ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_lookup_paper_id_from_name ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_lookup_paper_name_from_id ##### -->
+<para>
+
+</para>
+
+@id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_is_paper_id_known ##### -->
+<para>
+
+</para>
+
+@id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_is_paper_id_other ##### -->
+<para>
+
+</para>
+
+@id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_get_category_id_list ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_free_category_id_list ##### -->
+<para>
+
+</para>
+
+@ids: 
+
+
+<!-- ##### FUNCTION lgl_db_get_category_name_list ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_free_category_name_list ##### -->
+<para>
+
+</para>
+
+@names: 
+
+
+<!-- ##### FUNCTION lgl_db_lookup_category_from_id ##### -->
+<para>
+
+</para>
+
+@id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_lookup_category_from_name ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_lookup_category_id_from_name ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_lookup_category_name_from_id ##### -->
+<para>
+
+</para>
+
+@id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_is_category_id_known ##### -->
+<para>
+
+</para>
+
+@id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_get_brand_list ##### -->
+<para>
+
+</para>
+
+@paper_id: 
+@category_id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_free_brand_list ##### -->
+<para>
+
+</para>
+
+@brands: 
+
+
+<!-- ##### FUNCTION lgl_db_register_template ##### -->
+<para>
+
+</para>
+
+@template: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_delete_template_by_brand_part ##### -->
+<para>
+
+</para>
+
+@brand: 
+@part: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_delete_template_by_name ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_does_template_exist ##### -->
+<para>
+
+</para>
+
+@brand: 
+@part: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_does_template_name_exist ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_get_template_name_list_all ##### -->
+<para>
+
+</para>
+
+@brand: 
+@paper_id: 
+@category_id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_get_similar_template_name_list ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_free_template_name_list ##### -->
+<para>
+
+</para>
+
+@names: 
+
+
+<!-- ##### FUNCTION lgl_db_lookup_template_from_name ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_lookup_template_from_brand_part ##### -->
+<para>
+
+</para>
+
+@brand: 
+@part: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_get_vendor_name_list ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_free_vendor_name_list ##### -->
+<para>
+
+</para>
+
+@names: 
+
+
+<!-- ##### FUNCTION lgl_db_is_vendor_name_known ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_lookup_vendor_from_name ##### -->
+<para>
+
+</para>
+
+@name: 
+@Returns: 
+
+
+<!-- ##### FUNCTION lgl_db_print_known_papers ##### -->
+<para>
+
+</para>
+
+@void: 
+
+
+<!-- ##### FUNCTION lgl_db_print_known_categories ##### -->
+<para>
+
+</para>
+
+@void: 
+
+
+<!-- ##### FUNCTION lgl_db_print_known_templates ##### -->
+<para>
+
+</para>
+
+@void: 
+
+
+<!-- ##### FUNCTION lgl_db_print_known_vendors ##### -->
+<para>
+
+</para>
+
+@void: 
+
+

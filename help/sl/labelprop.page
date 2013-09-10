@@ -4,9 +4,7 @@
   <info>
     <link type="guide" xref="index#usage"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>
-      How to change the properties of a label or business card.
-    </desc>
+    <desc>Kako spremenite lastnosti nalepke, kartončka ali vizitke.</desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
@@ -20,7 +18,7 @@
     </license>    
   </info>
 
-    <title>To change label properties</title>
+    <title>Sprememba lastnosti nalepke</title>
 
       <p>To change the media type and/or orientation of a label, choose
         <guiseq><gui>File</gui>

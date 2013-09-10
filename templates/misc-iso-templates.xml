@@ -15,6 +15,17 @@
   <!-- ************************* -->
 
   <!-- =================================================================== -->
+  <!-- Agipa 114036: Rectangulars Labels, 48.5 x 18.5 mm, 16 per A5 sheet  -->
+  <!-- =================================================================== -->
+  <Template brand="Agipa" part="114036" size="A5" _description="Rectangular Labels">
+    <Meta category="label"/>
+    <Meta category="rectangle-label"/>
+    <Label-rectangle id="0" width="18.5mm" height="48.5mm" round="10">
+      <Layout nx="7" ny="4" x0="4mm" y0="2mm" dx="20mm" dy="49mm"/>
+    </Label-rectangle>
+  </Template>
+
+  <!-- =================================================================== -->
   <!-- Agipa 119488: Business Cards, 50 x 90 mm, 10 per sheet              -->
   <!-- =================================================================== -->
   <Template brand="Agipa" part="119488" size="A4" _description="Business Cards">
@@ -67,6 +78,19 @@
     <Label-rectangle id="0" width="198.425pt" height="94.3937pt" round="0pt" x_waste="0pt" y_waste="0pt">
       <Markup-margin size="0pt"/>
       <Layout nx="3" ny="8" x0="0pt" y0="43.3701pt" dx="198.425pt" dy="94.3937pt"/>
+    </Label-rectangle>
+  </Template>
+
+
+  <!-- =================================================================== -->
+  <!-- APLI 01271:  General Labels.                                        -->
+  <!-- =================================================================== -->
+  <Template brand="Apli" part="1271" size="A4" _description="Rectangular Labels">
+    <Meta category="label"/>
+    <Meta category="rectangle-label"/>
+    <Label-rectangle id="0" width="70mm" height="30mm" round="0mm" x_waste="0mm" y_waste="0mm">
+      <Markup-margin size="0mm"/>
+      <Layout nx="3" ny="9" x0="0mm" y0="13.5mm" dx="70mm" dy="30mm"/>
     </Label-rectangle>
   </Template>
 
@@ -407,6 +431,24 @@
     </Label-cd>
   </Template>
 
+  <!-- ************************* -->
+  <!--                           -->
+  <!-- Q_CONNECT                 -->
+  <!--                           -->
+  <!-- ************************* -->
+
+  <!-- =================================================================== -->
+  <!-- Q_CONNECT multi-purpose labels, 8 per sheet.                        -->
+  <!-- =================================================================== -->
+  <Template brand="Q-CONNECT" part="KF26055" size="A4" _description="Multi-Purpose Labels">
+    <Meta category="label"/>
+    <Meta category="rectangle-label"/>
+    <Label-rectangle id="0" width="99.1mm" height="67.7mm" round="2mm" x_waste="1mm" y_waste="0mm">
+      <Markup-margin size="2mm"/>
+      <Layout nx="2" ny="4" x0="6mm" y0="13mm" dx="101.1mm" dy="67.7mm"/>
+    </Label-rectangle>
+  </Template>
+
 
   <!-- ************************* -->
   <!--                           -->
@@ -513,6 +555,19 @@
   <!-- Sigel                     -->
   <!--                           -->
   <!-- ************************* -->
+
+  <!-- =================================================================== -->
+  <!-- Sigel LA 505: CD/DVD Labels				           -->
+  <!-- =================================================================== -->
+  <Template brand="Sigel" part="LA 505" size="A4" _description="CD/DVD labels">
+    <Meta category="label"/>
+    <Meta category="media"/> 
+    <Label-cd id="0" radius="58.5mm" hole="8.5mm" waste="2mm">
+      <Markup-margin size="3.175mm"/>
+      <Layout nx="1" ny="1" x0="45mm" y0="20mm" dx="123.4mm" dy="123.4mm"/>
+      <Layout nx="1" ny="1" x0="45mm" y0="159mm" dx="123.4mm" dy="123.4mm"/>
+    </Label-cd>
+  </Template>
 
   <!-- =================================================================== -->
   <!-- Sigel LP 800/LP 801/LP 802: Business Cards, 55.0 x 85.0 mm          -->

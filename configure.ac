@@ -6,7 +6,7 @@ dnl - GLABELS version
 dnl ---------------------------------------------------------------------------
 m4_define([glabels_major_version], [3])
 m4_define([glabels_minor_version], [0])
-m4_define([glabels_micro_version], [0])
+m4_define([glabels_micro_version], [1])
 
 m4_define([glabels_version],
           [glabels_major_version.glabels_minor_version.glabels_micro_version])
@@ -163,6 +163,7 @@ dnl - LIBGLABELS more modest prerequisites
 dnl ---------------------------------------------------------------------------
 PKG_CHECK_MODULES(LIBGLABELS, [\
 	glib-2.0 >= $GLIB_REQUIRED \
+	gobject-2.0 >= $GLIB_REQUIRED \
 	libxml-2.0 >= $LIBXML_REQUIRED \
 ])
 
@@ -177,6 +178,7 @@ PKG_CHECK_MODULES(LIBGLBARCODE, [\
 	glib-2.0 >= $GLIB_REQUIRED \
 	cairo >= $CAIRO_REQUIRED \
 	pango >= $PANGO_REQUIRED \
+	pangocairo >= $PANGO_REQUIRED \
 ])
 
 AC_SUBST(LIBGLBARCODE_CFLAGS)

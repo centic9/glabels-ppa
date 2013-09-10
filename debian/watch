@@ -1,2 +1,2 @@
 version=3
-http://sf.net/glabels/glabels-(.*)\.tar\.gz
+http://www.glabels.org/download/ .*glabels-(.*)\.tar\..*

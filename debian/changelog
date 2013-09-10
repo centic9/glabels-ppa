@@ -1,17 +1,34 @@
-glabels (3.0.0-3ubuntu1) quantal; urgency=low
+glabels (3.0.1-3) experimental; urgency=low
 
-  * debian/patches/0008-build-with-new-eds.patch:
-    - build with latest e-d-s/ebook API
-  * debian/control:
-    - build-dep on latest API for evolution
+  * Refresh debian/patches
+  * Cherry-pick 6b7d7e831e5542b6ea3c15802fa882a42399fc15 from upstream
+    as 0004-unbreak-with-evolution-data-server-3.6.0.patch
+    (Closes: #722033)
+  * Bump Standards-Version (no changes needed)
+  * Change dependency to gnome-desktop3-data (Closes: #707961)
+  * Add patch from Jakub Wilk to fix Polish translation (Closes: #691089)
 
- -- Didier Roche <didrocks@ubuntu.com>  Wed, 12 Sep 2012 15:41:07 +0200
+ -- Jakob Haufe <sur5r@sur5r.net>  Tue, 10 Sep 2013 20:44:01 +0200
 
-glabels (3.0.0-3build1) quantal; urgency=low
+glabels (3.0.1-2) experimental; urgency=low
 
-  * Rebuild against latest libebook.
+  * Pre-depend on dpkg >= 1.15.6~ as we are using xz.
 
- -- Bhavani Shankar <bhavi@ubuntu.com>  Mon, 28 May 2012 11:06:55 +0530
+ -- Jakob Haufe <sur5r@sur5r.net>  Sat, 17 Nov 2012 20:51:30 +0100
+
+glabels (3.0.1-1) experimental; urgency=low
+
+  * Enable hardening buildflags
+  * Update watchfile as SF has no current versions anymore
+  * New upstream version (Closes: #691958)
+  * Drop patches applied upstream:
+    - 0003-libglbarcode-uses-pangocairo-not-plain-pango.patch
+    - 0004-libglabels-silently-uses-gobject-fix-linkage.patch
+    - 0005-Ignore-unused-screenshot.patch
+    - 0006-Fix-schema-references.patch
+  * Fix typo (Closes: #669228)
+
+ -- Jakob Haufe <sur5r@sur5r.net>  Fri, 16 Nov 2012 12:23:15 +0100
 
 glabels (3.0.0-3) unstable; urgency=low
 

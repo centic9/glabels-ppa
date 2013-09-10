@@ -1,10 +1,10 @@
 Source: glabels
 Section: gnome
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
-XSBC-Original-Maintainer: Jakob Haufe <sur5r@sur5r.net>
+Maintainer: Jakob Haufe <sur5r@sur5r.net>
 Build-Depends: autotools-dev,
                cdbs,
+               dpkg-dev (>= 1.16.1~),
                debhelper (>= 5.0),
                intltool (>= 0.21),
                gnome-doc-utils (>= 0.3.2),
@@ -15,15 +15,16 @@ Build-Depends: autotools-dev,
                librsvg2-dev (>= 2.32.0),
                libcairo2-dev (>= 1.10.0),
                libpango1.0-dev (>= 1.28.1),
-               libebook1.2-dev (>= 3.5.3),
+               libebook1.2-dev (>= 3.6.0),
                barcode (>= 0.98),
                libqrencode-dev (>= 3.1.0),
                libiec16022-dev (>= 0.2.4)
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://glabels.sourceforge.net/
 
 Package: glabels
 Architecture: any
+Pre-Depends: dpkg (>= 1.15.6~)
 Depends: glabels-data (= ${source:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
@@ -41,7 +42,8 @@ Description: label, business card and media cover creation program for GNOME
 
 Package: glabels-data
 Architecture: all
-Depends: gnome-desktop-data, ${misc:Depends}
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: gnome-desktop3-data, ${misc:Depends}
 Description: data files for gLabels
  gLabels is a lightweight program for creating labels, barcodes, business
  cards and media covers for the GNOME desktop environment.
@@ -52,6 +54,7 @@ Description: data files for gLabels
 Package: glabels-dev
 Section: devel
 Architecture: any
+Pre-Depends: dpkg (>= 1.15.6~)
 Depends: glabels (= ${binary:Version}),
          glabels-data (= ${source:Version}),
          libglib2.0-dev,

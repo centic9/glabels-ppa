@@ -4,9 +4,7 @@
   <info>
     <link type="guide" xref="merge#merge-ex"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>
-       Create name tags from a CSV file.
-    </desc>
+    <desc>Ustvari imenske značke iz datoteke CSV.</desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
@@ -20,7 +18,7 @@
     </license>    
   </info>
 
-    <title>Example 1: Name Tags</title>
+    <title>Primer 1: Značke z imeni</title>
 
       <p>In this example we are organizing an orientation party for the new
         crew members of our ship.  We have a list of freshman crew members that we
@@ -59,7 +57,7 @@ Name,Department,SN
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex1-2.png" mime="image/png" style="right">
-      		<p>Adding objects</p>
+      		<p>Dodajanje predmetov</p>
     		</media>
       <!-- ==== End of Figure ==== -->
 
@@ -80,7 +78,7 @@ Name,Department,SN
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex1-3.png" mime="image/png" style="right">
-      		<p>Printing name tags</p>
+      		<p>Tiskanje imenskih značk</p>
     		</media>
       <!-- ==== End of Figure ==== -->
 

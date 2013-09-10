@@ -4,9 +4,7 @@
   <info>
     <link type="guide" xref="index#usage"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>
-      How to open multiple files at once by using the command line.
-    </desc>
+    <desc>Kako odpremo več datotek naenkrat iz ukazne vrstice.</desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
@@ -20,16 +18,14 @@
     </license>    
   </info>
 
-    <title>To open multiple files from the command line</title>
+    <title>Kako odpremo več datotek iz ukazne vrstice</title>
 
       <p>You can run <app>gLabels</app> from a command line
 	and open a single file or multiple files. To open multiple files from
         a command line, type the following command, then press
         <key>Return</key>:</p>
 
-      <p><cmd>glabels
-      <var>file1.glabels file2.glabels file3.glabels</var>
-      </cmd></p>
+      <p><cmd>glabels <var>datoteka1.glabels datoteka2.glabels datoteka3.glabels</var></cmd></p>
 
       <p>When the application starts, the files that you specify are
 	displayed in separate <app>gLabels</app> windows.</p>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="mergeskipfields" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Пропуск пустых строк при заполнении полей документа.</desc>
+    <credit type="author">
+      <name>Джим Эвинс (Jim Evins)</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Марио Блатерман (Mario Blättermann)</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title>Пропуск пустых строк</title>
+
+  <p>Эту возможность лучше всего объяснить на простом примере. В следующем файле CVS, в столбце 5 (ADDR2) содержится вторая строка адреса каждой записи. Это поле пустует в 1 и 2 записи, но присутствует в записи 3. Чтобы эта возможность заработала, необходимо чтобы поле было абсолютно пустым и не содержало не только какой-либо текст, но и символы пробелы.</p>
+
+  <code>
+  LAST,FIRST,MI,ADDR1,ADDR2,CITY,STATE,ZIP
+  Summers,Joyce,,"1630 Revello Dr",,Sunnydale,CA,95037
+  McGarret,Steve,O,"404 Piikoi Street",,Honolulu,HI,96813
+  Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
+  </code>
+
+  <p>На следующем снимке экрана для форматирования этих адресов был создан одиночный многострочный текстовый объект. Заметьте, что ${ADDR2}, представляющий вторую строку адреса, занимает целую строку. Любой дополнительный текст на этой строке, включая пробелы, отключает эту возможность. </p>
+
+  <media type="image" src="figures/skip-fields-screenshot.png" mime="image/png" style="right">
+  <p>Многострочный адрес</p>
+  </media>
+
+  <p>Печать этой этикетки будет выглядеть следующим образом. Заметьте, что строка с полем ${ADDR2} полностью пропущена.</p>
+
+  <media type="image" src="figures/skip-fields-output.png" mime="image/png" style="right">
+  <p>Вывод</p>
+  </media>
+
+</page>

@@ -1,6 +1,726 @@
+commit dbacd9e1737776a65701be50f7eb4d010abba940
+Author: Hatim Ali <dr.hatim@hotmail.com>
+Date:   2012-09-17
+
+    Added Arabic translation.
+
+M	po/LINGUAS
+A	po/ar.po
+
+commit 685a1cbe8bdfb62741ebc04240a8e4e3be513c13
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2012-09-09
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit fe92aa394a0affb83ce07b0481bd0df6cc10600a
+Author: Alexandre Prokoudine <alexandre.prokoudine@gmail.com>
+Date:	2012-09-04
+
+    Updated copyright years
+
+M	src/ui-commands.c
+
+commit 9e853cf05c6fd883f4023b436b06b1195b7c6c2f
+Author: Jim Evins <evins@snaught.com>
+Date:	2012-09-07
+
+    Fixed calculation of number of pages when printing merge jobs
+
+    Fixes bug #680585.	Poorly placed parenthesis caused the calculation
+    of the
+    number of sheets to be wrong whenever starting on any label other
+    than the
+    first one on a page.
+
+M	src/print-op-dialog.c
+
+commit d751152ccfcf46bde7c0c167a15dcb3b06038f40
+Author: Timo Jyrinki <timo@debian.org>
+Date:	2012-09-06
+
+    Finnish translation update by Jiri Grönroos
+
+M	po/LINGUAS
+A	po/fi.po
+
+commit 5c83a2d8550e62ae4af7d0a6b23536a6ffe045e0
+Author: Bruce Cowan <bruce@bcowan.me.uk>
+Date:	2012-09-04
+
+    Adeed British English translation
+
+M	po/LINGUAS
+A	po/en_GB.po
+
+commit 35528ef1442647c622c0ff2131cc152172c49071
+Author: Claude Paroz <claude@2xlibre.net>
+Date:	2012-09-04
+
+    Updated French help translation
+
+M	help/fr/fr.po
+
+commit cdefaf69dd84b63bd860900b7e10adee8c848d57
+Author: Claude Paroz <claude@2xlibre.net>
+Date:	2012-09-04
+
+    Updated French translation
+
+M	po/fr.po
+
+commit 032b5380f92f4cd8b60174313805efd137eb8e27
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-09-03
+
+    Added APLI 1271 label
+
+M	templates/misc-iso-templates.xml
+
+commit f57f6c3a32b56249f5de5248c41627cfa0f65ad3
+Author: Kjartan Maraas <kmaraas@gnome.org>
+Date:	2012-08-23
+
+    Updated Norwegian bokmål translation
+
+M	po/nb.po
+
+commit 0122161e0b967a4ed883ad1c8209017e227967c6
+Author: Jiro Matsuzawa <jmatsuzawa@gnome.org>
+Date:	2012-08-12
+
+    [l10n] Update Japanese translation
+
+    Modify the About label
+
+M	po/ja.po
+
+commit 51018e5473dd40f1053ee8498faf298413d85e49
+Author: Andika Triwidada <andika@gmail.com>
+Date:	2012-07-24
+
+    Added Indonesian translation to UI and User Guide
+
+M	help/Makefile.am
+A	help/id/id.po
+M	po/LINGUAS
+A	po/id.po
+
+commit aebe524714beaafb2d5a5cc9378a9b31c6bd7cac
+Author: Jim Evins <evins@snaught.com>
+Date:	2012-07-22
+
+    Make sure word wrap is consistent at all zoom levels.
+
+M	src/label-text.c
+
+commit d8db9b1cb2d23e6d1903ac8f7f24b819aed78b0d
+Author: Konstantinos Chortis <cograss@yahoo.com>
+Date:	2012-07-12
+
+    Updated Greek help translation
+
+M	help/el/el.po
+
+commit 7ea3e026cd5a9968b9bd161f2786dbd360723562
+Author: Konstantinos Chortis <cograss@yahoo.com>
+Date:	2012-07-12
+
+    Added Greek help translation
+
+M	help/Makefile.am
+A	help/el/el.po
+
+commit 7ca2284d602c610a979a26a31a7b9b74099a88c5
+Author: Efstathios Iosifidis <diamond_gr@freemail.gr>
+Date:	2012-07-12
+
+    Added Greek translation
+
+M	po/LINGUAS
+A	po/el.po
+
+commit bbeb91c70c6177a3045191fd350d59aa3f703e1d
+Author: Jim Evins <evins@snaught.com>
+Date:	2012-07-08
+
+    Fix font scaling problem.
+
+    Fixes bug #679531.	Don't apply font scale twice when "Allow merge to
+    automatically shrink text."  This also correctly applies font
+    scale when
+    line spacing is not 1.
+
+M	src/label-text.c
+
+commit 78a1ca0aaec6eb29dcfcae5c1d2fca23b10374b8
+Author: Martin Srebotnjak <miles@filmsi.net>
+Date:	2012-05-23
+
+    Updated Slovenian translation
+
+M	help/sl/sl.po
+
+commit 5df60ad44c554ee787b846327100835784ee27d5
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-05-01
+
+    Added Sigel template
+
+M	templates/misc-iso-templates.xml
+
+commit c19e310f9107478bde95d5e14d538fab24e20b7b
+Author: Jim Evins <evins@snaught.com>
+Date:	2012-04-21
+
+    Removed reference to unused screenshot.
+
+    Fixes sourceforge bug #3514704
+    (http://sourceforge.net/tracker/index.php?func=detail&aid=3514704&group_id=46122&atid=445116).
+    Removed reference to unused/non-existant screenshot from
+    help/Makefile.am.
+
+M	help/Makefile.am
+
+commit 861f3351f4f28d588b50ad650021a780e7c45c83
+Author: Jim Evins <evins@snaught.com>
+Date:	2012-04-21
+
+    Fix incomplete library dependencies.
+
+    Fixes Sourcforge bug #3514704
+    (http://sourceforge.net/tracker/?func=detail&aid=3514704&group_id=46122&atid=445116).
+    Added missing dependencies to pkg-config files for libglabels and
+    libglbarcode.
+
+M	libglabels/libglabels-3.0.pc.in
+M	libglbarcode/libglbarcode-3.0.pc.in
+
+commit fff2caad1a72c0a5b090e55415a5c1fc79bf1564
+Author: Joe Hansen <joedalton2@yahoo.dk>
+Date:	2012-04-21
+
+    Updated Danish translation
+
+M	po/da.po
+
+commit 1f91ab0b5795c80b497a67da48d902f75608809f
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2012-04-09
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit c5310abd4ffaf837d09eec6867392816441a05dd
+Author: Martin Srebotnjak <miles@filmsi.net>
+Date:	2012-04-08
+
+    Updated Slovenian translation
+
+M	help/sl/sl.po
+
+commit 713386a222aa4cd493fa448da00da90557b3870b
+Author: Marek Černocký <marek@manet.cz>
+Date:	2012-03-25
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit c43c88ddb85162f32503e27ed01ffc888e35d1c8
+Author: Matej Urbančič <mateju@svn.gnome.org>
+Date:	2012-03-18
+
+    Updated Slovenian translation
+
+M	po/sl.po
+
+commit adf7645ebc4040c1c343464c29612abd2df3fb96
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-03-18
+
+    [l10n] Updated German translation
+
+M	po/de.po
+
+commit d35d0b59444c5a85887017e783698e9b353d31dd
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-03-18
+
+    Added missing xml files to POTFILES.in
+
+M	po/POTFILES.in
+
+commit 451def260b33e7bceaffcef41ba0cf5d173374be
+Author: Marek černocký <marek@manet.cz>
+Date:	2012-03-18
+
+    Added missing xml files to Makefile.am
+
+M	templates/Makefile.am
+
+commit 21add8379ec3fedffb7358b6ec996468d941f95f
+Author: Marek černocký <marek@manet.cz>
+Date:	2012-03-18
+
+    Added new vendor definitions
+
+M	templates/vendors.xml
+
+commit 57ad3eb68ba78ea4ebbaadccbabb1651bc8060c6
+Author: Marek černocký <marek@manet.cz>
+Date:	2012-03-18
+
+    Added new Igepa and Rayfilm templates
+
+A	templates/igepa-templates.xml
+A	templates/rayfilm-templates.xml
+
+commit 67e92688b05ca4e58858e093703317262ef858ff
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2012-03-08
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit 5e135f378a09a32cf3d564da26cd0037d691dce9
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2012-03-08
+
+    Added Serbian translation
+
+M	po/LINGUAS
+A	po/sr.po
+A	po/sr@latin.po
+
+commit 425db423416e3ebc8d1e4206bc05d8ccdcb727ba
+Author: Jim Evins <evins@snaught.com>
+Date:	2012-02-26
+
+    Fix invalid schema file.
+
+    Fixes Redhat bug 795241.  Fixes minor errors in schema file: child
+    schema ids
+    are incorrect.
+
+M	data/schemas/org.gnome.glabels-3.gschema.xml.in.in
+
+commit 3268a6e76539d4923cc4dfc6c6e9305f4c7dd825
+Author: Jim Evins <evins@snaught.com>
+Date:	2012-02-26
+
+    More specific dependencies.
+
+    Fixes bug 669899.  Added finer grain dependencies to libglabels and
+    libglbarcode.
+
+M	configure.ac
+
+commit 3bfd5c12443659a2901734a99cf9b18327514951
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-02-25
+
+    Added Desmat template
+
+A	AUTHORS
+M	po/POTFILES.in
+A	templates/desmat-templates.xml
+M	templates/vendors.xml
+
+commit b2a38a7de49dead6ee2075299b1dbba535a77264
+Author: Marek Černocký <marek@manet.cz>
+Date:	2012-02-17
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit d484bb5f98c1ef8435074c7241f157cb9bd7db1b
+Author: Matej Urbančič <mateju@svn.gnome.org>
+Date:	2012-02-08
+
+    Updated Slovenian translation
+
+M	po/sl.po
+
+commit 8cc4f522e4d29c2343e9a0358a47f9b31c958064
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2012-01-29
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit 6349090ab4431f080fd40e3995c1912357c36e42
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2012-01-29
+
+    Updated Spanish translation
+
+M	help/es/es.po
+
+commit 8e599be69bff194016ddf06876d04edb17d3fe1f
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-01-29
+
+    Added new screenshots
+
+M	help/C/figures/merge-ex3-2.png
+M	help/C/figures/print-copies.png
+
+commit 1845876946e955fdefd1771a0c2bf57e755c7e97
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-01-29
+
+    Added new screenshot
+
+M	help/C/figures/print-merge.png
+
+commit 59fc5c868fdd454abdc271d451bc65cb632936bf
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-01-29
+
+    Added new screnshots to match the Adwaita style
+
+M	help/C/figures/introduction-glabels-main-window.png
+M	help/C/figures/merge-ex1-1.png
+M	help/C/figures/merge-ex1-2.png
+M	help/C/figures/merge-ex1-3.png
+M	help/C/figures/merge-ex1-4.png
+M	help/C/figures/merge-ex2-1.png
+M	help/C/figures/merge-ex2-2.png
+M	help/C/figures/merge-ex3-3.png
+M	help/C/figures/merge-ex3-4.png
+M	help/C/figures/object-editor-sidebar.png
+
+commit d1f5d3957abe00591e67fa4bc56cc7ea1c21eb72
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-01-29
+
+    [l10n] Updated German translation
+
+M	po/de.po
+
+commit cf085f7402d05cd4db45cfed8288f0b0875d91ec
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-01-28
+
+    [i18n] Added missing file to POTFILES
+
+M	po/POTFILES.in
+
+commit e2d438bfe8211ac63d6df90c3c94280f458f83a9
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-01-28
+
+    [l10n] Updated German translation
+
+M	po/de.po
+
+commit 2f5170b6bab7b753375bdb7cedb76e545038799b
+Author: Gaz Davidson <gaz@bitplane.net>
+Date:	2012-01-28
+
+    Added Q-CONNECT template
+
+D	AUTHORS
+M	templates/misc-iso-templates.xml
+M	templates/vendors.xml
+
+commit 062107e78530d04503eb09eddc64888d44d5cd2b
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2012-01-28
+
+    Added acknowledgement for new templates
+
+M	AUTHORS
+
+commit ddc68bb9658d396fd9ac104aa8cea6a01f48ef31
+Author: Marek Černocký <marek@manet.cz>
+Date:	2012-01-28
+
+    Added Endisch templates
+
+A	templates/endisch-templates.xml
+M	templates/vendors.xml
+
+commit 8021e503f6433bdab046e2fd176ca63c6a418387
+Author: Marek Černocký <marek@manet.cz>
+Date:	2012-01-28
+
+    Added ISO 217 paper sizes
+
+M	templates/paper-sizes.xml
+
+commit fdb9a89e4ef71d00826bdec075e1750d52ff9708
+Author: Matej Urbančič <mateju@svn.gnome.org>
+Date:	2012-01-24
+
+    Updated Slovenian translation
+
+M	po/sl.po
+
+commit 3c8a290a8e6b02a9051f89aad59a9c75d3075581
+Author: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>
+Date:	2012-01-08
+
+    Updated Japanese translation
+
+M	po/ja.po
+
+commit 388696289d950861a97786f79207459d6f653df3
+Author: Jim Evins <evins@snaught.com>
+Date:	2012-01-07
+
+    Fixed Avery 5160 template.
+
+    Fixes bug 667239.  Fixed incorrect horizontal pitch and left edge
+    measurements
+    for the built-in Avery 5160 template.
+
+M	templates/avery-us-templates.xml
+
+commit 204fed24fe97f6247ad08194b3bde90015186614
+Author: Marek Černocký <marek@manet.cz>
+Date:	2012-01-07
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit ab44617703ee73e2203c581eb51697a560ad9c70
+Author: Yuri Myasoedov <omerta13@yandex.ru>
+Date:	2012-01-04
+
+    Updated Russian translation
+
+M	help/Makefile.am
+A	help/ru/ru.po
+
+commit ceef9a19d44eab8d84c7f2e57df4f9afc74b9bdb
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2011-12-28
+
+    [l10n] Updated German translation
+
+M	po/de.po
+
+commit 83ee6cb3635e3ad9ca802bb4fd85dea6f3d8c556
+Author: Schlomo Schapiro <schlomoschapiro@users.sf.net>
+Date:	2011-12-19
+
+    Added new Avery template
+
+M	AUTHORS
+M	templates/avery-iso-templates.xml
+
+commit 99eafbe69f4d6fefec2d1b2197a9ddd6ce47285c
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2011-11-27
+
+    Added more Sheetlabels templates
+
+M	templates/sheetlabels-us-templates.xml
+
+commit fc30fc3b7e8347053296ee71a9e76581f83d51a4
+Author: Александр Прокудин
+<alexandre.prokoudine@gmail.com>
+Date:	2011-11-27
+
+    Reused the Russian translation from master
+
+M	po/ru.po
+
+commit b821e7adcaeedd6ce0f22b14288f5770ac407a1e
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2011-11-27
+
+    Moved Sheetlabels template to its own file
+
+M	po/POTFILES.in
+M	templates/misc-us-templates.xml
+A	templates/sheetlabels-us-templates.xml
+
+commit 6dd535e24be16abd7291c26118bac92f89648524
+Author: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>
+Date:	2011-11-10
+
+    Updated Esperanto translation
+
+M	po/eo.po
+
+commit 7d9b1744bce35ed788dfac176e995b81127999c0
+Author: Jim Evins <evins@snaught.com>
+Date:	2011-10-23
+
+    Fixed incorrect clip region for rectangular templates.
+
+M	src/cairo-label-path.c
+
+commit 8bbca4e1aa15f233e70ac29f11b0d215e6742e45
+Author: Bruno Brouard <annoa.b@gmail.com>
+Date:	2011-10-08
+
+    Updated French doc translation
+
+A	help/fr/figures/glabels-template-cd-label.png
+A	help/fr/figures/glabels-template-circle-label.png
+A	help/fr/figures/glabels-template-ellipse-label.png
+A	help/fr/figures/glabels-template-rect-label.png
+A	help/fr/figures/introduction-glabels-main-window.png
+A	help/fr/figures/merge-ex1-1.png
+A	help/fr/figures/merge-ex1-2.png
+A	help/fr/figures/merge-ex1-3.png
+A	help/fr/figures/merge-ex1-4.png
+A	help/fr/figures/merge-ex2-1.png
+A	help/fr/figures/merge-ex2-2.png
+A	help/fr/figures/merge-ex2-3.png
+A	help/fr/figures/merge-ex2-4.png
+A	help/fr/figures/merge-ex3-1.png
+A	help/fr/figures/merge-ex3-2.png
+A	help/fr/figures/merge-ex3-3.png
+A	help/fr/figures/merge-ex3-4.png
+A	help/fr/figures/object-editor-sidebar.png
+A	help/fr/figures/print-copies.png
+A	help/fr/figures/print-merge.png
+A	help/fr/figures/skip-fields-output.png
+A	help/fr/figures/skip-fields-screenshot.png
+M	help/fr/fr.po
+
+commit 76ca499b8f12ed4e3645249e3b508ac4dae55df9
+Author: Martin Srebotnjak <miles@filmsi.net>
+Date:	2011-09-17
+
+    Updated Slovenian translation
+
+M	po/sl.po
+
+commit 6ee5b3a10b92915ac2dca6a09f695cafe4021f0e
+Author: Bruce Dagel <bdagel@machlink.com>
+Date:	2011-09-09
+
+    Added SheetLabels label
+
+M	AUTHORS
+M	templates/misc-us-templates.xml
+M	templates/vendors.xml
+
+commit 969d598adc0a2cac9a69da4897dd58f0d76222bf
+Author: Arnaud van Cortenbosch <arnaud.van.cortenbosch@ens.fr>
+Date:	2011-09-09
+
+    Added Agipa label
+
+M	AUTHORS
+M	templates/misc-iso-templates.xml
+
+commit d30bcacebab2f54bdcb63d6e02c26b1354bba19d
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2011-08-19
+
+    [l10n] Updated German translation
+
+M	po/de.po
+
+commit 1306073c0da29ab608c0cc93858fa0c3fe46b210
+Author: Jorge González <aloriel@gmail.com>
+Date:	2011-08-12
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit 0dc0465256d9c907e821001c1c4a5c88b08327c4
+Author: Marek Černocký <marek@manet.cz>
+Date:	2011-08-09
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit 0b3ca9ed7e4705e0aff2eba871108abb057a280d
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2011-08-04
+
+    Added missing filename to POTFILES.in
+
+M	po/POTFILES.in
+
+commit c810a2e2d8116325a3820bb692c6cd7717eb12e5
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2011-07-29
+
+    Added Microapp template
+
+A	templates/microapp-templates.xml
+M	templates/vendors.xml
+
+commit de04717b9daaad1c196e38fcdd260c35950f9ff0
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2011-07-23
+
+    Updated filename in man page
+
+M	data/man/glabels-3.1
+
+commit ae8be2a78b93a4dd340ede69766738c608e77da5
+Author: Kjartan Maraas <kmaraas@gnome.org>
+Date:	2011-07-18
+
+    Updated Norwegian bokmål translation
+
+M	po/nb.po
+
+commit f5670df8644d817ea187510f7f3ce4dbad7d67a0
+Author: Marek Černocký <marek@manet.cz>
+Date:	2011-07-04
+
+    Updated Czech translation
+
+M	help/cs/cs.po
+
+commit d5ef3e2a2e33a8faade0abd39306f45f05b12f1c
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2011-06-23
+
+    Updated Spanish translation
+
+M	help/es/es.po
+
+commit 1d77595634814aa2b15dfa8c2c53241dddd5bbea
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2011-06-20
+
+    [l10n] Updated German doc translation
+
+M	help/de/de.po
+
+commit 49005cce964906785c60143fdca7c422740830c3
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2011-06-20
+
+    [l10n] Added note about multiple layout including example
+
+A	help/C/figures/layouts-cdlabel.png
+M	help/C/mancreate.page
+
+commit 00353e8c806abe5001a01a7c22cebab1a0d80af5
+Author: Takeshi AIHANA <takeshi.aihana@gmail.com>
+Date:	2011-05-21
+
+    Updated Japanese translation.
+
+M	po/ja.po
+
 commit d01a448a3e9c0719a2adfb6d51591e78148cfee3
 Author: Jim Evins <evins@snaught.com>
-Date:   2011-05-16
+Date:	2011-05-16
 
     Even more preparation for 3.0.0 release.
 
