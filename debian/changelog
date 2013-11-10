@@ -1,3 +1,20 @@
+glabels (3.0.1-4) unstable; urgency=low
+
+  * Upload to unstable as evolution-data-server 3.8 has arrived there
+  * Add symbols control file
+  * Add & update lintian overrides:
+    - icon-size-and-directory-name-mismatch
+      Size is correct, images are just not square
+    - package-name-doesnt-match-sonames
+      No external users of that library yet
+    - hardening-no-fortify-functions
+      False positive, thanks to Antonio Ospite for helping me understanding
+      this
+    - desktop-entry-lacks-keywords-entry
+      No useful keywords to be added
+
+ -- Jakob Haufe <sur5r@sur5r.net>  Sun, 10 Nov 2013 20:16:13 +0100
+
 glabels (3.0.1-3) experimental; urgency=low
 
   * Refresh debian/patches
