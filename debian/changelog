@@ -1,3 +1,9 @@
+glabels (3.0.1-4build1) trusty; urgency=low
+
+  * No-change rebuild for new e-d-s
+
+ -- Iain Lane <iain@orangesquash.org.uk>  Wed, 13 Nov 2013 13:14:43 +0000
+
 glabels (3.0.1-4) unstable; urgency=low
 
   * Upload to unstable as evolution-data-server 3.8 has arrived there
