@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="mergefeatures" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Was Sie von einer Dokumentmischung erwarten können.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Ausführung einer Dokumentmischung</title>
+
+      <p>Dokumentmischung ist ein mächtiges Funktionsmerkmal, das es Ihnen ermöglicht, ein einzelnes Etikett oder eine einzelne Karte für jeden Datensatz aus einer externen Datenquelle zu erstellen.</p>
+
+      <p>Der erste Schritt zur Ausführung einer Dokumentmischung ist die Vorbereitung eines Quelldokuments, welches die Daten zum Mischen enthält. Diese Daten können aus E-Mail-Adressen oder anderen Daten bestehen, aus denen Sie die einzelnen Etiketten oder Karten erstellen wollen. Gegenwärtig können als Datenquellen entweder Textdateien oder die Daten des Evolution-Adressbuchs verwendet werden, andere sind bereits in Planung. Das derzeit unterstützte Textformat ist recht einfach: Jede Zeile stellt einen Datensatz dar, wobei die einzelnen Felder durch Kommata (CSV), Tabulatoren oder Semikola getrennt werden. Neue Zeilen werden durch einen Zeilenumbruch »\n« erzeugt. Diese Datei kann mit einem Texteditor, einem anderen Programm oder einem Skript erstellt werden. Ein üblicher Weg der Erstellung ist der Export einer CSV-Datei aus einer Tabellenkalkulation.</p>
+
+      <p>Ein Etikett muss erstellt werden, das auf diese Datenquelle »zeigt«. Um die Mischeigenschaften für ein Dokument festzulegen, wählen Sie <guiseq><gui>Objekte</gui><gui>Mischeinstellungen</gui></guiseq>. Der Dialog <gui>Mischeigenschaften</gui> wird geöffnet. In diesem Dialog wählen Sie das genaue Dateiformat und den Dateinamen (den Ort) der einzumischenden Daten aus.</p>
+
+      <p>Zum Schluss, sobald das Etikett für die Datenquelle eingerichtet wurde, können die Feldschlüssel in Textobjekte eingefügt werden, um sie als Datenquelle für Strichcodeobjekte oder Bilder für Bildobjekte zu verwenden. Weitere Informationen über die Verwendung der Mischdaten für diese Objekttypen finden Sie in <link xref="editprop"/>.</p>
+
+      <p>Da Ihr Etikett nun konfiguriert ist, druckt <app>gLabels</app> genau ein Etikett für jeden Datensatz des Quelldokuments, wobei alle Text-, Bild- und Strichcode-Objekte durch die Einträge der Felder jedes Datensatzes ersetzt werden.</p>
+
+      <p>In <link xref="merge"/> finden Sie eine ausführliche Anleitung für dieses Funktionsmerkmal.</p>
+
+</page>

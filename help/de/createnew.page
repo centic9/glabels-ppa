@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="createnew" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Erstellen neuer Objekte in Ihrem Dokument.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Erstellen neuer Objekte</title>
+
+      <p>Objekte können ausgewählt werden, indem Sie das entsprechende Objekt in <guiseq><gui>Objekte</gui><gui>Erzeugen</gui></guiseq> auswählen, oder über die <gui>Zeichenwerkzeugleiste</gui>. Dadurch wird der Anzeigebereich in den Objekterzeugungsmodus versetzt, was am Mauszeiger erkennbar ist. Um zum vorgegebenen Objektauswahlmodus zurückzukehren, ohne ein Objekt zu erzeugen, wählen Sie <guiseq><gui>Objekte</gui><gui>Auswahlmodus</gui></guiseq>. Dadurch wird der Mauszeiger im Anzeigebereich wieder in den vorgegebenen Auswahlzeiger geändert.</p>
+
+      <p>Nachfolgend wird der Modus zur Erstellung der Objekte für jeden Objekttyp beschrieben:</p>
+
+	<section>
+	  <title>Text</title>
+	    <p>Klicken Sie auf die gewünschte Stelle in der linken oberen Ecke des Textobjekts. Neue Textobjekte erhalten anfänglich den Inhalt »Text«. Wie Sie diesen Text oder andere Eigenschaften ändern können, finden Sie in <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Rechteck</title>
+	    <p>Klicken Sie auf die gewünschte Stelle für die linke obere Ecke des Rechteckobjekts und ziehen Sie zur gewünschten rechten unteren Ecke. Wenn Sie einfach auf eine Stelle klicken, wird ein quadratisches Objekt erzeugt. Wie Sie die Eigenschaften des Rechteckobjekts ändern können, finden Sie in <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Linie</title>
+	    <p>Klicken Sie auf die gewünschte Stelle für das Ende des Linienobjekts und ziehen Sie zur gewünschten Stelle des anderen Endes. Wenn Sie einfach auf eine Stelle klicken, wird eine diagonale Linie erzeugt. Wie Sie die Eigenschaften des Linienobjekts ändern können, finden Sie in <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Ellipse</title>
+	    <p>Klicken Sie auf die gewünschte Stelle für die linke obere Ecke des Ellipsenobjekts und ziehen Sie zur gewünschten rechten unteren Ecke. Wenn Sie einfach auf eine Stelle klicken, wird ein Kreis erzeugt. Wie Sie die Eigenschaften des Ellipsenobjekts ändern können, finden Sie in <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Image</title>
+	    <p>Klicken Sie auf die gewünschte Stelle für die linke obere Ecke des Bildobjekts und ziehen Sie zur gewünschten rechten unteren Ecke. Wenn Sie einfach auf eine Stelle klicken, wird ein quadratisches Objekt erzeugt. Neue Bildobjekte erhalten anfänglich ein Schachbrettmuster. Wie Sie dies oder andere Eigenschaften des Bildobjekts ändern können, finden Sie in <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Strichcode</title>
+	    <p>Klicken Sie auf die gewünschte Stelle für die linke obere Ecke des Strichcodeobjekts und ziehen Sie zur gewünschten rechten unteren Ecke. Neue Objekte erhalten anfänglich einen POSTNET-Strichcode mit Beispieldaten. Wie Sie die Eigenschaften des Strichcodeobjekts ändern können, finden Sie in <link xref="editprop"/>.</p>
+	</section>
+
+</page>

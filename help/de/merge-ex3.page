@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="merge-ex3" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="merge#merge-ex"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Erstellung von Adressetiketten unter Nutzung des <app>Evolution</app>-Adressbuchs.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Beispiel 3: Adressetiketten unter Nutzung des <app>Evolution</app>-Adressbuchs</title>
+
+      <p>Ihre letzte Party war ein voller Erfolg. Nun benötigen Sie wieder Adressetiketten für die Einladungen zu einer neuen Party. Um dies zu vereinfachen, können Sie das <app>Evolution</app>-Adressbuch nutzen, denn die Adressdaten aller Ihrer Freunde sind dort gespeichert.</p>
+
+      <note>
+	<p>Abhängig davon, wie Ihr <app>gLabels</app>-Paket erstellt wurde, könnte diese Option  nicht verfügbar sein. Die Unterstützung für das Adressbuch von <app>Evolution</app> ist nur dann vorhanden, wenn <app>evolution-data-server</app> und dessen Entwicklerdateien zum Zeitpunkt der Erstellung von <app>gLabels</app> verfügbar waren. Bitte denken Sie auch daran, wenn Sie <app>gLabels</app> direkt aus den Quellen erstellen.</p>
+	
+	<p>Falls das <app>gLabels</app>-Paket Ihrer Distribution diese Unterstützung nicht bieten sollte, kontaktieren Sie bitte den Ersteller des Pakets oder senden Sie einen Fehlerbericht, um dies einzufordern.</p>
+      </note>
+
+      <p>In <app>glabels</app> haben Sie ein neues Dokument unter Verwendung der Dokumentvorlage »Avery 5512 Adressetiketten« erzeugt. Zunächst öffnen Sie mittels <guiseq><gui>Objekte</gui><gui>Mischeinstellungen</gui></guiseq> den Dialog <gui>Mischeinstellungen</gui>. In diesem Dialog wählen Sie wie gezeigt die Datenquelle aus, in diesem Fall CSV, sowie die Mischquelle (Dateiname).</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-1.png" mime="image/png" style="right">
+      		<p>Mischeinstellungen-Dialog</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Sobald Sie <gui>Daten aus dem vorgegebenen Evolution-Adressbuch</gui> als Mischquelle gewählt haben, erhalten Sie eine vollständige Liste mit dessen Inhalt. Anfänglich sind alle Einträge ausgewählt. Angenommen, Sie planen eine wirklich große Party, können Sie die Auswahl unverändert belassen. Behalten Sie jedoch dabei Ihre finanziellen Möglichkeiten im Auge. Sie können bestimmte Einträge auswählen oder wieder abwählen, indem Sie die entsprechenden Ankreuzfelder anklicken. Alternativ können Sie durch Anklicken der Knöpfe <gui>Alle markieren</gui> oder <gui>Markierung aufheben</gui> alle Einträge des Adressbuchs aktivieren oder deaktivieren. </p>
+ 
+      <p>Sie können jeden Datensatz detailliert betrachten, indem Sie auf die kleinen Dreiecke klicken. Sobald Sie mit der Auswahl zufrieden sind, klicken Sie auf <gui>OK</gui>, um die Änderungen anzuwenden.</p>
+
+      <p>Nun beginnen wir mit dem Hinzufügen von Objekten zu unserem <app>gLabels</app>-Dokument, wie gezeigt.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-2.png" mime="image/png" style="right">
+      		<p>Hinzufügen von Objekten</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>In diesem Beispiel haben Sie ein einzelnes Textobjekt. Dieses Textobjekt enthält alle Einmischfelder, angeordnet in mehreren Zeilen wie eine Versandadresse.</p>
+
+      <p>Nun können Sie Ihre Adressetiketten drucken, indem Sie <guiseq><gui>Datei</gui><gui>Drucken</gui></guiseq> wählen. Der unten angezeigte Druckdialog wird geöffnet.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-3.png" mime="image/png" style="right">
+      		<p>Adressetiketten drucken</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Um sicher zu stellen, dass Ihre Etiketten gut aussehen, wählen Sie die Option <gui>Begrenzungen drucken</gui> und klicken auf <gui>Druckvorschau</gui>. Der Druckvorschaudialog wird geöffnet, wie unten angezeigt.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-4.png" mime="image/png" style="right">
+      		<p>Adressetiketten-Vorschau</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Alles sieht gut aus, also können wir jetzt den Drucker mit den entsprechenden Etiketten bestücken, die Adressetiketten drucken und die Einladungen zur Party versenden.</p>
+
+
+</page>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="customize" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Přizpůsobte si aplikaci <app>gLabels</app> svým potřebám.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+    
+  <!-- ============= Customization ============================= -->
+  <!-- Use this section to describe how to customize the application. -->
+    <title>Nastavení</title> 
+    <p>Když chcete v aplikaci <app>gLabels</app> změnit nastavení, zvolte <guiseq><gui>Upravit</gui><gui>Předvolby</gui></guiseq>. Dialogové okno <gui>Předvolby gLabels</gui> obsahuje následující karty:</p>
+
+  <section id="prefs-locale" style="2column">
+    <title>Národní prostředí</title>
+	<section>
+	<title>Jednotky</title>
+	<p>Tento skupinový přepínač použijte k určení svých upřednostňovaných jednotek. Vyberte jednu z následujících možností:</p>
+	   <list>
+		<item>
+		<p><gui>Body</gui></p>
+		<p>Použít body (1 bod = 1/72 palce = 0,352778 mm).</p>
+		</item>
+		<item>
+		<p><gui>Palce</gui></p>
+		<p>Použít palce (1 palec = 25,4 mm).</p>
+		</item>
+		<item>
+		<p><gui>Milimetry</gui></p>
+		<p>Použít milimetry.</p>
+		</item>
+	   </list>
+	   <p>Výchozí : <gui>Palce</gui>.</p>
+	</section>
+
+	<section>
+	<title>Výchozí velikost stránky</title>
+	<p>Tento skupinový přepínač použijte k určení své upřednostňované velikosti stránky. Urychlí vám to hledání typu média při vytváření nové etikety nebo vizitky.</p>
+	   <list>
+		<item>
+		<p><gui>US Letter</gui></p>
+		<p>Většina vašich médií má velikost stránky US Letter (8,5 × 11 palců).</p>
+		</item>
+		<item>
+		<p><gui>ISO A4</gui></p>
+		<p>Většina vašich médií má velikost stránky ISO A4 (210 × 297 mm).</p>
+		</item>
+	   </list>
+	   <p>Výchozí: <gui>US Letter</gui>.</p>		
+	</section>
+    </section>
+
+  <section id="prefs-defaults" style="2column">
+    <title>Výchozí hodnoty objektů</title>
+
+	<section>
+	<title>Text</title>
+	<p>Použijte tyto ovládací prvky k nastavení výchozích vlastností nových textových objektů. Tyto vlastnosti jsou:</p>
+	   <list>
+		<item>
+		<p><gui>Písmo</gui></p>
+		<p>Tyto ovládací prvky slouží k nastavení rodiny písma a velikosti písma a zda by mělo být písmo tučné nebo kurzívou.</p>
+		</item>
+		<item>
+		<p><gui>Barva</gui></p>
+		<p>Tímto ovládacím prvkem se vybírá výchozí barva textu.</p>
+		</item>
+		<item>
+		<p><gui>Zarovnání</gui></p>
+		<p>Tyto ovládací prvky slouží k výběru výchozího zarovnání textu (vlevo, na střed nebo vpravo).</p>
+		</item>
+	   </list>
+	</section>
+
+	<section>
+	<title>Čára</title>
+	<p>Použijte tyto ovládací prvky k nastavení výchozích vlastností čar a obrysů nových objektů. Tyto vlastnosti jsou:</p>
+	   <list>
+		<item>
+		<p><gui>Šířka</gui></p>
+		<p>Tímto ovládacím prvkem se vybírá výchozí šířka čáry.</p>
+		</item>
+		<item>
+		<p><gui>Barva</gui></p>
+		<p>Tímto ovládacím prvkem se vybírá výchozí barva čáry.</p>
+		</item>
+	   </list>
+	</section>
+
+	<section>
+	<title>Výplň</title>
+	<p>Použijte tyto ovládací prvky k nastavení výchozích vlastností výplně nových objektů. Tyto vlastnosti jsou:</p>
+	   <list>
+		<item>
+		<p><gui>Barva</gui></p>
+		<p>Tento ovládací prvek slouží k výběru výchozí barvy výplně.</p>
+		</item>
+	   </list>
+	</section>
+	</section>
+
+</page>

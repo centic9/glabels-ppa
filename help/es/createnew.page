@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="createnew" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Crear objetos nuevos dentro de su documento.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+    <title>Crear objetos nuevos</title>
+
+      <p>Los objetos se crean eligiendo la selección adecuada en el submenú <guiseq><gui>Objetos</gui><gui>Crear Objeto</gui></guiseq> o la <gui>Barra de dibujo</gui>. Esto situará el área de visualización en el modo de creación de objetos como indica su cursor. Para volver al modo de selección de objetos predeterminado sin crear un objeto, seleccione<guiseq><gui>Objetos</gui><gui>Seleccionar modo</gui></guiseq>. Esto devolverá el cursor del área de visualización a la flecha de selección predeterminada.</p>
+
+      <p>A continuación se describe el modo de creación de un objeto para cada tipo de objeto:</p>
+
+	<section>
+	  <title>Texto</title>
+	    <p>Pulse en la ubicación que quiera en la esquina superior izquierda del objeto de texto y arrástrelo. Los objetos de texto nuevos se inicializan con la cadena «Texto». Para cambiar este texto u otras propiedades, consulte la <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Caja</title>
+	    <p>Pulse en la ubicación que quiera en la esquina superior izquierda del objeto de caja y arrástrelo a la ubicación que quiere en la esquina inferior derecha. Si simplemente pulsa en una única ubicación, se creará una caja cuadrada. Para cambiar las propiedades del objeto de caja, consulte la <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Línea</title>
+	    <p>Pulse en la ubicación que quiera en uno de los extremos del objeto de línea y arrástrelo a la ubicación que quiere en el otro extremo. Si simplemente pulsa en una única ubicación, se creará una línea. Para cambiar las propiedades del objeto de línea, consulte la <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Elipse</title>
+	    <p>Pulse en la ubicación que quiera en la esquina superior izquierda del objeto de elipse y arrástrelo a la ubicación que quiere en la esquina inferior derecha. Si simplemente pulsa en una única ubicación, se creará un círculo. Para cambiar las propiedades del objeto de elipse, consulte la <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Imagen</title>
+	    <p>Pulse en la ubicación que quiera en la esquina superior izquierda del objeto de imagen y arrástrelo a la ubicación que quiere en la esquina inferior derecha. Si simplemente pulsa en una única ubicación, se creará un cuadrado. Los objetos de imagen nuevos se inicializan con una imagen cuadriculada. Para cambiar esta imagen, u otras propiedades del objeto de imagen, consulte la <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Código de barras</title>
+	    <p>Pulse en la ubicación que quiera en la esquina superior izquierda del objeto de código de barras. Los objetos de código de barras nuevos se inicializan con un código de barras POSTNET con datos representativos. Para cambiar los datos y las propiedades del objeto de código de barras, consulte la <link xref="editprop"/>.</p>
+	</section>
+
+</page>

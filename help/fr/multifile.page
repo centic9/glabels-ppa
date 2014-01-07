@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="multifile" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Comment ouvrir plusieurs fichiers à la fois avec la ligne de commande.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+
+    <title>Ouverture de plusieurs fichiers à partir de la ligne de commande</title>
+
+      <p>Vous pouvez lancer <app>gLabels</app> à partir de la ligne de commande tout en ouvrant un ou plusieurs fichiers. Pour ouvrir plusieurs fichiers, saisissez la commande suivante et pressez <key>Entrée</key> :</p>
+
+      <p><cmd>glabels <var>fichier1.glabels fichier2.glabels fichier3.glabels</var></cmd></p>
+
+      <p>Au démarrage de l'application, les fichiers que vous avez indiqués, s'ouvrent dans des fenêtres <app>gLabels</app> distinctes.</p>
+
+</page>

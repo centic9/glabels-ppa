@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="index" xml:lang="cs">
+
+  <info>
+    <title type="link">Návrhář etiket a vizitek gLabels</title>
+    <title type="text">Návrhář etiket a vizitek gLabels</title>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title><media type="image" mime="image/png" src="figures/glabels-logo.png">logo gLabels</media> Příručka aplikace gLabels</title>
+
+  <p>Aplikace <application>gLabels</application> je jednoduchý program na vytváření etiket a vizitek pro pracovní prostředí GNOME. Je navržená pro práci s různými samolepicími etiketami a vizitkami rozmístěnými na listech pro laserový/inkoustový tisk, které najdete ve většině obchodů s kancelářskými potřebami.</p>
+ 
+  <p>Aplikaci <app>gLabels</app> můžete používat k návrhu adresních štítků, visaček, cenovek, obalů na CD/DVD nebo cokoliv jiného, co je uspořádáno na listu papíru v pravidelném vzoru. Etikety (nebo kartičky) mohou obsahovat text, obrázky, čáry, tvary a čárové kódy. Aplikace <app>gLabels</app> obsahuje také funkci slučování dokumentů, díky které můžete tisknout každou etiketu jinou, podle záznamů v externím zdroji dat, jako jsou soubory CSV nebo adresář kontaktů <app>Evolution</app>.</p>
+
+  <figure>
+    <title>Hlavní okno <app>gLabels</app></title>
+    <desc>Hlavní okno <app>gLabels</app></desc>
+    <media type="image" src="figures/introduction-glabels-main-window.png" mime="image/png" style="right">
+      <p>Hlavní okno <app>gLabels</app>.</p>
+    </media>
+  </figure>
+
+  <section id="usage" style="2column">
+    <title>Použití</title>
+  </section>
+
+  <section id="merging" style="2column">
+    <title>Slučováním dokumentů</title>
+  </section>
+
+  <section id="advanced" style="2column">
+    <title>Pokročilé používání</title>
+  </section>
+
+</page>

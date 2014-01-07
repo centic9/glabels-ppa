@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="printfile" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Comment imprimer étiquettes et cartes.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+
+    <title>Impression d'étiquettes ou cartes</title>
+
+      <p>Pour imprimer des étiquettes ou des cartes, choisissez <guiseq><gui>Fichier</gui><gui>Imprimer</gui></guiseq> pour afficher la boîte de dialogue <gui>Imprimer</gui>. Sélectionnez les options et cliquez sur <gui>Imprimer</gui> pour lancer l'impression. Pour simplement avoir un aperçu du résultat, cliquez sur <gui>Aperçu avant impression</gui>.</p>
+
+      <p>La boîte de dialogue <gui>Imprimer</gui> vous permet de définir les options d'impression suivantes :</p>
+
+      <section>
+	<title>Onglet « Étiquettes » de la boîte de dialogue « Imprimer »</title>
+
+	<section>
+            <title>Contrôle d'impression (simple)</title>
+
+	      <p>Pour des étiquettes ou des cartes simples (sans fusion), l'onglet <guilabel>Étiquettes</guilabel> dispose des contrôles suivants.</p>
+
+	      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/print-copies.png" mime="image/png" style="right">
+      		<p>Contrôles d'impression</p>
+    		</media>
+	      <!-- ==== End of Figure ==== -->
+
+	      <p>Le nombre d'exemplaires d'étiquettes est indiqué en choisissant, soit le nombre de pages complètes à imprimer, soit un sous-ensemble donné d'étiquettes sur une seule page.</p>
+
+	      <p>La prévisualisation en miniatures peut aussi être utilisé pour sélectionner graphiquement le sous-ensemble d'étiquettes à imprimer ; cliquez sur la miniature de la première étiquette et faites glisser le pointeur jusque sur la dernière.</p>
+
+	  </section>
+
+	  <section>
+            <title>Contrôle d'impression (fusion)</title>
+
+	      <p>Pour des étiquettes ou des cartes utilisant la fusion de documents (aussi connue sous le nom de « publipostage »), l'onglet <guilabel>Étiquettes</guilabel> propose les contrôles de fusion suivants à la place de ceux pour une simple impression.</p>
+
+	      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/print-merge.png" mime="image/png" style="right">
+      		<p>Contrôles de fusion pour l'impression d'un document</p>
+    		</media>
+	      <!-- ==== End of Figure ==== -->
+
+	      <p>Le nombre total d'étiquettes ou de cartes imprimées est le produit du nombre d'enregistrements dans la source de fusion par le nombre de copies sélectionnées. Si vous voulez imprimer plusieurs exemplaires, vous pouvez choisir de les grouper (toutes les copies d'un même enregistrement sont regroupées) ou de les disjoindre (une étiquette pour chaque enregistrement est imprimée avant la copie suivante).</p>
+
+	      <p>Sur la première page, vous pouvez débuter l'impression par n'importe quelle étiquette. Son numéro est choisi à l'aide du compteur <gui>Commencer par l'étiquette</gui>.</p>
+
+	      <p>De même, vous pouvez sélectionner cette première étiquette graphiquement en cliquant sur la miniature de l'aperçu.</p>
+
+	  </section>
+
+	  <section> 
+	  <title>Options</title>
+	      <p>Vous pouvez aussi préciser les options suivantes :</p>
+	      <list>
+		<item>
+		  <p><gui>imprimer des bordures</gui></p>
+		  <p>Imprime le cadre des étiquettes. Cette option est utile pour des essais à blanc, pour tester l'alignement de l'imprimante.</p>
+		</item>
+		<item>
+		  <p><gui>imprimer à l'envers</gui></p>
+		  <p>Imprime les étiquettes en miroir. Cette option est utile pour imprimer sur des supports transparents destinés à être vus de l'extérieur (par ex. sur une vitre de voiture).</p>
+		</item>
+		<item>
+		  <p><gui>imprimer les guides de coupe</gui></p>
+		  <p>Imprime les repères de massicot sur les bords de la feuille. Cette option est utile pour une impression sur feuilles blanches destinées à être découpées après impression. Elle ne fonctionne pas bien avec tous les modèles d'étiquette.</p>
+		</item>
+	      </list>
+	</section>
+       </section>
+
+</page>

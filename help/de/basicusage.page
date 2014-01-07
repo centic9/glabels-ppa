@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="basicusage" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Umgang mit Dateien und Beenden der Anwendung.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+   <title>Grundlegende Bedienung</title>
+    
+    <section>
+    <title>Öffnen einer Datei</title>
+
+      <p>Um eine Datei zu öffnen, wählen Sie <guiseq><gui>Datei</gui><gui>Öffnen</gui></guiseq>, um den Dialog <gui>Datei öffnen</gui> anzuzeigen. Wählen Sie die gewünschte Datei aus und klicken Sie dann auf <gui>Öffnen</gui>. Die Datei wird im Anzeigebereich des <app>gLabels</app>-Fensters geöffnet.</p>
+
+      <p>Sie können in <app>gLabels</app> auch mehrere Dateien öffnen. Die Anwendung erzeugt ein separates Fenster für jede geöffnete Datei.</p>
+
+      <p>Die Anwendung speichert die Pfade und Dateinamen der von Ihnen zuletzt bearbeiteten Dateien. Diese Dateien werden als Einträge im Menü <guiseq><gui>Datei</gui><guisubmenu>Zuletzt benutzt</guisubmenu></guiseq> angezeigt.</p>
+     </section>
+
+     <section id="closefile">
+    <title>Schließen einer Datei</title>
+
+      <p>Um das aktuelle Dokument zu schließen, wählen Sie <guiseq><gui>Datei</gui><gui>Schließen</gui></guiseq>, um das Anwendungsfenster zu schließen. Falls das aktuelle Dokument bearbeitet wurde, wird ein Bestätigungsdialog geöffnet, in welchem Sie das Dokument speichern oder den Vorgang abbrechen können. Falls das zu schließende Fenster das einzige offene Fenster ist, wird <app>gLabels</app> dadurch beendet.</p>
+     </section>
+     
+     <section>
+    <title>Speichern einer Datei</title>
+
+      <p>Sie können Dateien auf folgende Arten speichern:</p>
+
+      <list><item>
+
+	  <p>Um die Änderungen in der bereits vorhandenen Datei zu speichern, wählen Sie <guiseq><gui>Datei</gui><gui>Speichern</gui></guiseq>.</p>
+
+	</item>
+        <item>
+
+	  <p>Um eine neue Datei oder eine bestehende Datei unter einem neuen Dateinamen zu speichern, wählen Sie <guiseq><gui>Datei</gui><gui>Speichern unter</gui></guiseq>. Geben Sie einen Namen für die Datei im Dialogfeld <gui>Speichern unter</gui> ein und klicken Sie anschließend auf <gui>OK</gui>. </p>
+
+	</item>
+      </list>
+     </section>
+
+     <section>
+    <title><app>gLabels</app> beenden</title>
+
+      <p>Um <app>gLabels</app> zu beenden, wählen Sie <guiseq><gui>Datei</gui><gui>Beenden</gui></guiseq>. Dies entspricht dem Schließen aller geöffneten Fenster. Siehe <link xref="basicusage#closefile"/>.</p>
+     </section>
+</page>

@@ -1,0 +1,923 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>lglBarcode</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="LibGlbarcode 3.0 Reference Manual">
+<link rel="up" href="api.html" title="API Reference">
+<link rel="prev" href="api.html" title="API Reference">
+<link rel="next" href="libglbarcode-3.0-lgl-barcode-create.html" title="Barcode Factory">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="api.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="api.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">LibGlbarcode 3.0 Reference Manual</th>
+<td><a accesskey="n" href="libglbarcode-3.0-lgl-barcode-create.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libglbarcode-3.0-lgl-barcode.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#libglbarcode-3.0-lgl-barcode.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="libglbarcode-3.0-lgl-barcode"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libglbarcode-3.0-lgl-barcode.top_of_page"></a>lglBarcode</span></h2>
+<p>lglBarcode — Barcode structure</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="libglbarcode-3.0-lgl-barcode.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;libglbarcode/lgl-barcode.h&gt;
+
+                    <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode">lglBarcode</a>;
+
+<a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="returnvalue">lglBarcode</span></a> *        <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lgl-barcode-new" title="lgl_barcode_new ()">lgl_barcode_new</a>                     (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lgl-barcode-free" title="lgl_barcode_free ()">lgl_barcode_free</a>                    (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>);
+
+enum                <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeType" title="enum lglBarcodeShapeType">lglBarcodeShapeType</a>;
+                    <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShape" title="lglBarcodeShape">lglBarcodeShape</a>;
+                    <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeAny" title="lglBarcodeShapeAny">lglBarcodeShapeAny</a>;
+                    <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeLine" title="lglBarcodeShapeLine">lglBarcodeShapeLine</a>;
+                    <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeBox" title="lglBarcodeShapeBox">lglBarcodeShapeBox</a>;
+                    <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeChar" title="lglBarcodeShapeChar">lglBarcodeShapeChar</a>;
+                    <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeString" title="lglBarcodeShapeString">lglBarcodeShapeString</a>;
+                    <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeRing" title="lglBarcodeShapeRing">lglBarcodeShapeRing</a>;
+                    <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeHexagon" title="lglBarcodeShapeHexagon">lglBarcodeShapeHexagon</a>;
+
+<span class="returnvalue">void</span>                <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lgl-barcode-add-line" title="lgl_barcode_add_line ()">lgl_barcode_add_line</a>                (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> length</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> width</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lgl-barcode-add-box" title="lgl_barcode_add_box ()">lgl_barcode_add_box</a>                 (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> width</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> height</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lgl-barcode-add-char" title="lgl_barcode_add_char ()">lgl_barcode_add_char</a>                (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> fsize</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> c</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lgl-barcode-add-string" title="lgl_barcode_add_string ()">lgl_barcode_add_string</a>              (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> fsize</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> length</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lgl-barcode-add-ring" title="lgl_barcode_add_ring ()">lgl_barcode_add_ring</a>                (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> radius</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> line_width</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lgl-barcode-add-hexagon" title="lgl_barcode_add_hexagon ()">lgl_barcode_add_hexagon</a>             (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> height</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode.description"></a><h2>Description</h2>
+<p>
+This section describes the <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure and the <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShape" title="lglBarcodeShape"><span class="type">lglBarcodeShape</span></a> family of simple drawing primitives.
+These structures form the basic intermediate barcode representation used by libglbarcode.
+The section also defines a set of functions for constructing an <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure and populating it with drawing primitives.
+</p>
+</div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="lglBarcode"></a><h3>lglBarcode</h3>
+<pre class="programlisting">typedef struct {
+        gdouble  width;
+        gdouble  height;
+
+        GList   *shapes;    /* List of lglBarcodeShape drawing primitives */
+} lglBarcode;
+</pre>
+<p>
+This structure contains the libglbarcode intermediate barcode format.  This
+structure contains a simple vectorized representation of the barcode.  This
+vectorized representation is easy to interpret by a rendering backend for
+either vector or raster formats.  A simple API is provided for constructing
+barcodes in this format.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcode.width"></a>width</code></em>;</span></p></td>
+<td>Width of barcode bounding box (points)</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcode.height"></a>height</code></em>;</span></p></td>
+<td>Height of barcode bounding box (points)</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *<em class="structfield"><code><a name="lglBarcode.shapes"></a>shapes</code></em>;</span></p></td>
+<td>List of <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShape" title="lglBarcodeShape"><span class="type">lglBarcodeShape</span></a> drawing primitives</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-barcode-new"></a><h3>lgl_barcode_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="returnvalue">lglBarcode</span></a> *        lgl_barcode_new                     (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Allocate a new <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure.
+</p>
+<p>
+This function allocates a new <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure.
+</p>
+<p>
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+      This function is intended to be used internally by barcode implementations.
+      Typically an end-user would use <a class="link" href="libglbarcode-3.0-lgl-barcode-create.html#lgl-barcode-create" title="lgl_barcode_create ()"><code class="function">lgl_barcode_create()</code></a> instead.
+</p>
+</div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A newly allocated <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure.  Use <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lgl-barcode-free" title="lgl_barcode_free ()"><code class="function">lgl_barcode_free()</code></a> to
+free it.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-barcode-free"></a><h3>lgl_barcode_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_barcode_free                    (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>);</pre>
+<p>
+Free a previously allocated <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>bc</code></em> :</span></p></td>
+<td>The <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure to free</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lglBarcodeShapeType"></a><h3>enum lglBarcodeShapeType</h3>
+<pre class="programlisting">typedef enum {
+        LGL_BARCODE_SHAPE_LINE,
+        LGL_BARCODE_SHAPE_BOX,
+        LGL_BARCODE_SHAPE_CHAR,
+        LGL_BARCODE_SHAPE_STRING,
+        LGL_BARCODE_SHAPE_RING,
+        LGL_BARCODE_SHAPE_HEXAGON
+} lglBarcodeShapeType;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lglBarcodeShape"></a><h3>lglBarcodeShape</h3>
+<pre class="programlisting">typedef union {
+
+        lglBarcodeShapeType    type;
+        lglBarcodeShapeAny     any;
+
+        lglBarcodeShapeLine    line;
+        lglBarcodeShapeBox     box;
+        lglBarcodeShapeChar    bchar;
+        lglBarcodeShapeString  string;
+        lglBarcodeShapeRing    ring;
+        lglBarcodeShapeHexagon hexagon;
+
+} lglBarcodeShape;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lglBarcodeShapeAny"></a><h3>lglBarcodeShapeAny</h3>
+<pre class="programlisting">typedef struct {
+        /* Begin Common Fields */
+        lglBarcodeShapeType  type;
+        gdouble              x;
+        gdouble              y;
+        /* End Common Fields */
+} lglBarcodeShapeAny;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lglBarcodeShapeLine"></a><h3>lglBarcodeShapeLine</h3>
+<pre class="programlisting">typedef struct {
+        /* Begin Common Fields */
+        lglBarcodeShapeType  type; /* Always LGL_BARCODE_SHAPE_LINE. */
+        gdouble              x;
+        gdouble              y;
+        /* End Common Fields */
+
+        gdouble              length;
+        gdouble              width;
+} lglBarcodeShapeLine;
+</pre>
+<p>
+A vertical line drawing primitive.
+</p>
+<p>
+</p>
+<pre class="programlisting">
+
+@ =  origin (x,y) from top left corner of barcode
+
+             +--@--+
+             |     |
+             |     |
+             |     |
+             |     | length
+             |     |
+             |     |
+             |     |
+             +-----+
+              width
+
+</pre>
+<p>
+</p>
+<p>
+All units are in points ( 1 point = 1/72 inch ).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeType" title="enum lglBarcodeShapeType"><span class="type">lglBarcodeShapeType</span></a> <em class="structfield"><code><a name="lglBarcodeShapeLine.type"></a>type</code></em>;</span></p></td>
+<td>Always <code class="literal">LGL_BARCODE_SHAPE_LINE</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeLine.x"></a>x</code></em>;</span></p></td>
+<td>x coordinate of top of line</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeLine.y"></a>y</code></em>;</span></p></td>
+<td>y coordinate of top of line</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeLine.length"></a>length</code></em>;</span></p></td>
+<td>Length of line</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeLine.width"></a>width</code></em>;</span></p></td>
+<td>Width of line</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lglBarcodeShapeBox"></a><h3>lglBarcodeShapeBox</h3>
+<pre class="programlisting">typedef struct {
+        /* Begin Common Fields */
+        lglBarcodeShapeType  type; /* Always LGL_BARCODE_SHAPE_BOX. */
+        gdouble              x;
+        gdouble              y;
+        /* End Common Fields */
+
+        gdouble              width;
+        gdouble              height;
+} lglBarcodeShapeBox;
+</pre>
+<p>
+A solid box drawing primitive.
+</p>
+<p>
+</p>
+<pre class="programlisting">
+
+@ =  origin (x,y) from top left corner of barcode
+
+             @---------+
+             |         |
+             |         |
+             |         |
+             |         | height
+             |         |
+             |         |
+             |         |
+             +---------+
+                width
+
+</pre>
+<p>
+</p>
+<p>
+All units are in points ( 1 point = 1/72 inch ).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeType" title="enum lglBarcodeShapeType"><span class="type">lglBarcodeShapeType</span></a> <em class="structfield"><code><a name="lglBarcodeShapeBox.type"></a>type</code></em>;</span></p></td>
+<td>Always <code class="literal">LGL_BARCODE_SHAPE_BOX</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeBox.x"></a>x</code></em>;</span></p></td>
+<td>x coordinate of top left corner of box</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeBox.y"></a>y</code></em>;</span></p></td>
+<td>y coordinate of top left corner of box</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeBox.width"></a>width</code></em>;</span></p></td>
+<td>Width of box</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeBox.height"></a>height</code></em>;</span></p></td>
+<td>Height of box</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lglBarcodeShapeChar"></a><h3>lglBarcodeShapeChar</h3>
+<pre class="programlisting">typedef struct {
+        /* Begin Common Fields */
+        lglBarcodeShapeType  type; /* Always LGL_BARCODE_SHAPE_CHAR. */
+        gdouble              x;
+        gdouble              y;
+        /* End Common Fields */
+
+        gdouble              fsize;
+        gchar                c;
+} lglBarcodeShapeChar;
+</pre>
+<p>
+An single byte character drawing primitive.
+</p>
+<p>
+</p>
+<pre class="programlisting">
+
+@ =  origin (x,y) from top left corner of barcode
+
+             ____ ------------
+            /    \           ^
+           /  /\  \          |
+          /  /__\  \         |
+         /  ______  \        | ~fsize
+        /  /      \  \       |
+       /__/        \__\      |
+                             v
+      @ ----------------------
+
+</pre>
+<p>
+</p>
+<p>
+All units are in points ( 1 point = 1/72 inch ).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeType" title="enum lglBarcodeShapeType"><span class="type">lglBarcodeShapeType</span></a> <em class="structfield"><code><a name="lglBarcodeShapeChar.type"></a>type</code></em>;</span></p></td>
+<td>Always <code class="literal">LGL_BARCODE_SHAPE_CHAR</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeChar.x"></a>x</code></em>;</span></p></td>
+<td>x coordinate of left baseline of character</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeChar.y"></a>y</code></em>;</span></p></td>
+<td>y coordinate of left baseline of character</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeChar.fsize"></a>fsize</code></em>;</span></p></td>
+<td>Font size</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> <em class="structfield"><code><a name="lglBarcodeShapeChar.c"></a>c</code></em>;</span></p></td>
+<td>Character to add</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lglBarcodeShapeString"></a><h3>lglBarcodeShapeString</h3>
+<pre class="programlisting">typedef struct {
+        /* Begin Common Fields */
+        lglBarcodeShapeType  type; /* Always LGL_BARCODE_SHAPE_STRING. */
+        gdouble              x;
+        gdouble              y;
+        /* End Common Fields */
+
+        gdouble              fsize;
+        gchar               *string;
+} lglBarcodeShapeString;
+</pre>
+<p>
+A character string drawing primitive.
+</p>
+<p>
+</p>
+<pre class="programlisting">
+
+@ =  origin (x,y) from top left corner of barcode
+
+             ____        _  ------------------
+            /    \      | |                  ^
+           /  /\  \     | |                  |
+          /  /__\  \    | |___     ____      |
+         /  ______  \   | ._  \   /  __|     | ~fsize
+        /  /      \  \  | |_)  | |  (__      |
+       /__/        \__\ |_.___/   \____|     |
+                                             v
+                          @ ------------------
+                          x = horizontal center
+
+</pre>
+<p>
+</p>
+<p>
+All units are in points ( 1 point = 1/72 inch ).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeType" title="enum lglBarcodeShapeType"><span class="type">lglBarcodeShapeType</span></a> <em class="structfield"><code><a name="lglBarcodeShapeString.type"></a>type</code></em>;</span></p></td>
+<td>Always <code class="literal">LGL_BARCODE_SHAPE_STRING</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeString.x"></a>x</code></em>;</span></p></td>
+<td>x coordinate of horizontal center of baseline of string</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeString.y"></a>y</code></em>;</span></p></td>
+<td>y coordinate of horizontal center of baseline of string</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeString.fsize"></a>fsize</code></em>;</span></p></td>
+<td>Font size</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglBarcodeShapeString.string"></a>string</code></em>;</span></p></td>
+<td>String to add</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lglBarcodeShapeRing"></a><h3>lglBarcodeShapeRing</h3>
+<pre class="programlisting">typedef struct {
+        /* Begin Common Fields */
+        lglBarcodeShapeType  type; /* Always LGL_BARCODE_SHAPE_RING. */
+        gdouble              x;
+        gdouble              y;
+        /* End Common Fields */
+
+        gdouble              radius;
+        gdouble              line_width;
+} lglBarcodeShapeRing;
+</pre>
+<p>
+A ring (an open circle) drawing primitive.
+</p>
+<p>
+</p>
+<pre class="programlisting">
+
+@ = origin (x,y) is centre of circle
+
+               v  line_width
+          _.-""""-._
+        .'   ____   `.
+       /   .'  ^ `.   \
+      |   /        \   |
+      |   |    @---|---|------
+      |   \        /   |     ^
+       \   `.____.'   /      | radius
+        `._    ...._.'.......|
+           `-....-'
+
+</pre>
+<p>
+</p>
+<p>
+All units are in points ( 1 point = 1/72 inch ).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeType" title="enum lglBarcodeShapeType"><span class="type">lglBarcodeShapeType</span></a> <em class="structfield"><code><a name="lglBarcodeShapeRing.type"></a>type</code></em>;</span></p></td>
+<td>Always <code class="literal">LGL_BARCODE_SHAPE_RING</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeRing.x"></a>x</code></em>;</span></p></td>
+<td>x coordinate of center of circle</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeRing.y"></a>y</code></em>;</span></p></td>
+<td>y coordinate of center of circle</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeRing.radius"></a>radius</code></em>;</span></p></td>
+<td>Radius of ring (center of line)</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeRing.line-width"></a>line_width</code></em>;</span></p></td>
+<td>Width of line</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lglBarcodeShapeHexagon"></a><h3>lglBarcodeShapeHexagon</h3>
+<pre class="programlisting">typedef struct {
+        /* Begin Common Fields */
+        lglBarcodeShapeType  type; /* Always LGL_BARCODE_SHAPE_HEXAGON. */
+        gdouble              x;
+        gdouble              y;
+        /* End Common Fields */
+
+        gdouble              height;
+} lglBarcodeShapeHexagon;
+</pre>
+<p>
+A solid regular hexagon (oriented with vertexes at top and bottom) drawing primitive.
+</p>
+<p>
+</p>
+<pre class="programlisting">
+
+@ = origin (x,y) is top of hexagon
+
+                 @ ------------------
+             _-"   "-_              ^
+         _-"           "-_          |
+      +"                   "+       |
+      |                     |       |
+      |                     |       |
+      |                     |       | height
+      |                     |       |
+      |                     |       |
+      +_                   _+       |
+        "-_             _-"         |
+           "-_       _-"            |
+              "-_ _-"               v
+                 " ------------------
+
+</pre>
+<p>
+</p>
+<p>
+All units are in points ( 1 point = 1/72 inch ).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeType" title="enum lglBarcodeShapeType"><span class="type">lglBarcodeShapeType</span></a> <em class="structfield"><code><a name="lglBarcodeShapeHexagon.type"></a>type</code></em>;</span></p></td>
+<td>Always <code class="literal">LGL_BARCODE_SHAPE_HEXAGON</code>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeHexagon.x"></a>x</code></em>;</span></p></td>
+<td>x coordinate of top point of hexagon</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeHexagon.y"></a>y</code></em>;</span></p></td>
+<td>y coordinate of top point of hexagon</td>
+</tr>
+<tr>
+<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglBarcodeShapeHexagon.height"></a>height</code></em>;</span></p></td>
+<td>Height of hexagon</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-barcode-add-line"></a><h3>lgl_barcode_add_line ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_barcode_add_line                (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> length</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> width</code></em>);</pre>
+<p>
+Add a vertical line to barcode.  Coordinates are relative to top left corner
+of barcode.  All units are in points ( 1 point = 1/72 inch ).
+</p>
+<p>
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+       This function is intended to be used internally by barcode implementations.
+</p>
+</div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bc</code></em> :</span></p></td>
+<td>An <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>x coordinate of top of line</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>y coordinate of top of line</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td>Length of line</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>Width of line</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-barcode-add-box"></a><h3>lgl_barcode_add_box ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_barcode_add_box                 (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> width</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> height</code></em>);</pre>
+<p>
+Add a box to barcode.  Coordinates are relative to top left corner
+of barcode.  All units are in points ( 1 point = 1/72 inch ).
+</p>
+<p>
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+       This function is intended to be used internally by barcode implementations.
+</p>
+</div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bc</code></em> :</span></p></td>
+<td>An <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>x coordinate of top left corner of box</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>y coordinate of top left corner of box</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>Width of box</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td>Height of box</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-barcode-add-char"></a><h3>lgl_barcode_add_char ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_barcode_add_char                (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> fsize</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> c</code></em>);</pre>
+<p>
+Add an ASCII character to barcode.  Coordinates are relative to top left corner
+of barcode.  All units are in points ( 1 point = 1/72 inch ).
+</p>
+<p>
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+       This function is intended to be used internally by barcode implementations.
+</p>
+</div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bc</code></em> :</span></p></td>
+<td>An <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>x coordinate of left baseline of character</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>y coordinate of left baseline of character</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fsize</code></em> :</span></p></td>
+<td>Font size</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>c</code></em> :</span></p></td>
+<td>Character to add</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-barcode-add-string"></a><h3>lgl_barcode_add_string ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_barcode_add_string              (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> fsize</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> length</code></em>);</pre>
+<p>
+Add a character string to barcode.  Coordinates are relative to top left corner
+of barcode.  All units are in points ( 1 point = 1/72 inch ).
+</p>
+<p>
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+       This function is intended to be used internally by barcode implementations.
+</p>
+</div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bc</code></em> :</span></p></td>
+<td>An <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>x coordinate of horizontal center of baseline of string</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>y coordinate of horizontal center of baseline of string</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fsize</code></em> :</span></p></td>
+<td>Font size</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>string</code></em> :</span></p></td>
+<td>String to add</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td>Number of bytes in string</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-barcode-add-ring"></a><h3>lgl_barcode_add_ring ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_barcode_add_ring                (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> radius</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> line_width</code></em>);</pre>
+<p>
+Add a ring to barcode.  Coordinates are relative to top left corner
+of barcode.  All units are in points ( 1 point = 1/72 inch ).
+</p>
+<p>
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+       This function is intended to be used internally by barcode implementations.
+</p>
+</div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bc</code></em> :</span></p></td>
+<td>An <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>x coordinate of center of circle</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>y coordinate of center of circle</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>radius</code></em> :</span></p></td>
+<td>Radius of ring (center of line)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>line_width</code></em> :</span></p></td>
+<td>Width of line</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-barcode-add-hexagon"></a><h3>lgl_barcode_add_hexagon ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                lgl_barcode_add_hexagon             (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> x</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> y</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> height</code></em>);</pre>
+<p>
+Add a regular hexagon (oriented with vertexes at top and bottom) to barcode.
+Coordinates are relative to top left corner of barcode.  All units are in
+points ( 1 point = 1/72 inch ).
+</p>
+<p>
+</p>
+<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Note</h3>
+<p>
+       This function is intended to be used internally by barcode implementations.
+</p>
+</div>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>bc</code></em> :</span></p></td>
+<td>An <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>x coordinate of top point of hexagon</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>y coordinate of top point of hexagon</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td>Height of hexagon</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

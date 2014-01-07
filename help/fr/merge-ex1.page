@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="merge-ex1" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="merge#merge-ex"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Créer des badges à partir d'un fichier CSV.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+
+    <title>Exemple 1 : création de badges</title>
+
+      <p>Dans cet exemple, disons que nous organisons une session de formation pour les nouveaux membres d'équipage d'un navire. Nous disposons de la liste des nouvelles recrues créée avec <app>gnumeric</app> et exportée sous forme d'un fichier CSV. Nous aurions pu créer ce fichier avec n'importe quel éditeur de texte, mais diable ! nous sommes au XXIIIe siècle.</p>
+
+      <code>
+Nom,Département,Matricule
+"Jim Kirk",Direction,"SC937-0176 CEC"
+"Mr. Spock",Sciences,S179-276SP
+"Léonard McCoy",Médecine,Inconnu
+"Montgomery Scott",Ingénierie,SE-197-54T
+      </code>
+
+      <p>Dans <app>gLabels</app>, nous créons un nouveau document sur le modèle Avery 5395 « Étiquettes pour badges ». Puis, nous ouvrons la boîte de dialogue <gui>Propriétés de fusion</gui> en cliquant sur l'élément de menu <guiseq><gui>Objets</gui><gui>Propriétés de fusion</gui></guiseq> pour afficher les options de fusion. Ceci nous permet de choisir le type de source (dans notre cas CVS avec en-têtes en première ligne) et son emplacement (nom de fichier) comme illustré sur la figure ci-après.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-1.png" mime="image/png" style="right">
+      		<p>Boîte de dialogue « Propriétés de fusion »</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Il est aussi possible de voir le détail du contenu de chaque enregistrement en cliquant sur l'icône d'extension correspondante (le petit triangle) comme indiqué. Une fois les choix arrêtés dans cette boîte de dialogue, nous cliquons sur <guibutton>Valider</guibutton> pour confirmer les modifications.</p>
+
+      <p>Nous allons maintenant ajouter des objets au document <app>gLabels</app> comme indiqué ci-dessous.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-2.png" mime="image/png" style="right">
+      		<p>Ajout d'objets</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Dans cet exemple, nous plaçons trois objets texte et un objet code-barre. Le premier objet texte contient une simple phrase (« Bonjour, je m'appelle »). Le second objet texte contient un seul champ de fusion (« ${Nom} ») correspondant au premier champ de l'enregistrement (première colonne d'une ligne) contenant ici le nom complet du membre d'équipage. Le troisième contient le texte (« Département : ») suivi du champ de fusion (« ${Département} ») isolé correspondant au département auquel appartient le membre d'équipage. L'objet code-barre est configuré pour recevoir le champ (ou clé) « Matricule » contenant le numéro de matricule du membre d'équipage.</p>
+
+      <p>Maintenant nous pouvons lancer l'impression des badges en cliquant l'élément de menu <guiseq><gui>Fichier</gui><gui>Imprimer</gui></guiseq>. La boîte de dialogue « Imprimer » telle qu'affichée ci-dessous apparaît.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-3.png" mime="image/png" style="right">
+      		<p>Impression de badges nominatifs</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Pour s'assurer que les étiquettes auront bel aspect, nous activons l'option <gui>Imprimer des bordures</gui> et cliquons sur <gui>Aperçu avant impression</gui>. Cela déclenche l'affichage d'une fenêtre d'aperçu comme ci-dessous.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-4.png" mime="image/png" style="right">
+      		<p>Aperçu des badges nominatifs</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Tout paraît correct, nous pouvons maintenant charger la ramette d'étiquettes adéquates dans l'imprimante, imprimer nos badges et commencer à accueillir d'un large sourire nos invités à bord.</p>
+
+
+</page>

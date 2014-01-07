@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="mergefeatures" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Co můžete očekávat od slučování dokumentů.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Provádění slučování dokumentů</title>
+
+      <p>Slučování dokumentů (někdy také nazývané „hromadná korespondence“) je mocná funkce, která umožňuje vytisknout na etikety nebo vizitky různé texty podle jednotlivých záznamů v externím zdroji dat.</p>
+
+      <p>Prvním krokem při slučování dokumentů je příprava zdrojového dokumentu, který má obsahovat slučovaná data. Tato data mohou být poštovní adresy nebo jakákoliv jiná data, pro která si přejete vytvořit jedinečné etikety nebo vizitky. V současnosti jsou zatím jako zdroje podporované pouze textové soubory a datový server Evolution, jiné jsou v plánu. Současně podporovaný formát textových souborů je velmi jednoduchý: co řádek, to záznam; pole jsou oddělená čárkami (CSV), tabulátory nebo dvojtečkami; řádky jsou zakončené pomocí znaku „\n“. Takovýto soubor jde vytvořit v libovolném textovém editoru nebo jiným programem nebo skriptem. Obvyklým způsobem vytváření souborů CSV je jejich export z tabulkového kalkulátoru.</p>
+
+      <p>Etiketa musí být nastavená tak, aby „ukazovala na“ takovýto datový soubor. Abyste nastavili vlastnosti slučování dokumentu, zvolte položku nabídky <guiseq><gui>Objekty</gui><gui>Vlastnosti slučování</gui></guiseq> a zobrazí se dialogové okno <gui>vlastnosti slučování</gui>. Toto dialogové okno slouží k výběru přesného formátu datového souboru a názvu (umístění) souboru se slučovanými daty.</p>
+
+      <p>Nakonec, až je etiketa nastavená pro datový soubor, je zapotřebí vložit klíče polí do textových objektů a použít klíče polí jako zdroje nebo data pro objekty čárových kódů a jako názvy souborů pro obrázkové objekty. Více informací o použití slučovaných dat pro tyto typy objektů viz <link xref="editprop"/>.</p>
+
+      <p>Nyní, když máte svoji etiketu nastavenou, bude aplikace <app>gLabels</app> tisknout jednotlivé etikety odlišné pro každý záznam ve vašem zdrojovém dokumentu – do klíčů polí se ve všech textech budou dosazovat pole z jednotlivých záznamů.</p>
+
+      <p>Podrobný výklad funkcí slučování dokumentů viz <link xref="merge"/>.</p>
+
+</page>

@@ -1,50 +1,60 @@
-LIB_BARCODE_DIR = ../barcode-0.98
-LIB_IEC16022_DIR = ../iec16022-0.2.1
 
-SUBDIRS= pixmaps stock-pixmaps mygal
+SUBDIRS= \
+	pixmaps \
+	cursors
 
-bin_PROGRAMS = glabels glabels-batch
+bin_PROGRAMS = glabels-3 glabels-3-batch
 
 INCLUDES = \
-	-I$(top_srcdir) 					\
-	-I$(top_builddir) 					\
-	-I$(LIB_BARCODE_DIR)					\
-	-I$(LIB_IEC16022_DIR)					\
+	-I$(top_srcdir)						\
+	-I$(top_builddir)					\
+	-I$(top_srcdir)/libglabels				\
+	-I$(top_builddir)/libglabels				\
+	-I$(top_srcdir)/libglbarcode				\
+	-I$(top_builddir)/libglbarcode				\
 	$(GLABELS_CFLAGS) 					\
-	$(HAVE_XML_PARSE_HUGE)					\
+	$(LIBEBOOK_CFLAGS)					\
+	$(LIBBARCODE_CFLAGS)					\
+	$(LIBZINT_CFLAGS)					\
+	$(LIBQRENCODE_CFLAGS)					\
+	$(LIBIEC16022_CFLAGS)					\
 	$(DISABLE_DEPRECATED_CFLAGS)				\
-	-DPREFIX=\""$(prefix)"\"                        	\
-	-DSYSCONFDIR=\""$(sysconfdir)"\"                	\
-	-DDATADIR=\""$(datadir)"\"                      	\
-	-DLIBDIR=\""$(libdir)"\"                        	\
-	-DGLABELS_LOCALEDIR=\""$(datadir)/locale"\" 		\
-	-DGLABELS_GLADE_DIR=\""$(datadir)/glabels/glade/"\"	\
-	-DGLABELS_ICON_DIR=\""$(datadir)/pixmaps/"\"	\
-	-DGLABELS_PIXMAP_DIR=\""$(datadir)/pixmaps/glabels/"\"	\
+	-DGLABELS_LOCALE_DIR=\""$(datadir)/locale"\" 		\
+	-DGLABELS_DATA_DIR=\""$(datadir)/$(GLABELS_BRANCH)"\"	\
+	-DGLABELS_ICON_NAME=\""$(GLABELS_BRANCH)\""		\
 	-DG_LOG_DOMAIN=\""glabels\""
 
-glabels_LDFLAGS = -export-dynamic
+glabels_3_LDFLAGS = -export-dynamic
 
-glabels_LDADD = 				\
+glabels_3_LDADD = 				\
 	$(GLABELS_LIBS)				\
-	../libglabels/libglabels.la		\
-	mygal/libmygal.la			\
-	$(LIB_BARCODE_DIR)/libbarcode.la 	\
-	$(LIB_IEC16022_DIR)/libiec16022.la
+	../libglabels/$(LIBGLABELS_BRANCH).la	\
+	../libglbarcode/$(LIBGLBARCODE_BRANCH).la	\
+	$(LIBEBOOK_LIBS)		 	\
+	$(LIBBARCODE_LIBS)		 	\
+	$(LIBZINT_LIBS)				\
+	$(LIBQRENCODE_LIBS)			\
+	$(LIBIEC16022_LIBS)			\
+	-lm
 
-glabels_batch_LDFLAGS = -export-dynamic
+glabels_3_batch_LDFLAGS = -export-dynamic
 
-glabels_batch_LDADD = 				\
+glabels_3_batch_LDADD = 			\
 	$(GLABELS_LIBS)				\
-	../libglabels/libglabels.la		\
-	$(LIB_BARCODE_DIR)/libbarcode.la	\
-	$(LIB_IEC16022_DIR)/libiec16022.la
+	../libglabels/$(LIBGLABELS_BRANCH).la	\
+	../libglbarcode/$(LIBGLBARCODE_BRANCH).la	\
+	$(LIBEBOOK_LIBS)		 	\
+	$(LIBBARCODE_LIBS)		 	\
+	$(LIBZINT_LIBS)				\
+	$(LIBQRENCODE_LIBS)			\
+	$(LIBIEC16022_LIBS)			\
+	-lm
 
 BUILT_SOURCES = 			\
 	marshal.c			\
 	marshal.h			
 
-glabels_SOURCES = 			\
+glabels_3_SOURCES = 			\
 	glabels.c			\
 	warning-handler.c		\
 	warning-handler.h		\
@@ -52,8 +62,6 @@ glabels_SOURCES = 			\
 	critical-error-handler.h	\
 	window.c			\
 	window.h			\
-	stock.c				\
-	stock.h				\
 	ui.h				\
 	ui.c				\
 	ui-util.h			\
@@ -66,6 +74,8 @@ glabels_SOURCES = 			\
 	ui-sidebar.c			\
 	file.h				\
 	file.c				\
+	file-util.h			\
+	file-util.c			\
 	new-label-dialog.h		\
 	new-label-dialog.c		\
 	recent.h			\
@@ -76,11 +86,8 @@ glabels_SOURCES = 			\
 	prefs-model.h 			\
 	prefs-dialog.c 			\
 	prefs-dialog.h 			\
-	hig.h				\
 	view.c				\
 	view.h				\
-	view-object.c			\
-	view-object.h			\
 	view-box.c			\
 	view-box.h			\
 	view-ellipse.c			\
@@ -113,16 +120,22 @@ glabels_SOURCES = 			\
 	print.h				\
 	print-op.c			\
 	print-op.h			\
+	print-op-dialog.c		\
+	print-op-dialog.h		\
 	template-designer.c		\
 	template-designer.h		\
-	bc.c				\
-	bc.h				\
+	bc-backends.c			\
+	bc-backends.h			\
+	bc-builtin.c			\
+	bc-builtin.h			\
 	bc-gnubarcode.c			\
 	bc-gnubarcode.h			\
-	bc-postnet.c			\
-	bc-postnet.h			\
+	bc-zint.c			\
+	bc-zint.h 			\
 	bc-iec16022.c			\
 	bc-iec16022.h			\
+	bc-iec18004.c			\
+	bc-iec18004.h			\
 	label.c				\
 	label.h				\
 	label-object.c			\
@@ -139,14 +152,16 @@ glabels_SOURCES = 			\
 	label-image.h			\
 	label-barcode.c			\
 	label-barcode.h			\
+	pixbuf-util.c			\
+	pixbuf-util.h			\
 	xml-label.c			\
 	xml-label.h			\
 	xml-label-04.c			\
 	xml-label-04.h			\
 	pixbuf-cache.c			\
 	pixbuf-cache.h			\
-	base64.c			\
-	base64.h			\
+	svg-cache.c			\
+	svg-cache.h			\
 	merge.c				\
 	merge.h				\
 	merge-init.c			\
@@ -163,26 +178,64 @@ glabels_SOURCES = 			\
 	mini-preview-pixbuf.h		\
 	mini-preview-pixbuf-cache.c	\
 	mini-preview-pixbuf-cache.h	\
-	wdgt-print-copies.c		\
-	wdgt-print-copies.h		\
-	wdgt-print-merge.c		\
-	wdgt-print-merge.h		\
-	wdgt-media-select.c		\
-	wdgt-media-select.h		\
-	wdgt-mini-preview.c		\
-	wdgt-mini-preview.h		\
-	wdgt-rotate-label.c		\
-	wdgt-rotate-label.h		\
+	media-select.c			\
+	media-select.h			\
+	message-bar.c			\
+	message-bar.h			\
+	template-history.c		\
+	template-history.h		\
+	template-history-model.c	\
+	template-history-model.h	\
+	mini-preview.c			\
+	mini-preview.h			\
+	mini-label-preview.c		\
+	mini-label-preview.h		\
 	wdgt-chain-button.c		\
 	wdgt-chain-button.h		\
+	field-button.c			\
+	field-button.h			\
+	field-button-menu.c		\
+	field-button-menu.h		\
+	color-combo.c			\
+	color-combo.h			\
+	color-combo-button.c		\
+	color-combo-button.h		\
+	color-combo-menu.c		\
+	color-combo-menu.h		\
+	color-combo-color-menu-item.c	\
+	color-combo-color-menu-item.h	\
+	color-history-model.c		\
+	color-history-model.h		\
+	color-swatch.c			\
+	color-swatch.h			\
+	font-combo.c			\
+	font-combo.h			\
+	font-combo-menu.c		\
+	font-combo-menu.h		\
+	font-combo-menu-item.c		\
+	font-combo-menu-item.h		\
+	font-sample.c			\
+	font-sample.h			\
+	font-util.c			\
+	font-util.h			\
+	font-history.c			\
+	font-history.h			\
+	font-history-model.c		\
+	font-history-model.h		\
 	cairo-label-path.c		\
 	cairo-label-path.h		\
 	cairo-markup-path.c		\
 	cairo-markup-path.h		\
 	cairo-ellipse-path.c		\
 	cairo-ellipse-path.h		\
-	util.c				\
-	util.h				\
+	combo-util.c			\
+	combo-util.h			\
+	builder-util.c			\
+	builder-util.h			\
+	units-util.c			\
+	units-util.h			\
+	str-util.c			\
+	str-util.h			\
 	color.c				\
 	color.h				\
 	debug.c 			\
@@ -190,20 +243,26 @@ glabels_SOURCES = 			\
 	$(BUILT_SOURCES)
 
 
-glabels_batch_SOURCES = 		\
+glabels_3_batch_SOURCES = 		\
 	glabels-batch.c			\
+	file-util.h			\
+	file-util.c			\
 	print.c				\
 	print.h				\
 	print-op.c			\
 	print-op.h			\
-	bc.c				\
-	bc.h				\
+	bc-backends.c			\
+	bc-backends.h			\
+	bc-builtin.c			\
+	bc-builtin.h			\
 	bc-gnubarcode.c			\
 	bc-gnubarcode.h			\
-	bc-postnet.c			\
-	bc-postnet.h			\
+	bc-zint.c			\
+	bc-zint.h			\
 	bc-iec16022.c			\
 	bc-iec16022.h			\
+	bc-iec18004.c			\
+	bc-iec18004.h			\
 	label.c				\
 	label.h				\
 	label-object.c			\
@@ -220,14 +279,16 @@ glabels_batch_SOURCES = 		\
 	label-image.h			\
 	label-barcode.c			\
 	label-barcode.h			\
+	pixbuf-util.c			\
+	pixbuf-util.h			\
 	xml-label.c			\
 	xml-label.h			\
 	xml-label-04.c			\
 	xml-label-04.h			\
 	pixbuf-cache.c			\
 	pixbuf-cache.h			\
-	base64.c			\
-	base64.h			\
+	svg-cache.c			\
+	svg-cache.h			\
 	merge.c				\
 	merge.h				\
 	merge-init.c			\
@@ -244,19 +305,22 @@ glabels_batch_SOURCES = 		\
 	prefs.h 			\
 	prefs-model.c 			\
 	prefs-model.h 			\
-	util.c				\
-	util.h				\
+	font-util.c			\
+	font-util.h			\
+	font-history.c			\
+	font-history.h			\
+	font-history-model.c		\
+	font-history-model.h		\
+	template-history.c		\
+	template-history.h		\
+	template-history-model.c	\
+	template-history-model.h	\
+	str-util.c			\
+	str-util.h			\
 	color.c				\
 	color.h				\
 	debug.c 			\
 	debug.h 			\
-	wdgt-print-copies.c		\
-	wdgt-print-copies.h		\
-	wdgt-print-merge.c		\
-	wdgt-print-merge.h		\
-	wdgt-mini-preview.c		\
-	wdgt-mini-preview.h		\
-	hig.h				\
 	cairo-label-path.c		\
 	cairo-label-path.h		\
 	cairo-ellipse-path.c		\
@@ -264,10 +328,10 @@ glabels_batch_SOURCES = 		\
 	$(BUILT_SOURCES)
 
 marshal.h: marshal.list $(GLIB_GENMARSHAL)
-	$(GLIB_GENMARSHAL) $< --header --prefix=gl_marshal > $@
+	$(AM_V_GEN) $(GLIB_GENMARSHAL) $< --header --prefix=gl_marshal > $@
 
 marshal.c: marshal.list $(GLIB_GENMARSHAL)
-	echo "#include \"marshal.h\"" > $@ && \
+	$(AM_V_GEN) echo "#include \"marshal.h\"" > $@ && \
 	$(GLIB_GENMARSHAL) $< --body --prefix=gl_marshal >> $@
 
 EXTRA_DIST = \
@@ -275,16 +339,11 @@ EXTRA_DIST = \
 
 CLEANFILES = $(BUILT_SOURCES)
 
-$(bin_PROGRAMS): $(LIB_BARCODE_DIR)/libbarcode.la \
-		 $(LIB_IEC16022_DIR)/libiec16022.la \
-		 ../libglabels/libglabels.la
+$(bin_PROGRAMS): ../libglabels/$(LIBGLABELS_BRANCH).la ../libglbarcode/$(LIBGLBARCODE_BRANCH).la
 
-$(LIB_BARCODE_DIR)/libbarcode.la:
-	cd $(LIB_BARCODE_DIR); $(MAKE)
-
-$(LIB_IEC16022_DIR)/libiec16022.la:
-	cd $(LIB_IEC16022_DIR); $(MAKE)
-
-../libglabels/libglabels.la:
+../libglabels/$(LIBGLABELS_BRANCH).la:
 	cd ../libglabels; $(MAKE)
+
+../libglbarcode/$(LIBGLBARCODE_BRANCH).la:
+	cd ../libglbarcode; $(MAKE)
 

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="editprop" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Comment modifier les propriétés des objets.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+
+    <title>Modification des propriétés d'un objet</title>
+
+    <section id="glabels-object-properties">
+
+      <p>Les propriétés de la plupart des objets peuvent être modifiées avec l'éditeur d'objet présent dans le panneau latéral comme illustré ci-dessous. Pour que l'éditeur d'objet soit actif, il faut d'abord sélectionner un objet. Consultez la section <link xref="select"/>.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/object-editor-sidebar.png" mime="image/png" style="right">
+      		<p>Contrôles d'impression</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>L'éditeur d'objet propose, selon leur type, le jeu d'onglets suivants :</p>
+
+      <section id="object-editor-text">
+	<title>Onglet Texte (objets Texte)</title>
+
+	<p>Cet onglet contient un petit éditeur permettant de modifier le contenu d'un objet texte. Il contient aussi un menu déroulant indiquant les champs de fusion disponibles pouvant être insérés dans le texte.</p>
+
+      </section>
+
+      <section id="object-editor-image">
+	<title>Onglet Image (objets Image)</title>
+
+	<p>Cette partie contient une zone de sélection de fichier avec aperçu permettant de choisir des fichiers image. Le bouton de navigation s'utilise pour explorer aisément les fichiers image. On peut aussi indiquer un champ de fusion utilisable à la place du nom de fichier au moment de l'impression.</p>
+
+      </section>
+
+      <section id="object-editor-data">
+	<title>Onglet Code-barre (objets Code-barre)</title>
+
+	<p>Cet onglet contient une zone de saisie de texte pour saisir la chaîne alphanumérique d'un code-barre. On peut aussi indiquer un champ de fusion qui fournit l'information au moment de l'impression.</p>
+
+      </section>
+
+      <section id="object-editor-style">
+	<title>Onglet Style (objets Texte)</title>
+
+	<p>Cet onglet contient des éléments à renseigner pour choisir les propriétés du texte : famille, taille et style de la police, couleur, alignement et espacement.</p>
+
+      </section>
+
+      <section id="object-editor-barcode">
+	<title>Onglet Style (objets Code-barre)</title>
+
+	<p>Cet onglet contient des éléments à renseigner pour choisir les propriétés du code-barre : le style, la couleur, et s'il faut y inclure ou non une somme de contrôle.</p>
+
+      </section>
+
+      <section id="object-editor-line">
+	<title>Onglet Ligne</title>
+
+	<p>Cet onglet contient deux éléments permettant de choisir les propriétés des lignes et des bordures : épaisseur et couleur.</p>
+
+      </section>
+
+      <section id="object-editor-fill">
+	<title>Onglet Remplissage</title>
+
+	<p>Cet onglet contient des éléments pour renseigner les propriétés de remplissage des objets boîte et ellipse. Pour l'instant, la couleur est la seule option de remplissage disponible.</p>
+
+      </section>
+
+      <section id="object-editor-size">
+	<title>Onglet Taille (tous objets, sauf Ligne)</title>
+
+	<p>Cet onglet contient deux éléments pour choisir la largeur et la hauteur d'un objet. Il y a aussi une case à cocher pour figer le rapport largeur/hauteur pendant le redimensionnement de l'objet. Pour les objets Image, il y a en plus un bouton permettant de revenir aux dimensions d'origine (en supposant une résolution de 72 ppp).</p>
+
+      </section>
+
+      <section id="object-editor-size-line">
+	<title>Onglet Taille (objets Ligne)</title>
+
+	<p>Cet onglet contient deux éléments pour choisir la longueur et l'angle d'inclinaison d'un objet ligne.</p>
+
+      </section>
+
+      <section id="object-editor-position">
+	<title>Onglet Position</title>
+
+	<p>Cet onglet contient des éléments permettant de modifier la position d'un objet.</p>
+
+      </section>
+
+
+      <section id="object-editor-shadow">
+	<title>Onglet Ombrage (tous objets, sauf code-barre)</title>
+
+	<p>Cet onglet contient les paramètres pour ajouter une ombre à un objet.</p>
+
+      </section>
+
+
+    </section>
+
+<!-- ============= Other Manipulations of Objects ========= -->
+    <section id="glabels-object-manipulation"> 
+      <title>Autres possibilités de manipulation d'objets</title>
+
+      <p>Les objets peuvent aussi être manipulés des façons suivantes.</p>
+
+      <section id="other-moving-resizing">
+	<title>Déplacement et redimensionnement des objets</title>
+
+	<p>Un objet peut être déplacé en cliquant dessus et en le faisant glisser à sa nouvelle place. Si cet objet fait partie d'une sélection groupée, tous les objets sélectionnés sont déplacés en même temps tout en gardant leurs positions relatives les uns par rapport aux autres. Si aucun objet n'est sélectionné, un clic sur un objet crée une nouvelle sélection contenant cet objet. Consultez la section <link xref="select"/>.</p>
+
+	<p>Un objet sélectionné peut être redimensionné en cliquant sur une de ses poignées et en la faisant glisser jusqu'à obtenir les dimensions souhaitées.</p>
+
+      </section>
+
+      <section id="other-stacking-order">
+	<title>Modification de l'ordre d'empilage</title>
+
+	<p>L'ordre d'empilage se rapporte à la position relative des objets sur l'axe Z. Lorsque des objets se recouvrent, il indique quel objet apparaît au-dessus de l'autre. Par défaut, les plus récents sont affichés par-dessus les plus anciens. Pour modifier cet ordre, sélectionnez un ou plusieurs objets à déplacer et choisissez <guiseq><gui>Objets</gui><gui>Ordre</gui><gui>Avancer au premier plan </gui></guiseq> pour placer la sélection au-dessus de la pile, ou <guiseq><gui>Objets</gui><gui>Ordre</gui><gui>Reculer à l'arrière-plan</gui></guiseq> pour placer la sélection au bas de la pile. Ces commandes sont aussi accessibles par le menu contextuel (clic droit dans la zone d'affichage lorsqu'un élément au moins est sélectionné).</p>
+
+      </section>
+
+      <section id="other-rotating-flipping">
+	<title>Rotation ou retournement des objets</title>
+
+	<p>L'élément de menu <guiseq><gui>Objets</gui><gui>Rotation/Retournement</gui></guiseq> donne accès à un sous-menu permettant de faire pivoter un objet de 90° dans n'importe quel sens ou de le retourner horizontalement ou verticalement. Ces commandes sont aussi accessibles avec le menu contextuel (clic droit dans la zone d'affichage lorsqu'un élément au moins est sélectionné).</p>
+
+         <note>
+         <p>Cette fonctionnalité peut se révéler utile quand vous concevez des pochettes pour des boitiers CD. Pour le titre sur la tranche, vous aurez besoin de faire pivoter le texte verticalement. Après avoir créé une boîte texte normale, sélectionnez <guiseq><gui>Objets</gui><gui>Rotation/Retournement</gui></guiseq> pour faire tourner la boîte texte selon vos besoins.</p>
+         </note>
+
+      </section>
+
+      <section id="other-alignment">
+	<title>Alignement d'objets</title>
+
+	<p>Des objets peuvent être alignés horizontalement ou verticalement les uns par rapport aux autres ou centrés sur les médianes de l'étiquette. Pour cela, choisissez l'option adéquate dans les sous-menus de <guiseq><gui>Objets</gui><gui>Aligner horizontalement</gui></guiseq> ou <guiseq><gui>Objets</gui><gui>Aligner verticalement</gui></guiseq>. Ces commandes sont aussi accessibles par le menu contextuel (clic droit dans la zone d'affichage lorsqu'un élément au moins est sélectionné).</p>
+
+      </section>
+
+      <section id="other-property-bar">
+	<title>Utilisation de la barre des propriétés</title>
+
+	<p>La barre des propriétés sert à modifier certaines options communes à un ensemble d'objets : famille, taille, gras ou italique de la police, alignement ou couleur du texte, couleur de remplissage, couleur de ligne ou de bordure et épaisseur de ligne. La barre des propriétés est aussi utilisée pour définir les options appliquées par défaut à tout nouvel objet créé.</p>
+
+      </section>
+
+
+
+    </section>
+
+</page>

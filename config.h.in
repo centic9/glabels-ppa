@@ -1,4 +1,4 @@
-/* config.h.in.  Generated from configure.in by autoheader.  */
+/* config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* always defined to indicate that i18n is enabled */
 #undef ENABLE_NLS
@@ -24,8 +24,20 @@
 /* Define if your <locale.h> file defines LC_MESSAGES. */
 #undef HAVE_LC_MESSAGES
 
+/* Define to 1 for GNU Barcode support */
+#undef HAVE_LIBBARCODE
+
 /* Define to 1 for EDS support */
 #undef HAVE_LIBEBOOK
+
+/* Define to 1 for IEC 16022 support */
+#undef HAVE_LIBIEC16022
+
+/* Define to 1 for QR code support */
+#undef HAVE_LIBQRENCODE
+
+/* Define to 1 for Zint Barcode support */
+#undef HAVE_LIBZINT
 
 /* Define to 1 if you have the <locale.h> header file. */
 #undef HAVE_LOCALE_H
@@ -72,6 +84,9 @@
 
 /* Define to the one symbol short name of this package. */
 #undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
 
 /* Define to the version of this package. */
 #undef PACKAGE_VERSION

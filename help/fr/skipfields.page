@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="mergeskipfields" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Comment éviter des lignes blanches dans les adresses lors de la fusion de documents.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+
+  <title>Élision des lignes blanches dans les adresses</title>
+
+  <p>Cette fonctionnalité est mieux décrite avec un simple exemple. Dans le fichier CVS suivant, la colonne 5 (ADR2) contient la deuxième ligne d'adresse pour chaque enregistrement. Ce champ est vide dans les enregistrements 1 et 2, mais pas dans le 3 (pour que cette fonctionnalité fonctionne, le champ doit être totalement vide — tout texte, y compris des espaces, la met en défaut).</p>
+
+  <code>
+  NOM,PRENOM,INI,ADR1,ADR2,VILLE,REGION,CP
+  Summers,Joyce,,"1630 Revello Dr",,Sunnydale,CA,95037
+  McGarret,Steve,O,"404 Piikoi Street",,Honolulu,HI,96813
+  Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
+  </code>
+
+  <p>Dans la capture d'écran suivante, pour formater ces adresses, nous avons créé un seul objet texte avec plusieurs lignes. Vous noterez que ${ADDR2}, qui représente la deuxième ligne d'adresse, occupe bien une ligne à lui seul (n'importe quel texte ajouté sur cette ligne, y compris des espaces, met en défaut cette fonctionnalité).</p>
+
+  <media type="image" src="figures/skip-fields-screenshot.png" mime="image/png" style="right">
+  <p>Adresse sur plusieurs lignes</p>
+  </media>
+
+  <p>L'impression de cette étiquette donne la sortie suivante. Vous noterez que la ligne contenant le champ ${ADR2} est totalement omise pour les deux premiers enregistrements, sans imprimer de ligne blanche.</p>
+
+  <media type="image" src="figures/skip-fields-output.png" mime="image/png" style="right">
+  <p>Sortie</p>
+  </media>
+
+</page>

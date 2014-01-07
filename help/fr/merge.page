@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="merge" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Comment fusionner une source de données pour créer plusieurs documents.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+
+    <title>Guide pour la fusion de documents</title>
+
+    <p>La fusion de documents (quelquefois appelée « publipostage ») est une fonction puissante permettant d'imprimer une étiquette ou une carte pour chaque enregistrement d'une source de données extérieure. Elle est toutefois la fonction la moins bien connue de <app>gLabels</app>. Les exemples ci-après vont détailler les étapes à suivre pour quelques tâches courantes faisant appel à la fonctionnalité de fusion.</p>
+
+  <section id="merge-ex" style="2column">
+  </section>
+
+</page>

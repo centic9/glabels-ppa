@@ -1,25 +1,21 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  cairo-markup-path.c
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  cairo_markup_path.c:  Cairo markup path module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2007  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <config.h>
@@ -27,17 +23,21 @@
 #include "cairo-markup-path.h"
 
 #include <math.h>
-#include <glib.h>
+
+#include "cairo-ellipse-path.h"
 
 #include "debug.h"
+
 
 /*===========================================*/
 /* Private types                             */
 /*===========================================*/
 
+
 /*===========================================*/
 /* Private globals                           */
 /*===========================================*/
+
 
 /*===========================================*/
 /* Local function prototypes                 */
@@ -48,6 +48,10 @@ static void       gl_cairo_markup_margin_path         (cairo_t                 *
                                                        glLabel                 *label);
 
 static void       gl_cairo_markup_margin_rect_path    (cairo_t                 *cr,
+                                                       const lglTemplateMarkup *markup,
+                                                       glLabel                 *label);
+
+static void       gl_cairo_markup_margin_ellipse_path (cairo_t                 *cr,
                                                        const lglTemplateMarkup *markup,
                                                        glLabel                 *label);
 
@@ -68,7 +72,10 @@ static void       gl_cairo_markup_circle_path         (cairo_t                 *
 static void       gl_cairo_markup_rect_path           (cairo_t                 *cr,
                                                        const lglTemplateMarkup *markup);
 
-
+static void       gl_cairo_markup_ellipse_path        (cairo_t                 *cr,
+                                                       const lglTemplateMarkup *markup);
+
+
 /*--------------------------------------------------------------------------*/
 /* Create markup path                                                       */
 /*--------------------------------------------------------------------------*/
@@ -92,6 +99,9 @@ gl_cairo_markup_path (cairo_t                 *cr,
         case LGL_TEMPLATE_MARKUP_RECT:
                 gl_cairo_markup_rect_path (cr, markup);
                 break;
+        case LGL_TEMPLATE_MARKUP_ELLIPSE:
+                gl_cairo_markup_ellipse_path (cr, markup);
+                break;
         default:
                 g_message ("Unknown template markup type");
                 break;
@@ -99,6 +109,7 @@ gl_cairo_markup_path (cairo_t                 *cr,
 
         gl_debug (DEBUG_PATH, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Draw margin markup.                                             */
@@ -108,16 +119,22 @@ gl_cairo_markup_margin_path (cairo_t                *cr,
                              const lglTemplateMarkup *markup,
                              glLabel                *label)
 {
+	const lglTemplate      *template;
 	const lglTemplateFrame *frame;
 
         gl_debug (DEBUG_PATH, "START");
 
-        frame = (lglTemplateFrame *)label->template->frames->data;
+        template = gl_label_get_template (label);
+        frame = (lglTemplateFrame *)template->frames->data;
 
         switch (frame->shape) {
 
         case LGL_TEMPLATE_FRAME_SHAPE_RECT:
                 gl_cairo_markup_margin_rect_path (cr, markup, label);
+                break;
+
+        case LGL_TEMPLATE_FRAME_SHAPE_ELLIPSE:
+                gl_cairo_markup_margin_ellipse_path (cr, markup, label);
                 break;
 
         case LGL_TEMPLATE_FRAME_SHAPE_ROUND:
@@ -136,6 +153,7 @@ gl_cairo_markup_margin_path (cairo_t                *cr,
         gl_debug (DEBUG_PATH, "END");
 }
 
+
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Draw simple recangular margin.                                  */
 /*---------------------------------------------------------------------------*/
@@ -144,12 +162,14 @@ gl_cairo_markup_margin_rect_path (cairo_t                 *cr,
                                   const lglTemplateMarkup *markup,
                                   glLabel                 *label)
 {
+        const lglTemplate      *template;
         const lglTemplateFrame *frame;
         gdouble                 w, h, r, m;
 
         gl_debug (DEBUG_PATH, "START");
 
-        frame = (lglTemplateFrame *)label->template->frames->data;
+        template = gl_label_get_template (label);
+        frame = (lglTemplateFrame *)template->frames->data;
 
         m = markup->margin.size;
 
@@ -175,6 +195,39 @@ gl_cairo_markup_margin_rect_path (cairo_t                 *cr,
         gl_debug (DEBUG_PATH, "END");
 }
 
+
+/*---------------------------------------------------------------------------*/
+/* PRIVATE.  Draw elliptical margin.                                         */
+/*---------------------------------------------------------------------------*/
+static void
+gl_cairo_markup_margin_ellipse_path (cairo_t                 *cr,
+                                     const lglTemplateMarkup *markup,
+                                     glLabel                 *label)
+{
+        const lglTemplate      *template;
+        const lglTemplateFrame *frame;
+        gdouble                 w, h, m;
+
+        gl_debug (DEBUG_PATH, "START");
+
+        template = gl_label_get_template (label);
+        frame = (lglTemplateFrame *)template->frames->data;
+
+        m = markup->margin.size;
+
+        lgl_template_frame_get_size (frame, &w, &h);
+	w = w - 2*m;
+	h = h - 2*m;
+
+        cairo_save (cr);
+        cairo_translate (cr, m, m);
+        gl_cairo_ellipse_path (cr, w/2.0, h/2.0);
+        cairo_restore (cr);
+
+        gl_debug (DEBUG_PATH, "END");
+}
+
+
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Draw round margin.                                              */
 /*---------------------------------------------------------------------------*/
@@ -183,12 +236,14 @@ gl_cairo_markup_margin_round_path (cairo_t                 *cr,
                                    const lglTemplateMarkup *markup,
                                    glLabel                 *label)
 {
+	const lglTemplate      *template;
 	const lglTemplateFrame *frame;
 	gdouble                 r, m;
 
 	gl_debug (DEBUG_PATH, "START");
 
-        frame = (lglTemplateFrame *)label->template->frames->data;
+        template = gl_label_get_template (label);
+        frame = (lglTemplateFrame *)template->frames->data;
 
 	r = frame->round.r;
 	m = markup->margin.size;
@@ -199,6 +254,7 @@ gl_cairo_markup_margin_round_path (cairo_t                 *cr,
 	gl_debug (DEBUG_PATH, "END");
 }
 
+
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Draw CD margins.                                                */
 /*---------------------------------------------------------------------------*/
@@ -207,6 +263,7 @@ gl_cairo_markup_margin_cd_path (cairo_t                 *cr,
                                 const lglTemplateMarkup *markup,
                                 glLabel                 *label)
 {
+	const lglTemplate      *template;
 	const lglTemplateFrame *frame;
 	gdouble                 m, r1, r2;
 	gdouble                 theta1, theta2;
@@ -215,7 +272,8 @@ gl_cairo_markup_margin_cd_path (cairo_t                 *cr,
 
 	gl_debug (DEBUG_PATH, "START");
 
-        frame = (lglTemplateFrame *)label->template->frames->data;
+        template = gl_label_get_template (label);
+        frame = (lglTemplateFrame *)template->frames->data;
 
         lgl_template_frame_get_size (frame, &w, &h);
         xc = w/2.0;
@@ -248,6 +306,7 @@ gl_cairo_markup_margin_cd_path (cairo_t                 *cr,
 	gl_debug (DEBUG_PATH, "END");
 }
 
+
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Draw line markup.                                               */
 /*---------------------------------------------------------------------------*/
@@ -262,6 +321,7 @@ gl_cairo_markup_line_path (cairo_t                 *cr,
 
 	gl_debug (DEBUG_PATH, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Draw circle markup.                                             */
@@ -280,6 +340,7 @@ gl_cairo_markup_circle_path (cairo_t                 *cr,
 
 	gl_debug (DEBUG_PATH, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Draw rect markup.                                               */
@@ -313,3 +374,36 @@ gl_cairo_markup_rect_path (cairo_t                 *cr,
 	gl_debug (DEBUG_PATH, "END");
 }
 
+
+/*---------------------------------------------------------------------------*/
+/* PRIVATE.  Draw ellipse markup.                                            */
+/*---------------------------------------------------------------------------*/
+static void
+gl_cairo_markup_ellipse_path (cairo_t                 *cr,
+                              const lglTemplateMarkup *markup)
+{
+        gdouble x1 = markup->ellipse.x1;
+        gdouble y1 = markup->ellipse.y1;
+        gdouble w  = markup->ellipse.w;
+        gdouble h  = markup->ellipse.h;
+
+	gl_debug (DEBUG_PATH, "START");
+
+        cairo_save (cr);
+        cairo_translate (cr, x1, y1);
+        gl_cairo_ellipse_path (cr, w/2.0, h/2.0);
+        cairo_restore (cr);
+
+	gl_debug (DEBUG_PATH, "END");
+}
+
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

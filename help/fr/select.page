@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="select" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Comment sélectionner les objets.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+
+    <title>Sélection d'objets</title>
+
+      <p>Un prérequis pour réaliser des opérations sur des objets est la sélection d'un objet isolé ou d'un groupe d'objets. Pour effectuer de nouvelles sélections, la zone d'affichage doit être dans le mode sélection ; ce mode est indiqué par un pointeur en forme de flèche. Vous basculez en mode sélection d'objet en cliquant sur l'élément de menu <guiseq><gui>Objets</gui><gui>Mode sélection</gui></guiseq> ou sur le bouton correspondant de la <gui>Barre d'outils dessin</gui>.</p>
+
+      <section>
+	  <title>Sélection d'un objet isolé</title>
+	    <p>Un objet isolé est sélectionné par un simple clic dessus dans la zone d'affichage. Il apparaît alors en surbrillance avec un jeu de poignées de redimensionnement.</p>
+	</section>
+
+	<section>
+	  <title>Sélection d'un groupe d'objets</title>
+	    <p>Pour sélectionner plusieurs objets, commencez par cliquer sur l'un d'entre eux ; puis, tout en maintenant la touche <key>Ctrl</key> enfoncée, cliquez sur les autres. À tout moment, d'autres objets peuvent être ajoutés à une sélection existante suivant le même processus. Il est aussi possible de sélectionner tous les objets en même temps en cliquant sur l'élément de menu <guiseq><gui>Édition</gui><gui>Tout sélectionner</gui></guiseq>. Tous les objets d'une sélection groupée apparaissent en surbrillance.</p>
+	</section>
+
+	<section>
+	  <title>Sélection par zone</title>
+	  
+	    <p>Plusieurs objets peuvent aussi être sélectionnés à l'aide de la souris en cliquant sur une zone libre et en faisant glisser le pointeur pour délimiter une surface rectangulaire. Au relâchement du bouton de souris, tous les objets englobés dans le rectangle font partie de la sélection groupée. La sélection de zone peut être utilisée pour ajouter des objets à une sélection existante en maintenant la touche <key>Ctrl</key> enfoncée pendant l'opération.</p>
+	  
+	</section>
+
+	<section>
+	  <title>Désélection d'objets</title>
+	  
+	    <p>Tout objet isolé peut être retiré d'une sélection existante en cliquant dessus tout en maintenant la touche <key>Ctrl</key> enfoncée. La totalité d'une sélection peut être libérée en sélectionnant l'élément de menu <guiseq><gui>Édition</gui><gui>Désélectionner tout</gui></guiseq> ou plus simplement en cliquant dans une partie libre de la zone d'affichage. Dès qu'un objet n'est plus sélectionné, il n'apparaît plus en surbrillance.</p>
+	  
+	</section>
+
+    <section id="clipboard"> 
+      <title>Les commandes du presse-papier</title>
+
+      <p>Des sélections d'objets peuvent être manipulées avec les fonctions classiques du presse-papier : <gui>Couper</gui>, <gui>Copier</gui>, <gui>Coller</gui> et <gui>Supprimer</gui>.</p>
+
+	<section>
+	  <title><gui>Couper</gui> (<keyseq><key>Ctrl</key><key>X</key></keyseq>)</title>
+	  
+	    <p>Déplace les objets sélectionnés dans le presse-papier. Ils sont alors disponibles pour être collés à nouveau dans le même document ou dans un autre.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Copier</gui> (<keyseq><key>Ctrl</key><key>C</key></keyseq>)</title>
+	  
+	    <p>Place une copie des objets sélectionnés dans le presse-papier sans effacer les originaux. Ils sont alors disponibles pour être collés à nouveau dans le même document ou dans un autre.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Coller</gui> (<keyseq><key>Ctrl</key><key>V</key></keyseq>)</title>
+	  
+	    <p>Colle les objets du presse-papier dans le document actif. <app>gLabels</app> ne peut coller que des objets provenant d'un autre document <app>gLabels</app>.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Supprimer</gui> (<key>Suppr</key>)</title>
+	  
+	    <p>Supprime les objets sélectionnés sans les placer dans le presse-papier.</p>
+	  
+	</section>
+       </section>
+
+</page>

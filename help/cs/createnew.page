@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="createnew" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Jak vytvořit nový objekt ve vašich dokumentech.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Vytváření nových objektů</title>
+
+      <p>Objekty se vytvářejí příslušným výběrem v podnabídce <guiseq><gui>Objekty</gui><gui>Vytvořit</gui></guiseq> nebo na <gui>Liště kreslení</gui>. Zobrazovací oblast se přepne do režimu vytváření objektu, což je signalizováno patřičným ukazatelem. Do výchozího režimu výběru objektů se můžete vrátit, aniž byste nějaký objekt vytvořili, volbou <guiseq><gui>Objekty</gui><gui>Režim výběru</gui></guiseq>. Ukazatel pro zobrazovací oblast se změní zpět na výchozí šipku.</p>
+
+      <p>Zde je popis režimu vytváření objektu pro jednotlivé typy objektů:</p>
+
+	<section>
+	  <title>Text</title>
+	    <p>Klikněte na požadované umístění levého horního rohu objektu text. Nový textový objekt se vytvoří s počátečním řetězcem „Text“. Jak tento text nebo další vlastnosti změnit uvádí <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Obdélník</title>
+	    <p>Klikněte na požadované umístění levého horního rohu objektu obdélník a táhněte k požadovanému umístění pravého dolního rohu. Když jednoduše kliknete na jednom místě, vytvoří se čtverec. Jak změnit vlastnosti obdélníku uvádí <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Čára</title>
+	    <p>Klikněte na požadované umístění levého horního konce objektu čára a táhněte k požadovanému umístění pravého dolního konce. Když jednoduše kliknete na jednom místě, vytvoří diagonální úsečka. Jak změnit vlastnosti čáry uvádí <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Elipsa</title>
+	    <p>Klikněte na požadované umístění levého horního rohu objektu elipsa a táhněte k požadovanému umístění pravého dolního rohu. Když jednoduše kliknete na jednom místě, vytvoří se kruh. Jak změnit vlastnosti elipsy uvádí <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Obrázek</title>
+	    <p>Klikněte na požadované umístění levého horního rohu objektu obrázku a táhněte k požadovanému umístění pravého dolního rohu. Když jednoduše kliknete na jednom místě, vytvoří se čtverec. Nový obrázkový objekt se vytvoří s jednoduchým počátečním obrázkem šachovnice. Jak změnit tento obrázek a další vlastnosti uvádí <link xref="editprop"/>.</p>
+	</section>
+
+	<section>
+	  <title>Čárový kód</title>
+	    <p>Klikněte na požadované umístění levého horního rohu objektu čárového kódu. Nový objekt čárového kódu se vytvoří jako čárový kód POSTNET s ukázkovými daty. Jak tato data nebo další vlastnosti změnit uvádí <link xref="editprop"/>.</p>
+	</section>
+
+</page>

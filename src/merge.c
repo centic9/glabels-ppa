@@ -1,26 +1,23 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  merge.c
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  merge.c:  document merge module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2002  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #include <config.h>
 
 #include "merge.h"
@@ -28,6 +25,8 @@
 #include <glib/gi18n.h>
 #include <gobject/gvaluecollector.h>
 #include <string.h>
+
+#include <libglabels.h>
 
 #include "debug.h"
 
@@ -70,21 +69,21 @@ static GList *backends = NULL;
 /* Private function prototypes.                           */
 /*========================================================*/
 
-static void           gl_merge_finalize      (GObject        *object);
+static void           gl_merge_finalize      (GObject              *object);
 
-static void           merge_open             (glMerge        *merge);
+static void           merge_open             (glMerge              *merge);
 
-static void           merge_close            (glMerge        *merge);
+static void           merge_close            (glMerge              *merge);
 
-static glMergeRecord *merge_get_record       (glMerge        *merge);
+static glMergeRecord *merge_get_record       (glMerge              *merge);
 
-static void           merge_free_record      (glMergeRecord **record);
+static void           merge_free_record      (glMergeRecord       **record);
 
-static glMergeRecord *merge_dup_record       (glMergeRecord  *record);
+static glMergeRecord *merge_dup_record       (const glMergeRecord  *record);
 
-static void           merge_free_record_list (GList         **record_list);
+static void           merge_free_record_list (GList               **record_list);
 
-static GList         *merge_dup_record_list  (GList          *record_list);
+static GList         *merge_dup_record_list  (GList                *record_list);
 
 
 
@@ -167,6 +166,8 @@ gl_merge_get_descriptions (void)
 	GList   *p;
 	Backend *backend;
 
+        /* Translators: "None" here means that no document-merge source or
+         * method has been selected. */
 	descriptions = g_list_append (descriptions, g_strdup(_("None")));
 
 	for ( p=backends; p!=NULL; p=p->next) {
@@ -208,13 +209,13 @@ gl_merge_description_to_name (gchar *description)
 	GList   *p;
 	Backend *backend;
 
-	if (g_strcasecmp(description, _("None")) == 0) {
+	if (lgl_str_utf8_casecmp(description, _("None")) == 0) {
 		return g_strdup("None");
 	}
 
 	for ( p=backends; p!=NULL; p=p->next) {
 		backend = (Backend *)p->data;
-		if (g_strcasecmp(description, backend->description) == 0) {
+		if (lgl_str_utf8_casecmp(description, backend->description) == 0) {
 			return g_strdup(backend->name);
 		}
 	}
@@ -225,7 +226,7 @@ gl_merge_description_to_name (gchar *description)
 /*****************************************************************************/
 /* Boilerplate object stuff.                                                 */
 /*****************************************************************************/
-G_DEFINE_TYPE (glMerge, gl_merge, G_TYPE_OBJECT);
+G_DEFINE_TYPE (glMerge, gl_merge, G_TYPE_OBJECT)
 
 static void
 gl_merge_class_init (glMergeClass *class)
@@ -275,7 +276,7 @@ gl_merge_finalize (GObject *object)
 /* New merge object.                                                         */
 /*****************************************************************************/
 glMerge *
-gl_merge_new (gchar *name)
+gl_merge_new (const gchar *name)
 {
 	glMerge *merge = NULL;
 	GList   *p;
@@ -286,7 +287,7 @@ gl_merge_new (gchar *name)
 	for (p=backends; p!=NULL; p=p->next) {
 		backend = (Backend *)p->data;
 
-		if (g_strcasecmp(name, backend->name) == 0) {
+		if (g_ascii_strcasecmp(name, backend->name) == 0) {
 
 			merge = GL_MERGE (g_object_newv (backend->type,
 							 backend->n_params,
@@ -300,7 +301,7 @@ gl_merge_new (gchar *name)
 		}
 	}
 
-	if ( (merge == NULL) && (g_strcasecmp (name, "None") != 0)) {
+	if ( (merge == NULL) && (g_ascii_strcasecmp (name, "None") != 0)) {
 		g_message ("Unknown merge backend \"%s\"", name);
 	}
 
@@ -313,7 +314,7 @@ gl_merge_new (gchar *name)
 /* Duplicate merge.                                                         */
 /*****************************************************************************/
 glMerge *
-gl_merge_dup (glMerge *src_merge)
+gl_merge_dup (const glMerge *src_merge)
 {
 	glMerge    *dst_merge;
 
@@ -350,7 +351,7 @@ gl_merge_dup (glMerge *src_merge)
 /* Get name of merge.                                                        */
 /*****************************************************************************/
 gchar *
-gl_merge_get_name (glMerge *merge)
+gl_merge_get_name (const glMerge *merge)
 {
 	gl_debug (DEBUG_MERGE, "");
 
@@ -367,7 +368,7 @@ gl_merge_get_name (glMerge *merge)
 /* Get description of merge.                                                 */
 /*****************************************************************************/
 gchar *
-gl_merge_get_description (glMerge *merge)
+gl_merge_get_description (const glMerge *merge)
 {
 	gl_debug (DEBUG_MERGE, "");
 
@@ -384,7 +385,7 @@ gl_merge_get_description (glMerge *merge)
 /* Get source type of merge.                                                 */
 /*****************************************************************************/
 glMergeSrcType
-gl_merge_get_src_type (glMerge *merge)
+gl_merge_get_src_type (const glMerge *merge)
 {
 	gl_debug (DEBUG_MERGE, "");
 
@@ -401,8 +402,8 @@ gl_merge_get_src_type (glMerge *merge)
 /* Set src of merge.                                                         */
 /*****************************************************************************/
 void
-gl_merge_set_src (glMerge *merge,
-		  gchar   *src)
+gl_merge_set_src (glMerge       *merge,
+		  const gchar   *src)
 {
 	GList         *record_list = NULL;
 	glMergeRecord *record;
@@ -457,7 +458,7 @@ gl_merge_set_src (glMerge *merge,
 /* Get src of merge.                                                         */
 /*****************************************************************************/
 gchar *
-gl_merge_get_src (glMerge *merge)
+gl_merge_get_src (const glMerge *merge)
 {
 	gl_debug (DEBUG_MERGE, "");
 
@@ -474,7 +475,7 @@ gl_merge_get_src (glMerge *merge)
 /* Get Key List.                                                             */
 /*****************************************************************************/
 GList *
-gl_merge_get_key_list (glMerge *merge)
+gl_merge_get_key_list (const glMerge *merge)
 {
 	GList *key_list = NULL;
 
@@ -522,7 +523,7 @@ gl_merge_free_key_list (GList **key_list)
 /* Get Key List.                                                             */
 /*****************************************************************************/
 gchar *
-gl_merge_get_primary_key (glMerge *merge)
+gl_merge_get_primary_key (const glMerge *merge)
 {
 	gchar *key = NULL;
 
@@ -642,7 +643,7 @@ merge_free_record (glMergeRecord **record)
 /* Duplicate a merge record (list of fields)                                 */
 /*---------------------------------------------------------------------------*/
 static glMergeRecord *
-merge_dup_record (glMergeRecord *record)
+merge_dup_record (const glMergeRecord *record)
 {
 	glMergeRecord *dest_record;
 	GList         *p;
@@ -675,8 +676,8 @@ merge_dup_record (glMergeRecord *record)
 /* Find key in given record and evaluate.                                    */
 /*****************************************************************************/
 gchar *
-gl_merge_eval_key (glMergeRecord *record,
-		   gchar         *key)
+gl_merge_eval_key (const glMergeRecord *record,
+		   const gchar         *key)
 		   
 {
 	GList        *p;
@@ -705,7 +706,7 @@ gl_merge_eval_key (glMergeRecord *record,
 /* Read all records from merge source.                                       */
 /*****************************************************************************/
 const GList *
-gl_merge_get_record_list (glMerge *merge)
+gl_merge_get_record_list (const glMerge *merge)
 {
 	gl_debug (DEBUG_MERGE, "");
 	      
@@ -768,7 +769,7 @@ merge_dup_record_list (GList *record_list)
 /* Count selected records.                                                   */
 /*****************************************************************************/
 gint
-gl_merge_get_record_count (glMerge *merge)
+gl_merge_get_record_count (const glMerge *merge)
 {
 	GList *p;
 	glMergeRecord *record;
@@ -789,3 +790,12 @@ gl_merge_get_record_count (glMerge *merge)
 }
 
 
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

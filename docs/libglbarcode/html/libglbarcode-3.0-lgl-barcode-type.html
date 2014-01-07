@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Barcode Types</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="LibGlbarcode 3.0 Reference Manual">
+<link rel="up" href="api.html" title="API Reference">
+<link rel="prev" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html" title="Cairo Renderer">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="api.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">LibGlbarcode 3.0 Reference Manual</th>
+<td> </td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libglbarcode-3.0-lgl-barcode-type.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#libglbarcode-3.0-lgl-barcode-type.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="libglbarcode-3.0-lgl-barcode-type"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libglbarcode-3.0-lgl-barcode-type.top_of_page"></a>Barcode Types</span></h2>
+<p>Barcode Types — Enumeration of supported barcode types</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="libglbarcode-3.0-lgl-barcode-type.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;libglbarcode/lgl-barcode-type.h&gt;
+
+enum                <a class="link" href="libglbarcode-3.0-lgl-barcode-type.html#lglBarcodeType" title="enum lglBarcodeType">lglBarcodeType</a>;
+</pre>
+</div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-type.description"></a><h2>Description</h2>
+<p>
+This section describes an enumeration for selecting one of the barcode types supported by libglbarcode.
+</p>
+</div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-type.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="lglBarcodeType"></a><h3>enum lglBarcodeType</h3>
+<pre class="programlisting">typedef enum {
+
+        LGL_BARCODE_TYPE_POSTNET,        /* USPS Postnet Barcode (5, 9, or 11 digits) */
+        LGL_BARCODE_TYPE_POSTNET_5,      /* USPS Postnet Barcode (5 digits) */
+        LGL_BARCODE_TYPE_POSTNET_9,      /* USPS Postnet Barcode (9 digits) */
+        LGL_BARCODE_TYPE_POSTNET_11,     /* USPS Postnet Barcode (11 digits) */
+        LGL_BARCODE_TYPE_CEPNET,         /* Brazilian Postal Code */
+
+        LGL_BARCODE_TYPE_ONECODE,        /* USPS Intelligent Mail Barcode */
+
+        LGL_BARCODE_TYPE_CODE39,         /* Code 39 */
+        LGL_BARCODE_TYPE_CODE39_EXT,     /* Extended Code 39 (Supports full ASCII character set) */
+
+        /*&lt; private &gt;*/
+        LGL_BARCODE_N_TYPES
+
+} lglBarcodeType;
+</pre>
+<p>
+This enumeration is used to select a built-in barcode type.  The currently supported barcode types are
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="LGL-BARCODE-TYPE-POSTNET:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_POSTNET</code></span></p></td>
+<td>    USPS Postnet Barcode (5, 9, or 11 digits)
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-BARCODE-TYPE-POSTNET-5:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_POSTNET_5</code></span></p></td>
+<td>  USPS Postnet Barcode (5 digits)
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-BARCODE-TYPE-POSTNET-9:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_POSTNET_9</code></span></p></td>
+<td>  USPS Postnet Barcode (9 digits)
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-BARCODE-TYPE-POSTNET-11:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_POSTNET_11</code></span></p></td>
+<td> USPS Postnet Barcode (11 digits)
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-BARCODE-TYPE-CEPNET:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_CEPNET</code></span></p></td>
+<td>     Brazilian Postal Code
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-BARCODE-TYPE-ONECODE:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_ONECODE</code></span></p></td>
+<td>    USPS Intelligent Mail Barcode
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-BARCODE-TYPE-CODE39:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_CODE39</code></span></p></td>
+<td>     Code 39
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-BARCODE-TYPE-CODE39-EXT:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_CODE39_EXT</code></span></p></td>
+<td> Extended Code 39 (Supports full ASCII character set)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

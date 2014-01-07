@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="select" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Cómo seleccionar objetos.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+    <title>Seleccionar objetos</title>
+
+      <p>Un requisito previo para realizar operaciones en objetos es la selección individual o en grupo de objetos. El área de visualización debe estar en el modo de selección de objetos para crear selecciones nuevas, indicado por el cursor de flecha. El modo de selección de objetos se elije con el elemento de menú <guiseq><gui>Objetos</gui><gui>Seleccionar modo</gui></guiseq>, o con el comando correspondiente de la <gui>Barra de dibujo</gui>.</p>
+
+      <section>
+	  <title>Seleccionar un sólo objeto</title>
+	    <p>Se puede seleccionar un único objeto de texto simplemente pulsando sobre el objeto que quiere en el área de visualización. Una vez seleccionado, el objeto se resaltará con un conjunto de manejadores para redimensionarlo.</p>
+	</section>
+
+	<section>
+	  <title>Agregar selecciones de objetos</title>
+	    <p>Se pueden seleccionar varios objetos seleccionando el primero de ellos y manteniendo pulsada la tecla <key>Ctrl</key> mientras selecciona los objetos adicionales. Se puede añadir objetos individuales a la selección existente en cualquier momento manteniendo pulsada la tecla <key>Ctrl</key> mientras selecciona los objetos que quiere. También puede seleccionar todos los objetos usando el elemento de menú <guiseq><gui>Editar</gui><gui>Seleccionar todo</gui></guiseq>. Todos los objetos de una selección agregada de objetos se resaltarán.</p>
+	</section>
+
+	<section>
+	  <title>Selecciones de área</title>
+	  
+	    <p>Se puede seleccionar varios objetos pulsando en un área vacía y arrastrando hasta formar un área rectangular. Cuando se suelta, todos los objetos contenidos en el área formarán una selección agregada. Una selección de área se puede usar para añadirla a una selección existente manteniendo pulsada la tecla <key>Ctrl</key> mientras se hace la selección.</p>
+	  
+	</section>
+
+	<section>
+	  <title>Deseleccionar objetos</title>
+	  
+	    <p>Se puede quitar objetos individuales de una selección manteniendo pulsada la tecla <key>Ctrl</key> mientras se pulsa sobre un objeto seleccionado anteriormente. Se puede descartar una selección entera usando el elemento de menú <guiseq><gui>Editar</gui><gui>Deseleccionar todo</gui></guiseq>, o simplemente pulsando en un espacio vacío en el área de visualización. Una vez que un objeto no está seleccionado, se quita el resaltado.</p>
+	  
+	</section>
+
+    <section id="clipboard"> 
+      <title>Comandos del portapapeles</title>
+
+      <p>Los objetos se pueden manipular usando las operaciones estándar del portapapeles <gui>Cortar</gui>, <gui>Copiar</gui>, <gui>Pegar</gui>, y <gui>Eliminar</gui>.</p>
+
+	<section>
+	  <title><gui>Cortar</gui> (<keyseq><key>Ctrl</key><key>X</key></keyseq>)</title>
+	  
+	    <p>Mueve objetos al portapapeles. Los objetos están disponibles para pegarlos de nuevo en el documento actual o en otro documento.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Copiar</gui> (<keyseq><key>Ctrl</key><key>C</key></keyseq>)</title>
+	  
+	    <p>Copia los objetos seleccionados al portapapeles sin borrarlos. Los objetos están disponibles para pegarlos en el documento actual o en otro documento.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Pegar</gui> (<keyseq><key>Ctrl</key><key>V</key></keyseq>)</title>
+	  
+	    <p>Pega objetos del portapapeles en el documento actual. <app>gLabels</app> sólo puede pegar objetos de otro documento de <app>gLabels</app>.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Eliminar</gui> (<key>Supr</key>)</title>
+	  
+	    <p>Elimina los objetos seleccionados sin ponerlos en el portapapeles.</p>
+	  
+	</section>
+       </section>
+
+</page>

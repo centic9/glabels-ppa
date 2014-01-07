@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Barcode Factory</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="LibGlbarcode 3.0 Reference Manual">
+<link rel="up" href="api.html" title="API Reference">
+<link rel="prev" href="libglbarcode-3.0-lgl-barcode.html" title="lglBarcode">
+<link rel="next" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html" title="Cairo Renderer">
+<meta name="generator" content="GTK-Doc V1.17 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libglbarcode-3.0-lgl-barcode.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="api.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">LibGlbarcode 3.0 Reference Manual</th>
+<td><a accesskey="n" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libglbarcode-3.0-lgl-barcode-create.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#libglbarcode-3.0-lgl-barcode-create.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="libglbarcode-3.0-lgl-barcode-create"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libglbarcode-3.0-lgl-barcode-create.top_of_page"></a>Barcode Factory</span></h2>
+<p>Barcode Factory — Basic end-user barcode creation API</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="libglbarcode-3.0-lgl-barcode-create.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;libglbarcode/lgl-barcode-create.h&gt;
+
+<a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="returnvalue">lglBarcode</span></a> *        <a class="link" href="libglbarcode-3.0-lgl-barcode-create.html#lgl-barcode-create" title="lgl_barcode_create ()">lgl_barcode_create</a>                  (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode-type.html#lglBarcodeType" title="enum lglBarcodeType"><span class="type">lglBarcodeType</span></a> type</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> text_flag</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> checksum_flag</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> w</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> h</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *data</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-create.description"></a><h2>Description</h2>
+<p>
+This section describes a simple API to select and create <span class="type">glBarcode</span> structures using a built-in
+barcode backend.
+</p>
+</div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-create.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="lgl-barcode-create"></a><h3>lgl_barcode_create ()</h3>
+<pre class="programlisting"><a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="returnvalue">lglBarcode</span></a> *        lgl_barcode_create                  (<em class="parameter"><code><a class="link" href="libglbarcode-3.0-lgl-barcode-type.html#lglBarcodeType" title="enum lglBarcodeType"><span class="type">lglBarcodeType</span></a> type</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> text_flag</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> checksum_flag</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> w</code></em>,
+                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> h</code></em>,
+                                                         <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *data</code></em>);</pre>
+<p>
+Create a new barcode structure, encoding <em class="parameter"><code>data</code></em> with selected barcode type and
+characteristics.
+</p>
+<p>
+Barcode dimensions (<em class="parameter"><code>w</code></em> and <em class="parameter"><code>h</code></em>) are in points ( 1 point = 1/72 inch ).
+If either <em class="parameter"><code>w</code></em> or <em class="parameter"><code>h</code></em> are zero, the barcode will be rendered in a nominal size
+appropriate for the barcode type and data.  The actual size of the resulting
+barcode may also be limited by required tolerances of line sizes and spacing
+for the given barcode type.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>Barcode type selection (<a class="link" href="libglbarcode-3.0-lgl-barcode-type.html#lglBarcodeType" title="enum lglBarcodeType"><span class="type">lglBarcodeType</span></a>)</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text_flag</code></em> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to show text, if supported by barcode type</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>checksum_flag</code></em> :</span></p></td>
+<td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to include checksum, if supported or optional for barcode type</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>w</code></em> :</span></p></td>
+<td>Suggested width of barcode</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>h</code></em> :</span></p></td>
+<td>Suggested height of barcode</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>Data to encode into barcode</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>A newly allocated <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure.  Use <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lgl-barcode-free" title="lgl_barcode_free ()"><code class="function">lgl_barcode_free()</code></a> to
+free it.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17</div>
+</body>
+</html>

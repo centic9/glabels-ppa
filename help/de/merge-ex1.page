@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="merge-ex1" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="merge#merge-ex"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Namensschilder unter Nutzung einer CSV-Datei.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Beispiel 1: Namensschilder</title>
+
+      <p>In diesem Beispiel organisieren Sie eine Orientierungsparty für die neuen Mannschaftsmitglieder Ihres Schiffes. Eine Liste der neuen Mitglieder haben Sie in <app>gnumeric</app> erstellt und in die folgende CSV-Datei exportiert. Sie könnten diese Datei auch in einem Texteditor erstellen, aber schließlich leben wir im 23. Jahrhundert...</p>
+
+      <code>
+Name,Department,SN
+"Jim Kirk",Management,"SC937-0176 CEC"
+"Mr. Spock",Sciences,S179-276SP
+"Leonard McCoy",Medicine,unknown
+"Montgomery Scott",Engineering,SE-197-54T
+      </code>
+
+      <p>In <app>glabels</app> haben Sie ein neues Dokument unter Verwendung der Dokumentvorlage »Avery 5395 Namensschild-Etiketten« erzeugt. Zunächst öffnen Sie mittels <guiseq><gui>Objekte</gui><gui>Mischeinstellungen</gui></guiseq> den Dialog <gui>Mischeinstellungen</gui>. In diesem Dialog wählen Sie wie gezeigt die Datenquelle aus, in diesem Fall »CSV mit Schlüsseln in Zeile 1«, sowie die Mischquelle (Dateiname).</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-1.png" mime="image/png" style="right">
+      		<p>Mischeinstellungen-Dialog</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Sie können jeden Datensatz detailliert betrachten, indem Sie auf die kleinen Dreiecke klicken. Sobald Sie mit der Auswahl zufrieden sind, klicken Sie auf <gui>OK</gui>, um die Änderungen anzuwenden.</p>
+
+      <p>Nun beginnen wir mit dem Hinzufügen von Objekten zu unserem <app>gLabels</app>-Dokument, wie gezeigt.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-2.png" mime="image/png" style="right">
+      		<p>Hinzufügen von Objekten</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>In diesem Beispiel haben Sie drei Textobjekte und ein Strichcodeobjekt hinzugefügt. Das erste Textobjekt enthält nur einfachen Text (»Hello, my name is«). Das zweite Textobjekt enthält ein einfaches Mischfeld (»${Name}«), welches zum ersten Feld eines Datensatzes (erste Spalte einer Zeile) korrespondiert, die den vollen Namen eines Mannschaftsmitglieds enthält. Das dritte Feld enthält sowohl einfachen Text (»Department:«) als auch ein einzelnes Mischfeld (»${Department:}«), welches zum zweiten Feld oder zum Arbeitsgebiet eines Mannschaftsmitglieds korrespondiert. Das Strichcodefeld ist so eingestellt, das Feld (oder den Schlüssel) »SN« zu verwenden, das die Sternenflotten-Seriennummer des Mannschaftsmitglieds enthält.</p>
+
+      <p>Nun können Sie Ihre Namensschilder drucken, indem Sie <guiseq><gui>Datei</gui><gui>Drucken</gui></guiseq> wählen. Der unten angezeigte Druckdialog wird geöffnet.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-3.png" mime="image/png" style="right">
+      		<p>Drucken der Namensschilder</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Um sicher zu stellen, dass Ihre Etiketten gut aussehen, wählen Sie die Option <gui>Begrenzungen drucken</gui> und klicken auf <gui>Druckvorschau</gui>. Der Druckvorschaudialog wird geöffnet, wie unten angezeigt.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex1-4.png" mime="image/png" style="right">
+      		<p>Vorschau der Namensschilder</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Alles sieht gut aus, also können wir jetzt den Drucker mit den entsprechenden Etiketten bestücken, die Namensschilder drucken und die Gäste an Bord beamen.</p>
+
+
+</page>

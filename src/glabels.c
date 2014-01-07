@@ -1,67 +1,55 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
-/**
- *  (GLABELS) Label and Business Card Creation program for GNOME
+/*
+ *  glabels.c
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  glabels.c:  GLabels main module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2002  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <config.h>
 
 #include <glib/gi18n.h>
-#include <libgnome/libgnome.h>
-#include <libgnomeui/libgnomeui.h>
-#include <libgnomeui/gnome-window-icon.h>
 
+#include <libglabels.h>
 #include "warning-handler.h"
 #include "critical-error-handler.h"
-#include "stock.h"
 #include "merge-init.h"
 #include "recent.h"
-#include <libglabels/db.h>
 #include "mini-preview-pixbuf-cache.h"
 #include "prefs.h"
+#include "font-history.h"
+#include "template-history.h"
 #include "debug.h"
 #include "window.h"
 #include "file.h"
+
 
 /*========================================================*/
 /* Private macros and constants.                          */
 /*========================================================*/
 
+
 /*========================================================*/
 /* Private globals                                        */
 /*========================================================*/
 
+
 /*========================================================*/
 /* Local function prototypes                              */
 /*========================================================*/
-gboolean save_session_cb (GnomeClient        *client,
-			  gint                phase,
-			  GnomeRestartStyle   save_style,
-			  gint                shutdown,
-			  GnomeInteractStyle  interact_style,
-			  gint                fast,
-			  gpointer            client_data);
 
-void client_die_cb       (GnomeClient        *client,
-			  gpointer            client_data);
 
 /****************************************************************************/
 /* main program                                                             */
@@ -77,63 +65,53 @@ main (int argc, char **argv)
 	};
 
 	GOptionContext *option_context;
-    	GnomeProgram   *program;
-	gchar          *icon_file;
-	GnomeClient    *client;
 	GList          *file_list = NULL, *p;
 	GtkWidget      *win;
 	gchar	       *utf8_filename;
+        GError         *error = NULL;
 
-	bindtextdomain (GETTEXT_PACKAGE, GLABELS_LOCALEDIR);
+	bindtextdomain (GETTEXT_PACKAGE, GLABELS_LOCALE_DIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
-	option_context = g_option_context_new (_("- gLabels label designer"));
+	option_context = g_option_context_new (NULL);
+        g_option_context_set_summary (option_context,
+                                      _("Launch gLabels label and business card designer."));
 	g_option_context_add_main_entries (option_context, option_entries, GETTEXT_PACKAGE);
 
 
-	/* Initialize gnome program */
-	program = gnome_program_init ("glabels", VERSION,
-				      LIBGNOMEUI_MODULE, argc, argv,
-				      GNOME_PARAM_GOPTION_CONTEXT, option_context,
-				      GNOME_PROGRAM_STANDARD_PROPERTIES,
-				      NULL);
+	/* Initialize program */
+        gtk_init( &argc, &argv );
+        if (!g_option_context_parse (option_context, &argc, &argv, &error))
+	{
+	        g_print(_("%s\nRun '%s --help' to see a full list of available command line options.\n"),
+			error->message, argv[0]);
+		g_error_free (error);
+		return 1;
+	}
+
 
 	/* Install GUI handlers for critical error and warning messages */
 	gl_critical_error_handler_init();
 	gl_warning_handler_init();
 
-	/* Set default icon */
-	icon_file = GLABELS_ICON_DIR "glabels.png";
-	if (!g_file_test (icon_file, G_FILE_TEST_EXISTS))
-	{
-		g_message ("Could not find %s", icon_file);
-	}
-	else
-	{
-		gnome_window_icon_set_default_from_file (icon_file);
-	}
+	/* Add glabels specific icons to search path */
+        gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
+                                           GLABELS_DATA_DIR G_DIR_SEPARATOR_S "icons");
 
+	/* Set default icon */
+        gtk_window_set_default_icon_name (GLABELS_ICON_NAME);
 	
 	/* Initialize subsystems */
 	gl_debug_init ();
-	gl_stock_init ();
 	lgl_db_init ();
 	gl_prefs_init ();
 	gl_mini_preview_pixbuf_cache_init ();
 	gl_merge_init ();
 	gl_recent_init ();
+        gl_template_history_init ();
+        gl_font_history_init ();
 	
-
-	client = gnome_master_client();
-
-	g_signal_connect (G_OBJECT (client), "save_yourself",
-			  G_CALLBACK (save_session_cb),
-			  (gpointer)argv[0]);
-
-	g_signal_connect (G_OBJECT (client), "die",
-			  G_CALLBACK (client_die_cb), NULL);
-
 
 	/* Parse args and build the list of files to be loaded at startup */
 	if (remaining_args != NULL) {
@@ -166,53 +144,16 @@ main (int argc, char **argv)
 	/* Begin main loop */
 	gtk_main();
 
-	g_object_unref (G_OBJECT (program));
-
 	return 0;
 }
 
-/*---------------------------------------------------------------------------*/
-/* PRIVATE.  "Save session" callback.                                        */
-/*---------------------------------------------------------------------------*/
-gboolean save_session_cb (GnomeClient        *client,
-			  gint                phase,
-			  GnomeRestartStyle   save_style,
-			  gint                shutdown,
-			  GnomeInteractStyle  interact_style,
-			  gint                fast,
-			  gpointer            client_data)
-{
-	gchar       *argv[128];
-	gint         argc;
-	const GList *window_list;
-	GList       *p;
-	glWindow    *window;
-	glLabel     *label;
-
-	argv[0] = (gchar *)client_data;
-	argc = 1;
-
-	window_list = gl_window_get_window_list();
-	for ( p=(GList *)window_list; p != NULL; p=p->next ) {
-		window = GL_WINDOW(p->data);
-		if ( !gl_window_is_empty (window) ) {
-			label = GL_VIEW(window->view)->label;
-			argv[argc++] = gl_label_get_filename (label);
-		}
-	}
-	gnome_client_set_clone_command(client, argc, argv);
-	gnome_client_set_restart_command(client, argc, argv);
-	
-	return TRUE;
-}
-
-/*---------------------------------------------------------------------------*/
-/* PRIVATE.  "Die" callback.                                                 */
-/*---------------------------------------------------------------------------*/
-void client_die_cb (GnomeClient *client,
-		    gpointer     client_data)
-{
-	gl_file_exit ();
-}
 
 
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="printfile" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Jak vytisknout etikety nebo vizitky.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Tisk etiket a vizitek</title>
+
+      <p>Když chcete vytisknout etikety nebo vizitky, zvolte <guiseq><gui>Soubor</gui><gui>Tisk</gui></guiseq> a zobrazí se dialogové okno <gui>Tisk</gui>. Až nastavíte volby tisku, klikněte na <gui>Tisk</gui> a etikety nebo vizitky se vytisknou. Pokud se chcete jen podívat na náhled, klikněte místo toho na <gui>Náhled tisku</gui>.</p>
+
+      <p>V dialogovém okně <gui>Tisk</gui> můžete nastavit následující volby tisku:</p>
+
+      <section>
+	<title>Karta Etikety v dialogovém okně Tisk</title>
+
+	<section>
+            <title>Ovládání tisku (jednoduchý)</title>
+
+	      <p>Pro jednoduché etikety nebo vizitky (bez slučování dokumentů), obsahuje karta úlohy následující ovládací prvky pro nastavení kopie.</p>
+
+	      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/print-copies.png" mime="image/png" style="right">
+      		<p>Ovládací prvky tisku kopií</p>
+    		</media>
+	      <!-- ==== End of Figure ==== -->
+
+	      <p>Počet kopií etikety můžete vybrat zvolením počtu plných listů, které se mají vytisknout, a nebo vybrat jen část etiket na jednom listu.</p>
+
+	      <p>Minináhled můžete také použít ke grafickému výběru části etiket tak, že kliknete na první etiketu v minináhledu a táhnete až na poslední etiketu.</p>
+
+	  </section>
+
+	  <section>
+            <title>Ovládání tisku (slučování)</title>
+
+	      <p>Pro etikety nebo vizitky používající slučování dokumentů (někdy také nazývané „hromadná korespondence“), obsahuje karta úlohy následující ovládací prvky slučování, lišící se od ovládacích prvků jednoduchého tisku.</p>
+
+	      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/print-merge.png" mime="image/png" style="right">
+      		<p>Ovládací prvky tisku slučovaných dokumentů</p>
+    		</media>
+	      <!-- ==== End of Figure ==== -->
+
+	      <p>Celkový počet etiket nebo vizitek je dán počtem záznamů ve zdroji slučování a počtem vybraných kopií. Jestliže je vybráno více kopií, mohou být také uspořádané (kopie ze stejného záznamu seskupené spolu) nebo neuspořádané (kopie jednotlivých záznamů za sebou).</p>
+
+	      <p>Tisk může začínat na libovolné etiketě na prvním listu. Tu můžete vybrat pomocí číselníku <gui>Začít na etiketě</gui>.</p>
+
+	      <p>Minináhled můžete také použít ke grafickému výběru první etikety tak, že na ni v minináhledu kliknete.</p>
+
+	  </section>
+
+	  <section> 
+	  <title>Volby</title>
+	      <p>Můžete rovněž vybrat následující volby.</p>
+	      <list>
+		<item>
+		  <p><gui>tisk obrysů</gui></p>
+		  <p>Tisk obrysů etiket. Tato volba je použitelná k tisku nanečisto, k otestování lícování.</p>
+		</item>
+		<item>
+		  <p><gui>obrácený tisk</gui></p>
+		  <p>Tisknout etikety zrcadlově. Tato volba je použitelná pro tisk na čiré etikety, na které se bude dívat z druhé strany (např. na okně auta).</p>
+		</item>
+		<item>
+		  <p><gui>tisknout značky pro ořez</gui></p>
+		  <p>Tisknout ořezové značky podél hran listu. Tato volba je použitelná pro tisk na čisté listy, které se budou po tisku rozřezávat. Tato volba nepracuje úplně správně se všemi šablonami.</p>
+		</item>
+	      </list>
+	</section>
+       </section>
+
+</page>

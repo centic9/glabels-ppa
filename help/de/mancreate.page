@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mancreate" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Erstellen Sie Ihre Vorlagen manuell.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title>Manuelles Erstellen neuer Vorlagen</title>
+
+
+
+  <!-- ****************** -->
+  <!-- BEGIN Introduction -->
+  <!-- ****************** -->
+  <p>Diese Seite ist eine Referenzanleitung für die manuelle Erstellung von <app>gLabels</app>-Vorlagen. <app>gLabels</app>-Vorlagen sind einfache XML-Dateien, deren Struktur in der folgenden DTD beschrieben ist: <link href="http://glabels.org/xmlns/2.3/glabels-2.3.dtd.txt">glabels-2.3.dtd</link>. Diese DTD beschreibt außerdem weitere von <app>gLabels</app> benutzte XML-Formate.</p>
+
+  <p>Manuell erstellte Vorlagen sollten in <file>${HOME}/.glabels</file> gespeichert und mit der Erweiterung <file>.template</file> versehen werden.</p>
+
+  <note style="advanced">
+    <p><app>gLabels</app> sucht an verschiedenen anderen Orten nach Vorlagen, die folgendermaßen definiert werden:</p>
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Ort</p></td>
+        <td><p>Beschreibung</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>
+        <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><file>${prefix}/share/libglabels-3.0/templates</file></p></td>
+        <td><p>In <app>gLabels</app> mitgelieferte vordefinierte Vorlagen.</p>
+            <p><file>${prefix}</file> ist üblicherweise <file>/usr</file> oder <file>/usr/local</file>, abhängig davon, wo <app>gLabels</app> installiert wurde.</p></td>
+      </tr>
+      <tr>
+        <td><p><file>${XDG_CONFIG_HOME}/libglabels/templates</file></p></td>
+        <td><p>Mit dem <gui>Vorlagen-Designer</gui> von <app>gLabels</app> erstellte Vorlagen. <em>Legen Sie hier bitte keine manuell erstellten Vorlagen ab.</em></p>
+            <p>Falls <file>${XDG_CONFIG_HOME}</file> nicht definiert ist, wird als Vorgabe <file>${HOME}/.config</file> verwendet.</p></td>
+      </tr>
+      <tr>
+        <td><p><file>${HOME}/.glabels</file></p></td>
+        <td><p>Manuell erstellte benutzerdefinierte Vorlagen sollten hier abgelegt werden. Ältere Versionen des <gui>Vorlagen-Designers</gui> von <app>gLabels</app> (vor 3.0) speichern hier ebenfalls ihre Vorlagen.</p></td>
+      </tr>
+    </table>
+  </note>
+
+  <note><p>Vollständige Vorlagendateien können Sie an die <link href="mailto:glabels-templates@lists.sourceforge.net">Vorlagen-Mailingliste</link> von <app>gLabels</app> senden, damit diese in zukünftigen Versionen von <app>gLabels</app> mitgeliefert werden können.</p>
+  </note>
+  <!-- ****************** -->
+  <!-- END Introduction   -->
+  <!-- ****************** -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Assumptions -->
+  <!-- ***************** -->
+  <section id="template-assumptions">
+    <title>Voraussetzungen</title>
+    <list>
+      <item>
+        <p>Eine Seite enthält nur eine Etiketten- oder Kartengröße. Falls eine Seite mehrere Größen enthält, kann sie für das Drucken in mehreren Durchläufen über mehrere Vorlagen verteilt werden.</p>
+      </item>
+      <item>
+        <p>Abstände können in den Einheiten <code translate="no">pt</code>, <code translate="no">in</code>, <code translate="no">mm</code>, <code translate="no">cm</code> oder <code translate="no">pc</code> ausgedrückt werden. Beispiel: »<code translate="no">1.0in</code>« oder »<code translate="no">2.54cm</code>«. Falls keine Einheiten angegeben werden, nimmt der Rechner Punkt an. Ein Punkt (<code translate="no">pt</code>) entspricht = 1/72 <em>in</em> = 0.352778 <em>mm</em>.</p>
+      </item>
+    </list>
+  </section>
+  <!-- ***************** -->
+  <!-- END Assumptions   -->
+  <!-- ***************** -->
+
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Template Files -->
+  <!-- ******************** -->
+  <section id="template-file">
+    <title>Vorlagedateien</title>
+
+    <p>Eine Vorlagendatei enthält in der obersten Ebene einen einzelnen <code translate="no">Glabels-templates</code>-Knoten.</p>
+
+    <code mime="text/xml" translate="no">
+&lt;?xml version="1.0"?&gt;
+&lt;Glabels-templates&gt;
+
+   <var translate="yes">...Vorlagen...</var>
+
+&lt;/Glabels-templates&gt;</code>
+
+    <listing>
+      <title>Beispielvorlage</title>
+      <desc>Beispiel-Vorlagendatei von <app>gLabels</app>, die einen einzelnen <code translate="no">Template</code>-Knoten enthält.</desc>
+      <code mime="text/xml" translate="no">
+&lt;?xml version="1.0"?&gt;
+&lt;Glabels-templates&gt;
+
+  &lt;Template brand="Avery" part="8160" size="US-Letter" description="Mailing Labels"&gt;
+    &lt;Meta category="label"/&gt;
+    &lt;Meta category="mail"/&gt;
+    &lt;Meta product_url="http://www.avery.com/avery/en_us/"/&gt;
+    &lt;Label-rectangle id="0" width="189pt" height="72pt" round="5pt"&gt;
+      &lt;Markup-margin size="5pt"/&gt;
+      &lt;Layout nx="3" ny="10" x0="11.25pt" y0="36pt" dx="200pt" dy="72pt"/&gt;
+    &lt;/Label-rectangle&gt;
+  &lt;/Template&gt;
+
+&lt;/Glabels-templates&gt;</code>
+    </listing>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Template Files   -->
+  <!-- ******************** -->
+
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Template Node  -->
+  <!-- ******************** -->
+  <section id="template-template-node">
+    <title><span translate="no">Template</span>-Knoten</title>
+
+    <p>Ein <em><span translate="no">Template</span></em>-Knoten beschreibt ein einzelnes Produkt. Es muss eine Instanz eines der anderen Label-Knoten (<code translate="no">Label-rectangle</code>, <code translate="no">Label-round</code> oder <code translate="no">Label-cd</code>) enthalten.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Eigenschaft</p></td>  <td><p>Beschreibung</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">brand</code></p></td>  
+        <td><p>Marke oder Hersteller des Produkts, z.B. »Avery«</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">part</code></p></td>
+        <td><p>Bestellnummer oder Name des Produkts, z.B. »8160«</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">size</code></p></td>
+        <td><p>Größe des Papiers, z.B.  »<code translate="no">US-Letter</code>«, »<code translate="no">A4</code>«, …</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">description</code></p></td>
+        <td><p>Beschreibung des Produkts, z.B. »Mailing Labels«.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">_description</code></p></td>
+        <td><p>Übersetzbare Beschreibung des Produkts, z.B. »Mailing Labels« (nur sinnvoll für vordefinierte Vorlagen)</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Seitenbreite. Nur gültig, wenn als Größe »Other« festgelegt ist.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Seitenhöhe. Nur gültig, wenn als Größe »Other« festgelegt ist.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">equiv</code></p></td>
+        <td><p>Äquivalente Bestellnummer. Falls diese Eigenschaft vorhanden ist, handelt es sich bei dieser Vorlage um eine Kopie einer anderen Vorlage der gleichen Marke. Die Vorlage erbt alle Eigenschaften der anderen Vorlage, ausgenommen die Marke und die Bezeichnung. Die »equiv«-Eigenschaft muss sich auf eine bereits definierte Vorlage beziehen, denn derzeit unterstützt libglabels keine Vorwärtsreferenzen.</p></td>
+      </tr>
+    </table>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Template Node    -->
+  <!-- ******************** -->
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Meta Node      -->
+  <!-- ******************** -->
+  <section id="meta-template-node">
+    <title><span translate="no">Meta</span>-Knoten</title>
+
+    <p>Ein <code translate="no">Meta</code>-Knoten enthält eine Reihe zusätzlicher Eigenschaften des jeweiligen Produkts. Ein <code translate="no">Template</code>-Knoten kann keinen, einen oder auch mehrere <code translate="no">Meta</code>-Knoten enthalten.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Unterknoten</p></td>  <td><p>Beschreibung</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">category</code></p></td>
+        <td><p>Die Kategorie, der dieses Produkt zugeordnet ist. Eine Vorlage kann mehreren Kategorien zugeordnet werden, indem einfach mehrere <code translate="no">Meta</code>-Knoten zum übergeordneten <code translate="no">Template</code>-Knoten hinzugegügt werden. Die Werte dieser Kategorien werden von der <gui>Vorlagenauswahl</gui> in <app>gLabels</app> verwendet, um die Ansicht beispielsweise auf die Darstellung von Etiketten zu beschränken oder anders ausgedrückt, Etiketten allgemein anzuzeigen und die Anzeige anderer Produkte zu unterdrücken, an denen der Benutzer im jeweiligen Fall nicht interessiert ist.</p>
+
+            <p>Der Wert dieser Kategorie muss einem der in der Datei <file>${prefix}/libglabels-3.0/templates/categories.xml</file> vordefinierten Werte entsprechen. Derzeit stehen folgende Kategorien zur Verfügung:</p>
+            <list>
+              <item><p><code translate="no">label</code></p></item>
+              <item><p><code translate="no">round-label</code></p></item>
+              <item><p><code translate="no">elliptical-label</code></p></item>
+              <item><p><code translate="no">square-label</code></p></item>
+              <item><p><code translate="no">rectangle-label</code></p></item>
+              <item><p><code translate="no">card</code></p></item>
+              <item><p><code translate="no">business-card</code></p></item>
+              <item><p><code translate="no">media</code></p></item>
+              <item><p><code translate="no">mail</code></p></item>
+              <item><p><code translate="no">foldable</code></p></item>
+              <item><p><code translate="no">photo</code></p></item>
+            </list>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">product_url</code></p></td>
+        <td><p>Diese Adresse leitet auf die Webseite des Anbieters weiter. Idealerweise ist dies die Adresse genau dieses Produkts, falls diese verfügbar ist.</p></td>
+      </tr>
+    </table>
+
+    <note><p>Falls Sie Ideen für neue Kategorien haben, senden Sie Ihre Vorschläge bitte an die <link href="mailto:glabels-devel@lists.sourceforge.net">Mailingliste</link> der <app>gLabels</app>-Entwickler.</p>
+          <p>Produktadressen sind oft nur begrenzt gültig, das sich diese auch ändern können.</p>
+    </note>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Meta Node        -->
+  <!-- ******************** -->
+
+
+  <!-- ************************** -->
+  <!-- BEGIN Label-rectangle Node -->
+  <!-- ************************** -->
+  <section id="template-label-rectangle-node">
+    <title><span translate="no">Label-rectangle</span>-Knoten</title>
+
+    <p>Ein <code translate="no">Label-rectangle</code>-Knoten beschreibt die Abmessungen eines einzelnen Etiketts oder einer einzelnen Karte in rechteckiger Form, wobei abgerundete Ecken möglich sind.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Eigenschaft</p></td>  <td><p>Beschreibung</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Für zukünftige Verwendung reserviert. Sollte immer 0 sein.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Breite des Etiketts oder der Karte</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Höhe des Etiketts oder der Karte</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">round</code></p></td>
+        <td><p>Radius der Ecken. Für Objekte mit nicht abgerundeten Ecken (Visitenkarten) sollte der Radius 0 sein.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">x_waste</code></p></td>
+        <td><p>Erlaubte Breite des horizontalen Überdruckens. Dies minimiert Ausrichtungsprobleme auf anderen als weißen Hintergründen (z.B. Bilder).</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">y_waste</code></p></td>
+        <td><p>Erlaubte Breite des vertikalen Überdruckens. Dies minimiert Ausrichtungsprobleme auf anderen als weißen Hintergründen (z.B. Bilder).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Parameter zu <span translate="no">Label-rectangle</span></desc>
+      <media type="image" src="figures/glabels-template-rect-label.png" mime="image/png" style="right">
+        <p>Parameter zu <span translate="no">Label-rectangle</span></p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ************************** -->
+  <!-- END Label-rectangle Node   -->
+  <!-- ************************** -->
+
+
+  <!-- ************************ -->
+  <!-- BEGIN Label-ellipse Node -->
+  <!-- ************************ -->
+  <section id="template-label-ellipse-node">
+    <title><span translate="no">Label-ellipse</span>-Knoten</title>
+
+    <p>Ein <code translate="no">Label-ellipse</code>-Knoten beschreibt die Abmessungen eines einzelnen Etiketts oder einer einzelnen Karte in elliptischer Form.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Eigenschaft</p></td>  <td><p>Beschreibung</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Für zukünftige Verwendung reserviert. Sollte immer 0 sein.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Breite der Ellipse</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Höhe der Ellipse</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">waste</code></p></td>
+        <td><p>Erlaubte Breite des Überdruckens. Dies minimiert Ausrichtungsprobleme auf anderen als weißen Hintergründen (z.B. Bilder).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Parameter zu <span translate="no">Label-ellipse</span></desc>
+      <media type="image" src="figures/glabels-template-ellipse-label.png" mime="image/png" style="right">
+        <p>Parameter zu <span translate="no">Label-ellipse</span></p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ************************ -->
+  <!-- END Label-ellipse Node   -->
+  <!-- ************************ -->
+
+
+  <!-- ********************** -->
+  <!-- BEGIN Label-round Node -->
+  <!-- ********************** -->
+  <section id="template-label-round-node">
+    <title><span translate="no">Label-round</span>-Knoten</title>
+
+    <p>Ein <code translate="no">Label-round</code>-Knoten beschreibt die Abmessungen eines einfachen Rundetiketts (nicht einer CD).</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Eigenschaft</p></td>  <td><p>Beschreibung</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Für zukünftige Verwendung reserviert. Sollte immer 0 sein.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">radius</code></p></td>
+        <td><p>Radius (halber Durchmesser) des Etiketts</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">waste</code></p></td>
+        <td><p>Erlaubte Breite des Überdruckens. Dies minimiert Ausrichtungsprobleme auf anderen als weißen Hintergründen (z.B. Bilder).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Parameter zu <span translate="no">Label-ellipse</span></desc>
+      <media type="image" src="figures/glabels-template-circle-label.png" mime="image/png" style="right">
+        <p>Parameter zu <span translate="no">Label-ellipse</span></p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ********************** -->
+  <!-- END Label-round Node   -->
+  <!-- ********************** -->
+
+
+  <!-- ******************* -->
+  <!-- BEGIN Label-cd Node -->
+  <!-- ******************* -->
+  <section id="template-label-cd-node">
+    <title><span translate="no">Label-cd</span>-Knoten</title>
+
+    <p>Ein <code translate="no">Label-cd</code>-Knoten beschreibt die Abmessungen einer CD, DVD oder Visitenkarten-CD.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Eigenschaft</p></td>  <td><p>Beschreibung</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">id</code></p></td>
+        <td><p>Für zukünftige Verwendung reserviert. Sollte immer 0 sein.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">radius</code></p></td>
+        <td><p>Äußerer Radius des Etiketts</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">hole</code></p></td>
+        <td><p>Radius des Mittellochs</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">width</code></p></td>
+        <td><p>Falls vorhanden, wird das Etikett auf die angegebene Größe begrenzt (nützlich für »Visitenkarten-CDs«)</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">height</code></p></td>
+        <td><p>Falls vorhanden, wird das Etikett auf die angegebene Höhe begrenzt (nützlich für »Visitenkarten-CDs«)</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">waste</code></p></td>
+        <td><p>Erlaubte Breite des Überdruckens. Dies minimiert Ausrichtungsprobleme auf anderen als weißen Hintergründen (z.B. Bilder).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc><span translate="no">Label-cd</span>-Parameter</desc>
+      <media type="image" src="figures/glabels-template-cd-label.png" mime="image/png" style="right">
+        <p>CD-Label-Parameter</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ******************* -->
+  <!-- END Label-cd Node   -->
+  <!-- ******************* -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Markup Node -->
+  <!-- ***************** -->
+  <section id="template-markup">
+    <title><span translate="no">Markup</span>-Knoten</title>
+
+    <p>Vorlagen können optional auch Markierungs-Knoten enthalten. Diese Knoten beschreiben eine Reihe von Markierungslinien, die zwar im Zeichenbereich von <app>gLabels</app> angezeigt werden, jedoch im späteren Ausdruck nicht sichtbar sind. Diese Linien können Ränder, Falzlinien, Mittellinien oder spezielle Bereiche darstellen sowie dem Benutzer einer Vorlage weitere hilfreiche Hinweise geben.</p>
+
+
+    <!-- ======================== -->
+    <!-- BEGIN Markup-margin Node -->
+    <!-- ======================== -->
+    <section id="template-markup-margin-node">
+      <title><span translate="no">Markup-margin</span>-Knoten</title>
+
+      <p>Ein <code translate="no">Markup-margin</code>-Knoten beschreibt die Ränder entlang der Seiten eines Etiketts.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Eigenschaft</p></td>  <td><p>Beschreibung</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">size</code></p></td>
+          <td><p>Randbreite. Die Breite des Bereichs zwischen der Randlinie und dem Rand des Etiketts/der Karte.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ======================== -->
+    <!-- END Markup-margin Node   -->
+    <!-- ======================== -->
+
+
+    <!-- ====================== -->
+    <!-- BEGIN Markup-line Node -->
+    <!-- ====================== -->
+    <section id="template-markup-line-node">
+      <title><span translate="no">Markup-line</span>-Knoten</title>
+
+      <p>Ein <code translate="no">Markup-line</code>-Knoten beschreibt eine Markierungslinie.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Eigenschaft</p></td>  <td><p>Beschreibung</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x1</code></p></td>
+          <td><p>x-Koordinate des Anfangspunkts des Linienabschnitts.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y1</code></p></td>
+          <td><p>y-Koordinate des Anfangspunkts des Linienabschnitts.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x2</code></p></td>
+          <td><p>x-Koordinate des zweiten Endpunkts des Linienabschnitts.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y2</code></p></td>
+          <td><p>y-Koordinate des zweiten Endpunkts des Linienabschnitts.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ====================== -->
+    <!-- END Markup-line Node   -->
+    <!-- ====================== -->
+
+
+    <!-- ======================== -->
+    <!-- BEGIN Markup-circle Node -->
+    <!-- ======================== -->
+    <section id="template-markup-circle-node">
+      <title><span translate="no">Markup-circle</span>-Knoten</title>
+
+      <p>Ein <code translate="no">Markup-circle</code>-Knoten beschreibt einen Markierungskreis.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Eigenschaft</p></td>  <td><p>Beschreibung</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x0</code></p></td>
+          <td><p>x-Koordinate des Kreismittelpunkts.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y0</code></p></td>
+          <td><p>y-Koordinate des Kreismittelpunkts.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">radius</code></p></td>
+          <td><p>Radius des Kreises.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ======================== -->
+    <!-- END Markup-circle Node   -->
+    <!-- ======================== -->
+
+
+    <!-- ====================== -->
+    <!-- BEGIN Markup-rect Node -->
+    <!-- ====================== -->
+    <section id="template-markup-rect-node">
+      <title><span translate="no">Markup-rect</span>-Knoten</title>
+
+      <p>Ein <code translate="no">Markup-rect</code>-Knoten beschreibt ein Markierungsrechteck.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Eigenschaft</p></td>  <td><p>Beschreibung</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x1</code></p></td>
+          <td><p>x-Koordinate der oberen linken Ecke des Rechtecks.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y1</code></p></td>
+          <td><p>y-Koordinate der oberen linken Ecke des Rechtecks.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">w</code></p></td>
+          <td><p>Breite des Rechtecks.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">h</code></p></td>
+          <td><p>Höhe des Rechtecks.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">r</code></p></td>
+          <td><p>Radius der abgerundeten Ecken des Rechtecks.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ====================== -->
+    <!-- END Markup-rect Node   -->
+    <!-- ====================== -->
+
+
+    <!-- ========================= -->
+    <!-- BEGIN Markup-ellipse Node -->
+    <!-- ========================= -->
+    <section id="template-markup-ellipse-node">
+      <title><span translate="no">Markup-ellipse</span>-Knoten</title>
+
+      <p>Ein <code translate="no">Markup-ellipse</code>-Knoten beschreibt eine Markierungsellipse.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Eigenschaft</p></td>  <td><p>Beschreibung</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">x1</code></p></td>
+          <td><p>x-Koordinate der oberen linken Ecke des die Ellipse umschließenden Rechtecks.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">y1</code></p></td>
+          <td><p>x-Koordinate der oberen linken Ecke des die Ellipse umschließenden Rechtecks.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">w</code></p></td>
+          <td><p>Die Breite der Ellipse.</p></td>
+        </tr>
+        <tr>
+          <td><p><code translate="no">h</code></p></td>
+          <td><p>Die Höhe der Ellipse.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ========================= -->
+    <!-- END Markup-ellipse Node   -->
+    <!-- ========================= -->
+
+  </section>
+  <!-- ***************** -->
+  <!-- END Markup Node   -->
+  <!-- ***************** -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Layout Node -->
+  <!-- ***************** -->
+  <section id="template-layout-node">
+    <title><span translate="no">Layout</span>-Knoten</title>
+
+    <p>Ein Label-Knoten kann mehrere <code translate="no">Layout</code>-Unterknoten enthalten. Wenn die Etiketten in einem einfachen rechteckigen Raster angeordnet sind, dann wird nur ein Layout benötigt. Falls die Etiketten jedoch in komplizierteren Rasteranordnungen vorliegen, können mehrere <code translate="no">Layout</code></p>
+	<note style="tip">
+	<p>Beachten Sie, dass ein einzelnes Etikett immer auch als ein Raster aus Etiketten betrachtet werden kann.</p>
+      </note>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Eigenschaft</p></td>  <td><p>Beschreibung</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">nx</code></p></td>
+        <td><p>Anzahl der Etiketten/Karten im Raster in horizontaler Richtung</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">ny</code></p></td>
+        <td><p>Anzahl der Etiketten/Karten im Raster in vertikaler Richtung</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">x0</code></p></td>
+        <td><p>Abstand von linken Rand des Papiers zum linken Rand der linken Reihe der Karten/Etiketten im Layout.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">y0</code></p></td>
+        <td><p>Abstand von oberen Rand des Papiers zum oberen Rand der oberen Reihe der Karten/Etiketten im Layout.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">dx</code></p></td>
+        <td><p>Horizontaler Rasterabstand des Zeichengitters.</p></td>
+      </tr>
+      <tr>
+        <td><p><code translate="no">dy</code></p></td>
+        <td><p>Vertikaler Rasterabstand des Zeichengitters.</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc><span translate="no">Layout</span>-Parameter</desc>
+      <media type="image" src="figures/glabels-template-layout.png" mime="image/png" style="right">
+        <p><span translate="no">Layout</span>-Parameter</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ***************** -->
+  <!-- END Layout Node   -->
+  <!-- ***************** -->
+
+
+</page>

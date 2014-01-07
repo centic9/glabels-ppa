@@ -1,25 +1,21 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  xml-label-04.c
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  xml-label-04.c:  GLabels xml label compat module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2002  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <config.h>
@@ -28,17 +24,18 @@
 
 #include <glib/gi18n.h>
 
+#include <libglabels.h>
 #include "label-text.h"
 #include "label-box.h"
 #include "label-line.h"
 #include "label-ellipse.h"
 #include "label-image.h"
 #include "label-barcode.h"
-#include <libglabels/db.h>
-#include <libglabels/xml.h>
+#include "bc-backends.h"
+#include "str-util.h"
 
-#include "util.h"
 #include "debug.h"
+
 
 static gboolean xml04_parse_media_description (xmlNodePtr node,
 					       glLabel *label);
@@ -59,7 +56,7 @@ static void     xml04_parse_barcode_props     (xmlNodePtr node,
 static void     xml04_parse_merge_properties  (xmlNodePtr node,
 					       glLabel *label);
 
-
+
 /****************************************************************************/
 /* PRIVATE.  Parse xml doc structure and create label.                      */
 /****************************************************************************/
@@ -76,7 +73,7 @@ glLabel      *gl_xml_label_04_parse      (xmlNodePtr       root,
 	*status = XML_LABEL_OK;
 
 	if (!xmlStrEqual (root->name, (xmlChar *)"Label")) {
-		g_message (_("Bad root node = \"%s\""), root->name);
+		g_message ("Bad root node = \"%s\"", root->name);
 		*status = XML_LABEL_ERROR_OPEN_PARSE;
 		return NULL;
 	}
@@ -84,7 +81,7 @@ glLabel      *gl_xml_label_04_parse      (xmlNodePtr       root,
 	label = GL_LABEL (gl_label_new ());
 
 	rotate_flag = lgl_xml_get_prop_boolean (root, "rotate", FALSE);
-	gl_label_set_rotate_flag (label, rotate_flag);
+	gl_label_set_rotate_flag (label, rotate_flag, FALSE);
 
 	for (node = root->xmlChildrenNode; node != NULL; node = node->next) {
 
@@ -96,35 +93,35 @@ glLabel      *gl_xml_label_04_parse      (xmlNodePtr       root,
 					*status = XML_LABEL_UNKNOWN_MEDIA;
 				}
 			} else if (xmlStrEqual (node->name, (xmlChar *)"Text")) {
-				object = gl_label_text_new (label);
+				object = gl_label_text_new (label, FALSE);
 				xml04_parse_object (node, GL_LABEL_OBJECT(object));
 				xml04_parse_text_props (node, GL_LABEL_TEXT(object));
 			} else if (xmlStrEqual (node->name, (xmlChar *)"Box")) {
-				object = gl_label_box_new (label);
+				object = gl_label_box_new (label, FALSE);
 				xml04_parse_object (node, GL_LABEL_OBJECT(object));
 				xml04_parse_box_props (node, GL_LABEL_BOX(object));
 			} else if (xmlStrEqual (node->name, (xmlChar *)"Line")) {
-				object = gl_label_line_new (label);
+				object = gl_label_line_new (label, FALSE);
 				xml04_parse_object (node, GL_LABEL_OBJECT(object));
 				xml04_parse_line_props (node, GL_LABEL_LINE(object));
 			} else if (xmlStrEqual (node->name, (xmlChar *)"Ellipse")) {
-				object = gl_label_ellipse_new (label);
+				object = gl_label_ellipse_new (label, FALSE);
 				xml04_parse_object (node, GL_LABEL_OBJECT(object));
 				xml04_parse_ellipse_props (node,
 							   GL_LABEL_ELLIPSE(object));
 			} else if (xmlStrEqual (node->name, (xmlChar *)"Image")) {
-				object = gl_label_image_new (label);
+				object = gl_label_image_new (label, FALSE);
 				xml04_parse_object (node, GL_LABEL_OBJECT(object));
 				xml04_parse_image_props (node, GL_LABEL_IMAGE(object));
 			} else if (xmlStrEqual (node->name, (xmlChar *)"Barcode")) {
-				object = gl_label_barcode_new (label);
+				object = gl_label_barcode_new (label, FALSE);
 				xml04_parse_object (node, GL_LABEL_OBJECT(object));
 				xml04_parse_barcode_props (node,
 							   GL_LABEL_BARCODE(object));
 			} else if (xmlStrEqual (node->name, (xmlChar *)"Merge_Properties")) {
 				xml04_parse_merge_properties (node, label);
 			} else {
-				g_message (_("bad node =  \"%s\""), node->name);
+				g_message ("bad node =  \"%s\"", node->name);
 			}
 		}
 	}
@@ -133,6 +130,7 @@ glLabel      *gl_xml_label_04_parse      (xmlNodePtr       root,
 
 	return label;
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Parse Media Description node.                                  */
@@ -159,7 +157,7 @@ xml04_parse_media_description (xmlNodePtr node,
 		ret = TRUE;
 	}
 
-	gl_label_set_template (label, template);
+	gl_label_set_template (label, template, FALSE);
 
 	lgl_template_free (template);
 	xmlFree (template_name);
@@ -168,6 +166,7 @@ xml04_parse_media_description (xmlNodePtr node,
 
 	return ret;
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Parse XML Object Node                                          */
@@ -183,10 +182,11 @@ xml04_parse_object (xmlNodePtr    object_node,
 	x = lgl_xml_get_prop_double (object_node, "x", 0);
 	y = lgl_xml_get_prop_double (object_node, "y", 0);
 
-	gl_label_object_set_position (object, x, y);
+	gl_label_object_set_position (object, x, y, FALSE);
 
 	gl_debug (DEBUG_XML, "END");
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Parse XML Label->Text Node Properties                          */
@@ -212,23 +212,23 @@ xml04_parse_text_props (xmlNodePtr    object_node,
 	font_family = xmlGetProp (object_node, (xmlChar *)"font_family");
 	font_size = lgl_xml_get_prop_double (object_node, "font_size", 0);
 	string = xmlGetProp (object_node, (xmlChar *)"font_weight");
-	font_weight = gl_util_string_to_weight ((gchar *)string);
+	font_weight = gl_str_util_string_to_weight ((gchar *)string);
 	xmlFree (string);
 	font_italic_flag = lgl_xml_get_prop_boolean (object_node, "font_italic", FALSE);
 
 	string = xmlGetProp (object_node, (xmlChar *)"justify");
-	align = gl_util_string_to_align ((gchar *)string);
+	align = gl_str_util_string_to_align ((gchar *)string);
 	xmlFree (string);
 
 	color_node = gl_color_node_new_default ();
 	color_node->color = lgl_xml_get_prop_uint (object_node, "color", 0);
 
-	gl_label_object_set_font_family (GL_LABEL_OBJECT(object), (gchar *)font_family);
-	gl_label_object_set_font_size (GL_LABEL_OBJECT(object), font_size);
-	gl_label_object_set_font_weight (GL_LABEL_OBJECT(object), font_weight);
-	gl_label_object_set_font_italic_flag (GL_LABEL_OBJECT(object), font_italic_flag);
-	gl_label_object_set_text_color (GL_LABEL_OBJECT(object), color_node);
-	gl_label_object_set_text_alignment (GL_LABEL_OBJECT(object), align);
+	gl_label_object_set_font_family (GL_LABEL_OBJECT(object), (gchar *)font_family, FALSE);
+	gl_label_object_set_font_size (GL_LABEL_OBJECT(object), font_size, FALSE);
+	gl_label_object_set_font_weight (GL_LABEL_OBJECT(object), font_weight, FALSE);
+	gl_label_object_set_font_italic_flag (GL_LABEL_OBJECT(object), font_italic_flag, FALSE);
+	gl_label_object_set_text_color (GL_LABEL_OBJECT(object), color_node, FALSE);
+	gl_label_object_set_text_alignment (GL_LABEL_OBJECT(object), align, FALSE);
 	
 	gl_color_node_free (&color_node);
 
@@ -277,7 +277,7 @@ xml04_parse_text_props (xmlNodePtr    object_node,
 
 	}
 
-	gl_label_text_set_lines (object, lines);
+	gl_label_text_set_lines (object, lines, FALSE);
 
 	gl_text_node_lines_free (&lines);
 	xmlFree (font_family);
@@ -291,11 +291,11 @@ xml04_parse_text_props (xmlNodePtr    object_node,
 		break;
 	case PANGO_ALIGN_CENTER:
 		x -= w/2.0;
-		gl_label_object_set_position (GL_LABEL_OBJECT(object), x, y);
+		gl_label_object_set_position (GL_LABEL_OBJECT(object), x, y, FALSE);
 		break;
 	case PANGO_ALIGN_RIGHT:
 		x -= w;
-		gl_label_object_set_position (GL_LABEL_OBJECT(object), x, y);
+		gl_label_object_set_position (GL_LABEL_OBJECT(object), x, y, FALSE);
 		break;
 	default:
 		/* should not happen */
@@ -304,6 +304,7 @@ xml04_parse_text_props (xmlNodePtr    object_node,
 
 	gl_debug (DEBUG_XML, "END");
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Parse XML Label->Box Node Properties                           */
@@ -329,15 +330,16 @@ xml04_parse_box_props (xmlNodePtr    node,
 	fill_color_node = gl_color_node_new_default ();
 	fill_color_node->color = lgl_xml_get_prop_uint (node, "fill_color", 0);
 
-	gl_label_object_set_size (GL_LABEL_OBJECT(object), w, h);
-	gl_label_object_set_line_width (GL_LABEL_OBJECT(object), line_width);
-	gl_label_object_set_line_color (GL_LABEL_OBJECT(object), line_color_node);
-	gl_label_object_set_fill_color (GL_LABEL_OBJECT(object), fill_color_node);
+	gl_label_object_set_size (GL_LABEL_OBJECT(object), w, h, FALSE);
+	gl_label_object_set_line_width (GL_LABEL_OBJECT(object), line_width, FALSE);
+	gl_label_object_set_line_color (GL_LABEL_OBJECT(object), line_color_node, FALSE);
+	gl_label_object_set_fill_color (GL_LABEL_OBJECT(object), fill_color_node, FALSE);
 
 	gl_color_node_free (&line_color_node);
 	gl_color_node_free (&fill_color_node);
 	gl_debug (DEBUG_XML, "END");
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Parse XML Label->Line Node Properties                          */
@@ -359,14 +361,15 @@ xml04_parse_line_props (xmlNodePtr    node,
 	line_color_node = gl_color_node_new_default ();
 	line_color_node->color = lgl_xml_get_prop_uint (node, "line_color", 0);
 
-	gl_label_object_set_size (GL_LABEL_OBJECT(object), w, h);
-	gl_label_object_set_line_width (GL_LABEL_OBJECT(object), line_width);
-	gl_label_object_set_line_color (GL_LABEL_OBJECT(object), line_color_node);
+	gl_label_object_set_size (GL_LABEL_OBJECT(object), w, h, FALSE);
+	gl_label_object_set_line_width (GL_LABEL_OBJECT(object), line_width, FALSE);
+	gl_label_object_set_line_color (GL_LABEL_OBJECT(object), line_color_node, FALSE);
 
 	gl_color_node_free (&line_color_node);
 	
 	gl_debug (DEBUG_XML, "END");
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Parse XML Label->Ellipse Node Properties                       */
@@ -392,15 +395,16 @@ xml04_parse_ellipse_props (xmlNodePtr     node,
 	fill_color_node = gl_color_node_new_default ();
 	fill_color_node->color = lgl_xml_get_prop_uint (node, "fill_color", 0);
 
-	gl_label_object_set_size (GL_LABEL_OBJECT(object), w, h);
-	gl_label_object_set_line_width (GL_LABEL_OBJECT(object), line_width);
-	gl_label_object_set_line_color (GL_LABEL_OBJECT(object), line_color_node);
-	gl_label_object_set_fill_color (GL_LABEL_OBJECT(object), fill_color_node);
+	gl_label_object_set_size (GL_LABEL_OBJECT(object), w, h, FALSE);
+	gl_label_object_set_line_width (GL_LABEL_OBJECT(object), line_width, FALSE);
+	gl_label_object_set_line_color (GL_LABEL_OBJECT(object), line_color_node, FALSE);
+	gl_label_object_set_fill_color (GL_LABEL_OBJECT(object), fill_color_node, FALSE);
 
 	gl_color_node_free (&line_color_node);
 	gl_color_node_free (&fill_color_node);
 	gl_debug (DEBUG_XML, "END");
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Parse XML Label->Image Node Properties                         */
@@ -417,15 +421,16 @@ xml04_parse_image_props (xmlNodePtr    node,
 	filename = g_new0 (glTextNode, 1);
 	filename->field_flag = FALSE;
 	filename->data = (gchar *)xmlGetProp (node, (xmlChar *)"filename");
-	gl_label_image_set_filename (object, filename);
+	gl_label_image_set_filename (object, filename, FALSE);
 	gl_text_node_free (&filename);
 
 	w = lgl_xml_get_prop_double (node, "w", 0);
 	h = lgl_xml_get_prop_double (node, "h", 0);
-	gl_label_object_set_size (GL_LABEL_OBJECT(object), w, h);
+	gl_label_object_set_size (GL_LABEL_OBJECT(object), w, h, FALSE);
 
 	gl_debug (DEBUG_XML, "END");
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Parse XML Label->Barcode Node Properties                       */
@@ -434,27 +439,32 @@ static void
 xml04_parse_barcode_props (xmlNodePtr    node,
 			   glLabelBarcode *object)
 {
-	xmlChar       *id;
-	gboolean       text_flag;
-	glColorNode   *color_node;
-	gdouble        scale;
-	xmlNodePtr     child;
-	glTextNode    *text_node;
+	gchar               *id;
+        const gchar         *backend_id;
+        glLabelBarcodeStyle *style;
+	glColorNode         *color_node;
+	xmlNodePtr           child;
+	glTextNode          *text_node;
 
 	gl_debug (DEBUG_XML, "START");
 
 	color_node = gl_color_node_new_default ();
 	color_node->color = lgl_xml_get_prop_uint (node, "color", 0);
 
-	id = xmlGetProp (node, (xmlChar *)"style");
+        style = gl_label_barcode_style_new ();
 
-	text_flag = lgl_xml_get_prop_boolean (node, "text", FALSE);
-	scale =	lgl_xml_get_prop_double (node, "scale", 1.0);
-	if (scale == 0.0) {
-		scale = 0.5; /* Set to a valid value */
-	}
-	gl_label_barcode_set_props (object, (gchar *)id, text_flag, TRUE, 0);
-	gl_label_object_set_line_color (GL_LABEL_OBJECT(object), color_node);
+	id = lgl_xml_get_prop_string (node, "style", "POSTNET");
+        backend_id = gl_barcode_backends_guess_backend_id (id);
+        gl_label_barcode_style_set_backend_id (style, backend_id);
+        gl_label_barcode_style_set_style_id (style, id);
+
+	style->text_flag     = lgl_xml_get_prop_boolean (node, "text", FALSE);
+        style->checksum_flag = TRUE;
+        style->format_digits = 0;
+
+	gl_label_barcode_set_style (object, style, FALSE);
+
+	gl_label_object_set_line_color (GL_LABEL_OBJECT(object), color_node, FALSE);
 
 	child = node->xmlChildrenNode;
 	text_node = g_new0 (glTextNode, 1);
@@ -467,14 +477,16 @@ xml04_parse_barcode_props (xmlNodePtr    node,
 	} else {
 		g_message ("Unexpected Barcode child: \"%s\"", child->name);
 	}
-	gl_label_barcode_set_data (object, text_node);
+	gl_label_barcode_set_data (object, text_node, FALSE);
 
 	gl_color_node_free (&color_node);
 	gl_text_node_free (&text_node);
-	xmlFree (id);
+	g_free (id);
+        gl_label_barcode_style_free (style);
 
 	gl_debug (DEBUG_XML, "END");
 }
+
 
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Parse XML merge properties tag.                                */
@@ -496,9 +508,20 @@ xml04_parse_merge_properties (xmlNodePtr node,
 	gl_merge_set_src (merge, (gchar *)string);
 	xmlFree (string);
 
-	gl_label_set_merge (label, merge);
+	gl_label_set_merge (label, merge, FALSE);
 
 	g_object_unref (G_OBJECT(merge));
 
 	gl_debug (DEBUG_XML, "END");
 }
+
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

@@ -1,25 +1,21 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  text-node.c
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  text_node.c:  text node module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2002  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <config.h>
@@ -32,23 +28,24 @@
 
 #include "debug.h"
 
+
 /*===========================================*/
 /* Local function prototypes                 */
 /*===========================================*/
 
-static glTextNode *extract_text_node  (gchar          *text,
-				       gint           *n);
+static glTextNode *extract_text_node  (const gchar         *text,
+				       gint                *n);
 
-static gboolean    is_empty_field     (glTextNode     *text_node,
-				       glMergeRecord  *record);
+static gboolean    is_empty_field     (const glTextNode    *text_node,
+				       const glMergeRecord *record);
 
-
+
 /****************************************************************************/
 /* Expand single node into representative string.                           */
 /****************************************************************************/
 gchar *
-gl_text_node_expand (glTextNode    *text_node,
-		     glMergeRecord *record)
+gl_text_node_expand (const glTextNode    *text_node,
+		     const glMergeRecord *record)
 {
 	gchar *text;
 
@@ -68,12 +65,13 @@ gl_text_node_expand (glTextNode    *text_node,
 	}
 }
 
+
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Is node a field that evaluates empty?                          */
 /*--------------------------------------------------------------------------*/
 static gboolean
-is_empty_field (glTextNode    *text_node,
-		glMergeRecord *record)
+is_empty_field (const glTextNode    *text_node,
+		const glMergeRecord *record)
 {
 	gchar    *text;
 	gboolean  ret = FALSE;
@@ -89,23 +87,25 @@ is_empty_field (glTextNode    *text_node,
 	return ret;
 }
 
+
 /****************************************************************************/
 /* Create a single text node from given text.                               */
 /****************************************************************************/
 glTextNode *
-gl_text_node_new_from_text (gchar *text)
+gl_text_node_new_from_text (const gchar *text)
 {
 	gint n;
 
 	return extract_text_node (text, &n);
 }
 
+
 /*--------------------------------------------------------------------------*/
 /* PRIVATE.  Create a single text node from given text. n = characters used */
 /*--------------------------------------------------------------------------*/
 static glTextNode *
-extract_text_node (gchar *text,
-		   gint  *n)
+extract_text_node (const gchar *text,
+		   gint        *n)
 {
 	glTextNode *text_node;
 	gchar      *p;
@@ -118,7 +118,7 @@ extract_text_node (gchar *text,
 		text_node->field_flag = TRUE;
 		*n = strlen ("${");
 		text += *n;
-		for (p = text, m = 0; *p != 0; p++, m++, (*n)++) {
+		for (p = (gchar *)text, m = 0; *p != 0; p++, m++, (*n)++) {
 			if (*p == '}') {
 				(*n)++;
 				break;
@@ -128,7 +128,7 @@ extract_text_node (gchar *text,
 	} else {
 		/* We are at the beginning of a literal node */
 		text_node->field_flag = FALSE;
-		for (p = text, *n = 0; *p != 0; p++, (*n)++) {
+		for (p = (gchar *)text, *n = 0; *p != 0; p++, (*n)++) {
 			if (strncmp (p, "${", strlen ("${")) == 0)
 				break;
 			if (*p == '\n')
@@ -140,11 +140,12 @@ extract_text_node (gchar *text,
 	return text_node;
 }
 
+
 /****************************************************************************/
 /* Copy a single text node.                                                 */
 /****************************************************************************/
 glTextNode *
-gl_text_node_dup (glTextNode *src)
+gl_text_node_dup (const glTextNode *src)
 {
 	glTextNode *dst;
 
@@ -157,6 +158,7 @@ gl_text_node_dup (glTextNode *src)
 
 	return dst;
 }
+
 
 /****************************************************************************/
 /* Free a single text node.                                                 */
@@ -172,12 +174,13 @@ gl_text_node_free (glTextNode **text_node)
 	*text_node = NULL;
 }
 
+
 /****************************************************************************/
 /* Compare 2 text nodes for equality.                                       */
 /****************************************************************************/
 gboolean
-gl_text_node_equal (glTextNode     *text_node1,
-		    glTextNode     *text_node2)
+gl_text_node_equal (const glTextNode     *text_node1,
+		    const glTextNode     *text_node2)
 {
 	/* First take care of the case of either or both being NULL. */
 	if ( text_node1 == NULL ) {
@@ -206,12 +209,13 @@ gl_text_node_equal (glTextNode     *text_node1,
 	return (strcmp (text_node1->data, text_node2->data) == 0);
 }
 
+
 /****************************************************************************/
 /* Expand text lines into single string.                                    */
 /****************************************************************************/
 gchar *
-gl_text_node_lines_expand (GList         *lines,
-			   glMergeRecord *record)
+gl_text_node_lines_expand (GList               *lines,
+			   const glMergeRecord *record)
 {
 	GList      *p_line, *p_node;
 	glTextNode *text_node;
@@ -252,11 +256,12 @@ gl_text_node_lines_expand (GList         *lines,
 	return text;
 }
 
+
 /****************************************************************************/
 /* Parse a string back into text lines.                                     */
 /****************************************************************************/
 GList *
-gl_text_node_lines_new_from_text (gchar *text)
+gl_text_node_lines_new_from_text (const gchar *text)
 {
 	GList      *lines, *nodes;
 	glTextNode *text_node;
@@ -265,7 +270,7 @@ gl_text_node_lines_new_from_text (gchar *text)
 
 	lines = NULL;
 	nodes = NULL;
-	for (p = text; *p != 0; p += n) {
+	for (p = (gchar *)text; *p != 0; p += n) {
 		if (*p != '\n') {
 			text_node = extract_text_node (p, &n);
 			nodes = g_list_append (nodes, text_node);
@@ -281,6 +286,7 @@ gl_text_node_lines_new_from_text (gchar *text)
 
 	return lines;
 }
+
 
 /****************************************************************************/
 /* Copy a list of text lines.                                               */
@@ -305,6 +311,7 @@ gl_text_node_lines_dup (GList *src_lines)
 
 	return dst_lines;
 }
+
 
 /****************************************************************************/
 /* Free a list of text lines.                                               */
@@ -331,6 +338,7 @@ gl_text_node_lines_free (GList **lines)
 	*lines = NULL;
 }
 
+
 /****************************************************************************/
 /* For debugging:  descend and print lines list.                            */
 /****************************************************************************/
@@ -354,3 +362,13 @@ gl_text_node_lines_print (GList * lines )
 
 }
 
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

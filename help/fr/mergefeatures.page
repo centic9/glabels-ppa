@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="mergefeatures" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Qu'attendre d'une fusion de documents.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
+    </license>    
+  </info>
+
+    <title>Réalisation d'une fusion de documents</title>
+
+      <p>La fusion de documents (aussi appelée « Publipostage ») est un outil performant capable d'imprimer une étiquette ou une carte pour chaque enregistrement d'une source de données externe.</p>
+
+      <p>La première étape pour effectuer une fusion de document est de préparer le document source où figurent les données de cette fusion. Ce sont des adresses postales ou autres données pour lesquelles vous souhaitez créer une étiquette ou carte particulière. Pour l'instant, les seules sources possibles sont des fichiers texte ou le carnet d'adresses d'Evolution — d'autres sont prévues. Le format texte actuellement géré est très simple : chaque ligne est un enregistrement ; les champs sont séparés par des virgules (CSV), des tabulations ou le signe deux-points ; des sauts de lignes peuvent être placés à l'intérieur d'un champ en utilisant l'expression « \n ». Ce fichier peut être créé à l'aide de n'importe quel éditeur de texte ou généré par un autre programme ou script. Une méthode courante pour créer des fichiers CSV consiste à les exporter à partir d'un tableur.</p>
+
+      <p>Une étiquette doit ensuite être configurée pour « pointer » vers ce fichier de données. Pour configurer les propriétés de fusion d'un document, choisissez <guiseq><gui>Objets</gui><gui>Propriétés de fusion</gui></guiseq> pour afficher la boîte de dialogue <gui>Propriétés de fusion</gui>. Cette boîte de dialogue sert à définir exactement le format du fichier de données pour la fusion, ainsi que son nom et son emplacement.</p>
+
+      <p>Pour terminer, une fois l'étiquette associée au fichier de données, les champs clés peuvent être insérés dans des objets texte et utilisés comme source ou données pour des objets code-barre ou bien encore comme noms de fichiers image dans les objets image. Consultez <link xref="editprop"/> pour de plus amples informations sur l'utilisation des données de fusion pour ces types d'objets.</p>
+
+      <p>Après que l'étiquette est configurée, <application>gLabels</application> en imprime une pour chaque enregistrement du document source — remplaçant les valeurs des champs de chaque enregistrement par les champs clés correspondants de chaque objet texte, code-barre et image.</p>
+
+      <p>Consultez le <link xref="merge"/> pour des indications détaillées sur cette fonctionnalité.</p>
+
+</page>

@@ -1,25 +1,21 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  cairo-label-path.c
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  cairo_label_path.c:  Cairo label path module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2007  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <config.h>
@@ -27,42 +23,50 @@
 #include "cairo-label-path.h"
 
 #include <math.h>
-#include <glib.h>
+
+#include "cairo-ellipse-path.h"
 
 #include "debug.h"
+
 
 /*===========================================*/
 /* Private types                             */
 /*===========================================*/
 
+
 /*===========================================*/
 /* Private globals                           */
 /*===========================================*/
+
 
 /*===========================================*/
 /* Local function prototypes                 */
 /*===========================================*/
 
 static void gl_cairo_rect_label_path             (cairo_t                *cr,
-                                                  lglTemplate            *template,
+                                                  const lglTemplate      *template,
+                                                  gboolean                rotate_flag,
+                                                  gboolean                waste_flag);
+static void gl_cairo_ellipse_label_path          (cairo_t                *cr,
+                                                  const lglTemplate      *template,
                                                   gboolean                rotate_flag,
                                                   gboolean                waste_flag);
 static void gl_cairo_round_label_path            (cairo_t                *cr,
-                                                  lglTemplate            *template,
+                                                  const lglTemplate      *template,
                                                   gboolean                rotate_flag,
                                                   gboolean                waste_flag);
 static void gl_cairo_cd_label_path               (cairo_t                *cr,
-                                                  lglTemplate            *template,
+                                                  const lglTemplate      *template,
                                                   gboolean                rotate_flag,
                                                   gboolean                waste_flag);
 
-
+
 /*--------------------------------------------------------------------------*/
 /* Create label path                                                        */
 /*--------------------------------------------------------------------------*/
 void
 gl_cairo_label_path (cairo_t           *cr,
-                     lglTemplate       *template,
+                     const lglTemplate *template,
                      gboolean           rotate_flag,
                      gboolean           waste_flag)
 {
@@ -76,6 +80,10 @@ gl_cairo_label_path (cairo_t           *cr,
 
         case LGL_TEMPLATE_FRAME_SHAPE_RECT:
                 gl_cairo_rect_label_path (cr, template, rotate_flag, waste_flag);
+                break;
+
+        case LGL_TEMPLATE_FRAME_SHAPE_ELLIPSE:
+                gl_cairo_ellipse_label_path (cr, template, rotate_flag, waste_flag);
                 break;
 
         case LGL_TEMPLATE_FRAME_SHAPE_ROUND:
@@ -94,12 +102,13 @@ gl_cairo_label_path (cairo_t           *cr,
         gl_debug (DEBUG_PATH, "END");
 }
 
+
 /*--------------------------------------------------------------------------*/
 /* Create rectangular label path                                            */
 /*--------------------------------------------------------------------------*/
 static void
 gl_cairo_rect_label_path (cairo_t           *cr,
-                          lglTemplate       *template,
+                          const lglTemplate *template,
                           gboolean           rotate_flag,
                           gboolean           waste_flag)
 {
@@ -152,12 +161,54 @@ gl_cairo_rect_label_path (cairo_t           *cr,
         gl_debug (DEBUG_PATH, "END");
 }
 
+
+/*--------------------------------------------------------------------------*/
+/* Create elliptical label path                                             */
+/*--------------------------------------------------------------------------*/
+static void
+gl_cairo_ellipse_label_path (cairo_t           *cr,
+                             const lglTemplate *template,
+                             gboolean           rotate_flag,
+                             gboolean           waste_flag)
+{
+        const lglTemplateFrame *frame;
+        gdouble                 w, h;
+        gdouble                 waste;
+
+        gl_debug (DEBUG_PATH, "START");
+
+        frame = (lglTemplateFrame *)template->frames->data;
+
+        if (rotate_flag)
+        {
+                lgl_template_frame_get_size (frame, &h, &w);
+        }
+        else
+        {
+                lgl_template_frame_get_size (frame, &w, &h);
+        }
+
+        waste = 0.0;
+        if (waste_flag)
+        {
+                waste = frame->ellipse.waste;
+        }
+
+        cairo_save (cr);
+        cairo_translate (cr, -waste, -waste);
+        gl_cairo_ellipse_path (cr, (w+waste)/2.0, (h+waste)/2.0);
+        cairo_restore (cr);
+
+        gl_debug (DEBUG_PATH, "END");
+}
+
+
 /*--------------------------------------------------------------------------*/
 /* Create round label path                                                  */
 /*--------------------------------------------------------------------------*/
 static void
 gl_cairo_round_label_path (cairo_t           *cr,
-                           lglTemplate       *template,
+                           const lglTemplate *template,
                            gboolean           rotate_flag,
                            gboolean           waste_flag)
 {
@@ -194,12 +245,13 @@ gl_cairo_round_label_path (cairo_t           *cr,
         gl_debug (DEBUG_PATH, "END");
 }
 
+
 /*--------------------------------------------------------------------------*/
 /* Create cd label path                                                     */
 /*--------------------------------------------------------------------------*/
 static void
 gl_cairo_cd_label_path (cairo_t           *cr,
-                        lglTemplate       *template,
+                        const lglTemplate *template,
                         gboolean           rotate_flag,
                         gboolean           waste_flag)
 {
@@ -262,3 +314,13 @@ gl_cairo_cd_label_path (cairo_t           *cr,
         gl_debug (DEBUG_PATH, "END");
 }
 
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

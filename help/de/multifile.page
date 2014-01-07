@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="multifile" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Öffnen mehrerer Dateien aus einer Befehlszeile.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Öffnen mehrerer Dateien aus einer Befehlszeile</title>
+
+      <p>Sie können <app>gLabels</app> aus einer Befehlszeile starten und eine Datei oder mehrere Dateien öffnen. Um mehrere Dateien aus einer Befehlszeile zu öffnen, geben Sie den folgenden Befehl ein und drücken dann die <key>Eingabetaste</key>:</p>
+
+      <p><cmd>glabels <var>Datei1.glabels Datei2.glabels Datei3.glabels</var></cmd></p>
+
+      <p>Wenn die Anwendung startet, werden die von Ihnen angegebenen Dateien in separaten -<app>gLabels</app>-Fenstern angezeigt.</p>
+
+</page>

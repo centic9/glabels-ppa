@@ -1,31 +1,26 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  label-barcode.h
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  label_barcode.h:  GLabels label barcode object
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2002  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #ifndef __LABEL_BARCODE_H__
 #define __LABEL_BARCODE_H__
 
-#include "bc.h"
 #include "text-node.h"
 #include "label-object.h"
 
@@ -54,25 +49,63 @@ struct _glLabelBarcodeClass {
 };
 
 
-GType           gl_label_barcode_get_type  (void) G_GNUC_CONST;
 
-GObject        *gl_label_barcode_new       (glLabel        *label);
+typedef struct _glLabelBarcodeStyle     glLabelBarcodeStyle;
 
-void            gl_label_barcode_set_data  (glLabelBarcode *lbc,
-					    glTextNode     *text_node);
-void            gl_label_barcode_set_props (glLabelBarcode *lbc,
-					    gchar          *id,
-					    gboolean        text_flag,
-					    gboolean        checksum_flag,
-					    guint           format_digits);
+struct _glLabelBarcodeStyle {
+        gchar          *backend_id;
+        gchar          *id;
+        gboolean        text_flag;
+        gboolean        checksum_flag;
+        guint           format_digits;
+};
 
-glTextNode     *gl_label_barcode_get_data  (glLabelBarcode *lbc);
-void            gl_label_barcode_get_props (glLabelBarcode *lbc,
-					    gchar         **id,
-					    gboolean       *text_flag,
-					    gboolean       *checksum_flag,
-					    guint          *format_digits);
+
+
+GType                 gl_label_barcode_get_type             (void) G_GNUC_CONST;
+
+GObject              *gl_label_barcode_new                  (glLabel                   *label,
+                                                             gboolean                   checkpoint);
+
+void                  gl_label_barcode_set_data             (glLabelBarcode            *lbc,
+                                                             const glTextNode          *text_node,
+                                                             gboolean                   checkpoint);
+
+void                  gl_label_barcode_set_style            (glLabelBarcode            *lbc,
+                                                             const glLabelBarcodeStyle *style,
+                                                             gboolean                   checkpoint);
+
+glTextNode           *gl_label_barcode_get_data             (glLabelBarcode            *lbc);
+
+glLabelBarcodeStyle  *gl_label_barcode_get_style            (glLabelBarcode            *lbc);
+
+
+glLabelBarcodeStyle  *gl_label_barcode_style_new            (void);
+glLabelBarcodeStyle  *gl_label_barcode_style_dup            (const glLabelBarcodeStyle *style);
+void                  gl_label_barcode_style_free           (glLabelBarcodeStyle       *style);
+
+gboolean              gl_label_barcode_style_is_equal       (const glLabelBarcodeStyle *style1,
+                                                             const glLabelBarcodeStyle *style2);
+
+void                  gl_label_barcode_style_set_backend_id (glLabelBarcodeStyle       *style,
+                                                             const gchar               *backend_id);
+
+void                  gl_label_barcode_style_set_style_id   (glLabelBarcodeStyle       *style,
+                                                             const gchar               *id);
+
 
 G_END_DECLS
 
 #endif /* __LABEL_BARCODE_H__ */
+
+
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

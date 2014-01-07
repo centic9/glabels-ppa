@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="customize" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Anpassen von <app>gLabels</app> an Ihre Bedürfnisse.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+    
+  <!-- ============= Customization ============================= -->
+  <!-- Use this section to describe how to customize the application. -->
+    <title>Einstellungen</title> 
+    <p>Um <app>gLabels</app> zu konfigurieren, wählen Sie <guiseq><gui>Einstellungen</gui><gui>Einstellungen</gui></guiseq>. Der Dialog <gui>Einstellungen</gui> enthält die folgenden Reiter:</p>
+
+  <section id="prefs-locale" style="2column">
+    <title>Lokale Einstellungen</title>
+	<section>
+	<title>Einheiten</title>
+	<p>Verwenden Sie diese Radioknöpfe, um Ihre bevorzugten Maßeinheiten festzulegen. Wählen Sie aus den folgenden Optionen:</p>
+	   <list>
+		<item>
+		<p><gui>Punkte</gui></p>
+		<p>Punkte verwenden (1 Punkt = 1/72 Zoll = 0.352778 mm).</p>
+		</item>
+		<item>
+		<p><gui>Zoll</gui></p>
+		<p>Zoll verwenden.</p>
+		</item>
+		<item>
+		<p><gui>Millimeter</gui></p>
+		<p>Millimeter verwenden.</p>
+		</item>
+	   </list>
+	   <p>Standard: <gui>Zoll</gui>.</p>
+	</section>
+
+	<section>
+	<title>Vorgegebene Seitengröße</title>
+	<p>Verwenden Sie diese Radioknöpfe zur Auswahl Ihrer bevorzugten Papiergröße. Dadurch lassen sich beim Erstellen neuer Etiketten oder Visitenkarten die entsprechenden Papiertypen schneller finden.</p>
+	   <list>
+		<item>
+		<p><gui>US-Letter</gui></p>
+		<p>Die meisten Ihrer Medien haben das US-Letter-Format (8.5 x 11 inches).</p>
+		</item>
+		<item>
+		<p><gui>ISO A4</gui></p>
+		<p>Die meisten Ihrer Medien haben das ISO-A4-Format (210 x 297 mm).</p>
+		</item>
+	   </list>
+	   <p>Standard: <gui>US-Letter</gui>.</p>		
+	</section>
+    </section>
+
+  <section id="prefs-defaults" style="2column">
+    <title>Objekt-Vorgaben</title>
+
+	<section>
+	<title>Text</title>
+	<p>Verwenden Sie diese Einstellmöglichkeiten, um die Standardeigenschaften neuer Textobjekte festzulegen. Diese Eigenschaften sind:</p>
+	   <list>
+		<item>
+		<p><gui>Schrift</gui></p>
+		<p>Verwenden Sie diese Einstellmöglichkeiten, um die Schriftfamilie und -größe festzulegen, sowie um anzugeben, ob die Schrift fett oder kursiv dargestellt werden soll.</p>
+		</item>
+		<item>
+		<p><gui>Farbe</gui></p>
+		<p>Diese Einstellung wählt die Standard-Textfarbe aus.</p>
+		</item>
+		<item>
+		<p><gui>Ausrichtung</gui></p>
+		<p>Mit diesen Einstellungen wählen Sie die vorgegebene Textausrichtung (links, mittig oder rechts).</p>
+		</item>
+	   </list>
+	</section>
+
+	<section>
+	<title>Linie</title>
+	<p>Verwenden sie diese Einstellmöglichkeiten, um die Standardeigenschaften von Linien und Begrenzungen neuer Objekte festzulegen. Diese Eigenschaften sind:</p>
+	   <list>
+		<item>
+		<p><gui>Breite</gui></p>
+		<p>Diese Einstellung wählt die Standard-Linienbreite aus.</p>
+		</item>
+		<item>
+		<p><gui>Farbe</gui></p>
+		<p>Diese Einstellung wählt die Standard-Linienfarbe aus.</p>
+		</item>
+	   </list>
+	</section>
+
+	<section>
+	<title>Füllen</title>
+	<p>Verwenden Sie diese Einstellmöglichkeiten zum Angeben der Füllungseigenschaften eines neuen Objekts. Diese Eigenschaften sind:</p>
+	   <list>
+		<item>
+		<p><gui>Farbe</gui></p>
+		<p>Diese Einstellung wählt die Standard-Füllfarbe aus.</p>
+		</item>
+	   </list>
+	</section>
+	</section>
+
+</page>

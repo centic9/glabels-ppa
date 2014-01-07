@@ -1,25 +1,21 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  debug.h
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  debug.h:  GLabels debug module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2002  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -32,7 +28,7 @@
 #ifndef __DEBUG_H__
 #define __DEBUG_H__
 
-#include <glib/gtypes.h>
+#include <glib.h>
 
 G_BEGIN_DECLS
 
@@ -63,9 +59,12 @@ typedef enum {
 	GLABELS_DEBUG_MEDIA_SELECT = 1 << 16,
 	GLABELS_DEBUG_MINI_PREVIEW = 1 << 17,
 	GLABELS_DEBUG_PIXBUF_CACHE = 1 << 18,
-	GLABELS_DEBUG_EDITOR       = 1 << 19,
-	GLABELS_DEBUG_WDGT         = 1 << 20,
-        GLABELS_DEBUG_PATH         = 1 << 21,
+	GLABELS_DEBUG_SVG_CACHE    = 1 << 19,
+	GLABELS_DEBUG_EDITOR       = 1 << 20,
+	GLABELS_DEBUG_WDGT         = 1 << 21,
+        GLABELS_DEBUG_PATH         = 1 << 22,
+	GLABELS_DEBUG_FIELD_BUTTON = 1 << 23,
+        GLABELS_DEBUG_BARCODE      = 1 << 24
 } glDebugSection;
 
 
@@ -92,9 +91,12 @@ typedef enum {
 #define	DEBUG_MEDIA_SELECT	GLABELS_DEBUG_MEDIA_SELECT,     __FILE__, __LINE__, __FUNCTION__
 #define	DEBUG_MINI_PREVIEW	GLABELS_DEBUG_MINI_PREVIEW,     __FILE__, __LINE__, __FUNCTION__
 #define	DEBUG_PIXBUF_CACHE	GLABELS_DEBUG_PIXBUF_CACHE,     __FILE__, __LINE__, __FUNCTION__
+#define	DEBUG_SVG_CACHE	GLABELS_DEBUG_SVG_CACHE,     __FILE__, __LINE__, __FUNCTION__
 #define	DEBUG_EDITOR	GLABELS_DEBUG_EDITOR, __FILE__, __LINE__, __FUNCTION__
 #define	DEBUG_WDGT	GLABELS_DEBUG_WDGT,   __FILE__, __LINE__, __FUNCTION__
 #define	DEBUG_PATH      GLABELS_DEBUG_PATH,   __FILE__, __LINE__, __FUNCTION__
+#define	DEBUG_FIELD_BUTTON      GLABELS_DEBUG_FIELD_BUTTON,   __FILE__, __LINE__, __FUNCTION__
+#define	DEBUG_BARCODE   GLABELS_DEBUG_BARCODE,__FILE__, __LINE__, __FUNCTION__
 
 void gl_debug_init (void);
 
@@ -108,3 +110,14 @@ void gl_debug      (glDebugSection  section,
 G_END_DECLS
 
 #endif /* __DEBUG_H__ */
+
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

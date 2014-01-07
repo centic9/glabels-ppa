@@ -1,25 +1,21 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  file.c
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  file.c:  FILE menu dialog module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <config.h>
@@ -27,20 +23,18 @@
 #include "file.h"
 
 #include <glib/gi18n.h>
-#include <gtk/gtkmain.h>
-#include <gtk/gtkdialog.h>
-#include <gtk/gtkmessagedialog.h>
-#include <gtk/gtkfilechooserdialog.h>
-#include <gtk/gtkstock.h>
+#include <gtk/gtk.h>
 #include <string.h>
 
 #include "xml-label.h"
 #include "recent.h"
-#include "util.h"
+#include "file-util.h"
 #include "window.h"
 #include "new-label-dialog.h"
-#include "libglabels/libglabels.h"
+#include <libglabels.h>
+
 #include "debug.h"
+
 
 /*===========================================*/
 /* Private globals                           */
@@ -56,15 +50,14 @@ static gboolean rotate_flag = FALSE;
 static gchar *open_path = NULL;
 static gchar *save_path = NULL;
 
+
 /*===========================================*/
 /* Local function prototypes.                */
 /*===========================================*/
-static void new_response                     (GtkDialog         *dialog,
-					      gint               response,
+static void new_complete                     (GtkDialog         *dialog,
 					      gpointer           user_data);
 
-static void properties_response              (GtkDialog         *dialog,
-					      gint               response,
+static void properties_complete              (GtkDialog         *dialog,
 					      gpointer           user_data);
 
 static void open_response                    (GtkDialog         *chooser,
@@ -74,7 +67,7 @@ static void save_as_response                 (GtkDialog         *chooser,
 					      gint               response,
 					      glLabel           *label);
 
-
+
 /*****************************************************************************/
 /* "New" menu callback.                                                      */
 /*****************************************************************************/
@@ -92,8 +85,7 @@ gl_file_new (glWindow  *window)
 
 	g_object_set_data (G_OBJECT (dialog), "parent_window", window);
 
-	g_signal_connect (G_OBJECT(dialog), "response",
-			  G_CALLBACK (new_response), dialog);
+	g_signal_connect (G_OBJECT(dialog), "complete", G_CALLBACK (new_complete), dialog);
 
 	if (page_size != NULL) {
 		gl_new_label_dialog_set_filter_parameters (GL_NEW_LABEL_DIALOG (dialog),
@@ -106,18 +98,17 @@ gl_file_new (glWindow  *window)
 	}
 	gl_new_label_dialog_set_rotate_state (GL_NEW_LABEL_DIALOG (dialog), rotate_flag);
 
-        gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 	gtk_widget_show_all (GTK_WIDGET (dialog));
 
 	gl_debug (DEBUG_FILE, "END");
 }
 
+
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  New "ok" button callback.                                       */
 /*---------------------------------------------------------------------------*/
 static void
-new_response (GtkDialog *dialog,
-	      gint       response,
+new_complete (GtkDialog *dialog,
 	      gpointer   user_data)
 {
 	lglTemplate *template;
@@ -127,50 +118,41 @@ new_response (GtkDialog *dialog,
 
 	gl_debug (DEBUG_FILE, "START");
 
-	switch (response) {
+        gl_new_label_dialog_get_filter_parameters (GL_NEW_LABEL_DIALOG (dialog),
+                                                   &page_size,
+                                                   &category);
 
-	case GTK_RESPONSE_OK:
+        if (sheet_name != NULL)
+        {
+                g_free (sheet_name);
+        }
 
-		gl_new_label_dialog_get_filter_parameters (GL_NEW_LABEL_DIALOG (dialog),
-							    &page_size,
-							    &category);
+        sheet_name = gl_new_label_dialog_get_template_name (GL_NEW_LABEL_DIALOG (dialog));
 
-		if (sheet_name != NULL)
-			g_free (sheet_name);
-		sheet_name =
-			gl_new_label_dialog_get_template_name (GL_NEW_LABEL_DIALOG (dialog));
+        rotate_flag = gl_new_label_dialog_get_rotate_state (GL_NEW_LABEL_DIALOG (dialog));
 
-		rotate_flag =
-			gl_new_label_dialog_get_rotate_state (GL_NEW_LABEL_DIALOG (dialog));
+        template = lgl_db_lookup_template_from_name (sheet_name);
 
-		template = lgl_db_lookup_template_from_name (sheet_name);
+        label = GL_LABEL(gl_label_new ());
+        gl_label_set_template (label, template, FALSE);
+        gl_label_set_rotate_flag (label, rotate_flag, FALSE);
 
-		label = GL_LABEL(gl_label_new ());
-		gl_label_set_template (label, template);
-		gl_label_set_rotate_flag (label, rotate_flag);
+        lgl_template_free (template);
 
-		lgl_template_free (template);
-
-		window =
-			GL_WINDOW (g_object_get_data (G_OBJECT (dialog),
-						      "parent_window"));
-		if ( gl_window_is_empty (window) ) {
-			gl_window_set_label (window, label);
-		} else {
-			new_window = gl_window_new_from_label (label);
-			gtk_widget_show_all (new_window);
-		}
+        window = GL_WINDOW (g_object_get_data (G_OBJECT (dialog), "parent_window"));
+        if ( gl_window_is_empty (window) )
+        {
+                gl_window_set_label (window, label);
+        }
+        else
+        {
+                new_window = gl_window_new_from_label (label);
+                gtk_widget_show_all (new_window);
+        }
 		
-		break;
-
-	default:
-		break;
-	}
-
-	gtk_widget_destroy (GTK_WIDGET (dialog));
-
 	gl_debug (DEBUG_FILE, "END");
 }
+
 
 /*****************************************************************************/
 /* "Properties" menu callback.                                               */
@@ -179,8 +161,10 @@ void
 gl_file_properties (glLabel   *label,
 		    glWindow  *window)
 {
-	GtkWidget    *dialog;
-        gchar        *name;
+        const lglTemplate *template;
+        gboolean           rotate_flag;
+	GtkWidget         *dialog;
+        gchar             *name;
 
 	gl_debug (DEBUG_FILE, "START");
 
@@ -192,74 +176,65 @@ gl_file_properties (glLabel   *label,
 
 	g_object_set_data (G_OBJECT (dialog), "label", label);
 
-	g_signal_connect (G_OBJECT(dialog), "response",
-			  G_CALLBACK (properties_response), dialog);
+	g_signal_connect (G_OBJECT(dialog), "complete", G_CALLBACK (properties_complete), dialog);
 
-        if (label->template->paper_id != NULL) {
+        template    = gl_label_get_template (label);
+        rotate_flag = gl_label_get_rotate_flag (label);
+
+        if (template->paper_id != NULL) {
                 gl_new_label_dialog_set_filter_parameters (GL_NEW_LABEL_DIALOG (dialog),
-                                                           label->template->paper_id,
+                                                           template->paper_id,
                                                            NULL);
         }
-        name = lgl_template_get_name (label->template);
+        name = lgl_template_get_name (template);
         if (name != NULL) {
                 gl_new_label_dialog_set_template_name (GL_NEW_LABEL_DIALOG (dialog), name);
         }
         g_free (name);
 
-        gl_new_label_dialog_set_rotate_state (GL_NEW_LABEL_DIALOG (dialog),
-					      label->rotate_flag);
+        gl_new_label_dialog_set_rotate_state (GL_NEW_LABEL_DIALOG (dialog), rotate_flag);
 
-        gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 	gtk_widget_show_all (GTK_WIDGET (dialog));
 
 	gl_debug (DEBUG_FILE, "END");
 }
 
+
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Properties "ok" button callback.                                */
 /*---------------------------------------------------------------------------*/
 static void
-properties_response (GtkDialog *dialog,
-	      gint       response,
-	      gpointer   user_data)
+properties_complete (GtkDialog *dialog,
+                     gpointer   user_data)
 {
 	lglTemplate *template;
 	glLabel     *label;
 
 	gl_debug (DEBUG_FILE, "START");
 
-	switch (response) {
+        gl_new_label_dialog_get_filter_parameters (GL_NEW_LABEL_DIALOG (dialog),
+                                                   &page_size,
+                                                   &category);
 
-	case GTK_RESPONSE_OK:
+        if (sheet_name != NULL)
+        {
+                g_free (sheet_name);
+        }
 
-		gl_new_label_dialog_get_filter_parameters (GL_NEW_LABEL_DIALOG (dialog),
-							    &page_size,
-							    &category);
+        sheet_name = gl_new_label_dialog_get_template_name (GL_NEW_LABEL_DIALOG (dialog));
 
-		if (sheet_name != NULL)
-			g_free (sheet_name);
-		sheet_name =
-			gl_new_label_dialog_get_template_name (GL_NEW_LABEL_DIALOG (dialog));
+        rotate_flag = gl_new_label_dialog_get_rotate_state (GL_NEW_LABEL_DIALOG (dialog));
 
-		rotate_flag =
-			gl_new_label_dialog_get_rotate_state (GL_NEW_LABEL_DIALOG (dialog));
+        template = lgl_db_lookup_template_from_name (sheet_name);
 
-		template = lgl_db_lookup_template_from_name (sheet_name);
+        label = GL_LABEL(g_object_get_data (G_OBJECT (dialog), "label"));
 
-                label = GL_LABEL(g_object_get_data (G_OBJECT (dialog), "label"));
-                gl_label_set_template (label, template);
-                gl_label_set_rotate_flag (label, rotate_flag);
-
-		break;
-
-	default:
-		break;
-	}
-
-	gtk_widget_destroy (GTK_WIDGET (dialog));
+        gl_label_set_template (label, template, TRUE);
+        gl_label_set_rotate_flag (label, rotate_flag, TRUE);
 
 	gl_debug (DEBUG_FILE, "END");
 }
+
 
 /*****************************************************************************/
 /* "Open" menu callback.                                                     */
@@ -307,6 +282,7 @@ gl_file_open (glWindow  *window)
 
 	gl_debug (DEBUG_FILE, "END");
 }
+
 
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Open "response" callback.                                       */
@@ -405,6 +381,7 @@ gl_file_open_recent (const gchar     *filename,
 	}
 }
 
+
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  Open a file.                                                    */
 /*---------------------------------------------------------------------------*/
@@ -419,7 +396,7 @@ gl_file_open_real (const gchar     *filename,
 
 	gl_debug (DEBUG_FILE, "START");
 
-	abs_filename = gl_util_make_absolute (filename);
+	abs_filename = gl_file_util_make_absolute (filename);
 	label = gl_xml_label_open (abs_filename, &status);
 	if (!label) {
 		GtkWidget *dialog;
@@ -466,6 +443,7 @@ gl_file_open_real (const gchar     *filename,
 
 	}
 }
+
 
 /*****************************************************************************/
 /* "Save" menu callback.                                                     */
@@ -535,6 +513,7 @@ gl_file_save (glLabel   *label,
 	}
 }
 
+
 /*****************************************************************************/
 /* "Save As" menu callback.                                                  */
 /*****************************************************************************/
@@ -603,6 +582,7 @@ gl_file_save_as (glLabel   *label,
 	return saved_flag;
 }
 
+
 /*---------------------------------------------------------------------------*/
 /* PRIVATE.  "Save As" ok button callback.                                   */
 /*---------------------------------------------------------------------------*/
@@ -647,7 +627,7 @@ save_as_response (GtkDialog     *chooser,
 
 		} else {
 
-			full_filename = gl_util_add_extension (raw_filename);
+			full_filename = gl_file_util_add_extension (raw_filename);
 
 			filename = g_filename_to_utf8 (full_filename, -1,
 						       NULL, NULL, NULL);
@@ -821,6 +801,7 @@ gl_file_close (glWindow *window)
 	return close;
 }
 
+
 /*****************************************************************************/
 /* "Exit" menu callback.                                                     */
 /*****************************************************************************/
@@ -842,3 +823,14 @@ gl_file_exit (void)
 
 	gl_debug (DEBUG_FILE, "END");
 }
+
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="labelprop" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Ändern der Eigenschaften eines Etiketts oder einer Visitenkarte.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Ändern der Eigenschaften eines Etiketts</title>
+
+      <p>Um den Medientyp oder die Ausrichtung des Etiketts zu ändern, wählen Sie <guiseq><gui>Datei</gui><gui>Eigenschaften</gui></guiseq>, um den Dialog <gui>Etikett-Eigenschaften</gui> anzuzeigen. Wählen Sie den neuen Medientyp für das Dokument aus und klicken Sie anschließend auf <gui>OK</gui>.</p>
+
+</page>

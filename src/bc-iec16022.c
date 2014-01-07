@@ -1,58 +1,58 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*- */
-
 /*
- *  (GLABELS) Label and Business Card Creation program for GNOME
+ *  bc-iec16022.c
+ *  Copyright (C) 2001-2009  Jim Evins <evins@snaught.com>.
  *
- *  bc-iec16022.c:  front-end to iec16022-library module
+ *  This file is part of gLabels.
  *
- *  Copyright (C) 2001-2006  Jim Evins <evins@snaught.com>.
- *
- *  This program is free software; you can redistribute it and/or modify
+ *  gLabels is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
+ *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  This program is distributed in the hope that it will be useful,
+ *  gLabels is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+ *  along with gLabels.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <config.h>
 
+#ifdef HAVE_LIBIEC16022
+
 #include "bc-iec16022.h"
 
+#include <glib.h>
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
-#include <glib/gmessages.h>
-
-#include "iec16022ecc200.h"
+#include <iec16022ecc200.h>
 
 #include "debug.h"
+
 
 /*========================================================*/
 /* Private macros and constants.                          */
 /*========================================================*/
 #define MIN_PIXEL_SIZE 1.0
 
+
 /*===========================================*/
 /* Local function prototypes                 */
 /*===========================================*/
-static glBarcode *render_iec16022 (const gchar *grid,
-                                   gint         i_width,
-                                   gint         i_height,
-                                   gdouble      w,
-                                   gdouble      h);
+static lglBarcode *render_iec16022 (const gchar *grid,
+                                    gint         i_width,
+                                    gint         i_height,
+                                    gdouble      w,
+                                    gdouble      h);
+
 
 /*****************************************************************************/
 /* Generate intermediate representation of barcode.                          */
 /*****************************************************************************/
-glBarcode *
+lglBarcode *
 gl_barcode_iec16022_new (const gchar    *id,
                          gboolean        text_flag,
                          gboolean        checksum_flag,
@@ -62,9 +62,9 @@ gl_barcode_iec16022_new (const gchar    *id,
 {
         gchar               *grid;
         gint                 i_width, i_height;
-        glBarcode           *gbc;
+        lglBarcode          *gbc;
 
-        if ( strlen (digits) == 0 )
+        if ( *digits == '\0' )
         {
                 return NULL;
         }
@@ -84,29 +84,32 @@ gl_barcode_iec16022_new (const gchar    *id,
         return gbc;
 }
 
+
 /*--------------------------------------------------------------------------
- * PRIVATE.  Render to glBarcode intermediate representation of barcode.
+ * PRIVATE.  Render to lglBarcode intermediate representation of barcode.
  *--------------------------------------------------------------------------*/
-static glBarcode *
+static lglBarcode *
 render_iec16022 (const gchar *grid,
                  gint         i_width,
                  gint         i_height,
                  gdouble      w,
                  gdouble      h)
 {
-        glBarcode     *gbc;
-        glBarcodeLine *line;
-        gint           x, y;
-        gdouble        aspect_ratio, pixel_size;
+        lglBarcode         *gbc;
+        gint                x, y;
+        gdouble             aspect_ratio, pixel_size;
 
-	/* Treat requested size as a bounding box, scale to maintain aspect
-	 * ratio while fitting it in this bounding box. */
-	aspect_ratio = (gdouble)i_height / (gdouble)i_width;
-	if ( h > w*aspect_ratio ) {
-		h = w * aspect_ratio;
-	} else {
-		w = h / aspect_ratio;
-	}
+        /* Treat requested size as a bounding box, scale to maintain aspect
+         * ratio while fitting it in this bounding box. */
+        aspect_ratio = (gdouble)i_height / (gdouble)i_width;
+        if ( h > w*aspect_ratio )
+        {
+                h = w * aspect_ratio;
+        }
+        else
+        {
+                w = h / aspect_ratio;
+        }
 
         /* Now determine pixel size. */
         pixel_size = w / i_width;
@@ -115,7 +118,7 @@ render_iec16022 (const gchar *grid,
                 pixel_size = MIN_PIXEL_SIZE;
         }
 
-        gbc = g_new0 (glBarcode, 1);
+        gbc = lgl_barcode_new ();
 
         /* Now traverse the code string and create a list of boxes */
         for ( y = i_height-1; y >= 0; y-- )
@@ -126,12 +129,7 @@ render_iec16022 (const gchar *grid,
 
                         if (*grid++)
                         {
-                                line = g_new0 (glBarcodeLine, 1);
-                                line->x      = x*pixel_size + pixel_size/2.0;
-                                line->y      = y*pixel_size;
-                                line->length = pixel_size;
-                                line->width  = pixel_size;
-                                gbc->lines = g_list_append (gbc->lines, line);
+                                lgl_barcode_add_box (gbc, x*pixel_size, y*pixel_size, pixel_size, pixel_size);
                         }
 
                 }
@@ -142,10 +140,18 @@ render_iec16022 (const gchar *grid,
         gbc->height = i_height * pixel_size;
         gbc->width  = i_width  * pixel_size;
 
-#if 0
-        g_print ("w=%f, h=%f\n", gbc->width, gbc->height);
-#endif
-
         return gbc;
 }
 
+#endif /* HAVE_LIBIEC16022 */
+
+
+
+/*
+ * Local Variables:       -- emacs
+ * mode: C                -- emacs
+ * c-basic-offset: 8      -- emacs
+ * tab-width: 8           -- emacs
+ * indent-tabs-mode: nil  -- emacs
+ * End:                   -- emacs
+ */

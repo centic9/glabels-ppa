@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="printfile" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Ausdrucke von Ihren Etiketten oder Karten erstellen.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Drucken von Etiketten oder Karten</title>
+
+      <p>Um Etiketten oder Visitenkarten zu drucken, wählen Sie <guiseq><gui>Datei</gui><gui>Drucken</gui></guiseq>, um den <gui>Drucken</gui>-Dialog anzuzeigen. Nachdem Sie die Druckoptionen ausgewählt haben, klicken Sie auf <gui>Drucken</gui>, um die Etiketten oder Visitenkarten zu drucken. Um zunächst eine Vorschau auf die Druckergebnisse zu erhalten, klicken Sie auf <gui>Druckvorschau</gui>.</p>
+
+      <p>Im Dialog <gui>Drucken</gui> können Sie die folgenden Optionen zum Drucken festlegen:</p>
+
+      <section>
+	<title>Der Reiter »Etiketten« des Druckdialogs</title>
+
+	<section>
+            <title>Drucksteuerung (einfach)</title>
+
+	      <p>Für einfache Etiketten oder Karten (keine Dokumentmischung) enthält der Reiter »Labels« die folgenden Einstellmöglichkeiten.</p>
+
+	      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/print-copies.png" mime="image/png" style="right">
+      		<p>Angeben der Kopien</p>
+    		</media>
+	      <!-- ==== End of Figure ==== -->
+
+	      <p>Die Anzahl der Kopien können Sie wählen, indem Sie die Anzahl der vollständig zu druckenden Seiten oder eine Teilmenge von Etiketten auf einer einzelnen Seite auswählen.</p>
+
+	      <p>Die verkleinerte Vorschau können Sie auch dazu verwenden, einen Teil der Etiketten grafisch auszuwählen, indem Sie auf das erste Etikett klicken und es auf das letzte Etikett ziehen.</p>
+
+	  </section>
+
+	  <section>
+            <title>Drucksteuerung (Mischen)</title>
+
+	      <p>Für Etiketten oder Karten unter Verwendung der Dokumentmischung enthält dieser Reiter die folgenden Einstellungen zur Mischung von Dokumenten anstelle der Festlegung der Kopien.</p>
+
+	      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/print-merge.png" mime="image/png" style="right">
+      		<p>Steuerung der Einmischung von Dokumenten</p>
+    		</media>
+	      <!-- ==== End of Figure ==== -->
+
+	      <p>Die Gesamtzahl der gedruckten Etiketten oder Karten ergibt sich als Produkt aus der Anzahl der Datensätze in der Einmischquelle und der Anzahl der gewählten Kopien. Falls mehrere Kopien gewählt wurden, können diese entweder zusammengefasst werden (durch Gruppieren der Kopien des gleichen Datensatzes) oder nicht zusammengefasst (eine Kopie jedes Datensatzes wird immer vor der nächsten Kopie gedruckt).</p>
+
+	      <p>Der Druck kann mit jedem beliebigen Etikett der ersten Seite begonnen werden. Dies können Sie im Einstellfeld <gui>Start bei Etikett</gui> auswählen.</p>
+
+	      <p>In der verkleinerten Vorschau können Sie das erste Etikett grafisch auswählen, indem Sie das gewünschte Etikett anklicken.</p>
+
+	  </section>
+
+	  <section> 
+	  <title>Optionen</title>
+	      <p>Die folgenden Optionen können ebenfalls gewählt werden.</p>
+	      <list>
+		<item>
+		  <p><gui>Begrenzungen drucken</gui></p>
+		  <p>Begrenzungen der Etiketten drucken. Diese Option ist nützlich, wenn Sie die Lage des Papiers im Drucker prüfen wollen.</p>
+		</item>
+		<item>
+		  <p><gui>Spiegelbildlich drucken</gui></p>
+		  <p>Druckt die Etiketten spiegelbildlich. Diese Option ist nützlich für das Drucken durchsichtiger Aufkleber, die von der Rückseite aus betrachtet werden (z.B. hinter Autoscheiben).</p>
+		</item>
+		<item>
+		  <p><gui>Schnitt</gui></p>
+		  <p>Druckt Schnittmarken entlang der Papierränder. Diese Option ist nützlich zum Drucken auf Papier, das erst nach dem Druck beschnitten werden soll. Diese Option funktioniert eventuell nicht mit allen Vorlagen.</p>
+		</item>
+	      </list>
+	</section>
+       </section>
+
+</page>

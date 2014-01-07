@@ -61,24 +61,32 @@ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 	$(top_srcdir)/gnome-doc-utils.make
 subdir = help
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/configure.in
+am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
+AM_V_GEN = $(am__v_GEN_$(V))
+am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))
+am__v_GEN_0 = @echo "  GEN   " $@;
+AM_V_at = $(am__v_at_$(V))
+am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
+am__v_at_0 = @
 SOURCES =
 DIST_SOURCES =
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 ALL_LINGUAS = @ALL_LINGUAS@
 AMTAR = @AMTAR@
+AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 AR = @AR@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
 AWK = @AWK@
+CAIRO_REQUIRED = @CAIRO_REQUIRED@
 CATALOGS = @CATALOGS@
 CATOBJEXT = @CATOBJEXT@
 CC = @CC@
@@ -92,6 +100,7 @@ DEFS = @DEFS@
 DEPDIR = @DEPDIR@
 DISABLE_DEPRECATED_CFLAGS = @DISABLE_DEPRECATED_CFLAGS@
 DISTCHECK_CONFIGURE_FLAGS = @DISTCHECK_CONFIGURE_FLAGS@
+DLLTOOL = @DLLTOOL@
 DOC_USER_FORMATS = @DOC_USER_FORMATS@
 DSYMUTIL = @DSYMUTIL@
 DUMPBIN = @DUMPBIN@
@@ -101,17 +110,23 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 FGREP = @FGREP@
+GDK_PIXBUF_CSOURCE = @GDK_PIXBUF_CSOURCE@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
+GLABELS_BRANCH = @GLABELS_BRANCH@
 GLABELS_CFLAGS = @GLABELS_CFLAGS@
 GLABELS_LIBS = @GLABELS_LIBS@
+GLIB_COMPILE_SCHEMAS = @GLIB_COMPILE_SCHEMAS@
 GLIB_GENMARSHAL = @GLIB_GENMARSHAL@
 GLIB_REQUIRED = @GLIB_REQUIRED@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
 GREP = @GREP@
+GSETTINGS_DISABLE_SCHEMAS_COMPILE = @GSETTINGS_DISABLE_SCHEMAS_COMPILE@
 GTKDOC_CHECK = @GTKDOC_CHECK@
+GTKDOC_MKPDF = @GTKDOC_MKPDF@
+GTKDOC_REBASE = @GTKDOC_REBASE@
 GTK_REQUIRED = @GTK_REQUIRED@
-HAVE_XML_PARSE_HUGE = @HAVE_XML_PARSE_HUGE@
+GTK_UPDATE_ICON_CACHE = @GTK_UPDATE_ICON_CACHE@
 HELP_DIR = @HELP_DIR@
 HTML_DIR = @HTML_DIR@
 INSTALL = @INSTALL@
@@ -127,31 +142,45 @@ INTLTOOL_PERL = @INTLTOOL_PERL@
 INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 LD = @LD@
 LDFLAGS = @LDFLAGS@
+LIBBARCODE_CFLAGS = @LIBBARCODE_CFLAGS@
+LIBBARCODE_LIBS = @LIBBARCODE_LIBS@
+LIBBARCODE_REQUIRED = @LIBBARCODE_REQUIRED@
 LIBEBOOK_CFLAGS = @LIBEBOOK_CFLAGS@
 LIBEBOOK_LIBS = @LIBEBOOK_LIBS@
 LIBEBOOK_REQUIRED = @LIBEBOOK_REQUIRED@
+LIBGLABELS_API_VERSION = @LIBGLABELS_API_VERSION@
+LIBGLABELS_BRANCH = @LIBGLABELS_BRANCH@
 LIBGLABELS_CFLAGS = @LIBGLABELS_CFLAGS@
 LIBGLABELS_LIBS = @LIBGLABELS_LIBS@
-LIBGLABELS_VERSION_INFO = @LIBGLABELS_VERSION_INFO@
-LIBGLADE_REQUIRED = @LIBGLADE_REQUIRED@
-LIBGNOMEUI_REQUIRED = @LIBGNOMEUI_REQUIRED@
-LIBGNOME_REQUIRED = @LIBGNOME_REQUIRED@
+LIBGLBARCODE_API_VERSION = @LIBGLBARCODE_API_VERSION@
+LIBGLBARCODE_BRANCH = @LIBGLBARCODE_BRANCH@
+LIBGLBARCODE_CFLAGS = @LIBGLBARCODE_CFLAGS@
+LIBGLBARCODE_LIBS = @LIBGLBARCODE_LIBS@
+LIBIEC16022_CFLAGS = @LIBIEC16022_CFLAGS@
+LIBIEC16022_LIBS = @LIBIEC16022_LIBS@
+LIBIEC16022_REQUIRED = @LIBIEC16022_REQUIRED@
 LIBOBJS = @LIBOBJS@
+LIBQRENCODE_CFLAGS = @LIBQRENCODE_CFLAGS@
+LIBQRENCODE_LIBS = @LIBQRENCODE_LIBS@
+LIBQRENCODE_REQUIRED = @LIBQRENCODE_REQUIRED@
+LIBRSVG_REQUIRED = @LIBRSVG_REQUIRED@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
 LIBXML_REQUIRED = @LIBXML_REQUIRED@
+LIBZINT_CFLAGS = @LIBZINT_CFLAGS@
+LIBZINT_LIBS = @LIBZINT_LIBS@
+LIBZINT_REQUIRED = @LIBZINT_REQUIRED@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LTLIBOBJS = @LTLIBOBJS@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
+MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
 MKINSTALLDIRS = @MKINSTALLDIRS@
 MSGFMT = @MSGFMT@
 MSGFMT_OPTS = @MSGFMT_OPTS@
 MSGMERGE = @MSGMERGE@
-MYGAL_CFLAGS = @MYGAL_CFLAGS@
-MYGAL_LIBS = @MYGAL_LIBS@
 NM = @NM@
 NMEDIT = @NMEDIT@
 OBJDUMP = @OBJDUMP@
@@ -164,9 +193,13 @@ PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_NAME = @PACKAGE_NAME@
 PACKAGE_STRING = @PACKAGE_STRING@
 PACKAGE_TARNAME = @PACKAGE_TARNAME@
+PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
+PANGO_REQUIRED = @PANGO_REQUIRED@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 PKG_CONFIG = @PKG_CONFIG@
+PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
+PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
 POFILES = @POFILES@
 POSUB = @POSUB@
 PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
@@ -176,18 +209,15 @@ SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
-UPDATE_DESKTOP_DATABASE = @UPDATE_DESKTOP_DATABASE@
-UPDATE_MIME_DATABASE = @UPDATE_MIME_DATABASE@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
 WARN_CFLAGS = @WARN_CFLAGS@
 XGETTEXT = @XGETTEXT@
-XML_PARSE_HUGE_CFLAGS = @XML_PARSE_HUGE_CFLAGS@
-XML_PARSE_HUGE_LIBS = @XML_PARSE_HUGE_LIBS@
 abs_builddir = @abs_builddir@
 abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
 abs_top_srcdir = @abs_top_srcdir@
+ac_ct_AR = @ac_ct_AR@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_DUMPBIN = @ac_ct_DUMPBIN@
 am__include = @am__include@
@@ -207,6 +237,7 @@ datarootdir = @datarootdir@
 docdir = @docdir@
 dvidir = @dvidir@
 exec_prefix = @exec_prefix@
+gsettingsschemadir = @gsettingsschemadir@
 host = @host@
 host_alias = @host_alias@
 host_cpu = @host_cpu@
@@ -220,7 +251,6 @@ libdir = @libdir@
 libexecdir = @libexecdir@
 localedir = @localedir@
 localstatedir = @localstatedir@
-lt_ECHO = @lt_ECHO@
 mandir = @mandir@
 mkdir_p = @mkdir_p@
 oldincludedir = @oldincludedir@
@@ -305,6 +335,7 @@ _DOC_C_HTML = $(foreach f,						\
 _DOC_POFILES = $(if $(DOC_MODULE)$(DOC_ID),					\
 	$(foreach lc,$(_DOC_REAL_LINGUAS),$(lc)/$(lc).po))
 
+_DOC_MOFILES = $(patsubst %.po,%.mo,$(_DOC_POFILES))
 _DOC_LC_MODULES = $(if $(DOC_MODULE),						\
 	$(foreach lc,$(_DOC_REAL_LINGUAS),$(lc)/$(DOC_MODULE).xml))
 
@@ -333,7 +364,7 @@ _DOC_SRC_FIGURES = \
 	$(foreach fig,$(_DOC_C_FIGURES), $(foreach lc,C $(_DOC_REAL_LINGUAS),	\
 		$(wildcard $(srcdir)/$(lc)/$(patsubst C/%,%,$(fig))) ))
 
-_DOC_POT = $(if $(DOC_MODULE),$(DOC_MODULE).pot)
+_DOC_POT = $(if $(DOC_MODULE),$(DOC_MODULE).pot,$(if $(DOC_ID),$(DOC_ID).pot))
 
 ################################################################################
 _DOC_HTML_ALL = $(if $(filter html HTML,$(_DOC_REAL_FORMATS)), \
@@ -345,28 +376,54 @@ _clean_dsk = $(if $(_DOC_DSK_IN),clean-doc-dsk)
 _clean_lc = $(if $(_DOC_REAL_LINGUAS),clean-doc-lc)
 _clean_dir = $(if $(DOC_MODULE)$(DOC_ID),clean-doc-dir)
 _doc_install_dir = $(if $(DOC_ID),$(DOC_ID),$(DOC_MODULE))
-DOC_MODULE = glabels
-DOC_ENTITIES = legal.xml 
-DOC_INCLUDES = 
-DOC_FIGURES = figures/glabels-template-cd.png      	\
-              figures/glabels-template-label.png	\
-	      figures/glabels-template-layout.png	\
-	      figures/main-window-empty.png		\
-	      figures/merge-ex1-1.png			\
-	      figures/merge-ex1-2.png			\
-	      figures/merge-ex1-3.png			\
-	      figures/merge-ex1-4.png			\
-	      figures/merge-ex2-1.png			\
-	      figures/merge-ex2-2.png			\
-	      figures/merge-ex2-3.png			\
-	      figures/merge-ex2-4.png			\
-	      figures/merge-ex3-1.png			\
-	      figures/merge-ex3-2.png			\
-	      figures/object-editor-sidebar.png		\
-	      figures/print-copies.png			\
-	      figures/print-merge.png
+DOC_ID = $(GLABELS_BRANCH)
+DOC_FIGURES = \
+	figures/glabels-logo.png			\
+	figures/glabels-template-cd-label.png      	\
+	figures/glabels-template-circle-label.png      	\
+	figures/glabels-template-ellipse-label.png     	\
+	figures/glabels-template-layout.png		\
+	figures/glabels-template-rect-label.png		\
+	figures/introduction-glabels-main-window.png	\
+	figures/main-window-empty.png			\
+	figures/merge-ex1-1.png				\
+	figures/merge-ex1-2.png				\
+	figures/merge-ex1-3.png				\
+	figures/merge-ex1-4.png				\
+	figures/merge-ex2-1.png				\
+	figures/merge-ex2-2.png				\
+	figures/merge-ex2-3.png				\
+	figures/merge-ex2-4.png				\
+	figures/object-editor-sidebar.png		\
+	figures/print-copies.png			\
+	figures/print-merge.png				\
+	figures/skip-fields-output.png			\
+	figures/skip-fields-screenshot.png
 
-DOC_LINGUAS = cs de es fr
+DOC_PAGES = \
+	about.page		\
+	basicusage.page		\
+	createnew.page		\
+	customize.page		\
+	customtemplate.page	\
+	editprop.page		\
+	index.page		\
+	labelprop.page		\
+	license.page		\
+	mancreate.page		\
+	merge-ex1.page		\
+	merge-ex2.page		\
+	merge-ex3.page		\
+	merge-ex4.page		\
+	mergefeatures.page	\
+	merge.page		\
+	multifile.page		\
+	newlabel.page		\
+	printfile.page		\
+	select.page		\
+	skipfields.page
+
+DOC_LINGUAS = cs de es fr nl sl
 all: all-am
 
 .SUFFIXES:
@@ -640,7 +697,7 @@ _db2omf  ?= `$(PKG_CONFIG) --variable db2omf gnome-doc-utils`
 _malrng  ?= `$(PKG_CONFIG) --variable malrng gnome-doc-utils`
 _chunks  ?= `$(PKG_CONFIG) --variable xmldir gnome-doc-utils`/gnome/xslt/docbook/utils/chunks.xsl
 _credits ?= `$(PKG_CONFIG) --variable xmldir gnome-doc-utils`/gnome/xslt/docbook/utils/credits.xsl
-_ids ?= `$(PKG_CONFIG) --variable xmldir gnome-doc-utils`/gnome/xslt/docbook/utils/ids.xsl
+_ids ?= $(shell $(PKG_CONFIG) --variable xmldir gnome-doc-utils)/gnome/xslt/docbook/utils/ids.xsl
 @ENABLE_SK_TRUE@_skpkgdatadir ?= `scrollkeeper-config --pkgdatadir`
 @ENABLE_SK_TRUE@_sklocalstatedir ?= `scrollkeeper-config --pkglocalstatedir`
 @ENABLE_SK_TRUE@_skcontentslist ?= $(_skpkgdatadir)/Templates/C/scrollkeeper_cl.xml
@@ -666,6 +723,9 @@ omf: $(_DOC_OMF_ALL)
 
 .PHONY: po
 po: $(_DOC_POFILES)
+
+.PHONY: mo
+mo: $(_DOC_MOFILES)
 
 $(_DOC_POFILES):
 	@if ! test -d $(dir $@); then \
@@ -694,16 +754,23 @@ $(_DOC_POFILES):
 	    $(_xml2po) -m $(_xml2po_mode) -e -u $(notdir $@) $$docs); \
 	fi
 
+$(_DOC_MOFILES): %.mo: %.po
+	@if ! test -d $(dir $@); then \
+	  echo "mkdir $(dir $@)"; \
+	  mkdir "$(dir $@)"; \
+	fi
+	msgfmt -o $@ $<
+
 # FIXME: fix the dependancy
 # FIXME: hook xml2po up
-$(_DOC_LC_DOCS) : $(_DOC_POFILES)
+$(_DOC_LC_DOCS) : $(_DOC_MOFILES)
 $(_DOC_LC_DOCS) : $(_DOC_C_DOCS)
 	if ! test -d $(dir $@); then mkdir $(dir $@); fi
 	if [ -f "C/$(notdir $@)" ]; then d="../"; else d="$(_DOC_ABS_SRCDIR)/"; fi; \
-	po="$(dir $@)$(patsubst %/$(notdir $@),%,$@).po"; \
-	if [ -f "$${po}" ]; then po="../$${po}"; else po="$(_DOC_ABS_SRCDIR)/$${po}"; fi; \
+	mo="$(dir $@)$(patsubst %/$(notdir $@),%,$@).mo"; \
+	if [ -f "$${mo}" ]; then mo="../$${mo}"; else mo="$(_DOC_ABS_SRCDIR)/$${mo}"; fi; \
 	(cd $(dir $@) && \
-	  $(_xml2po) -m $(_xml2po_mode) -e -p "$${po}" \
+	  $(_xml2po) -m $(_xml2po_mode) -e -t "$${mo}" \
 	    "$${d}C/$(notdir $@)" > $(notdir $@).tmp && \
 	    cp $(notdir $@).tmp $(notdir $@) && rm -f $(notdir $@).tmp)
 .PHONY: pot
@@ -729,12 +796,14 @@ clean-doc-omf: ; rm -f $(_DOC_OMF_DB) $(_DOC_OMF_HTML)
 clean-doc-dsk: ; rm -f $(_DOC_DSK_DB) $(_DOC_DSK_HTML)
 clean-doc-lc:
 	rm -f $(_DOC_LC_DOCS)
+	rm -f $(_DOC_MOFILES)
 	@list='$(_DOC_POFILES)'; for po in $$list; do \
 	  if ! test "$$po" -ef "$(srcdir)/$$po"; then \
 	    echo "rm -f $$po"; \
 	    rm -f "$$po"; \
 	  fi; \
 	done
+#	.xml2.po.mo cleaning is obsolete as of 0.18.1 and could be removed in 0.20.x
 	@for lc in C $(_DOC_REAL_LINGUAS); do \
 	  if test -f "$$lc/.xml2po.mo"; then \
 	    echo "rm -f $$lc/.xml2po.mo"; \

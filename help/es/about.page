@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="topic" id="about" xml:lang="es">
+
+  <info>
+    <link type="seealso" xref="index"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Información acerca de <app>gLabels</app>.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+    <title>Acerca de <app>gLabels</app></title>
+
+    <p><link href="mailto:evins@snaught.com">Jim Evins</link> escribió <app>gLabels</app>. Para obtener más información acerca de <app>gLabels</app>, visite la <link href="http://glabels.org" type="http">página web de<app>gLabels</app></link>.</p>
+    <p>Para informar de un error o hacer una sugerencia acerca de esta aplicación o este manual, siga las indicaciones en la <link href="http://glabels.org/contact/" type="http">página de contacto de <app>gLabels</app></link>.</p>
+
+    <p>Este programa se distribuye bajo los términos de la Licencia Pública General GNU tal como la publica la Free Software Foundation; tanto en la versión 3 de la Licencia, o (a su elección) cualquier otra versión posterior. Puede encontrarse una copia de esta licencia en este <link href="ghelp:gpl" type="help">enlace</link>, o en el archivo COPYING incluido con el código fuente de este programa.</p>
+</page>

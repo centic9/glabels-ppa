@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="merge-ex3" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="merge#merge-ex"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Crear etiquetas de direcciones desde las entradas de la libreta de direcciones de <app>Evolution</app>.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+    <title>Ejemplo 3: Etiquetas de dirección usando la libreta de direcciones de <app>Evolution</app></title>
+
+      <p>La última fiesta fue un éxito, y se necesitan imprimir etiquetas de dirección para las invitaciones a una nueva fiesta. Para simplificarlo, se puede usar la libreta de direcciones de <app>Evolution</app>, ya que las direcciones de sus amigos están guardadas ahí.</p>
+
+      <note>
+	<p>Dependiendo de cómo se haya empaquetado su copia de <app>gLabels</app>, puede que esta opción no esté disponible. El soporte para la libreta de direcciones de <app>Evolution</app> sólo está disponible si <app>evolution-data-server</app> y sus archivos de desarrollo estaban presentes cuando se compiló <app>gLabels</app>. Tenga esto en cuenta si construye <app>gLabels</app> directamente desde las fuentes.</p>
+	
+	<p>Si el paquete <app>gLabels</app> de su distribución carece de este soporte, puede contactar con el mantenedor del paquete o informar de un error en este paquete para solicitarlo.</p>
+      </note>
+
+      <p>Se ha creado en <app>glabels</app> un documento de <app>gLabels</app> nuevo usando la plantilla Avery 5512 «Etiquetas de dirección». Ahora se usa el elemento de menú <guiseq><gui>Objetos</gui><gui>Mezclar propiedades</gui></guiseq> para mostrar el diálogo <gui>Mezclar propiedades</gui>. Use este diálogo para seleccionar el tipo de origen (en este caso, <gui>Datos de la libreta de direcciones predeterminada de Evolution</gui>) como se muestra.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-1.png" mime="image/png" style="right">
+      		<p>Diálogo de propiedades de fusión</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Una vez que se han elegido <gui>Datos de la libreta predeterminada de Evolution</gui> como origen de la mezcla, obtendrá una lista completa de su contenido. Inicialmente, se comprueban todas las entradas. Asumiendo que se está planificando una gran fiesta, se puede dejar esta selección sin tocar (pero se va a mantener en mente el presupuesto). Ahora se seleccionan o deseleccionan ciertas entradas pulsando en las casillas adecuadas, o se pueden usar los botones <gui>Seleccionar todo</gui> y <gui>Deseleccionar todo</gui> para activar o desactivar todas las entradas en la libreta de direcciones.</p>
+ 
+      <p>También se puede ver cada entrada con más detalle pulsando en el desplegable adecuado (los triángulos pequeños), como se muestra. Una vez satisfechos con las selecciones en este diálogo, pulse el botón <gui>Aceptar</gui> para aceptar los cambios.</p>
+
+      <p>Ahora puede añadir a añadir objetos al documento de<application>gLabels</application> como se muestra.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-2.png" mime="image/png" style="right">
+      		<p>Añadir objetos</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>En este ejemplo existe un único objeto de texto otra vez. Este objeto de texto contiene todos los campos mezclados organizados en varias líneas como direcciones de correo.</p>
+
+      <p>Ahora se pueden imprimir las etiquetas de dirección seleccionando el elemento de menú <guiseq><gui>Archivo</gui><gui>Imprimir</gui></guiseq>. Esto mostrará el diálogo de impresión como se muestra a continuación.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-3.png" mime="image/png" style="right">
+      		<p>Imprimir etiquetas de dirección</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Sólo para asegurarse de que las etiquetas se van a ver bien, seleccione la opción <gui>Imprimir contornos</gui> y pulse en <gui>Previsualizar la impresión</gui>. Esto mostrará un diálogo de vista previa, como se muestra a continuación.</p>
+
+      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/merge-ex3-4.png" mime="image/png" style="right">
+      		<p>Vista previa de las etiquetas de dirección</p>
+    		</media>
+      <!-- ==== End of Figure ==== -->
+
+      <p>Todo parece correcto, así que ahora podemos cargar nuestra impresora con las etiquetas apropiadas, imprimir nuestras etiquetas de dirección y enviar por correo nuestras invitaciones a la fiesta.</p>
+
+
+</page>

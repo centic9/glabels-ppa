@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="printfile" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Cómo imprimir sus etiquetas y sus tarjetas.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>    
+  </info>
+
+    <title>Imprimir etiquetas y tarjetas</title>
+
+      <p>Para imprimir etiquetas o tarjetas, elija <guiseq><gui>Archivo</gui><gui>Imprimir</gui></guiseq> para mostrar el diálogo <gui>Imprimir</gui>. Una vez que haya seleccionado las opciones de impresión, pulse en <gui>Imprimir</gui> para imprimir las etiquetas o las tarjetas. Para sólo previsualizar el resultado, pulse en <gui>Previsualizar la impresión</gui> en su lugar.</p>
+
+      <p>El diálogo <gui>Imprimir</gui> le permite especificar las siguientes opciones de impresión:</p>
+
+      <section>
+	<title>La pestaña «etiquetas» del diálogo de impresión</title>
+
+	<section>
+            <title>Control de impresión (simple)</title>
+
+	      <p>Para etiquetas o tarjetas simples (no para documentos combinados) la sección de trabajos en pestañas contiene los siguientes controles de copia.</p>
+
+	      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/print-copies.png" mime="image/png" style="right">
+      		<p>Controles de impresión de copia</p>
+    		</media>
+	      <!-- ==== End of Figure ==== -->
+
+	      <p>El número de copias de la etiqueta se puede seleccionar eligiendo el número de hojas completas que imprimir, o un subconjunto específico de etiquetas de una sola hoja.</p>
+
+	      <p>La mini vista previa también se puede usar para seleccionar gráficamente el subconjunto de etiquetas, pulsando en la primera etiqueta de la mini vista previa y arrastrando hasta la última etiqueta.</p>
+
+	  </section>
+
+	  <section>
+            <title>Control de impresión (fusión)</title>
+
+	      <p>Para etiquetas o tarjetas que usan la capacidad de combinación de documentos (también llamada «combinación de correo»), la sección de trabajos en pestañas contiene los siguientes controles de combinación en vez de los controles de copia.</p>
+
+	      <!-- ==== Figure ==== -->
+		<media type="image" src="figures/print-merge.png" mime="image/png" style="right">
+      		<p>Controles de impresión de fusión de documentos</p>
+    		</media>
+	      <!-- ==== End of Figure ==== -->
+
+	      <p>El número total de etiquetas o tarjetas imprimidas es el producto del número de registros en el origen de la combinación y del número de copias seleccionadas. Si se seleccionan varias copias, éstas pueden ser cotejadas (copias de un mismo registro agrupados) o sin cotejar (una copia de cada registro se imprime antes del siguiente copia).</p>
+
+	      <p>La impresión puede empezar en cualquier etiqueta de la primera hoja. Ésta se puede seleccionar con el botón incremental <gui>Comenzar con la etiqueta</gui>.</p>
+
+	      <p>La mini vista previa también se puede usar para seleccionar gráficamente la primera etiqueta, pulsando en la etiqueta que quiere en la mini vista previa.</p>
+
+	  </section>
+
+	  <section> 
+	  <title>Opciones</title>
+	      <p>Se pueden seleccionar las siguientes opciones.</p>
+	      <list>
+		<item>
+		  <p><gui>imprimir márgenes</gui></p>
+		  <p>Imprimir los contornos de las etiquetas. Esta opción es útil para ejecuciones en seco, para verificar la alineación de la impresora.</p>
+		</item>
+		<item>
+		  <p><gui>imprimir en el reverso</gui></p>
+		  <p>Imprime las etiquetas como imágenes espejo. Esta opción es útil para imprimir en etiquetas que se verán por el reverso (ej. en la ventanilla de un coche).</p>
+		</item>
+		<item>
+		  <p><gui>imprimir marcas de corte</gui></p>
+		  <p>Imprime marcas de corte a lo largo del borde de la hoja. Esta opción es útil para imprimir en páginas en blanco, y recortarlas después de imprimir. Esta opción no funciona bien con todas las plantillas.</p>
+		</item>
+	      </list>
+	</section>
+       </section>
+
+</page>

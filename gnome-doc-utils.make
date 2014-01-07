@@ -138,7 +138,7 @@ _db2omf  ?= `$(PKG_CONFIG) --variable db2omf gnome-doc-utils`
 _malrng  ?= `$(PKG_CONFIG) --variable malrng gnome-doc-utils`
 _chunks  ?= `$(PKG_CONFIG) --variable xmldir gnome-doc-utils`/gnome/xslt/docbook/utils/chunks.xsl
 _credits ?= `$(PKG_CONFIG) --variable xmldir gnome-doc-utils`/gnome/xslt/docbook/utils/credits.xsl
-_ids ?= `$(PKG_CONFIG) --variable xmldir gnome-doc-utils`/gnome/xslt/docbook/utils/ids.xsl
+_ids ?= $(shell $(PKG_CONFIG) --variable xmldir gnome-doc-utils)/gnome/xslt/docbook/utils/ids.xsl
 
 if ENABLE_SK
 _ENABLE_SK = true
@@ -266,6 +266,13 @@ _DOC_POFILES = $(if $(DOC_MODULE)$(DOC_ID),					\
 .PHONY: po
 po: $(_DOC_POFILES)
 
+## @ _DOC_MOFILES
+## The .mo files used for translating the document
+_DOC_MOFILES = $(patsubst %.po,%.mo,$(_DOC_POFILES))
+
+.PHONY: mo
+mo: $(_DOC_MOFILES)
+
 ## @ _DOC_LC_MODULES
 ## The top-level documentation files in all other locales
 _DOC_LC_MODULES = $(if $(DOC_MODULE),						\
@@ -332,22 +339,29 @@ $(_DOC_POFILES):
 	    $(_xml2po) -m $(_xml2po_mode) -e -u $(notdir $@) $$docs); \
 	fi
 
+$(_DOC_MOFILES): %.mo: %.po
+	@if ! test -d $(dir $@); then \
+	  echo "mkdir $(dir $@)"; \
+	  mkdir "$(dir $@)"; \
+	fi
+	msgfmt -o $@ $<
+
 # FIXME: fix the dependancy
 # FIXME: hook xml2po up
-$(_DOC_LC_DOCS) : $(_DOC_POFILES)
+$(_DOC_LC_DOCS) : $(_DOC_MOFILES)
 $(_DOC_LC_DOCS) : $(_DOC_C_DOCS)
 	if ! test -d $(dir $@); then mkdir $(dir $@); fi
 	if [ -f "C/$(notdir $@)" ]; then d="../"; else d="$(_DOC_ABS_SRCDIR)/"; fi; \
-	po="$(dir $@)$(patsubst %/$(notdir $@),%,$@).po"; \
-	if [ -f "$${po}" ]; then po="../$${po}"; else po="$(_DOC_ABS_SRCDIR)/$${po}"; fi; \
+	mo="$(dir $@)$(patsubst %/$(notdir $@),%,$@).mo"; \
+	if [ -f "$${mo}" ]; then mo="../$${mo}"; else mo="$(_DOC_ABS_SRCDIR)/$${mo}"; fi; \
 	(cd $(dir $@) && \
-	  $(_xml2po) -m $(_xml2po_mode) -e -p "$${po}" \
+	  $(_xml2po) -m $(_xml2po_mode) -e -t "$${mo}" \
 	    "$${d}C/$(notdir $@)" > $(notdir $@).tmp && \
 	    cp $(notdir $@).tmp $(notdir $@) && rm -f $(notdir $@).tmp)
 
 ## @ _DOC_POT
 ## A pot file
-_DOC_POT = $(if $(DOC_MODULE),$(DOC_MODULE).pot)
+_DOC_POT = $(if $(DOC_MODULE),$(DOC_MODULE).pot,$(if $(DOC_ID),$(DOC_ID).pot))
 .PHONY: pot
 pot: $(_DOC_POT)
 $(_DOC_POT): $(_DOC_C_DOCS_NOENT)
@@ -386,12 +400,14 @@ clean-doc-omf: ; rm -f $(_DOC_OMF_DB) $(_DOC_OMF_HTML)
 clean-doc-dsk: ; rm -f $(_DOC_DSK_DB) $(_DOC_DSK_HTML)
 clean-doc-lc:
 	rm -f $(_DOC_LC_DOCS)
+	rm -f $(_DOC_MOFILES)
 	@list='$(_DOC_POFILES)'; for po in $$list; do \
 	  if ! test "$$po" -ef "$(srcdir)/$$po"; then \
 	    echo "rm -f $$po"; \
 	    rm -f "$$po"; \
 	  fi; \
 	done
+#	.xml2.po.mo cleaning is obsolete as of 0.18.1 and could be removed in 0.20.x
 	@for lc in C $(_DOC_REAL_LINGUAS); do \
 	  if test -f "$$lc/.xml2po.mo"; then \
 	    echo "rm -f $$lc/.xml2po.mo"; \
