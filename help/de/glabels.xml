@@ -1,0 +1,1776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "2.2.6">
+<!ENTITY manrevision "2.2.6">
+<!ENTITY date "December 2007">
+<!ENTITY app "<application>gLabels</application>">
+<!-- Information about the entities
+       The legal.xml file contains legal information, there is no need to edit the file. 
+       Use the appversion entity to specify the version of the application.
+       Use the manrevision entity to specify the revision number of this manual.
+       Use the date entity to specify the release date of this manual.
+       Use the app entity to specify the name of the application. -->]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Apr 11, 2002
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="de">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title><application>gLabels</application>-Handbuch V2.2.6</title>       
+	<abstract role="description">
+      	<para>Benutzerhandbuch für <application>gLabels</application>, einem Programm zum Erstellen von Etiketten und Visitenkarten</para>
+    </abstract>
+    <copyright> 
+      <year>2003-2009</year> 
+      <holder>Jim Evins</holder> 
+    </copyright><copyright><year>2008, 2009</year><holder>Mario Blättermann (mariobl@gnome.org)</holder></copyright>
+    	<publisher> 
+      		<publishername>Jim Evins</publishername> 
+    	</publisher> 
+
+     <legalnotice id="legalnotice">
+	<para>Das vorliegende Dokument kann gemäß den Bedingungen der GNU Free Documentation License (GFDL), Version 1.1 oder jeder späteren, von der Free Software Foundation veröffentlichten Version ohne unveränderbare Abschnitte sowie ohne Texte auf dem vorderen und hinteren Buchdeckel kopiert, verteilt und/oder modifiziert werden. Eine Kopie der GFDL finden Sie unter diesem <ulink type="help" url="ghelp:fdl">Link</ulink> oder in der mit diesem Handbuch gelieferten Datei COPYING-DOCS.</para>
+         <para>Dieses Handbuch ist Teil einer Sammlung von GNOME-Handbüchern, die unter der GFDL veröffentlicht werden. Wenn Sie dieses Handbuch getrennt von der Sammlung weiterverbreiten möchten, können Sie das tun, indem Sie eine Kopie der Lizenz zum Handbuch hinzufügen, wie es in Abschnitt 6 der Lizenz beschrieben ist.</para>
+
+	<para>Viele der Namen, die von Unternehmen verwendet werden, um ihre Produkte und Dienstleistungen von anderen zu unterscheiden, sind eingetragene Warenzeichen. An den Stellen, an denen diese Namen in einer GNOME-Dokumentation erscheinen, werden die Namen in Großbuchstaben oder mit einem großen Anfangsbuchstaben geschrieben, wenn das GNOME-Dokumentationsprojekt auf diese Warenzeichen hingewiesen wird.</para>
+
+	<para>DAS DOKUMENT UND VERÄNDERTE FASSUNGEN DES DOKUMENTS WERDEN UNTER DEN BEDINGUNGEN DER GNU FREE DOCUMENTATION LICENSE ZUR VERFÜGUNG GESTELLT MIT DEM WEITERGEHENDEN VERSTÄNDNIS, DASS: <orderedlist>
+		<listitem>
+		  <para>DIESES DOKUMENT WIRD »WIE VORLIEGEND« GELIEFERT, OHNE GARANTIEN IRGENDEINER ART, SOWOHL AUSDRÜCKLICH GENANNTE ALS AUCH ANGEDEUTETE. DIES BEZIEHT SICH AUCH OHNE EINSCHRÄNKUNG AUF GARANTIEN, DASS DIESES DOKUMENT ODER VERÄNDERTE FASSUNGEN DIESES DOKUMENTS FREI VON HANDELSDEFEKTEN, FÜR EINEN BESTIMMTEN ZWECK GEEIGNET IST ODER DASS ES KEINE RECHTE DRITTER VERLETZT. DAS VOLLE RISIKO WAS QUALITÄT, GENAUIGKEIT UND LEISTUNG DES DOKUMENTS ODER VERÄNDERTE FASSUNGEN DES DOKUMENTS LIEGT BEI IHNEN. SOLLTE EIN DOKUMENT ODER EINE VERÄNDERTE FASSUNG DAVON FEHLER IRGENDEINER ART BEINHALTEN, TRAGEN SIE (NICHT DER URSPRUNGSAUTOR, DER AUTOR ODER EIN MITWIRKENDER) DIE KOSTEN FÜR NOTWENDIGE DIENSTLEISTUNGEN, REPARATUREN ODER FEHLERKORREKTUREN. DIESER HAFTUNGSAUSSCHLUSS IST EIN ESSENZIELLER TEIL DIESER LIZENZ. DIE VERWENDUNG EINES DOKUMENTS ODER EINER VERÄNDERTEN VERSION DES DOKUMENTS IST NICHT GESTATTET AUßER UNTER BEACHTUNG DIESES HAFTUNGSAUSSCHLUSSES UND</para>
+		</listitem>
+		<listitem>
+		  <para>UNTER KEINEN UMSTÄNDEN UND AUF BASIS KEINER RECHTSGRUNDLAGE, EGAL OB DURCH UNERLAUBTEN HANDLUNGEN (EINSCHLIEßLICH FAHRLÄSSIGKEIT), VERTRAG ODER ANDERWEITIG KANN DER AUTOR, URSPRUNGSAUTOR, EIN MITWIRKENDER ODER EIN VERTRIEBSPARTNER DIESES DOKUMENTS ODER EINER VERÄNDERTEN FASSUNG DES DOKUMENTS ODER EIN ZULIEFERER EINER DIESER PARTEIEN, HAFTBAR GEMACHT WERDEN FÜR DIREKTE, INDIREKTE, SPEZIELLE, VERSEHENTLICHE ODER FOLGESCHÄDEN JEGLICHER ART, EINSCHLIEßLICH UND OHNE EINSCHRÄNKUNGEN SCHÄDEN DURCH VERLUST VON KULANZ, ARBEITSAUSFALL, COMPUTERVERSAGEN ODER COMPUTERFEHLFUNKTIONEN ODER ALLE ANDEREN SCHÄDEN ODER VERLUSTE, DIE SICH AUS ODER IN VERBINDUNG MIT DER VERWENDUNG DES DOKUMENTS UND VERÄNDERTER FASSUNGEN DES DOKUMENTS ERGEBEN, AUCH WENN DIE OBEN GENANNTEN PARTEIEN ÜBER DIE MÖGLICHKEIT SOLCHER SCHÄDEN INFORMIERT WAREN.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+	any of this. -->
+
+    <authorgroup> 
+      <author role="maintainer"> 
+		<firstname>Jim</firstname> 
+		<surname>Evins</surname> 
+      </author> 
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+     
+      <othercredit role="translator">
+		<firstname>Latin</firstname> 
+		<surname>Translator 1</surname> 
+		<affiliation> 
+	  		<orgname>Latin Translation Team</orgname> 
+	  		<address> <email>translator@gnome.org</email> </address> 
+		</affiliation>
+		<contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+
+
+<!-- According to GNU FDL, revision history is mandatory if you are -->
+<!-- modifying/reusing someone else's document.  If not, you can omit it. -->
+<!-- Remember to remove the &manrevision; entity from the revision entries other
+-->
+<!-- than the current revision. -->
+<!-- The revision numbering system for GNOME manuals is as follows: -->
+<!-- * the revision number consists of two components -->
+<!-- * the first component of the revision number reflects the release version of the GNOME desktop. -->
+<!-- * the second component of the revision number is a decimal unit that is incremented with each revision of the manual. -->
+<!-- For example, if the GNOME desktop release is V2.x, the first version of the manual that -->
+<!-- is written in that desktop timeframe is V2.0, the second version of the manual is V2.1, etc. -->
+<!-- When the desktop release version changes to V3.x, the revision number of the manual changes -->
+<!-- to V3.0, and so on. -->  
+    <revhistory>
+      <revision> 
+		<revnumber>gLabels-Handbuch V2.2.6</revnumber> 
+		<date>October 2009</date> 
+		<revdescription> 
+	  		<para role="author">Mario Blättermann <email>mariobl@gnome.org</email></para>
+	  		<para role="publisher">Jim Evins</para>
+		</revdescription> 
+      </revision> 
+      <revision> 
+		<revnumber>gLabels-Handbuch V2.2</revnumber> 
+		<date>Dezember 2007</date> 
+		<revdescription> 
+	  		<para role="author">Jim Evins <email>evins@snaught.com</email></para>
+	  		<para role="publisher">Jim Evins</para>
+		</revdescription> 
+      </revision> 
+    </revhistory> 
+
+    <releaseinfo>Dieses Handbuch beschreibt Version 2.2.6 von <application>gLabels</application>.</releaseinfo> 
+    <legalnotice> 
+      <title>Rückmeldungen</title> 
+      <para>Um einen Fehler zu melden oder einen Vorschlag zur Anwendung <application>gLabels</application> oder zu diesem Handbuch zu machen, folgen Sie den Anweisungen auf der <ulink url="http://glabels.sourceforge.net/contact/" type="http"><application>gLabels</application>-Kontaktseite</ulink>.</para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>gLabels</primary> 
+  </indexterm> 
+  <indexterm zone="index"> 
+    <primary>glabels</primary> 
+  </indexterm>
+
+
+
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <sect1 id="glabels-introduction"> 
+    <title>Einführung</title> 
+
+    <para>Die Anwendung <application>gLabels</application> ist ein ressourcenschonendes Programm zum Erstellen von Etiketten und Visitenkarten für die <systemitem>GNOME</systemitem>-Arbeitsumgebung. Es wurde für die verschiedensten mit Laser- oder Tintenstrahldruckern bedruckbaren (auch selbstklebenden) Etiketten sowie Visitenkarten entworfen, so wie Sie sie in den meisten Schreibwarengeschäften finden.</para>
+
+  </sect1>
+
+
+
+
+<!-- =========== Getting Started ============================== -->
+<!-- Use the Getting Started section to describe the steps required
+     to start the application and to describe the user interface components
+     of the application. If there is other information that it is important
+     for readers to know before they start using the application, you should
+     also include this information here. 
+     If the information about how to get started is very short, you can 
+     include it in the Introduction and omit this section. -->
+
+  <sect1 id="glabels-getting-started"> 
+    <title>Erste Schritte</title> 
+
+    <sect2 id="glabels-start">
+    <title><application>gLabels</application> starten</title>
+    <para>Sie können <application>gLabels</application> auf folgende Arten starten:</para> 
+    <variablelist>
+    	<varlistentry>
+    		<term>Menü <guimenu>Anwendungen</guimenu></term>
+    		<listitem>
+    		<para>Wählen Sie <menuchoice><guisubmenu>Büroanwendungen</guisubmenu><guimenuitem>gLabels</guimenuitem></menuchoice>.</para>
+    		</listitem>
+    	</varlistentry>
+    	<varlistentry>
+    		<term>Befehlszeile</term>
+    		<listitem>
+    		<para>Geben Sie <command>glabels</command> ein, und drücken Sie dann die <keycap>Eingabetaste</keycap>.</para>
+    		</listitem>
+    	</varlistentry>
+    </variablelist>
+    </sect2>
+
+    <sect2 id="glabels-when-start">
+    <title>Beim Start von <application>gLabels</application></title>
+    <para>Nach dem Start von <application>gLabels</application> erscheint folgendes Fenster:</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="mainwindow-fig"> 
+	<title><application>gLabels</application>-Startfenster</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/main-window-empty.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+
+    <!-- Include any descriptions of the GUI immediately after the screenshot of the main UI, -->
+    <!-- for example, the items on the menubar and on the toolbar. This section is optional. -->
+
+    <para>Das <application>gLabels</application>-Fenster enthält folgende Elemente:</para>
+      <variablelist>
+	<varlistentry>
+	<term>Menüleiste.</term>
+	<listitem>
+	    <para>Die Menüs in der Menüleiste enthalten alle Befehle, die Sie zum Erstellen und Bearbeiten von Etiketten und Visitenkarten in <application>gLabels</application> benötigen.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Haupt-Werkzeugleiste.</term>
+	<listitem>
+	    <para>Die Haupt-Werkzeugleiste enthält eine Auswahl der Befehle, die Sie über die Menüleiste in den Menüs »Datei« und »Bearbeiten« erreichen.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Zeichenwerkzeugleiste.</term>
+	<listitem>
+	    <para>Die Zeichenwerkzeugleiste enthält eine Auswahl von Befehlen zum Bearbeiten des aktuellen <application>gLabels</application>-Dokuments.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Anzeigebereich.</term>
+	<listitem>
+	    <para>Der Anzeigebereich ist die Zeichenfläche für <application>gLabels</application>.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Objekt-Seitenleiste.</term>
+	<listitem>
+	    <para>Die Objekt-Seitenleiste stellt eine Schnittstelle zum Betrachten und Bearbeiten der Eigenschaften eines bestimmten Objekts zur Verfügung.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Eingenschaften-Werkzeugleiste.</term>
+	<listitem>
+	    <para>Die Eigenschaften-Werkzeugleiste enthält eine Reihe von Werkzeugen zum Manipulieren der Eigenschaften ausgewählter Objekte sowie zum Setzen der Standardeigenschaften für neue Objekte.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Statusleiste.</term>
+	<listitem>
+	    <para>In der Statusleiste werden Informationen über die aktuelle <application>gLabels</application>-Aktivität und Kontextinformationen über die Menüpunkte angezeigt.</para>
+	</listitem>
+	</varlistentry>
+	</variablelist>
+    </sect2>
+  </sect1>
+
+
+
+
+<!-- ================ Usage ================================ -->
+<!-- Use this section to describe how to use the application to perform the tasks for 
+  which the application is designed. -->
+  <sect1 id="glabels-usage"> 
+    <title>Benutzung</title> 
+
+<!-- ============= To create a new file ============================= -->
+    <sect2 id="glabels-open-new"> 
+      <title>Erstellen eines neuen Etiketts oder einer neuen Karte</title>
+
+      <para>Um ein neues Etikett oder eine neue Visitenkarte anzulegen, wählen Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Neu</guimenuitem></menuchoice>, um den Dialog <guilabel>Neues Etikett oder neue Karte</guilabel> anzuzeigen. Wählen Sie den Medientyp und die Ausrichtung für das neue Dokument aus und klicken Sie anschließend auf <guibutton>OK</guibutton>. Ein neues Dokument erscheint im Anzeigebereich des <application>gLabels</application>-Fensters.</para>
+
+      <para>Falls Ihr spezieller Medientyp in diesem Dialog nicht angezeigt wird, siehe <xref linkend="glabels-create-template"/>.</para>
+
+    </sect2>
+
+<!-- ============= To Open a File ============================= -->
+    <sect2 id="glabels-open-file"> 
+      <title>Öffnen einer Datei</title>
+
+      <para>Um eine Datei zu öffnen, wählen Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Öffnen</guimenuitem></menuchoice>, um den Dialog <guilabel>Datei öffnen</guilabel> anzuzeigen. Wählen Sie die gewünschte Datei aus und klicken Sie dann auf <guibutton>Öffnen</guibutton>. Die Datei wird im Anzeigebereich des <application>gLabels</application>-Fensters geöffnet.</para>
+
+      <para>Sie können in <application>gLabels</application> auch mehrere Dateien öffnen. Die Anwendung erzeugt ein separates Fenster für jede geöffnete Datei.</para>
+
+      <para>Die Anwendung speichert die Pfade und Dateinamen der von Ihnen zuletzt bearbeiteten Dateien. Diese Dateien werden als Einträge im Menü <menuchoice><guimenu>Datei</guimenu><guisubmenu>Zuletzt benutzt</guisubmenu></menuchoice> angezeigt.</para>
+
+    </sect2>
+
+<!-- ============= To Open Multiple Files from the Command Line ========= -->
+    <sect2 id="glabels-run-from-cmd-line"> 
+      <title>Öffnen mehrerer Dateien aus einer Befehlszeile</title>
+
+      <para>Sie können <application>gLabels</application> aus einer Befehlszeile starten und eine Datei oder mehrere Dateien öffnen. Um mehrere Dateien aus einer Befehlszeile zu öffnen, geben Sie den folgenden Befehl ein und drücken dann die <keycap>Eingabetaste</keycap>:</para>
+
+      <para><command>glabels <replaceable>Datei1.glabels Datei2.glabels Datei3.glabels</replaceable></command></para>
+
+      <para>Wenn die Anwendung startet, werden die von Ihnen angegebenen Dateien in separaten <application>gLabels</application>-Fenstern angezeigt.</para>
+
+    </sect2>
+
+<!-- ============= To Save a File ========= -->
+    <sect2 id="glabels-save-file"> 
+      <title>Speichern einer Datei</title>
+
+      <para>Sie können Dateien auf folgende Arten speichern:</para>
+
+      <itemizedlist> 
+	<listitem>
+
+	  <para>Um die Änderungen in der bereits vorhandenen Datei zu speichern, wählen Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Speichern</guimenuitem></menuchoice>.</para>
+
+	</listitem>
+	<listitem>
+
+	  <para>Um eine neue Datei oder eine bestehende Datei unter einem neuen Dateinamen zu speichern, wählen Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Speichern unter</guimenuitem></menuchoice>. Geben Sie einen Namen für die Datei im Dialogfeld <guilabel>Speichern unter</guilabel> ein und klicken Sie anschließend auf <guibutton>OK</guibutton>. </para>
+
+	</listitem>
+      </itemizedlist>
+
+    </sect2>
+
+<!-- ============= To Change Label Properties ========= -->
+    <sect2 id="glabels-label-properties"> 
+      <title>Ändern der Eigenschaften eines Etiketts</title>
+
+      <para>Um den Medientyp oder die Ausrichtung des Etiketts zu ändern, wählen Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Eigenschaften</guimenuitem></menuchoice>, um den Dialog <guilabel>Etikett-Eigenschaften</guilabel> anzuzeigen. Wählen Sie den neuen Medientyp für das Dokument aus und klicken Sie anschließend auf <guibutton>OK</guibutton>.</para>
+
+    </sect2>
+
+<!-- ============= To create a custom template ======================= -->
+    <sect2 id="glabels-create-template"> 
+      <title>Erstellen einer benutzerdefinierten Vorlage</title>
+
+      <para>Um eine neue benutzerdefinierte Vorlage zu erstellen, wählen Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Vorlagen-Designer …</guimenuitem></menuchoice>, um den <guilabel>Vorlagen-Designer</guilabel>-Dialog anzuzeigen. Dieser Dialog hilft Ihnen bei der Erstellung einer benutzerdefinierten Vorlage für die meisten Typen von Etiketten oder Visitenkarten, die Ihnen in Schreibwarengeschäften begegnen könnten.</para>
+
+      <para>Falls Sie dies bevorzugen, können Sie Ihre Vorlagen auch manuell erstellen. Weitere Informationen hierzu finden Sie in <xref linkend="glabels-manual-create-template"/>.</para>
+
+    </sect2>
+
+<!-- ============= To Close a File ========= -->
+    <sect2 id="glabels-close-file"> 
+      <title>Schließen einer Datei</title>
+
+      <para>Um das aktuelle Dokument zu schließen, wählen Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Schließen</guimenuitem></menuchoice>, um das Anwendungsfenster zu schließen. Falls das aktuelle Dokument bearbeitet wurde, wird ein Bestätigungsdialog geöffnet, in welchem Sie das Dokument speichern oder den Vorgang abbrechen können. Falls das zu schließende Fenster das einzige offene Fenster ist, wird <application>gLabels</application> dadurch beendet.</para>
+
+    </sect2>
+
+<!-- ============= To Quit ========= -->
+    <sect2 id="glabels-quit"> 
+      <title><application>gLabels</application> beenden</title>
+
+      <para>Um <application>gLabels</application> zu beenden, wählen Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Beenden</guimenuitem></menuchoice>. Dadurch werden alle offenen Fenster geschlossen. Siehe <xref linkend="glabels-close-file"/>.</para>
+
+    </sect2>
+
+<!-- ============= To Print Labels and Cards ========= -->
+    <sect2 id="glabels-print-file"> 
+      <title>Drucken von Etiketten oder Karten</title>
+
+      <para>Um Etiketten oder Visitenkarten zu drucken, wählen Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Drucken</guimenuitem></menuchoice>, um den <guilabel>Drucken</guilabel>-Dialog anzuzeigen. Nachdem Sie die Druckoptionen ausgewählt haben, klicken Sie auf <guilabel>Drucken</guilabel>, um die Etiketten oder Visitenkarten zu drucken. Um zunächst eine Vorschau auf die Druckergebnisse zu erhalten, klicken Sie auf <guilabel>Druckvorschau</guilabel>.</para>
+
+      <para>Im Dialog <guilabel>Drucken</guilabel> können Sie die folgenden Optionen zum Drucken festlegen:</para>
+		
+      <sect3 id="print-dialog-job">
+	<title>Der Reiter »Etiketten« des Druckdialogs</title>
+
+	<variablelist>
+
+	  <varlistentry>
+            <term><guilabel>Drucksteuerung (einfach)</guilabel></term>
+	    <listitem> 
+
+	      <para>Für einfache Etiketten oder Karten (keine Dokumentmischung) enthält der Reiter »Labels« die folgenden Einstellmöglichkeiten.</para>
+
+	      <!-- ==== Figure ==== -->
+	      <figure id="print-copies-fig"> 
+		<title>Angeben der Kopien</title> 
+		<screenshot> 
+		  <mediaobject> 
+		    <imageobject><imagedata fileref="figures/print-copies.png" format="PNG"/> 
+		    </imageobject>
+		  </mediaobject> 
+		</screenshot> 
+	      </figure>
+	      <!-- ==== End of Figure ==== -->
+
+	      <para>Die Anzahl der Kopien können Sie wählen, indem Sie die Anzahl der vollständig zu druckenden Seiten oder eine Teilmenge von Etiketten auf einer einzelnen Seite auswählen.</para>
+
+	      <para>Die verkleinerte Vorschau können Sie auch dazu verwenden, einen Teil der Etiketten grafisch auszuwählen, indem Sie auf das erste Etikett klicken und es auf das letzte Etikett ziehen.</para>
+
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+            <term><guilabel>Drucksteuerung (Mischen)</guilabel></term>
+	    <listitem> 
+
+	      <para>Für Etiketten oder Karten unter Verwendung der Dokumentmischung enthält dieser Reiter die folgenden Einstellungen zur Mischung von Dokumenten anstelle der Festlegung der Kopien.</para>
+
+	      <!-- ==== Figure ==== -->
+	      <figure id="print-merge-fig"> 
+		<title>Steuerung der Einmischung von Dokumenten</title> 
+		<screenshot> 
+		  <mediaobject> 
+		    <imageobject><imagedata fileref="figures/print-merge.png" format="PNG"/> 
+		    </imageobject>
+		  </mediaobject> 
+		</screenshot> 
+	      </figure>
+	      <!-- ==== End of Figure ==== -->
+
+	      <para>Die Gesamtzahl der gedruckten Etiketten oder Karten ergibt sich als Produkt aus der Anzahl der Datensätze in der Einmischquelle und der Anzahl der gewählten Kopien. Falls mehrere Kopien gewählt wurden, können diese entweder zusammengefasst werden (durch Gruppieren der Kopien des gleichen Datensatzes) oder nicht zusammengefasst (eine Kopie jedes Datensatzes wird immer vor der nächsten Kopie gedruckt).</para>
+
+	      <para>Der Druck kann mit jedem beliebigen Etikett der ersten Seite begonnen werden. Dies können Sie im Einstellfeld <guilabel>Start bei Etikett</guilabel> auswählen.</para>
+
+	      <para>In der verkleinerten Vorschau können Sie das erste Etikett grafisch auswählen, indem Sie das gewünschte Etikett anklicken.</para>
+
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry> <term><guilabel>Optionen</guilabel> </term> 
+	    <listitem> 
+	      <para>Die folgenden Optionen können ebenfalls gewählt werden.</para>
+	      <itemizedlist>
+		<listitem>
+		  <para><guilabel>Begrenzungen drucken</guilabel></para>
+		  <para>Begrenzungen der Etiketten drucken. Diese Option ist nützlich, wenn Sie die Lage des Papiers im Drucker prüfen wollen.</para>
+		</listitem>
+		<listitem>
+		  <para><guilabel>Spiegelbildlich drucken</guilabel></para>
+		  <para>Druckt die Etiketten spiegelbildlich. Diese Option ist nützlich für das Drucken durchsichtiger Aufkleber, die von der Rückseite aus betrachtet werden (z.B. hinter Autoscheiben).</para>
+		</listitem>
+		<listitem>
+		  <para><guilabel>Schnitt</guilabel></para>
+		  <para>Druckt Schnittmarken entlang der Papierränder. Diese Option ist nützlich zum Drucken auf Papier, das erst nach dem Druck beschnitten werden soll. Diese Option funktioniert eventuell nicht mit allen Vorlagen.</para>
+		</listitem>
+	      </itemizedlist>
+	    </listitem>
+	  </varlistentry>
+	</variablelist>
+      </sect3>
+		
+    </sect2>
+
+<!-- ============= To Create New Objects ========= -->
+    <sect2 id="glabels-new-objects"> 
+      <title>Erstellen neuer Objekte</title>
+
+      <para>Objekte können ausgewählt werden, indem Sie das entsprechende Objekt in <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Erzeugen</guimenuitem></menuchoice> auswählen oder über die <guilabel>Zeichenwerkzeugleiste</guilabel>. Dadurch wird der Anzeigebereich in den Objekterzeugungsmodus versetzt, was am Mauszeiger erkennbar ist. Um zum vorgegebenen Objektauswahlmodus zurückzukehren, ohne ein Objekt zu erzeugen, wählen Sie <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Auswahlmodus</guimenuitem></menuchoice>. Dadurch wird der Mauszeiger im Anzeigebereich wieder in den vorgegebenen Auswahlzeiger geändert.</para>
+
+      <para>Nachfolgend wird der Modus zur Erstellung der Objekte für jeden Objekttyp beschrieben:</para>
+
+      <variablelist>
+
+	<varlistentry>
+	  <term>Text</term>
+	  <listitem>
+	    <para>Klicken Sie auf die gewünschte Stelle in der linken oberen Ecke des Textobjekts. Neue Textobjekte erhalten anfänglich den Inhalt »Text«. Wie Sie diesen Text oder andere Eigenschaften ändern können, finden Sie in <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Rechteck</term>
+	  <listitem>
+	    <para>Klicken Sie auf die gewünschte Stelle für die linke obere Ecke des Rechteckobjekts und ziehen Sie zur gewünschten rechten unteren Ecke. Wenn Sie einfach auf eine Stelle klicken, wird ein quadratisches Objekt erzeugt. Wie Sie die Eigenschaften des Rechteckobjekts ändern können, finden Sie in <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Linie</term>
+	  <listitem>
+	    <para>Klicken Sie auf die gewünschte Stelle für das Ende des Linienobjekts und ziehen Sie zur gewünschten Stelle des anderen Endes. Wenn Sie einfach auf eine Stelle klicken, wird eine diagonale Linie erzeugt. Wie Sie die Eigenschaften des Linienobjekts ändern können, finden Sie in <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Ellipse</term>
+	  <listitem>
+	    <para>Klicken Sie auf die gewünschte Stelle für die linke obere Ecke des Ellipsenobjekts und ziehen Sie zur gewünschten rechten unteren Ecke. Wenn Sie einfach auf eine Stelle klicken, wird ein Kreis erzeugt. Wie Sie die Eigenschaften des Ellipsenobjekts ändern können, finden Sie in <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Image</term>
+	  <listitem>
+	    <para>Klicken Sie auf die gewünschte Stelle für die linke obere Ecke des Bildobjekts und ziehen Sie zur gewünschten rechten unteren Ecke. Wenn Sie einfach auf eine Stelle klicken, wird ein quadratisches Objekt erzeugt. Neue Bildobjekte erhalten anfänglich ein Schachbrettmuster. Wie Sie dies oder andere Eigenschaften des Bildobjekts ändern können, finden Sie in <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Strichcode</term>
+	  <listitem>
+	    <para>Klicken Sie auf die gewünschte Stelle für die linke obere Ecke des Strichcodeobjekts und ziehen Sie zur gewünschten rechten unteren Ecke. Neue Objekte erhalten anfänglich einen POSTNET-Strichcode mit Beispieldaten. Wie Sie die Eigenschaften des Strichcodeobjekts ändern können, finden Sie in <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+      </variablelist>
+
+
+    </sect2>
+
+<!-- ============= To Select Objects ========= -->
+    <sect2 id="glabels-select-objects"> 
+      <title>Auswählen von Objekten</title>
+
+      <para>Eine Voraussetzung zum Ausführen von Operationen auf Objekten ist die Auswahl individueller Objekte oder Gruppen von Objekten. Der Anzeigebereich muss sich im Objektauswahlmodus befinden, was durch einen pfeilförmigen Mauszeiger angezeigt wird. Der Objektauswahlmodus wird über den Menüeintrag <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Auswahlmodus</guimenuitem></menuchoice> aktiviert oder über das entsprechende Objekt in der <guilabel>Zeichenwerkzeugleiste</guilabel>.</para>
+
+      <variablelist>
+
+	<varlistentry>
+	  <term>Auswahl eines einzelnen Objekts</term>
+	  <listitem>
+	    <para>Ein einzelnes Objekt können Sie auswählen, indem Sie das gewünschte Objekt im Anzeigebereich anklicken. Nach dem Anklicken wird das Objekt durch Anfasspunkte zur Größenänderung hervorgehoben.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Auswahl mehrerer Objekte</term>
+	  <listitem>
+	    <para>Sie können mehrere Objekte auswählen, indem Sie zunächst das erste Objekt auswählen, wie oben beschrieben. Halten Sie dann bei der Auswahl weiterer Objekte die <keycap>Strg</keycap>-Taste gedrückt. Zusätzliche Objekte können Sie jederzeit zur Auswahl hinzufügen, wenn Sie wiederum die <keycap>Strg</keycap>-Taste gedrückt halten und die gewünschten Objekte auswählen. Alle Objekte lassen sich über den Menüeintrag <menuchoice><guimenu>Bearbeiten</guimenu><guimenuitem>Alle auswählen</guimenuitem></menuchoice> auswählen. Alle Objekte in einer zusammenhängenden Objektauswahl werden hervorgehoben dargestellt.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Bereichsauswahl</term>
+	  <listitem>
+	    <para>Sie können auch mehrere Objekte auswählen, indem Sie in einen leeren Bereich klicken und mit der Maus die Form eines Rechtecks aufziehen. Daraufhin bilden alle Objekte in diesem Bereich eine zusammenhängende Auswahl. Eine Bereichsauswahl kann zum Hinzufügen einer vorhandenen Auswahl benutzt werden, wenn Sie bei der Auswahl die <keycap>Strg</keycap>-Taste gedrückt halten.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Auswahl von Objekten aufheben</term>
+	  <listitem>
+	    <para>Sie können individuelle Objekte aus einer vorhandenen Auswahl entfernen, wenn Sie beim Klicken auf ein zuvor ausgewähltes Objekt die <keycap>Strg</keycap>-Taste gedrückt halten. Die gesamte Auswahl können Sie rückgängig machen, indem Sie im Menü <menuchoice><guimenu>Bearbeiten</guimenu><guimenuitem>Alle Markierungen löschen</guimenuitem></menuchoice> wählen. Sobald ein Objekt nicht mehr ausgewählt ist, wird es nicht mehr hervorgehoben dargestellt.</para>
+	  </listitem>
+	</varlistentry>
+
+      </variablelist>
+
+    </sect2>
+
+<!-- ============= Clipboard Commands ========= -->
+    <sect2 id="glabels-clipboard"> 
+      <title>Befehle für die Zwischenablage</title>
+
+      <para>Objektauswahlen können durch die Standardoperationen der Zwischenablage <guimenuitem>Ausschneiden</guimenuitem>, <guimenuitem>Kopieren</guimenuitem>, <guimenuitem>Einfügen</guimenuitem> und <guimenuitem>Löschen</guimenuitem> manipuliert werden.</para>
+
+      <variablelist>
+
+	<varlistentry>
+	  <term>
+            <menuchoice>
+	      <shortcut>
+		<keycombo><keycap>Strg</keycap><keycap>X</keycap></keycombo>
+	      </shortcut>
+	      <guimenuitem>Ausschneiden</guimenuitem>
+	    </menuchoice>
+          </term>
+	  <listitem>
+	    <para>Verschiebt die ausgewählten Objekte in die Zwischenablage. Diese Objekte sind dann verfügbar, um später in das aktuelle Dokument oder ein anderes Dokument eingefügt zu werden.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>
+            <menuchoice>
+	      <shortcut>
+		<keycombo><keycap>Strg</keycap><keycap>C</keycap></keycombo>
+	      </shortcut>
+	      <guimenuitem>Kopieren</guimenuitem>
+	    </menuchoice>
+          </term>
+	  <listitem>
+	    <para>Kopiert die ausgewählten Objekte in die Zwischenablage, ohne sie zu entfernen. Diese Objekte sind dann verfügbar, um später in das aktuelle Dokument oder ein anderes Dokument eingefügt zu werden.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>
+            <menuchoice>
+	      <shortcut>
+		<keycombo><keycap>Strg</keycap><keycap>V</keycap></keycombo>
+	      </shortcut>
+	      <guimenuitem>Einfügen</guimenuitem>
+	    </menuchoice>
+          </term>
+	  <listitem>
+	    <para>Fügt Objekte aus der Zwischenablage in das aktuelle Dokument ein. <application>gLabels</application> kann nur Objekte aus anderen <application>gLabels</application>-Dokumenten einfügen.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>
+            <menuchoice>
+	      <shortcut>
+		<keycap>Löschen</keycap>
+	      </shortcut>
+	      <guimenuitem>Löschen</guimenuitem>
+	    </menuchoice>
+          </term>
+	  <listitem>
+	    <para>Entfernt die ausgewählten Objekte, ohne sie in die Zwischenablage zu verschieben.</para>
+	  </listitem>
+	</varlistentry>
+
+      </variablelist>
+
+    </sect2>
+
+<!-- ============= To Edit object Properties ========= -->
+    <sect2 id="glabels-object-properties"> 
+      <title>Bearbeiten der Objekteigenschaften</title>
+
+      <para>Die meisten Objekteigenschaften können Sie über die Objekteditor-Seitenleiste verändern, wie unten illustriert. Um den Objekteditor zu verwenden, muss zunächst ein einzelnes Objekt ausgewählt werden. Siehe <xref linkend="glabels-select-objects"/>.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="object-editor-sidebar-fig"> 
+	<title>Objekteditor-Seitenleiste</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/object-editor-sidebar.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Der Objekteditor bietet eine Auswahl der folgenden Reiter, abhängig vom Objekttyp:</para>
+
+      <sect3 id="object-editor-text">
+	<title>Text-Reiter (Textobjekte)</title>
+
+	<para>Dieser Abschnitt bietet einen kleinen Editor zum Bearbeiten des Inhalts eines Textobjekts. Weiterhin ist ein Ausklappmenü mit den verfügbaren Schlüsseln zur Dokumentmischung enthalten, die in den Text eingefügt werden können.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-image">
+	<title>Bild-Reiter (Bild-Objekte)</title>
+
+	<para>Dieser Abschnitt enthält einen Dateiwähler mit Vorschau zur Auswahl von Bilddateien. Der »Durchsuchen«-Knopf kann zum Suchen von Bilddateien benutzt werden. Alternativ können Sie einen Schlüssel zur Dokumenteinmischung anstelle eines Dateinamens angeben, der bei der Ausgabe des Dokuments ersetzt wird.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-data">
+	<title>Daten-Reiter (Strichcode-Objekte)</title>
+
+	<para>Dieser Abschnitt enthält ein Textfeld zur Eingabe von Strichcode-Daten. Alternativ kann hier ein Schlüssel zur Dokumentmischung eingetragen werden, der beim Druck für die Bereitstellung der richtigen Daten sorgt.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-style">
+	<title>Stil-Reiter (Text-Objekte)</title>
+
+	<para>Dieser Abschnitt enthält Einstellmöglichkeiten für die Texteigenschaften, wie Schriftfamilie, Schriftgröße, Schriftstärke, Schriftfarbe und Ausrichtung des Texts.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-barcode">
+	<title>Stil-Reiter (Strichcode-Objekte)</title>
+
+	<para>Dieser Abschnitt enthält Einstellmöglichkeiten für die Eigenschaften des Strichcodes, wie Stil, Farbe, Drucken von Text oder Beinhalten einer Prüfsumme.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-line">
+	<title>Linie-Reiter</title>
+
+	<para>Dieser Abschnitt enthält Einstellmöglichkeiten für die Auswahl von Eigenschaften von Linien und Begrenzungen, wie Linienbreite und -farbe.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-fill">
+	<title>Füllung-Reiter</title>
+
+	<para>Dieser Abschnitt enthält Einstellmöglichkeiten für die Auswahl der Füllungseigenschaften von Rechteck- und Ellipsenobjekten. Derzeit ist nur die Einstellung der Füllungsfarbe möglich.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-size">
+	<title>Reiter »Größe« (alle außer Linienobjekte)</title>
+
+	<para>Dieser Abschnitt enthält Einstellmöglichkeiten für die Höhe und die Breite eines Objekts. Mit einem Ankreuzfeld können Sie die Werte aneinander koppeln, so dass das Seitenverhältnis beim Ändern der Höhe oder Breite erhalten bleibt. Für Bildobjekte gibt es außerdem einen Knopf zum Zurücksetzen des Bildes auf Originalgröße, wobei eine Auflösung von 72 dpi angenommen wird.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-size-line">
+	<title>Reiter »Größe« (Linienobjekte)</title>
+
+	<para>Dieser Abschnitt enthält Einstellmöglichkeiten für die Länge und den Winkel eines Linienobjekts.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-position">
+	<title>Reiter »Position«</title>
+
+	<para>Dieser Abschnitt beschreibt die Möglichkeiten zur Positionierung eines Objekts.</para>
+
+      </sect3>
+
+
+      <sect3 id="object-editor-shadow">
+	<title>Reiter »Schattierung« (alle außer Bild- und Strichcodeobjekten)</title>
+
+	<para>Dieser Abschnitt enthält Einstellmöglichkeiten für die Schattierung eines Objekts.</para>
+
+      </sect3>
+
+
+    </sect2>
+
+<!-- ============= Other Manipulations of Objects ========= -->
+    <sect2 id="glabels-object-manipulation"> 
+      <title>Andere Manipulationen von Objekten</title>
+
+      <para>Objekte können auf die folgenden Arten manipuliert werden.</para>
+
+      <sect3 id="other-moving-resizing">
+	<title>Verschieben und Größenänderung von Objekten</title>
+
+	<para>Objekte können Sie durch einfaches Anklicken und Ziehen des ausgewählten Objekts zur neuen Position verschieben. Falls dieses Objekt Teil einer Mehrfachauswahl ist, werden durch Ziehen dieses Objektes alle Objekte verschoben, wobei deren Abstände untereinander erhalten bleiben. Falls kein Objekt ausgewählt ist, wird durch Anklicken eines Objekts eine neue Auswahl erzeugt, die dieses Objekt enthält. Siehe <xref linkend="glabels-select-objects"/>.</para>
+
+	<para>Die Größe eines ausgewählten Objekts kann geändert werden, indem Sie auf einen der Größenänderungs-Anfasspunkte klicken und diesen ziehen, um die gewünschte Größe zu erreichen.</para>
+
+      </sect3>
+
+      <sect3 id="other-stacking-order">
+	<title>Ändern der Reihenfolge der Ebenen</title>
+
+	<para>Die Stapelreihenfolge bezieht sich auf die relative Position in der Z-Achse von Objekten. Das beschreibt beim Überlappen von Objekten, welches der Objekte über den anderen erscheint. Per Vorgabe werden neue Objekte immer oberhalb von bereits vorhandenen Objekten platziert. Um diese Anordnung zu ändern, wählen Sie <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Anordnung</guimenuitem><guimenuitem>Ganz nach vorn</guimenuitem></menuchoice>, um die Auswahl im Stapel nach oben zu verschieben, oder <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Anordnung</guimenuitem><guimenuitem>Ganz nach hinten</guimenuitem></menuchoice>, um die Auswahl im Stapel nach unten zu verschieben. Diese Menüeinträge sind auch durch einen Klick mit der rechten Maustaste auf den Ansichtsbereich verfügbar, falls sich dort eine nicht leere Auswahl befindet.</para>
+
+      </sect3>
+
+      <sect3 id="other-rotating-flipping">
+	<title>Drehen und Spiegeln von Objekten</title>
+
+	<para>Objekte können um 90 Grad in jeder Richtung gedreht oder horizontal oder vertikal gespiegelt werden. Wählen Sie hierzu den entsprechenden Eintrag im Menü <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Drehen/Spiegeln</guimenuitem></menuchoice>. Diese Menüeinträge sind auch verfügbar, wenn Sie mit der rechten Maustaste in eine nicht leere Auswahl im Ansichtsbereich klicken.</para>
+
+      </sect3>
+
+      <sect3 id="other-alignment">
+	<title>Ausrichten von Objekten</title>
+
+	<para>Objekte können horizontal oder vertikal zu einem anderen Objekt oder relativ zu einer Mittellinie des Etiketts angeordnet werden, indem Sie <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Horizontal</guimenuitem></menuchoice> oder <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Vertikal</guimenuitem></menuchoice> wählen. Diese Menüeinträge sind auch verfügbar, wenn Sie mit der rechten Maustaste in eine nicht leere Auswahl im Ansichtsbereich klicken.</para>
+
+      </sect3>
+
+      <sect3 id="other-property-bar">
+	<title>Verwendung der Eigenschaftsleiste</title>
+
+	<para>Mit der Eigenschaftsleiste können Sie einige Eigenschaften von Objekten in einem Arbeitsgang ändern. Diese Eigenschaften umfassen Schriftfamilie, Schriftgröße, Schriftstärke, Textausrichtung, Textfarbe, Füllfarbe, Farbe von Linien oder Begrenzungen sowie Linienbreiten. Die Eigenschaftsleiste regelt auch die Vorgaben für diese Eigenschaften, wenn neue Objekte erzeugt werden.</para>
+
+      </sect3>
+
+
+
+    </sect2>
+
+<!-- ============= Document Merge Features ========= -->
+    <sect2 id="glabels-merge"> 
+      <title>Ausführung einer Dokumentmischung</title>
+
+      <para>Dokumentmischung ist ein mächtiges Funktionsmerkmal, das es Ihnen ermöglicht, ein einzelnes Etikett oder eine einzelne Karte für jeden Datensatz aus einer externen Datenquelle zu erstellen.</para>
+
+      <para>Der erste Schritt zur Ausführung einer Dokumentmischung ist die Vorbereitung eines Quelldokuments, welches die Daten zum Mischen enthält. Diese Daten können aus E-Mail-Adressen oder anderen Daten bestehen, aus denen Sie die einzelnen Etiketten oder Karten erstellen wollen. Gegenwärtig können als Datenquellen entweder Textdateien oder die Daten des Evolution-Adressbuchs verwendet werden, andere sind bereits in Planung. Das derzeit unterstützte Textformat ist recht einfach: Jede Zeile stellt einen Datensatz dar, wobei die einzelnen Felder durch Kommata (CSV), Tabulatoren oder Semikola getrennt werden. Neue Zeilen werden durch einen Zeilenumbruch »\n« erzeugt. Diese Datei kann mit einem Texteditor, einem anderen Programm oder einem Skript erstellt werden. Ein üblicher Weg der Erstellung ist der Export einer CSV-Datei aus einer Tabellenkalkulation.</para>
+
+      <para>Ein Etikett muss erstellt werden, das auf diese Datenquelle »zeigt«. Um die Mischeigenschaften für ein Dokument festzulegen, wählen Sie <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Mischeinstellungen</guimenuitem></menuchoice>. Der Dialog <guilabel>Mischeinstellungen</guilabel> wird geöffnet. In diesem Dialog wählen Sie das genaue Dateiformat und den Dateinamen (den Ort) der einzumischenden Daten aus.</para>
+
+      <para>Zum Schluss, sobald das Etikett für die Datenquelle eingerichtet wurde, können die Feldschlüssel in Textobjekte eingefügt werden, um sie als Datenquelle für Strichcodeobjekte oder Bilder für Bildobjekte zu verwenden. Weitere Informationen über die Verwendung der Mischdaten für diese Objekttypen finden Sie in <xref linkend="glabels-object-properties"/>.</para>
+
+      <para>Da Ihr Etikett nun konfiguriert ist, druckt <application>gLabels</application> genau ein Etikett für jeden Datensatz des Quelldokuments, wobei alle Text-, Bild- und Strichcode-Objekte durch die Einträge der Felder jedes Datensatzes ersetzt werden.</para>
+
+      <para>In <xref linkend="glabels-merge-tutorial"/> finden Sie eine ausführliche Anleitung für dieses Funktionsmerkmal.</para>
+
+
+    </sect2>
+
+
+  </sect1>
+
+
+
+
+  <!-- ============= Customization ============================= -->
+  <!-- Use this section to describe how to customize the application. -->
+  <sect1 id="glabels-prefs"> 
+    <title>Einstellungen</title> 
+    <para>Um <application>gLabels</application> zu konfigurieren, wählen Sie <menuchoice><guimenu>Einstellungen</guimenu><guimenuitem>Einstellungen</guimenuitem></menuchoice>. Der Dialog <guilabel>Einstellungen</guilabel> enthält die folgenden Reiter:</para> 
+    <itemizedlist> 
+      <listitem> 
+	<para> 
+	  <xref linkend="glabels-prefs-locale"/></para> 
+      </listitem> 
+      <listitem> 
+	<para> 
+	  <xref linkend="glabels-prefs-object-defaults"/></para> 
+      </listitem> 
+    </itemizedlist>
+<!-- =============== Customization Subsection ================ -->
+<!-- Use a new section to describe different tabbed sections on the Settings or Preferences
+	     dialog. -->
+    <sect2 id="glabels-prefs-locale"> 
+      <title>Lokale Einstellungen</title> 
+      <variablelist> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Einheiten</guilabel> </term> 
+	  <listitem> 
+	    <para>Verwenden Sie diese Radioknöpfe, um Ihre bevorzugten Maßeinheiten festzulegen. Wählen Sie aus den folgenden Optionen:</para>
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Punkte</guilabel> </para> 
+		<para>Punkte verwenden (1 Punkt = 1/72 Zoll = 0.352778 mm).</para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Zoll</guilabel> </para> 
+		<para>Zoll verwenden.</para>
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Millimeter</guilabel> </para> 
+		<para>Millimeter verwenden.</para>
+	      </listitem> 
+	    </itemizedlist> 
+	    <para>Standard: <guilabel>Zoll</guilabel>.</para> 
+	  </listitem> 
+	</varlistentry> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Vorgegebene Seitengröße</guilabel> </term> 
+	  <listitem> 
+	    <para>Verwenden Sie diese Radioknöpfe zur Auswahl Ihrer bevorzugten Papiergröße. Dadurch lassen sich beim Erstellen neuer Etiketten oder Visitenkarten die entsprechenden Papiertypen schneller finden.</para>
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>US-Letter</guilabel> </para> 
+		<para>Die meisten Ihrer Medien haben das US-Letter-Format (8.5 x 11 inches).</para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>ISO A4</guilabel> </para> 
+		<para>Die meisten Ihrer Medien haben das ISO-A4-Format (210 x 297 mm).</para>
+	      </listitem> 
+	    </itemizedlist> 
+	    <para>Standard: <guilabel>US-Letter</guilabel>.</para> 
+	  </listitem> 
+	</varlistentry> 
+      </variablelist> 
+    </sect2>
+    <!-- ============= Customization Subsection ===================== -->
+    <!-- Another tabbed section on the Preferences dialog. -->
+    <sect2 id="glabels-prefs-object-defaults"> 
+      <title>Objekt-Voreinstellungen</title> 
+      <variablelist> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Text</guilabel> </term> 
+	  <listitem> 
+	    <para>Verwenden Sie diese Einstellmöglichkeiten, um die Standardeigenschaften neuer Textobjekte festzulegen. Diese Eigenschaften sind</para>
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Schrift</guilabel> </para> 
+		<para>Verwenden Sie diese Einstellmöglichkeiten, um die Schriftfamilie und -größe festzulegen, sowie um anzugeben, ob die Schrift fett oder kursiv dargestellt werden soll.</para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Farbe</guilabel> </para> 
+		<para>Diese Einstellung wählt die Standard-Textfarbe aus.</para>
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Ausrichtung</guilabel> </para> 
+		<para>Mit diesen Einstellungen wählen Sie die vorgegebene Textausrichtung (links, mittig oder rechts).</para>
+	      </listitem> 
+	    </itemizedlist> 
+	  </listitem> 
+	</varlistentry> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Linie</guilabel> </term> 
+	  <listitem> 
+	    <para>Verwenden sie diese Einstellmöglichkeiten, um die Standardeigenschaften von Begrenzungen und neuen Objekten festzulegen. Diese Eigenschaften sind</para>
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Breite</guilabel> </para> 
+		<para>Diese Einstellung wählt die Standard-Linienbreite aus.</para>
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Farbe</guilabel> </para> 
+		<para>Diese Einstellung wählt die Standard-Linienfarbe aus.</para>
+	      </listitem> 
+	    </itemizedlist> 
+	  </listitem> 
+	</varlistentry> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Füllen</guilabel> </term> 
+	  <listitem> 
+	    <para>Verwenden Sie diese Einstellmöglichkeiten zum Angeben der Füllungseigenschaften eines neuen Objekts. Diese Eigenschaften sind</para>
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Farbe</guilabel> </para> 
+		<para>Diese Einstellung wählt die Standard-Füllfarbe aus.</para>
+	      </listitem> 
+	    </itemizedlist> 
+	  </listitem> 
+	</varlistentry> 
+      </variablelist> 
+    </sect2> 
+  </sect1>
+
+
+
+
+<!-- ============= Document Merge Tutorial ================================== -->
+  <sect1 id="glabels-merge-tutorial"> 
+    <title>Anleitung zur Dokumentmischung</title>
+
+    <para>Dokumentmischung ist ein mächtiges Funktionsmerkmal, das es Ihnen ermöglicht, ein einzelnes Etikett oder eine einzelne Karte für jeden Datensatz aus einer externen Datenquelle zu erstellen. Es ist allerdings die am häufigsten missverstandene Funktion in <application>gLabels</application>. Die folgenden Beispiele führen Sie schrittweise durch viele der Aufgaben, die Sie mit der Dokumentmischung ausführen können.</para>
+
+    <sect2 id="merge-ex1">
+      <title>Beispiel 1: Namensschilder unter Nutzung einer CSV-Datei</title>
+  
+      <para>In diesem Beispiel organisieren Sie eine Orientierungsparty für die neuen Mannschaftsmitglieder Ihres Schiffes. Eine Liste der neuen Mitglieder haben Sie in <application>gnumeric</application> erstellt und in die folgende CSV-Datei exportiert. Sie könnten diese Datei auch in einem Texteditor erstellen, aber schließlich leben wir im 23. Jahrhundert...</para>
+
+      <programlisting>
+Name,Department,SN
+"Jim Kirk",Management,"SC937-0176 CEC"
+"Mr. Spock",Sciences,S179-276SP
+"Leonard McCoy",Medicine,unknown
+"Montgomery Scott",Engineering,SE-197-54T
+      </programlisting>
+
+      <para>In <application>glabels</application> haben Sie ein neues Dokument unter Verwendung der Dokumentvorlage »Avery 5395 Namensschild-Etiketten« erzeugt. Zunächst öffnen Sie mittels <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Mischeinstellungen</guimenuitem></menuchoice> den Dialog <guilabel>Mischeinstellungen</guilabel>. In diesem Dialog wählen Sie wie gezeigt die Datenquelle aus, in diesem Fall CSV, sowie die Mischquelle (Dateiname).</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex1-1-fig"> 
+	<title>Mischeinstellungen-Dialog</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex1-1.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Bevor Sie eine neue Einmischquelle anwenden, sollten Sie den ersten Datensatz deaktivieren, weil dieser nur Spaltenköpfe aus der originalen <application>gnumeric</application>-Tabelle enthält. Dadurch würde nur das erste Etikett verschwendet. Weiterhin können Sie alle anderen Datensätze entfernen, die Sie nicht für ein Etikett verwenden wollen.</para>
+
+      <para>Sie können jeden Datensatz detailliert betrachten, indem Sie auf die kleinen Dreiecke klicken. Sobald Sie mit der Auswahl zufrieden sind, klicken Sie auf <guibutton>OK</guibutton>, um die Änderungen anzuwenden.</para>
+
+      <para>Nun beginnen wir mit dem Hinzufügen von Objekten zu unserem <application>gLabels</application>-Dokument, wie gezeigt.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex1-2-fig"> 
+	<title>Hinzufügen von Objekten</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex1-2.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>In diesem Beispiel haben Sie drei Textobjekte und ein Strichcodeobjekt hinzugefügt. Das erste Textobjekt enthält nur einfachen Text (»Hello, my name is«). Das zweite Textobjekt enthält ein einfaches Mischfeld (»${1}«), welches zum ersten Feld eines Datensatzes (erste Spalte einer Zeile) korrespondiert, die den vollen Namen eines Mannschaftsmitglieds enthält. Das dritte Feld enthält sowohl einfachen Text (»Department:«) als auch ein einzelnes Mischfeld (»${2}«), welches zum zweiten Feld oder zum Arbeitsgebiet eines Mannschaftsmitglieds korrespondiert. Das Strichcodefeld ist so eingestellt, das Feld (oder den Schlüssel) »3« zu verwenden, das die Sternenflotten-Seriennummer des Mannschaftsmitglieds enthält.</para>
+
+      <para>Nun können Sie Ihre Namensschilder drucken, indem Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Drucken</guimenuitem></menuchoice> wählen. Der unten angezeigte Druckdialog wird geöffnet.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex1-3-fig"> 
+	<title>Drucken der Namensschilder</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex1-3.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Um sicher zu stellen, dass Ihre Etiketten gut aussehen, wählen Sie die Option <guilabel>Begrenzungen drucken</guilabel> und klicken auf <guibutton>Druckvorschau</guibutton>. Der Druckvorschaudialog wird geöffnet, wie unten angezeigt.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex1-4-fig"> 
+	<title>Vorschau der Namensschilder</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex1-4.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Alles sieht gut aus, also können wir jetzt den Drucker mit den entsprechenden Etiketten bestücken, die Namensschilder drucken und die Gäste an Bord beamen.</para>
+
+    </sect2>
+
+    <sect2 id="merge-ex2">
+      <title>Beispiel 2: Adressetiketten unter Nutzung einer CSV-Datei</title>
+  
+      <para>In diesem Beispiel planen Sie eine Party. Dafür benötigen Sie Adressetiketten für die Einladungen. Sie haben eine Liste Ihrer besten Freunde in <application>gnumeric</application> erstellt, die Sie in die folgende CSV-Datei exportiert haben. Es ist zu beachten, dass nicht jeder einen zweiten Vornamen oder eine zweizeilige Adresse hat.</para>
+
+      <programlisting>
+LAST,FIRST,MI,ADDR1,ADDR2,CITY,STATE,ZIP
+,,,,,,,
+Critter,Ess,S,"123 Faux St.",,Alexandria,VA,22310
+Doe,John,,"Apt 1X","451 Mystery St.",Trenton,NJ,08601
+Summers,Joyce,,"1630 Revello Dr",,Sunnydale,CA,95037
+McGarret,Steve,O,"404 Piikoi Street",,Honolulu,HI,96813
+Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
+      </programlisting>
+
+      <para>In <application>glabels</application> haben Sie ein neues Dokument unter Verwendung der Dokumentvorlage »Avery 5512 Adressetiketten« erzeugt. Zunächst öffnen Sie mittels <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Mischeinstellungen</guimenuitem></menuchoice> den Dialog <guilabel>Mischeinstellungen</guilabel>. In diesem Dialog wählen Sie wie gezeigt die Datenquelle aus, in diesem Fall CSV, sowie die Mischquelle (Dateiname).</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex2-1-fig"> 
+	<title>Mischeinstellungen-Dialog</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-1.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Bevor Sie eine neue Einmischquelle anwenden, sollten Sie den ersten Datensatz deaktivieren, weil dieser nur Spaltenköpfe aus der originalen <application>gnumeric</application>-Tabelle enthält. Dadurch würde nur das erste Etikett verschwendet. Weiterhin können Sie alle anderen Datensätze entfernen, die Sie nicht für ein Etikett verwenden wollen.</para>
+
+      <para>Sie können jeden Datensatz detailliert betrachten, indem Sie auf die kleinen Dreiecke klicken. Sobald Sie mit der Auswahl zufrieden sind, klicken Sie auf <guibutton>OK</guibutton>, um die Änderungen anzuwenden.</para>
+
+      <para>Nun beginnen wir mit dem Hinzufügen von Objekten zu unserem <application>gLabels</application>-Dokument, wie gezeigt.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex2-2-fig"> 
+	<title>Hinzufügen von Objekten</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-2.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>In diesem Beispiel haben Sie ein einzelnes Textobjekt. Dieses Textobjekt enthält alle Einmischfelder, angeordnet in mehreren Zeilen wie eine Versandadresse. Beachten Sie, dass die Felder ${4} und ${5} (korrespondierend zu ADDR1 und ADDR2) jeweils keinen weiteren Text in deren Zeilen enthalten. Wenn <application>glabels</application> ein solches Feld als »nur Text« in einer Zeile erkennt, wird die Zeile nicht expandiert, falls das Feld leer ist.</para>
+
+      <para>Nun können Sie Ihre Adressetiketten drucken, indem Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Drucken</guimenuitem></menuchoice> wählen. Der unten angezeigte Druckdialog wird geöffnet.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex2-3-fig"> 
+	<title>Adressetiketten drucken</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-3.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Um sicher zu stellen, dass Ihre Etiketten gut aussehen, wählen Sie die Option <guilabel>Begrenzungen drucken</guilabel> und klicken auf <guibutton>Druckvorschau</guibutton>. Der Druckvorschaudialog wird geöffnet, wie unten angezeigt.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex2-4-fig"> 
+	<title>Adressetiketten-Vorschau</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-4.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Alles sieht gut aus, also können wir jetzt den Drucker mit den entsprechenden Etiketten bestücken, die Adressetiketten drucken und die Einladungen zur Party versenden.</para>
+
+    </sect2>
+
+<sect2 id="merge-ex3">
+      <title>Beispiel 3: Adressetiketten unter Nutzung des <application>Evolution</application>-Adressbuchs</title>
+  
+      <para>Ihre letzte Party war ein voller Erfolg. Nun benötigen Sie wieder Adressetiketten für die Einladung zu einer neuen Party. Um dies zu vereinfachen, können Sie das <application>Evolution</application>-Adressbuch nutzen, denn die Adressdaten aller Ihrer Freunde sind dort gespeichert.</para>
+
+      <note>
+	<para>Abhängig davon, wie das von Ihnen genutzte <application>gLabels</application>-Paket erstellt wurde, könnte diese Option nicht verfügbar sein. Die Unterstützung für das <application>Evolution</application>-Adressbuch ist nur vorhanden, wenn bei der Erstellung von <application>gLabels</application> das Paket <application>evolution-data-server</application> sowie dessen Entwicklerdateien verfügbar waren. Bitte berücksichtigen dies auch dann, wenn Sie <application>gLabels</application> direkt aus den Quellen erstellen.</para>
+	
+	<para>Falls das <application>gLabels</application>-Paket Ihrer Distribution diese Unterstützung nicht bieten sollte, kontaktieren Sie bitte den Ersteller des Pakets oder senden Sie einen Fehlerbericht, um dies einzufordern.</para>
+      </note>
+
+      <para>In <application>glabels</application> haben Sie ein neues Dokument unter Verwendung der Dokumentvorlage »Avery 5512 Adressetiketten« erzeugt. Zunächst öffnen Sie mittels <menuchoice><guimenu>Objekte</guimenu><guimenuitem>Mischeinstellungen</guimenuitem></menuchoice> den Dialog <guilabel>Mischeinstellungen</guilabel>. In diesem Dialog wählen Sie wie gezeigt die Datenquelle aus, in diesem Fall <guilabel>Daten aus dem vorgegebenen Evolution-Adressbuch</guilabel>, wie gezeigt.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex3-1-fig"> 
+	<title>Mischeinstellungen-Dialog</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex3-1.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Sobald  Sie <guilabel>Daten aus dem vorgegebenem Evolution-Adressbuch</guilabel> als Mischquelle gewählt haben, wird eine vollständige Liste des Inhalts angezeigt. Anfänglich sind alle Einträge ausgewählt. Angenommen, Sie planen eine wirklich große Party, können Sie die Auswahl unverändert belassen. Behalten Sie jedoch dabei Ihre finanziellen Möglichkeiten im Auge. Sie können bestimmte Einträge auswählen oder wieder abwählen, indem Sie die entsprechenden Ankreuzfelder anklicken. Alternativ können Sie durch Anklicken der Knöpfe <guibutton>Alle markieren</guibutton> oder <guibutton>Markierung aufheben</guibutton> alle Einträge des Adressbuchs aktivieren oder deaktivieren. </para>
+ 
+      <para>Sie können jeden Datensatz detailliert betrachten, indem Sie auf die kleinen Dreiecke klicken. Sobald Sie mit der Auswahl zufrieden sind, klicken Sie auf <guibutton>OK</guibutton>, um die Änderungen anzuwenden.</para>
+
+      <para>Nun beginnen wir mit dem Hinzufügen von Objekten zu unserem <application>gLabels</application>-Dokument, wie gezeigt.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex3-2-fig"> 
+	<title>Hinzufügen von Objekten</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex3-2.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>In diesem Beispiel haben Sie ein einzelnes Textobjekt. Dieses Textobjekt enthält alle Einmischfelder, angeordnet in mehreren Zeilen wie eine Versandadresse.</para>
+
+      <para>Nun können Sie Ihre Adressetiketten drucken, indem Sie <menuchoice><guimenu>Datei</guimenu><guimenuitem>Drucken</guimenuitem></menuchoice> wählen. Der unten angezeigte Druckdialog wird geöffnet.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex3-3-fig"> 
+	<title>Adressetiketten drucken</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-3.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Um sicher zu stellen, dass Ihre Etiketten gut aussehen, wählen Sie die Option <guilabel>Begrenzungen drucken</guilabel> und klicken auf <guibutton>Druckvorschau</guibutton>. Der Druckvorschaudialog wird geöffnet, wie unten angezeigt.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex3-4-fig"> 
+	<title>Adressetiketten-Vorschau</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-4.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Alles sieht gut aus, also können wir jetzt den Drucker mit den entsprechenden Etiketten bestücken, die Adressetiketten drucken und die Einladungen zur Party versenden.</para>
+
+    </sect2>
+
+  </sect1>
+
+
+
+
+<!-- ============= Creating templates ================================== -->
+  <sect1 id="glabels-manual-create-template"> 
+    <title>Manuelles Erstellen neuer Vorlagen</title> 
+
+    <para>Vordefinierte Vorlagen sind als XML-Dateien verfügbar, die in <filename>${prefix}/share/glabels/</filename> gespeichert sind, wobei <filename>${prefix}</filename> üblicherweise <filename>/usr/local</filename> oder <filename>/usr</filename> ist, abhängig von der Konfigurationsoption <filename>prefix</filename>. <application>gLabels</application> verwendet alle Dateien der Form <filename>*-templates.xml</filename> oder <filename>*.template</filename>, die es in <filename>${prefix}/share/glabels/</filename> und <filename>${HOME}/.glabels/</filename> findet. Zusätzliche Vorlagen können unter Verwendung der Dateiendung <filename>*.template</filename> in einem dieser Ordner gespeichert werden.</para>
+
+    <para>Das Format dieser Dateien ist in einer DTD definiert: <ulink url="http://glabels.sourceforge.net/doc/glabels-2.0.dtd.txt" type="http">glabels-2.2.dtd</ulink>. Diese DTD beschreibt außerdem weitere von gLabels benutzte XML-Formate.</para>
+
+    <sect2 id="template-assumptions">
+      <title>Voraussetzungen</title>
+      <itemizedlist>
+	<listitem>
+	  <para>Eine Seite enthält nur eine Etiketten- oder Kartengröße. Falls eine Seite mehrere Größen enthält, kann sie für das Drucken in mehreren Durchläufen über mehrere Vorlagen verteilt werden.</para>
+	</listitem>
+	<listitem>
+	  <para>Abstände können in den Einheiten <emphasis>pt</emphasis>, <emphasis>in</emphasis>, <emphasis>mm</emphasis>, <emphasis>cm</emphasis> oder <emphasis>pc</emphasis> ausgedrückt werden. Beispiel: »<literal>1.0in</literal>« oder »<literal>2.54cm</literal>«. Falls keine Einheiten angegeben werden, nimmt der Rechner Punkt an. ein Punkt (<emphasis>pt</emphasis>) entspricht = 1/72 <emphasis>in</emphasis> = 0.352778 <emphasis>mm</emphasis>.</para>
+	</listitem>
+      </itemizedlist>
+    </sect2>
+
+    <sect2 id="template-file">
+      <title>Vorlagedateien</title>
+
+      <programlisting>
+&lt;?xml version="1.0"?&gt;
+&lt;Glabels-templates&gt;
+
+   <replaceable>...Vorlagen...</replaceable>
+
+&lt;/Glabels-templates&gt;
+      </programlisting>
+    </sect2>
+
+
+    <sect2 id="template-example">
+      <title>Beispielvorlage</title>
+      <programlisting>
+  &lt;Template brand="Avery" part="8160" size="US-Letter" description="Mailing Labels"&gt;
+    &lt;Label-rectangle id="0" width="189pt" height="72pt" round="5pt"&gt;
+      &lt;Markup-margin size="5pt"/&gt;
+      &lt;Layout nx="3" ny="10" x0="11.25pt" y0="36pt" dx="200pt" dy="72pt"/&gt;
+    &lt;/Label-rectangle&gt;
+    &lt;Alias brand="Avery" part="5160"/&gt;
+    &lt;Alias brand="Avery" part="6233"/&gt;
+  &lt;/Template&gt;
+      </programlisting>
+    </sect2>
+
+    <sect2 id="template-template-node">
+      <title>Knoten »Template«</title>
+
+      <para>Ein <emphasis>Template</emphasis>-Knoten beschreibt ein einzelnes Produkt. Es muss eine Instanz eines der anderen Label-Knoten (<emphasis>Label-rectangle</emphasis>, <emphasis>Label-round</emphasis>, or <emphasis>Label-cd</emphasis>) enthalten. Auf diesen Knoten können einer, mehrere oder kein <emphasis>Alias</emphasis>-Knoten folgen.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Eigenschaft</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Beschreibung</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>brand</para></entry>
+	      <entry>
+                <para>Marke oder Hersteller des Produkts, z.B. »Avery«</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>part</para></entry>
+	      <entry>
+                <para>Bestellnummer oder Name des Produkts, z.B. »8160«</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>size</para></entry>
+	      <entry>
+                <para>Größe des Papiers, z.B.  »US-Letter«, »A4«, …</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>description</para></entry>
+	      <entry>
+                <para>Beschreibung des Produkts, z.B. »Mailing Labels«.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>_description</para></entry>
+	      <entry>
+                <para>Übersetzbare Beschreibung des Produkts, z.B. »Mailing Labels« (nur sinnvoll für vordefinierte Vorlagen)</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>width</para></entry>
+	      <entry>
+                <para>Seitenbreite. Nur gültig, wenn als Größe »Other« festgelegt ist.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>height</para></entry>
+	      <entry>
+                <para>Seitenhöhe. Nur gültig, wenn als Größe »Other« festgelegt ist.</para>
+               </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-label-rectangle-node">
+      <title>Knoten »Label-rectangle«</title>
+
+      <para>Ein <emphasis>Label-rectangle</emphasis>-Knoten beschreibt die Abmessungen eines einzelnen Etiketts oder einer einzelnen Karte in rechteckiger Form, wobei abgerundete Ecken möglich sind.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Eigenschaft</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Beschreibung</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>id</para></entry>
+	      <entry>
+                <para>Für zukünftige Verwendung reserviert. Sollte immer 0 sein.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>width</para></entry>
+	      <entry><para>Breite des Etiketts oder der Karte</para></entry>
+            </row>
+	    <row valign="top">
+	      <entry><para>height</para></entry>
+	      <entry><para>Höhe des Etiketts oder der Karte</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>round</para></entry>
+	      <entry>
+                <para>Radius der Ecken. Für Objekte mit nicht abgerundeten Ecken (Visitenkarten) sollte der Radius 0 sein.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>x_waste</para></entry>
+	      <entry>
+                <para>Erlaubte Breite des horizontalen Überdruckens. Dies minimiert Ausrichtungsprobleme auf anderen als weißen Hintergründen (z.B. Bilder).</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y_waste</para></entry>
+	      <entry>
+                <para>Erlaubte Breite des vertikalen Überdruckens. Dies minimiert Ausrichtungsprobleme auf anderen als weißen Hintergründen (z.B. Bilder).</para>
+              </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+      <!-- ==== Figure ==== -->
+      <figure id="template-label-fig"> 
+	<title>Parameter zu Label-rectangle </title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/glabels-template-label.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+    </sect2>
+
+    <sect2 id="template-label-round-node">
+      <title>Knoten »Label-round«</title>
+
+      <para>Ein <emphasis>Label-round</emphasis>-Knoten beschreibt die Abmessungen eines einfachen Rundetiketts (nicht einer CD).</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Eigenschaft</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Beschreibung</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>id</para></entry>
+	      <entry>
+                <para>Für zukünftige Verwendung reserviert. Sollte immer 0 sein.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>radius</para></entry>
+	      <entry><para>Radius (halber Durchmesser) des Etiketts</para></entry>
+            </row>
+	    <row valign="top">
+	      <entry><para>waste</para></entry>
+	      <entry>
+                <para>Erlaubte Breite des Überdruckens. Dies minimiert Ausrichtungsprobleme auf anderen als weißen Hintergründen (z.B. Bilder).</para>
+              </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-label-cd-node">
+      <title>Knoten »Label-cd«</title>
+
+      <para>Ein <emphasis>Label-cd</emphasis>-Knoten beschreibt die Abmessungen einer CD, DVD oder Visitenkarten-CD.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Eigenschaft</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Beschreibung</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>id</para></entry>
+	      <entry>
+                <para>Für zukünftige Verwendung reserviert. Sollte immer 0 sein.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>radius</para></entry>
+	      <entry><para>Äußerer Radius des Etiketts</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>hole</para></entry>
+	      <entry><para>Radius des Mittellochs</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>width</para></entry>
+	      <entry>
+                <para>Falls vorhanden, wird das Etikett auf die angegebene Größe begrenzt (nützlich für »Visitenkarten-CDs«)</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>height</para></entry>
+	      <entry>
+                <para>Falls vorhanden, wird das Etikett auf die angegebene Höhe begrenzt (nützlich für »Visitenkarten-CDs«)</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>waste</para></entry>
+	      <entry>
+                <para>Erlaubte Breite des Überdruckens. Dies minimiert Ausrichtungsprobleme auf anderen als weißen Hintergründen (z.B. Bilder).</para>
+              </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+      <!-- ==== Figure ==== -->
+      <figure id="template-label-cd-fig"> 
+	<title>CD-Label-Parameter</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/glabels-template-cd.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+    </sect2>
+
+    <sect2 id="template-markup-margin-node">
+      <title>Knoten »Markup-margin«</title>
+
+      <para>Ein <emphasis>Markup-margin</emphasis>-Knoten beschreibt die Ränder entlang der Seiten eines Etiketts.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Eigenschaft</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Beschreibung</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>size</para></entry>
+	      <entry>
+                <para>Randbreite. Die Breite des Bereichs zwischen der Randlinie und dem Rand des Etiketts/der Karte.</para>
+              </entry>
+            </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-markup-line-node">
+      <title>Knoten »Markup-line«</title>
+
+      <para>Ein <emphasis>Markup-line</emphasis>-Knoten beschreibt eine Markierungslinie.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Eigenschaft</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Beschreibung</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>x1</para></entry>
+	      <entry>
+                <para>x-Koordinate des Anfangspunkts des Linienabschnitts.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y1</para></entry>
+	      <entry>
+                <para>y-Koordinate des Anfangspunkts des Linienabschnitts.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>x2</para></entry>
+	      <entry>
+                <para>x-Koordinate des Endpunkts des Linienabschnitts.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y2</para></entry>
+	      <entry>
+                <para>y-Koordinate des Endpunkts des Linienabschnitts.</para>
+              </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-markup-circle-node">
+      <title>Knoten »Markup-circle«</title>
+
+      <para>Ein <emphasis>Markup-circle</emphasis>-Knoten beschreibt einen Markierungskreis.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Eigenschaft</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Beschreibung</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>x0</para></entry>
+	      <entry>
+                <para>x-Koordinate des Kreismittelpunkts.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y0</para></entry>
+	      <entry>
+                <para>y-Koordinate des Kreismittelpunkts.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>radius</para></entry>
+	      <entry><para>Radius des Kreises.</para></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-markup-rect-node">
+      <title>Knoten »Markup-rect«</title>
+
+      <para>Ein <emphasis>Markup-rect</emphasis>-Knoten beschreibt ein Markierungsrechteck.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Eigenschaft</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Beschreibung</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>x1</para></entry>
+	      <entry>
+                <para>x-Koordinate der oberen linken Ecke des Rechtecks.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y1</para></entry>
+	      <entry>
+                <para>y-Koordinate der oberen linken Ecke des Rechtecks.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>w</para></entry>
+	      <entry>
+                <para>Breite des Rechtecks.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>h</para></entry>
+	      <entry>
+                <para>Höhe des Rechtecks.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>r</para></entry>
+	      <entry><para>Radius der abgerundeten Ecken des Rechtecks.</para></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-layout-node">
+      <title>Knoten »Layout«</title>
+
+      <para>Ein Label-Knoten kann mehrere <emphasis>Layout</emphasis>-Unterknoten enthalten. Wenn die Etiketten in einem einfachen rechteckigen Raster angeordnet sind, dann wird nur ein Layout benötigt. Falls die Etiketten jedoch in komplizierteren Rasteranordnungen vorliegen, können mehrere <emphasis>Layout</emphasis>-Unterknoten verwendet werden. Beachten Sie, dass ein einzelnes Etikett immer auch als ein Raster aus Etiketten betrachtet werden kann.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Eigenschaft</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Beschreibung</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>nx</para></entry>
+	      <entry>
+                <para>Anzahl der Etiketten/Karten im Raster in horizontaler Richtung</para>
+              </entry>
+            </row>
+	    <row valign="top">
+	      <entry><para>ny</para></entry>
+	      <entry>
+                <para>Anzahl der Etiketten/Karten im Raster in vertikaler Richtung</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>x0</para></entry>
+	      <entry>
+                <para>Abstand von linken Rand des Papiers zum linken Rand der linken Reihe der Karten/Etiketten im Layout.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y0</para></entry>
+	      <entry>
+                <para>Abstand von oberen Rand des Papiers zum oberen Rand der oberen Reihe der Karten/Etiketten im Layout.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>dx</para></entry>
+	      <entry><para>Horizontaler Rasterabstand des Zeichengitters.</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>dy</para></entry>
+	      <entry><para>Vertikaler Rasterabstand des Zeichengitters.</para></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+      <!-- ==== Figure ==== -->
+      <figure id="template-layout-fig"> 
+	<title>Layout-Parameter</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/glabels-template-layout.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+    </sect2>
+
+    <sect2 id="template-alias-node">
+      <title>Knoten »Alias«</title>
+
+      <para>Ein <emphasis>Alias</emphasis>-Knoten beschreibt den Namen eines Produkts mit der gleichen Größe und dem gleichen Layout einer anderen Vorlage.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Eigenschaft</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Beschreibung</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>brand</para></entry>
+	      <entry>
+                <para>Die Marke oder der Hersteller des entsprechenden Produkts.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>part</para></entry>
+	      <entry>
+                <para>Die Bestellnummer oder der Name des entsprechenden Produkts.</para>
+              </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+      </sect2>
+
+  </sect1>
+
+
+
+
+<!-- ============= Bugs ================================== -->
+<!-- This section is optional and is commented out by default. 
+     You can use it to describe known bugs and limitations of the 
+	  program if there are any - please be frank and list all
+     problems you know of. 
+  
+  <sect1 id="mayapp-bugs">
+  <title>Known Bugs and Limitations</title>
+  <para> </para>
+ </sect1>
+-->
+
+
+
+
+<!-- ============= About ================================== -->
+<!-- This section contains info about the program (not docs), such as
+      author's name(s), web page, license, feedback address. This
+      section is optional: primary place for this info is "About.." box of
+      the program. However, if you do wish to include this info in the
+      manual, this is the place to put it. Alternatively, you can put this information in the title page.-->
+  <sect1 id="glabels-about"> 
+    <title>Info zu <application>gLabels</application></title> 
+    <para><application>gLabels</application> wurde von Jim Evins (<email>evins@snaught.com</email>) geschrieben. Weitere Informationen zu <application>gLabels</application> finden Sie auf der <ulink url="http://glabels.sourceforge.net" type="http">gLabels-Webseite</ulink>.</para>
+    <para>Um einen Fehler zu melden oder einen Vorschlag zu dieser Anwendung oder zu diesem Handbuch zu machen, folgen Sie den Anweisungen auf der <ulink url="http://glabels.sourceforge.net/contact/" type="http"><application>gLabels</application>-Kontaktseite</ulink>.</para>
+
+    <para>Dieses Programm ist freie Software. Sie können es unter den Bedingungen der <citetitle>GNU General Public License</citetitle>, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 2 der Lizenz oder (nach Ihrer Option) jeder späteren Version. Eine Kopie der <citetitle>GNU General Public License</citetitle> finden Sie unter diesem <ulink url="ghelp:gpl" type="help">Link</ulink>, oder in der Datei COPYING, die im Quellcode dieses Programms enthalten ist.</para>
+
+  </sect1> 
+
+
+
+
+
+</article>

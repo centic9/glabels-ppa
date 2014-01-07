@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="libglabels-enums">
+<refmeta>
+<refentrytitle role="top_of_page" id="libglabels-enums.top_of_page">Enumerations</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGLABELS Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Enumerations</refname>
+<refpurpose>Common enumerations used by libglabels</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libglabels-enums.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libglabels/enums.h&gt;
+
+enum                <link linkend="lglUnitsType">lglUnitsType</link>;
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libglabels-enums.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This section defines enumerations used to interact with libglabels.
+</para>
+</refsect1>
+
+<refsect1 id="libglabels-enums.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="lglUnitsType" role="enum">
+<title>enum lglUnitsType</title>
+<indexterm zone="lglUnitsType"><primary sortas="lglUnitsType">lglUnitsType</primary></indexterm><programlisting>typedef enum {
+	LGL_UNITS_POINT, /* encoded as "pt" */
+	LGL_UNITS_INCH,  /* encoded as "in" */
+	LGL_UNITS_MM,    /* encoded as "mm" */
+	LGL_UNITS_CM,    /* encoded as "cm" */
+	LGL_UNITS_PICA,  /* encoded as "pc" */
+
+	LGL_UNITS_FIRST = LGL_UNITS_POINT,
+	LGL_UNITS_LAST  = LGL_UNITS_PICA,
+} lglUnitsType;
+</programlisting>
+<para>
+This enumeration defines a set of units of distance supported by the libglabels XML distance
+attributes.
+</para><variablelist role="enum">
+<varlistentry id="LGL-UNITS-POINT--CAPS" role="constant">
+<term><literal>LGL_UNITS_POINT</literal></term>
+<listitem><simpara>Points.  Encoded as "pt" in XML distance attributes.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="LGL-UNITS-INCH--CAPS" role="constant">
+<term><literal>LGL_UNITS_INCH</literal></term>
+<listitem><simpara>Inches.  Encoded as "in" in XML distance attributes.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="LGL-UNITS-MM--CAPS" role="constant">
+<term><literal>LGL_UNITS_MM</literal></term>
+<listitem><simpara>Millmeters.  Encoded as "mm" in XML distance attributes.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="LGL-UNITS-CM--CAPS" role="constant">
+<term><literal>LGL_UNITS_CM</literal></term>
+<listitem><simpara>Centimeters.  Encoded as "cm" in XML distance attributes.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="LGL-UNITS-PICA--CAPS" role="constant">
+<term><literal>LGL_UNITS_PICA</literal></term>
+<listitem><simpara>Picas.  Encoded as "pc" in XML distance attributes.
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="LGL-UNITS-FIRST--CAPS" role="constant">
+<term><literal>LGL_UNITS_FIRST</literal></term>
+<listitem><simpara>First enumeration.  Used for generic iteration through supported units..
+</simpara></listitem>
+</varlistentry>
+<varlistentry id="LGL-UNITS-LAST--CAPS" role="constant">
+<term><literal>LGL_UNITS_LAST</literal></term>
+<listitem><simpara>Last enumeration.  Used for generic iteration through supported units.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

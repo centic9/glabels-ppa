@@ -1,0 +1,3210 @@
+commit 735fbf968d761acb31bee98121686f02cdeab17e
+Author: Jim Evins <evins@snaught.com>
+Date:   2010-04-19
+
+    Preparation for 2.2.8
+
+M	NEWS
+M	configure.in
+
+commit e68a37d0bec952928393abea94326a7ec77b9e38
+Author: Jorge González <jorgegonz@svn.gnome.org>
+Date:	2010-04-11
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit a17439be4a34d934f0bf4a19dc9bfb2967343b32
+Author: Jim Evins <evins@snaught.com>
+Date:	2010-04-11
+
+    Remove wasted space in "new label dialog"
+
+    Modified the layout spacing of widgets in the "new label dialog."
+    This makes
+    the dialog a little more compact and hopefully fits better on
+    small screens
+    such as netbooks.
+
+M	data/glade/new-label-dialog.glade
+M	data/glade/wdgt-media-select.glade
+M	data/glade/wdgt-rotate-label.glade
+M	src/new-label-dialog.c
+
+commit 333e792ab9daa4cb6fba8f19d360ca27d69ebff0
+Author: Jim Evins <evins@snaught.com>
+Date:	2010-04-11
+
+    Add place-holder field to all empty private structures
+
+    Fixes glabels bug #2981895.  This is a work-around for glib bug
+    #615379.  For
+    objects with no private data, add a place-holder field so that
+    the private
+    structure is not of zero length which causes g_new0() to crash in glib
+    2.24.0.
+
+M	src/view-barcode.c
+M	src/view-box.c
+M	src/view-ellipse.c
+M	src/view-image.c
+M	src/view-line.c
+M	src/view-text.c
+
+commit a3275186debbf0f4addf574bf02b789bcf3776ba
+Author: Jorge González <jorgegonz@svn.gnome.org>
+Date:	2010-04-07
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit be60f3c5d947d9ae66ec16f5b61045deb76d1b59
+Author: Filipe Roque <fliproque@gmail.com>
+Date:	2010-04-04
+
+    Updated Portuguese translation
+
+M	po/LINGUAS
+A	po/pt.po
+
+commit a26ba4f2eb55cc02f08c1b97fd4c001d3a550fd2
+Author: Jim Evins <evins@snaught.com>
+Date:	2010-04-03
+
+    Added Avery DL33 and look-alike templates.
+
+    DL33 templates provided by Ian Shuttleworth.
+
+M	AUTHORS
+M	data/templates/avery-iso-templates.xml
+M	data/templates/misc-iso-templates.xml
+
+commit 675d5a6a13117ca85ebdc292dd931efece55d406
+Author: Marek Černocký <marek@manet.cz>
+Date:	2010-03-28
+
+    Update Czech translation
+
+M	po/cs.po
+
+commit ad36a71e24d395d641bf495dda96b8dea994d2df
+Author: Andrej Žnidaršič <andrej.znidarsic@gmail.com>
+Date:	2010-03-28
+
+    Updated Slovenian translation
+
+M	po/sl.po
+
+commit 67becb0c44760f68ad5c014866a53707e8ef4630
+Author: Jorge González <jorgegonz@svn.gnome.org>
+Date:	2010-03-21
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit 1dd629c4b88056fd0ae51ce9c1b2b0921286fb98
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2010-03-20
+
+    Updated German translation
+
+M	po/de.po
+
+commit bf78adcbbfd7e8fa51308e0fd64c22d6b07754bc
+Author: Bruno Brouard <annoa.b@gmail.com>
+Date:	2010-03-17
+
+    Updated French translation
+
+M	po/fr.po
+
+commit 6414ee7cd3975db6e7a7fe65b51ec7918ddcd7d6
+Author: Jorge González <jorgegonz@svn.gnome.org>
+Date:	2010-03-17
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit 21ce5c207013d6ee8f28aa02b4db5894422b8942
+Author: Jim Evins <evins@snaught.com>
+Date:	2010-03-16
+
+    Catching up on template submissions.
+
+M	AUTHORS
+M	data/templates/misc-iso-templates.xml
+M	data/templates/misc-us-templates.xml
+M	data/templates/pearl-templates.xml
+
+commit 1a7125903c076189372671b3b1c699bd1a4322c6
+Author: Kjartan Maraas <kmaraas@gnome.org>
+Date:	2010-03-15
+
+    Add Norwegian language entry.
+
+M	po/LINGUAS
+
+commit 501e409e1565d6aaf75fd6125eca323b4fe081f0
+Author: Kjartan Maraas <kmaraas@gnome.org>
+Date:	2010-03-15
+
+    Added Norwegian bokmål translation
+
+A	po/nb.po
+
+commit 99ac6500e2ce897708ac228b4684d3608576b931
+Author: Jorge González <jorgegonz@svn.gnome.org>
+Date:	2010-03-07
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit c53c6d83333de1ab2d77f1e81e1d151509f7a1d4
+Author: Takeshi AIHANA <takeshi.aihana@gmail.com>
+Date:	2010-03-06
+
+    Updated Japanese translation
+
+M	po/ja.po
+
+commit c142345372faa68185cd5bbeba4e6192d72599ce
+Author: Jim Evins <evins@snaught.com>
+Date:	2010-03-02
+
+    Preparation for 2.2.7
+
+    Updated NEWS.  Updated version information in configure.in.
+    Added pearl
+    templates to makefile.
+
+M	NEWS
+M	configure.in
+M	data/templates/Makefile.am
+D	help/glabels-help.pot
+
+commit c866fbe3c5dd5cdea13efad8107a7d1a82b5a172
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2010-03-02
+
+    Fixed some bugs in template data
+
+M	data/templates/pearl-templates.xml
+
+commit ca13ecdc3455f0cca218671dfc9c0a31500a264a
+Author: Andrej Žnidaršič <andrej.znidarsic@gmail.com>
+Date:	2010-02-28
+
+    Updated Slovenian translation
+
+M	po/sl.po
+
+commit 7dbee475634553b69ce7dd934608c7a35da59aa2
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2010-02-27
+
+    Added Staples STAP14 Mailing Labels
+
+M	data/templates/misc-iso-templates.xml
+
+commit e3cb29b2d6c93547112146696b8adb0c35387b6e
+Author: Joe Hansen <joedalton2@yahoo.dk>
+Date:	2010-02-23
+
+    Updated Danish translation
+
+A	po/da.po
+
+commit de137c4bcf7eb19551ce1478f9929891781ef86f
+Author: Kenneth Nielsen <k.nielsen81@gmail.com>
+Date:	2010-02-23
+
+    Added da to list of languages
+
+M	po/LINGUAS
+
+commit aa892ac85b64ba0f069cc8d0e178faef4eb3de05
+Author: Marek Černocký <marek@manet.cz>
+Date:	2010-02-21
+
+    Update Czech translation
+
+M	help/cs/cs.po
+
+commit 4cf933c8d8e1f74e61fac64b3cfd954c51029b4b
+Author: Jorge González <jorgegonz@svn.gnome.org>
+Date:	2010-02-19
+
+    Added initial Spanish translation
+
+A	help/es/es.po
+
+commit 31cb90be5f9219e04e06f33c72e4269c03154873
+Author: Jorge González <jorgegonz@svn.gnome.org>
+Date:	2010-02-19
+
+    Added es to DOC_LINGUAS
+
+M	help/Makefile.am
+
+commit ca216db75311bda7b80e08409b33212729d8a8ff
+Author: Petr Kovar <pknbe@volny.cz>
+Date:	2010-02-18
+
+    Fix Czech translation by Marek Cernocky
+
+M	po/cs.po
+
+commit 59ce2a62e8ff923d6348f84b9e3e0cff59b10e87
+Author: Petr Kovar <pknbe@volny.cz>
+Date:	2010-02-18
+
+    Add Czech help translation by Marek Cernocky
+
+M	help/Makefile.am
+A	help/cs/cs.po
+A	help/cs/figures/main-window-empty.png
+A	help/cs/figures/merge-ex1-1.png
+A	help/cs/figures/merge-ex1-2.png
+A	help/cs/figures/merge-ex1-3.png
+A	help/cs/figures/merge-ex1-4.png
+A	help/cs/figures/merge-ex2-1.png
+A	help/cs/figures/merge-ex2-2.png
+A	help/cs/figures/merge-ex2-3.png
+A	help/cs/figures/merge-ex2-4.png
+A	help/cs/figures/object-editor-sidebar.png
+A	help/cs/figures/print-copies.png
+A	help/cs/figures/print-merge.png
+
+commit f428dd10c86b1102e96fe76ff0c62d209d6c2923
+Author: Jim Evins <evins@snaught.com>
+Date:	2010-02-15
+
+    Create a default frame if missing from template file
+
+    When parsing a template node, if there is no recognized frame node
+    (e.g.
+    Label-rectangle), a default full-page frame with a 1x1 layout
+    is created.
+    This prevents potential crashes if sharing a user '.glabels' directory
+    with future versions of glabels with new frame types, or in the
+    case of
+    typos for hand generated templates.
+
+M	libglabels/xml-template.c
+
+commit 8ce4aff951c126566870d3417aeadcf385ca5886
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2010-02-13
+
+    Added URL for Geha Z53 again
+
+M	data/templates/misc-iso-templates.xml
+
+commit c990e078f09bfa3bcee172459e883c1231b458b6
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2010-02-13
+
+    Removed URL from template due to gettext errors
+
+M	data/templates/misc-iso-templates.xml
+
+commit 610cdbbecd84ed54b2aa082c2781be2f0aae3289
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2010-02-13
+
+    Added PEARL templates
+
+M	AUTHORS
+A	data/templates/pearl-templates.xml
+
+commit 921c7bc0ab840288787d50ffdde15065f5a610ee
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2010-02-13
+
+    Added Geha Z53 template
+
+M	AUTHORS
+M	data/templates/misc-iso-templates.xml
+
+commit 548abc9542516724ee8029c7186280cb171b085c
+Author: Petr Kovar <pknbe@volny.cz>
+Date:	2010-02-11
+
+    Update Czech translation by Marek Cernocky
+
+M	po/cs.po
+
+commit a309766e4e90d164e487ebc1978f92fbedbb536c
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2010-02-09
+
+    Updated German translation
+
+M	po/de.po
+
+commit 6ac473f54bf654ebed0e3eaf94769130b74edd1a
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2010-02-09
+
+    Updated German translation
+
+M	po/de.po
+
+commit 01b54d65f1bc32538314f01cbe89d89b2d0baa77
+Author: Jim Evins <evins@snaught.com>
+Date:	2010-02-06
+
+    Relax libxml limits when parsing label files
+
+    Glabels bug #2940758.  Back port from master:  Use XML_PARSE_HUGE
+    parser option
+    so that we can handle large text nodes, such as encoded images.  This
+    modification is only applied if libxml 2.7+ is available, as to
+    not introduce
+    new dependencies.
+
+M	configure.in
+M	src/Makefile.am
+M	src/xml-label.c
+
+commit 78329ea6424b52a3e8236b69afebc2eddc6386db
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2010-01-16
+
+    Updated German doc translation
+
+M	help/de/de.po
+
+commit 8bc29ac0910c02eba94f9ccd5042c07cb415b7f3
+Author: Petr Kovar <pknbe@volny.cz>
+Date:	2010-01-13
+
+    Updated Czech translation by Marek Cernocky
+
+M	po/cs.po
+
+commit e5ecd2b4e597bf2e509d4c285f59420322dad390
+Author: Claude Paroz <claude@2xlibre.net>
+Date:	2010-01-09
+
+    Add fr to DOC_LINGUAS variable
+
+M	help/Makefile.am
+
+commit a4758401a939c804a3a026f5c5bcf2deb1f8f7c1
+Author: Claude Paroz <claude@2xlibre.net>
+Date:	2010-01-09
+
+    Add French translation of manual
+
+    Contributed by Alain Lojewski and Claude Paroz
+
+A	help/fr/figures/main-window-empty.png
+A	help/fr/figures/merge-ex1-1.png
+A	help/fr/figures/merge-ex1-2.png
+A	help/fr/figures/merge-ex1-3.png
+A	help/fr/figures/merge-ex1-4.png
+A	help/fr/figures/merge-ex2-1.png
+A	help/fr/figures/merge-ex2-2.png
+A	help/fr/figures/merge-ex2-3.png
+A	help/fr/figures/merge-ex2-4.png
+A	help/fr/figures/object-editor-sidebar.png
+A	help/fr/figures/print-copies.png
+A	help/fr/figures/print-merge.png
+A	help/fr/fr.po
+
+commit 908f97ce93793c1ad05e15b1ad9c788dab587a17
+Author: Matej Urbančič <mateju@svn.gnome.org>
+Date:	2009-12-17
+
+    Added sl for Slovenian translation
+
+M	po/LINGUAS
+
+commit b0e6dea0d9c9b2ca0e1e1ba0650cbe990bce1c29
+Author: Andrej Žnidaršič <andrej.znidarsic@gmail.com>
+Date:	2009-12-17
+
+    Updated Slovenian translation
+
+A	po/sl.po
+
+commit 8f4713e9aec5e19ad382d6493119f6cea812ced4
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-11-18
+
+    Fixed focus behavior of view canvas
+
+    Fixes bug #2899305.  Don't just automatically steal focus when
+    entering
+    canvas.  Require a click to get focus back.
+
+M	src/view.c
+
+commit 1f24fba0eafc5f5e13c4e27cc315ac13cd450bbc
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-11-10
+
+    Preparation for 2.2.6
+
+    Updated NEWS and configure.in.
+
+M	NEWS
+M	configure.in
+
+commit 6f8023f3f90e360ed1911aaf95ab07dd9d1fd00d
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-11-05
+
+    Automatically generate ChangeLog when building dist
+
+    Automatically generate ChangeLog when building distributions.
+    Archived
+    pre 2.2 ChangeLog entries.
+
+M	.gitignore
+M	ChangeLog
+C090	ChangeLog	ChangeLog.pre-2.2
+M	Makefile.am
+
+commit 9542ced852f02b4ded00a923ea99bbfc5262234b
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-11-05
+
+    Caught up on user submitted templates.
+
+    Added user submitted templates and acknowledgements.
+
+M	AUTHORS
+M	data/templates/misc-iso-templates.xml
+M	data/templates/zweckform-iso-templates.xml
+
+commit a2ad57fa1a0c1e826ff1b758a3baeed263d4b1a8
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-11-04
+
+    Fixed merge inconsistencies and crash
+
+    merge.c:
+	Fixed crash when trying to print when a "key" radio has been
+	selected
+	but no key has been selected yet.
+
+    object-editor-*-page.c:
+	Fixed potential inconsistencies with "key" radio buttons when
+	a merge
+	source has not been selected but the field indicates that it is
+	using a
+	merge key.  This can happen when opening a glabels file that
+	has a merg
+	type not supported by the current instance of glabels.
+
+    xml-label.c:
+	Also when parsing a merge field that has a merge type not
+	supported,
+	don't continue parsing it.
+
+M	src/merge.c
+M	src/object-editor-bc-page.c
+M	src/object-editor-data-page.c
+M	src/object-editor-fill-page.c
+M	src/object-editor-image-page.c
+M	src/object-editor-line-page.c
+M	src/object-editor-shadow-page.c
+M	src/object-editor-text-page.c
+M	src/xml-label.c
+
+commit 4cbc3bf59c5b3f2fe8310a87a19c86f414e2e0ae
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-11-04
+
+    Updated German translation
+
+M	po/de.po
+
+commit 50e804b0aae8214a4354d084e36be88eace03f67
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-11-04
+
+    Updated German translation
+
+M	po/de.po
+
+commit 499d70c757fe12219337e2ec9da267b723a1004c
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-11-04
+
+    Updated German doc translation
+
+M	help/de/de.po
+
+commit 7e1940ad444877f6fe17cff8befd469e4ee22ee8
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-11-04
+
+    Forgotten to add before
+
+A	help/de/figures/merge-ex3-1.png
+A	help/de/figures/merge-ex3-2.png
+
+commit f01319ec821d3a3a0463010ca001eaf883cfd98a
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-11-04
+
+    New screenshots
+
+M	help/C/figures/merge-ex3-1.png
+M	help/C/figures/merge-ex3-2.png
+
+commit 4b24ee895b75d59225bedee6ee6a1140a54eebcb
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-11-04
+
+    Updated German doc translation
+
+M	po/de.po
+
+commit b9b0ec1e9eaedcf92ac4a2600d2e09a3a9f466c8
+Author: Daniel Nylander <po@danielnylander.se>
+Date:	2009-11-04
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit d0777b14a00530d90dab29e85aabad7b6ff57b67
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-11-03
+
+    Updated documentation for 2.2.6
+
+    - Added an example for doing document merge from evolution data
+    server.  (Mario Blättermann)
+    - Updated most screenshots to 2.2.6 with Clearlooks theme.
+    - Minor corrections
+
+A	.gitignore
+M	help/C/figures/main-window-empty.png
+M	help/C/figures/merge-ex1-1.png
+M	help/C/figures/merge-ex1-2.png
+M	help/C/figures/merge-ex1-3.png
+M	help/C/figures/merge-ex1-4.png
+M	help/C/figures/merge-ex2-1.png
+M	help/C/figures/merge-ex2-2.png
+M	help/C/figures/merge-ex2-3.png
+M	help/C/figures/merge-ex2-4.png
+A	help/C/figures/merge-ex3-1.png
+A	help/C/figures/merge-ex3-2.png
+M	help/C/figures/object-editor-sidebar.png
+M	help/C/figures/print-copies.png
+M	help/C/figures/print-merge.png
+M	help/C/glabels.xml
+M	help/Makefile.am
+
+commit 8fe92bd1ae20ab937f2a5de135c80d92e4c685eb
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-10-25
+
+    Start new path when drawing round labels
+
+    Start new path when drawing round labels.  This fixes a bug, where
+    if the
+    top most object is a text object, an extras line would be drawn.
+
+M	src/cairo-label-path.c
+
+commit d55ffd2866c5d6a20c1236f087b18316989c87dd
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-10-25
+
+    Fixed incorrect storage of glPrefsModel's base object
+
+    Parent object was declared as a pointer, so there was not enough
+    room for
+    the parent/base object.  This potentially could have caused havoc
+    with this
+    object.
+
+M	src/prefs-model.h
+
+commit 33821ebe5b65a8191215646fab2be577854bfb17
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-10-10
+
+    Converted translations to UTF-8
+
+M	po/pl.po
+M	po/pt_BR.po
+
+commit 69e71bfe60909459ed177b767b40f0940824ad6b
+Author: Daniel Nylander <po@danielnylander.se>
+Date:	2009-10-06
+
+    Added Swedish translation
+
+M	po/LINGUAS
+A	po/sv.po
+
+commit e04fe3a1a5b378412eb153350e2fb2b8a22eb8b1
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-10-06
+
+    Converted polish translation to UTF-8
+
+M	po/pl.po
+
+commit 37b8623b1615da2b54cf2b22444f89c3e36b429d
+Author: Claude Paroz <claude@2xlibre.net>
+Date:	2009-10-06
+
+    Convert zh_TW translation to UTF-8
+
+M	po/LINGUAS
+R089	po/zh_TW.Big5.po	po/zh_TW.po
+
+commit 885961d5ac802bf487d34b400679b2f15855d1e4
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-10-06
+
+    Updated German translation
+
+M	po/de.po
+
+commit 3a3f0f3859c7ddeeeb9b2251fddf2c066ee9ca99
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-10-05
+
+    Moved files to top-level of branch.
+
+    Moved files to top-level directory of glabels_2_2 branch.  This is
+    an artifact
+    of the old SVN layout.  Fixed problems with zh_CN.po that prevented
+    push.
+
+R100	glabels2/help/de/de.po	help/de/de.po
+R100	glabels2/help/de/figures/main-window-empty.png
+help/de/figures/main-window-empty.png
+R100	glabels2/help/de/figures/merge-ex1-1.png
+help/de/figures/merge-ex1-1.png
+R100	glabels2/help/de/figures/merge-ex1-2.png
+help/de/figures/merge-ex1-2.png
+R100	glabels2/help/de/figures/merge-ex1-3.png
+help/de/figures/merge-ex1-3.png
+R100	glabels2/help/de/figures/merge-ex1-4.png
+help/de/figures/merge-ex1-4.png
+R100	glabels2/help/de/figures/merge-ex2-1.png
+help/de/figures/merge-ex2-1.png
+R100	glabels2/help/de/figures/merge-ex2-2.png
+help/de/figures/merge-ex2-2.png
+R100	glabels2/help/de/figures/merge-ex2-3.png
+help/de/figures/merge-ex2-3.png
+R100	glabels2/help/de/figures/merge-ex2-4.png
+help/de/figures/merge-ex2-4.png
+R100	glabels2/help/de/figures/object-editor-sidebar.png
+help/de/figures/object-editor-sidebar.png
+R100	glabels2/help/de/figures/print-copies.png
+help/de/figures/print-copies.png
+R100	glabels2/help/de/figures/print-merge.png
+help/de/figures/print-merge.png
+R100	glabels2/help/glabels-help.pot	help/glabels-help.pot
+R100	glabels2/help/glabels.omf.in	help/glabels.omf.in
+R100	glabels2/po/LINGUAS	po/LINGUAS
+R100	glabels2/po/ca.po	po/ca.po
+R099	glabels2/po/zh_CN.po	po/zh_CN.po
+
+commit 484197466a1ddace52d14046709ad6e8c4f17bbc
+Merge: 9ebfc49 d3a7257
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-09-28
+
+    Merge original SVN glabels-2_2 branch into glabels_2_2
+
+    Restored history past 2.2.5 release that was lost when originally
+    creating
+    branch from SVN.
+
+commit 9ebfc492936b30b4095ae458278e63c51caf3f67
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-09-26
+
+    Reorganized glabels_2_2 branch so that it is the top-level glabels
+    directory,
+    instead of having a glabels2 subdirectory.
+
+R100	glabels2/AUTHORS	AUTHORS
+R100	glabels2/COPYING	COPYING
+R100	glabels2/COPYING-DOCS	COPYING-DOCS
+R100	glabels2/COPYING-LIBGLABELS	COPYING-LIBGLABELS
+R100	glabels2/COPYING.README_FIRST	COPYING.README_FIRST
+R100	glabels2/ChangeLog	ChangeLog
+R100	glabels2/INSTALL	INSTALL
+R100	glabels2/Makefile.am	Makefile.am
+R100	glabels2/NEWS	NEWS
+R100	glabels2/README README
+R100	glabels2/TODO	TODO
+R100	glabels2/autogen.sh	autogen.sh
+R100	glabels2/barcode-0.98/COPYING	barcode-0.98/COPYING
+R100	glabels2/barcode-0.98/ChangeLog barcode-0.98/ChangeLog
+R100	glabels2/barcode-0.98/INSTALL	barcode-0.98/INSTALL
+R100	glabels2/barcode-0.98/Makefile.am	barcode-0.98/Makefile.am
+R100	glabels2/barcode-0.98/Makefile.in.dist
+barcode-0.98/Makefile.in.dist
+R100	glabels2/barcode-0.98/README	barcode-0.98/README
+R100	glabels2/barcode-0.98/README.glabels
+barcode-0.98/README.glabels
+R100	glabels2/barcode-0.98/TODO	barcode-0.98/TODO
+R100	glabels2/barcode-0.98/barcode.h barcode-0.98/barcode.h
+R100	glabels2/barcode-0.98/barcode.spec	barcode-0.98/barcode.spec
+R100	glabels2/barcode-0.98/bookland/bookland.py
+barcode-0.98/bookland/bookland.py
+R100	glabels2/barcode-0.98/cmdline.c barcode-0.98/cmdline.c
+R100	glabels2/barcode-0.98/cmdline.h barcode-0.98/cmdline.h
+R100	glabels2/barcode-0.98/codabar.c barcode-0.98/codabar.c
+R100	glabels2/barcode-0.98/code128.c barcode-0.98/code128.c
+R100	glabels2/barcode-0.98/code39.c	barcode-0.98/code39.c
+R100	glabels2/barcode-0.98/code93.c	barcode-0.98/code93.c
+R100	glabels2/barcode-0.98/compat/getopt.c
+barcode-0.98/compat/getopt.c
+R100	glabels2/barcode-0.98/compat/getopt.h
+barcode-0.98/compat/getopt.h
+R100	glabels2/barcode-0.98/configure barcode-0.98/configure
+R100	glabels2/barcode-0.98/configure.in.dist
+barcode-0.98/configure.in.dist
+R100	glabels2/barcode-0.98/contrib/barcode-SVG.tar.gz
+barcode-0.98/contrib/barcode-SVG.tar.gz
+R100	glabels2/barcode-0.98/contrib/barcode-SVG.tar.gz.README
+barcode-0.98/contrib/barcode-SVG.tar.gz.README
+R100	glabels2/barcode-0.98/contrib/barcode-for-delphi.tar.gz
+barcode-0.98/contrib/barcode-for-delphi.tar.gz
+R100	glabels2/barcode-0.98/contrib/barcode-for-delphi.tar.gz.README
+barcode-0.98/contrib/barcode-for-delphi.tar.gz.README
+R100	glabels2/barcode-0.98/contrib/barcodeps-0.1.tgz
+barcode-0.98/contrib/barcodeps-0.1.tgz
+R100	glabels2/barcode-0.98/contrib/barcodeps-0.1.tgz.README
+barcode-0.98/contrib/barcodeps-0.1.tgz.README
+R100	glabels2/barcode-0.98/contrib/grab-0.0.4.tar.gz
+barcode-0.98/contrib/grab-0.0.4.tar.gz
+R100	glabels2/barcode-0.98/contrib/grab-0.0.4.tar.gz.README
+barcode-0.98/contrib/grab-0.0.4.tar.gz.README
+R100	glabels2/barcode-0.98/debian/README.debian
+barcode-0.98/debian/README.debian
+R100	glabels2/barcode-0.98/debian/changelog
+barcode-0.98/debian/changelog
+R100	glabels2/barcode-0.98/debian/control
+barcode-0.98/debian/control
+R100	glabels2/barcode-0.98/debian/copyright
+barcode-0.98/debian/copyright
+R100	glabels2/barcode-0.98/debian/dirs	barcode-0.98/debian/dirs
+R100	glabels2/barcode-0.98/debian/info	barcode-0.98/debian/info
+R100	glabels2/barcode-0.98/debian/rules	barcode-0.98/debian/rules
+R100	glabels2/barcode-0.98/doc/Makefile.in
+barcode-0.98/doc/Makefile.in
+R100	glabels2/barcode-0.98/doc/README	barcode-0.98/doc/README
+R100	glabels2/barcode-0.98/doc/barcode.info
+barcode-0.98/doc/barcode.info
+R100	glabels2/barcode-0.98/doc/barcode.pdf
+barcode-0.98/doc/barcode.pdf
+R100	glabels2/barcode-0.98/doc/barcode.ps
+barcode-0.98/doc/barcode.ps
+R100	glabels2/barcode-0.98/doc/barcodedoc.txt
+barcode-0.98/doc/barcodedoc.txt
+R100	glabels2/barcode-0.98/doc/doc.barcode
+barcode-0.98/doc/doc.barcode
+R100	glabels2/barcode-0.98/doc/infofilter
+barcode-0.98/doc/infofilter
+R100	glabels2/barcode-0.98/doc/manpager	barcode-0.98/doc/manpager
+R100	glabels2/barcode-0.98/doc/mktxt barcode-0.98/doc/mktxt
+R100	glabels2/barcode-0.98/doc/texi2html	barcode-0.98/doc/texi2html
+R100	glabels2/barcode-0.98/ean.c	barcode-0.98/ean.c
+R100	glabels2/barcode-0.98/i25.c	barcode-0.98/i25.c
+R100	glabels2/barcode-0.98/install-sh	barcode-0.98/install-sh
+R100	glabels2/barcode-0.98/library.c barcode-0.98/library.c
+R100	glabels2/barcode-0.98/main.c	barcode-0.98/main.c
+R100	glabels2/barcode-0.98/missing	barcode-0.98/missing
+R100	glabels2/barcode-0.98/mkinstalldirs	barcode-0.98/mkinstalldirs
+R100	glabels2/barcode-0.98/msi.c	barcode-0.98/msi.c
+R100	glabels2/barcode-0.98/pcl.c	barcode-0.98/pcl.c
+R100	glabels2/barcode-0.98/plessey.c barcode-0.98/plessey.c
+R100	glabels2/barcode-0.98/ps.c	barcode-0.98/ps.c
+R100	glabels2/barcode-0.98/sample.c	barcode-0.98/sample.c
+R100	glabels2/configure.in	configure.in
+R100	glabels2/data/Makefile.am	data/Makefile.am
+R100	glabels2/data/desktop/Makefile.am	data/desktop/Makefile.am
+R100	glabels2/data/desktop/glabels.desktop.in
+data/desktop/glabels.desktop.in
+R100	glabels2/data/dtd/Makefile.am	data/dtd/Makefile.am
+R100	glabels2/data/dtd/glabels-2.2.dtd	data/dtd/glabels-2.2.dtd
+R100	glabels2/data/glade/Makefile.am data/glade/Makefile.am
+R100	glabels2/data/glade/merge-properties-dialog.glade
+data/glade/merge-properties-dialog.glade
+R100	glabels2/data/glade/new-label-dialog.glade
+data/glade/new-label-dialog.glade
+R100	glabels2/data/glade/object-editor.glade
+data/glade/object-editor.glade
+R100	glabels2/data/glade/prefs-dialog.glade
+data/glade/prefs-dialog.glade
+R100	glabels2/data/glade/print-custom-widget.glade
+data/glade/print-custom-widget.glade
+R100	glabels2/data/glade/property-bar.glade
+data/glade/property-bar.glade
+R100	glabels2/data/glade/template-designer.glade
+data/glade/template-designer.glade
+R100	glabels2/data/glade/wdgt-media-select.glade
+data/glade/wdgt-media-select.glade
+R100	glabels2/data/glade/wdgt-rotate-label.glade
+data/glade/wdgt-rotate-label.glade
+R100	glabels2/data/man/Makefile.am	data/man/Makefile.am
+R100	glabels2/data/man/glabels.1	data/man/glabels.1
+R100	glabels2/data/mime/Makefile.am	data/mime/Makefile.am
+R100	glabels2/data/mime/glabels.applications
+data/mime/glabels.applications
+R100	glabels2/data/mime/glabels.keys.in	data/mime/glabels.keys.in
+R100	glabels2/data/mime/glabels.mime data/mime/glabels.mime
+R100	glabels2/data/mime/glabels.xml.in	data/mime/glabels.xml.in
+R100	glabels2/data/pixmaps/Makefile.am	data/pixmaps/Makefile.am
+R100	glabels2/data/pixmaps/ex-1layout.png
+data/pixmaps/ex-1layout.png
+R100	glabels2/data/pixmaps/ex-2layouts.png
+data/pixmaps/ex-2layouts.png
+R100	glabels2/data/pixmaps/ex-cd-size.png
+data/pixmaps/ex-cd-size.png
+R100	glabels2/data/pixmaps/ex-rect-size.png
+data/pixmaps/ex-rect-size.png
+R100	glabels2/data/pixmaps/ex-round-size.png
+data/pixmaps/ex-round-size.png
+R100	glabels2/data/pixmaps/glabels-about-logo.png
+data/pixmaps/glabels-about-logo.png
+R100	glabels2/data/pixmaps/glabels-application-x-glabels.png
+data/pixmaps/glabels-application-x-glabels.png
+R100	glabels2/data/pixmaps/glabels-splash.png
+data/pixmaps/glabels-splash.png
+R100	glabels2/data/pixmaps/glabels.png	data/pixmaps/glabels.png
+R100	glabels2/data/templates/Makefile.am	data/templates/Makefile.am
+R100	glabels2/data/templates/avery-iso-templates.xml
+data/templates/avery-iso-templates.xml
+R100	glabels2/data/templates/avery-other-templates.xml
+data/templates/avery-other-templates.xml
+R100	glabels2/data/templates/avery-us-templates.xml
+data/templates/avery-us-templates.xml
+R100	glabels2/data/templates/brother-other-templates.xml
+data/templates/brother-other-templates.xml
+R100	glabels2/data/templates/categories.xml
+data/templates/categories.xml
+R100	glabels2/data/templates/dymo-other-templates.xml
+data/templates/dymo-other-templates.xml
+R100	glabels2/data/templates/misc-iso-templates.xml
+data/templates/misc-iso-templates.xml
+R100	glabels2/data/templates/misc-other-templates.xml
+data/templates/misc-other-templates.xml
+R100	glabels2/data/templates/misc-us-templates.xml
+data/templates/misc-us-templates.xml
+R100	glabels2/data/templates/paper-sizes.xml
+data/templates/paper-sizes.xml
+R100	glabels2/data/templates/zweckform-iso-templates.xml
+data/templates/zweckform-iso-templates.xml
+R100	glabels2/docs/Makefile.am	docs/Makefile.am
+R100	glabels2/docs/libglabels/Makefile.am
+docs/libglabels/Makefile.am
+R100	glabels2/docs/libglabels/libglabels-decl-list.txt
+docs/libglabels/libglabels-decl-list.txt
+R100	glabels2/docs/libglabels/libglabels-docs.sgml
+docs/libglabels/libglabels-docs.sgml
+R100	glabels2/docs/libglabels/libglabels-overrides.txt
+docs/libglabels/libglabels-overrides.txt
+R100	glabels2/docs/libglabels/libglabels-sections.txt
+docs/libglabels/libglabels-sections.txt
+R100	glabels2/docs/libglabels/libglabels-undocumented.txt
+docs/libglabels/libglabels-undocumented.txt
+R100	glabels2/docs/libglabels/libglabels.types
+docs/libglabels/libglabels.types
+R100	glabels2/docs/libglabels/tmpl/category.sgml
+docs/libglabels/tmpl/category.sgml
+R100	glabels2/docs/libglabels/tmpl/db.sgml
+docs/libglabels/tmpl/db.sgml
+R100	glabels2/docs/libglabels/tmpl/enums.sgml
+docs/libglabels/tmpl/enums.sgml
+R100	glabels2/docs/libglabels/tmpl/libglabels-unused.sgml
+docs/libglabels/tmpl/libglabels-unused.sgml
+R100	glabels2/docs/libglabels/tmpl/libglabels.sgml
+docs/libglabels/tmpl/libglabels.sgml
+R100	glabels2/docs/libglabels/tmpl/paper.sgml
+docs/libglabels/tmpl/paper.sgml
+R100	glabels2/docs/libglabels/tmpl/str.sgml
+docs/libglabels/tmpl/str.sgml
+R100	glabels2/docs/libglabels/tmpl/template.sgml
+docs/libglabels/tmpl/template.sgml
+R100	glabels2/docs/libglabels/tmpl/xml-category.sgml
+docs/libglabels/tmpl/xml-category.sgml
+R100	glabels2/docs/libglabels/tmpl/xml-paper.sgml
+docs/libglabels/tmpl/xml-paper.sgml
+R100	glabels2/docs/libglabels/tmpl/xml-template.sgml
+docs/libglabels/tmpl/xml-template.sgml
+R100	glabels2/docs/libglabels/tmpl/xml.sgml
+docs/libglabels/tmpl/xml.sgml
+R100	glabels2/glabels.spec.in	glabels.spec.in
+R100	glabels2/gtk-doc.make	gtk-doc.make
+R100	glabels2/help/C/Makefile.am	help/C/Makefile.am
+R100	glabels2/help/C/figures/glabels-template-cd.png
+help/C/figures/glabels-template-cd.png
+R100	glabels2/help/C/figures/glabels-template-label.png
+help/C/figures/glabels-template-label.png
+R100	glabels2/help/C/figures/glabels-template-layout.png
+help/C/figures/glabels-template-layout.png
+R100	glabels2/help/C/figures/main-window-empty.png
+help/C/figures/main-window-empty.png
+R100	glabels2/help/C/figures/merge-ex1-1.png
+help/C/figures/merge-ex1-1.png
+R100	glabels2/help/C/figures/merge-ex1-2.png
+help/C/figures/merge-ex1-2.png
+R100	glabels2/help/C/figures/merge-ex1-3.png
+help/C/figures/merge-ex1-3.png
+R100	glabels2/help/C/figures/merge-ex1-4.png
+help/C/figures/merge-ex1-4.png
+R100	glabels2/help/C/figures/merge-ex2-1.png
+help/C/figures/merge-ex2-1.png
+R100	glabels2/help/C/figures/merge-ex2-2.png
+help/C/figures/merge-ex2-2.png
+R100	glabels2/help/C/figures/merge-ex2-3.png
+help/C/figures/merge-ex2-3.png
+R100	glabels2/help/C/figures/merge-ex2-4.png
+help/C/figures/merge-ex2-4.png
+R100	glabels2/help/C/figures/object-editor-sidebar.png
+help/C/figures/object-editor-sidebar.png
+R100	glabels2/help/C/figures/print-copies.png
+help/C/figures/print-copies.png
+R100	glabels2/help/C/figures/print-merge.png
+help/C/figures/print-merge.png
+R100	glabels2/help/C/glabels-C.omf	help/C/glabels-C.omf
+R100	glabels2/help/C/glabels.xml	help/C/glabels.xml
+R100	glabels2/help/C/legal.xml	help/C/legal.xml
+R100	glabels2/help/Makefile.am	help/Makefile.am
+R100	glabels2/iec16022-0.2.1/BUGS	iec16022-0.2.1/BUGS
+R100	glabels2/iec16022-0.2.1/CHANGELOG	iec16022-0.2.1/CHANGELOG
+R100	glabels2/iec16022-0.2.1/CREDITS iec16022-0.2.1/CREDITS
+R100	glabels2/iec16022-0.2.1/INSTALL iec16022-0.2.1/INSTALL
+R100	glabels2/iec16022-0.2.1/LICENSE iec16022-0.2.1/LICENSE
+R100	glabels2/iec16022-0.2.1/Makefile.am	iec16022-0.2.1/Makefile.am
+R100	glabels2/iec16022-0.2.1/Makefile.dist
+iec16022-0.2.1/Makefile.dist
+R100	glabels2/iec16022-0.2.1/README	iec16022-0.2.1/README
+R100	glabels2/iec16022-0.2.1/README.glabels
+iec16022-0.2.1/README.glabels
+R100	glabels2/iec16022-0.2.1/TODO	iec16022-0.2.1/TODO
+R100	glabels2/iec16022-0.2.1/iec16022.1	iec16022-0.2.1/iec16022.1
+R100	glabels2/iec16022-0.2.1/iec16022.c	iec16022-0.2.1/iec16022.c
+R100	glabels2/iec16022-0.2.1/iec16022ecc200.c
+iec16022-0.2.1/iec16022ecc200.c
+R100	glabels2/iec16022-0.2.1/iec16022ecc200.h
+iec16022-0.2.1/iec16022ecc200.h
+R100	glabels2/iec16022-0.2.1/image.c iec16022-0.2.1/image.c
+R100	glabels2/iec16022-0.2.1/image.h iec16022-0.2.1/image.h
+R100	glabels2/iec16022-0.2.1/reedsol.c	iec16022-0.2.1/reedsol.c
+R100	glabels2/iec16022-0.2.1/reedsol.h	iec16022-0.2.1/reedsol.h
+R100	glabels2/iec16022-0.2.1/test/testsuite-example.bin
+iec16022-0.2.1/test/testsuite-example.bin
+R100	glabels2/iec16022-0.2.1/test/testsuite-example.eps
+iec16022-0.2.1/test/testsuite-example.eps
+R100	glabels2/iec16022-0.2.1/test/testsuite-example.hex
+iec16022-0.2.1/test/testsuite-example.hex
+R100	glabels2/iec16022-0.2.1/test/testsuite-example.png
+iec16022-0.2.1/test/testsuite-example.png
+R100	glabels2/iec16022-0.2.1/test/testsuite-example.text
+iec16022-0.2.1/test/testsuite-example.text
+R100	glabels2/iec16022-0.2.1/test/testsuite.sh
+iec16022-0.2.1/test/testsuite.sh
+R100	glabels2/libglabels/Makefile.am libglabels/Makefile.am
+R100	glabels2/libglabels/category.c	libglabels/category.c
+R100	glabels2/libglabels/category.h	libglabels/category.h
+R100	glabels2/libglabels/db.c	libglabels/db.c
+R100	glabels2/libglabels/db.h	libglabels/db.h
+R100	glabels2/libglabels/enums.h	libglabels/enums.h
+R100	glabels2/libglabels/libglabels-private.h
+libglabels/libglabels-private.h
+R100	glabels2/libglabels/libglabels.h	libglabels/libglabels.h
+R100	glabels2/libglabels/libglabels.pc.in
+libglabels/libglabels.pc.in
+R100	glabels2/libglabels/paper.c	libglabels/paper.c
+R100	glabels2/libglabels/paper.h	libglabels/paper.h
+R100	glabels2/libglabels/str.c	libglabels/str.c
+R100	glabels2/libglabels/str.h	libglabels/str.h
+R100	glabels2/libglabels/template.c	libglabels/template.c
+R100	glabels2/libglabels/template.h	libglabels/template.h
+R100	glabels2/libglabels/xml-category.c	libglabels/xml-category.c
+R100	glabels2/libglabels/xml-category.h	libglabels/xml-category.h
+R100	glabels2/libglabels/xml-paper.c libglabels/xml-paper.c
+R100	glabels2/libglabels/xml-paper.h libglabels/xml-paper.h
+R100	glabels2/libglabels/xml-template.c	libglabels/xml-template.c
+R100	glabels2/libglabels/xml-template.h	libglabels/xml-template.h
+R100	glabels2/libglabels/xml.c	libglabels/xml.c
+R100	glabels2/libglabels/xml.h	libglabels/xml.h
+R100	glabels2/po/POTFILES.in po/POTFILES.in
+R100	glabels2/po/cs.po	po/cs.po
+R100	glabels2/po/de.po	po/de.po
+R100	glabels2/po/eo.po	po/eo.po
+R100	glabels2/po/es.po	po/es.po
+R100	glabels2/po/fr.po	po/fr.po
+R100	glabels2/po/it.po	po/it.po
+R100	glabels2/po/ja.po	po/ja.po
+R100	glabels2/po/ko.po	po/ko.po
+R100	glabels2/po/pl.po	po/pl.po
+R100	glabels2/po/pt_BR.po	po/pt_BR.po
+R100	glabels2/po/ru.po	po/ru.po
+R100	glabels2/po/zh_TW.Big5.po	po/zh_TW.Big5.po
+R100	glabels2/src/Makefile.am	src/Makefile.am
+R100	glabels2/src/base64.c	src/base64.c
+R100	glabels2/src/base64.h	src/base64.h
+R100	glabels2/src/bc-gnubarcode.c	src/bc-gnubarcode.c
+R100	glabels2/src/bc-gnubarcode.h	src/bc-gnubarcode.h
+R100	glabels2/src/bc-iec16022.c	src/bc-iec16022.c
+R100	glabels2/src/bc-iec16022.h	src/bc-iec16022.h
+R100	glabels2/src/bc-postnet.c	src/bc-postnet.c
+R100	glabels2/src/bc-postnet.h	src/bc-postnet.h
+R100	glabels2/src/bc.c	src/bc.c
+R100	glabels2/src/bc.h	src/bc.h
+R100	glabels2/src/cairo-ellipse-path.c	src/cairo-ellipse-path.c
+R100	glabels2/src/cairo-ellipse-path.h	src/cairo-ellipse-path.h
+R100	glabels2/src/cairo-label-path.c src/cairo-label-path.c
+R100	glabels2/src/cairo-label-path.h src/cairo-label-path.h
+R100	glabels2/src/cairo-markup-path.c	src/cairo-markup-path.c
+R100	glabels2/src/cairo-markup-path.h	src/cairo-markup-path.h
+R100	glabels2/src/color.c	src/color.c
+R100	glabels2/src/color.h	src/color.h
+R100	glabels2/src/critical-error-handler.c
+src/critical-error-handler.c
+R100	glabels2/src/critical-error-handler.h
+src/critical-error-handler.h
+R100	glabels2/src/debug.c	src/debug.c
+R100	glabels2/src/debug.h	src/debug.h
+R100	glabels2/src/file.c	src/file.c
+R100	glabels2/src/file.h	src/file.h
+R100	glabels2/src/glabels-batch.c	src/glabels-batch.c
+R100	glabels2/src/glabels.c	src/glabels.c
+R100	glabels2/src/hig.h	src/hig.h
+R100	glabels2/src/label-barcode.c	src/label-barcode.c
+R100	glabels2/src/label-barcode.h	src/label-barcode.h
+R100	glabels2/src/label-box.c	src/label-box.c
+R100	glabels2/src/label-box.h	src/label-box.h
+R100	glabels2/src/label-ellipse.c	src/label-ellipse.c
+R100	glabels2/src/label-ellipse.h	src/label-ellipse.h
+R100	glabels2/src/label-image.c	src/label-image.c
+R100	glabels2/src/label-image.h	src/label-image.h
+R100	glabels2/src/label-line.c	src/label-line.c
+R100	glabels2/src/label-line.h	src/label-line.h
+R100	glabels2/src/label-object.c	src/label-object.c
+R100	glabels2/src/label-object.h	src/label-object.h
+R100	glabels2/src/label-text.c	src/label-text.c
+R100	glabels2/src/label-text.h	src/label-text.h
+R100	glabels2/src/label.c	src/label.c
+R100	glabels2/src/label.h	src/label.h
+R100	glabels2/src/marshal.list	src/marshal.list
+R100	glabels2/src/merge-evolution.c	src/merge-evolution.c
+R100	glabels2/src/merge-evolution.h	src/merge-evolution.h
+R100	glabels2/src/merge-init.c	src/merge-init.c
+R100	glabels2/src/merge-init.h	src/merge-init.h
+R100	glabels2/src/merge-properties-dialog.c
+src/merge-properties-dialog.c
+R100	glabels2/src/merge-properties-dialog.h
+src/merge-properties-dialog.h
+R100	glabels2/src/merge-text.c	src/merge-text.c
+R100	glabels2/src/merge-text.h	src/merge-text.h
+R100	glabels2/src/merge-vcard.c	src/merge-vcard.c
+R100	glabels2/src/merge-vcard.h	src/merge-vcard.h
+R100	glabels2/src/merge.c	src/merge.c
+R100	glabels2/src/merge.h	src/merge.h
+R100	glabels2/src/mini-preview-pixbuf-cache.c
+src/mini-preview-pixbuf-cache.c
+R100	glabels2/src/mini-preview-pixbuf-cache.h
+src/mini-preview-pixbuf-cache.h
+R100	glabels2/src/mini-preview-pixbuf.c	src/mini-preview-pixbuf.c
+R100	glabels2/src/mini-preview-pixbuf.h	src/mini-preview-pixbuf.h
+R100	glabels2/src/mygal/Makefile.am	src/mygal/Makefile.am
+R100	glabels2/src/mygal/color-group.c	src/mygal/color-group.c
+R100	glabels2/src/mygal/color-group.h	src/mygal/color-group.h
+R100	glabels2/src/mygal/color-palette.c	src/mygal/color-palette.c
+R100	glabels2/src/mygal/color-palette.h	src/mygal/color-palette.h
+R100	glabels2/src/mygal/e-colors.c	src/mygal/e-colors.c
+R100	glabels2/src/mygal/e-colors.h	src/mygal/e-colors.h
+R100	glabels2/src/mygal/e-marshal.list	src/mygal/e-marshal.list
+R100	glabels2/src/mygal/e-util.h	src/mygal/e-util.h
+R100	glabels2/src/mygal/mygal-combo-box.c
+src/mygal/mygal-combo-box.c
+R100	glabels2/src/mygal/mygal-combo-box.h
+src/mygal/mygal-combo-box.h
+R100	glabels2/src/mygal/widget-color-combo.c
+src/mygal/widget-color-combo.c
+R100	glabels2/src/mygal/widget-color-combo.h
+src/mygal/widget-color-combo.h
+R100	glabels2/src/new-label-dialog.c src/new-label-dialog.c
+R100	glabels2/src/new-label-dialog.h src/new-label-dialog.h
+R100	glabels2/src/object-editor-bc-page.c
+src/object-editor-bc-page.c
+R100	glabels2/src/object-editor-data-page.c
+src/object-editor-data-page.c
+R100	glabels2/src/object-editor-edit-page.c
+src/object-editor-edit-page.c
+R100	glabels2/src/object-editor-fill-page.c
+src/object-editor-fill-page.c
+R100	glabels2/src/object-editor-image-page.c
+src/object-editor-image-page.c
+R100	glabels2/src/object-editor-line-page.c
+src/object-editor-line-page.c
+R100	glabels2/src/object-editor-lsize-page.c
+src/object-editor-lsize-page.c
+R100	glabels2/src/object-editor-position-page.c
+src/object-editor-position-page.c
+R100	glabels2/src/object-editor-private.h
+src/object-editor-private.h
+R100	glabels2/src/object-editor-shadow-page.c
+src/object-editor-shadow-page.c
+R100	glabels2/src/object-editor-size-page.c
+src/object-editor-size-page.c
+R100	glabels2/src/object-editor-text-page.c
+src/object-editor-text-page.c
+R100	glabels2/src/object-editor.c	src/object-editor.c
+R100	glabels2/src/object-editor.h	src/object-editor.h
+R100	glabels2/src/pixbuf-cache.c	src/pixbuf-cache.c
+R100	glabels2/src/pixbuf-cache.h	src/pixbuf-cache.h
+R100	glabels2/src/pixmaps/Makefile.am	src/pixmaps/Makefile.am
+R100	glabels2/src/pixmaps/checkerboard.xpm
+src/pixmaps/checkerboard.xpm
+R100	glabels2/src/pixmaps/collate.xpm	src/pixmaps/collate.xpm
+R100	glabels2/src/pixmaps/cursor_barcode.xbm
+src/pixmaps/cursor_barcode.xbm
+R100	glabels2/src/pixmaps/cursor_barcode_mask.xbm
+src/pixmaps/cursor_barcode_mask.xbm
+R100	glabels2/src/pixmaps/cursor_box.xbm	src/pixmaps/cursor_box.xbm
+R100	glabels2/src/pixmaps/cursor_box_mask.xbm
+src/pixmaps/cursor_box_mask.xbm
+R100	glabels2/src/pixmaps/cursor_ellipse.xbm
+src/pixmaps/cursor_ellipse.xbm
+R100	glabels2/src/pixmaps/cursor_ellipse_mask.xbm
+src/pixmaps/cursor_ellipse_mask.xbm
+R100	glabels2/src/pixmaps/cursor_image.xbm
+src/pixmaps/cursor_image.xbm
+R100	glabels2/src/pixmaps/cursor_image_mask.xbm
+src/pixmaps/cursor_image_mask.xbm
+R100	glabels2/src/pixmaps/cursor_line.xbm
+src/pixmaps/cursor_line.xbm
+R100	glabels2/src/pixmaps/cursor_line_mask.xbm
+src/pixmaps/cursor_line_mask.xbm
+R100	glabels2/src/pixmaps/cursor_text.xbm
+src/pixmaps/cursor_text.xbm
+R100	glabels2/src/pixmaps/cursor_text_mask.xbm
+src/pixmaps/cursor_text_mask.xbm
+R100	glabels2/src/pixmaps/nocollate.xpm	src/pixmaps/nocollate.xpm
+R100	glabels2/src/prefs-dialog.c	src/prefs-dialog.c
+R100	glabels2/src/prefs-dialog.h	src/prefs-dialog.h
+R100	glabels2/src/prefs-model.c	src/prefs-model.c
+R100	glabels2/src/prefs-model.h	src/prefs-model.h
+R100	glabels2/src/prefs.c	src/prefs.c
+R100	glabels2/src/prefs.h	src/prefs.h
+R100	glabels2/src/print-op.c src/print-op.c
+R100	glabels2/src/print-op.h src/print-op.h
+R100	glabels2/src/print.c	src/print.c
+R100	glabels2/src/print.h	src/print.h
+R100	glabels2/src/recent.c	src/recent.c
+R100	glabels2/src/recent.h	src/recent.h
+R100	glabels2/src/stock-pixmaps/Makefile.am
+src/stock-pixmaps/Makefile.am
+R100	glabels2/src/stock-pixmaps/stock_align_bottom_16.png
+src/stock-pixmaps/stock_align_bottom_16.png
+R100	glabels2/src/stock-pixmaps/stock_align_hcenter_16.png
+src/stock-pixmaps/stock_align_hcenter_16.png
+R100	glabels2/src/stock-pixmaps/stock_align_left_16.png
+src/stock-pixmaps/stock_align_left_16.png
+R100	glabels2/src/stock-pixmaps/stock_align_right_16.png
+src/stock-pixmaps/stock_align_right_16.png
+R100	glabels2/src/stock-pixmaps/stock_align_top_16.png
+src/stock-pixmaps/stock_align_top_16.png
+R100	glabels2/src/stock-pixmaps/stock_align_vcenter_16.png
+src/stock-pixmaps/stock_align_vcenter_16.png
+R100	glabels2/src/stock-pixmaps/stock_arrow_16.png
+src/stock-pixmaps/stock_arrow_16.png
+R100	glabels2/src/stock-pixmaps/stock_arrow_24.png
+src/stock-pixmaps/stock_arrow_24.png
+R100	glabels2/src/stock-pixmaps/stock_barcode_16.png
+src/stock-pixmaps/stock_barcode_16.png
+R100	glabels2/src/stock-pixmaps/stock_barcode_24.png
+src/stock-pixmaps/stock_barcode_24.png
+R100	glabels2/src/stock-pixmaps/stock_box_16.png
+src/stock-pixmaps/stock_box_16.png
+R100	glabels2/src/stock-pixmaps/stock_box_24.png
+src/stock-pixmaps/stock_box_24.png
+R100	glabels2/src/stock-pixmaps/stock_bucket_fill_16.png
+src/stock-pixmaps/stock_bucket_fill_16.png
+R100	glabels2/src/stock-pixmaps/stock_bucket_fill_24.png
+src/stock-pixmaps/stock_bucket_fill_24.png
+R100	glabels2/src/stock-pixmaps/stock_center_horiz_16.png
+src/stock-pixmaps/stock_center_horiz_16.png
+R100	glabels2/src/stock-pixmaps/stock_center_vert_16.png
+src/stock-pixmaps/stock_center_vert_16.png
+R100	glabels2/src/stock-pixmaps/stock_ellipse_16.png
+src/stock-pixmaps/stock_ellipse_16.png
+R100	glabels2/src/stock-pixmaps/stock_ellipse_24.png
+src/stock-pixmaps/stock_ellipse_24.png
+R100	glabels2/src/stock-pixmaps/stock_flip_horiz_16.png
+src/stock-pixmaps/stock_flip_horiz_16.png
+R100	glabels2/src/stock-pixmaps/stock_flip_vert_16.png
+src/stock-pixmaps/stock_flip_vert_16.png
+R100	glabels2/src/stock-pixmaps/stock_hchain_24.png
+src/stock-pixmaps/stock_hchain_24.png
+R100	glabels2/src/stock-pixmaps/stock_hchain_broken_24.png
+src/stock-pixmaps/stock_hchain_broken_24.png
+R100	glabels2/src/stock-pixmaps/stock_image_16.png
+src/stock-pixmaps/stock_image_16.png
+R100	glabels2/src/stock-pixmaps/stock_image_24.png
+src/stock-pixmaps/stock_image_24.png
+R100	glabels2/src/stock-pixmaps/stock_line_16.png
+src/stock-pixmaps/stock_line_16.png
+R100	glabels2/src/stock-pixmaps/stock_line_24.png
+src/stock-pixmaps/stock_line_24.png
+R100	glabels2/src/stock-pixmaps/stock_merge_16.png
+src/stock-pixmaps/stock_merge_16.png
+R100	glabels2/src/stock-pixmaps/stock_merge_24.png
+src/stock-pixmaps/stock_merge_24.png
+R100	glabels2/src/stock-pixmaps/stock_order_bottom_16.png
+src/stock-pixmaps/stock_order_bottom_16.png
+R100	glabels2/src/stock-pixmaps/stock_order_top_16.png
+src/stock-pixmaps/stock_order_top_16.png
+R100	glabels2/src/stock-pixmaps/stock_pencil_16.png
+src/stock-pixmaps/stock_pencil_16.png
+R100	glabels2/src/stock-pixmaps/stock_pencil_24.png
+src/stock-pixmaps/stock_pencil_24.png
+R100	glabels2/src/stock-pixmaps/stock_properties_16.png
+src/stock-pixmaps/stock_properties_16.png
+R100	glabels2/src/stock-pixmaps/stock_properties_24.png
+src/stock-pixmaps/stock_properties_24.png
+R100	glabels2/src/stock-pixmaps/stock_rotate_left_16.png
+src/stock-pixmaps/stock_rotate_left_16.png
+R100	glabels2/src/stock-pixmaps/stock_rotate_right_16.png
+src/stock-pixmaps/stock_rotate_right_16.png
+R100	glabels2/src/stock-pixmaps/stock_text_16.png
+src/stock-pixmaps/stock_text_16.png
+R100	glabels2/src/stock-pixmaps/stock_text_24.png
+src/stock-pixmaps/stock_text_24.png
+R100	glabels2/src/stock-pixmaps/stock_vchain_24.png
+src/stock-pixmaps/stock_vchain_24.png
+R100	glabels2/src/stock-pixmaps/stock_vchain_broken_24.png
+src/stock-pixmaps/stock_vchain_broken_24.png
+R100	glabels2/src/stock.c	src/stock.c
+R100	glabels2/src/stock.h	src/stock.h
+R100	glabels2/src/template-designer.c	src/template-designer.c
+R100	glabels2/src/template-designer.h	src/template-designer.h
+R100	glabels2/src/text-node.c	src/text-node.c
+R100	glabels2/src/text-node.h	src/text-node.h
+R100	glabels2/src/ui-commands.c	src/ui-commands.c
+R100	glabels2/src/ui-commands.h	src/ui-commands.h
+R100	glabels2/src/ui-property-bar.c	src/ui-property-bar.c
+R100	glabels2/src/ui-property-bar.h	src/ui-property-bar.h
+R100	glabels2/src/ui-sidebar.c	src/ui-sidebar.c
+R100	glabels2/src/ui-sidebar.h	src/ui-sidebar.h
+R100	glabels2/src/ui-util.c	src/ui-util.c
+R100	glabels2/src/ui-util.h	src/ui-util.h
+R100	glabels2/src/ui.c	src/ui.c
+R100	glabels2/src/ui.h	src/ui.h
+R100	glabels2/src/util.c	src/util.c
+R100	glabels2/src/util.h	src/util.h
+R100	glabels2/src/view-barcode.c	src/view-barcode.c
+R100	glabels2/src/view-barcode.h	src/view-barcode.h
+R100	glabels2/src/view-box.c src/view-box.c
+R100	glabels2/src/view-box.h src/view-box.h
+R100	glabels2/src/view-ellipse.c	src/view-ellipse.c
+R100	glabels2/src/view-ellipse.h	src/view-ellipse.h
+R100	glabels2/src/view-image.c	src/view-image.c
+R100	glabels2/src/view-image.h	src/view-image.h
+R100	glabels2/src/view-line.c	src/view-line.c
+R100	glabels2/src/view-line.h	src/view-line.h
+R100	glabels2/src/view-object.c	src/view-object.c
+R100	glabels2/src/view-object.h	src/view-object.h
+R100	glabels2/src/view-text.c	src/view-text.c
+R100	glabels2/src/view-text.h	src/view-text.h
+R100	glabels2/src/view.c	src/view.c
+R100	glabels2/src/view.h	src/view.h
+R100	glabels2/src/warning-handler.c	src/warning-handler.c
+R100	glabels2/src/warning-handler.h	src/warning-handler.h
+R100	glabels2/src/wdgt-chain-button.c	src/wdgt-chain-button.c
+R100	glabels2/src/wdgt-chain-button.h	src/wdgt-chain-button.h
+R100	glabels2/src/wdgt-media-select.c	src/wdgt-media-select.c
+R100	glabels2/src/wdgt-media-select.h	src/wdgt-media-select.h
+R100	glabels2/src/wdgt-mini-preview.c	src/wdgt-mini-preview.c
+R100	glabels2/src/wdgt-mini-preview.h	src/wdgt-mini-preview.h
+R100	glabels2/src/wdgt-print-copies.c	src/wdgt-print-copies.c
+R100	glabels2/src/wdgt-print-copies.h	src/wdgt-print-copies.h
+R100	glabels2/src/wdgt-print-merge.c src/wdgt-print-merge.c
+R100	glabels2/src/wdgt-print-merge.h src/wdgt-print-merge.h
+R100	glabels2/src/wdgt-rotate-label.c	src/wdgt-rotate-label.c
+R100	glabels2/src/wdgt-rotate-label.h	src/wdgt-rotate-label.h
+R100	glabels2/src/window.c	src/window.c
+R100	glabels2/src/window.h	src/window.h
+R100	glabels2/src/xml-label-04.c	src/xml-label-04.c
+R100	glabels2/src/xml-label-04.h	src/xml-label-04.h
+R100	glabels2/src/xml-label.c	src/xml-label.c
+R100	glabels2/src/xml-label.h	src/xml-label.h
+
+commit d3a72579798314c893e9dd7b9c1dc0927f0a89f6
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-09-18
+
+    2009-09-17	Jim Evins  <evins@snaught.com>
+
+	* src/stock.c: (add_icons), (add_button_icon):
+		Use proper free function for GtkIconSource
+		(gtk_icon_source_free() not g_free()).
+		Patch provided by Christian Persch <chpe@gnome.org>.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@887
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/stock.c
+
+commit d6ca76c9dbc400c5fb6d53a06213548ec06cb207
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-09-10
+
+    2009-09-09	Jim Evins  <evins@snaught.com>
+
+	* configure.in:
+		Deleted help/C/Makefile.am.  Fixes "make dist".
+	* help/Makefile.am:
+		Removed trailing whitespace.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@881
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/configure.in
+M	glabels2/gtk-doc.make
+D	glabels2/help/C/Makefile.am
+M	glabels2/help/Makefile.am
+
+commit 6aa23570ca0b86c434a605f3c5a283a0f5d22e73
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-09-09
+
+    Added a translation template for the documentation,
+    created with the latest xml2po version from gnome-doc-utils v0.17.3
+
+    Updated German doc translation
+
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@879
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/help/de/de.po
+A	glabels2/help/glabels-help.pot
+
+commit 681ec7dbf587319f53d3ce59e8e62ac3b16e476c
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-09-09
+
+    Removed unneeded whitespace from subject category in glabels.omf.in.
+
+    Fixed some formatting bugs in glabels.xml.
+
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@878
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/help/C/glabels.xml
+M	glabels2/help/glabels.omf.in
+
+commit fbdd5f00e6cde15930a2c9fd848bd8a6cc124208
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-09-08
+
+    Added screenshots to German docs
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@875
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+A	glabels2/help/de/figures/main-window-empty.png
+A	glabels2/help/de/figures/merge-ex1-1.png
+A	glabels2/help/de/figures/merge-ex1-2.png
+A	glabels2/help/de/figures/merge-ex1-3.png
+A	glabels2/help/de/figures/merge-ex1-4.png
+A	glabels2/help/de/figures/merge-ex2-1.png
+A	glabels2/help/de/figures/merge-ex2-2.png
+A	glabels2/help/de/figures/merge-ex2-3.png
+A	glabels2/help/de/figures/merge-ex2-4.png
+A	glabels2/help/de/figures/object-editor-sidebar.png
+A	glabels2/help/de/figures/print-copies.png
+A	glabels2/help/de/figures/print-merge.png
+
+commit e17c32e30a18a859fcf20bd5d1b8f791e7b2b946
+Author: Mario Blättermann <mariobl@gnome.org>
+Date:	2009-09-08
+
+    Updated German doc translation
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@874
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/help/de/de.po
+
+commit 26a4496bb2e3fe0a4320b68147a88e0e52673f7f
+Author: Alexandre Prokoudine <alexandre.prokoudine@gmail.com>
+Date:	2009-09-08
+
+    Updated Russian translation
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@873
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/po/ru.po
+
+commit 86a8bb0c5f86a84dc85a8238cee4e4b4c2ec895f
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-09-01
+
+    2009-08-31	Jim Evins  <evins@snaught.com>
+
+	* po/fr.po:
+		Updated french translation (Claude Paroz)
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@864
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/po/fr.po
+
+commit 2fdeef77371533c7ae0f627fa14dd683616b8dd5
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-05-20
+
+    2009-05-19	Jim Evins  <evins@snaught.com>
+
+	* configure.in:
+	* po/LINGUAS:
+		Moved translation list from configure.in to po/LINGUAS.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@853
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/configure.in
+A	glabels2/po/LINGUAS
+
+commit ad91b41ce563ebe5b0fcb2a86c02d23f697c3790
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-05-20
+
+    2009-05-19	Jim Evins  <evins@snaught.com>
+
+	* configure.in:
+	* po/zh_CN.po:
+		New Chinese translation (Careon
+		<zzbusagain@yahoo.com.cn>).
+	* AUTHORS:
+		Added above translation to acknowledgements.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@850
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/AUTHORS
+M	glabels2/ChangeLog
+M	glabels2/configure.in
+A	glabels2/po/zh_CN.po
+
+commit d9d21f38de54637ea0713406beb5cfd93598369c
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-05-18
+
+    2009-05-18	Jim Evins  <evins@snaught.com>
+
+	* src/prefs-model.c: (gl_prefs_model_load_settings):
+		Make an educated guess at locale settings when run for the
+		first time.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@848
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/prefs-model.c
+
+commit 19a05da1d464dc893cb20d959f1bf7ec150ad08b
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-05-18
+
+    Deleting file that is unused with last checkin.
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@847
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+D	glabels2/help/C/glabels-C.omf
+
+commit 1ef96f18da1704ef0fc131366b456e6dfa345f01
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-05-18
+
+    2009-05-17	Jim Evins  <evins@snaught.com>
+
+	* Makefile.am:
+	* configure.in:
+	* help/C/glabels-C.omf:
+	* help/C/glabels.xml:
+	* help/Makefile.am:
+	* help/de/de.po:
+	* help/glabels.omf.in:
+	* po/de.po:
+		Updated german translation, gnome-doc-utils support and
+		german translation of glabels manual (Mario Blättermann).
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@844
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/Makefile.am
+M	glabels2/configure.in
+M	glabels2/help/C/glabels-C.omf
+M	glabels2/help/C/glabels.xml
+M	glabels2/help/Makefile.am
+A	glabels2/help/de/de.po
+A	glabels2/help/glabels.omf.in
+M	glabels2/po/de.po
+
+commit d06758ddbbea33616952af7ed1f3518782e15361
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-05-02
+
+    2009-05-01	Jim Evins  <evins@purple>
+
+	* AUTHORS:
+	* configure.in:
+	* po/ca.po:
+		Added catalan translation (David Planella).
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@842
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/AUTHORS
+M	glabels2/ChangeLog
+M	glabels2/configure.in
+A	glabels2/po/ca.po
+
+commit 4ce6f965c7c56a4be543898244fd8f330a3ecd24
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-05-01
+
+    Release 2.2.5
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/tags/glabels-2_2_5@841
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+commit b26cfcc7d50b6980fae589120ccca4f2348642d0
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-04-30
+
+    2009-04-29	Jim Evins  <evins@purple>
+
+	* NEWS:
+	* configure.in:
+	* docs/libglabels/libglabels-decl-list.txt:
+	* gtk-doc.make:
+	* src/ui-commands.c: (gl_ui_cmd_help_about):
+		Prepare for 2.2.5 release.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@840
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/NEWS
+M	glabels2/configure.in
+M	glabels2/docs/libglabels/libglabels-decl-list.txt
+M	glabels2/gtk-doc.make
+M	glabels2/src/ui-commands.c
+
+commit b3db239b39cf13a96008574884f25f4c3e57d5c3
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-04-30
+
+    2009-04-29	Jim Evins  <evins@purple>
+
+	* data/templates/avery-iso-templates.xml:
+	* data/templates/misc-iso-templates.xml:
+	* data/templates/misc-us-templates.xml:
+		Make sure new descriptions are marked translatable.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@839
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/data/templates/avery-iso-templates.xml
+M	glabels2/data/templates/misc-iso-templates.xml
+M	glabels2/data/templates/misc-us-templates.xml
+
+commit 4443dc5d0c2546a028a9cfef97d6ca40a3833d1c
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-04-30
+
+    2009-04-29	Jim Evins  <evins@purple>
+
+	* data/templates/avery-iso-templates.xml:
+	* data/templates/misc-iso-templates.xml:
+	* data/templates/misc-us-templates.xml:
+		Caught up on user submitted templates.
+	* AUTHORS:
+		Acknowledgements for above templates.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@837
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/AUTHORS
+M	glabels2/ChangeLog
+M	glabels2/data/templates/avery-iso-templates.xml
+M	glabels2/data/templates/misc-iso-templates.xml
+M	glabels2/data/templates/misc-us-templates.xml
+
+commit 23c906e6a07f047e932d1812be7668e1b312ad5f
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-04-30
+
+    2009-04-29	Jim Evins  <evins@purple>
+
+	* po/de.po:
+		Updated german translation (Mario Blättermann).
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@836
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+D	glabels2/po/ChangeLog
+M	glabels2/po/de.po
+
+commit 30da2882aea0fedfe88020c61dc642beee5a0a9d
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-04-29
+
+    2009-04-29	Jim Evins  <evins@purple>
+
+	* src/color.c: (gl_color_to_gdk_color), (gl_color_from_gdk_color):
+	* src/mygal/widget-color-combo.c: (color_combo_new):
+	* src/object-editor.c: (gl_object_editor_construct_color_combo):
+	* src/ui-property-bar.c:
+	(gl_ui_property_bar_construct_color_combo):
+		Bug #2760830.  Display correct preview color in color
+		combos when default
+		color selected.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@834
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/color.c
+M	glabels2/src/mygal/widget-color-combo.c
+M	glabels2/src/object-editor.c
+M	glabels2/src/ui-property-bar.c
+
+commit 987a9259d51cfe2fbbed149ded2e93c92e0b17ad
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-04-29
+
+    2009-04-28	Jim Evins  <evins@purple>
+
+	* data/glade/object-editor.glade:
+	* data/glade/prefs-dialog.glade:
+	* data/glade/property-bar.glade:
+	* data/glade/template-designer.glade:
+	* src/wdgt-print-copies.c: (gl_wdgt_print_copies_construct),
+	(first_spin_cb), (last_spin_cb):
+	* src/wdgt-print-merge.c: (gl_wdgt_print_merge_construct):
+		Zero out adjustment->page_size for all spinbuttons.
+		With gtk-2.14 this causes
+		many warning and with gtk-2.16 this actually breaks
+		the spinbuttons.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@833
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/data/glade/object-editor.glade
+M	glabels2/data/glade/prefs-dialog.glade
+M	glabels2/data/glade/property-bar.glade
+M	glabels2/data/glade/template-designer.glade
+M	glabels2/src/wdgt-print-copies.c
+M	glabels2/src/wdgt-print-merge.c
+
+commit ad51cdd46a8bdcb13c0bc4637e81a6d1e80de92c
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-01-08
+
+    2009-01-07	Jim Evins  <evins@snaught.com>
+
+	* src/critical-error-handler.c: (critical_error_handler):
+	* src/ui-commands.c: (gl_ui_cmd_help_contents):
+	* src/warning-handler.c: (warning_handler):
+	* src/view.c: (selection_received_cb):
+		Compile without warning with additional CFLAGS of
+		-O1 -Wall -Wformat=2.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@822
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/critical-error-handler.c
+M	glabels2/src/ui-commands.c
+M	glabels2/src/view.c
+M	glabels2/src/warning-handler.c
+
+commit fad7d2c766ab31ac4f083557d6543ef30fa84115
+Author: Jim Evins <evins@snaught.com>
+Date:	2009-01-03
+
+    2009-01-02	Jim Evins  <evins@snaught.com>
+
+	* COPYING.README_FIRST:
+		Fixed typo.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@820
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/COPYING.README_FIRST
+M	glabels2/ChangeLog
+
+commit 273e96234241a73a9e1f81de1ea691109025f189
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-12-28
+
+    2008-12-27	Jim Evins  <evins@snaught.com>
+
+	* data/templates/avery-iso-templates.xml:
+	* data/templates/avery-other-templates.xml:
+	* data/templates/avery-us-templates.xml:
+	* data/templates/brother-other-templates.xml:
+	* data/templates/misc-iso-templates.xml:
+	* data/templates/misc-other-templates.xml:
+	* data/templates/zweckform-iso-templates.xml:
+		Make sure all descriptions are marked as translatable.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@818
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/data/templates/avery-iso-templates.xml
+M	glabels2/data/templates/avery-other-templates.xml
+M	glabels2/data/templates/avery-us-templates.xml
+M	glabels2/data/templates/brother-other-templates.xml
+M	glabels2/data/templates/misc-iso-templates.xml
+M	glabels2/data/templates/misc-other-templates.xml
+M	glabels2/data/templates/zweckform-iso-templates.xml
+
+commit f7097587f69419775838221b7d93d2b84d10ca53
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-12-28
+
+    2008-12-27	Jim Evins  <evins@snaught.com>
+
+	* de.po:
+		Updated german translation (Mario Blättermann)
+	* AUTHORS:
+		Updated credits to reflect above translation.
+	* data/glade/object-editor.glade:
+	* data/glade/prefs-dialog.glade:
+	* data/glade/template-designer.glade:
+		Removed "translatable" attribute from whitespace strings,
+		which are used only to help layout.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@816
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/AUTHORS
+M	glabels2/ChangeLog
+M	glabels2/data/glade/object-editor.glade
+M	glabels2/data/glade/prefs-dialog.glade
+M	glabels2/data/glade/template-designer.glade
+M	glabels2/po/de.po
+
+commit fcaa5234cf2768a9167bc29a2875c56a146017a9
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-12-22
+
+    2008-12-22	Jim Evins  <evins@snaught.com>
+
+	* NEWS:
+	* configure.in:
+		Prepare for 2.2.4 release.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@812
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/NEWS
+M	glabels2/configure.in
+
+commit 1a93a81faad1793bf17bef90238180aa748ee2aa
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-12-22
+
+    2008-12-21	Jim Evins  <evins@snaught.com>
+
+	* data/templates/avery-us-templates.xml:
+	* data/templates/misc-iso-templates.xml:
+		A couple of recent template submissions.
+	* AUTHORS:
+		Acknowledgements for above templates.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@810
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/AUTHORS
+M	glabels2/ChangeLog
+M	glabels2/data/templates/avery-us-templates.xml
+M	glabels2/data/templates/misc-iso-templates.xml
+
+commit eb69c885bee022e5617b4c99e7f6b34de68965a3
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-12-21
+
+    2008-12-21	Jim Evins  <evins@snaught.com>
+
+	* src/view.c: (motion_notify_event_cb), (button_press_event_cb):
+		Don't check for handles on aggregate selections.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@808
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/view.c
+
+commit f87acc99c19ad66b78d6293e887412220a64f189
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-12-19
+
+    2008-12-18	Jim Evins  <evins@snaught.com>
+
+	* src/view.c: (selection_received_cb):
+		Fixed paste bug that caused a duplicate phantom
+		view_object to be created for
+		each new label_object.	This is because the view now
+		(as of r673) the view
+		monitiors the label for new objects and creates
+		view_objects automatically.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@803
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/view.c
+
+commit 033d3d8b724a44306ab3be30b26a39153d3b44bd
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-12-15
+
+    2008-12-14	Jim Evins  <evins@snaught.com>
+
+	* po/POTFILES.in:
+		Bug #2395628.  Reconciled POTFILES.in with current files.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@802
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/po/POTFILES.in
+
+commit 85256c10a275c37d1efaa115840f0b7bb1f3d171
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-12-15
+
+    2008-12-14	Jim Evins  <evins@snaught.com>
+
+	* src/ui.c: (gl_ui_new):
+		Bug #2395628.  Fixed i18n for application shell.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@800
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/ui.c
+
+commit c8f375d7e8aebd472353953976a629730c857978
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-12-15
+
+    2008-12-14	Jim Evins  <evins@snaught.com>
+
+	* configure.in:
+		Bug #2316013.  Added PKG_PROG_PKG_CONFIG.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@798
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/configure.in
+
+commit b4abc77732a4daf5ada4cd4da0f945453380db7e
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-11-16
+
+    2008-11-15	Jim Evins  <evins@snaught.com>
+
+	* libglabels/db.c: (lgl_db_register_template):
+	* libglabels/xml-template.c:
+	(lgl_xml_template_parse_template_node):
+	* src/glabels-batch.c:
+	* src/view-text.c: (gl_view_text_create_button_press_event):
+		Fixed several issues such as possible use of uninitialized
+		variables found with "-O1 -Wall".
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@795
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/libglabels/db.c
+M	glabels2/libglabels/xml-template.c
+M	glabels2/src/glabels-batch.c
+M	glabels2/src/view-text.c
+
+commit eab7333647b997218395f4f30a5a6a18705c7f7c
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-11-10
+
+    2008-11-09	Jim Evins  <evins@snaught.com>
+
+	* data/templates/misc-iso-templates.xml:
+		Another user submitted template.
+
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@793
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/data/templates/misc-iso-templates.xml
+
+commit 0fa94b3a05a329adf9ca6b52ca41b56b24e12766
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-10-28
+
+    2008-10-27	Jim Evins  <evins@snaught.com>
+
+	* data/templates/avery-us-templates.xml:
+	* data/templates/misc-iso-templates.xml:
+	* data/templates/zweckform-iso-templates.xml:
+		Caught up on user submitted templates.
+	* AUTHORS:
+		Acknowledgements for above templates.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@789
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/AUTHORS
+M	glabels2/ChangeLog
+M	glabels2/data/templates/avery-us-templates.xml
+M	glabels2/data/templates/misc-iso-templates.xml
+M	glabels2/data/templates/zweckform-iso-templates.xml
+
+commit f3330ba8ef8348e17bcbb5f236507b94b92fb504
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-10-24
+
+    2008-10-23	Jim Evins  <evins@snaught.com>
+
+	* src/label-text.c: (set_font_family):
+	* src/object-editor-text-page.c:
+	(gl_object_editor_prepare_text_page),
+	(gl_object_editor_set_font_family):
+	* src/prefs-dialog.c: (construct_object_page),
+	(update_object_page_from_prefs):
+	* src/ui-property-bar.c: (gl_ui_property_bar_construct),
+	(reset_to_default_properties):
+	* src/util.c: (gl_util_get_font_family_list):
+	* src/util.h:
+		Bug #1902275 and Bug #2186214.	Cache font list so that
+		it is not re-created everytime
+		the list is requested.
+	* src/object-editor-text-page.c:
+	(gl_object_editor_set_font_family):
+		Don't change font-family if it hasn't actually changed.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@787
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/label-text.c
+M	glabels2/src/object-editor-text-page.c
+M	glabels2/src/prefs-dialog.c
+M	glabels2/src/ui-property-bar.c
+M	glabels2/src/util.c
+M	glabels2/src/util.h
+
+commit 6bfe40b9f5e173eae0b7176e9d0ffe3191bd0201
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-08-30
+
+    2008-08-29	Jim Evins  <evins@snaught.com>
+
+	* src/file.c: (gl_file_open), (gl_file_save_as):
+		Bug #2069668.  Corrected button order in Open and
+		"Save as"
+		dialogs.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@782
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/file.c
+
+commit 9d1db9a86dc38a2828d571e80d2a65f6d28c8ba1
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-08-19
+
+    2008-08-18	Jim Evins  <evins@snaught.com>
+
+	* NEWS:
+	* configure.in:
+	* docs/libglabels/tmpl/paper.sgml:
+		Prepare for 2.2.3 release.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@779
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/NEWS
+M	glabels2/configure.in
+M	glabels2/docs/libglabels/tmpl/paper.sgml
+M	glabels2/gtk-doc.make
+
+commit 0cb3511ff16977b4bcaed8127929171ec8560f8d
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-08-17
+
+    2008-08-17	Jim Evins  <evins@snaught.com>
+
+	* data/dtd/glabels-2.2.dtd:
+	* data/templates/paper-sizes.xml:
+	* libglabels/db.c: (lgl_db_init):
+	* libglabels/paper.c: (lgl_paper_new), (lgl_paper_dup),
+	(lgl_paper_free):
+	* libglabels/paper.h:
+	* libglabels/xml-paper.c: (lgl_xml_paper_parse_paper_node):
+	* src/print-op.c: (set_page_size):
+		Bug #2049431.  Always explicitely set page size.
+		Added pwg_size field (PWG 5101.1-2002
+		size specification) to the libglabels paper database to
+		allow the page size to be
+		communicated to GtkPrintOp un-ambiguously.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@778
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/data/dtd/glabels-2.2.dtd
+M	glabels2/data/templates/paper-sizes.xml
+M	glabels2/libglabels/db.c
+M	glabels2/libglabels/paper.c
+M	glabels2/libglabels/paper.h
+M	glabels2/libglabels/xml-paper.c
+M	glabels2/src/print-op.c
+
+commit 1e2a5ab9232f284bda98dccaedb6016d6e5f2857
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-07-26
+
+    2008-07-25	Jim Evins  <evins@snaught.com>
+
+	* src/object-editor-size-page.c: (size_reset_cb),
+	(gl_object_editor_set_max_size):
+		Bug #1993550.  Set size limits based on longest side
+		of label.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@775
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/object-editor-size-page.c
+
+commit db3c2bd3a3b02e607ae60a08f01c2a50da66d7d3
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-07-20
+
+    2008-07-19	Jim Evins  <evins@snaught.com>
+
+	* configure.in:
+	* src/mygal/Makefile.am:
+		Make sure libtool handles library dependencies for mygal
+		properly.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@773
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/configure.in
+M	glabels2/src/mygal/Makefile.am
+
+commit d7f7d6bd6d757805359b3e997e2978c0012f54a5
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-05-22
+
+    2008-05-21	Jim Evins  <evins@snaught.com>
+
+	* src/glabels-batch.c: (main):
+		Bug #1968653.  Initialize prefs subsystem in
+		glabels-batch.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@771
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/glabels-batch.c
+
+commit 72928ecdf1b1560209e55c3d64fe6e3dfaa19604
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-05-10
+
+    2008-05-09	Jim Evins  <evins@snaught.com>
+
+	* data/glade/object-editor.glade:
+		Bug #1959135.  A couple of radio buttons somehow became
+		ungrouped.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@770
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/data/glade/object-editor.glade
+
+commit bff482ebb178677634fd8f1d00d3e777d52d7ba1
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-04-05
+
+    2008-04-04	Jim Evins  <evins@snaught.com>
+
+	* data/templates/brother-other-templates.xml:
+		Added categories to existing templates.
+	* data/templates/misc-other-templates.xml:
+		Moved dymo templates to their own file.
+	* data/templates/Makefile.am:
+	* data/templates/dymo-other-templates.xml:
+		Additional dymo templates provided by Harald Welte
+		<laforge@gnumonks.org>.
+	* AUTHORS:
+		Acknowledgement for above templates.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@765
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/AUTHORS
+M	glabels2/ChangeLog
+M	glabels2/data/templates/Makefile.am
+M	glabels2/data/templates/brother-other-templates.xml
+A	glabels2/data/templates/dymo-other-templates.xml
+M	glabels2/data/templates/misc-other-templates.xml
+
+commit 77e287c50a70b8f21c1f6168e109ede934eeea15
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-03-25
+
+    2008-03-24	Jim Evins  <evins@snaught.com>
+
+	* src/xml-label.c: (xml_doc_to_label):
+		Bug #1872584.  Don't refuse to parse label file if
+		namespace is
+		unrecognized -- it may be from a newer version of glabels.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@764
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/xml-label.c
+
+commit da84fe8790466157cac18eed1895cffa20d316d4
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-03-16
+
+    2008-03-15	Jim Evins  <evins@snaught.com>
+
+	* data/templates/Makefile.am:
+	* data/templates/brother-other-templates.xml:
+		Added brother templates.
+	* src/cairo-markup-path.c: (gl_cairo_markup_margin_rect_path),
+	(gl_cairo_markup_margin_cd_path):
+	* src/view.c: (draw_markup_layer):
+		Fixed markup drawing errors when label is rotated.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@761
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/data/templates/Makefile.am
+A	glabels2/data/templates/brother-other-templates.xml
+M	glabels2/src/cairo-markup-path.c
+M	glabels2/src/view.c
+
+commit 00e91e339f4184c5af3f026db6da7cb704362fb7
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-03-04
+
+    2008-03-03	Jim Evins  <evins@snaught.com>
+
+	* configure.in:
+	* ko.po:
+		Added korean translation provided by xein@naver.com.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@759
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/configure.in
+A	glabels2/po/ko.po
+
+commit 1af444dffebbf48dd36214aee5d2e7ed8e73c8ab
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-02-22
+
+    2008-02-21	Jim Evins  <evins@snaught.com>
+
+	* src/ui.c:
+		Last minute bug fix for 2.2.2 release.
+		Fixed typo that prevented "Save" from being deactivated
+		when
+		document is not modified.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@754
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/ui.c
+
+commit c7b72805e8f9e88c788dcd8cb599b11515fac170
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-02-22
+
+    2008-02-21	Jim Evins  <evins@snaught.com>
+
+	* NEWS:
+	* configure.in:
+		Prepare for 2.2.2 release.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@753
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/NEWS
+M	glabels2/configure.in
+
+commit 104d0092d40b8bbfef6eb417fdf9ee9c568ab7e3
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-02-19
+
+    2008-02-18	Jim Evins  <evins@snaught.com>
+
+	* src/prefs-model.c: (gl_prefs_model_save_settings),
+	(gl_prefs_model_load_settings):
+		Set default units for file output.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@751
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/prefs-model.c
+
+commit ef2d442e373bf8f26ff49f1d9e2e4415d3690d15
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-02-18
+
+    2008-02-18	Jim Evins  <evins@snaught.com>
+
+	* help/C/glabels.xml:
+		Fixed example template.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@749
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/help/C/glabels.xml
+
+commit df63b87a2eb63897873851c61c1200334aaccfcb
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-02-17
+
+    2008-02-16	Jim Evins  <evins@snaught.com>
+
+	* AUTHORS:
+	* data/templates/avery-iso-templates.xml:
+	* data/templates/avery-us-templates.xml:
+	* data/templates/misc-iso-templates.xml:
+	* data/templates/misc-us-templates.xml:
+		Caught up on user submitted templates.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@747
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/AUTHORS
+M	glabels2/ChangeLog
+M	glabels2/data/templates/avery-iso-templates.xml
+M	glabels2/data/templates/avery-us-templates.xml
+M	glabels2/data/templates/misc-iso-templates.xml
+M	glabels2/data/templates/misc-us-templates.xml
+
+commit bb17382205e5bae69c7dc96e394b2da864ef3645
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-02-05
+
+    2008-02-04	Jim Evins  <evins@snaught.com>
+
+	* src/view-image.c: (update_object_from_editor_cb):
+		Bug #1886438.  Don't update the image size unless it
+		is actually
+		triggered by a change in image source.	The result of
+		this bug
+		was that any attempt to edit the size spinboxes,
+		immediately
+		reset the size.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@745
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/view-image.c
+
+commit cd2b98740455cb7a60925aa093fce003ecc8be81
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-02-03
+
+    2008-02-03	Jim Evins  <evins@snaught.com>
+
+	* src/label-image.c: (gl_label_image_class_init), (set_size):
+		Enforce minimum size for images.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@744
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/label-image.c
+
+commit 16f9c5076bfe01daba6a98a6572cee8e69d6375e
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-02-03
+
+    2008-02-03	Jim Evins  <evins@snaught.com>
+
+	* src/object-editor-lsize-page.c:
+	(gl_object_editor_set_max_lsize):
+	* src/object-editor-private.h:
+	* src/object-editor-shadow-page.c:
+	(gl_object_editor_set_max_shadow_offset):
+	* src/object-editor-size-page.c: (gl_object_editor_set_max_size):
+	* src/object-editor.c: (gl_object_editor_finalize),
+	(gl_object_editor_new), (gl_object_notebook_construct_valist),
+	(label_changed_cb):
+	* src/object-editor.h:
+	* src/ui-sidebar.c: (gl_ui_sidebar_construct):
+	* src/view-barcode.c: (construct_properties_editor):
+	* src/view-box.c: (construct_properties_editor):
+	* src/view-ellipse.c: (construct_properties_editor):
+	* src/view-image.c: (construct_properties_editor):
+	* src/view-line.c: (construct_properties_editor):
+	* src/view-object.c: (gl_view_object_finalize):
+	* src/view-text.c: (construct_properties_editor):
+		Move update_editor_from_label callback from individual
+		view objects
+		to the object editor, so that signals can be disconnected
+		when
+		object editor is finalized.
+	* src/view-text.c: (gl_view_text_create_button_press_event):
+		Fixed bug that caused multiple view objects to be created
+		for a
+		single text object.  This bug would manifest itself as
+		a crash
+		when deleting multi-object selections which included
+		text objects.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@742
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/object-editor-lsize-page.c
+M	glabels2/src/object-editor-private.h
+M	glabels2/src/object-editor-shadow-page.c
+M	glabels2/src/object-editor-size-page.c
+M	glabels2/src/object-editor.c
+M	glabels2/src/object-editor.h
+M	glabels2/src/ui-sidebar.c
+M	glabels2/src/view-barcode.c
+M	glabels2/src/view-box.c
+M	glabels2/src/view-ellipse.c
+M	glabels2/src/view-image.c
+M	glabels2/src/view-line.c
+M	glabels2/src/view-object.c
+M	glabels2/src/view-text.c
+
+commit 975cf2793e52a80c09f558064e0987d238b99edf
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-02-01
+
+    2008-01-31	Jim Evins  <evins@snaught.com>
+
+	* src/label-barcode.c: (draw_object):
+		Fixed rendering problem when "Invalid data" is displayed
+		when text
+		object is lower in stacking order.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@739
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/label-barcode.c
+
+commit 4908a24dc1a5d597a853a4806e791f78b522fafd
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-01-31
+
+    2008-01-30	Jim Evins  <evins@snaught.com>
+
+	* src/label-text.c: (get_size), (draw_object), (draw_shadow):
+		Don't turn off cairo_hint_metrics.  This causes serious
+		issues with
+		bitmap fonts.
+
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@737
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/label-text.c
+
+commit c173c24c951943fbdf0a5ecf35b84815ac736fcb
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-01-30
+
+    2008-01-29	Jim Evins  <evins@snaught.com>
+
+	* src/print-op.c: (gl_print_op_construct),
+	(gl_print_op_construct_batch), (set_page_size):
+		Explicitly set page size for "other" page sizes.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@735
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/print-op.c
+
+commit 28c8daaa0657de9c8894a5c9bbad604c8a8a6013
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-01-26
+
+    2008-01-25	Jim Evins  <evins@snaught.com>
+
+	* src/bc.c:
+		Fixed Code128C backend parameters.
+	* src/label-barcode.c: (get_size):
+		Bug #1766425.  If barcode is not renderable with either
+		input data or default data, use a default size.  Also
+		fixed small leak.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@732
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/bc.c
+M	glabels2/src/label-barcode.c
+
+commit 5042beae2d6a1d83f2d0178fe97636b99bedde17
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-01-23
+
+    2008-01-22	Jim Evins  <evins@snaught.com>
+
+	* NEWS:
+	* configure.in:
+		Preparation for 2.2.1 release.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@728
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/NEWS
+M	glabels2/configure.in
+
+commit 147a21ba6c21f68b40654752182f6bbf55d06f2a
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-01-17
+
+    2008-01-16	Jim Evins  <evins@snaught.com>
+
+	* src/print.c: (print_label):
+		Bug #1872568.  Don't apply special transforms (rotate and
+		mirror) to clipping region or outline.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@726
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/print.c
+
+commit 512e3c088acd3f8a14d8152f7318cbbf17a3cdd8
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-01-02
+
+    2008-01-01	Jim Evins  <evins@snaught.com>
+
+	* src/util.c:
+		Sort font lists alphabetically.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@724
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/util.c
+
+commit 655ca82e016d106d6d884ef2caf8f0434f14221a
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-01-02
+
+    2008-01-01	Jim Evins  <evins@snaught.com>
+
+	* src/merge-evolution.c:
+		Do a case-insensitive sort.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@722
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/src/merge-evolution.c
+
+commit 84dd6ce9eb82d51fefcc0f77a104adbf786feea1
+Author: Jim Evins <evins@snaught.com>
+Date:	2008-01-02
+
+    2008-01-01	Jim Evins  <evins@snaught.com>
+
+	* src/merge-evolution.c:
+		Sort evolution by "file_under" field.  Original patch
+		provided
+		by Peter Cherriman <glabels-devel2712@bubieyehyeh.me.uk>
+		in
+		Patch #1860423.
+	* AUTHORS:
+		Added acknowledgement for above patch.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@720
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/AUTHORS
+M	glabels2/ChangeLog
+M	glabels2/src/merge-evolution.c
+
+commit dce85299fd3989e6636675c39317c7280592d86b
+Author: Jim Evins <evins@snaught.com>
+Date:	2007-12-25
+
+    2007-12-25	Jim Evins  <evins@snaught.com>
+
+	* glabels.spec.in:
+		Fix spec file.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@715
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+M	glabels2/glabels.spec.in
+
+commit c8dd36d8d3c61487c28560d11f52310d655ab72a
+Author: Jim Evins <evins@snaught.com>
+Date:	2007-12-25
+
+    2007-12-25	Jim Evins  <evins@snaught.com>
+
+	* MESSAGE-OF-DOOM:
+		Removed for 2.2 stable branch.
+	* Makefile.am:
+	* NEWS:
+	* configure.in:
+		Prepare for 2.2.0 release.
+
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@714
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+M	glabels2/ChangeLog
+D	glabels2/MESSAGE-OF-DOOM
+M	glabels2/Makefile.am
+M	glabels2/NEWS
+M	glabels2/configure.in
+
+commit ea75118a021e733fa7e2281456581dab61d9c811
+Author: Jim Evins <evins@snaught.com>
+Date:	2007-12-25
+
+    Creating glabels-2.2 branch.
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@713
+    f5e0f49d-192f-0410-a22d-a8d8700d0965
+
+A	glabels2/AUTHORS
+A	glabels2/COPYING
+A	glabels2/COPYING-DOCS
+A	glabels2/COPYING-LIBGLABELS
+A	glabels2/COPYING.README_FIRST
+A	glabels2/ChangeLog
+A	glabels2/INSTALL
+A	glabels2/MESSAGE-OF-DOOM
+A	glabels2/Makefile.am
+A	glabels2/NEWS
+A	glabels2/README
+A	glabels2/TODO
+A	glabels2/autogen.sh
+A	glabels2/barcode-0.98/COPYING
+A	glabels2/barcode-0.98/ChangeLog
+A	glabels2/barcode-0.98/INSTALL
+A	glabels2/barcode-0.98/Makefile.am
+A	glabels2/barcode-0.98/Makefile.in.dist
+A	glabels2/barcode-0.98/README
+A	glabels2/barcode-0.98/README.glabels
+A	glabels2/barcode-0.98/TODO
+A	glabels2/barcode-0.98/barcode.h
+A	glabels2/barcode-0.98/barcode.spec
+A	glabels2/barcode-0.98/bookland/bookland.py
+A	glabels2/barcode-0.98/cmdline.c
+A	glabels2/barcode-0.98/cmdline.h
+A	glabels2/barcode-0.98/codabar.c
+A	glabels2/barcode-0.98/code128.c
+A	glabels2/barcode-0.98/code39.c
+A	glabels2/barcode-0.98/code93.c
+A	glabels2/barcode-0.98/compat/getopt.c
+A	glabels2/barcode-0.98/compat/getopt.h
+A	glabels2/barcode-0.98/configure
+A	glabels2/barcode-0.98/configure.in.dist
+A	glabels2/barcode-0.98/contrib/barcode-SVG.tar.gz
+A	glabels2/barcode-0.98/contrib/barcode-SVG.tar.gz.README
+A	glabels2/barcode-0.98/contrib/barcode-for-delphi.tar.gz
+A	glabels2/barcode-0.98/contrib/barcode-for-delphi.tar.gz.README
+A	glabels2/barcode-0.98/contrib/barcodeps-0.1.tgz
+A	glabels2/barcode-0.98/contrib/barcodeps-0.1.tgz.README
+A	glabels2/barcode-0.98/contrib/grab-0.0.4.tar.gz
+A	glabels2/barcode-0.98/contrib/grab-0.0.4.tar.gz.README
+A	glabels2/barcode-0.98/debian/README.debian
+A	glabels2/barcode-0.98/debian/changelog
+A	glabels2/barcode-0.98/debian/control
+A	glabels2/barcode-0.98/debian/copyright
+A	glabels2/barcode-0.98/debian/dirs
+A	glabels2/barcode-0.98/debian/info
+A	glabels2/barcode-0.98/debian/rules
+A	glabels2/barcode-0.98/doc/Makefile.in
+A	glabels2/barcode-0.98/doc/README
+A	glabels2/barcode-0.98/doc/barcode.info
+A	glabels2/barcode-0.98/doc/barcode.pdf
+A	glabels2/barcode-0.98/doc/barcode.ps
+A	glabels2/barcode-0.98/doc/barcodedoc.txt
+A	glabels2/barcode-0.98/doc/doc.barcode
+A	glabels2/barcode-0.98/doc/infofilter
+A	glabels2/barcode-0.98/doc/manpager
+A	glabels2/barcode-0.98/doc/mktxt
+A	glabels2/barcode-0.98/doc/texi2html
+A	glabels2/barcode-0.98/ean.c
+A	glabels2/barcode-0.98/i25.c
+A	glabels2/barcode-0.98/install-sh
+A	glabels2/barcode-0.98/library.c
+A	glabels2/barcode-0.98/main.c
+A	glabels2/barcode-0.98/missing
+A	glabels2/barcode-0.98/mkinstalldirs
+A	glabels2/barcode-0.98/msi.c
+A	glabels2/barcode-0.98/pcl.c
+A	glabels2/barcode-0.98/plessey.c
+A	glabels2/barcode-0.98/ps.c
+A	glabels2/barcode-0.98/sample.c
+A	glabels2/configure.in
+A	glabels2/data/Makefile.am
+A	glabels2/data/desktop/Makefile.am
+A	glabels2/data/desktop/glabels.desktop.in
+A	glabels2/data/dtd/Makefile.am
+A	glabels2/data/dtd/glabels-2.2.dtd
+A	glabels2/data/glade/Makefile.am
+A	glabels2/data/glade/merge-properties-dialog.glade
+A	glabels2/data/glade/new-label-dialog.glade
+A	glabels2/data/glade/object-editor.glade
+A	glabels2/data/glade/prefs-dialog.glade
+A	glabels2/data/glade/print-custom-widget.glade
+A	glabels2/data/glade/property-bar.glade
+A	glabels2/data/glade/template-designer.glade
+A	glabels2/data/glade/wdgt-media-select.glade
+A	glabels2/data/glade/wdgt-rotate-label.glade
+A	glabels2/data/man/Makefile.am
+A	glabels2/data/man/glabels.1
+A	glabels2/data/mime/Makefile.am
+A	glabels2/data/mime/glabels.applications
+A	glabels2/data/mime/glabels.keys.in
+A	glabels2/data/mime/glabels.mime
+A	glabels2/data/mime/glabels.xml.in
+A	glabels2/data/pixmaps/Makefile.am
+A	glabels2/data/pixmaps/ex-1layout.png
+A	glabels2/data/pixmaps/ex-2layouts.png
+A	glabels2/data/pixmaps/ex-cd-size.png
+A	glabels2/data/pixmaps/ex-rect-size.png
+A	glabels2/data/pixmaps/ex-round-size.png
+A	glabels2/data/pixmaps/glabels-about-logo.png
+A	glabels2/data/pixmaps/glabels-application-x-glabels.png
+A	glabels2/data/pixmaps/glabels-splash.png
+A	glabels2/data/pixmaps/glabels.png
+A	glabels2/data/templates/Makefile.am
+A	glabels2/data/templates/avery-iso-templates.xml
+A	glabels2/data/templates/avery-other-templates.xml
+A	glabels2/data/templates/avery-us-templates.xml
+A	glabels2/data/templates/categories.xml
+A	glabels2/data/templates/misc-iso-templates.xml
+A	glabels2/data/templates/misc-other-templates.xml
+A	glabels2/data/templates/misc-us-templates.xml
+A	glabels2/data/templates/paper-sizes.xml
+A	glabels2/data/templates/zweckform-iso-templates.xml
+A	glabels2/docs/Makefile.am
+A	glabels2/docs/libglabels/Makefile.am
+A	glabels2/docs/libglabels/libglabels-decl-list.txt
+A	glabels2/docs/libglabels/libglabels-docs.sgml
+A	glabels2/docs/libglabels/libglabels-overrides.txt
+A	glabels2/docs/libglabels/libglabels-sections.txt
+A	glabels2/docs/libglabels/libglabels-undocumented.txt
+A	glabels2/docs/libglabels/libglabels.types
+A	glabels2/docs/libglabels/tmpl/category.sgml
+A	glabels2/docs/libglabels/tmpl/db.sgml
+A	glabels2/docs/libglabels/tmpl/enums.sgml
+A	glabels2/docs/libglabels/tmpl/libglabels-unused.sgml
+A	glabels2/docs/libglabels/tmpl/libglabels.sgml
+A	glabels2/docs/libglabels/tmpl/paper.sgml
+A	glabels2/docs/libglabels/tmpl/str.sgml
+A	glabels2/docs/libglabels/tmpl/template.sgml
+A	glabels2/docs/libglabels/tmpl/xml-category.sgml
+A	glabels2/docs/libglabels/tmpl/xml-paper.sgml
+A	glabels2/docs/libglabels/tmpl/xml-template.sgml
+A	glabels2/docs/libglabels/tmpl/xml.sgml
+A	glabels2/glabels.spec.in
+A	glabels2/gtk-doc.make
+A	glabels2/help/C/Makefile.am
+A	glabels2/help/C/figures/glabels-template-cd.png
+A	glabels2/help/C/figures/glabels-template-label.png
+A	glabels2/help/C/figures/glabels-template-layout.png
+A	glabels2/help/C/figures/main-window-empty.png
+A	glabels2/help/C/figures/merge-ex1-1.png
+A	glabels2/help/C/figures/merge-ex1-2.png
+A	glabels2/help/C/figures/merge-ex1-3.png
+A	glabels2/help/C/figures/merge-ex1-4.png
+A	glabels2/help/C/figures/merge-ex2-1.png
+A	glabels2/help/C/figures/merge-ex2-2.png
+A	glabels2/help/C/figures/merge-ex2-3.png
+A	glabels2/help/C/figures/merge-ex2-4.png
+A	glabels2/help/C/figures/object-editor-sidebar.png
+A	glabels2/help/C/figures/print-copies.png
+A	glabels2/help/C/figures/print-merge.png
+A	glabels2/help/C/glabels-C.omf
+A	glabels2/help/C/glabels.xml
+A	glabels2/help/C/legal.xml
+A	glabels2/help/Makefile.am
+A	glabels2/iec16022-0.2.1/BUGS
+A	glabels2/iec16022-0.2.1/CHANGELOG
+A	glabels2/iec16022-0.2.1/CREDITS
+A	glabels2/iec16022-0.2.1/INSTALL
+A	glabels2/iec16022-0.2.1/LICENSE
+A	glabels2/iec16022-0.2.1/Makefile.am
+A	glabels2/iec16022-0.2.1/Makefile.dist
+A	glabels2/iec16022-0.2.1/README
+A	glabels2/iec16022-0.2.1/README.glabels
+A	glabels2/iec16022-0.2.1/TODO
+A	glabels2/iec16022-0.2.1/iec16022.1
+A	glabels2/iec16022-0.2.1/iec16022.c
+A	glabels2/iec16022-0.2.1/iec16022ecc200.c
+A	glabels2/iec16022-0.2.1/iec16022ecc200.h
+A	glabels2/iec16022-0.2.1/image.c
+A	glabels2/iec16022-0.2.1/image.h
+A	glabels2/iec16022-0.2.1/reedsol.c
+A	glabels2/iec16022-0.2.1/reedsol.h
+A	glabels2/iec16022-0.2.1/test/testsuite-example.bin
+A	glabels2/iec16022-0.2.1/test/testsuite-example.eps
+A	glabels2/iec16022-0.2.1/test/testsuite-example.hex
+A	glabels2/iec16022-0.2.1/test/testsuite-example.png
+A	glabels2/iec16022-0.2.1/test/testsuite-example.text
+A	glabels2/iec16022-0.2.1/test/testsuite.sh
+A	glabels2/libglabels/Makefile.am
+A	glabels2/libglabels/category.c
+A	glabels2/libglabels/category.h
+A	glabels2/libglabels/db.c
+A	glabels2/libglabels/db.h
+A	glabels2/libglabels/enums.h
+A	glabels2/libglabels/libglabels-private.h
+A	glabels2/libglabels/libglabels.h
+A	glabels2/libglabels/libglabels.pc.in
+A	glabels2/libglabels/paper.c
+A	glabels2/libglabels/paper.h
+A	glabels2/libglabels/str.c
+A	glabels2/libglabels/str.h
+A	glabels2/libglabels/template.c
+A	glabels2/libglabels/template.h
+A	glabels2/libglabels/xml-category.c
+A	glabels2/libglabels/xml-category.h
+A	glabels2/libglabels/xml-paper.c
+A	glabels2/libglabels/xml-paper.h
+A	glabels2/libglabels/xml-template.c
+A	glabels2/libglabels/xml-template.h
+A	glabels2/libglabels/xml.c
+A	glabels2/libglabels/xml.h
+A	glabels2/po/ChangeLog
+A	glabels2/po/POTFILES.in
+A	glabels2/po/cs.po
+A	glabels2/po/de.po
+A	glabels2/po/eo.po
+A	glabels2/po/es.po
+A	glabels2/po/fr.po
+A	glabels2/po/it.po
+A	glabels2/po/ja.po
+A	glabels2/po/pl.po
+A	glabels2/po/pt_BR.po
+A	glabels2/po/ru.po
+A	glabels2/po/zh_TW.Big5.po
+A	glabels2/src/Makefile.am
+A	glabels2/src/base64.c
+A	glabels2/src/base64.h
+A	glabels2/src/bc-gnubarcode.c
+A	glabels2/src/bc-gnubarcode.h
+A	glabels2/src/bc-iec16022.c
+A	glabels2/src/bc-iec16022.h
+A	glabels2/src/bc-postnet.c
+A	glabels2/src/bc-postnet.h
+A	glabels2/src/bc.c
+A	glabels2/src/bc.h
+A	glabels2/src/cairo-ellipse-path.c
+A	glabels2/src/cairo-ellipse-path.h
+A	glabels2/src/cairo-label-path.c
+A	glabels2/src/cairo-label-path.h
+A	glabels2/src/cairo-markup-path.c
+A	glabels2/src/cairo-markup-path.h
+A	glabels2/src/color.c
+A	glabels2/src/color.h
+A	glabels2/src/critical-error-handler.c
+A	glabels2/src/critical-error-handler.h
+A	glabels2/src/debug.c
+A	glabels2/src/debug.h
+A	glabels2/src/file.c
+A	glabels2/src/file.h
+A	glabels2/src/glabels-batch.c
+A	glabels2/src/glabels.c
+A	glabels2/src/hig.h
+A	glabels2/src/label-barcode.c
+A	glabels2/src/label-barcode.h
+A	glabels2/src/label-box.c
+A	glabels2/src/label-box.h
+A	glabels2/src/label-ellipse.c
+A	glabels2/src/label-ellipse.h
+A	glabels2/src/label-image.c
+A	glabels2/src/label-image.h
+A	glabels2/src/label-line.c
+A	glabels2/src/label-line.h
+A	glabels2/src/label-object.c
+A	glabels2/src/label-object.h
+A	glabels2/src/label-text.c
+A	glabels2/src/label-text.h
+A	glabels2/src/label.c
+A	glabels2/src/label.h
+A	glabels2/src/marshal.list
+A	glabels2/src/merge-evolution.c
+A	glabels2/src/merge-evolution.h
+A	glabels2/src/merge-init.c
+A	glabels2/src/merge-init.h
+A	glabels2/src/merge-properties-dialog.c
+A	glabels2/src/merge-properties-dialog.h
+A	glabels2/src/merge-text.c
+A	glabels2/src/merge-text.h
+A	glabels2/src/merge-vcard.c
+A	glabels2/src/merge-vcard.h
+A	glabels2/src/merge.c
+A	glabels2/src/merge.h
+A	glabels2/src/mini-preview-pixbuf-cache.c
+A	glabels2/src/mini-preview-pixbuf-cache.h
+A	glabels2/src/mini-preview-pixbuf.c
+A	glabels2/src/mini-preview-pixbuf.h
+A	glabels2/src/mygal/Makefile.am
+A	glabels2/src/mygal/color-group.c
+A	glabels2/src/mygal/color-group.h
+A	glabels2/src/mygal/color-palette.c
+A	glabels2/src/mygal/color-palette.h
+A	glabels2/src/mygal/e-colors.c
+A	glabels2/src/mygal/e-colors.h
+A	glabels2/src/mygal/e-marshal.list
+A	glabels2/src/mygal/e-util.h
+A	glabels2/src/mygal/mygal-combo-box.c
+A	glabels2/src/mygal/mygal-combo-box.h
+A	glabels2/src/mygal/widget-color-combo.c
+A	glabels2/src/mygal/widget-color-combo.h
+A	glabels2/src/new-label-dialog.c
+A	glabels2/src/new-label-dialog.h
+A	glabels2/src/object-editor-bc-page.c
+A	glabels2/src/object-editor-data-page.c
+A	glabels2/src/object-editor-edit-page.c
+A	glabels2/src/object-editor-fill-page.c
+A	glabels2/src/object-editor-image-page.c
+A	glabels2/src/object-editor-line-page.c
+A	glabels2/src/object-editor-lsize-page.c
+A	glabels2/src/object-editor-position-page.c
+A	glabels2/src/object-editor-private.h
+A	glabels2/src/object-editor-shadow-page.c
+A	glabels2/src/object-editor-size-page.c
+A	glabels2/src/object-editor-text-page.c
+A	glabels2/src/object-editor.c
+A	glabels2/src/object-editor.h
+A	glabels2/src/pixbuf-cache.c
+A	glabels2/src/pixbuf-cache.h
+A	glabels2/src/pixmaps/Makefile.am
+A	glabels2/src/pixmaps/checkerboard.xpm
+A	glabels2/src/pixmaps/collate.xpm
+A	glabels2/src/pixmaps/cursor_barcode.xbm
+A	glabels2/src/pixmaps/cursor_barcode_mask.xbm
+A	glabels2/src/pixmaps/cursor_box.xbm
+A	glabels2/src/pixmaps/cursor_box_mask.xbm
+A	glabels2/src/pixmaps/cursor_ellipse.xbm
+A	glabels2/src/pixmaps/cursor_ellipse_mask.xbm
+A	glabels2/src/pixmaps/cursor_image.xbm
+A	glabels2/src/pixmaps/cursor_image_mask.xbm
+A	glabels2/src/pixmaps/cursor_line.xbm
+A	glabels2/src/pixmaps/cursor_line_mask.xbm
+A	glabels2/src/pixmaps/cursor_text.xbm
+A	glabels2/src/pixmaps/cursor_text_mask.xbm
+A	glabels2/src/pixmaps/nocollate.xpm
+A	glabels2/src/prefs-dialog.c
+A	glabels2/src/prefs-dialog.h
+A	glabels2/src/prefs-model.c
+A	glabels2/src/prefs-model.h
+A	glabels2/src/prefs.c
+A	glabels2/src/prefs.h
+A	glabels2/src/print-op.c
+A	glabels2/src/print-op.h
+A	glabels2/src/print.c
+A	glabels2/src/print.h
+A	glabels2/src/recent.c
+A	glabels2/src/recent.h
+A	glabels2/src/stock-pixmaps/Makefile.am
+A	glabels2/src/stock-pixmaps/stock_align_bottom_16.png
+A	glabels2/src/stock-pixmaps/stock_align_hcenter_16.png
+A	glabels2/src/stock-pixmaps/stock_align_left_16.png
+A	glabels2/src/stock-pixmaps/stock_align_right_16.png
+A	glabels2/src/stock-pixmaps/stock_align_top_16.png
+A	glabels2/src/stock-pixmaps/stock_align_vcenter_16.png
+A	glabels2/src/stock-pixmaps/stock_arrow_16.png
+A	glabels2/src/stock-pixmaps/stock_arrow_24.png
+A	glabels2/src/stock-pixmaps/stock_barcode_16.png
+A	glabels2/src/stock-pixmaps/stock_barcode_24.png
+A	glabels2/src/stock-pixmaps/stock_box_16.png
+A	glabels2/src/stock-pixmaps/stock_box_24.png
+A	glabels2/src/stock-pixmaps/stock_bucket_fill_16.png
+A	glabels2/src/stock-pixmaps/stock_bucket_fill_24.png
+A	glabels2/src/stock-pixmaps/stock_center_horiz_16.png
+A	glabels2/src/stock-pixmaps/stock_center_vert_16.png
+A	glabels2/src/stock-pixmaps/stock_ellipse_16.png
+A	glabels2/src/stock-pixmaps/stock_ellipse_24.png
+A	glabels2/src/stock-pixmaps/stock_flip_horiz_16.png
+A	glabels2/src/stock-pixmaps/stock_flip_vert_16.png
+A	glabels2/src/stock-pixmaps/stock_hchain_24.png
+A	glabels2/src/stock-pixmaps/stock_hchain_broken_24.png
+A	glabels2/src/stock-pixmaps/stock_image_16.png
+A	glabels2/src/stock-pixmaps/stock_image_24.png
+A	glabels2/src/stock-pixmaps/stock_line_16.png
+A	glabels2/src/stock-pixmaps/stock_line_24.png
+A	glabels2/src/stock-pixmaps/stock_merge_16.png
+A	glabels2/src/stock-pixmaps/stock_merge_24.png
+A	glabels2/src/stock-pixmaps/stock_order_bottom_16.png
+A	glabels2/src/stock-pixmaps/stock_order_top_16.png
+A	glabels2/src/stock-pixmaps/stock_pencil_16.png
+A	glabels2/src/stock-pixmaps/stock_pencil_24.png
+A	glabels2/src/stock-pixmaps/stock_properties_16.png
+A	glabels2/src/stock-pixmaps/stock_properties_24.png
+A	glabels2/src/stock-pixmaps/stock_rotate_left_16.png
+A	glabels2/src/stock-pixmaps/stock_rotate_right_16.png
+A	glabels2/src/stock-pixmaps/stock_text_16.png
+A	glabels2/src/stock-pixmaps/stock_text_24.png
+A	glabels2/src/stock-pixmaps/stock_vchain_24.png
+A	glabels2/src/stock-pixmaps/stock_vchain_broken_24.png
+A	glabels2/src/stock.c
+A	glabels2/src/stock.h
+A	glabels2/src/template-designer.c
+A	glabels2/src/template-designer.h
+A	glabels2/src/text-node.c
+A	glabels2/src/text-node.h
+A	glabels2/src/ui-commands.c
+A	glabels2/src/ui-commands.h
+A	glabels2/src/ui-property-bar.c
+A	glabels2/src/ui-property-bar.h
+A	glabels2/src/ui-sidebar.c
+A	glabels2/src/ui-sidebar.h
+A	glabels2/src/ui-util.c
+A	glabels2/src/ui-util.h
+A	glabels2/src/ui.c
+A	glabels2/src/ui.h
+A	glabels2/src/util.c
+A	glabels2/src/util.h
+A	glabels2/src/view-barcode.c
+A	glabels2/src/view-barcode.h
+A	glabels2/src/view-box.c
+A	glabels2/src/view-box.h
+A	glabels2/src/view-ellipse.c
+A	glabels2/src/view-ellipse.h
+A	glabels2/src/view-image.c
+A	glabels2/src/view-image.h
+A	glabels2/src/view-line.c
+A	glabels2/src/view-line.h
+A	glabels2/src/view-object.c
+A	glabels2/src/view-object.h
+A	glabels2/src/view-text.c
+A	glabels2/src/view-text.h
+A	glabels2/src/view.c
+A	glabels2/src/view.h
+A	glabels2/src/warning-handler.c
+A	glabels2/src/warning-handler.h
+A	glabels2/src/wdgt-chain-button.c
+A	glabels2/src/wdgt-chain-button.h
+A	glabels2/src/wdgt-media-select.c
+A	glabels2/src/wdgt-media-select.h
+A	glabels2/src/wdgt-mini-preview.c
+A	glabels2/src/wdgt-mini-preview.h
+A	glabels2/src/wdgt-print-copies.c
+A	glabels2/src/wdgt-print-copies.h
+A	glabels2/src/wdgt-print-merge.c
+A	glabels2/src/wdgt-print-merge.h
+A	glabels2/src/wdgt-rotate-label.c
+A	glabels2/src/wdgt-rotate-label.h
+A	glabels2/src/window.c
+A	glabels2/src/window.h
+A	glabels2/src/xml-label-04.c
+A	glabels2/src/xml-label-04.h
+A	glabels2/src/xml-label.c
+A	glabels2/src/xml-label.h
+
+commit aa41cfa57d2ea352fee26bbacfcd6ac919f1ee76
+Author: Jim Evins <evins@snaught.com>
+Date:	2007-12-25
+
+    Creating glabels-2.2 branch.
+
+    git-svn-id:
+    https://glabels.svn.sourceforge.net/svnroot/glabels/branches/glabels-2_2@712
+    f5e0f49d-192f-0410-a22d-a8d8700d0965

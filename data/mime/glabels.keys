@@ -1,0 +1,24 @@
+application/x-glabels:
+	open=glabels %f
+	description=gLabels Project File
+	[ca]description=Fitxer de projecte del gLabels
+	[cs]description=Projektový soubor gLabels
+	[da]description=gLabels' projektfil
+	[de]description=gLabels-Projektdatei
+	[eo]description=Dosiero de Projekto de gLabels
+	[es]description=Archivo de projecto gLabels
+	[fr]description=Fichier de projet gLabels
+	[it]description=File di progetto di gLabels
+	[ja]description=gLabels のプロジェクト・ファイル
+	[ko]description=gLabels 프로젝트 파일
+	[pt]description=Propriedades de ficheiro gLabels
+	[ru]description=Файл проекта gLabels
+	[sl]description=Datoteka projekta gLabels
+	[sv]description=gLabels-projektfil
+	[zh_CN]description=gLabels工程文件
+        icon_filename=glabels-application-x-glabels.png
+        default_action_type=application
+	category=Documents
+        short_list_application_ids_for_novice_user_level=glabels
+        short_list_application_ids_for_intermediate_user_level=glabels
+        short_list_application_ids_for_advanced_user_level=glabels

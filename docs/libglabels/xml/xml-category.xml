@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="libglabels-xml-category">
+<refmeta>
+<refentrytitle role="top_of_page" id="libglabels-xml-category.top_of_page">XML Category Functions</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGLABELS Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>XML Category Functions</refname>
+<refpurpose>Functions to parse glabels XML category definition files</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libglabels-xml-category.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libglabels/xml-category.h&gt;
+
+<link linkend="GList">GList</link> *             <link linkend="lgl-xml-category-read-categories-from-file">lgl_xml_category_read_categories_from_file</link>
+                                                        (<link linkend="gchar">gchar</link> *utf8_filename);
+<link linkend="GList">GList</link> *             <link linkend="lgl-xml-category-parse-categories-doc">lgl_xml_category_parse_categories_doc</link>
+                                                        (<link linkend="xmlDocPtr">xmlDocPtr</link> categories_doc);
+<link linkend="lglCategory">lglCategory</link> *       <link linkend="lgl-xml-category-parse-category-node">lgl_xml_category_parse_category_node</link>
+                                                        (<link linkend="xmlNodePtr">xmlNodePtr</link> category_node);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libglabels-xml-category.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This section describes a number of functions for parsing glabels
+XML category definition files.
+</para>
+</refsect1>
+
+<refsect1 id="libglabels-xml-category.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="lgl-xml-category-read-categories-from-file" role="function">
+<title>lgl_xml_category_read_categories_from_file ()</title>
+<indexterm zone="lgl-xml-category-read-categories-from-file"><primary sortas="lgl_xml_category_read_categories_from_file">lgl_xml_category_read_categories_from_file</primary></indexterm><programlisting><link linkend="GList">GList</link> *             lgl_xml_category_read_categories_from_file
+                                                        (<link linkend="gchar">gchar</link> *utf8_filename);</programlisting>
+<para>
+Read category definitions from a file.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>utf8_filename</parameter>&#160;:</term>
+<listitem><simpara>       Filename of categories file (name encoded as UTF-8)
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a list of <link linkend="lglCategory"><type>lglCategory</type></link> structures.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="lgl-xml-category-parse-categories-doc" role="function">
+<title>lgl_xml_category_parse_categories_doc ()</title>
+<indexterm zone="lgl-xml-category-parse-categories-doc"><primary sortas="lgl_xml_category_parse_categories_doc">lgl_xml_category_parse_categories_doc</primary></indexterm><programlisting><link linkend="GList">GList</link> *             lgl_xml_category_parse_categories_doc
+                                                        (<link linkend="xmlDocPtr">xmlDocPtr</link> categories_doc);</programlisting>
+<para>
+Read category definitions from a libxml <link linkend="xmlDocPtr"><type>xmlDocPtr</type></link> tree.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>categories_doc</parameter>&#160;:</term>
+<listitem><simpara>  libxml <link linkend="xmlDocPtr"><type>xmlDocPtr</type></link> tree, representing a categories
+definition file.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a list of <link linkend="lglCategory"><type>lglCategory</type></link> structures.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="lgl-xml-category-parse-category-node" role="function">
+<title>lgl_xml_category_parse_category_node ()</title>
+<indexterm zone="lgl-xml-category-parse-category-node"><primary sortas="lgl_xml_category_parse_category_node">lgl_xml_category_parse_category_node</primary></indexterm><programlisting><link linkend="lglCategory">lglCategory</link> *       lgl_xml_category_parse_category_node
+                                                        (<link linkend="xmlNodePtr">xmlNodePtr</link> category_node);</programlisting>
+<para>
+Read a single category definition from a libxml <link linkend="xmlNodePtr"><type>xmlNodePtr</type></link> node.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>category_node</parameter>&#160;:</term>
+<listitem><simpara>  libxml <link linkend="xmlNodePtr"><type>xmlNodePtr</type></link> category node from a <link linkend="xmlDocPtr"><type>xmlDocPtr</type></link> tree.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a pointer to a newly created <link linkend="lglCategory"><type>lglCategory</type></link> structure.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

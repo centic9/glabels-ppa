@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="libglabels-paper">
+<refmeta>
+<refentrytitle role="top_of_page" id="libglabels-paper.top_of_page">The lglPaper Structure</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGLABELS Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>The lglPaper Structure</refname>
+<refpurpose>Paper size definitions</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libglabels-paper.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libglabels/paper.h&gt;
+
+                    <link linkend="lglPaper">lglPaper</link>;
+<link linkend="lglPaper">lglPaper</link> *          <link linkend="lgl-paper-new">lgl_paper_new</link>                       (<link linkend="gchar">gchar</link> *id,
+                                                         <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="gdouble">gdouble</link> width,
+                                                         <link linkend="gdouble">gdouble</link> height,
+                                                         <link linkend="gchar">gchar</link> *pwg_size);
+<link linkend="lglPaper">lglPaper</link> *          <link linkend="lgl-paper-dup">lgl_paper_dup</link>                       (const <link linkend="lglPaper">lglPaper</link> *orig);
+<link linkend="void">void</link>                <link linkend="lgl-paper-free">lgl_paper_free</link>                      (<link linkend="lglPaper">lglPaper</link> *paper);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libglabels-paper.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This section describes a structure for representing a paper size definition
+and related functions.
+</para>
+</refsect1>
+
+<refsect1 id="libglabels-paper.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="lglPaper" role="struct">
+<title>lglPaper</title>
+<indexterm zone="lglPaper"><primary sortas="lglPaper">lglPaper</primary></indexterm><programlisting>typedef struct {
+	gchar               *id;       /* Unique ID of paper definition */
+	gchar               *name;     /* Localized name of paper */
+	gdouble              width;    /* Width (in points) */
+	gdouble              height;   /* Height (in points) */
+	gchar               *pwg_size; /* PWG 5101.1-2002 size name */
+} lglPaper;
+</programlisting>
+<para>
+This structure defines a paper (page) size.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>id</structfield>;</term>
+<listitem><simpara>Paper size ID.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>name</structfield>;</term>
+<listitem><simpara>Localized paper size name.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gdouble">gdouble</link>&#160;<structfield>width</structfield>;</term>
+<listitem><simpara>Width of paper in points.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gdouble">gdouble</link>&#160;<structfield>height</structfield>;</term>
+<listitem><simpara>Height of paper in points.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>pwg_size</structfield>;</term>
+<listitem><simpara>PWG 5101.1-2002 size name.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="lgl-paper-new" role="function">
+<title>lgl_paper_new ()</title>
+<indexterm zone="lgl-paper-new"><primary sortas="lgl_paper_new">lgl_paper_new</primary></indexterm><programlisting><link linkend="lglPaper">lglPaper</link> *          lgl_paper_new                       (<link linkend="gchar">gchar</link> *id,
+                                                         <link linkend="gchar">gchar</link> *name,
+                                                         <link linkend="gdouble">gdouble</link> width,
+                                                         <link linkend="gdouble">gdouble</link> height,
+                                                         <link linkend="gchar">gchar</link> *pwg_size);</programlisting>
+<para>
+Allocates and constructs a new <link linkend="lglPaper"><type>lglPaper</type></link> structure.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>id</parameter>&#160;:</term>
+<listitem><simpara>       Id of paper definition. (E.g. US-Letter, A4, etc.)  Should be
+           unique.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>     Localized name of paper.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>width</parameter>&#160;:</term>
+<listitem><simpara>    Width of paper in points.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>height</parameter>&#160;:</term>
+<listitem><simpara>   Height of paper in points.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pwg_size</parameter>&#160;:</term>
+<listitem><simpara> PWG 5101.1-2002 size name.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a pointer to a newly allocated <link linkend="lglPaper"><type>lglPaper</type></link> structure.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="lgl-paper-dup" role="function">
+<title>lgl_paper_dup ()</title>
+<indexterm zone="lgl-paper-dup"><primary sortas="lgl_paper_dup">lgl_paper_dup</primary></indexterm><programlisting><link linkend="lglPaper">lglPaper</link> *          lgl_paper_dup                       (const <link linkend="lglPaper">lglPaper</link> *orig);</programlisting>
+<para>
+Duplicates an existing <link linkend="lglPaper"><type>lglPaper</type></link> structure.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>orig</parameter>&#160;:</term>
+<listitem><simpara>  <link linkend="lglPaper"><type>lglPaper</type></link> structure to be duplicated.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a pointer to a newly allocated <link linkend="lglPaper"><type>lglPaper</type></link> structure.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="lgl-paper-free" role="function">
+<title>lgl_paper_free ()</title>
+<indexterm zone="lgl-paper-free"><primary sortas="lgl_paper_free">lgl_paper_free</primary></indexterm><programlisting><link linkend="void">void</link>                lgl_paper_free                      (<link linkend="lglPaper">lglPaper</link> *paper);</programlisting>
+<para>
+Free all memory associated with an existing <link linkend="lglPaper"><type>lglPaper</type></link> structure.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>paper</parameter>&#160;:</term>
+<listitem><simpara>  pointer to <link linkend="lglPaper"><type>lglPaper</type></link> structure to be freed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

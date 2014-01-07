@@ -1,0 +1,2229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The lglTemplate Structure</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="LibGlabels Reference Manual">
+<link rel="up" href="ch01.html" title="Basic LibGlabels Usage">
+<link rel="prev" href="libglabels-db.html" title="Database">
+<link rel="next" href="libglabels-paper.html" title="The lglPaper Structure">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Basic LibGlabels Usage">
+<link rel="chapter" href="ch02.html" title="Working Directly With LibGlabels XML">
+<link rel="chapter" href="ch03.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libglabels-db.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">LibGlabels Reference Manual</th>
+<td><a accesskey="n" href="libglabels-paper.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libglabels-template.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libglabels-template.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="The lglTemplate Structure">
+<a name="libglabels-template"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libglabels-template.top_of_page"></a>The lglTemplate Structure</span></h2>
+<p>The lglTemplate Structure — How templates are represented in memory</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libglabels-template.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;libglabels/template.h&gt;
+
+                    <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a>;
+
+                    <a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias">lglTemplateAlias</a>;
+
+enum                <a class="link" href="libglabels-template.html#lglTemplateFrameShape" title="enum lglTemplateFrameShape">lglTemplateFrameShape</a>;
+union               <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a>;
+                    <a class="link" href="libglabels-template.html#lglTemplateFrameAll" title="lglTemplateFrameAll">lglTemplateFrameAll</a>;
+                    <a class="link" href="libglabels-template.html#lglTemplateFrameRect" title="lglTemplateFrameRect">lglTemplateFrameRect</a>;
+                    <a class="link" href="libglabels-template.html#lglTemplateFrameRound" title="lglTemplateFrameRound">lglTemplateFrameRound</a>;
+                    <a class="link" href="libglabels-template.html#lglTemplateFrameCD" title="lglTemplateFrameCD">lglTemplateFrameCD</a>;
+
+                    <a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout">lglTemplateLayout</a>;
+
+enum                <a class="link" href="libglabels-template.html#lglTemplateMarkupType" title="enum lglTemplateMarkupType">lglTemplateMarkupType</a>;
+union               <a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a>;
+                    <a class="link" href="libglabels-template.html#lglTemplateMarkupMargin" title="lglTemplateMarkupMargin">lglTemplateMarkupMargin</a>;
+                    <a class="link" href="libglabels-template.html#lglTemplateMarkupLine" title="lglTemplateMarkupLine">lglTemplateMarkupLine</a>;
+                    <a class="link" href="libglabels-template.html#lglTemplateMarkupCircle" title="lglTemplateMarkupCircle">lglTemplateMarkupCircle</a>;
+                    <a class="link" href="libglabels-template.html#lglTemplateMarkupRect" title="lglTemplateMarkupRect">lglTemplateMarkupRect</a>;
+
+                    <a class="link" href="libglabels-template.html#lglTemplateOrigin" title="lglTemplateOrigin">lglTemplateOrigin</a>;
+
+<a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *       <a class="link" href="libglabels-template.html#lgl-template-new" title="lgl_template_new ()">lgl_template_new</a>                    (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *brand,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *part,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *description,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *paper_id,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> page_width,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> page_height);
+<a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *       <a class="link" href="libglabels-template.html#lgl-template-dup" title="lgl_template_dup ()">lgl_template_dup</a>                    (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *orig_template);
+void                <a class="link" href="libglabels-template.html#lgl-template-free" title="lgl_template_free ()">lgl_template_free</a>                   (<a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template);
+void                <a class="link" href="libglabels-template.html#lgl-template-add-category" title="lgl_template_add_category ()">lgl_template_add_category</a>           (<a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *category_id);
+void                <a class="link" href="libglabels-template.html#lgl-template-add-frame" title="lgl_template_add_frame ()">lgl_template_add_frame</a>              (<a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame);
+void                <a class="link" href="libglabels-template.html#lgl-template-add-alias" title="lgl_template_add_alias ()">lgl_template_add_alias</a>              (<a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         <a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias">lglTemplateAlias</a> *alias);
+
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *             <a class="link" href="libglabels-template.html#lgl-template-get-name" title="lgl_template_get_name ()">lgl_template_get_name</a>               (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="libglabels-template.html#lgl-template-do-templates-match" title="lgl_template_do_templates_match ()">lgl_template_do_templates_match</a>     (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template1,
+                                                         const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template2);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="libglabels-template.html#lgl-template-does-brand-match" title="lgl_template_does_brand_match ()">lgl_template_does_brand_match</a>       (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *brand);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="libglabels-template.html#lgl-template-does-page-size-match" title="lgl_template_does_page_size_match ()">lgl_template_does_page_size_match</a>   (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *paper_id);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="libglabels-template.html#lgl-template-does-category-match" title="lgl_template_does_category_match ()">lgl_template_does_category_match</a>    (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *category_id);
+
+<a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias">lglTemplateAlias</a> *  <a class="link" href="libglabels-template.html#lgl-template-alias-new" title="lgl_template_alias_new ()">lgl_template_alias_new</a>              (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *brand,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *part);
+<a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias">lglTemplateAlias</a> *  <a class="link" href="libglabels-template.html#lgl-template-alias-dup" title="lgl_template_alias_dup ()">lgl_template_alias_dup</a>              (const <a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias">lglTemplateAlias</a> *orig_alias);
+void                <a class="link" href="libglabels-template.html#lgl-template-alias-free" title="lgl_template_alias_free ()">lgl_template_alias_free</a>             (<a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias">lglTemplateAlias</a> *alias);
+
+<a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *  <a class="link" href="libglabels-template.html#lgl-template-frame-rect-new" title="lgl_template_frame_rect_new ()">lgl_template_frame_rect_new</a>         (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *id,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> w,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> h,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x_waste,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y_waste);
+<a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *  <a class="link" href="libglabels-template.html#lgl-template-frame-round-new" title="lgl_template_frame_round_new ()">lgl_template_frame_round_new</a>        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *id,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> waste);
+<a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *  <a class="link" href="libglabels-template.html#lgl-template-frame-cd-new" title="lgl_template_frame_cd_new ()">lgl_template_frame_cd_new</a>           (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *id,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r2,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> w,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> h,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> waste);
+<a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *  <a class="link" href="libglabels-template.html#lgl-template-frame-dup" title="lgl_template_frame_dup ()">lgl_template_frame_dup</a>              (const <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *orig_frame);
+void                <a class="link" href="libglabels-template.html#lgl-template-frame-free" title="lgl_template_frame_free ()">lgl_template_frame_free</a>             (<a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame);
+void                <a class="link" href="libglabels-template.html#lgl-template-frame-add-layout" title="lgl_template_frame_add_layout ()">lgl_template_frame_add_layout</a>       (<a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame,
+                                                         <a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout">lglTemplateLayout</a> *layout);
+void                <a class="link" href="libglabels-template.html#lgl-template-frame-add-markup" title="lgl_template_frame_add_markup ()">lgl_template_frame_add_markup</a>       (<a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame,
+                                                         <a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> *markup);
+
+void                <a class="link" href="libglabels-template.html#lgl-template-frame-get-size" title="lgl_template_frame_get_size ()">lgl_template_frame_get_size</a>         (const <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> *w,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> *h);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                <a class="link" href="libglabels-template.html#lgl-template-frame-get-n-labels" title="lgl_template_frame_get_n_labels ()">lgl_template_frame_get_n_labels</a>     (const <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame);
+<a class="link" href="libglabels-template.html#lglTemplateOrigin" title="lglTemplateOrigin">lglTemplateOrigin</a> * <a class="link" href="libglabels-template.html#lgl-template-frame-get-origins" title="lgl_template_frame_get_origins ()">lgl_template_frame_get_origins</a>      (const <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame);
+
+<a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout">lglTemplateLayout</a> * <a class="link" href="libglabels-template.html#lgl-template-layout-new" title="lgl_template_layout_new ()">lgl_template_layout_new</a>             (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> nx,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> ny,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x0,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y0,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> dx,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> dy);
+<a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout">lglTemplateLayout</a> * <a class="link" href="libglabels-template.html#lgl-template-layout-dup" title="lgl_template_layout_dup ()">lgl_template_layout_dup</a>             (const <a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout">lglTemplateLayout</a> *orig_layout);
+void                <a class="link" href="libglabels-template.html#lgl-template-layout-free" title="lgl_template_layout_free ()">lgl_template_layout_free</a>            (<a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout">lglTemplateLayout</a> *layout);
+
+<a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> * <a class="link" href="libglabels-template.html#lgl-template-markup-margin-new" title="lgl_template_markup_margin_new ()">lgl_template_markup_margin_new</a>      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> size);
+<a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> * <a class="link" href="libglabels-template.html#lgl-template-markup-line-new" title="lgl_template_markup_line_new ()">lgl_template_markup_line_new</a>        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x2,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y2);
+<a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> * <a class="link" href="libglabels-template.html#lgl-template-markup-circle-new" title="lgl_template_markup_circle_new ()">lgl_template_markup_circle_new</a>      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x0,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y0,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r);
+<a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> * <a class="link" href="libglabels-template.html#lgl-template-markup-rect-new" title="lgl_template_markup_rect_new ()">lgl_template_markup_rect_new</a>        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> w,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> h,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r);
+<a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> * <a class="link" href="libglabels-template.html#lgl-template-markup-dup" title="lgl_template_markup_dup ()">lgl_template_markup_dup</a>             (const <a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> *orig_markup);
+void                <a class="link" href="libglabels-template.html#lgl-template-markup-free" title="lgl_template_markup_free ()">lgl_template_markup_free</a>            (<a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> *markup);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libglabels-template.description"></a><h2>Description</h2>
+<p>
+This section describes a set of structures that represent a template in memory.  It also
+describes functions to help create and interpret these structures.
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libglabels-template.details"></a><h2>Details</h2>
+<div class="refsect2" title="lglTemplate">
+<a name="lglTemplate"></a><h3>lglTemplate</h3>
+<pre class="programlisting">typedef struct {
+	gchar               *brand;
+        gchar               *part;
+	gchar               *description;
+	gchar               *paper_id;
+	gdouble              page_width;
+	gdouble              page_height;
+
+	/* List of (lglTemplateAlias *) aliase structures. */
+	GList               *aliases;
+
+        /* List of (gchar *) category ids. */
+	GList               *category_ids;
+
+	/* List of (lglTemplateFrame *) label frame structures.
+	 * Currently glabels only supports a single label frame per
+	 * template. */
+	GList               *frames;
+} lglTemplate;
+</pre>
+<p>
+This is the main structure of a libglabels template.  A template represents a single sheet
+of peel-off labels or cards.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>brand</code></em>;</span></p></td>
+<td>Brand name of label or card.  E.g. "Avery."
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>part</code></em>;</span></p></td>
+<td>Part name or number of label or card.  E.g. "8160."
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>description</code></em>;</span></p></td>
+<td>A description of the template.  E.g. "Mailing labels."
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>paper_id</code></em>;</span></p></td>
+<td>A paper ID.  E.g. "A4" or "US-Letter."
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>page_width</code></em>;</span></p></td>
+<td>Page width in points.  Used only if paper_id is "Other."
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>page_height</code></em>;</span></p></td>
+<td>Page height in points.  Used only if paper_id is "Other."
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *<em class="structfield"><code>aliases</code></em>;</span></p></td>
+<td>A list of alternate names for this template.  Often a single template can be used for
+multiple products.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *<em class="structfield"><code>category_ids</code></em>;</span></p></td>
+<td>A list of category IDs that this template belongs to.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *<em class="structfield"><code>frames</code></em>;</span></p></td>
+<td>A list of (<a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame"><span class="type">lglTemplateFrame</span></a> *) structures.  GLabels currently only supports one frame
+per template -- future versions may support multiple frames per template.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lglTemplateAlias">
+<a name="lglTemplateAlias"></a><h3>lglTemplateAlias</h3>
+<pre class="programlisting">typedef struct {
+	gchar               *brand;
+        gchar               *part;
+} lglTemplateAlias;
+</pre>
+<p>
+This structure defines an alias for the parent template structure.  An alias is used for
+different products that can use the same template.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>brand</code></em>;</span></p></td>
+<td>Brand name of label or card.  E.g. "Avery."
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>part</code></em>;</span></p></td>
+<td>Part name or number of label or card.  E.g. "8160."
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum lglTemplateFrameShape">
+<a name="lglTemplateFrameShape"></a><h3>enum lglTemplateFrameShape</h3>
+<pre class="programlisting">typedef enum {
+	LGL_TEMPLATE_FRAME_SHAPE_RECT,
+	LGL_TEMPLATE_FRAME_SHAPE_ROUND,
+	LGL_TEMPLATE_FRAME_SHAPE_CD,
+} lglTemplateFrameShape;
+</pre>
+<p>
+This enumeration defines frame types that are supported by libglabels
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="LGL-TEMPLATE-FRAME-SHAPE-RECT--CAPS"></a><span class="term"><code class="literal">LGL_TEMPLATE_FRAME_SHAPE_RECT</code></span></p></td>
+<td>A rectangular frame.  (May have rounded corners.)
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-TEMPLATE-FRAME-SHAPE-ROUND--CAPS"></a><span class="term"><code class="literal">LGL_TEMPLATE_FRAME_SHAPE_ROUND</code></span></p></td>
+<td>A round frame.
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-TEMPLATE-FRAME-SHAPE-CD--CAPS"></a><span class="term"><code class="literal">LGL_TEMPLATE_FRAME_SHAPE_CD</code></span></p></td>
+<td>A CD or DVD frame.  (Includes credit-card style CDs.)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="union lglTemplateFrame">
+<a name="lglTemplateFrame"></a><h3>union lglTemplateFrame</h3>
+<pre class="programlisting">union lglTemplateFrame{
+
+	lglTemplateFrameShape shape;
+
+	lglTemplateFrameAll   all;
+	lglTemplateFrameRect  rect;
+	lglTemplateFrameRound round;
+	lglTemplateFrameCD    cd;
+};
+</pre>
+<p>
+A union of all possible frame structures.  The type of structure is indicated by the shape
+member, which overlays the first field of all other member structures.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="lglTemplateFrameAll">
+<a name="lglTemplateFrameAll"></a><h3>lglTemplateFrameAll</h3>
+<pre class="programlisting">typedef struct {
+        /* Begin Common Fields */
+	lglTemplateFrameShape shape;
+
+	gchar                *id;       /* Id, currently always "0" */
+	GList                *layouts;  /* List of lglTemplateLayouts */
+	GList                *markups;  /* List of lglTemplateMarkups */
+        /* End Common Fields */
+} lglTemplateFrameAll;
+</pre>
+<p>
+This structure is composed of a set of fields common to all frame structures.  All frame types
+can be cast to this structure.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglabels-template.html#lglTemplateFrameShape" title="enum lglTemplateFrameShape">lglTemplateFrameShape</a> <em class="structfield"><code>shape</code></em>;</span></p></td>
+<td>The shape of the frame.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>id</code></em>;</span></p></td>
+<td>Reserved for future use.  Should always be zero.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *<em class="structfield"><code>layouts</code></em>;</span></p></td>
+<td>A list of (<a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout"><span class="type">lglTemplateLayout</span></a> *) structures.  Typically a frame will have a single
+layout, representing a simple grid of labels or cards.  If the layout of labels or cards is
+more complex, multiple (<a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout"><span class="type">lglTemplateLayout</span></a> *) structures may be needed.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *<em class="structfield"><code>markups</code></em>;</span></p></td>
+<td>A list of (<a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup"><span class="type">lglTemplateMarkup</span></a> *) structures, which represent non-printing markup lines.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lglTemplateFrameRect">
+<a name="lglTemplateFrameRect"></a><h3>lglTemplateFrameRect</h3>
+<pre class="programlisting">typedef struct {
+        /* Begin Common Fields */
+	lglTemplateFrameShape shape;    /* Always LGL_TEMPLATE_FRAME_SHAPE_RECT. */
+
+	gchar                *id;       /* Id, currently always "0" */
+	GList                *layouts;  /* List of lglTemplateLayouts */
+	GList                *markups;  /* List of lglTemplateMarkups */
+        /* End Common Fields */
+
+        gdouble               w;        /* Width */
+        gdouble               h;        /* Height */
+        gdouble               r;        /* Corner radius */
+        gdouble               x_waste;  /* Amount of horiz overprint allowed. */
+        gdouble               y_waste;  /* Amount of vert overprint allowed. */
+} lglTemplateFrameRect;
+</pre>
+<p>
+This structure defines the frame for a rectangular label or card.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglabels-template.html#lglTemplateFrameShape" title="enum lglTemplateFrameShape">lglTemplateFrameShape</a> <em class="structfield"><code>shape</code></em>;</span></p></td>
+<td>Common field.  Always <a class="link" href="libglabels-template.html#LGL-TEMPLATE-FRAME-SHAPE-RECT--CAPS"><span class="type">LGL_TEMPLATE_FRAME_SHAPE_RECT</span></a> for <a class="link" href="libglabels-template.html#lglTemplateFrameRect" title="lglTemplateFrameRect"><span class="type">lglTemplateFrameRect</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>id</code></em>;</span></p></td>
+<td>Common field.  See <a class="link" href="libglabels-template.html#lglTemplateFrameAll" title="lglTemplateFrameAll"><span class="type">lglTemplateFrameAll</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *<em class="structfield"><code>layouts</code></em>;</span></p></td>
+<td> Common field.  See <a class="link" href="libglabels-template.html#lglTemplateFrameAll" title="lglTemplateFrameAll"><span class="type">lglTemplateFrameAll</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *<em class="structfield"><code>markups</code></em>;</span></p></td>
+<td> Common field.  See <a class="link" href="libglabels-template.html#lglTemplateFrameAll" title="lglTemplateFrameAll"><span class="type">lglTemplateFrameAll</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>w</code></em>;</span></p></td>
+<td>Width of label or card in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>h</code></em>;</span></p></td>
+<td>Height of label or card in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>r</code></em>;</span></p></td>
+<td>Radius of corners in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>x_waste</code></em>;</span></p></td>
+<td>Amount of horizontal over-print to allow in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>y_waste</code></em>;</span></p></td>
+<td>Amount of vertical over-print to allow in points.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lglTemplateFrameRound">
+<a name="lglTemplateFrameRound"></a><h3>lglTemplateFrameRound</h3>
+<pre class="programlisting">typedef struct {
+        /* Begin Common Fields */
+	lglTemplateFrameShape shape;    /* Always LGL_TEMPLATE_FRAME_SHAPE_ROUND. */
+
+	gchar                *id;       /* Id, currently always "0" */
+	GList                *layouts;  /* List of lglTemplateLayouts */
+	GList                *markups;  /* List of lglTemplateMarkups */
+        /* End Common Fields */
+
+        gdouble               r;      /* Radius */
+        gdouble               waste;  /* Amount of overprint allowed. */
+} lglTemplateFrameRound;
+</pre>
+<p>
+This structure defines the frame for a round label or card.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglabels-template.html#lglTemplateFrameShape" title="enum lglTemplateFrameShape">lglTemplateFrameShape</a> <em class="structfield"><code>shape</code></em>;</span></p></td>
+<td>Common field.  Always <a class="link" href="libglabels-template.html#LGL-TEMPLATE-FRAME-SHAPE-ROUND--CAPS"><span class="type">LGL_TEMPLATE_FRAME_SHAPE_ROUND</span></a> for <a class="link" href="libglabels-template.html#lglTemplateFrameRound" title="lglTemplateFrameRound"><span class="type">lglTemplateFrameRound</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>id</code></em>;</span></p></td>
+<td>Common field.  See <a class="link" href="libglabels-template.html#lglTemplateFrameAll" title="lglTemplateFrameAll"><span class="type">lglTemplateFrameAll</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *<em class="structfield"><code>layouts</code></em>;</span></p></td>
+<td>Common field.  See <a class="link" href="libglabels-template.html#lglTemplateFrameAll" title="lglTemplateFrameAll"><span class="type">lglTemplateFrameAll</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *<em class="structfield"><code>markups</code></em>;</span></p></td>
+<td>Common field.  See <a class="link" href="libglabels-template.html#lglTemplateFrameAll" title="lglTemplateFrameAll"><span class="type">lglTemplateFrameAll</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>r</code></em>;</span></p></td>
+<td>Radius of label or card in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>waste</code></em>;</span></p></td>
+<td>Amount of over-print to allow in points.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lglTemplateFrameCD">
+<a name="lglTemplateFrameCD"></a><h3>lglTemplateFrameCD</h3>
+<pre class="programlisting">typedef struct {
+        /* Begin Common Fields */
+	lglTemplateFrameShape shape;    /* Always LGL_TEMPLATE_FRAME_SHAPE_CD. */
+
+	gchar                *id;       /* Id, currently always "0" */
+	GList                *layouts;  /* List of lglTemplateLayouts */
+	GList                *markups;  /* List of lglTemplateMarkups */
+        /* End Common Fields */
+
+        gdouble               r1;     /* Outer radius */
+        gdouble               r2;     /* Inner radius (hole) */
+        gdouble               w;      /* Clip width, business card CDs */
+        gdouble               h;      /* Clip height, business card CDs */
+        gdouble               waste;  /* Amount of overprint allowed. */
+} lglTemplateFrameCD;
+</pre>
+<p>
+This structure defines the frame for a CD or DVD label.  This structure also supports
+credit-card CD labels.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglabels-template.html#lglTemplateFrameShape" title="enum lglTemplateFrameShape">lglTemplateFrameShape</a> <em class="structfield"><code>shape</code></em>;</span></p></td>
+<td>Common field.  Always <a class="link" href="libglabels-template.html#LGL-TEMPLATE-FRAME-SHAPE-CD--CAPS"><span class="type">LGL_TEMPLATE_FRAME_SHAPE_CD</span></a> for <a class="link" href="libglabels-template.html#lglTemplateFrameCD" title="lglTemplateFrameCD"><span class="type">lglTemplateFrameCD</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>id</code></em>;</span></p></td>
+<td>Common field.  See <a class="link" href="libglabels-template.html#lglTemplateFrameAll" title="lglTemplateFrameAll"><span class="type">lglTemplateFrameAll</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *<em class="structfield"><code>layouts</code></em>;</span></p></td>
+<td>Common field.  See <a class="link" href="libglabels-template.html#lglTemplateFrameAll" title="lglTemplateFrameAll"><span class="type">lglTemplateFrameAll</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"
+>GList</a> *<em class="structfield"><code>markups</code></em>;</span></p></td>
+<td>Common field.  See <a class="link" href="libglabels-template.html#lglTemplateFrameAll" title="lglTemplateFrameAll"><span class="type">lglTemplateFrameAll</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>r1</code></em>;</span></p></td>
+<td>Outer radius of label in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>r2</code></em>;</span></p></td>
+<td>Radius of center hole in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>w</code></em>;</span></p></td>
+<td>Clip width in points.  Used for credit-card CD labels.  This field is ignored if zero.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>h</code></em>;</span></p></td>
+<td>Clip height in points.  Used for credit-card CD labels.  This field is ignored if zero.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>waste</code></em>;</span></p></td>
+<td>Amount of over-print to allow in points.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lglTemplateLayout">
+<a name="lglTemplateLayout"></a><h3>lglTemplateLayout</h3>
+<pre class="programlisting">typedef struct {
+	gint                  nx;  /* Number of labels across */
+	gint                  ny;  /* Number of labels up and down */
+
+	gdouble               x0;  /* Left of grid from left edge of paper */
+	gdouble               y0;  /* Top of grid from top edge of paper */
+
+	gdouble               dx;  /* Horizontal pitch of grid */
+	gdouble               dy;  /* Vertical pitch of grid */
+} lglTemplateLayout;
+</pre>
+<p>
+This structure defines a simple grid layout of labels or cards.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> <em class="structfield"><code>nx</code></em>;</span></p></td>
+<td>Number of labels or cards across in the grid (horizontal).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> <em class="structfield"><code>ny</code></em>;</span></p></td>
+<td>Number of labels or cards down in the grid (vertical).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>x0</code></em>;</span></p></td>
+<td>Distance (in points) from the left edge of page to the left edge of the left column of
+cards or labels in the layout.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>y0</code></em>;</span></p></td>
+<td>Distance (in points) from the top edge of page to the top edge of the top row of
+cards or labels in the layout.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>dx</code></em>;</span></p></td>
+<td>Horizontal pitch of grid in points.  This is the distance from left edge to left edge
+(not the gap between labels or cards).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>dy</code></em>;</span></p></td>
+<td>Vertical pitch of grid in points.  This is the distance from top edge to top edge
+(not the gap between labels or cards).
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum lglTemplateMarkupType">
+<a name="lglTemplateMarkupType"></a><h3>enum lglTemplateMarkupType</h3>
+<pre class="programlisting">typedef enum {
+	LGL_TEMPLATE_MARKUP_MARGIN,
+	LGL_TEMPLATE_MARKUP_LINE,
+	LGL_TEMPLATE_MARKUP_CIRCLE,
+	LGL_TEMPLATE_MARKUP_RECT,
+} lglTemplateMarkupType;
+</pre>
+<p>
+This enumeration defines markup types that are supported by libglabels
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="LGL-TEMPLATE-MARKUP-MARGIN--CAPS"></a><span class="term"><code class="literal">LGL_TEMPLATE_MARKUP_MARGIN</code></span></p></td>
+<td>A margin line around perimeter of label or card.
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-TEMPLATE-MARKUP-LINE--CAPS"></a><span class="term"><code class="literal">LGL_TEMPLATE_MARKUP_LINE</code></span></p></td>
+<td>A simple line segment.
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-TEMPLATE-MARKUP-CIRCLE--CAPS"></a><span class="term"><code class="literal">LGL_TEMPLATE_MARKUP_CIRCLE</code></span></p></td>
+<td>A circle.
+</td>
+</tr>
+<tr>
+<td><p><a name="LGL-TEMPLATE-MARKUP-RECT--CAPS"></a><span class="term"><code class="literal">LGL_TEMPLATE_MARKUP_RECT</code></span></p></td>
+<td>A rectangle.  Possibly with rounded corners.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="union lglTemplateMarkup">
+<a name="lglTemplateMarkup"></a><h3>union lglTemplateMarkup</h3>
+<pre class="programlisting">union lglTemplateMarkup {
+
+	lglTemplateMarkupType   type;
+
+	lglTemplateMarkupMargin margin;
+	lglTemplateMarkupLine   line;
+	lglTemplateMarkupCircle circle;
+	lglTemplateMarkupRect   rect;
+};
+</pre>
+<p>
+A union of all possible markup structures.  The type of structure is indicated by the type
+member, which overlays the first field of all other member structures.
+</p>
+</div>
+<hr>
+<div class="refsect2" title="lglTemplateMarkupMargin">
+<a name="lglTemplateMarkupMargin"></a><h3>lglTemplateMarkupMargin</h3>
+<pre class="programlisting">typedef struct {
+	lglTemplateMarkupType  type;  /* Always LGL_TEMPLATE_MARKUP_MARGIN */
+
+        gdouble                size;  /* Margin size */
+} lglTemplateMarkupMargin;
+</pre>
+<p>
+This structure defines a simple margin markup around the perimeter of a label or card.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglabels-template.html#lglTemplateMarkupType" title="enum lglTemplateMarkupType">lglTemplateMarkupType</a> <em class="structfield"><code>type</code></em>;</span></p></td>
+<td>Common field.  Always <a class="link" href="libglabels-template.html#LGL-TEMPLATE-MARKUP-MARGIN--CAPS"><span class="type">LGL_TEMPLATE_MARKUP_MARGIN</span></a> for <a class="link" href="libglabels-template.html#lglTemplateMarkupMargin" title="lglTemplateMarkupMargin"><span class="type">lglTemplateMarkupMargin</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>size</code></em>;</span></p></td>
+<td>Distance of margin from edge of label or card.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lglTemplateMarkupLine">
+<a name="lglTemplateMarkupLine"></a><h3>lglTemplateMarkupLine</h3>
+<pre class="programlisting">typedef struct {
+	lglTemplateMarkupType  type;   /* Always LGL_TEMPLATE_MARKUP_LINE */
+
+        gdouble                x1, y1; /* 1st endpoint */
+        gdouble                x2, y2; /* 2nd endpoint */
+} lglTemplateMarkupLine;
+</pre>
+<p>
+This structure defines a simple line segment markup.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglabels-template.html#lglTemplateMarkupType" title="enum lglTemplateMarkupType">lglTemplateMarkupType</a> <em class="structfield"><code>type</code></em>;</span></p></td>
+<td>Common field.  Always <a class="link" href="libglabels-template.html#LGL-TEMPLATE-MARKUP-LINE--CAPS"><span class="type">LGL_TEMPLATE_MARKUP_LINE</span></a> for <a class="link" href="libglabels-template.html#lglTemplateMarkupLine" title="lglTemplateMarkupLine"><span class="type">lglTemplateMarkupLine</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>x1</code></em>;</span></p></td>
+<td>Distance (in points) of first endpoint from left edge of label or card.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>y1</code></em>;</span></p></td>
+<td>Distance (in points) of first endpoint from top edge of label or card.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>x2</code></em>;</span></p></td>
+<td>Distance (in points) of second endpoint from left edge of label or card.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>y2</code></em>;</span></p></td>
+<td>Distance (in points) of second endpoint from top edge of label or card.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lglTemplateMarkupCircle">
+<a name="lglTemplateMarkupCircle"></a><h3>lglTemplateMarkupCircle</h3>
+<pre class="programlisting">typedef struct {
+	lglTemplateMarkupType  type;   /* Always LGL_TEMPLATE_MARKUP_CIRCLE */
+
+        gdouble                x0, y0; /* Center of circle */
+        gdouble                r;      /* Radius of circle */
+} lglTemplateMarkupCircle;
+</pre>
+<p>
+This structure defines a simple circle markup.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglabels-template.html#lglTemplateMarkupType" title="enum lglTemplateMarkupType">lglTemplateMarkupType</a> <em class="structfield"><code>type</code></em>;</span></p></td>
+<td>Common field.  Always <a class="link" href="libglabels-template.html#LGL-TEMPLATE-MARKUP-CIRCLE--CAPS"><span class="type">LGL_TEMPLATE_MARKUP_CIRCLE</span></a> for <a class="link" href="libglabels-template.html#lglTemplateMarkupCircle" title="lglTemplateMarkupCircle"><span class="type">lglTemplateMarkupCircle</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>x0</code></em>;</span></p></td>
+<td>Distance (in points) of vertex from left edge of label or card.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>y0</code></em>;</span></p></td>
+<td>Distance (in points) of vertex from top edge of label or card.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>r</code></em>;</span></p></td>
+<td>Radius of circle in points.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lglTemplateMarkupRect">
+<a name="lglTemplateMarkupRect"></a><h3>lglTemplateMarkupRect</h3>
+<pre class="programlisting">typedef struct {
+	lglTemplateMarkupType  type;   /* Always LGL_TEMPLATE_MARKUP_RECT */
+
+        gdouble                x1, y1; /* Upper left corner */
+        gdouble                w, h;   /* Width and height. */
+        gdouble                r;      /* Radius of corners. */
+} lglTemplateMarkupRect;
+</pre>
+<p>
+This structure defines a simple rectangle markup.  The rectangle can have rounded corners.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a class="link" href="libglabels-template.html#lglTemplateMarkupType" title="enum lglTemplateMarkupType">lglTemplateMarkupType</a> <em class="structfield"><code>type</code></em>;</span></p></td>
+<td>Common field.  Always <a class="link" href="libglabels-template.html#LGL-TEMPLATE-MARKUP-RECT--CAPS"><span class="type">LGL_TEMPLATE_MARKUP_RECT</span></a> for <a class="link" href="libglabels-template.html#lglTemplateMarkupRect" title="lglTemplateMarkupRect"><span class="type">lglTemplateMarkupRect</span></a>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>x1</code></em>;</span></p></td>
+<td>Distance (in points) of left edge of markup from left edge of label or card.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>y1</code></em>;</span></p></td>
+<td>Distance (in points) of top edge of markup from top edge of label or card.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>w</code></em>;</span></p></td>
+<td>Width of rectangle in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>h</code></em>;</span></p></td>
+<td>Height of rectangle in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>r</code></em>;</span></p></td>
+<td>Radius of corners in points.  Should be zero for sharp corners.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lglTemplateOrigin">
+<a name="lglTemplateOrigin"></a><h3>lglTemplateOrigin</h3>
+<pre class="programlisting">typedef struct {
+	gdouble               x, y; /* Label origin relative to upper 
+				     * upper left hand corner of paper */
+} lglTemplateOrigin;
+</pre>
+<p>
+This structure represents the cartesian coordinates of the origin of a label or card on the page.
+The orign is the upper left corner of the extent of the label or card.  These coordinates are
+relative to the upper left corner of the page.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>x</code></em>;</span></p></td>
+<td>Distance in points from top edge of page.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> <em class="structfield"><code>y</code></em>;</span></p></td>
+<td>Distance in points from left edge of page.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_new ()">
+<a name="lgl-template-new"></a><h3>lgl_template_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *       lgl_template_new                    (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *brand,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *part,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *description,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *paper_id,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> page_width,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> page_height);</pre>
+<p>
+Create a new template structure, with the given top-level attributes.  The
+created template will have no initial aliases, categories, or frames
+associated with it.  See <a class="link" href="libglabels-template.html#lgl-template-add-alias" title="lgl_template_add_alias ()"><code class="function">lgl_template_add_alias()</code></a>, <a class="link" href="libglabels-template.html#lgl-template-add-category" title="lgl_template_add_category ()"><code class="function">lgl_template_add_category()</code></a>,
+and <a class="link" href="libglabels-template.html#lgl-template-add-frame" title="lgl_template_add_frame ()"><code class="function">lgl_template_add_frame()</code></a> to add these.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>brand</code></em> :</span></p></td>
+<td>        Template brand
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>part</code></em> :</span></p></td>
+<td>         Template part name/number
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>description</code></em> :</span></p></td>
+<td>  Template descriptions
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>paper_id</code></em> :</span></p></td>
+<td>     Page size id
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>page_width</code></em> :</span></p></td>
+<td>   Page width in points, set to zero unless paper_id="Other"
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>page_height</code></em> :</span></p></td>
+<td>  Page height in points, set to zero unless paper_id="Other"
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> pointer to a newly allocated <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate"><span class="type">lglTemplate</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_dup ()">
+<a name="lgl-template-dup"></a><h3>lgl_template_dup ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *       lgl_template_dup                    (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *orig_template);</pre>
+<p>
+This function duplicates a template structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>orig_template</code></em> :</span></p></td>
+<td> Template to duplicate.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  a newly allocated <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate"><span class="type">lglTemplate</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_free ()">
+<a name="lgl-template-free"></a><h3>lgl_template_free ()</h3>
+<pre class="programlisting">void                lgl_template_free                   (<a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template);</pre>
+<p>
+This function frees all memory associated with given template structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td> Template to free.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_add_category ()">
+<a name="lgl-template-add-category"></a><h3>lgl_template_add_category ()</h3>
+<pre class="programlisting">void                lgl_template_add_category           (<a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *category_id);</pre>
+<p>
+This function adds the given category ID to a templates category list.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>     Pointer to template structure
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>category_id</code></em> :</span></p></td>
+<td>  Category ID string
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_add_frame ()">
+<a name="lgl-template-add-frame"></a><h3>lgl_template_add_frame ()</h3>
+<pre class="programlisting">void                lgl_template_add_frame              (<a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame);</pre>
+<p>
+This function adds the given frame structure to the template.  Once added,
+the frame structure belongs to the given template; do not attempt to free
+it.
+</p>
+<p>
+Note: Currently glabels only supports a single frame per template.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>  Pointer to template structure
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>     Pointer to frame structure
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_add_alias ()">
+<a name="lgl-template-add-alias"></a><h3>lgl_template_add_alias ()</h3>
+<pre class="programlisting">void                lgl_template_add_alias              (<a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         <a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias">lglTemplateAlias</a> *alias);</pre>
+<p>
+This function adds the given alias to a templates list of aliases.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>  Pointer to template structure
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alias</code></em> :</span></p></td>
+<td>     Alias string
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_get_name ()">
+<a name="lgl-template-get-name"></a><h3>lgl_template_get_name ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *             lgl_template_get_name               (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template);</pre>
+<p>
+This function returns the name of the given template.  The name is the concetenation
+of the brand and part name/number.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>  Pointer to template structure to test
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  A pointer to a newly allocated name string.  Should be freed with <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><code class="function">g_free()</code></a>.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_do_templates_match ()">
+<a name="lgl-template-do-templates-match"></a><h3>lgl_template_do_templates_match ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            lgl_template_do_templates_match     (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template1,
+                                                         const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template2);</pre>
+<p>
+This function tests if the given templates match.  This is a simple test that only tests
+the brand and part name/number. It does not test if they are actually identical.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template1</code></em> :</span></p></td>
+<td>  Pointer to 1st template structure to test
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template2</code></em> :</span></p></td>
+<td>  Pointer to 2nd template structure to test
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  TRUE if the two template matche.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_does_brand_match ()">
+<a name="lgl-template-does-brand-match"></a><h3>lgl_template_does_brand_match ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            lgl_template_does_brand_match       (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *brand);</pre>
+<p>
+This function tests if the brand of the template matches the given brand.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>  Pointer to template structure to test
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>brand</code></em> :</span></p></td>
+<td>     Brand string
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  TRUE if the template matches the given brand.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_does_page_size_match ()">
+<a name="lgl-template-does-page-size-match"></a><h3>lgl_template_does_page_size_match ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            lgl_template_does_page_size_match   (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *paper_id);</pre>
+<p>
+This function tests if the page size of the template matches the given ID.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>  Pointer to template structure to test
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>paper_id</code></em> :</span></p></td>
+<td>  Page size ID string
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  TRUE if the template matches the given page size ID.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_does_category_match ()">
+<a name="lgl-template-does-category-match"></a><h3>lgl_template_does_category_match ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            lgl_template_does_category_match    (const <a class="link" href="libglabels-template.html#lglTemplate" title="lglTemplate">lglTemplate</a> *template,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *category_id);</pre>
+<p>
+This function tests if the given template belongs to the given category ID.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>template</code></em> :</span></p></td>
+<td>     Pointer to template structure to test
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>category_id</code></em> :</span></p></td>
+<td>  Category ID string
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  TRUE if the template matches the given category ID.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_alias_new ()">
+<a name="lgl-template-alias-new"></a><h3>lgl_template_alias_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias">lglTemplateAlias</a> *  lgl_template_alias_new              (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *brand,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *part);</pre>
+<p>
+Create a new template alias structure, with the given brand and part number.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>brand</code></em> :</span></p></td>
+<td>        Alias brand
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>part</code></em> :</span></p></td>
+<td>         Alias part name/number
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> pointer to a newly allocated <a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias"><span class="type">lglTemplateAlias</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_alias_dup ()">
+<a name="lgl-template-alias-dup"></a><h3>lgl_template_alias_dup ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias">lglTemplateAlias</a> *  lgl_template_alias_dup              (const <a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias">lglTemplateAlias</a> *orig_alias);</pre>
+<p>
+This function duplicates a template alias structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>orig_alias</code></em> :</span></p></td>
+<td> Alias to duplicate.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  a newly allocated <a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias"><span class="type">lglTemplateAlias</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_alias_free ()">
+<a name="lgl-template-alias-free"></a><h3>lgl_template_alias_free ()</h3>
+<pre class="programlisting">void                lgl_template_alias_free             (<a class="link" href="libglabels-template.html#lglTemplateAlias" title="lglTemplateAlias">lglTemplateAlias</a> *alias);</pre>
+<p>
+This function frees all memory associated with given template alias structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>alias</code></em> :</span></p></td>
+<td> Alias to free.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_frame_rect_new ()">
+<a name="lgl-template-frame-rect-new"></a><h3>lgl_template_frame_rect_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *  lgl_template_frame_rect_new         (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *id,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> w,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> h,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x_waste,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y_waste);</pre>
+<p>
+This function creates a new template frame for a rectangular label or card.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>      ID of frame.  (This should currently always be "0").
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>w</code></em> :</span></p></td>
+<td>       width of frame in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>h</code></em> :</span></p></td>
+<td>       height of frame in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>       radius of rounded corners in points.  (Should be 0 for square corners.)
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x_waste</code></em> :</span></p></td>
+<td> Amount of overprint to allow in the horizontal direction.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y_waste</code></em> :</span></p></td>
+<td> Amount of overprint to allow in the vertical direction.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Pointer to newly allocated <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame"><span class="type">lglTemplateFrame</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_frame_round_new ()">
+<a name="lgl-template-frame-round-new"></a><h3>lgl_template_frame_round_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *  lgl_template_frame_round_new        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *id,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> waste);</pre>
+<p>
+This function creates a new template frame for a round label.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>      ID of frame.  (This should currently always be "0").
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>       radius of label in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>waste</code></em> :</span></p></td>
+<td>   Amount of overprint to allow.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Pointer to newly allocated <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame"><span class="type">lglTemplateFrame</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_frame_cd_new ()">
+<a name="lgl-template-frame-cd-new"></a><h3>lgl_template_frame_cd_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *  lgl_template_frame_cd_new           (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *id,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r2,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> w,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> h,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> waste);</pre>
+<p>
+This function creates a new template frame for a CD/DVD label.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>      ID of frame.  (This should currently always be "0").
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r1</code></em> :</span></p></td>
+<td>      outer radius of label in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r2</code></em> :</span></p></td>
+<td>      radius of center hole in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>w</code></em> :</span></p></td>
+<td>       clip width of frame in points for business card CDs.  Should be 0 for no clipping.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>h</code></em> :</span></p></td>
+<td>       clip height of frame in points for business card CDs.  Should be 0 for no clipping.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>waste</code></em> :</span></p></td>
+<td>   Amount of overprint to allow.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Pointer to newly allocated <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame"><span class="type">lglTemplateFrame</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_frame_dup ()">
+<a name="lgl-template-frame-dup"></a><h3>lgl_template_frame_dup ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *  lgl_template_frame_dup              (const <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *orig_frame);</pre>
+<p>
+This function duplicates a template frame structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>orig_frame</code></em> :</span></p></td>
+<td> Frame to duplicate.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  a newly allocated <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame"><span class="type">lglTemplateFrame</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_frame_free ()">
+<a name="lgl-template-frame-free"></a><h3>lgl_template_frame_free ()</h3>
+<pre class="programlisting">void                lgl_template_frame_free             (<a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame);</pre>
+<p>
+This function frees all memory associated with given template frame structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td> Frame to free.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_frame_add_layout ()">
+<a name="lgl-template-frame-add-layout"></a><h3>lgl_template_frame_add_layout ()</h3>
+<pre class="programlisting">void                lgl_template_frame_add_layout       (<a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame,
+                                                         <a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout">lglTemplateLayout</a> *layout);</pre>
+<p>
+This function adds a layout structure to the given template frame.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>  Pointer to template frame to add layout to.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>layout</code></em> :</span></p></td>
+<td> Pointer to layout structure to add to frame.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_frame_add_markup ()">
+<a name="lgl-template-frame-add-markup"></a><h3>lgl_template_frame_add_markup ()</h3>
+<pre class="programlisting">void                lgl_template_frame_add_markup       (<a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame,
+                                                         <a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> *markup);</pre>
+<p>
+This function adds a markup structure to the given template frame.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>  Pointer to template frame to add markup to.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>markup</code></em> :</span></p></td>
+<td> Pointer to markup structure to add to frame.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_frame_get_size ()">
+<a name="lgl-template-frame-get-size"></a><h3>lgl_template_frame_get_size ()</h3>
+<pre class="programlisting">void                lgl_template_frame_get_size         (const <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> *w,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> *h);</pre>
+<p>
+Get size (width and height) of given <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame"><span class="type">lglTemplateFrame</span></a> in points.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td> <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame"><span class="type">lglTemplateFrame</span></a> structure to query
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>w</code></em> :</span></p></td>
+<td> pointer to location to receive width of frame
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>h</code></em> :</span></p></td>
+<td> pointer to location to receive height of frame
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_frame_get_n_labels ()">
+<a name="lgl-template-frame-get-n-labels"></a><h3>lgl_template_frame_get_n_labels ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a>                lgl_template_frame_get_n_labels     (const <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame);</pre>
+<p>
+Get total number of labels per sheet corresponding to the given frame.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td> <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame"><span class="type">lglTemplateFrame</span></a> structure to query
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> number of labels per sheet.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_frame_get_origins ()">
+<a name="lgl-template-frame-get-origins"></a><h3>lgl_template_frame_get_origins ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateOrigin" title="lglTemplateOrigin">lglTemplateOrigin</a> * lgl_template_frame_get_origins      (const <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame">lglTemplateFrame</a> *frame);</pre>
+<p>
+Get an array of label origins for the given frame.  These origins represent the
+upper left hand corner of each label on a page corresponding to the given frame.
+The origins will be ordered geometrically left to right and then top to bottom.
+The array should be freed using <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"
+><code class="function">g_free()</code></a>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td> <a class="link" href="libglabels-template.html#lglTemplateFrame" title="union lglTemplateFrame"><span class="type">lglTemplateFrame</span></a> structure to query
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A newly allocated array of <a class="link" href="libglabels-template.html#lglTemplateOrigin" title="lglTemplateOrigin"><span class="type">lglTemplateOrigin</span></a> structures.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_layout_new ()">
+<a name="lgl-template-layout-new"></a><h3>lgl_template_layout_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout">lglTemplateLayout</a> * lgl_template_layout_new             (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> nx,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"
+>gint</a> ny,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x0,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y0,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> dx,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> dy);</pre>
+<p>
+This function creates a new layout structure with the given parameters.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nx</code></em> :</span></p></td>
+<td>  Number of labels across.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ny</code></em> :</span></p></td>
+<td>  Number of labels down.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x0</code></em> :</span></p></td>
+<td>  X coordinate of the top-left corner of the top-left label in the layout in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y0</code></em> :</span></p></td>
+<td>  Y coordinate of the top-left corner of the top-left label in the layout in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dx</code></em> :</span></p></td>
+<td>  Horizontal pitch in points.  This is the distance from left-edge to left-edge.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dy</code></em> :</span></p></td>
+<td>  Vertical pitch in points.  This is the distance from top-edge to top-edge.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly allocated <a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout"><span class="type">lglTemplateLayout</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_layout_dup ()">
+<a name="lgl-template-layout-dup"></a><h3>lgl_template_layout_dup ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout">lglTemplateLayout</a> * lgl_template_layout_dup             (const <a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout">lglTemplateLayout</a> *orig_layout);</pre>
+<p>
+This function duplicates a template layout structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>orig_layout</code></em> :</span></p></td>
+<td> Layout to duplicate.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  a newly allocated <a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout"><span class="type">lglTemplateLayout</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_layout_free ()">
+<a name="lgl-template-layout-free"></a><h3>lgl_template_layout_free ()</h3>
+<pre class="programlisting">void                lgl_template_layout_free            (<a class="link" href="libglabels-template.html#lglTemplateLayout" title="lglTemplateLayout">lglTemplateLayout</a> *layout);</pre>
+<p>
+This function frees all memory associated with given template layout structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>layout</code></em> :</span></p></td>
+<td> Layout to free.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_markup_margin_new ()">
+<a name="lgl-template-markup-margin-new"></a><h3>lgl_template_markup_margin_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> * lgl_template_markup_margin_new      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> size);</pre>
+<p>
+This function creates a new margin markup structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td> margin size in points.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly allocated <a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup"><span class="type">lglTemplateMarkup</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_markup_line_new ()">
+<a name="lgl-template-markup-line-new"></a><h3>lgl_template_markup_line_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> * lgl_template_markup_line_new        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x2,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y2);</pre>
+<p>
+This function creates a new line markup structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x1</code></em> :</span></p></td>
+<td> x coordinate of first endpoint.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y1</code></em> :</span></p></td>
+<td> y coordinate of first endpoint.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x2</code></em> :</span></p></td>
+<td> x coordinate of second endpoint.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y2</code></em> :</span></p></td>
+<td> y coordinate of second endpoint.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly allocated <a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup"><span class="type">lglTemplateMarkup</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_markup_circle_new ()">
+<a name="lgl-template-markup-circle-new"></a><h3>lgl_template_markup_circle_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> * lgl_template_markup_circle_new      (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x0,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y0,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r);</pre>
+<p>
+This function creates a new circle markup structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x0</code></em> :</span></p></td>
+<td> x coordinate of center of circle.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y0</code></em> :</span></p></td>
+<td> y coordinate of center of circle.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>  radius of circle.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly allocated <a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup"><span class="type">lglTemplateMarkup</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_markup_rect_new ()">
+<a name="lgl-template-markup-rect-new"></a><h3>lgl_template_markup_rect_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> * lgl_template_markup_rect_new        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> x1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> y1,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> w,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> h,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"
+>gdouble</a> r);</pre>
+<p>
+This function creates a new rectangle markup structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x1</code></em> :</span></p></td>
+<td> x coordinate of top-left corner of rectangle.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y1</code></em> :</span></p></td>
+<td> y coordinate of top-left corner of rectangle.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>w</code></em> :</span></p></td>
+<td>  width of rectangle.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>h</code></em> :</span></p></td>
+<td>  height of rectangle.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>r</code></em> :</span></p></td>
+<td>  radius of rounded corner.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a newly allocated <a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup"><span class="type">lglTemplateMarkup</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_markup_dup ()">
+<a name="lgl-template-markup-dup"></a><h3>lgl_template_markup_dup ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> * lgl_template_markup_dup             (const <a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> *orig_markup);</pre>
+<p>
+This function duplicates a template markup structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>orig_markup</code></em> :</span></p></td>
+<td> Markup to duplicate.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>  a newly allocated <a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup"><span class="type">lglTemplateMarkup</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_template_markup_free ()">
+<a name="lgl-template-markup-free"></a><h3>lgl_template_markup_free ()</h3>
+<pre class="programlisting">void                lgl_template_markup_free            (<a class="link" href="libglabels-template.html#lglTemplateMarkup" title="union lglTemplateMarkup">lglTemplateMarkup</a> *markup);</pre>
+<p>
+This function frees all memory associated with given template markup structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>markup</code></em> :</span></p></td>
+<td> Markup to free.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="libglabels-category">
+<refmeta>
+<refentrytitle role="top_of_page" id="libglabels-category.top_of_page">The lglCategory Structure</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGLABELS Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>The lglCategory Structure</refname>
+<refpurpose>Template category definitions</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libglabels-category.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libglabels/category.h&gt;
+
+                    <link linkend="lglCategory">lglCategory</link>;
+<link linkend="lglCategory">lglCategory</link> *       <link linkend="lgl-category-new">lgl_category_new</link>                    (<link linkend="gchar">gchar</link> *id,
+                                                         <link linkend="gchar">gchar</link> *name);
+<link linkend="lglCategory">lglCategory</link> *       <link linkend="lgl-category-dup">lgl_category_dup</link>                    (const <link linkend="lglCategory">lglCategory</link> *orig);
+<link linkend="void">void</link>                <link linkend="lgl-category-free">lgl_category_free</link>                   (<link linkend="lglCategory">lglCategory</link> *category);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libglabels-category.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This section describes a structure for representing a category of stationary and related
+functions.
+</para>
+</refsect1>
+
+<refsect1 id="libglabels-category.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="lglCategory" role="struct">
+<title>lglCategory</title>
+<indexterm zone="lglCategory"><primary sortas="lglCategory">lglCategory</primary></indexterm><programlisting>typedef struct {
+	gchar               *id;     /* Unique ID of category */
+	gchar               *name;   /* Localized name of category */
+} lglCategory;
+</programlisting>
+<para>
+This structure defines a category.
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>id</structfield>;</term>
+<listitem><simpara>Category ID.
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="gchar">gchar</link>&#160;*<structfield>name</structfield>;</term>
+<listitem><simpara>Localized category name.
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="lgl-category-new" role="function">
+<title>lgl_category_new ()</title>
+<indexterm zone="lgl-category-new"><primary sortas="lgl_category_new">lgl_category_new</primary></indexterm><programlisting><link linkend="lglCategory">lglCategory</link> *       lgl_category_new                    (<link linkend="gchar">gchar</link> *id,
+                                                         <link linkend="gchar">gchar</link> *name);</programlisting>
+<para>
+Allocates and constructs a new <link linkend="lglCategory"><type>lglCategory</type></link> structure.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>id</parameter>&#160;:</term>
+<listitem><simpara>     Id of category definition. (E.g. label, card, etc.)  Should be
+         unique.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>name</parameter>&#160;:</term>
+<listitem><simpara>   Localized name of category.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a pointer to a newly allocated <link linkend="lglCategory"><type>lglCategory</type></link> structure.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="lgl-category-dup" role="function">
+<title>lgl_category_dup ()</title>
+<indexterm zone="lgl-category-dup"><primary sortas="lgl_category_dup">lgl_category_dup</primary></indexterm><programlisting><link linkend="lglCategory">lglCategory</link> *       lgl_category_dup                    (const <link linkend="lglCategory">lglCategory</link> *orig);</programlisting>
+<para>
+Duplicates an existing <link linkend="lglCategory"><type>lglCategory</type></link> structure.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>orig</parameter>&#160;:</term>
+<listitem><simpara>  <link linkend="lglCategory"><type>lglCategory</type></link> structure to be duplicated.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> a pointer to a newly allocated <link linkend="lglCategory"><type>lglCategory</type></link> structure.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="lgl-category-free" role="function">
+<title>lgl_category_free ()</title>
+<indexterm zone="lgl-category-free"><primary sortas="lgl_category_free">lgl_category_free</primary></indexterm><programlisting><link linkend="void">void</link>                lgl_category_free                   (<link linkend="lglCategory">lglCategory</link> *category);</programlisting>
+<para>
+Free all memory associated with an existing <link linkend="lglCategory"><type>lglCategory</type></link> structure.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>category</parameter>&#160;:</term>
+<listitem><simpara>  pointer to <link linkend="lglCategory"><type>lglCategory</type></link> structure to be freed.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

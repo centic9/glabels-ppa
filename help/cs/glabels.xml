@@ -1,0 +1,1776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "2.2.6">
+<!ENTITY manrevision "2.2.6">
+<!ENTITY date "December 2007">
+<!ENTITY app "<application>gLabels</application>">
+<!-- Information about the entities
+       The legal.xml file contains legal information, there is no need to edit the file. 
+       Use the appversion entity to specify the version of the application.
+       Use the manrevision entity to specify the revision number of this manual.
+       Use the date entity to specify the release date of this manual.
+       Use the app entity to specify the name of the application. -->]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Apr 11, 2002
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="cs">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Příručka V2.2.6 k aplikaci <application>gLabels</application></title>       
+	<abstract role="description">
+      	<para>Uživatelská příručka k aplikaci <application>gLabels</application> na vytváření etiket a vizitek</para>
+    </abstract>
+    <copyright> 
+      <year>2003-2009</year> 
+      <holder>Jim Evins</holder> 
+    </copyright><copyright><year>2010</year><holder>Marek Černocký (marek@manet.cz)</holder></copyright>
+    	<publisher> 
+      		<publishername>Jim Evins</publishername> 
+    	</publisher> 
+
+     <legalnotice id="legalnotice">
+	<para>Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU Free Documentation License, verze 1.1 nebo jakékoli další verze vydané nadací Free Software Foundation; bez neměnných oddílů, bez textů předních desek a bez textů zadních desek. Kopie této licence je zahrnuta v oddílu jménem <ulink type="help" url="ghelp:fdl">GNU Free Documentation License</ulink> nebo v souboru COPYING-DOCS dodávaném s touto příručkou.</para>
+         <para>Tato příručka je součástí kolekce příruček GNOME, distribuovaných pod licencí GNU FDL. Pokud chcete tento dokument šířit odděleně od kolekce, musíte přiložit kopii licence dle popisu v sekci 6 dané licence.</para>
+
+	<para>Mnoho užívaných jmen určených k zviditelnění produktů nebo služeb jsou ochranné známky. Na místech, kde jsou tato jména v dokumentaci užita a členové Dokumentačního projektu GNOME jsou si vědomi skutečnosti, že se jedná o ochrannou známku, je takové jméno psáno velkými písmeny celé nebo s velkým písmenem na začátku.</para>
+
+	<para>DOKUMENT A JEHO UPRAVENÉ VERZE JSOU ŠÍŘENY V SOULADU SE ZNĚNÍM LICENCE GNU FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <orderedlist>
+		<listitem>
+		  <para>DOKUMENT JE POSKYTOVÁN V PODOBĚ „JAK JE“ BEZ ZÁRUKY V JAKÉKOLIV PODOBĚ, NEPOSKYTUJÍ SE ANI ODVOZENÉ ZÁRUKY, ZÁRUKY, ŽE DOKUMENT, NEBO JEHO UPRAVENÁ VERZE, JE BEZCHYBNÝ NEBO ZÁRUKY PRODEJNOSTI, VHODNOSTI PRO URČITÝ ÚČEL NEBO NEPORUŠENOSTI. RIZIKO NEKVALITY, NEPŘESNOSTI A ŠPATNÉHO PROVEDENÍ DOKUMENTU, NEBO JEHO UPRAVENÉ VERZE, LEŽÍ NA VÁS. POKUD KVŮLI TOMUTO DOKUMENTU, NEBO JEHO UPRAVENÉ VERZI, NASTANE PROBLÉM, VY (NIKOLIV PŮVODNÍ AUTOR NEBO JAKÝKOLIV PŘISPĚVATEL) PŘEBÍRÁTE JAKÉKOLIV NÁKLADY ZA NUTNÉ ÚPRAVY, OPRAVY ČI SLUŽBY. TOTO PROHLÁŠENÍ O ZÁRUCE PŘEDSTAVUJE ZÁKLADNÍ SOUČÁST TÉTO LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ, PODLE TÉTO DOHODY, POVOLENO UŽÍVÁNÍ ANI ÚPRAVY TOHOTO DOKUMENTU; DÁLE</para>
+		</listitem>
+		<listitem>
+		  <para>ZA ŽÁDNÝCH OKOLNOSTÍ A ŽÁDNÝCH PRÁVNÍCH PŘEDPOKLADŮ, AŤ SE JEDNÁ O PŘEČIN (VČETNĚ NEDBALOSTNÍCH), SMLOUVU NEBO JINÉ, NENÍ AUTOR, PŮVODNÍ PISATEL, KTERÝKOLIV PŘISPĚVATEL NEBO KTERÝKOLIV DISTRIBUTOR TOHOTO DOKUMENTU NEBO UPRAVENÉ VERZE DOKUMENTU NEBO KTERÝKOLIV DODAVATEL NĚKTERÉ Z TĚCHTO STRAN ODPOVĚDNÝ NĚJAKÉ OSOBĚ ZA PŘÍMÉ, NEPŘÍMÉ, SPECIÁLNÍ, NAHODILÉ NEBO NÁSLEDNÉ ŠKODY JAKÉHOKOLIV CHARAKTERU, VČETNĚ, ALE NEJEN, ZA POŠKOZENÍ ZE ZTRÁTY DOBRÉHO JMÉNA, PŘERUŠENÍ PRÁCE, PORUCHY NEBO NESPRÁVNÉ FUNKCE POČÍTAČE NEBO JINÉHO A VŠECH DALŠÍCH ŠKOD NEBO ZTRÁT VYVSTÁVAJÍCÍCH Z NEBO VZTAHUJÍCÍCH SE K POUŽÍVÁNÍ TOHOTO DOKUMENTU NEBO UPRAVENÝCH VERZÍ DOKUMENTU, I KDYŽ BY TAKOVÁTO STRANA BYLA INFORMOVANÁ O MOŽNOSTI TAKOVÉHOTO POŠKOZENÍ.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+	any of this. -->
+
+    <authorgroup> 
+      <author role="maintainer"> 
+		<firstname>Jim</firstname> 
+		<surname>Evins</surname> 
+      </author> 
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+     
+      <othercredit role="translator">
+		<firstname>Latin</firstname> 
+		<surname>Translator 1</surname> 
+		<affiliation> 
+	  		<orgname>Latin Translation Team</orgname> 
+	  		<address> <email>translator@gnome.org</email> </address> 
+		</affiliation>
+		<contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+
+
+<!-- According to GNU FDL, revision history is mandatory if you are -->
+<!-- modifying/reusing someone else's document.  If not, you can omit it. -->
+<!-- Remember to remove the &manrevision; entity from the revision entries other
+-->
+<!-- than the current revision. -->
+<!-- The revision numbering system for GNOME manuals is as follows: -->
+<!-- * the revision number consists of two components -->
+<!-- * the first component of the revision number reflects the release version of the GNOME desktop. -->
+<!-- * the second component of the revision number is a decimal unit that is incremented with each revision of the manual. -->
+<!-- For example, if the GNOME desktop release is V2.x, the first version of the manual that -->
+<!-- is written in that desktop timeframe is V2.0, the second version of the manual is V2.1, etc. -->
+<!-- When the desktop release version changes to V3.x, the revision number of the manual changes -->
+<!-- to V3.0, and so on. -->  
+    <revhistory>
+      <revision> 
+		<revnumber>Příručka V2.2.6 k aplikaci gLabels</revnumber> 
+		<date>Říjen 2009</date> 
+		<revdescription> 
+	  		<para role="author">Mario Blättermann <email>mariobl@gnome.org</email></para>
+	  		<para role="publisher">Jim Evins</para>
+		</revdescription> 
+      </revision> 
+      <revision> 
+		<revnumber>Příručka V2.2 k aplikaci gLabels</revnumber> 
+		<date>Prosinec 2007</date> 
+		<revdescription> 
+	  		<para role="author">Jim Evins <email>evins@snaught.com</email></para>
+	  		<para role="publisher">Jim Evins</para>
+		</revdescription> 
+      </revision> 
+    </revhistory> 
+
+    <releaseinfo>Tato příručka popisuje aplikaci <application>gLabels</application> ve verzi 2.2.6.</releaseinfo> 
+    <legalnotice> 
+      <title>Ohlasy</title> 
+      <para>Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k aplikaci <application>gLabels</application> nebo této příručce, postupujte dle instrukcí na <ulink url="http://glabels.sourceforge.net/contact/" type="http">kontaktní stránce <application>gLabels</application></ulink>.</para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  </articleinfo> 
+
+  <indexterm zone="index"> 
+    <primary>gLabels</primary> 
+  </indexterm> 
+  <indexterm zone="index"> 
+    <primary>glabels</primary> 
+  </indexterm>
+
+
+
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <sect1 id="glabels-introduction"> 
+    <title>Úvod</title> 
+
+    <para>Aplikace <application>gLabels</application> je jednoduchý program na vytváření etiket a vizitek pro <systemitem>pracovní prostředí GNOME</systemitem>. Je navržená pro práci s různými samolepicími etiketami a vizitkami rozmístěnými na listech pro laserový/inkoustový tisk, které najdete v každém obchodě s kancelářskými potřebami.</para>
+
+  </sect1>
+
+
+
+
+<!-- =========== Getting Started ============================== -->
+<!-- Use the Getting Started section to describe the steps required
+     to start the application and to describe the user interface components
+     of the application. If there is other information that it is important
+     for readers to know before they start using the application, you should
+     also include this information here. 
+     If the information about how to get started is very short, you can 
+     include it in the Introduction and omit this section. -->
+
+  <sect1 id="glabels-getting-started"> 
+    <title>Začínáme</title> 
+
+    <sect2 id="glabels-start">
+    <title>Jak spustit aplikaci <application>gLabels</application></title>
+    <para>Aplikaci <application>gLabels</application> můžete spustit následujícími způsoby:</para> 
+    <variablelist>
+    	<varlistentry>
+    		<term>Nabídka <guimenu>Aplikace</guimenu></term>
+    		<listitem>
+    		<para>Zvolte <menuchoice><guisubmenu>Kancelář</guisubmenu><guimenuitem>Návrhář etiket gLabels</guimenuitem></menuchoice>.</para>
+    		</listitem>
+    	</varlistentry>
+    	<varlistentry>
+    		<term>Příkazový řádek</term>
+    		<listitem>
+    		<para>Napište příkaz <command>glabels</command> a zmáčkněte <keycap>Enter</keycap>:</para>
+    		</listitem>
+    	</varlistentry>
+    </variablelist>
+    </sect2>
+
+    <sect2 id="glabels-when-start">
+    <title>Když spustíte aplikaci <application>gLabels</application></title>
+    <para>Když spustíte aplikaci <application>gLabels</application>, zobrazí se následující okno.</para>
+
+    <!-- ==== Figure ==== -->
+      <figure id="mainwindow-fig"> 
+	<title>Okno <application>gLabels</application> po spuštění</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/main-window-empty.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+    <!-- ==== End of Figure ==== -->
+
+    <!-- Include any descriptions of the GUI immediately after the screenshot of the main UI, -->
+    <!-- for example, the items on the menubar and on the toolbar. This section is optional. -->
+
+    <para>Okno <application>gLabels</application> obsahuje následující části:</para>
+      <variablelist>
+	<varlistentry>
+	<term>Panel nabídek.</term>
+	<listitem>
+	    <para>Nabídky v panelu nabídek obsahují všechny příkazy potřebné k vytváření a úpravám etiket a vizitek v aplikaci <application>gLabels</application>.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Hlavní panel nástrojů.</term>
+	<listitem>
+	    <para>Hlavní panel nástrojů obsahuje podmnožinu běžných příkazů pro práci se soubory a k úpravám z těch, které jsou dostupné v panelu nabídek.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Panel kreslení.</term>
+	<listitem>
+	    <para>Panel kreslení obsahuje podmnožinu běžných příkazů k úpravám aktuálního dokumentu <application>gLabels</application>.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Zobrazovací oblast</term>
+	<listitem>
+	    <para>Zobrazovací oblast je hlavní rozhraní aplikace <application>gLabels</application> sloužící ke kreslení.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Postranní panel objektů.</term>
+	<listitem>
+	    <para>Postranní panel objektů poskytuje rozhraní na prohlížení a úpravu všech vlastností jednotlivých objektů.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Panel vlastností.</term>
+	<listitem>
+	    <para>Panel vlastností obsahuje sadu nástrojů na úpravu vlastností vybraných objektů a nastavení výchozích vlastností pro nové objekty.</para>
+	</listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Stavový panel.</term>
+	<listitem>
+	    <para>Stavový panel zobrazuje informace o aktuální činnosti aplikace <application>gLabels</application> a kontextové informace o položkách nabídky.</para>
+	</listitem>
+	</varlistentry>
+	</variablelist>
+    </sect2>
+  </sect1>
+
+
+
+
+<!-- ================ Usage ================================ -->
+<!-- Use this section to describe how to use the application to perform the tasks for 
+  which the application is designed. -->
+  <sect1 id="glabels-usage"> 
+    <title>Použití</title> 
+
+<!-- ============= To create a new file ============================= -->
+    <sect2 id="glabels-open-new"> 
+      <title>Jak vytvořit novou etiketu nebo vizitku</title>
+
+      <para>Když chcete vytvořit novou etiketu nebo vizitku, zvolte <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Nový</guimenuitem></menuchoice> a zobrazí se dialogové okno <guilabel>Nová etiketa či vizitka</guilabel>. Vyberte pro nový dokument typ média a orientaci a klikněte na <guibutton>OK</guibutton>. Nový dokument se zobrazí v zobrazovací oblasti okna <application>gLabels</application>.</para>
+
+      <para>V případě, že vaše konkrétní médium v tomto dialogovém okně schází, přečtěte si <xref linkend="glabels-create-template"/>.</para>
+
+    </sect2>
+
+<!-- ============= To Open a File ============================= -->
+    <sect2 id="glabels-open-file"> 
+      <title>Jak otevřít soubor</title>
+
+      <para>Soubor otevřete pomocí volby <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Otevřít</guimenuitem></menuchoice>, která zobrazí dialogové okno <guilabel>Otevření souboru</guilabel>. Vyberte soubor, který chcete otevřít a klikněte na <guibutton>OK</guibutton>. Soubor se zobrazí v zobrazovací oblasti okna <application>gLabels</application>.</para>
+
+      <para>V aplikaci <application>gLabels</application> můžete otevřít i více souborů naráz. Aplikace pro každý otevřený soubor vytvoří zvláštní okno.</para>
+
+      <para>Pro soubory nedávno otevřené k úpravě si aplikace zaznamenává cesty a názvy a tyto soubory potom zobrazuje v nabídce <menuchoice><guimenu>Soubor</guimenu><guisubmenu>Otevřít nedávné soubory</guisubmenu></menuchoice>.</para>
+
+    </sect2>
+
+<!-- ============= To Open Multiple Files from the Command Line ========= -->
+    <sect2 id="glabels-run-from-cmd-line"> 
+      <title>Jak otevřít více souborů z příkazové řádky</title>
+
+      <para>Aplikaci <application>gLabels</application> můžete spustit z příkazového řádku a otevřít při tom jeden nebo více souborů. Pokud chcete otevřít z příkazového řádku více souborů, napište následující příkaz a zmáčkněte <keycap>Enter</keycap>:</para>
+
+      <para><command>glabels <replaceable>soubor1.glabels soubor2.glabels soubor3.glabels</replaceable></command></para>
+
+      <para>Po spuštění aplikace se každý ze zadaných souborů zobrazí ve zvláštním okně <application>gLabels</application>.</para>
+
+    </sect2>
+
+<!-- ============= To Save a File ========= -->
+    <sect2 id="glabels-save-file"> 
+      <title>Jak uložit soubor</title>
+
+      <para>Soubory můžete uložit následujícími způsoby:</para>
+
+      <itemizedlist> 
+	<listitem>
+
+	  <para>Pro uložení změn do stávajícího souboru, zvolte <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Uložit</guimenuitem></menuchoice>.</para>
+
+	</listitem>
+	<listitem>
+
+	  <para>Pro uložení nového souboru nebo uložení stávajícího souboru pod novým názvem, zvolte <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Uložit jako</guimenuitem></menuchoice>. V dialogovém okně <guilabel>Uložit jako</guilabel> zadejte pro soubor název a klikněte na <guibutton>OK</guibutton>.</para>
+
+	</listitem>
+      </itemizedlist>
+
+    </sect2>
+
+<!-- ============= To Change Label Properties ========= -->
+    <sect2 id="glabels-label-properties"> 
+      <title>Jak změnit vlastnosti etikety</title>
+
+      <para>Pokud chcete změnit typ média a/nebo orientaci etiket, zvolte <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Vlastnosti</guimenuitem></menuchoice> a zobrazí se dialogové okno <guilabel>Vlastnosti etikety</guilabel>. Zvolte pro dokument nový typ média a orientaci a klikněte na <guibutton>OK</guibutton>.</para>
+
+    </sect2>
+
+<!-- ============= To create a custom template ======================= -->
+    <sect2 id="glabels-create-template"> 
+      <title>Jak vytvořit vlastní šablonu</title>
+
+      <para>Když chcete vytvořit novou vlastní šablonu, zvolte <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Návrhář šablon…</guimenuitem></menuchoice> a zobrazí se dialogové okno <guilabel>Návrhář šablon gLabels</guilabel>. Toto dialogové okno vás provede vytvořením vlastní šablony pro většinu typů etiket nebo vizitek, se kterými se můžete setkat.</para>
+
+      <para>Pokud dáváte přednost ručnímu vytvoření šablon, přečtěte si <xref linkend="glabels-manual-create-template"/></para>
+
+    </sect2>
+
+<!-- ============= To Close a File ========= -->
+    <sect2 id="glabels-close-file"> 
+      <title>Jak zavřít soubor</title>
+
+      <para>Když chcete aktuální dokument zavřít, zvolte <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Zavřít</guimenuitem></menuchoice> a zavřete tím aplikační okno. Pokud byl aktuální dokument změněn, zobrazí se potvrzovací dialogové okno, kde můžete dokument uložit nebo příkaz zrušit. Pokud je zavírané okno jediné otevřené, ukončí se celá aplikace <application>gLabels</application>.</para>
+
+    </sect2>
+
+<!-- ============= To Quit ========= -->
+    <sect2 id="glabels-quit"> 
+      <title>Jak ukončit <application>gLabels</application></title>
+
+      <para>Když chcete aplikaci <application>gLabels</application> ukončit, zvolte <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Ukončit</guimenuitem></menuchoice>. Odpovídá to zavření všech otevřených oken. Viz <xref linkend="glabels-close-file"/>.</para>
+
+    </sect2>
+
+<!-- ============= To Print Labels and Cards ========= -->
+    <sect2 id="glabels-print-file"> 
+      <title>Jak vytisknout etikety nebo vizitky</title>
+
+      <para>Když chcete vytisknout etikety nebo vizitky, zvolte <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Tisk</guimenuitem></menuchoice> a zobrazí se dialogové okno <guilabel>Tisk</guilabel>. Až nastavíte volby tisku, klikněte na <guilabel>Tisk</guilabel> a etikety nebo vizitky se vytisknou. Pokud se chcete jen podívat na náhled, klikněte místo toho na <guilabel>Náhled tisku</guilabel>.</para>
+
+      <para>V dialogovém okně <guilabel>Tisk</guilabel> můžete nastavit následující volby tisku:</para>
+		
+      <sect3 id="print-dialog-job">
+	<title>Karta Etikety v dialogovém okně Tisk</title>
+
+	<variablelist>
+
+	  <varlistentry>
+            <term><guilabel>Ovládání tisku (jednoduchý)</guilabel></term>
+	    <listitem> 
+
+	      <para>Pro jednoduché etikety nebo vizitky (bez slučování dokumentů), obsahuje karta <guilabel>Etikety</guilabel> následující prvky.</para>
+
+	      <!-- ==== Figure ==== -->
+	      <figure id="print-copies-fig"> 
+		<title>Ovládací prvky tisku kopií</title> 
+		<screenshot> 
+		  <mediaobject> 
+		    <imageobject><imagedata fileref="figures/print-copies.png" format="PNG"/> 
+		    </imageobject>
+		  </mediaobject> 
+		</screenshot> 
+	      </figure>
+	      <!-- ==== End of Figure ==== -->
+
+	      <para>Počet kopií etikety můžete vybrat zvolením počtu plných listů, které se mají vytisknout, a nebo vybrat jen část etiket na jednom listu.</para>
+
+	      <para>Mini-náhled můžete také použít ke grafickému výběru části etiket tak, že kliknete na první etiketu v mini-náhledu a táhnete až na poslední etiketu.</para>
+
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+            <term><guilabel>Ovládání tisku (slučování)</guilabel></term>
+	    <listitem> 
+
+	      <para>Pro etikety nebo vizitky používající slučování dokumentů (někdy také nazývané „hromadná korespondence“), obsahuje karta <guilabel>Etikety</guilabel> následující ovládací prvky slučování lišící se od ovládacích prvků jednoduchého tisku.</para>
+
+	      <!-- ==== Figure ==== -->
+	      <figure id="print-merge-fig"> 
+		<title>Ovládací prvky tisku slučovaných dokumentů</title> 
+		<screenshot> 
+		  <mediaobject> 
+		    <imageobject><imagedata fileref="figures/print-merge.png" format="PNG"/> 
+		    </imageobject>
+		  </mediaobject> 
+		</screenshot> 
+	      </figure>
+	      <!-- ==== End of Figure ==== -->
+
+	      <para>Celkový počet etiket nebo vizitek je dán počtem záznamů ve zdroji slučování a počtem vybraných kopií. Jestliže je vybráno více kopií, mohou být také uspořádané (kopie ze stejného záznamu seskupené spolu) nebo neuspořádané (kopie jednotlivých záznamů za sebou).</para>
+
+	      <para>Tisk může začínat na libovolné etiketě na prvním listu. Tu můžete vybrat pomocí číselníku <guilabel>Začít na etiketě</guilabel>.</para>
+
+	      <para>Mini-náhled můžete také použít ke grafickému výběru první etikety tak, že na ni v mini-náhledu kliknete.</para>
+
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry> <term><guilabel>Volby</guilabel> </term> 
+	    <listitem> 
+	      <para>Můžete rovněž vybrat následující volby.</para>
+	      <itemizedlist>
+		<listitem>
+		  <para><guilabel>tisk obrysů</guilabel></para>
+		  <para>Tisk obrysů etiket. Tato volba je použitelná k tisku nanečisto, k otestování lícování.</para>
+		</listitem>
+		<listitem>
+		  <para><guilabel>obrácený tisk</guilabel></para>
+		  <para>Tisknout etikety zrcadlově. Tato volba je použitelná pro tisk na čiré etikety, na které se bude dívat z druhé strany (např. na okně auta).</para>
+		</listitem>
+		<listitem>
+		  <para><guilabel>tisknout značky pro ořez</guilabel></para>
+		  <para>Tisknout ořezové značky podél hran listu. Tato volba je použitelná pro tisk na čisté listy, které se budou po tisku rozřezávat. Tato volba nepracuje úplně správně se všemi šablonami.</para>
+		</listitem>
+	      </itemizedlist>
+	    </listitem>
+	  </varlistentry>
+	</variablelist>
+      </sect3>
+		
+    </sect2>
+
+<!-- ============= To Create New Objects ========= -->
+    <sect2 id="glabels-new-objects"> 
+      <title>Jak vytvořit nový objekt</title>
+
+      <para>Objekty se vytvářejí příslušným výběrem v podnabídce <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Vytvořit</guimenuitem></menuchoice> nebo na <guilabel>Panelu kreslení</guilabel>. Zobrazovací oblast se přepne do režimu vytváření objektu, což je indikováno patřičným ukazatelem. Do výchozího režimu výběru objektů se můžete vrátit, aniž byste nějaký objekt vytvořili, volbou <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Režim výběru</guimenuitem></menuchoice>. Ukazatel pro zobrazovací oblast se změní zpět na výchozí šipku.</para>
+
+      <para>Zde je popis režimu vytváření objektu pro jednotlivé typy objektů:</para>
+
+      <variablelist>
+
+	<varlistentry>
+	  <term>Text</term>
+	  <listitem>
+	    <para>Klikněte na požadované umístění levého horního rohu objektu text. Nový textový objekt se vytvoří s počátečním řetězcem „Text“. Jak tento text nebo další vlastnosti změnit uvádí <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Obdélník</term>
+	  <listitem>
+	    <para>Klikněte na požadované umístění levého horního rohu objektu obdélník a táhněte k požadovanému umístění pravého dolního rohu. Když jednoduše kliknete na jednom místě, vytvoří se čtverec. Jak změnit vlastnosti obdélníku uvádí <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Čára</term>
+	  <listitem>
+	    <para>Klikněte na požadované umístění levého horního konce objektu čára a táhněte k požadovanému umístění pravého dolního konce. Když jednoduše kliknete na jednom místě, vytvoří diagonální úsečka. Jak změnit vlastnosti čáry uvádí <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Elipsa</term>
+	  <listitem>
+	    <para>Klikněte na požadované umístění levého horního rohu objektu elipsa a táhněte k požadovanému umístění pravého dolního rohu. Když jednoduše kliknete na jednom místě, vytvoří se kruh. Jak změnit vlastnosti elipsy uvádí <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Obrázek</term>
+	  <listitem>
+	    <para>Klikněte na požadované umístění levého horního rohu objektu obrázku a táhněte k požadovanému umístění pravého dolního rohu. Když jednoduše kliknete na jednom místě, vytvoří se čtverec. Nový obrázkový objekt se vytvoří s jednoduchým počátečním obrázkem šachovnice. Jak změnit tento obrázek a další vlastnosti uvádí <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Čárový kód</term>
+	  <listitem>
+	    <para>Klikněte na požadované umístění levého horního rohu objektu čárového kódu. Nový objekt čárového kódu se vytvoří jako čárový kód POSTNET s ukázkovými daty. Jak tato data nebo další vlastnosti změnit uvádí <xref linkend="glabels-object-properties"/>.</para>
+	  </listitem>
+	</varlistentry>
+
+      </variablelist>
+
+
+    </sect2>
+
+<!-- ============= To Select Objects ========= -->
+    <sect2 id="glabels-select-objects"> 
+      <title>Jak vybrat objekty</title>
+
+      <para>Předpokladem k provádění operací s objekty je výběr jednoho či skupiny více objektů. Aby bylo možné výběr provést, musí být zobrazovací oblast v režimu výběru objektů, což je indikováno kurzorem v podobě šipky. Režim výběru objektů se zvolí pomocí <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Režim výběru</guimenuitem></menuchoice> nebo odpovídajícím příkazem na <guilabel>Panelu kreslení</guilabel>.</para>
+
+      <variablelist>
+
+	<varlistentry>
+	  <term>Výběr jednoho objektu</term>
+	  <listitem>
+	    <para>Jeden objekt vyberete prostým kliknutím na něj v zobrazovací oblasti. Vybraný objekt bude zvýrazněný sadou úchopů sloužících ke změně velikosti</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Přidávání objektů do výběru</term>
+	  <listitem>
+	    <para>Více objektů můžete vybrat tak, že vyberete první dříve uvedeným způsobem a po té budete držet klávesu <keycap>Ctrl</keycap> a vybírat další objekty. Jednotlivé objekty lze přidat do stávajícího výběru kdykoliv držením klávesy <keycap>Ctrl</keycap> během vybírání požadovaných objektů. Všechny objekty můžete vybrat pomocí položky nabídky <menuchoice><guimenu>Upravit</guimenu><guimenuitem>Vybrat vše</guimenuitem></menuchoice>. Všechny objekty ve výběru jsou zvýrazněné.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Výběr oblasti</term>
+	  <listitem>
+	    <para>Více objektů lze rovněž vybrat zmáčknutím tlačítka myši na prázdném místě a tažením obdélníkové oblasti. Po uvolnění tlačítka se všechny objekty obsažené v takovéto oblasti naráz vyberou. Výběr pomocí oblasti lez použít k přidání ke stávajícímu výběru podržením klávesy <keycap>Ctrl</keycap> během provádění výběru.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Zrušení výběru objektů</term>
+	  <listitem>
+	    <para>Jednotlivé objekty lze z výběru odebrat podržením klávesy <keycap>Ctrl</keycap> a klikáním na označené objekty. Veškerý výběr můžete zrušit pomocí nabídky <menuchoice><guimenu>Upravit</guimenu><guimenuitem>Zrušit výběr</guimenuitem></menuchoice> nebo jednoduchým kliknutím na prázdné místo v zobrazovací oblasti. Jakmile je u objektu zrušen výběr, zmizí i jeho zvýraznění.</para>
+	  </listitem>
+	</varlistentry>
+
+      </variablelist>
+
+    </sect2>
+
+<!-- ============= Clipboard Commands ========= -->
+    <sect2 id="glabels-clipboard"> 
+      <title>Příkazy pro práci se schránkou</title>
+
+      <para>S vybranými objekty lze manipulovat pomocí standardních operací se schránkou <guimenuitem>Vyjmout</guimenuitem>, <guimenuitem>Kopírovat</guimenuitem>, <guimenuitem>Vložit</guimenuitem> a <guimenuitem>Smazat</guimenuitem>.</para>
+
+      <variablelist>
+
+	<varlistentry>
+	  <term>
+            <menuchoice>
+	      <shortcut>
+		<keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>
+	      </shortcut>
+	      <guimenuitem>Vyjmout</guimenuitem>
+	    </menuchoice>
+          </term>
+	  <listitem>
+	    <para>Přesune vybrané objekty do schránky. Objekty jsou potom přístupné pro vkládání zpátky do aktuálního dokumentu nebo jiného dokumentu.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>
+            <menuchoice>
+	      <shortcut>
+		<keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>
+	      </shortcut>
+	      <guimenuitem>Kopírovat</guimenuitem>
+	    </menuchoice>
+          </term>
+	  <listitem>
+	    <para>Zkopíruje vybrané objekty do schránky, aniž by byly vymazány. Objekty jsou potom přístupné pro vkládání zpátky do aktuálního dokumentu nebo jiného dokumentu.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>
+            <menuchoice>
+	      <shortcut>
+		<keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>
+	      </shortcut>
+	      <guimenuitem>Vložit</guimenuitem>
+	    </menuchoice>
+          </term>
+	  <listitem>
+	    <para>Vloží objekty ze schránky do aktuálního dokumentu. Aplikace <application>gLabels</application> umí vkládat pouze objekty z jiného dokumentu <application>gLabels</application>.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>
+            <menuchoice>
+	      <shortcut>
+		<keycap>Smazat</keycap>
+	      </shortcut>
+	      <guimenuitem>Smazat</guimenuitem>
+	    </menuchoice>
+          </term>
+	  <listitem>
+	    <para>Smaže vybrané objekty, aniž by byly umístěny do schránky.</para>
+	  </listitem>
+	</varlistentry>
+
+      </variablelist>
+
+    </sect2>
+
+<!-- ============= To Edit object Properties ========= -->
+    <sect2 id="glabels-object-properties"> 
+      <title>Jak upravit vlastnosti objektu</title>
+
+      <para>Většinu vlastností objektů lze upravit přes editor objektů v postranním panelu, který je vyobrazený níže. Abyste mohli editor objektů používat, musíte nejdříve vybrat jeden objekt. Viz <xref linkend="glabels-select-objects"/>.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="object-editor-sidebar-fig"> 
+	<title>Editor objektů z postranního panelu</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/object-editor-sidebar.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Editor objektů bude obsahovat některé z následujících karet, které závisí na typu objektu:</para>
+
+      <sect3 id="object-editor-text">
+	<title>Karta Text (textové objekty)</title>
+
+	<para>Tato karta obsahuje malý editor na úpravu obsahu textového objektu. Rovněž obsahuje vyskakovací nabídku dostupných klíčů slučování dokumentů, které lze do textu vkládat.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-image">
+	<title>Karta Obrázek (obrázkové objekty)</title>
+
+	<para>Tato karta obsahuje pole na zadání souboru s obrázkem. Přes tlačítko procházení můžete soubor snadno najít. Druhou možností je použití klíče pro slučování dokumentů, který poskytne název souboru až během tisku.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-data">
+	<title>Karta Data (objekty čárových kódů)</title>
+
+	<para>Tato karta obsahuje textové pole na zadání dat pro čárový kód. Druhou možností je použití klíče pro slučování dokumentů, přes který jsou data poskytována až během tisku.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-style">
+	<title>Karta Styl (textové objekty)</title>
+
+	<para>Tato karta obsahuje ovládací prvky na výběr vlastností textu, včetně typu písma, velikosti písma, tloušťky písma, barvy a zarovnání textu.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-barcode">
+	<title>Karta Styl (objekty čárových kódů)</title>
+
+	<para>Tato karta obsahuje ovládací prvky na výběr vlastností čárového kódu, včetně stylu čárového kódu, barvy, zda tisknout text a zda vkládat číslo s kontrolním součtem.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-line">
+	<title>Karta Čára</title>
+
+	<para>Tato karta obsahuje ovládací prvky na výběr vlastností čar a obrysů. Tyto vlastnosti zahrnují tloušťku čáry a její barvu.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-fill">
+	<title>Karta Výplň</title>
+
+	<para>Tato karta obsahuje ovládací prvky na výběr vlastností výplně objektů obdélníků a elips. V současnosti obsahuje pouze barvu výplně.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-size">
+	<title>Karta Velikost (všechny objekty vyjma čar)</title>
+
+	<para>Tato karta obsahuje ovládací prvky na výběr šířky a výšky objektu. K dispozici je zaškrtávací pole, kterým můžete zamknout poměr stran během úprav šířky a výšky. U obrázků je k dispozici rovněž tlačítko, kterým můžete nastavit reálné rozměry obrázku (předpokládá se 72 DPI).</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-size-line">
+	<title>Karta Velikost (objekty čar)</title>
+
+	<para>Tato karta obsahuje ovládací prvky pro výběr délky a úhlu čáry.</para>
+
+      </sect3>
+
+      <sect3 id="object-editor-position">
+	<title>Karta Pozice</title>
+
+	<para>Tato karta obsahuje ovládací prvky pro změnu pozice objektu.</para>
+
+      </sect3>
+
+
+      <sect3 id="object-editor-shadow">
+	<title>Karta Stín (všechny objekty vyjma obrázků a čárových kódů)</title>
+
+	<para>Tato karta obsahuje ovládací prvky pro přidání stínu k objektu.</para>
+
+      </sect3>
+
+
+    </sect2>
+
+<!-- ============= Other Manipulations of Objects ========= -->
+    <sect2 id="glabels-object-manipulation"> 
+      <title>Ostatní manipulace s objekty</title>
+
+      <para>S objekty lze manipulovat ještě následujícími způsoby:</para>
+
+      <sect3 id="other-moving-resizing">
+	<title>Přesouvání a změna velikosti objektů</title>
+
+	<para>Objekty lze přesunout kliknutím na vybraný objekt a tažením objektu na nové místo. Pokud je objekt součástí skupiny označených objektů, budou se s objektem přesouvat všechny vybrané objekty, ale jejich vzájemná pozice zůstane zachovaná. Pokud není žádný objekt vybraný, kliknutí na objekt provede nový výběr tohoto objektu. Viz <xref linkend="glabels-select-objects"/>.</para>
+
+	<para>U vybraných objektů můžete měnit jejich velikost kliknutím na úchop pro změnu velikosti a jeho tažením tak, abyste dosáhli správné velikost.</para>
+
+      </sect3>
+
+      <sect3 id="other-stacking-order">
+	<title>Změna pořadí objektů</title>
+
+	<para>Pořadí objektů představuje jejich relativní polohu v ose z. Prakticky to určuje při překrývání objektů, který z nich bude nahoře a který vespod. Standardně se nové objekty vytvářejí nad staršími objekty. Když chcete toto pořadí změnit, jeden nebo více objektů vyberte a zvolte <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Pořadí</guimenuitem><guimenuitem>Přenést dopředu</guimenuitem></menuchoice> pro vynesení výběru na nejvyšší pozici nebo <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Pořadí</guimenuitem><guimenuitem>Přenést dozadu</guimenuitem></menuchoice> pro zatlačení výběru úplně dospod. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</para>
+
+      </sect3>
+
+      <sect3 id="other-rotating-flipping">
+	<title>Otáčení a překlápění objektů</title>
+
+	<para>Objekty lze otáčet po 90stupňových krocích v obou směrech nebo je překlápět svisle nebo vodorovně a to volbou příslušné položky v podnabídce <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Otočit/Překlopit</guimenuitem></menuchoice>. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</para>
+
+      </sect3>
+
+      <sect3 id="other-alignment">
+	<title>Zarovnávání objektů</title>
+
+	<para>Objekty lze zarovnávat vodorovně nebo svisle, relativně vůči sobě nebo relativně ke středové čáře etikety, volbou příslušné položky z podnabídky <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Zarovnat vodorovně</guimenuitem></menuchoice> nebo <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Zarovnat svisle</guimenuitem></menuchoice>. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</para>
+
+      </sect3>
+
+      <sect3 id="other-property-bar">
+	<title>Používání panelu vlastností</title>
+
+	<para>Panel vlastností lze použít ke změně některých běžných vlastností objektů jako celku. Tyto vlastnosti zahrnují typ písma, velikost písma, tloušťku písma, zarovnání textu, barvu textu, barvu výplně, barvu čáry nebo obrysu a tloušťku čáry. Přes panel vlastností může také zadat výchozí hodnoty těchto vlastností pro nově vytvářené objekty.</para>
+
+      </sect3>
+
+
+
+    </sect2>
+
+<!-- ============= Document Merge Features ========= -->
+    <sect2 id="glabels-merge"> 
+      <title>Provádění slučování dokumentů</title>
+
+      <para>Slučování dokumentů (někdy také nazývané „hromadná korespondence“) je mocná funkce, která umožňuje vytisknout na etikety nebo vizitky různé texty podle jednotlivých záznamů v externím zdroji dat.</para>
+
+      <para>Prvním krokem při slučování dokumentů je příprava zdrojového dokumentu, který má obsahovat slučovaná data. Tato data mohou být poštovní adresy nebo jakákoliv jiná data, pro která si přejete vytvořit jedinečné etikety nebo vizitky. V současnosti jsou zatím jako zdroje podporované pouze textové soubory a datový server Evolution, jiné jsou v plánu. Současně podporovaný formát textových souborů je velmi jednoduchý: co řádek, to záznam; pole jsou oddělená čárkami (CSV), tabulátory nebo dvojtečkami; řádky jsou zakončené pomocí znaku „\n“. Takovýto soubor jde vytvořit v libovolném textovém editoru nebo jiným programem nebo skriptem. Obvyklým způsobem vytváření souborů CSV je jejich export z tabulkového kalkulátoru.</para>
+
+      <para>Etiketa musí být nastavená tak, aby „ukazovala na“ takovýto datový soubor. Abyste nastavili vlastnosti slučování dokumentu, zvolte položku nabídky <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Vlastnosti slučování</guimenuitem></menuchoice>, zobrazí se dialogové okno <guilabel>vlastnosti slučování</guilabel>. Toto dialogové okno slouží k výběru přesného formátu datového souboru a názvu (umístění) souboru se slučovanými daty.</para>
+
+      <para>Nakonec, až je etiketa nastavená pro datový soubor, je zapotřebí vložit klíče polí do textových objektů a použít klíče polí jako zdroje nebo data pro objekty čárových kódů a jako názvy souborů pro obrázkové objekty. Více informací o použití slučovaných dat pro tyto typy objektů viz <xref linkend="glabels-object-properties"/>.</para>
+
+      <para>Nyní, když máte svoji etiketu nastavenou, bude aplikace <application>gLabels</application> tisknout jednotlivé etikety odlišné pro každý záznam ve vašem zdrojovém dokumentu - do klíčů polí se ve všech textech budou dosazovat pole z jednotlivých záznamů.</para>
+
+      <para>Podrobný průvodce funkcí slučování dokumentů viz <xref linkend="glabels-merge-tutorial"/>.</para>
+
+
+    </sect2>
+
+
+  </sect1>
+
+
+
+
+  <!-- ============= Customization ============================= -->
+  <!-- Use this section to describe how to customize the application. -->
+  <sect1 id="glabels-prefs"> 
+    <title>Nastavení</title> 
+    <para>Když chcete v aplikaci <application>gLabels</application> změnit nastavení, zvolte <menuchoice><guimenu>Upravit</guimenu><guimenuitem>Předvolby</guimenuitem></menuchoice>. Dialogové okno <guilabel>Předvolby gLabels</guilabel> obsahuje následující karty:</para> 
+    <itemizedlist> 
+      <listitem> 
+	<para> 
+	  <xref linkend="glabels-prefs-locale"/></para> 
+      </listitem> 
+      <listitem> 
+	<para> 
+	  <xref linkend="glabels-prefs-object-defaults"/></para> 
+      </listitem> 
+    </itemizedlist>
+<!-- =============== Customization Subsection ================ -->
+<!-- Use a new section to describe different tabbed sections on the Settings or Preferences
+	     dialog. -->
+    <sect2 id="glabels-prefs-locale"> 
+      <title>Národní prostředí</title> 
+      <variablelist> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Jednotky</guilabel> </term> 
+	  <listitem> 
+	    <para>Tento skupinový přepínač použijte k určení svých upřednostňovaných jednotek. Vyberte jednu z následujících možností:</para>
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Body</guilabel> </para> 
+		<para>Použít body (1 bod = 1/72 palce = 0,352778 mm).</para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Palce</guilabel> </para> 
+		<para>Použít palce (1 palec = 25,4 mm).</para>
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Milimetry</guilabel> </para> 
+		<para>Použít milimetry.</para>
+	      </listitem> 
+	    </itemizedlist> 
+	    <para>Výchozí : <guilabel>Palce</guilabel>.</para> 
+	  </listitem> 
+	</varlistentry> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Výchozí velikost stránky</guilabel> </term> 
+	  <listitem> 
+	    <para>Tento skupinový přepínač použijte k určení své upřednostňované velikosti stránky. Urychlí vám to hledání typu média při vytváření nové etikety nebo vizitky.</para>
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>US Letter</guilabel> </para> 
+		<para>Většina vašich médií má velikost stránky US Letter (8,5 × 11 palců).</para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>ISO A4</guilabel> </para> 
+		<para>Většina vašich médií má velikost stránky ISO A4 (210 × 297 mm).</para>
+	      </listitem> 
+	    </itemizedlist> 
+	    <para>Výchozí: <guilabel>US Letter</guilabel>.</para> 
+	  </listitem> 
+	</varlistentry> 
+      </variablelist> 
+    </sect2>
+    <!-- ============= Customization Subsection ===================== -->
+    <!-- Another tabbed section on the Preferences dialog. -->
+    <sect2 id="glabels-prefs-object-defaults"> 
+      <title>Výchozí hodnoty objektu</title> 
+      <variablelist> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Text</guilabel> </term> 
+	  <listitem> 
+	    <para>Použijte tyto ovládací prvky k nastavení výchozích vlastností nových textových objektů. Tyto vlastnosti jsou:</para>
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Písmo</guilabel> </para> 
+		<para>Tyto ovládací prvky slouží k nastavení rodiny písma a velikosti písma a zda by mělo být písmo tučné nebo kurzívou.</para> 
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Barva</guilabel> </para> 
+		<para>Tímto ovládacím prvkem se vybírá výchozí barva textu.</para>
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Zarovnání</guilabel> </para> 
+		<para>Tyto ovládací prvky slouží k výběru výchozího zarovnání textu (vlevo, na střed nebo vpravo).</para>
+	      </listitem> 
+	    </itemizedlist> 
+	  </listitem> 
+	</varlistentry> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Čára</guilabel> </term> 
+	  <listitem> 
+	    <para>Použijte tyto ovládací prvky k nastavení výchozích vlastností čar a obrysů nových objektů. Tyto vlastnosti jsou:</para>
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Šířka</guilabel> </para> 
+		<para>Tímto ovládacím prvkem se vybírá výchozí šířka čáry.</para>
+	      </listitem> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Barva</guilabel> </para> 
+		<para>Tímto ovládacím prvkem se vybírá výchozí barva čáry.</para>
+	      </listitem> 
+	    </itemizedlist> 
+	  </listitem> 
+	</varlistentry> 
+	<varlistentry> 
+	  <term> 
+	    <guilabel>Výplň</guilabel> </term> 
+	  <listitem> 
+	    <para>Použijte tyto ovládací prvky k nastavení výchozích vlastností výplně nových objektů. Tyto vlastnosti jsou:</para>
+	    <itemizedlist> 
+	      <listitem> 
+		<para> 
+		  <guilabel>Barva</guilabel> </para> 
+		<para>Tento ovládací prvek slouží k výběru výchozí barvy výplně.</para>
+	      </listitem> 
+	    </itemizedlist> 
+	  </listitem> 
+	</varlistentry> 
+      </variablelist> 
+    </sect2> 
+  </sect1>
+
+
+
+
+<!-- ============= Document Merge Tutorial ================================== -->
+  <sect1 id="glabels-merge-tutorial"> 
+    <title>Průvodce slučováním dokumentů</title>
+
+    <para>Slučování dokumentů (někdy také nazývané „hromadná korespondence“) je mocná funkce, díky které můžete tisknout odlišné etikety nebo vizitky pro každý záznam v externím zdroji dat. Je však také ze všech funkcí aplikace <application>gLabels</application> nejnáročnější na pochopení. Následující příklady vás provedou dvojicí obvyklých úloh, které používají funkci slučování dokumentů.</para>
+
+    <sect2 id="merge-ex1">
+      <title>Příklad 1: Jmenovky s použitím souboru CSV</title>
+  
+      <para>V tomto příkladu pořádáme seznamovací párty pro nové členy osádky naší lodi. Máme seznam nováčků v osádce, který jsme vytvořili v aplikaci <application>gnumeric</application> a následně jej vyexportovali do souboru CSV. Mohli bychom jej vytvořit i v textovém editoru, ale žijeme přece v 21. století.</para>
+
+      <programlisting>
+jmeno,zarazeni,cislo
+"Jiří Kroupa",vedení,"SC937-0176 CEC"
+"prof. Hrbolek",vědec,S179-276SP
+"MUDr. Kroupová",lékař,unknown
+"Viktor Hujer",technik,SE-197-54T
+      </programlisting>
+
+      <para>V aplikaci <application>gLabels</application> máme vytvořený dokument vycházející ze šablony Avery 5395 „Etikety na jmenovky“. Nyní použijeme položku nabídky <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Vlastnosti slučování</guimenuitem></menuchoice> a zobrazí se nám dialogové okno <guilabel>vlastnosti slučování</guilabel>. Toto dialogové okno použijeme k výběru typu zdroje (v našem případě CSV) a vlastního zdroje (souboru), jak můžete vidět níže.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex1-1-fig"> 
+	<title>Dialogové okno vlastností slučování</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex1-1.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Před použitím zdroje slučování zrušíme zaškrtnutí prvního záznamu, protože ten obsahuje pouze záhlaví sloupců z naší původní tabulky v <application>gnumeric</application> a akorát bychom tím zničili první etiketu. Stejným způsobem můžeme zrušit zaškrtnutí kteréhokoliv záznamu, který nechceme vytisknout.</para>
+
+      <para>U každého záznamu si také můžeme prohlédnou všechny údaje po jeho rozbalení kliknutím na malý trojúhelníček. Až jsme s výběrem v dialogovém okně spokojení, klikneme na <guibutton>OK</guibutton> a změny se použijí.</para>
+
+      <para>Nyní můžeme začít s přidáváním objektů do svého dokumentu <application>gLabels</application>, jak je zobrazeno níže.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex1-2-fig"> 
+	<title>Přidávání objektů</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex1-2.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>V tomto příkladu máme přidané tři textové objekty a čárový kód. První textový objekt obsahuje pouze prostý text („Ahoj, jmenuji se“). Druhý textový objekt obsahuje jedno slučované pole („${1}“), které odpovídá prvnímu poli v záznamu (první sloupec v řádku) a které obsahuje celé jméno nového člena osádky. Třetí textové pole obsahuje jak text („Zařazení: “), tak za ním následuje jedno slučované pole („${2}“), které odpovídá druhému poli se zařazením člena posádky. Objekt s čárovým kódem je nastavený na použití pole (klíče) „3“, které obsahuje identifikační číslo člena posádky.</para>
+
+      <para>Nyní můžeme své jmenovky vytisknout pomocí položky nabídky <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Tisk</guimenuitem></menuchoice>. Zobrazí se dialogové okno jako na následujícím obrázku.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex1-3-fig"> 
+	<title>Tisk jmenovek</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex1-3.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Nyní zkontrolujeme, zda vypadají etikety jak mají. Vybereme možnost <guilabel>Tisk obrysů</guilabel> a klikneme na <guibutton>Náhled tisku</guibutton>. Zobrazí se dialogové okno s náhledem tisku, stejně jako na následujícím obrázku.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex1-4-fig"> 
+	<title>Náhled jmenovek</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex1-4.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Vše vypadá v pořádku, takže můžeme do tiskárny vložit správný list s etiketami, vytisknout jmenovky a vzhůru na palubu nalodit naše hosty.</para>
+
+    </sect2>
+
+    <sect2 id="merge-ex2">
+      <title>Příklad 2: Adresní štítky s použitím souboru CSV</title>
+  
+      <para>V tomto příkladu se chystáme uspořádat večírek a potřebujeme vytisknout adresní štítky na své pozvánky. Máme seznam svých nejbližších přátel, který jsem vytvořili v aplikaci <application>gnumeric</application> a vyexportovali jej jako soubor CSV. Povšimněte si, že ne všichni mají přezdívku nebo dvouřádkovou adresu.</para>
+
+      <programlisting>
+PRIJMENI,JMENO,PREZDIVKA,ADR1,ADR2,MESTO,PSC
+,,,,,,,
+Pacovský,Tomáš,,"U dvou akordů","Křižíkova 506",Praha,"123 00"
+Pacovský,František,Ozzák,"Křižíkova 62",,"Praha - Vinohrady","110 00"
+Divićová,Marcela,,"Náměstí míru 1",,Praha,"150 00"
+Bůček,Alexandr,Lexa,"U Jezevce","Nitranská 7",Praha,"160 13"
+Bůčková,Alexandra,,"Korunní 18",,Praha,"100 24"
+      </programlisting>
+
+      <para>V aplikaci <application>gLabels</application> vytvoříme nový dokument ze šablony Avery L7162 „Poštovní etikety“. Následně použijeme položku nabídky <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Vlastnosti slučování</guimenuitem></menuchoice> a zobrazí se nám dialogové okno <guilabel>vlastností slučování</guilabel>. V tomto dialogovém okně vybereme typ zdroje (v našem případě CSV) a konkrétní zdroj (název souboru) pro slučování, jak můžete vidět na následujícím obrázku.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex2-1-fig"> 
+	<title>Dialogové okno vlastností slučování</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-1.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Před tím, než zdroj pro slučován použijeme, zrušíme zaškrtnutí prvního záznamu, protože ten obsahuje pouze záhlaví sloupců z původní tabulky v <application>gnumeric</application> a akorát bychom tím znehodnotili první etiketu. Zrušíme zaškrtnutí i druhého záznamu, protože je prázdný (což je pozůstatek z tabulkového kalkulátoru). A stejným způsobem můžeme vyřadit kterýkoliv jiný záznam, který nechceme na etikety vytisknout.</para>
+
+      <para>U každého záznamu si také můžeme prohlédnou všechny údaje po jeho rozbalení kliknutím na malý trojúhelníček. Až jsme s výběrem v dialogovém okně spokojení, klikneme na <guibutton>OK</guibutton> a změny se použijí.</para>
+
+      <para>Nyní můžeme začít s přidáváním objektů do svého dokumentu <application>gLabels</application>, jak je zobrazeno níže.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex2-2-fig"> 
+	<title>Přidávání objektů</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-2.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>V tomto příkladu máme jen jeden textový objekt. Tento textový objekt obsahuje všechna slučovaná pole uspořádaná v několika řádcích představujících poštovní adresu. Všimněte si, že pole ${4} a ${5} (ta odpovídají ADR1 a ADR2) jsou umístěná na samostatných řádcích bez jakéhokoliv dalšího textu. Pokud aplikace <application>gLabels</application> narazí na pole, které je jediným textem na řádku a toto pole je prázdné, řádek nebude ve výsledku zabírat žádné místo.</para>
+
+      <para>Nyní se můžeme pustit do tisku adresních etiket pomocí volby <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Tisk</guimenuitem></menuchoice> v nabídce. Zobrazí se dialogové okno tisku jako na následujícím obrázku.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex2-3-fig"> 
+	<title>Tisk etiket s adresami</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-3.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Nyní zkontrolujeme, zda vypadají etikety jak mají. Vybereme možnost <guilabel>Tisk obrysů</guilabel> a klikneme na <guibutton>Náhled tisku</guibutton>. Zobrazí se dialogové okno s náhledem tisku, stejně jako na následujícím obrázku.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex2-4-fig"> 
+	<title>Náhled etiket s adresami</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-4.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Vše vypadá dobře a tak můžeme vložit do tiskárny správný list s etiketami, vytisknout adresní štítky a začít rozesílat pozvánky na večírek.</para>
+
+    </sect2>
+
+<sect2 id="merge-ex3">
+      <title>Příklad 3: Adresní štítky s použitím adresáře aplikace <application>Evolution</application></title>
+  
+      <para>Náš předchozí večírek měl velký úspěch a my nyní chceme vytisknout adresní štítky pro pozvánky na další takový. Abychom si to zjednodušili, můžeme použít adresář aplikace <application>Evolution</application>, protože adresy všech našich přátel máme uložené v něm.</para>
+
+      <note>
+	<para>V závislosti na tom, jak byl připravený váš balíček <application>gLabels</application>, nemusí být tato funkčnost dostupná. Podpora pro adresář <application>Evolution</application> je dostupná jen v případě, že byl při překladu aplikace <application>gLabels</application> k dispozici <application>evolution-data-server</application> a k němu vývojářské soubory. Mějte toto na paměti, pokud si aplikaci překládáte sami ze zdrojových kódů.</para>
+	
+	<para>Pokud balíček <application>gLabels</application> ve vaší distribuci tuto podporu postrádá, můžete zkusit kontaktovat správce balíčku nebo to zkusit nahlásit jako chybu.</para>
+      </note>
+
+      <para>V aplikaci <application>glabels</application> vytvoříme nový dokument ze šablony Avery L7162 „Poštovní etikety“. Potom v nabídce zvolíme <menuchoice><guimenu>Objekty</guimenu><guimenuitem>Vlastnosti slučování</guimenuitem></menuchoice>, aby se nám zobrazilo dialogové okno <guilabel>Vlastnosti slučování</guilabel>. V něm vybereme typ zdroje (v našem případě <guilabel>Data z výchozího adresáře Evolution</guilabel>), jak je ukázáno na obrázku.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex3-1-fig"> 
+	<title>Dialogové okno vlastností slučování</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex3-1.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Když máme jako zdroj slučování vybráno <guilabel>Data z výchozího adresáře Evolution</guilabel>, obdržíme úplný seznam jeho obsahu. Na začátku jsou zaškrtnuté všechny položky. Předpokládá se, že budeme pořádat opravdu velký večírek a tak bychom mohli ponechat výběr jak je (ale uvědomte si kolik to bude stát). Nyní některé záznamy kliknutím na příslušné zaškrtávací políčko vyřadíme nebo naopak vybereme, případně můžeme použít tlačítka <guibutton>Vybrat vše</guibutton> a <guibutton>Zrušit výběr</guibutton> pro aktivování nebo deaktivování všech záznamů v adresáři.</para>
+ 
+      <para>U každého záznamu si také můžeme prohlédnou všechny údaje po jeho rozbalení kliknutím na malý trojúhelníček. Až jsme s výběrem v dialogovém okně spokojení, klikneme na <guibutton>OK</guibutton> a změny se použijí.</para>
+
+      <para>Nyní můžeme začít s přidáváním objektů do svého dokumentu glabels, jak bylo ukázáno dříve.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex3-2-fig"> 
+	<title>Přidávání objektů</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex3-2.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>V tomto příkladu máme opět jen jeden textový objekt. Ten obsahuje všechna slučovaná pole uspořádaná v několika řádcích, představujících poštovní adresy.</para>
+
+      <para>Nyní můžeme své etikety s adresami vytisknout volbou položky nabídky <menuchoice><guimenu>Soubor</guimenu><guimenuitem>Tisk</guimenuitem></menuchoice>. Zobrazí se dialogové okno tisku, jak jej můžete vidět níže.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex3-3-fig"> 
+	<title>Tisk etiket s adresami</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-3.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Nyní zkontrolujeme, zda vypadají etikety jak mají. Vybereme možnost <guilabel>Tisk obrysů</guilabel> a klikneme na <guibutton>Náhled tisku</guibutton>. Zobrazí se dialogové okno s náhledem tisku, stejně jako na následujícím obrázku.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="merge-ex3-4-fig"> 
+	<title>Náhled etiket s adresami</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/merge-ex2-4.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <para>Vše vypadá dobře a tak můžeme vložit do tiskárny správný list s etiketami, vytisknout adresní štítky a začít rozesílat pozvánky na večírek.</para>
+
+    </sect2>
+
+  </sect1>
+
+
+
+
+<!-- ============= Creating templates ================================== -->
+  <sect1 id="glabels-manual-create-template"> 
+    <title>Ruční vytváření šablon</title> 
+
+    <para>Předdefinované šablony jsou definované soubory XML umístěnými v <filename>${prefix}/share/glabels/</filename>, kde <filename>${prefix}</filename> je obvykle <filename>/usr/local</filename> nebo <filename>/usr</filename>, v závislosti na volbě nastavení <filename>prefix</filename> při překladu programu. Aplikace <application>gLabels</application> použije všechny soubory s názvem v podobě <filename>*-templates.xml</filename> nebo <filename>*.template</filename>, které nalezne v <filename>${prefix}/share/glabels/</filename> a <filename>${HOME}/.glabels/</filename>. Další šablony si můžete přidat vytvořením dalších souborů <filename>*.template</filename> v jedné z těchto složek.</para>
+
+    <para>Formát těchto souborů je dán v DTD: <ulink url="http://glabels.sourceforge.net/doc/glabels-2.0.dtd.txt" type="http">glabels-2.2.dtd</ulink>. (Toto DTD popisuje i ostatní formáty XML používané v aplikaci <application>gLabels</application>.)</para>
+
+    <sect2 id="template-assumptions">
+      <title>Předpoklady/upozornění</title>
+      <itemizedlist>
+	<listitem>
+	  <para>Stránka obsahuje etiketu nebo vizitku pouze jedné velikosti (pokud má stránka obsahovat více než jednu velikost položky, můžete ji rozdělit do více šablon a vytisknout na vícekrát)</para>
+	</listitem>
+	<listitem>
+	  <para>Rozměry mohou být uváděny v jednotkách <emphasis>pt</emphasis>, <emphasis>in</emphasis>, <emphasis>mm</emphasis>, <emphasis>cm</emphasis> nebo <emphasis>pc</emphasis>. Například: „<literal>1.0in</literal>“ nebo „<literal>2.54cm</literal>“. Pokud není žádná jednotka uvedená, budou předpokládány body <emphasis>pt</emphasis>  (1 <emphasis>pt</emphasis> = 1/72 <emphasis>in</emphasis> = 0,352778 <emphasis>mm</emphasis>).</para>
+	</listitem>
+      </itemizedlist>
+    </sect2>
+
+    <sect2 id="template-file">
+      <title>Soubory šablon</title>
+
+      <programlisting>
+&lt;?xml version="1.0"?&gt;
+&lt;Glabels-templates&gt;
+
+   <replaceable>…šablony…</replaceable>
+
+&lt;/Glabels-templates&gt;
+      </programlisting>
+    </sect2>
+
+
+    <sect2 id="template-example">
+      <title>Příklad šablony</title>
+      <programlisting>
+  &lt;Template brand="Avery" part="8160" size="US-Letter" _description="Mailing Labels"&gt;
+    &lt;Label-rectangle id="0" width="189pt" height="72pt" round="5pt"&gt;
+      &lt;Markup-margin size="5pt"/&gt;
+      &lt;Layout nx="3" ny="10" x0="11.25pt" y0="36pt" dx="200pt" dy="72pt"/&gt;
+    &lt;/Label-rectangle&gt;
+    &lt;Alias brand="Avery" part="5160"/&gt;
+    &lt;Alias brand="Avery" part="6233"/&gt;
+  &lt;/Template&gt;
+      </programlisting>
+    </sect2>
+
+    <sect2 id="template-template-node">
+      <title>Uzel Template</title>
+
+      <para>Uzel <emphasis>Template</emphasis> popisuje jeden pevně daný výrobek. Musí obsahovat jednu instanci libovolného uzlu Label (<emphasis>Label-rectangle</emphasis>, <emphasis>Label-round</emphasis> nebo <emphasis>Label-cd</emphasis>). Tento uzel může být následován žádným nebo více uzly <emphasis>Alias</emphasis>.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Vlastnost</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Popis</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>brand</para></entry>
+	      <entry>
+                <para>Značka nebo výrobce pevně daného výrobku. Např. "S Label"</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>part</para></entry>
+	      <entry>
+                <para>Produktové číslo nebo název pevně daného výrobku. Např. "8160"</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>size</para></entry>
+	      <entry>
+                <para>Velikost stránky. Např. "A4", "US-Letter"</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>description</para></entry>
+	      <entry>
+                <para>Popis pevně daného produktu. Např. "Mailing Labels."</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>_description</para></entry>
+	      <entry>
+                <para>Popis pevně daného produktu s možností překladu. Např. "Mailing Labels." (Použitelné pouze pro předdefinované šablony)</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>width</para></entry>
+	      <entry>
+                <para>Šířka stránky. Platné jen v případě, že size="Other"</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>height</para></entry>
+	      <entry>
+                <para>Výška stránky. Platné jen v případě, že size="Other"</para>
+               </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-label-rectangle-node">
+      <title>Uzel Label-rectangle</title>
+
+      <para>Uzel <emphasis>Label-rectangle</emphasis> popisuje rozměry jedné etikety nebo vizitky, která má obdélníkový tvar (může mít zaoblené rohy).</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Vlastnost</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Popis</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>id</para></entry>
+	      <entry>
+                <para>Rezervované pro pozdější použití. Vždy by mělo být nastavené  na 0.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>width</para></entry>
+	      <entry><para>Šířka etikety/vizitky</para></entry>
+            </row>
+	    <row valign="top">
+	      <entry><para>height</para></entry>
+	      <entry><para>Výška etikety/vizitky</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>round</para></entry>
+	      <entry>
+                <para>Poloměr rohů. Pro položky s ostrými rohy (např. vizitky) by mělo být nastaveno na 0.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>x_waste</para></entry>
+	      <entry>
+                <para>Velikost dovoleného vodorovného odsazení (umožňuje přetisk). To je užitečné kvůli zamezení problémům se zarovnáním v situaci, kdy se nepoužívá bílé pozadí, ale např. obrázkové.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y_waste</para></entry>
+	      <entry>
+                <para>Velikost dovoleného svislého odsazení (umožňuje přetisk). To je užitečné kvůli zamezení problémům se zarovnáním v situaci, kdy se nepoužívá bílé pozadí, ale např. obrázkové.</para>
+              </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+      <!-- ==== Figure ==== -->
+      <figure id="template-label-fig"> 
+	<title>Parametry uzlu Label-rectangle</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/glabels-template-label.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+    </sect2>
+
+    <sect2 id="template-label-round-node">
+      <title>Uzel Label-round</title>
+
+      <para>Uzel <emphasis>Label-round</emphasis> popisuje rozměry jedné zaoblené etikety (ne CD).</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Vlastnost</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Popis</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>id</para></entry>
+	      <entry>
+                <para>Rezervované pro pozdější použití. Vždy by mělo být nastavené  na 0.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>radius</para></entry>
+	      <entry><para>Poloměr (½ průměru) etikety</para></entry>
+            </row>
+	    <row valign="top">
+	      <entry><para>waste</para></entry>
+	      <entry>
+                <para>Velikost dovoleného odsazení (umožňuje přetisk). To je užitečné kvůli zamezení problémům se zarovnáním v situaci, kdy se nepoužívá bílé pozadí, ale např. obrázkové.</para>
+              </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-label-cd-node">
+      <title>Uzel Label-cd</title>
+
+      <para>Uzel <emphasis>Label-cd</emphasis> popisuje rozměry etiket na CD, DVD nebo vizitkové CD.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Vlastnost</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Popis</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>id</para></entry>
+	      <entry>
+                <para>Rezervované pro pozdější použití. Vždy by mělo být nastavené  na 0.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>radius</para></entry>
+	      <entry><para>Vnější poloměr etikety</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>hole</para></entry>
+	      <entry><para>Poloměr středové díry</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>width</para></entry>
+	      <entry>
+                <para>Pokud je zadáno, bude etiketa oříznuta na uvedenou šířku. (Vhodné pro „vizitková CD“).</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>height</para></entry>
+	      <entry>
+                <para>Pokud je zadáno, bude etiketa oříznuta na uvedenou výšku. (Vhodné pro „vizitková CD“).</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>waste</para></entry>
+	      <entry>
+                <para>Velikost dovoleného odsazení (umožňuje přetisk). To je užitečné kvůli zamezení problémům se zarovnáním v situaci, kdy se nepoužívá bílé pozadí, ale např. obrázkové.</para>
+              </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+      <!-- ==== Figure ==== -->
+      <figure id="template-label-cd-fig"> 
+	<title>Parametry etiket na CD</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/glabels-template-cd.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+    </sect2>
+
+    <sect2 id="template-markup-margin-node">
+      <title>Uzel Markup-margin</title>
+
+      <para>Uzel <emphasis>Markup-margin</emphasis> popisuje okraj podél všech hran etikety.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Vlastnost</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Popis</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>size</para></entry>
+	      <entry>
+                <para>Velikost okraje. Např. vzdálenost hranice okraje od hrany etikety/vizitky.</para>
+              </entry>
+            </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-markup-line-node">
+      <title>Uzel Markup-line</title>
+
+      <para>Uzel <emphasis>Markup-line</emphasis> popisuje značku v podobě čáry.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Vlastnost</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Popis</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>x1</para></entry>
+	      <entry>
+                <para>x-ová souřadnice počátku úsečky</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y1</para></entry>
+	      <entry>
+                <para>y-ová souřadnice počátku úsečky</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>x2</para></entry>
+	      <entry>
+                <para>x-ová souřadnice konce úsečky</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y2</para></entry>
+	      <entry>
+                <para>y-ová souřadnice konce úsečky</para>
+              </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-markup-circle-node">
+      <title>Uzel Markup-circle</title>
+
+      <para>Uzel <emphasis>Markup-circle</emphasis> popisuje značku v podobě kruhu.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Vlastnost</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Popis</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>x0</para></entry>
+	      <entry>
+                <para>x-ová souřadnice středu kruhu</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y0</para></entry>
+	      <entry>
+                <para>y-ová souřadnice středu kruhu</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>radius</para></entry>
+	      <entry><para>Poloměr kruhu.</para></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-markup-rect-node">
+      <title>Uzel Markup-rect</title>
+
+      <para>Uzel <emphasis>Markup-rect</emphasis> popisuje značku v podobě obdélníku.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Vlastnost</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Popis</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>x1</para></entry>
+	      <entry>
+                <para>x-ová souřadnice levého horního rohu obdélníku.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y1</para></entry>
+	      <entry>
+                <para>y-ová souřadnice levého horního rohu obdélníku.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>w</para></entry>
+	      <entry>
+                <para>Šířka obdélníku.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>h</para></entry>
+	      <entry>
+                <para>Výška obdélníku.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>r</para></entry>
+	      <entry><para>Poloměr zakulacených rohů obdélníku.</para></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+    </sect2>
+
+    <sect2 id="template-layout-node">
+      <title>Uzel Layout</title>
+
+      <para>Uzel typu Label může obsahovat více potomků <emphasis>Layout</emphasis>. V případě, že jsou etikety rozmístěné do jednoduché pravidelné mřížky, postačuje jeden uzel Layout. Pokud ale jsou etikety rozmístěné ve více mřížkách, např. mají podobu cihlové zdi, musí se použít více značek <emphasis>layout</emphasis>. Poznámka: jedna etiketa může být vždy považována za mřížku s jednou buňkou.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Vlastnost</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Popis</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>nx</para></entry>
+	      <entry>
+                <para>Počet etiket/vizitek v mřížce (vodorovně)</para>
+              </entry>
+            </row>
+	    <row valign="top">
+	      <entry><para>ny</para></entry>
+	      <entry>
+                <para>Počet etiket/vizitek v mřížce (svisle)</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>x0</para></entry>
+	      <entry>
+                <para>Vzdálenost od levé hrany stránky k levé hraně levého sloupce etiket/vizitek v rozvržení.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>y0</para></entry>
+	      <entry>
+                <para>Vzdálenost od horní hrany stránky k horní hraně horní řady etiket/vizitek v rozvržení.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>dx</para></entry>
+	      <entry><para>Vodorovná rozteč mřížky.</para></entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>dy</para></entry>
+	      <entry><para>Svislá rozteč mřížky.</para></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+      <!-- ==== Figure ==== -->
+      <figure id="template-layout-fig"> 
+	<title>Parametry uzlu Layout</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/glabels-template-layout.png" format="PNG"/> 
+	    </imageobject>
+	  </mediaobject> 
+	</screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+    </sect2>
+
+    <sect2 id="template-alias-node">
+      <title>Uzel Alias</title>
+
+      <para>Uzel <emphasis>Alias</emphasis> uvádí názvy výrobků se stejnými rozměry a rozvržením, jako má rodičovská šablona.</para>
+
+      <informaltable frame="topbot">
+	<tgroup cols="2">
+	  <colspec colname="col1"/>
+	  <colspec colname="col2"/>
+	  <thead>
+	    <row valign="top">
+	      <entry colname="col1" colsep="0" valign="top">
+                <para>Vlastnost</para>
+              </entry>
+	      <entry colname="col2" valign="top">
+                <para>Popis</para>
+              </entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row valign="top">
+	      <entry><para>brand</para></entry>
+	      <entry>
+                <para>Značka nebo výrobce odpovídajícího výrobku.</para>
+              </entry>
+	    </row>
+	    <row valign="top">
+	      <entry><para>part</para></entry>
+	      <entry>
+                <para>Produktové číslo nebo název odpovídajícího výrobku.</para>
+              </entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+      </sect2>
+
+  </sect1>
+
+
+
+
+<!-- ============= Bugs ================================== -->
+<!-- This section is optional and is commented out by default. 
+     You can use it to describe known bugs and limitations of the 
+	  program if there are any - please be frank and list all
+     problems you know of. 
+  
+  <sect1 id="mayapp-bugs">
+  <title>Known Bugs and Limitations</title>
+  <para> </para>
+ </sect1>
+-->
+
+
+
+
+<!-- ============= About ================================== -->
+<!-- This section contains info about the program (not docs), such as
+      author's name(s), web page, license, feedback address. This
+      section is optional: primary place for this info is "About.." box of
+      the program. However, if you do wish to include this info in the
+      manual, this is the place to put it. Alternatively, you can put this information in the title page.-->
+  <sect1 id="glabels-about"> 
+    <title>O aplikaci <application>gLabels</application></title> 
+    <para>Aplikaci <application>gLabels</application> napsal Jim Evins (<email>evins@snaught.com</email>).  Pokud chcete o aplikaci <application>gLabels</application> najít více informací, navštivte prosím <ulink url="http://glabels.sourceforge.net" type="http">webovou stránku gLabels</ulink>.</para>
+    <para>Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k této aplikaci nebo této příručce, postupujte dle instrukcí na <ulink url="http://glabels.sourceforge.net/contact/" type="http">kontaktní stránce <application>gLabels</application></ulink>.</para>
+
+    <para>Tento program je šířen podle ustanovení GNU General Public License, vydávané Free Software Foundation; a to buď verze 2 této licence anebo (podle vlastního uvážení) kterékoliv pozdější verze. Kopii této licence naleznete pod tímto <ulink url="ghelp:gpl" type="help">odkazem</ulink> nebo v souboru COPYING přiloženém ke zdrojovým kódům tohoto programu. </para>
+
+  </sect1> 
+
+
+
+
+
+</article>

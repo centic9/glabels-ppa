@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+
+<refentry id="libglabels-str">
+<refmeta>
+<refentrytitle role="top_of_page" id="libglabels-str.top_of_page">String Utility Functions</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGLABELS Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>String Utility Functions</refname>
+<refpurpose>String utility functions provided by libglabels</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libglabels-str.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;libglabels/str.h&gt;
+
+<link linkend="gint">gint</link>                <link linkend="lgl-str-utf8-casecmp">lgl_str_utf8_casecmp</link>                (const <link linkend="gchar">gchar</link> *s1,
+                                                         const <link linkend="gchar">gchar</link> *s2);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libglabels-str.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This section defines string utility functions used by libglabels and of
+possible use to a user of libglabels.
+</para>
+</refsect1>
+
+<refsect1 id="libglabels-str.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="lgl-str-utf8-casecmp" role="function">
+<title>lgl_str_utf8_casecmp ()</title>
+<indexterm zone="lgl-str-utf8-casecmp"><primary sortas="lgl_str_utf8_casecmp">lgl_str_utf8_casecmp</primary></indexterm><programlisting><link linkend="gint">gint</link>                lgl_str_utf8_casecmp                (const <link linkend="gchar">gchar</link> *s1,
+                                                         const <link linkend="gchar">gchar</link> *s2);</programlisting>
+<para>
+Compare two UTF-8 strings, ignoring the case of characters.
+</para>
+<para>
+This function should be used only on strings that are known to be encoded
+in UTF-8 or a compatible UTF-8 subset.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>s1</parameter>&#160;:</term>
+<listitem><simpara> string to compare with s2.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>s2</parameter>&#160;:</term>
+<listitem><simpara> string to compare with s1.
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> 0 if the strings match, a negative value if s1 &lt; s2,
+         or a positive value if s1 &gt; s2.
+
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

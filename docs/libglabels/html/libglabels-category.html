@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The lglCategory Structure</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="LibGlabels Reference Manual">
+<link rel="up" href="ch01.html" title="Basic LibGlabels Usage">
+<link rel="prev" href="libglabels-paper.html" title="The lglPaper Structure">
+<link rel="next" href="ch02.html" title="Working Directly With LibGlabels XML">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Basic LibGlabels Usage">
+<link rel="chapter" href="ch02.html" title="Working Directly With LibGlabels XML">
+<link rel="chapter" href="ch03.html" title="Miscellaneous">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libglabels-paper.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">LibGlabels Reference Manual</th>
+<td><a accesskey="n" href="ch02.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libglabels-category.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libglabels-category.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="The lglCategory Structure">
+<a name="libglabels-category"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libglabels-category.top_of_page"></a>The lglCategory Structure</span></h2>
+<p>The lglCategory Structure — Template category definitions</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libglabels-category.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;libglabels/category.h&gt;
+
+                    <a class="link" href="libglabels-category.html#lglCategory" title="lglCategory">lglCategory</a>;
+<a class="link" href="libglabels-category.html#lglCategory" title="lglCategory">lglCategory</a> *       <a class="link" href="libglabels-category.html#lgl-category-new" title="lgl_category_new ()">lgl_category_new</a>                    (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *id,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name);
+<a class="link" href="libglabels-category.html#lglCategory" title="lglCategory">lglCategory</a> *       <a class="link" href="libglabels-category.html#lgl-category-dup" title="lgl_category_dup ()">lgl_category_dup</a>                    (const <a class="link" href="libglabels-category.html#lglCategory" title="lglCategory">lglCategory</a> *orig);
+void                <a class="link" href="libglabels-category.html#lgl-category-free" title="lgl_category_free ()">lgl_category_free</a>                   (<a class="link" href="libglabels-category.html#lglCategory" title="lglCategory">lglCategory</a> *category);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libglabels-category.description"></a><h2>Description</h2>
+<p>
+This section describes a structure for representing a category of stationary and related
+functions.
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libglabels-category.details"></a><h2>Details</h2>
+<div class="refsect2" title="lglCategory">
+<a name="lglCategory"></a><h3>lglCategory</h3>
+<pre class="programlisting">typedef struct {
+	gchar               *id;     /* Unique ID of category */
+	gchar               *name;   /* Localized name of category */
+} lglCategory;
+</pre>
+<p>
+This structure defines a category.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>id</code></em>;</span></p></td>
+<td>Category ID.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *<em class="structfield"><code>name</code></em>;</span></p></td>
+<td>Localized category name.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_category_new ()">
+<a name="lgl-category-new"></a><h3>lgl_category_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-category.html#lglCategory" title="lglCategory">lglCategory</a> *       lgl_category_new                    (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *id,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *name);</pre>
+<p>
+Allocates and constructs a new <a class="link" href="libglabels-category.html#lglCategory" title="lglCategory"><span class="type">lglCategory</span></a> structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>     Id of category definition. (E.g. label, card, etc.)  Should be
+         unique.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>   Localized name of category.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a pointer to a newly allocated <a class="link" href="libglabels-category.html#lglCategory" title="lglCategory"><span class="type">lglCategory</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_category_dup ()">
+<a name="lgl-category-dup"></a><h3>lgl_category_dup ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-category.html#lglCategory" title="lglCategory">lglCategory</a> *       lgl_category_dup                    (const <a class="link" href="libglabels-category.html#lglCategory" title="lglCategory">lglCategory</a> *orig);</pre>
+<p>
+Duplicates an existing <a class="link" href="libglabels-category.html#lglCategory" title="lglCategory"><span class="type">lglCategory</span></a> structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>orig</code></em> :</span></p></td>
+<td>  <a class="link" href="libglabels-category.html#lglCategory" title="lglCategory"><span class="type">lglCategory</span></a> structure to be duplicated.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a pointer to a newly allocated <a class="link" href="libglabels-category.html#lglCategory" title="lglCategory"><span class="type">lglCategory</span></a> structure.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="lgl_category_free ()">
+<a name="lgl-category-free"></a><h3>lgl_category_free ()</h3>
+<pre class="programlisting">void                lgl_category_free                   (<a class="link" href="libglabels-category.html#lglCategory" title="lglCategory">lglCategory</a> *category);</pre>
+<p>
+Free all memory associated with an existing <a class="link" href="libglabels-category.html#lglCategory" title="lglCategory"><span class="type">lglCategory</span></a> structure.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>category</code></em> :</span></p></td>
+<td>  pointer to <a class="link" href="libglabels-category.html#lglCategory" title="lglCategory"><span class="type">lglCategory</span></a> structure to be freed.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>
