@@ -11,18 +11,42 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervans@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Géode</mal:name>
+      <mal:email>Geodebay@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
   </info>
 
     <title>Ouverture de plusieurs fichiers à partir de la ligne de commande</title>
 
       <p>Vous pouvez lancer <app>gLabels</app> à partir de la ligne de commande tout en ouvrant un ou plusieurs fichiers. Pour ouvrir plusieurs fichiers, saisissez la commande suivante et pressez <key>Entrée</key> :</p>
 
-      <p><cmd>glabels <var>fichier1.glabels fichier2.glabels fichier3.glabels</var></cmd></p>
+      <p><cmd>glabels <var>fichier1.glabels fichier2.glabels fichier3.glabels</var> </cmd></p>
 
       <p>Au démarrage de l'application, les fichiers que vous avez indiqués, s'ouvrent dans des fenêtres <app>gLabels</app> distinctes.</p>
 

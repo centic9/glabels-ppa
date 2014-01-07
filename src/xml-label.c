@@ -436,6 +436,7 @@ xml_parse_object_text (xmlNodePtr  node,
 	gdouble           w, h;
 	gchar            *string;
 	PangoAlignment    align;
+	glValignment      valign;
 	gboolean          auto_shrink;
 	xmlNodePtr        child;
 
@@ -458,6 +459,12 @@ xml_parse_object_text (xmlNodePtr  node,
 	align = gl_str_util_string_to_align (string);
 	g_free (string);
 	gl_label_object_set_text_alignment (GL_LABEL_OBJECT(object), align, FALSE);
+
+	/* valign attr */
+	string = lgl_xml_get_prop_string (node, "valign", NULL);
+	valign = gl_str_util_string_to_valign (string);
+	g_free (string);
+	gl_label_object_set_text_valignment (GL_LABEL_OBJECT(object), valign, FALSE);
 
 	/* auto_shrink attr */
 	auto_shrink = lgl_xml_get_prop_boolean (node, "auto_shrink", FALSE);
@@ -1321,6 +1328,7 @@ xml_create_object_text (xmlNodePtr     parent,
 	gdouble           x, y;
 	gdouble           w, h;
 	PangoAlignment    align;
+	glValignment      valign;
 	gboolean          auto_shrink;
 
 	gl_debug (DEBUG_XML, "START");
@@ -1340,6 +1348,10 @@ xml_create_object_text (xmlNodePtr     parent,
 	/* justify attr */
 	align = gl_label_object_get_text_alignment (object);
 	lgl_xml_set_prop_string (node, "justify", gl_str_util_align_to_string (align));
+
+	/* valign attr */
+	valign = gl_label_object_get_text_valignment (object);
+	lgl_xml_set_prop_string (node, "valign", gl_str_util_valign_to_string (valign));
 
 	/* auto_shrink attr */
 	auto_shrink = gl_label_text_get_auto_shrink (GL_LABEL_TEXT (object));
@@ -1830,7 +1842,6 @@ xml_create_toplevel_span (xmlNodePtr        parent,
 	PangoWeight       font_weight;
 	gboolean          font_italic_flag;
 	glColorNode      *color_node;
-	PangoAlignment    align;
 	gdouble           text_line_spacing;
 	GList            *lines, *p_line, *p_node;
 	glTextNode       *text_node;
@@ -1856,7 +1867,6 @@ xml_create_toplevel_span (xmlNodePtr        parent,
 	}
 	gl_color_node_free (&color_node);
 	
-	align = gl_label_object_get_text_alignment (GL_LABEL_OBJECT(object_text));
 	lgl_xml_set_prop_string (node, "font_family", font_family);
 	lgl_xml_set_prop_double (node, "font_size", font_size);
 	lgl_xml_set_prop_string (node, "font_weight", gl_str_util_weight_to_string (font_weight));

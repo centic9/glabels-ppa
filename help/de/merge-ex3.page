@@ -11,11 +11,17 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2008-2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Beispiel 3: Adressetiketten unter Nutzung des <app>Evolution</app>-Adressbuchs</title>
@@ -28,7 +34,7 @@
 	<p>Falls das <app>gLabels</app>-Paket Ihrer Distribution diese Unterstützung nicht bieten sollte, kontaktieren Sie bitte den Ersteller des Pakets oder senden Sie einen Fehlerbericht, um dies einzufordern.</p>
       </note>
 
-      <p>In <app>glabels</app> haben Sie ein neues Dokument unter Verwendung der Dokumentvorlage »Avery 5512 Adressetiketten« erzeugt. Zunächst öffnen Sie mittels <guiseq><gui>Objekte</gui><gui>Mischeinstellungen</gui></guiseq> den Dialog <gui>Mischeinstellungen</gui>. In diesem Dialog wählen Sie wie gezeigt die Datenquelle aus, in diesem Fall CSV, sowie die Mischquelle (Dateiname).</p>
+      <p>In <app>glabels</app> haben Sie ein neues Dokument unter Verwendung der Dokumentvorlage »Avery 5512 Adressetiketten« erzeugt. Zunächst öffnen Sie mittels <guiseq><gui>Objekte</gui><gui>Mischeinstellungen</gui></guiseq> den Dialog <gui>Mischeinstellungen</gui>. In diesem Dialog wählen Sie wie gezeigt die Datenquelle aus, in diesem Fall <gui>Evolution-Adressbuch</gui>, sowie die Mischquelle (Dateiname).</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-1.png" mime="image/png" style="right">

@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Марио Блатерман (Mario Blättermann)</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -22,9 +22,61 @@
 
       <p>Автоматическое создание документов — это мощная возможность, которая позволяет создавать этикетки и визитки для каждой отдельной записи из внешнего источника данных.</p>
 
-      <p>Первый шаг для подготовки к автоматическому созданию документов — подготовить документ, который содержал бы необходимые данные. Эти данные могут быть адресами эл. почты или любыми другими данными, с помощью которых можно создавать этикетки и визитки. В настоящий момент поддерживаются только текстовые файлы и сервер данных Evolution, в будущем запланирована возможность работать с другими источниками. Формат поддерживаемых в настоящий момент текстовых файлов очень прост: на одну строку приходится одна запись, поля отделяются друг от друга запятыми, табуляциями или двоеточиями; новые строки можно вставлять в поля с помощью символов «\n». Этот файл можно создать с помощью любого текстового редактора, он также может быть создан другой программой или сценарием. Файлы формата CSV можно получить, экспортировав в данный формат электронную таблицу.</p>
+      <p>The first step to performing a document merge is to prepare
+        a source document that contains your merge data.  This data could
+        be mailing addresses or any other data that you wish to create
+        unique labels or cards for.  Currently back-ends only exist for
+        text files and the evolution data server -- others are planned.  The currently
+        supported text-file format is very simple:  each line is a record;
+        fields are delimited by commas (CSV), tabs, or colons; and newlines
+        can be embedded into fields by using the "\n" entity.  This file
+        could be created using any text editor or could be created by
+        another program or script.  A common way of creating CSV files is
+	to export them from a spreadsheet program or from address book
+	applications.</p>
+	
+	<note style="advanced">
+         <p>
+         To export a CSV file from <app>kaddressbook</app>, first select the
+	 contacts you wish to export. Click on the first contact, then press and
+	 hold <key>Ctrl</key> and click on the other desired contacts to select them.
+	 Then choose <guiseq><gui>File</gui><gui>Export</gui>
+	 <gui>Export CSV File</gui></guiseq>.</p>
+	 
+	 <p>
+	 In the <gui>Select Contacts</gui>
+	 window, enable the button <gui>Selected contacts</gui> (which should be
+	 enabled by default anyway). Then click on <gui>OK</gui>.
+	 In the <gui>Save As</gui> dialog, choose the desired folder and a name
+	 for the file and click on <gui>Save</gui>.
+         </p>
+        </note>
+	
+	<note style="advanced">
+         <p>
+	 To export a CSV file from <app>Thunderbird</app>, click on the
+	 <gui>Address Book</gui> toolbar button or choose <guiseq><gui>Tools
+	 </gui><gui>Address Book</gui></guiseq> from the menu.
+	 Then select the contacts you wish to export. Click on the first contact,
+	 then press and hold <key>Ctrl</key> and click on the other desired contacts
+	 to select them. Then choose <guiseq><gui>Tools</gui><gui>Export</gui>
+	 </guiseq>.</p>
+	 
+	 <p>
+	 In the file chooser window, choose the desired folder and a name
+	 for the file and change the value of the drop-down button in the
+	 right bottom corner to <gui>Comma Separated</gui>. Finally, click on
+	 <gui>Save</gui>.
+         </p>
+        </note>
 
-      <p>Этикета должна быть настроена на использование этого файла с данными. Чтобы настроить свойства автоматического создания документов, выберите <guiseq><gui>Объекты</gui><gui>Заполнить поля данными</gui></guiseq>. Появится диалоговое окно. Выберите в этом окне формат файла с данными и имя файла.</p>
+      <p>A label must then be configured to "point at" this data file.
+        To configure the merge properties of a document, choose
+        <guiseq><gui>Objects</gui>
+        <gui>Merge Properties</gui></guiseq> menu item
+        to display the <gui>merge properties</gui> dialog.  This
+        dialog is used to select the exact data file format and file
+        name (location) of the merge data.</p>
 
       <p>После того, как этикетка будет настроена на использование файла с данными, ключи полей можно вставить в текстовые объекты и использовать в качестве источника или данных для объектов штрих-кодов, а также имён файлов для объектов изображений. Подробнее об автоматическом создании документов для этих типов объектов см. <link xref="editprop"/>.</p>
 

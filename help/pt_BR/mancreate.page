@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mancreate" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <revision pkgversion="3.0.1" version="0.1" date="2011-06-20" status="incomplete"/>
+    <desc>
+      Create your templates manually.
+    </desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mario.blaettermann@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title>Manually creating new templates</title>
+
+
+
+  <!-- ****************** -->
+  <!-- BEGIN Introduction -->
+  <!-- ****************** -->
+  <p>This page is a reference guide to manually creating <app>gLabels</app> templates.
+  <app>gLabels</app> templates are defined in simple XML files as described in the DTD:
+  <link href="http://glabels.org/xmlns/2.3/glabels-2.3.dtd.txt">glabels-2.3.dtd</link>
+  (this DTD also describes other XML files used by <app>gLabels</app>).</p>
+
+  <p>Manually created template files should be placed in the <file>${HOME}/.glabels</file>
+  and be named with a <file>.template</file> extension.</p>
+
+  <note style="advanced">
+    <p><app>gLabels</app> searches for templates in several other locations as defined here:</p>
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Location</p></td>
+        <td><p>Description</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>
+        <td><p/></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><file>${prefix}/share/libglabels-3.0/templates</file></p></td>
+        <td><p>Predefined templates distributed with <app>gLabels</app>.</p>
+            <p><file>${prefix}</file> is usually <file>/usr</file> or <file>/usr/local</file>,
+            depending on where <app>gLabels</app> was installed.</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><file>${XDG_CONFIG_HOME}/libglabels/templates</file></p></td>
+        <td><p>User defined templates created with the <app>gLabels</app> <gui>Template Designer</gui>.
+            <em>Do not put manually created templates in this directory.</em></p>
+            <p>If <file>${XDG_CONFIG_HOME}</file> is not defined, it defaults to
+            <file>${HOME}/.config</file>.</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><file>${HOME}/.glabels</file></p></td>
+        <td><p>User defined templates that have been created manually should be placed in this
+            directory.
+            Older versions of the <app>gLabels</app> <gui>Template Designer</gui> (prior to 3.0)
+            would also put templates in this directory.</p></td>
+      </tr>
+    </table>
+  </note>
+
+  <note><p>Completed template files can be sent to the
+        <app>gLabels</app> template
+        <link href="mailto:glabels-templates@lists.sourceforge.net">mailing list</link>
+        for possible inclusion in future versions of <app>gLabels</app>.</p>
+  </note>
+  <!-- ****************** -->
+  <!-- END Introduction   -->
+  <!-- ****************** -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Assumptions -->
+  <!-- ***************** -->
+  <section id="template-assumptions">
+    <title>Assumptions/caveats</title>
+    <list>
+      <item>
+        <p>A sheet contains only one size of label or card (if a sheet
+          contains more than one size of item, it can be split into
+           multiple templates for multiple pass printing)</p>
+      </item>
+      <item>
+        <p>Distances can be expressed in units of <code>pt</code>, <code>in</code>,
+	  <code>mm</code>, <code>cm</code>, or <code>pc</code>.  For example:
+          "<code>1.0in</code>" or "<code>2.54cm</code>".  If no
+          units are specified, computer points (<code>pt</code>) will
+          be assumed (1 <em>pt</em> =
+          1/72 <em>in</em> = 0.352778 <em>mm</em>).
+          </p>
+      </item>
+    </list>
+  </section>
+  <!-- ***************** -->
+  <!-- END Assumptions   -->
+  <!-- ***************** -->
+
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Template Files -->
+  <!-- ******************** -->
+  <section id="template-file">
+    <title>Template Files</title>
+
+    <p>A template file contains a single <code>Glabels-templates</code> top-level
+    node.</p>
+
+    <code mime="text/xml">
+&lt;?xml version="1.0"?&gt;
+&lt;Glabels-templates&gt;
+
+   <var>...templates...</var>
+
+&lt;/Glabels-templates&gt;</code>
+
+    <listing>
+      <title>Example Template</title>
+      <desc>Example <app>gLabels</app> template file containing a single
+            <code>Template</code> node.</desc>
+      <code mime="text/xml" its:translate="no">
+&lt;?xml version="1.0"?&gt;
+&lt;Glabels-templates&gt;
+
+  &lt;Template brand="Avery" part="8160" size="US-Letter" description="Mailing Labels"&gt;
+    &lt;Meta category="label"/&gt;
+    &lt;Meta category="mail"/&gt;
+    &lt;Meta product_url="http://www.avery.com/avery/en_us/"/&gt;
+    &lt;Label-rectangle id="0" width="189pt" height="72pt" round="5pt"&gt;
+      &lt;Markup-margin size="5pt"/&gt;
+      &lt;Layout nx="3" ny="10" x0="11.25pt" y0="36pt" dx="200pt" dy="72pt"/&gt;
+    &lt;/Label-rectangle&gt;
+  &lt;/Template&gt;
+
+&lt;/Glabels-templates&gt;</code>
+    </listing>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Template Files   -->
+  <!-- ******************** -->
+
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Template Node  -->
+  <!-- ******************** -->
+  <section id="template-template-node">
+    <title><code>Template</code> Node</title>
+
+    <p>A <code>Template</code> node describes a single
+      stationery product.  It must contain one instance of any type of Label node
+      (<code>Label-rectangle</code>,
+      <code>Label-round</code>, or
+      <code>Label-cd</code>).</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Property</p></td>  <td><p>Description</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>brand</code></p></td>  
+        <td><p>Brand or manufacturer of stationery product. E.g. "Avery"</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>part</code></p></td>
+        <td><p>Part number or name of stationery product. E.g. "8160"</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>size</code></p></td>
+        <td><p>Size of sheet.
+               E.g., "<code>US-Letter</code>", "<code>A4</code>", ...
+            </p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>description</code></p></td>
+        <td><p>Description of stationery product.  E.g, "Mailing Labels."</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>_description</code></p></td>
+        <td><p>Translatable description of stationery product. E.g, "Mailing Labels."
+            (Only useful for predefined templates)</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>width</code></p></td>
+        <td><p>Page width.  Only valid if size="Other"</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>height</code></p></td>
+        <td><p>Page height.  Only valid if size="Other"</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>equiv</code></p></td>
+        <td><p>Equivalent part number.  If this property is present, the template
+            is a clone of another template of the same brand.  The template will
+            inherit all properties, except brand and name from the other template.
+            This equiv property must refer to a previously defined template - 
+            <app>gLabels</app> does not currently support forward references.</p></td>
+      </tr>
+    </table>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Template Node    -->
+  <!-- ******************** -->
+
+
+  <!-- ******************** -->
+  <!-- BEGIN Meta Node      -->
+  <!-- ******************** -->
+  <section id="meta-template-node">
+    <title><code>Meta</code> Node</title>
+
+    <p>A <code>Meta</code> node contains some additional
+         information about the template. A <code>Template</code>
+         node may contain zero or more <code>Meta</code> nodes.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Subnode</p></td>  <td><p>Description</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>category</code></p></td>
+        <td><p>A category for the template.
+            A template can belong to multiple categories by simply adding multiple
+            <code>Meta</code> nodes to the parent
+            <code>Template</code> node.
+            Template categories are used by the <app>gLabels</app> <gui>New Label
+            Dialog</gui> to filter the results of template searches.</p>
+
+            <p>The value of this category must match a predefined category ID defined in
+            the file <file>${prefix}/libglabels-3.0/templates/categories.xml</file>.
+	      Currently defined category IDs include:</p>
+            <list>
+              <item its:translate="no"><p><code>label</code></p></item>
+              <item its:translate="no"><p><code>round-label</code></p></item>
+              <item its:translate="no"><p><code>elliptical-label</code></p></item>
+              <item its:translate="no"><p><code>square-label</code></p></item>
+              <item its:translate="no"><p><code>rectangle-label</code></p></item>
+              <item its:translate="no"><p><code>card</code></p></item>
+              <item its:translate="no"><p><code>business-card</code></p></item>
+              <item its:translate="no"><p><code>media</code></p></item>
+              <item its:translate="no"><p><code>mail</code></p></item>
+              <item its:translate="no"><p><code>foldable</code></p></item>
+              <item its:translate="no"><p><code>photo</code></p></item>
+            </list>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>product_url</code></p></td>
+        <td><p>A URL pointing to the vendor's webpage for the specific product, if available.</p></td>
+      </tr>
+    </table>
+
+    <note><p>Suggestions for additional categories can be sent to the 
+          <app>gLabels</app> developer's
+          <link href="mailto:glabels-devel@lists.sourceforge.net">mailing list</link>.</p>
+          <p>Product URLs may be of limited use, because they may not be permanent.</p>
+    </note>
+
+  </section>
+  <!-- ******************** -->
+  <!-- END Meta Node        -->
+  <!-- ******************** -->
+
+
+  <!-- ************************** -->
+  <!-- BEGIN Label-rectangle Node -->
+  <!-- ************************** -->
+  <section id="template-label-rectangle-node">
+    <title><code>Label-rectangle</code> Node</title>
+
+    <p>A <code>Label-rectangle</code> node describes the
+      dimensions of a single label or business card that is rectangular
+      in shape (may have rounded edges).</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Property</p></td>  <td><p>Description</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>id</code></p></td>
+        <td><p>Reserved for future use.  Should always be 0.</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>width</code></p></td>
+        <td><p>Width of label/card</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>height</code></p></td>
+        <td><p>Heigth of label/card</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>round</code></p></td>
+        <td><p>Radius of corners.  For items with square edges (business cards),
+               the radius should be 0.</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>x_waste</code></p></td>
+        <td><p>Amount of horizontal waste (over-print) to allow.  This is useful
+                      for minimizing alignment problems when using non-white
+                      backgrounds (e.g. images).</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>y_waste</code></p></td>
+        <td><p>Amount of vertical waste (over-print) to allow.  This is useful
+                      for minimizing alignment problems when using non-white
+                      backgrounds (e.g. images).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc><code>Label-rectangle</code> parameters</desc>
+      <media its:translate="no" type="image" src="figures/glabels-template-rect-label.png" mime="image/png" style="right">
+        <p><code>Label-rectangle</code> parameters</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ************************** -->
+  <!-- END Label-rectangle Node   -->
+  <!-- ************************** -->
+
+
+  <!-- ************************ -->
+  <!-- BEGIN Label-ellipse Node -->
+  <!-- ************************ -->
+  <section id="template-label-ellipse-node">
+    <title><code>Label-ellipse</code> Node</title>
+
+    <p>A <code>Label-ellipse</code> node describes the
+      dimensions of a single label or business card that is elliptic
+      in shape.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Property</p></td>  <td><p>Description</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>id</code></p></td>
+        <td><p>Reserved for future use.  Should always be 0.</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>width</code></p></td>
+        <td><p>Width of the ellipse</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>height</code></p></td>
+        <td><p>Heigth of the ellipse</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>waste</code></p></td>
+        <td><p>Amount of waste (over-print) to allow.  This is useful
+            for minimizing alignment problems when using non-white
+            backgrounds (e.g. images).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc><span>Label-ellipse</span> parameters</desc>
+      <media type="image" src="figures/glabels-template-ellipse-label.png" mime="image/png" style="right">
+        <p><code>Label-ellipse</code> parameters</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ************************ -->
+  <!-- END Label-ellipse Node   -->
+  <!-- ************************ -->
+
+
+  <!-- ********************** -->
+  <!-- BEGIN Label-round Node -->
+  <!-- ********************** -->
+  <section id="template-label-round-node">
+    <title><code>Label-round</code> Node</title>
+
+    <p>A <code>Label-round</code> node describes the dimensions
+      of a simple round label (not a CD).</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Property</p></td>  <td><p>Description</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>id</code></p></td>
+        <td><p>Reserved for future use.  Should always be 0.</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>radius</code></p></td>
+        <td><p>Radius (1/2 diameter) of label</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>waste</code></p></td>
+        <td><p>Amount of waste (over-print) to allow.  This is useful
+                for minimizing alignment problems when using non-white
+                backgrounds (e.g. images).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc><code>Label-ellipse</code> parameters</desc>
+      <media its:translate="no" type="image" src="figures/glabels-template-circle-label.png" mime="image/png" style="right">
+        <p><code>Label-ellipse</code> parameters</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ********************** -->
+  <!-- END Label-round Node   -->
+  <!-- ********************** -->
+
+
+  <!-- ******************* -->
+  <!-- BEGIN Label-cd Node -->
+  <!-- ******************* -->
+  <section id="template-label-cd-node">
+    <title><code>Label-cd</code> Node</title>
+
+    <p>A <code>Label-cd</code> node describes the dimensions
+      of a CD, DVD, or business card CD.</p>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Property</p></td>  <td><p>Description</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>id</code></p></td>
+        <td><p>Reserved for future use.  Should always be 0.</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>radius</code></p></td>
+        <td><p>Outer radius of label</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>hole</code></p></td>
+        <td><p>Radius of concentric hole</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>width</code></p></td>
+        <td><p>If present, the label is clipped to the given width.
+                      (Useful for "business card CDs").</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>height</code></p></td>
+        <td><p>If present, the label is clipped to the given height.
+                      (Useful for "business card CDs").</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>waste</code></p></td>
+        <td><p>Amount of waste (over-print) to allow.  This is useful
+                      for minimizing alignment problems when using non-white
+                      backgrounds (e.g. images).</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc><code>Label-cd</code> parameters</desc>
+      <media its:translate="no" type="image" src="figures/glabels-template-cd-label.png" mime="image/png" style="right">
+        <p>CD label parameters</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ******************* -->
+  <!-- END Label-cd Node   -->
+  <!-- ******************* -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Markup Node -->
+  <!-- ***************** -->
+  <section id="template-markup">
+    <title><code>Markup</code> Nodes</title>
+
+    <p>Templates may contain optional markup nodes.  These nodes are used to describe
+    a simple set of markup lines that are visible in the <app>glabels</app> drawing canvas, but
+    not visible when printed.  These lines can represent margins, fold lines, center lines,
+    special areas, or other helpful hints to the user of a template.</p>
+
+
+    <!-- ======================== -->
+    <!-- BEGIN Markup-margin Node -->
+    <!-- ======================== -->
+    <section id="template-markup-margin-node">
+      <title><code>Markup-margin</code> Node</title>
+
+      <p>A <code>Markup-margin</code> describes a margin along
+      all edges of a label.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Property</p></td>  <td><p>Description</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>size</code></p></td>
+          <td><p>Size of the margin.  I.e. the distance of the margin
+                        line from the edge of the card/label.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ======================== -->
+    <!-- END Markup-margin Node   -->
+    <!-- ======================== -->
+
+
+    <!-- ====================== -->
+    <!-- BEGIN Markup-line Node -->
+    <!-- ====================== -->
+    <section id="template-markup-line-node">
+      <title><code>Markup-line</code> Node</title>
+
+      <p>A <code>Markup-line</code> node describes a markup line.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Property</p></td>  <td><p>Description</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>x1</code></p></td>
+          <td><p>x coordinate of 1st endpoint of the line segment.</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>y1</code></p></td>
+          <td><p>y coordinate of 1st endpoint of the line segment.</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>x2</code></p></td>
+          <td><p>x coordinate of 2st endpoint of the line segment.</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>y2</code></p></td>
+          <td><p>y coordinate of 2st endpoint of the line segment.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ====================== -->
+    <!-- END Markup-line Node   -->
+    <!-- ====================== -->
+
+
+    <!-- ======================== -->
+    <!-- BEGIN Markup-circle Node -->
+    <!-- ======================== -->
+    <section id="template-markup-circle-node">
+      <title><code>Markup-circle</code> Node</title>
+
+      <p>A <code>Markup-circle</code> describes a markup circle.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Property</p></td>  <td><p>Description</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>x0</code></p></td>
+          <td><p>x coordinate of circle origin (center).</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>y0</code></p></td>
+          <td><p>y coordinate of circle origin (center).</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>radius</code></p></td>
+          <td><p>Radius of circle.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ======================== -->
+    <!-- END Markup-circle Node   -->
+    <!-- ======================== -->
+
+
+    <!-- ====================== -->
+    <!-- BEGIN Markup-rect Node -->
+    <!-- ====================== -->
+    <section id="template-markup-rect-node">
+      <title><code>Markup-rect</code> Node</title>
+
+      <p>A <code>Markup-rect</code> describes a markup rectangle.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Property</p></td>  <td><p>Description</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>x1</code></p></td>
+          <td><p>x coordinate of upper left corner of rectangle.</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>y1</code></p></td>
+          <td><p>y coordinate of upper left corner of rectangle.</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>w</code></p></td>
+          <td><p>Largura do retãngulo</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>h</code></p></td>
+          <td><p>Altura do retãngulo</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>r</code></p></td>
+          <td><p>Radius of rounded corners of rectangle.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ====================== -->
+    <!-- END Markup-rect Node   -->
+    <!-- ====================== -->
+
+
+    <!-- ========================= -->
+    <!-- BEGIN Markup-ellipse Node -->
+    <!-- ========================= -->
+    <section id="template-markup-ellipse-node">
+      <title><code>Markup-ellipse</code> Node</title>
+
+      <p>A <code>Markup-ellipse</code> describes a markup ellipse.</p>
+
+      <table frame="all" rules="rows">
+        <tr>
+          <td><p>Property</p></td>  <td><p>Description</p></td>
+        </tr>
+        <tr>
+          <td><p/></td>  <td><p/></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>x1</code></p></td>
+          <td><p>x coordinate of upper left corner of ellipse.</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>y1</code></p></td>
+          <td><p>y coordinate of upper left corner of ellipse.</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>w</code></p></td>
+          <td><p>Width of ellipse.</p></td>
+        </tr>
+        <tr>
+          <td its:translate="no"><p><code>h</code></p></td>
+          <td><p>Height of ellipse.</p></td>
+        </tr>
+      </table>
+    </section>
+    <!-- ========================= -->
+    <!-- END Markup-ellipse Node   -->
+    <!-- ========================= -->
+
+  </section>
+  <!-- ***************** -->
+  <!-- END Markup Node   -->
+  <!-- ***************** -->
+
+
+  <!-- ***************** -->
+  <!-- BEGIN Layout Node -->
+  <!-- ***************** -->
+  <section id="template-layout-node">
+    <title><code>Layout</code> Node</title>
+
+    <p>A label node may contain multiple <code>Layout</code>
+      children.  If labels are arranged in a simple grid pattern, only
+      one layout is needed.  However, if labels are arranged in multiple
+      grids, such as a running bond pattern, multiple
+      <code>Layout</code> tags can be used.</p>
+    <p>A common example for multiple layouts is a sheet with three
+       CD labels:</p>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>CD label sheet</desc>
+      <media its:translate="no" type="image" src="figures/layouts-cdlabel.png" mime="image/png" style="right">
+        <p>CD label sheet</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+    <p>The two labels on the left edge can be assigned to a grid, assuming we
+       can define the coordinates for the top left label and the distance to
+       the second label properly. The distance to the left edge is common to
+       these labels. The third one on the right edge has no common distance
+       values with the other ones, that's why we have to define a second layout,
+       with unique coordinates for the top left corner of that label.</p>
+
+	<note style="tip">
+	<p>You can define multiple layouts only if the labels on the sheet
+        have the same shape. If your sheet contains different shapes, you have
+        to define each shape in another template seperately. Future versions
+        of <app>gLabels</app> will probably be able to concatenate such sheets
+        with different shapes within a single template.</p>
+      </note>
+
+	<note style="tip">
+	<p>A single label can always be treated as a grid of one.</p>
+      </note>
+
+    <table frame="all" rules="rows">
+      <tr>
+        <td><p>Property</p></td>  <td><p>Description</p></td>
+      </tr>
+      <tr>
+        <td><p/></td>  <td><p/></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>nx</code></p></td>
+        <td><p>Number of labels/cards across in the grid (horizontal)</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>ny</code></p></td>
+        <td><p>Number of labels/cards across in the grid (vertical)</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>x0</code></p></td>
+        <td><p>Distance from left edge of sheet to the left edge of
+            the left column of cards/labels in the layout.</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>y0</code></p></td>
+        <td><p>Distance from the top edge of sheet to the top edge of
+             the top row of labels/cards in the layout.</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>dx</code></p></td>
+        <td><p>Horizontal pitch of grid.</p></td>
+      </tr>
+      <tr>
+        <td its:translate="no"><p><code>dy</code></p></td>
+        <td><p>Vertical pitch of grid.</p></td>
+      </tr>
+    </table>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc><code>Layout</code> parameters</desc>
+      <media its:translate="no" type="image" src="figures/glabels-template-layout.png" mime="image/png" style="right">
+        <p><span>Layout</span> Parameters</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  </section>
+  <!-- ***************** -->
+  <!-- END Layout Node   -->
+  <!-- ***************** -->
+
+
+</page>

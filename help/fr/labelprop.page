@@ -11,15 +11,39 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervans@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Géode</mal:name>
+      <mal:email>Geodebay@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
   </info>
 
     <title>Modification des propriétés d'une étiquette</title>
 
-      <p>Pour modifier le type de support ou l'orientation d'une étiquette, choisissez <guiseq><gui>Fichier</gui><gui>Propriétés</gui></guiseq> pour afficher la boîte de dialogue <gui>Propriétés de l'étiquette</gui>. Sélectionnez un type de support et l'orientation du document, puis cliquez sur <gui>Valider</gui>.</p>
+      <p>Pour modifier le type de support ou l'orientation d'une étiquette, choisissez <guiseq><gui>Fichier</gui> <gui>Propriétés</gui></guiseq> pour afficher la boîte de dialogue <gui>Propriétés de l'étiquette</gui>. Sélectionnez un type de support et l'orientation du document, puis cliquez sur <gui>Valider</gui>.</p>
 
 </page>

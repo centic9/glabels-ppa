@@ -11,18 +11,30 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Compartir Igual 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
   </info>
 
     <title>Abrir varios archivos desde la línea de comandos</title>
 
       <p>Puede ejecutar <app>gLabels</app> desde una línea de comandos y abrir uno o varios archivos. Para abrir varios archivos desde una línea de comandos, escriba el siguiente comando y pulse <key>Intro</key>:</p>
 
-      <p><cmd>glabels <var>archivo1.glabels archivo2.glabels archivo3.glabels</var></cmd></p>
+      <p><cmd>glabels <var>archivo1.glabels archivo2.glabels archivo3.glabels</var> </cmd></p>
 
       <p>Cuando se inicia la aplicación, se muestran los archivos que especifique en ventanas de <app>gLabels</app> separadas.</p>
 

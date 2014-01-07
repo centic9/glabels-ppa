@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Марио Блатерман (Mario Blättermann)</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -32,7 +32,13 @@ McGarret,Steve,O,"404 Piikoi Street",,Honolulu,HI,96813
 Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
       </code>
 
-      <p>Мы создали новый документ с помощью шаблона Avery 5512 "Address Labels". Далее, с помощью меню <guiseq><gui>Объекты</gui><gui>Заполнить поля данным</gui></guiseq> открываем диалоговое окно свойств. Используя этот диалог, выберите тип источника данных (в нашем случае — CSV) и имя файла.</p>
+      <p>In <app>glabels</app> we have created a new <app>glabels</app>
+        document using the Avery 5512 "Address Labels" template.  Next we use the
+        <guiseq> <gui>Objects</gui>
+        <gui>Merge Properties</gui> </guiseq> menu item to display
+        the <gui>merge properties</gui> dialog.  We use this dialog to
+        select the source type (in our case CSV with keys on line 1) and the merge
+	source (filename) as shown.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex2-1.png" mime="image/png" style="right">
@@ -54,7 +60,10 @@ Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
 
       <p>В этом примере у нас имеется один текстовый объект. Этот объект содержит все наши поля, разбитые по нескольким строкам. Заметьте, что поля ${ADDR1} и ${ADDR2} не имеют какого-либо текста. Когда <app>glabels</app> встречается поле, которое является единственным текстом в строке, строка не будет расширена, если поле пустое.</p>
 
-      <p>Теперь мы можем распечатать наши адресные этикетки, выбрав в меню <guiseq><gui>Файл</gui><gui>Печать</gui></guiseq>. Появится диалоговое окно печати.</p>
+      <p>Now we can print our address labels by selecting the
+        <guiseq> <gui>File</gui>
+        <gui>Print</gui> </guiseq> menu item.  This will display
+        print dialog as shown below.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex2-3.png" mime="image/png" style="right">

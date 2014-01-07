@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -20,7 +20,12 @@
 
     <title>Για να εκτυπώσετε τις ετικέτες και τις κάρτες σας</title>
 
-      <p>Για να εκτυπώσετε ετικέτες ή κάρτες, επιλέξτε <guiseq><gui>Αρχείο</gui><gui>Εκτύπωση</gui></guiseq> για να εμφανίσετε το διάλογο <gui>Εκτύπωση</gui>. Μόλις οι επιλογές εκτύπωσης έχουν επιλεγεί, κάντε κλικ στην επιλογή <gui>Εκτύπωση</gui> για να εκτυπώσετε τις ετικέτες ή τις κάρτες. Για να κάνετε προεπισκόπηση των αποτελεσμάτων, κάντε κλικ στην επιλογή <gui>Προεπισκόπηση εκτύπωσης</gui>.</p>
+      <p>To print labels or cards, choose
+        <guiseq><gui>File</gui><gui>Print</gui>
+	</guiseq> to display the <gui>Print</gui> dialog.
+        Once print options have been selected, click <gui>Print</gui>
+        to print the labels or cards.  To simply preview the results,
+        click <gui>Print Preview</gui> instead.</p>
 
       <p>Ο διάλογος <gui>Εκτύπωση</gui> σας επιτρέπει να ορίσετε τις ακόλουθες επιλογές εκτύπωσης:</p>
 
@@ -68,15 +73,15 @@
 	      <p>Οι ακόλουθες επιλογές μπορούν επίσης να επιλεγούν.</p>
 	      <list>
 		<item>
-		  <p><gui>εκτύπωση περιγραμμάτων</gui></p>
+		  <p><gui>print outlines</gui></p>
 		  <p>Εκτύπωση περιγραμμάτων των ετικετών. Αυτή η επιλογή είναι χρήσιμη για να ελέγξετε την ευθυγράμμιση του εκτυπωτή.</p>
 		</item>
 		<item>
-		  <p><gui>εκτύπωση με αντιστροφή</gui></p>
+		  <p><gui>print in reverse</gui></p>
 		  <p>Εκτυπώνει τις ετικέτες ως εικόνες καθρέφτη. Αυτή η επιλογή είναι χρήσιμη για την εκτύπωση σε διαφανείς ετικέτες που θα προβάλονται από την ανάποδη πλευρά (π.χ. σε ένα παράθυρο του αυτοκινήτου).</p>
 		</item>
 		<item>
-		  <p><gui>εκτύπωση σημείων κοπής</gui></p>
+		  <p><gui>print crop marks</gui></p>
 		  <p>Εκτυπώνει σημάδια κοπής κατά μήκος της άκρης του φύλλου. Αυτή η επιλογή είναι χρήσιμη για την εκτύπωση σε λευκό υλικό, ώστε να κοπεί μετά από την εκτύπωση. Αυτή η επιλογή δεν λειτουργεί καλά με όλα τα πρότυπα.</p>
 		</item>
 	      </list>

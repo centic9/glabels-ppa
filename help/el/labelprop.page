@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -20,6 +20,11 @@
 
     <title>Για να αλλάξετε τις ιδιότητες ετικέτας</title>
 
-      <p>Για να αλλάξετε τον τύπο μέσων και/ή τον προσανατολισμό της ετικέτας, επιλέξτε <guiseq><gui>Αρχείο</gui><gui>Ιδιότητες</gui></guiseq> για να εμφανίσετε το παράθυρο <gui>ιδιότητες ετικέτας</gui> . Επιλέξτε τον νέο τύπο μέσων και τον προσανατολισμό για το έγγραφο, έπειτα κάντε κλικ στο <gui>ΟΚ</gui>.</p>
+      <p>To change the media type and/or orientation of a label, choose
+        <guiseq><gui>File</gui>
+        <gui>Properties</gui></guiseq> to display the
+        <gui>Label properties</gui> dialog.  Select the
+        new media type and orientation for the document, then click
+        <gui>OK</gui>.</p>
 
 </page>

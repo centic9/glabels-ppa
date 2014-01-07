@@ -11,11 +11,35 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervans@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Géode</mal:name>
+      <mal:email>Geodebay@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
   </info>
 
     <title>Exemple 1 : création de badges</title>
@@ -30,7 +54,7 @@ Nom,Département,Matricule
 "Montgomery Scott",Ingénierie,SE-197-54T
       </code>
 
-      <p>Dans <app>gLabels</app>, nous créons un nouveau document sur le modèle Avery 5395 « Étiquettes pour badges ». Puis, nous ouvrons la boîte de dialogue <gui>Propriétés de fusion</gui> en cliquant sur l'élément de menu <guiseq><gui>Objets</gui><gui>Propriétés de fusion</gui></guiseq> pour afficher les options de fusion. Ceci nous permet de choisir le type de source (dans notre cas CVS avec en-têtes en première ligne) et son emplacement (nom de fichier) comme illustré sur la figure ci-après.</p>
+      <p>Dans <app>gLabels</app>, nous créons un nouveau document sur le modèle Avery 5395 « Étiquettes pour badges ». Puis, nous ouvrons la boîte de dialogue <gui>Propriétés de fusion</gui> en cliquant sur l'élément de menu <guiseq><gui>Objets</gui> <gui>Propriétés de fusion</gui></guiseq> pour afficher les options de fusion. Ceci nous permet de choisir le type de source (dans notre cas CVS avec en-têtes en première ligne) et son emplacement (nom de fichier) comme illustré sur la figure ci-après.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex1-1.png" mime="image/png" style="right">
@@ -50,7 +74,7 @@ Nom,Département,Matricule
 
       <p>Dans cet exemple, nous plaçons trois objets texte et un objet code-barre. Le premier objet texte contient une simple phrase (« Bonjour, je m'appelle »). Le second objet texte contient un seul champ de fusion (« ${Nom} ») correspondant au premier champ de l'enregistrement (première colonne d'une ligne) contenant ici le nom complet du membre d'équipage. Le troisième contient le texte (« Département : ») suivi du champ de fusion (« ${Département} ») isolé correspondant au département auquel appartient le membre d'équipage. L'objet code-barre est configuré pour recevoir le champ (ou clé) « Matricule » contenant le numéro de matricule du membre d'équipage.</p>
 
-      <p>Maintenant nous pouvons lancer l'impression des badges en cliquant l'élément de menu <guiseq><gui>Fichier</gui><gui>Imprimer</gui></guiseq>. La boîte de dialogue « Imprimer » telle qu'affichée ci-dessous apparaît.</p>
+      <p>Maintenant nous pouvons lancer l'impression des badges en cliquant l'élément de menu <guiseq><gui>Fichier</gui> <gui>Imprimer</gui></guiseq>. La boîte de dialogue « Imprimer » telle qu'affichée ci-dessous apparaît.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex1-3.png" mime="image/png" style="right">

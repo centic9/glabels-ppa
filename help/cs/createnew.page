@@ -11,16 +11,22 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2010 – 2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Vytváření nových objektů</title>
 
-      <p>Objekty se vytvářejí příslušným výběrem v podnabídce <guiseq><gui>Objekty</gui><gui>Vytvořit</gui></guiseq> nebo na <gui>Liště kreslení</gui>. Zobrazovací oblast se přepne do režimu vytváření objektu, což je signalizováno patřičným ukazatelem. Do výchozího režimu výběru objektů se můžete vrátit, aniž byste nějaký objekt vytvořili, volbou <guiseq><gui>Objekty</gui><gui>Režim výběru</gui></guiseq>. Ukazatel pro zobrazovací oblast se změní zpět na výchozí šipku.</p>
+      <p>Objekty se vytvářejí příslušným výběrem v podnabídce <guiseq><gui>Objekty</gui> <gui>Vytvořit</gui></guiseq> nebo na <gui>Liště kreslení</gui>. Zobrazovací oblast se přepne do režimu vytváření objektu, což je signalizováno patřičným ukazatelem. Do výchozího režimu výběru objektů se můžete vrátit, aniž byste nějaký objekt vytvořili, volbou <guiseq><gui>Objekty</gui> <gui>Režim výběru</gui></guiseq>. Ukazatel pro zobrazovací oblast se změní zpět na výchozí šipku.</p>
 
       <p>Zde je popis režimu vytváření objektu pro jednotlivé typy objektů:</p>
 

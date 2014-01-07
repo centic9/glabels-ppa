@@ -41,9 +41,9 @@
 #include &lt;libglbarcode/lgl-barcode-render-to-cairo.h&gt;
 
 <span class="returnvalue">void</span>                <a class="link" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html#lgl-barcode-render-to-cairo" title="lgl_barcode_render_to_cairo ()">lgl_barcode_render_to_cairo</a>         (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
-                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> *cr</code></em>);
+                                                         <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html#lgl-barcode-render-to-cairo-path" title="lgl_barcode_render_to_cairo_path ()">lgl_barcode_render_to_cairo_path</a>    (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
-                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> *cr</code></em>);
+                                                         <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>);
 </pre>
 </div>
 <div class="refsect1">
@@ -57,7 +57,7 @@ This section describes the cairo barcode renderer.
 <div class="refsect2">
 <a name="lgl-barcode-render-to-cairo"></a><h3>lgl_barcode_render_to_cairo ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                lgl_barcode_render_to_cairo         (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
-                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> *cr</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>);</pre>
 <p>
 Render barcode to cairo context.  Context should be prepared with desired
 translation and appropriate scale.  Context should be translated such that
@@ -75,7 +75,7 @@ go down the surface.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>cr</code></em> :</span></p></td>
-<td>A <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> context</td>
+<td>A <span class="type">cairo_t</span> context</td>
 </tr>
 </tbody>
 </table></div>
@@ -84,7 +84,7 @@ go down the surface.
 <div class="refsect2">
 <a name="lgl-barcode-render-to-cairo-path"></a><h3>lgl_barcode_render_to_cairo_path ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                lgl_barcode_render_to_cairo_path    (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
-                                                         <em class="parameter"><code><a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> *cr</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>);</pre>
 <p>
 Render barcode to cairo context, but only create a path to be filled or
 tested against.  Context should be prepared with desired
@@ -103,7 +103,7 @@ go down the surface.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>cr</code></em> :</span></p></td>
-<td>A <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> context</td>
+<td>A <span class="type">cairo_t</span> context</td>
 </tr>
 </tbody>
 </table></div>

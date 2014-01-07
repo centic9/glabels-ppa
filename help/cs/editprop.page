@@ -11,11 +11,17 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2010 – 2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Změna vlastností objektů</title>
@@ -131,17 +137,17 @@
       <section id="other-stacking-order">
 	<title>Změna pořadí objektů</title>
 
-	<p>Pořadí objektů představuje jejich relativní polohu v ose z. Prakticky to určuje při překrývání objektů, který z nich bude nahoře a který vespod. Standardně se nové objekty vytvářejí nad staršími objekty. Když chcete toto pořadí změnit, jeden nebo více objektů vyberte a zvolte <guiseq><gui>Objekty</gui><gui>Pořadí</gui><gui>Přenést dopředu</gui></guiseq> pro vynesení výběru na nejvyšší pozici nebo <guiseq><gui>Objekty</gui><gui>Pořadí</gui><gui>Odsunout dozadu</gui></guiseq> pro zatlačení výběru úplně dospod. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</p>
+	<p>Pořadí objektů představuje jejich relativní polohu v ose z. Prakticky to určuje při překrývání objektů, který z nich bude nahoře a který vespod. Standardně se nové objekty vytvářejí nad staršími objekty. Když chcete toto pořadí změnit, jeden nebo více objektů vyberte a zvolte <guiseq><gui>Objekty</gui> <gui>Pořadí</gui> <gui>Přenést dopředu</gui></guiseq> pro vynesení výběru na nejvyšší pozici nebo <guiseq><gui>Objekty</gui> <gui>Pořadí</gui> <gui>Odsunout dozadu</gui></guiseq> pro zatlačení výběru úplně dospod. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</p>
 
       </section>
 
       <section id="other-rotating-flipping">
 	<title>Otáčení a překlápění objektů</title>
 
-	<p>Objekty lze otáčet po 90stupňových krocích v obou směrech nebo je překlápět svisle či vodorovně a to volbou příslušné položky v podnabídce <guiseq><gui>Objekty</gui><gui>Otočit/Překlopit</gui></guiseq>. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</p>
+	<p>Objekty lze otáčet po 90stupňových krocích v obou směrech nebo je překlápět svisle či vodorovně a to volbou příslušné položky v podnabídce <guiseq><gui>Objekty</gui> <gui>Otočit/Překlopit</gui></guiseq>. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</p>
 
          <note>
-         <p>Tato funkce je užitečná, když navrhujete vložky do krabičky na CD. Pro text na hřbetu potřebujete svisle uspořádaný text. Po té co vytvoříte rámec se základním textem, zvolte <guiseq><gui>Objekty</gui><gui>Otočit/překlopit</gui></guiseq>, abyste textový rámec natočili podle svých požadavků.</p>
+         <p>Tato funkce je užitečná, když navrhujete vložky do krabičky na CD. Pro text na hřbetu potřebujete svisle uspořádaný text. Po té co vytvoříte rámec se základním textem, zvolte <guiseq><gui>Objekty</gui> <gui>Otočit/překlopit</gui></guiseq>, abyste textový rámec natočili podle svých požadavků.</p>
          </note>
 
       </section>
@@ -149,7 +155,7 @@
       <section id="other-alignment">
 	<title>Zarovnávání objektů</title>
 
-	<p>Objekty lze zarovnávat vodorovně nebo svisle, relativně vůči sobě nebo relativně ke středové čáře etikety, volbou příslušné položky z podnabídky <guiseq><gui>Objekty</gui><gui>Zarovnat vodorovně</gui></guiseq> nebo <guiseq><gui>Objekty</gui><gui>Zarovnat svisle</gui></guiseq>. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</p>
+	<p>Objekty lze zarovnávat vodorovně nebo svisle, relativně vůči sobě nebo relativně ke středové čáře etikety, volbou příslušné položky z podnabídky <guiseq><gui>Objekty</gui> <gui>Zarovnat vodorovně</gui></guiseq> nebo <guiseq><gui>Objekty</gui> <gui>Zarovnat svisle</gui></guiseq>. Tyto položky nabídky jsou přístupné i po kliknutí pravým tlačítkem v zobrazovací oblasti za předpokladu, že jsou vybrané nějaké objekty.</p>
 
       </section>
 

@@ -16,6 +16,30 @@
     <license>
       <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervans@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Géode</mal:name>
+      <mal:email>Geodebay@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
   </info>
 
     <title>À propos de <app>gLabels</app></title>
@@ -23,5 +47,5 @@
     <p><app>gLabels</app> a été écrit par <link href="mailto:evins@snaught.com">Jim Evins</link>. Pour obtenir de plus amples informations à propos de <app>gLabels</app>, visitez le <link href="http://glabels.org" type="http">site Web de <app>gLabels</app></link>.</p>
     <p>Pour signaler une anomalie ou émettre une suggestion à propos de cette application ou ce manuel, consultez les indications de la <link href="http://glabels.org/contact/" type="http">page de contact de <app>gLabels</app></link>.</p>
 
-    <p>Ce logiciel est distribué selon les termes de la Licence Publique Générale GNU telle que publiée par la Free Software Foundation ; soit la version 3 de cette licence, soit (à votre convenance) une quelconque version ultérieure. Une copie de cette licence est disponible en suivant <link href="ghelp:gpl" type="help">ce lien</link> ou dans le fichier COPYING inclus dans le code source de ce logiciel.</p>
+    <p>Ce logiciel est distribué selon les termes de la Licence Publique Générale GNU telle que publiée par la Free Software Foundation ; soit la version 3 de cette licence, soit (à votre convenance) une quelconque version ultérieure. Une copie de cette licence est disponible en suivant <link href="help:gpl" type="help">ce lien</link> ou dans le fichier COPYING inclus dans le code source de ce logiciel.</p>
 </page>

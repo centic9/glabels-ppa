@@ -11,11 +11,17 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2008-2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Drucken von Etiketten oder Karten</title>
@@ -76,7 +82,7 @@
 		  <p>Druckt die Etiketten spiegelbildlich. Diese Option ist nützlich für das Drucken durchsichtiger Aufkleber, die von der Rückseite aus betrachtet werden (z.B. hinter Autoscheiben).</p>
 		</item>
 		<item>
-		  <p><gui>Schnitt</gui></p>
+		  <p><gui>Schnittmarken drucken</gui></p>
 		  <p>Druckt Schnittmarken entlang der Papierränder. Diese Option ist nützlich zum Drucken auf Papier, das erst nach dem Druck beschnitten werden soll. Diese Option funktioniert eventuell nicht mit allen Vorlagen.</p>
 		</item>
 	      </list>

@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -20,7 +20,15 @@
 
     <title>Untuk memilih objek</title>
 
-      <p>Persyaratan bagi pelaksanaan operasi pada objek adalah pemilihan individu objek atau kelompok objek. Area tampilan mesti berada dalam mode pemilihan objek untuk membuat pilihan baru, sebagaimana ditunjukkan oleh kursor panah. Mode pemilihan objek dipilih oleh butir menu <guiseq><gui>Objek</gui><gui>Pilih Mode</gui></guiseq>, atau perintah yang bersesuaian pada <gui>bilah Perkakas Menggambar</gui>.</p>
+      <p>A prerequisite for performing operations on objects is the
+        selection of individual objects or groups of objects.  The
+        display area must be in the object selection mode to create new
+        selections, as indicated by an arrow cursor.  The object
+        selection mode is selected by the
+        <guiseq><gui>Objects</gui>
+        <gui>Select Mode</gui></guiseq> menu item,
+        or the corresponding command on the <gui>Drawing
+        Toolbar</gui>.</p>
 
       <section>
 	  <title>Memilih objek tunggal</title>
@@ -29,7 +37,16 @@
 
 	<section>
 	  <title>Mengagregasi pilihan objek</title>
-	    <p>Beberapa objek dapat dipilih dengan cara, pertama memilih objek pertama seperti di atas lalu dengan menahan <key>Ctrl</key> ketika memilih objek-objek tambahan. Objek individu dapat ditambahkan ke pilihan yang telah ada kapanpun dengan menahan <key>Ctrl</key> ketika memilih objek-objek yang diinginkan. Semua objek juga dapat dipilih dengan memakai butir menu <guiseq><gui>Sunting</gui><gui>Pilih Semua</gui></guiseq>. Semua objek dalam suatu pilihan objek agregat akan disorot.</p>
+	    <p>Multiple objects can be selected by first selecting the first
+              object as above and then by holding the <key>Ctrl</key>
+              key while selecting additional objects.
+              Individual objects can be added to an existing selection
+              at any time by holding the <key>Ctrl</key> key while
+              selecting the desired objects.  All objects can also be
+              selected by using the <guiseq><gui>Edit</gui>
+              <gui>Select All</gui></guiseq>
+              menu item.  All objects in an aggregate object selection will be
+              highlighted.</p>
 	</section>
 
 	<section>

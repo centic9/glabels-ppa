@@ -11,16 +11,40 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervans@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Géode</mal:name>
+      <mal:email>Geodebay@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
   </info>
 
     <title>Sélection d'objets</title>
 
-      <p>Un prérequis pour réaliser des opérations sur des objets est la sélection d'un objet isolé ou d'un groupe d'objets. Pour effectuer de nouvelles sélections, la zone d'affichage doit être dans le mode sélection ; ce mode est indiqué par un pointeur en forme de flèche. Vous basculez en mode sélection d'objet en cliquant sur l'élément de menu <guiseq><gui>Objets</gui><gui>Mode sélection</gui></guiseq> ou sur le bouton correspondant de la <gui>Barre d'outils dessin</gui>.</p>
+      <p>Un prérequis pour réaliser des opérations sur des objets est la sélection d'un objet isolé ou d'un groupe d'objets. Pour effectuer de nouvelles sélections, la zone d'affichage doit être dans le mode sélection ; ce mode est indiqué par un pointeur en forme de flèche. Vous basculez en mode sélection d'objet en cliquant sur l'élément de menu <guiseq><gui>Objets</gui> <gui>Mode sélection</gui></guiseq> ou sur le bouton correspondant de la <gui>Barre d'outils dessin</gui>.</p>
 
       <section>
 	  <title>Sélection d'un objet isolé</title>
@@ -29,7 +53,7 @@
 
 	<section>
 	  <title>Sélection d'un groupe d'objets</title>
-	    <p>Pour sélectionner plusieurs objets, commencez par cliquer sur l'un d'entre eux ; puis, tout en maintenant la touche <key>Ctrl</key> enfoncée, cliquez sur les autres. À tout moment, d'autres objets peuvent être ajoutés à une sélection existante suivant le même processus. Il est aussi possible de sélectionner tous les objets en même temps en cliquant sur l'élément de menu <guiseq><gui>Édition</gui><gui>Tout sélectionner</gui></guiseq>. Tous les objets d'une sélection groupée apparaissent en surbrillance.</p>
+	    <p>Pour sélectionner plusieurs objets, commencez par cliquer sur l'un d'entre eux ; puis, tout en maintenant la touche <key>Ctrl</key> enfoncée, cliquez sur les autres. À tout moment, d'autres objets peuvent être ajoutés à une sélection existante suivant le même processus. Il est aussi possible de sélectionner tous les objets en même temps en cliquant sur l'élément de menu <guiseq><gui>Édition</gui> <gui>Tout sélectionner</gui></guiseq>. Tous les objets d'une sélection groupée apparaissent en surbrillance.</p>
 	</section>
 
 	<section>
@@ -42,7 +66,7 @@
 	<section>
 	  <title>Désélection d'objets</title>
 	  
-	    <p>Tout objet isolé peut être retiré d'une sélection existante en cliquant dessus tout en maintenant la touche <key>Ctrl</key> enfoncée. La totalité d'une sélection peut être libérée en sélectionnant l'élément de menu <guiseq><gui>Édition</gui><gui>Désélectionner tout</gui></guiseq> ou plus simplement en cliquant dans une partie libre de la zone d'affichage. Dès qu'un objet n'est plus sélectionné, il n'apparaît plus en surbrillance.</p>
+	    <p>Tout objet isolé peut être retiré d'une sélection existante en cliquant dessus tout en maintenant la touche <key>Ctrl</key> enfoncée. La totalité d'une sélection peut être libérée en sélectionnant l'élément de menu <guiseq><gui>Édition</gui> <gui>Désélectionner tout</gui></guiseq> ou plus simplement en cliquant dans une partie libre de la zone d'affichage. Dès qu'un objet n'est plus sélectionné, il n'apparaît plus en surbrillance.</p>
 	  
 	</section>
 

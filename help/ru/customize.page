@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Марио Блатерман (Mario Blättermann)</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -21,7 +21,13 @@
   <!-- ============= Customization ============================= -->
   <!-- Use this section to describe how to customize the application. -->
     <title>Параметры</title> 
-    <p>Чтобы настроить <app>gLabels</app>, выберите <guiseq><gui>Настройки</gui><gui>Параметры</gui></guiseq>. Появится диалоговое окно <gui>Параметры</gui> со следующими вкладками:</p>
+    <p>To configure <app>gLabels</app>, choose 
+      <guiseq> 
+	<gui>Settings</gui> 
+	<gui>Preferences</gui> 
+      </guiseq>. The 
+      <gui>Preferences</gui> dialog contains the following tabbed
+      sections:</p>
 
   <section id="prefs-locale" style="2column">
     <title>Региональные параметры</title>
@@ -30,15 +36,15 @@
 	<p>Используйте группу переключателей, чтобы указать предпочтительные единицы измерения. Выберите один из следующих параметров:</p>
 	   <list>
 		<item>
-		<p><gui>Точки</gui></p>
+		<p><gui>Points</gui></p>
 		<p>Использовать точки (1 точка = 0.352778 мм = 1/72 дюйма).</p>
 		</item>
 		<item>
-		<p><gui>Дюймы</gui></p>
+		<p><gui>Inches</gui></p>
 		<p>Использовать дюймы.</p>
 		</item>
 		<item>
-		<p><gui>Милиметры</gui></p>
+		<p><gui>Millimeters</gui></p>
 		<p>Использовать милиметры.</p>
 		</item>
 	   </list>
@@ -70,15 +76,15 @@
 	<p>Используйте эти элементы управления для установки свойств по умолчанию. Список доступных свойств: </p>
 	   <list>
 		<item>
-		<p><gui>Шрифт</gui></p>
+		<p><gui>Font</gui></p>
 		<p>Эти элементы управления использовать для выбора семейства шрифта и размера шрифта, а также стиля шрифта (полужирный, наклонный).</p>
 		</item>
 		<item>
-		<p><gui>Цвет</gui></p>
+		<p><gui>Color</gui></p>
 		<p>Этот параметр выбирает цвет текста по умолчанию.</p>
 		</item>
 		<item>
-		<p><gui>Выравнивание</gui></p>
+		<p><gui>Alignment</gui></p>
 		<p>Эти параметры используются для выбора выравнивания текста по умолчанию (слева, по центру или справа).</p>
 		</item>
 	   </list>
@@ -89,11 +95,11 @@
 	<p>Эти элементы управления используются для установки свойств линий и контуров новых объектов. Список свойств:</p>
 	   <list>
 		<item>
-		<p><gui>Ширина</gui></p>
+		<p><gui>Width</gui></p>
 		<p>Этот параметры выбирает ширину линии по умолчанию.</p>
 		</item>
 		<item>
-		<p><gui>Цвет</gui></p>
+		<p><gui>Color</gui></p>
 		<p>Этот параметр выбирает цвет линии по умолчанию.</p>
 		</item>
 	   </list>
@@ -104,7 +110,7 @@
 	<p>Эти элементы управления используются для установки свойств заливки новых объектов. Свойство:</p>
 	   <list>
 		<item>
-		<p><gui>Цвет</gui></p>
+		<p><gui>Color</gui></p>
 		<p>Этот параметр выбирает цвет заливки по умолчанию.</p>
 		</item>
 	   </list>

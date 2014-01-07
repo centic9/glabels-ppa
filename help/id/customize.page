@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -37,15 +37,15 @@
               Select one of the following options:</p>
 	   <list>
 		<item>
-		<p><gui>Point</gui></p>
+		<p><gui>Points</gui></p>
 		<p>Pakai point (1 point = 1/72 in = 0.352778 mm).</p>
 		</item>
 		<item>
-		<p><gui>Inci</gui></p>
+		<p><gui>Inches</gui></p>
 		<p>Pakai Inci.</p>
 		</item>
 		<item>
-		<p><gui>Milimeter</gui></p>
+		<p><gui>Millimeters</gui></p>
 		<p>Pakai Milimeter.</p>
 		</item>
 	   </list>
@@ -80,16 +80,16 @@
               These properties are:</p>
 	   <list>
 		<item>
-		<p><gui>Fonta</gui></p>
+		<p><gui>Font</gui></p>
 		<p>These controls are used to select font family and font size, and
                   whether the font should bold or in italics.</p>
 		</item>
 		<item>
-		<p><gui>Warna</gui></p>
+		<p><gui>Color</gui></p>
 		<p>This control selects the default text color.</p>
 		</item>
 		<item>
-		<p><gui>Perataan</gui></p>
+		<p><gui>Alignment</gui></p>
 		<p>These controls are used to select the default text alignment (left, center or right).</p>
 		</item>
 	   </list>
@@ -101,11 +101,11 @@
               new objects.  These properties are:</p>
 	   <list>
 		<item>
-		<p><gui>Lebar</gui></p>
+		<p><gui>Width</gui></p>
 		<p>This control selects the default line width.</p>
 		</item>
 		<item>
-		<p><gui>Warna</gui></p>
+		<p><gui>Color</gui></p>
 		<p>This control selects the default line color.</p>
 		</item>
 	   </list>
@@ -117,7 +117,7 @@
               new objects.  This property is:</p>
 	   <list>
 		<item>
-		<p><gui>Warna</gui></p>
+		<p><gui>Color</gui></p>
 		<p>This control selects the default fill color.</p>
 		</item>
 	   </list>

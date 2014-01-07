@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -20,7 +20,15 @@
 
     <title>Για να επιλέξετε αντικείμενα</title>
 
-      <p>Απαραίτητη προϋπόθεση της εκτέλεσης εργασιών για αντικείμενα είναι η επιλογή των επιμέρους αντικειμένων ή ομάδων αντικειμένων. Η περιοχή προβολής πρέπει να είναι σε κατάσταση επιλογής αντικειμένου για να δημιουργήσετε νέες επιλογές, όπως υποδεικνύεται από ένα βέλος δρομέα. Η κατάσταση επιλογής αντικειμένου μπορεί να επιλεγεί από το στοιχείο μενού <guiseq><gui>Αντικείμενα</gui><gui>Επιλογή Κατάστασης</gui></guiseq>, ή την αντίστοιχη εντολή στο<gui>Εργαλείο Σχεδίασης</gui>.</p>
+      <p>A prerequisite for performing operations on objects is the
+        selection of individual objects or groups of objects.  The
+        display area must be in the object selection mode to create new
+        selections, as indicated by an arrow cursor.  The object
+        selection mode is selected by the
+        <guiseq><gui>Objects</gui>
+        <gui>Select Mode</gui></guiseq> menu item,
+        or the corresponding command on the <gui>Drawing
+        Toolbar</gui>.</p>
 
       <section>
 	  <title>Επιλέγοντας ένα μεμονωμένο αντικείμενο</title>
@@ -29,7 +37,16 @@
 
 	<section>
 	  <title>Συγκεντρωτικές επιλογές αντικειμένου</title>
-	    <p>Πολλαπλά αντικείμενα μπορούν να επιλεγούν πρώτα επιλέγοντας το πρώτο αντικείμενο όπως παραπάνω και στη συνέχεια κρατώντας πατημένο το πλήκτρο <key>Ctrl</key> για την επιλογή επιπλέον αντικειμένων. Μεμονωμένα αντικείμενα μπορούν να προστεθούν σε μια υπάρχουσα επιλογή σε οποιαδήποτε στιγμή, κρατώντας πατημένο το <key>Ctrl</key> κατά την επιλογή των επιθυμητών αντικειμένων. Όλα τα αντικείμενα μπορούν επίσης επιλεγούν με τη χρήση του στοιχείου μενού <guiseq><gui>Επεξεργασία</gui> <gui>Επιλογή Όλων</gui></guiseq>. Όλα τα αντικείμενα στο σύνολο τους θα επισημανθούν.</p>
+	    <p>Multiple objects can be selected by first selecting the first
+              object as above and then by holding the <key>Ctrl</key>
+              key while selecting additional objects.
+              Individual objects can be added to an existing selection
+              at any time by holding the <key>Ctrl</key> key while
+              selecting the desired objects.  All objects can also be
+              selected by using the <guiseq><gui>Edit</gui>
+              <gui>Select All</gui></guiseq>
+              menu item.  All objects in an aggregate object selection will be
+              highlighted.</p>
 	</section>
 
 	<section>
@@ -42,7 +59,14 @@
 	<section>
 	  <title>Αποεπιλογή αντικειμένων</title>
 	  
-	    <p>Μεμονωμένα αντικείμενα μπορούν να αφαιρεθούν από μια υπάρχουσα επιλογή κρατώντας πατημένο το πλήκτρο <key>Ctrl</key> καί παράλληλα κάνοντας κλικ σε ένα ήδη επιλεγμένο αντικείμενο. Μια πολλαπλή επιλογή μπορεί να απορριφθεί με τη χρήση του στοιχείου μενού <guiseq><gui>Επεξεργασία</gui><gui>Αποεπιλογή Όλων</gui></guiseq> ή κάνοντας απλώς κλικ σε οποιοδήποτε κενό χώρο στην περιοχή. Όταν ένα αντικείμενο αποεπιλέγεται ο τονισμός του αφαιρείται.</p>
+	    <p>Individual objects can be removed from an existing
+              selection by holding the <key>Ctrl</key> key while
+              clicking on a previously selected object.  An entire selection
+              can be dismissed by using the <guiseq>
+	      <gui>Edit</gui> <gui>Un-select All</gui>
+              </guiseq> menu item
+              or by simply clicking any empty space in the display area.
+              Once an object is unselected its highlight is removed.</p>
 	  
 	</section>
 

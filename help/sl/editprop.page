@@ -4,21 +4,23 @@
   <info>
     <link type="guide" xref="index#usage"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>Spremeni lastnosti predmetov.</desc>
+    <desc>
+      Change the properties of objects.
+    </desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
-      <p>Creative Commons Share Alike 3.0</p>
+      <p>Creative Commons - deljenje pod enakimi pogoji 3.0</p>
     </license>    
   </info>
 
-    <title>Kako uredimo lastnosti predmeta</title>
+    <title>To edit object properties</title>
 
     <section id="glabels-object-properties">
 
@@ -130,7 +132,7 @@
       <section id="object-editor-shadow">
 	<title>Shadow Tabbed Section (All except barcode objects)</title>
 
-	<p>Ta odsek vsebuje kontrolnike za dodajanje senc predmetov.</p>
+	<p>This section contains controls to add a shadow to an object.</p>
 
       </section>
 
@@ -144,7 +146,7 @@
       <p>Objects can also be manipulated in the following ways.</p>
 
       <section id="other-moving-resizing">
-	<title>Premikanje predmetov in spreminjanje njihove velikosti</title>
+	<title>Moving and Resizing Objects</title>
 
 	<p>Objects can be moved by simply clicking on a selected
           object and dragging the object to its new location.  If the object
@@ -180,7 +182,7 @@
       </section>
 
       <section id="other-rotating-flipping">
-	<title>Sukanje in zrcaljenje predmetov</title>
+	<title>Rotating and Flipping Objects</title>
 
 	<p>Objects can be rotated 90 degrees in either direction, or flipped
           horizontally or vertically, by choosing the appropriate menuitem
@@ -201,7 +203,7 @@
       </section>
 
       <section id="other-alignment">
-	<title>Poravnava predmetov</title>
+	<title>Aligning Objects</title>
 
 	<p>Objects can be aligned horizontally or vertically, relative to
           one another, or relative to the center line of the label, by
@@ -216,7 +218,7 @@
       </section>
 
       <section id="other-property-bar">
-	<title>Uporaba vrstice Lastnosti</title>
+	<title>Using the Property Bar</title>
 
 	<p>The property bar can be used to change some common properties
           of objects en-masse.  These properties include font family, font

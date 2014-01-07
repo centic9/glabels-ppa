@@ -11,11 +11,17 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2010 – 2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Příklad 1: Jmenovky</title>
@@ -30,7 +36,7 @@ jmeno,zarazeni,cislo
 "Viktor Hujer",technik,SE-197-54T
       </code>
 
-      <p>V aplikaci <app>gLabels</app> máme vytvořený dokument vycházející ze šablony Avery 5395 „Etikety na jmenovky“. Nyní použijeme položku nabídky <guiseq><gui>Objekty</gui><gui>Vlastnosti slučování</gui></guiseq> a zobrazí se nám dialogové okno <gui>vlastnosti slučování</gui>. Toto dialogové okno použijeme k výběru typu zdroje (v našem případě CSV s klíči na 1. řádku) a vlastního zdroje (souboru), jak můžete vidět níže.</p>
+      <p>V aplikaci <app>gLabels</app> máme vytvořený dokument vycházející ze šablony Avery 5395 „Etikety na jmenovky“. Nyní použijeme položku nabídky <guiseq><gui>Objekty</gui> <gui>Vlastnosti slučování</gui></guiseq> a zobrazí se nám dialogové okno <gui>vlastnosti slučování</gui>. Toto dialogové okno použijeme k výběru typu zdroje (v našem případě CSV s klíči na 1. řádku) a vlastního zdroje (souboru), jak můžete vidět níže.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex1-1.png" mime="image/png" style="right">
@@ -50,7 +56,7 @@ jmeno,zarazeni,cislo
 
       <p>V tomto příkladu máme přidané tři textové objekty a čárový kód. První textový objekt obsahuje pouze prostý text („Ahoj, jmenuji se“). Druhý textový objekt obsahuje jedno slučované pole („${jmeno}“), které odpovídá prvnímu poli v záznamu (první sloupec v řádku) a které obsahuje celé jméno nového člena osádky. Třetí textové pole obsahuje jak text („Zařazení: “), tak za ním následuje jedno slučované pole („${zarazeni}“), které odpovídá druhému poli se zařazením člena posádky. Objekt s čárovým kódem je nastavený na použití pole (klíče) „cislo“, které obsahuje identifikační číslo člena posádky.</p>
 
-      <p>Nyní můžeme své jmenovky vytisknout pomocí položky nabídky <guiseq><gui>Soubor</gui><gui>Tisk</gui></guiseq>. Zobrazí se dialogové okno jako na následujícím obrázku.</p>
+      <p>Nyní můžeme své jmenovky vytisknout pomocí položky nabídky <guiseq><gui>Soubor</gui> <gui>Tisk</gui></guiseq>. Zobrazí se dialogové okno jako na následujícím obrázku.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex1-3.png" mime="image/png" style="right">

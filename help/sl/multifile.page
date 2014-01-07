@@ -4,28 +4,32 @@
   <info>
     <link type="guide" xref="index#usage"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>Kako odpremo več datotek naenkrat iz ukazne vrstice.</desc>
+    <desc>
+      How to open multiple files at once by using the command line.
+    </desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
-      <p>Creative Commons Share Alike 3.0</p>
+      <p>Creative Commons - deljenje pod enakimi pogoji 3.0</p>
     </license>    
   </info>
 
-    <title>Kako odpremo več datotek iz ukazne vrstice</title>
+    <title>To open multiple files from the command line</title>
 
       <p>You can run <app>gLabels</app> from a command line
 	and open a single file or multiple files. To open multiple files from
         a command line, type the following command, then press
         <key>Return</key>:</p>
 
-      <p><cmd>glabels <var>datoteka1.glabels datoteka2.glabels datoteka3.glabels</var></cmd></p>
+      <p><cmd>glabels
+      <var>file1.glabels file2.glabels file3.glabels</var>
+      </cmd></p>
 
       <p>When the application starts, the files that you specify are
 	displayed in separate <app>gLabels</app> windows.</p>

@@ -4,17 +4,17 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>Prilagodite <app>gLabels</app>, da bo ustrezal vašim potrebam.</desc>
+    <desc>Customize <app>gLabels</app> to match your needs.</desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
-      <p>Creative Commons Share Alike 3.0</p>
+      <p>Creative Commons - deljenje pod enakimi pogoji 3.0</p>
     </license>    
   </info>
     
@@ -30,23 +30,23 @@
       sections:</p>
 
   <section id="prefs-locale" style="2column">
-    <title>Jezikovna oznaka</title>
+    <title>Locale</title>
 	<section>
 	<title>Enote</title>
 	<p>Use this radio button group to specify your preferred units.
               Select one of the following options:</p>
 	   <list>
 		<item>
-		<p><gui>Točke</gui></p>
-		<p>Uporabi slik. točke (1 slik. točka = 1/72 palca = 0,352778 mm).</p>
+		<p><gui>Points</gui></p>
+		<p>Use points (1 point = 1/72 in = 0.352778 mm).</p>
 		</item>
 		<item>
-		<p><gui>Palci</gui></p>
-		<p>Uporabi palce.</p>
+		<p><gui>Inches</gui></p>
+		<p>Use Inches.</p>
 		</item>
 		<item>
-		<p><gui>Milimetri</gui></p>
-		<p>Uporabi milimetre.</p>
+		<p><gui>Millimeters</gui></p>
+		<p>Use Millimeters.</p>
 		</item>
 	   </list>
 	   <p>Default: <gui>Inches</gui>.</p>
@@ -59,12 +59,12 @@
               label or card.</p>
 	   <list>
 		<item>
-		<p><gui>Ameriško pismo</gui></p>
-		<p>Večinoma boste uporabljali strani velikosti US Letter (8,5 x 11 palcev).</p>
+		<p><gui>US Letter</gui></p>
+		<p>Most of your media will be of the US Letter page size (8.5 x 11 inches).</p>
 		</item>
 		<item>
 		<p><gui>ISO A4</gui></p>
-		<p>Večinoma boste uporabljali strani velikosti ISO A4 (210 x 297 mm).</p>
+		<p>Most of your media will be of the ISO A4 page size (210 x 297 mm).</p>
 		</item>
 	   </list>
 	   <p>Default: <gui>US Letter</gui>.</p>		
@@ -72,7 +72,7 @@
     </section>
 
   <section id="prefs-defaults" style="2column">
-    <title>Privzete vrednosti predmeta</title>
+    <title>Object Defaults</title>
 
 	<section>
 	<title>Besedilo</title>
@@ -80,16 +80,16 @@
               These properties are:</p>
 	   <list>
 		<item>
-		<p><gui>Pisava</gui></p>
+		<p><gui>Font</gui></p>
 		<p>These controls are used to select font family and font size, and
                   whether the font should bold or in italics.</p>
 		</item>
 		<item>
-		<p><gui>Barva</gui></p>
-		<p>Ta kontrolnik določa privzeto barvo besedila.</p>
+		<p><gui>Color</gui></p>
+		<p>This control selects the default text color.</p>
 		</item>
 		<item>
-		<p><gui>Poravnava</gui></p>
+		<p><gui>Alignment</gui></p>
 		<p>These controls are used to select the default text alignment (left, center or right).</p>
 		</item>
 	   </list>
@@ -101,24 +101,24 @@
               new objects.  These properties are:</p>
 	   <list>
 		<item>
-		<p><gui>Širina</gui></p>
-		<p>Ta kontrolnik določa privzeto širino črt.</p>
+		<p><gui>Width</gui></p>
+		<p>This control selects the default line width.</p>
 		</item>
 		<item>
-		<p><gui>Barva</gui></p>
-		<p>Ta kontrolnik določa privzeto barvo črt.</p>
+		<p><gui>Color</gui></p>
+		<p>This control selects the default line color.</p>
 		</item>
 	   </list>
 	</section>
 
 	<section>
-	<title>Polnilo</title>
+	<title>Zapolni</title>
 	<p>Use this control to set the default fill property of
               new objects.  This property is:</p>
 	   <list>
 		<item>
-		<p><gui>Barva</gui></p>
-		<p>Ta kontrolnik določa privzeto barvo polnila.</p>
+		<p><gui>Color</gui></p>
+		<p>This control selects the default fill color.</p>
 		</item>
 	   </list>
 	</section>

@@ -11,16 +11,22 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2010 – 2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Tisk etiket a vizitek</title>
 
-      <p>Když chcete vytisknout etikety nebo vizitky, zvolte <guiseq><gui>Soubor</gui><gui>Tisk</gui></guiseq> a zobrazí se dialogové okno <gui>Tisk</gui>. Až nastavíte volby tisku, klikněte na <gui>Tisk</gui> a etikety nebo vizitky se vytisknou. Pokud se chcete jen podívat na náhled, klikněte místo toho na <gui>Náhled tisku</gui>.</p>
+      <p>Když chcete vytisknout etikety nebo vizitky, zvolte <guiseq><gui>Soubor</gui> <gui>Tisk</gui></guiseq> a zobrazí se dialogové okno <gui>Tisk</gui>. Až nastavíte volby tisku, klikněte na <gui>Tisk</gui> a etikety nebo vizitky se vytisknou. Pokud se chcete jen podívat na náhled, klikněte místo toho na <gui>Náhled tisku</gui>.</p>
 
       <p>V dialogovém okně <gui>Tisk</gui> můžete nastavit následující volby tisku:</p>
 

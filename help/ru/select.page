@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Марио Блатерман (Mario Blättermann)</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -20,7 +20,15 @@
 
     <title>Выделение объектов</title>
 
-      <p>Необходимым условием для выполнения операций над объектами является то, что отдельные объекты или целые группы должны быть предварительно выделены. Для создания новых выделений, область просмотра должна находиться в режиме выделения, режим можно определить по форме курсора. Режим выделению можно выбрать в меню <guiseq><gui>Объекты</gui><gui>Режим выделения</gui></guiseq> или с помощью команды в <gui>Панели рисования</gui>.</p>
+      <p>A prerequisite for performing operations on objects is the
+        selection of individual objects or groups of objects.  The
+        display area must be in the object selection mode to create new
+        selections, as indicated by an arrow cursor.  The object
+        selection mode is selected by the
+        <guiseq><gui>Objects</gui>
+        <gui>Select Mode</gui></guiseq> menu item,
+        or the corresponding command on the <gui>Drawing
+        Toolbar</gui>.</p>
 
       <section>
 	  <title>Выбор одиночного объекта</title>
@@ -29,7 +37,16 @@
 
 	<section>
 	  <title>Выбор нескольких объектов</title>
-	    <p>Несколько объектов можно выделить, выбрав сначала первый объект, а затем, удерживая клавишу <key>Ctrl</key>, выбрав остальные объекты. Объекты можно добавлять в существующее выделение в любое время, для этого необходимо выделить нужные объекты, удерживая при этом клавишу <key>Ctrl</key>. Вы можете выделить сразу все объекты, выбрав в меню <guiseq><gui>Правка</gui><gui>Выделить всё</gui></guiseq></p>
+	    <p>Multiple objects can be selected by first selecting the first
+              object as above and then by holding the <key>Ctrl</key>
+              key while selecting additional objects.
+              Individual objects can be added to an existing selection
+              at any time by holding the <key>Ctrl</key> key while
+              selecting the desired objects.  All objects can also be
+              selected by using the <guiseq><gui>Edit</gui>
+              <gui>Select All</gui></guiseq>
+              menu item.  All objects in an aggregate object selection will be
+              highlighted.</p>
 	</section>
 
 	<section>
@@ -42,7 +59,14 @@
 	<section>
 	  <title>Снятие выделения с объектов</title>
 	  
-	    <p>Из выделения можно убирать отдельные объекты. Для этого необходимо нажать левую кнопку мыши по выделенному объекту, удерживая клавишу <key>Ctrl</key>. Чтобы полностью убрать выделение, выберите в меню <guiseq><gui>Правка</gui><gui>Снять выделение</gui></guiseq> или просто нажмите левую кнопку мыши по пустому месту в области просмотра. Как только с объекта будет снято выделение, с него будет убрана подсветка.</p>
+	    <p>Individual objects can be removed from an existing
+              selection by holding the <key>Ctrl</key> key while
+              clicking on a previously selected object.  An entire selection
+              can be dismissed by using the <guiseq>
+	      <gui>Edit</gui> <gui>Un-select All</gui>
+              </guiseq> menu item
+              or by simply clicking any empty space in the display area.
+              Once an object is unselected its highlight is removed.</p>
 	  
 	</section>
 

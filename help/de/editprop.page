@@ -11,11 +11,17 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2008-2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Bearbeiten der Objekteigenschaften</title>
@@ -141,7 +147,7 @@
 	<p>Objekte können um 90 Grad in jeder Richtung gedreht oder horizontal oder vertikal gespiegelt werden. Wählen Sie hierzu den entsprechenden Eintrag im Menü <guiseq><gui>Objekte</gui><gui>Drehen/Spiegeln</gui></guiseq>. Diese Menüeinträge sind auch verfügbar, wenn Sie mit der rechten Maustaste in eine nicht leere Auswahl im Ansichtsbereich klicken.</p>
 
          <note>
-         <p>Dieses Funktionsmerkmal kann nützlich sein, wenn Sie Einleger für CD-Boxen entwerfen. Für die Beschriftung der Schmalseite benötigen sie vertikal laufenden Text. Nachdem Sie das Textobjekt erstellt haben, wählen Sie <guiseq><gui>Objekte</gui><gui>Drehen/Spiegeln</gui></guiseq>, um das Textobjekt Ihren Erfordernissen entsprechend auszurichten.</p>
+         <p>Dieses Funktionsmerkmal kann nützlich sein, wenn Sie Einleger für CD-Boxen entwerfen. Für die Beschriftung der Schmalseite benötigen Sie vertikal laufenden Text. Nachdem Sie das Textobjekt erstellt haben, wählen Sie <guiseq><gui>Objekte</gui><gui>Drehen/Spiegeln</gui></guiseq>, um das Textobjekt Ihren Erfordernissen entsprechend auszurichten.</p>
          </note>
 
       </section>

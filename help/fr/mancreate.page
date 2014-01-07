@@ -12,11 +12,35 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervans@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Géode</mal:name>
+      <mal:email>Geodebay@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
   </info>
 
   <title>Création manuelle de nouveaux modèles</title>
@@ -42,17 +66,17 @@
         <td><p/></td>
       </tr>
       <tr>
-        <td><p><file>${prefix}/share/libglabels-3.0/templates</file></p></td>
+        <td its:translate="no"><p><file>${prefix}/share/libglabels-3.0/templates</file></p></td>
         <td><p>Modèles prédéfinis distribués avec <app>gLabels</app>.</p>
             <p><file>${prefix}</file> est habituellement <file>/usr</file> ou <file>/usr/local</file> en fonction de l'endroit où a été installé <app>gLabels</app>.</p></td>
       </tr>
       <tr>
-        <td><p><file>${XDG_CONFIG_HOME}/libglabels/templates</file></p></td>
+        <td its:translate="no"><p><file>${XDG_CONFIG_HOME}/libglabels/templates</file></p></td>
         <td><p>Modèles définis par l'utilisateur, créés avec le <gui>créateur de modèles</gui> de <app>gLabels</app>. <em>Ne pas placer de modèles créés manuellement dans ce répertoire.</em></p>
             <p>Si la variable <file>${XDG_CONFIG_HOME}</file> n'est pas définie, sa valeur par défaut est <file>${HOME}/.config</file>.</p></td>
       </tr>
       <tr>
-        <td><p><file>${HOME}/.glabels</file></p></td>
+        <td its:translate="no"><p><file>${HOME}/.glabels</file></p></td>
         <td><p>Les modèles définis par l'utilisateur et qui ont été créés manuellement, doivent être placés dans ce répertoire. Les versions plus anciennes du <gui>créateur de modèles</gui> de <app>gLabels</app> (antérieures à 3.0) placent également leurs modèles dans ce répertoire.</p></td>
       </tr>
     </table>
@@ -75,7 +99,7 @@
         <p>Une page ne contient qu'un seul format d'étiquette ou de carte (s'il y en a plusieurs, il faut la diviser en plusieurs modèles et faire autant de passes d'impression).</p>
       </item>
       <item>
-        <p>Les dimensions peuvent être exprimées en <code translate="no">pt</code>, <code translate="no">in</code>, <code translate="no">mm</code>, <code translate="no">cm</code> ou <code translate="no">pc</code>. Par exemple : "<code translate="no">1.0in</code>" ou "<code translate="no">2.54cm</code>". Si aucune unité n'est indiquée, c'est le point (<code translate="no">pt</code>) qui est utilisé par défaut : 1 <em>pt</em> = 1/72e<em> de pouce</em>= 0,352778<em> mm</em>.</p>
+        <p>Les dimensions peuvent être exprimées en <code>pt</code>, <code>in</code>, <code>mm</code>, <code>cm</code> ou <code>pc</code>. Par exemple : "<code>1.0in</code>" ou "<code>2.54cm</code>". Si aucune unité n'est indiquée, c'est le point (<code>pt</code>) qui est utilisé par défaut : 1 <em>pt</em> = 1/72e<em> de pouce</em>= 0,352778<em> mm</em>.</p>
       </item>
     </list>
   </section>
@@ -91,25 +115,25 @@
   <section id="template-file">
     <title>Fichier modèle</title>
 
-    <p>Un fichier modèle contient un seul nœud de haut-niveau <code translate="no">Glabels-templates</code>.</p>
+    <p>Un fichier modèle contient un seul nœud de haut-niveau <code>Glabels-templates</code>.</p>
 
-    <code mime="text/xml" translate="no">
+    <code mime="text/xml">
 &lt;?xml version="1.0"?&gt;
 &lt;Glabels-templates&gt;
 
-   <var translate="yes">...modèles...</var>
+   <var>...modèles...</var>
 
 &lt;/Glabels-templates&gt;
       </code>
 
     <listing>
       <title>Exemple de modèle d'étiquette</title>
-      <desc>Exemple de fichier modèle de <app>gLabels</app> contenant un seul nœud <code translate="no">Template</code>.</desc>
-      <code mime="text/xml" translate="no">
+      <desc>Exemple de fichier modèle de <app>gLabels</app> contenant un seul nœud <code>Template</code>.</desc>
+      <code mime="text/xml" its:translate="no">
 &lt;?xml version="1.0"?&gt;
 &lt;Glabels-templates&gt;
 
-  &lt;Template brand="Avery" part="8160" size="US-Letter" description="Étiquettes postales"&gt;
+  &lt;Template brand="Avery" part="8160" size="US-Letter" description="Mailing Labels"&gt;
     &lt;Meta category="label"/&gt;
     &lt;Meta category="mail"/&gt;
     &lt;Meta product_url="http://www.avery.com/avery/en_us/"/&gt;
@@ -133,9 +157,9 @@
   <!-- BEGIN Template Node  -->
   <!-- ******************** -->
   <section id="template-template-node">
-    <title>Nœud <span translate="no">Template</span></title>
+    <title>Nœud <code>Template</code></title>
 
-    <p>Un nœud <code translate="no">Template</code> décrit les caractéristiques d'un seul produit. Il doit contenir une instance de l'un des types de nœud « Label-... » suivants : <code translate="no">Label-rectangle</code>, <code translate="no">Label-round</code> ou <code translate="no">Label-cd</code>.</p>
+    <p>Un nœud <code>Template</code> décrit les caractéristiques d'un seul produit. Il doit contenir une instance de l'un des types de nœud « Label-... » suivants : <code>Label-rectangle</code>, <code>Label-round</code> ou <code>Label-cd</code>.</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -145,35 +169,35 @@
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
-        <td><p><code translate="no">brand</code></p></td>  
+        <td its:translate="no"><p><code>brand</code></p></td>  
         <td><p>Marque ou fabricant de la fourniture de bureau, par ex. « Avery »</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">part</code></p></td>
+        <td its:translate="no"><p><code>part</code></p></td>
         <td><p>Numéro de série ou nom de la fourniture de bureau, par ex. « 8160 »</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">size</code></p></td>
-        <td><p>Format de page, par ex. « <code translate="no">US-Letter</code> », « <code translate="no">A4</code> », ...</p></td>
+        <td its:translate="no"><p><code>size</code></p></td>
+        <td><p>Format de page, par ex. « <code>US-Letter</code> », « <code>A4</code> », ...</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">description</code></p></td>
+        <td its:translate="no"><p><code>description</code></p></td>
         <td><p>Description de la fourniture de bureau, par ex. « Étiquettes postales ».</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">_description</code></p></td>
+        <td its:translate="no"><p><code>_description</code></p></td>
         <td><p>Description traduisible de la fourniture de bureau, par ex. « Étiquettes postales » (utile seulement pour les formats de modèles prédéfinis).</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">width</code></p></td>
+        <td its:translate="no"><p><code>width</code></p></td>
         <td><p>Largeur de la page. Valide seulement si la propriété « size » contient « Other » (autre).</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">height</code></p></td>
+        <td its:translate="no"><p><code>height</code></p></td>
         <td><p>Hauteur de la page. Valide seulement si la propriété « size » contient « Other » (autre).</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">equiv</code></p></td>
+        <td its:translate="no"><p><code>equiv</code></p></td>
         <td><p>Numéro de la partie équivalente. Si cette propriété est présente, le modèle est un clone d'un autre modèle de la même marque. Le modèle hérite de toutes les propriétés sauf de la marque et du nom de l'autre modèle. Cette propriété equiv doit se rapporter à un modèle défini antérieurement - Actuellement, <app>gLabels</app> ne prend pas en charge les références anticipées.</p></td>
       </tr>
     </table>
@@ -188,9 +212,9 @@
   <!-- BEGIN Meta Node      -->
   <!-- ******************** -->
   <section id="meta-template-node">
-    <title>Nœud <span translate="no">Meta</span></title>
+    <title>Nœud <code>Meta</code></title>
 
-    <p>Un nœud <code translate="no">Meta</code> contient des informations supplémentaires à propos du modèle. Un nœud <code translate="no">Template</code> peut contenir zéro nœud <code translate="no">Meta</code> ou plus.</p>
+    <p>Un nœud <code>Meta</code> contient des informations supplémentaires à propos du modèle. Un nœud <code>Template</code> peut contenir zéro nœud <code>Meta</code> ou plus.</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -200,29 +224,29 @@
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
-        <td><p><code translate="no">category</code></p></td>
-        <td><p>Une catégorie pour le modèle. Un modèle peut appartenir à plusieurs catégories en ajoutant simplement plusieurs nœuds <code translate="no">Meta</code> au nœud <code translate="no">Template</code> parent. Les catégories de modèle sont utilisés dans la <gui>boîte de dialogue Nouvelle étiquette</gui> de <app>gLabels</app> pour filtrer les résultats des recherches de modèle.</p>
+        <td its:translate="no"><p><code>category</code></p></td>
+        <td><p>Une catégorie pour le modèle. Un modèle peut appartenir à plusieurs catégories en ajoutant simplement plusieurs nœuds <code>Meta</code> au nœud <code>Template</code> parent. Les catégories de modèle sont utilisés dans la <gui>boîte de dialogue Nouvelle étiquette</gui> de <app>gLabels</app> pour filtrer les résultats des recherches de modèle.</p>
 
             <p>La valeur de cette catégorie doit correspondre à un identifiant de catégorie prédéfini dans le fichier <file>${prefix}/libglabels-3.0/templates/categories.xml</file>. Les identifiants de catégorie actuellement définis comprennent :</p>
             <list>
-              <item><p><code translate="no">label</code></p></item>
-              <item><p><code translate="no">round-label</code></p></item>
-              <item><p><code translate="no">elliptical-label</code></p></item>
-              <item><p><code translate="no">square-label</code></p></item>
-              <item><p><code translate="no">rectangle-label</code></p></item>
-              <item><p><code translate="no">card</code></p></item>
-              <item><p><code translate="no">business-card</code></p></item>
-              <item><p><code translate="no">media</code></p></item>
-              <item><p><code translate="no">mail</code></p></item>
-              <item><p><code translate="no">foldable</code></p></item>
-              <item><p><code translate="no">photo</code></p></item>
+              <item its:translate="no"><p><code>label</code></p></item>
+              <item its:translate="no"><p><code>round-label</code></p></item>
+              <item its:translate="no"><p><code>elliptical-label</code></p></item>
+              <item its:translate="no"><p><code>square-label</code></p></item>
+              <item its:translate="no"><p><code>rectangle-label</code></p></item>
+              <item its:translate="no"><p><code>card</code></p></item>
+              <item its:translate="no"><p><code>business-card</code></p></item>
+              <item its:translate="no"><p><code>media</code></p></item>
+              <item its:translate="no"><p><code>mail</code></p></item>
+              <item its:translate="no"><p><code>foldable</code></p></item>
+              <item its:translate="no"><p><code>photo</code></p></item>
             </list>
 
 
         </td>
       </tr>
       <tr>
-        <td><p><code translate="no">product_url</code></p></td>
+        <td its:translate="no"><p><code>product_url</code></p></td>
         <td><p>Un URL pointant sur la page Web du fournisseur du produit spécifié, si elle existe.</p></td>
       </tr>
     </table>
@@ -241,9 +265,9 @@
   <!-- BEGIN Label-rectangle Node -->
   <!-- ************************** -->
   <section id="template-label-rectangle-node">
-    <title>Nœud <span translate="no">Label-rectangle</span></title>
+    <title>Nœud <code>Label-rectangle</code></title>
 
-    <p>Un nœud <code translate="no">Label-rectangle</code> décrit les dimensions d'une étiquette ou d'une carte de visite de forme rectangulaire (elle peut aussi avoir des angles arrondis).</p>
+    <p>Un nœud <code>Label-rectangle</code> décrit les dimensions d'une étiquette ou d'une carte de visite de forme rectangulaire (elle peut aussi avoir des angles arrondis).</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -253,36 +277,36 @@
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
-        <td><p><code translate="no">id</code></p></td>
+        <td its:translate="no"><p><code>id</code></p></td>
         <td><p>Réservé pour une utilisation future. Doit toujours être 0.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">width</code></p></td>
+        <td its:translate="no"><p><code>width</code></p></td>
         <td><p>Largeur de l'étiquette/carte</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">height</code></p></td>
+        <td its:translate="no"><p><code>height</code></p></td>
         <td><p>Hauteur de l'étiquette/carte</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">round</code></p></td>
+        <td its:translate="no"><p><code>round</code></p></td>
         <td><p>Rayon de l'arrondi du coin. Pour les étiquettes ou cartes à angles droits (cartes de visite), la valeur du rayon doit être 0.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">x_waste</code></p></td>
+        <td its:translate="no"><p><code>x_waste</code></p></td>
         <td><p>Quantité d'espace horizontal perdu acceptable (surimpression). C'est utile pour réduire les problèmes d'alignement, notamment avec l'utilisation de fonds colorés (par ex. des images).</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">y_waste</code></p></td>
+        <td its:translate="no"><p><code>y_waste</code></p></td>
         <td><p>Quantité d'espace vertical perdu acceptable (surimpression). C'est utile pour réduire les problèmes d'alignement, notamment avec l'utilisation de fonds colorés (par ex. des images).</p></td>
       </tr>
     </table>
 
     <!-- ==== Figure ==== -->
     <figure>
-      <desc>Paramètres de <span translate="no">Label-rectangle</span></desc>
-      <media type="image" src="figures/glabels-template-rect-label.png" mime="image/png" style="right">
-        <p>Paramètres de <span translate="no">Label-rectangle</span></p>
+      <desc>Paramètres de <code>Label-rectangle</code></desc>
+      <media its:translate="no" type="image" src="figures/glabels-template-rect-label.png" mime="image/png" style="right">
+        <p><code>Label-rectangle</code> parameters</p>
       </media>
     </figure>
     <!-- ==== End of Figure ==== -->
@@ -297,9 +321,9 @@
   <!-- BEGIN Label-ellipse Node -->
   <!-- ************************ -->
   <section id="template-label-ellipse-node">
-    <title>Nœud <span translate="no">Label-ellipse</span></title>
+    <title>Nœud <code>Label-ellipse</code></title>
 
-    <p>Un nœud <code translate="no">Label-ellipse</code> décrit les dimensions d'une étiquette ou carte de visite de forme elliptique.</p>
+    <p>Un nœud <code>Label-ellipse</code> décrit les dimensions d'une étiquette ou carte de visite de forme elliptique.</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -309,28 +333,28 @@
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
-        <td><p><code translate="no">id</code></p></td>
+        <td its:translate="no"><p><code>id</code></p></td>
         <td><p>Réservé pour une utilisation future. Doit toujours être 0.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">width</code></p></td>
+        <td its:translate="no"><p><code>width</code></p></td>
         <td><p>Largeur de l'ellipse</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">height</code></p></td>
+        <td its:translate="no"><p><code>height</code></p></td>
         <td><p>Hauteur de l'ellipse</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">waste</code></p></td>
+        <td its:translate="no"><p><code>waste</code></p></td>
         <td><p>Quantité d'espace perdu acceptable (surimpression). C'est utile pour réduire les problèmes d'alignement, notamment avec l'utilisation de fonds colorés (par ex. des images).</p></td>
       </tr>
     </table>
 
     <!-- ==== Figure ==== -->
     <figure>
-      <desc>Paramètres de <span translate="no">Label-ellipse</span></desc>
+      <desc>Paramètres de <span>Label-ellipse</span></desc>
       <media type="image" src="figures/glabels-template-ellipse-label.png" mime="image/png" style="right">
-        <p>Paramètres de <span translate="no">Label-ellipse</span></p>
+        <p>Paramètres de <code>Label-ellipse</code></p>
       </media>
     </figure>
     <!-- ==== End of Figure ==== -->
@@ -345,9 +369,9 @@
   <!-- BEGIN Label-round Node -->
   <!-- ********************** -->
   <section id="template-label-round-node">
-    <title>Nœud <span translate="no">Label-round</span></title>
+    <title>Nœud <code>Label-round</code></title>
 
-    <p>Un nœud <code translate="no">Label-round</code> décrit les dimensions d'une étiquette ronde pleine (pas pour un CD).</p>
+    <p>Un nœud <code>Label-round</code> décrit les dimensions d'une étiquette ronde pleine (pas pour un CD).</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -357,24 +381,24 @@
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
-        <td><p><code translate="no">id</code></p></td>
+        <td its:translate="no"><p><code>id</code></p></td>
         <td><p>Réservé pour une utilisation future. Doit toujours être 0.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">radius</code></p></td>
+        <td its:translate="no"><p><code>radius</code></p></td>
         <td><p>Rayon (la moitié du diamètre) d'une étiquette ronde</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">waste</code></p></td>
+        <td its:translate="no"><p><code>waste</code></p></td>
         <td><p>Quantité d'espace perdu acceptable (surimpression). C'est utile pour réduire les problèmes d'alignement, notamment avec l'utilisation de fonds colorés (par ex. des images).</p></td>
       </tr>
     </table>
 
     <!-- ==== Figure ==== -->
     <figure>
-      <desc>Paramètres de <span translate="no">Label-ellipse</span></desc>
-      <media type="image" src="figures/glabels-template-circle-label.png" mime="image/png" style="right">
-        <p>Paramètres de <span translate="no">Label-ellipse</span></p>
+      <desc>Paramètres de <code>Label-ellipse</code></desc>
+      <media its:translate="no" type="image" src="figures/glabels-template-circle-label.png" mime="image/png" style="right">
+        <p><code>Label-ellipse</code> parameters</p>
       </media>
     </figure>
     <!-- ==== End of Figure ==== -->
@@ -389,9 +413,9 @@
   <!-- BEGIN Label-cd Node -->
   <!-- ******************* -->
   <section id="template-label-cd-node">
-    <title>Nœud <span translate="no">Label-cd</span></title>
+    <title>Nœud <code>Label-cd</code></title>
 
-    <p>Un nœud <code translate="no">Label-cd</code> décrit les dimensions d'une étiquette de CD, de DVD ou de mini CD.</p>
+    <p>Un nœud <code>Label-cd</code> décrit les dimensions d'une étiquette de CD, de DVD ou de mini CD.</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -401,36 +425,36 @@
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
-        <td><p><code translate="no">id</code></p></td>
+        <td its:translate="no"><p><code>id</code></p></td>
         <td><p>Réservé pour une utilisation future. Doit toujours être 0.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">radius</code></p></td>
+        <td its:translate="no"><p><code>radius</code></p></td>
         <td><p>Rayon extérieur de l'étiquette</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">hole</code></p></td>
+        <td its:translate="no"><p><code>hole</code></p></td>
         <td><p>Rayon du trou central</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">width</code></p></td>
+        <td its:translate="no"><p><code>width</code></p></td>
         <td><p>Si présent, l'étiquette est découpée à la largeur indiquée (utile pour les « mini CD »).</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">height</code></p></td>
+        <td its:translate="no"><p><code>height</code></p></td>
         <td><p>Si présent, l'étiquette est découpée à la hauteur donnée (utile pour les « mini CD »).</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">waste</code></p></td>
+        <td its:translate="no"><p><code>waste</code></p></td>
         <td><p>Quantité d'espace perdu acceptable (surimpression). C'est utile pour réduire les problèmes d'alignement, notamment avec l'utilisation de fonds colorés (par ex. des images).</p></td>
       </tr>
     </table>
 
     <!-- ==== Figure ==== -->
     <figure>
-      <desc>Paramètres de <span translate="no">Label-cd</span></desc>
-      <media type="image" src="figures/glabels-template-cd-label.png" mime="image/png" style="right">
-        <p>Paramètres pour étiquette de CD</p>
+      <desc>Paramètres de <code>Label-cd</code></desc>
+      <media its:translate="no" type="image" src="figures/glabels-template-cd-label.png" mime="image/png" style="right">
+        <p>CD label parameters</p>
       </media>
     </figure>
     <!-- ==== End of Figure ==== -->
@@ -445,7 +469,7 @@
   <!-- BEGIN Markup Node -->
   <!-- ***************** -->
   <section id="template-markup">
-    <title>Nœuds <span translate="no">Markup</span></title>
+    <title>Nœuds <code>Markup</code></title>
 
     <p>Le modèle peut comporter des nœuds « markup » optionnels. Ces nœuds s'utilisent pour décrire un simple ensemble de lignes de marquage visibles sur le canevas de tracé de <app>glabels</app>, mais invisibles à l'impression. Ces lignes peuvent représenter des marges, des lignes de pliage, des lignes de centrage, des zones spécialisées ou d'autres indications pour aider l'utilisateur d'un modèle.</p>
 
@@ -454,9 +478,9 @@
     <!-- BEGIN Markup-margin Node -->
     <!-- ======================== -->
     <section id="template-markup-margin-node">
-      <title>Nœud <span translate="no">Markup-margin</span></title>
+      <title>Nœud <code>Markup-margin</code></title>
 
-      <p>Un nœud <code translate="no">Markup-margin</code> délimite la marge autour d'une étiquette.</p>
+      <p>Un nœud <code>Markup-margin</code> délimite la marge autour d'une étiquette.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -466,7 +490,7 @@
           <td><p/></td>  <td><p/></td>
         </tr>
         <tr>
-          <td><p><code translate="no">size</code></p></td>
+          <td its:translate="no"><p><code>size</code></p></td>
           <td><p>Taille de la marge, c'est-à-dire la distance de la ligne de marge jusqu'au bord de l'étiquette ou de la carte.</p></td>
         </tr>
       </table>
@@ -480,9 +504,9 @@
     <!-- BEGIN Markup-line Node -->
     <!-- ====================== -->
     <section id="template-markup-line-node">
-      <title>Nœud <span translate="no">Markup-line</span></title>
+      <title>Nœud <code>Markup-line</code></title>
 
-      <p>Un nœud <code translate="no">Markup-line</code> décrit le tracé d'une droite de marquage.</p>
+      <p>Un nœud <code>Markup-line</code> décrit le tracé d'une droite de marquage.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -492,19 +516,19 @@
           <td><p/></td>  <td><p/></td>
         </tr>
         <tr>
-          <td><p><code translate="no">x1</code></p></td>
+          <td its:translate="no"><p><code>x1</code></p></td>
           <td><p>Abscisse x de l'origine du segment de droite.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">y1</code></p></td>
+          <td its:translate="no"><p><code>y1</code></p></td>
           <td><p>Ordonnée y de l'origine du segment de droite.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">x2</code></p></td>
+          <td its:translate="no"><p><code>x2</code></p></td>
           <td><p>Abscisse x de l'extrémité du segment de droite.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">y2</code></p></td>
+          <td its:translate="no"><p><code>y2</code></p></td>
           <td><p>Ordonnée y de l'extrémité du segment de droite.</p></td>
         </tr>
       </table>
@@ -518,9 +542,9 @@
     <!-- BEGIN Markup-circle Node -->
     <!-- ======================== -->
     <section id="template-markup-circle-node">
-      <title>Nœud <span translate="no">Markup-circle</span></title>
+      <title>Nœud <code>Markup-circle</code></title>
 
-      <p>Un nœud <code translate="no">Markup-circle</code> décrit le tracé d'un cercle de marquage.</p>
+      <p>Un nœud <code>Markup-circle</code> décrit le tracé d'un cercle de marquage.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -530,15 +554,15 @@
           <td><p/></td>  <td><p/></td>
         </tr>
         <tr>
-          <td><p><code translate="no">x0</code></p></td>
+          <td its:translate="no"><p><code>x0</code></p></td>
           <td><p>Abscisse x du centre du cercle.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">y0</code></p></td>
+          <td its:translate="no"><p><code>y0</code></p></td>
           <td><p>Ordonnée y du centre du cercle.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">radius</code></p></td>
+          <td its:translate="no"><p><code>radius</code></p></td>
           <td><p>Rayon du cercle.</p></td>
         </tr>
       </table>
@@ -552,9 +576,9 @@
     <!-- BEGIN Markup-rect Node -->
     <!-- ====================== -->
     <section id="template-markup-rect-node">
-      <title>Nœud <span translate="no">Markup-rect</span></title>
+      <title>Nœud <code>Markup-rect</code></title>
 
-      <p>Un nœud <code translate="no">Markup-rect</code> décrit le tracé d'un rectangle de marquage.</p>
+      <p>Un nœud <code>Markup-rect</code> décrit le tracé d'un rectangle de marquage.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -564,23 +588,23 @@
           <td><p/></td>  <td><p/></td>
         </tr>
         <tr>
-          <td><p><code translate="no">x1</code></p></td>
+          <td its:translate="no"><p><code>x1</code></p></td>
           <td><p>Abscisse x du coin supérieur gauche du rectangle.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">y1</code></p></td>
+          <td its:translate="no"><p><code>y1</code></p></td>
           <td><p>Ordonnée y du coin supérieur gauche du rectangle.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">w</code></p></td>
+          <td its:translate="no"><p><code>w</code></p></td>
           <td><p>Largeur du rectangle.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">h</code></p></td>
+          <td its:translate="no"><p><code>h</code></p></td>
           <td><p>Hauteur du rectangle.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">r</code></p></td>
+          <td its:translate="no"><p><code>r</code></p></td>
           <td><p>Rayon de l'arrondi des coins du rectangle.</p></td>
         </tr>
       </table>
@@ -594,9 +618,9 @@
     <!-- BEGIN Markup-ellipse Node -->
     <!-- ========================= -->
     <section id="template-markup-ellipse-node">
-      <title>Nœud <span translate="no">Markup-ellipse</span></title>
+      <title>Nœud <code>Markup-ellipse</code></title>
 
-      <p>Un nœud <code translate="no">Markup-ellipse</code> décrit le tracé d'une ellipse de marquage.</p>
+      <p>Un nœud <code>Markup-ellipse</code> décrit le tracé d'une ellipse de marquage.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -606,19 +630,19 @@
           <td><p/></td>  <td><p/></td>
         </tr>
         <tr>
-          <td><p><code translate="no">x1</code></p></td>
+          <td its:translate="no"><p><code>x1</code></p></td>
           <td><p>Abscisse x du coin supérieur gauche du rectangle exinscrit dans l'ellipse.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">y1</code></p></td>
+          <td its:translate="no"><p><code>y1</code></p></td>
           <td><p>Ordonnée y du coin supérieur gauche du rectangle exinscrit dans l'ellipse.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">w</code></p></td>
+          <td its:translate="no"><p><code>w</code></p></td>
           <td><p>Largeur de l'ellipse.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">h</code></p></td>
+          <td its:translate="no"><p><code>h</code></p></td>
           <td><p>Hauteur de l'ellipse.</p></td>
         </tr>
       </table>
@@ -637,16 +661,16 @@
   <!-- BEGIN Layout Node -->
   <!-- ***************** -->
   <section id="template-layout-node">
-    <title>Nœud <span translate="no">Layout</span></title>
+    <title>Nœud <code>Layout</code></title>
 
-    <p>Un nœud <span translate="no">Label</span> peut contenir plusieurs nœuds <code translate="no">Layout</code> enfants. Si les étiquettes sont placées dans une trame de grille simple, un seul nœud suffit. Si les étiquettes sont disposées dans plusieurs grilles, comme pour le motif décalé d'un mur de briques, plusieurs nœuds <code translate="no">Layout</code> seront nécessaires.</p>
+    <p>Un nœud <code>Label</code> peut contenir plusieurs nœuds <code>Layout</code> enfants. Si les étiquettes sont placées dans une trame de grille simple, un seul nœud suffit. Si les étiquettes sont disposées dans plusieurs grilles, comme pour le motif décalé d'un mur de briques, plusieurs nœuds <code>Layout</code> seront nécessaires.</p>
     <p>Un exemple courant d'agencement multiple est une feuille contenant trois étiquettes de CD :</p>
 
     <!-- ==== Figure ==== -->
     <figure>
       <desc>Page d'étiquettes pour CD</desc>
-      <media type="image" src="figures/layouts-cdlabel.png" mime="image/png" style="right">
-        <p>Page d'étiquettes pour CD</p>
+      <media its:translate="no" type="image" src="figures/layouts-cdlabel.png" mime="image/png" style="right">
+        <p>CD label sheet</p>
       </media>
     </figure>
     <!-- ==== End of Figure ==== -->
@@ -669,36 +693,36 @@
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
-        <td><p><code translate="no">nx</code></p></td>
+        <td its:translate="no"><p><code>nx</code></p></td>
         <td><p>Nombre d'étiquettes/cartes dans la grille (horizontalement).</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">ny</code></p></td>
+        <td its:translate="no"><p><code>ny</code></p></td>
         <td><p>Nombre d'étiquettes/cartes dans la grille (verticalement).</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">x0</code></p></td>
+        <td its:translate="no"><p><code>x0</code></p></td>
         <td><p>Distance entre le bord gauche de la page et le bord gauche de la première colonne d'étiquettes/cartes dans la disposition.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">y0</code></p></td>
+        <td its:translate="no"><p><code>y0</code></p></td>
         <td><p>Distance entre le bord supérieur de la page et le bord supérieur de la première rangée d'étiquettes/cartes dans la disposition.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">dx</code></p></td>
+        <td its:translate="no"><p><code>dx</code></p></td>
         <td><p>Pas horizontal de la grille.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">dy</code></p></td>
+        <td its:translate="no"><p><code>dy</code></p></td>
         <td><p>Pas vertical de la grille.</p></td>
       </tr>
     </table>
 
     <!-- ==== Figure ==== -->
     <figure>
-      <desc>Paramètres de <span translate="no">Layout</span></desc>
-      <media type="image" src="figures/glabels-template-layout.png" mime="image/png" style="right">
-        <p>Paramètres de <span translate="no">Layout</span></p>
+      <desc>Paramètres de <code>Layout</code></desc>
+      <media its:translate="no" type="image" src="figures/glabels-template-layout.png" mime="image/png" style="right">
+        <p><span>Layout</span> Parameters</p>
       </media>
     </figure>
     <!-- ==== End of Figure ==== -->

@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Марио Блатерман (Mario Blättermann)</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -30,7 +30,13 @@ Name,Department,SN
 "Сергей Сергеев",Инженер,SE-197-54T
       </code>
 
-      <p>В <app>gLabels</app> мы создали новый документ, используя шаблон Avery 5395 "Name Badge Labels". Далее, с помощью меню <guiseq><gui>Объекты</gui><gui>Заполнить поля данным</gui></guiseq> открываем диалоговое окно свойств. Используя этот диалог, выберите тип источника данных (в нашем случае — CSV) и имя файла.</p>
+      <p>In <app>gLabels</app> we have created a new <app>glabels</app>
+        document using the Avery 5395 "Name Badge Labels" template.  Next we use the
+        <guiseq> <gui>Objects</gui>
+        <gui>Merge Properties</gui> </guiseq> menu item to display
+        the <gui>merge properties</gui> dialog.  We use this dialog to
+        select the source type (in our case CSV with keys on line 1) and the merge
+	source (filename) as shown.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex1-1.png" mime="image/png" style="right">
@@ -50,7 +56,10 @@ Name,Department,SN
 
       <p>В этом примере мы добавили три текстовых объекта и штрих-код. Первый текстовый объект содержит только простую текстовую информацию («Привет, меня зовут»). Второй текстовый объект содержит одно поле («${Name}»), соответствующее первому полю записи (первому столбцу в строке), в котором записывается полное имя нового члена команды. В третьем поле записывается текст («Подразделение: »), после которого идёт поле «${Department}», которое соответствует подразделению. Штрих-код настроен на использование поля «SN», которое содержит личный номер нового члена.</p>
 
-      <p>Теперь мы может распечатать наши этикетки, выбрав в меню <guiseq><gui>Файл</gui><gui>Печать</gui></guiseq>. Появится диалоговое окно печати.</p>
+      <p>Now we can print our name tags by selecting the
+        <guiseq> <gui>File</gui>
+        <gui>Print</gui> </guiseq> menu item.  This will display
+        print dialog as shown below.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex1-3.png" mime="image/png" style="right">

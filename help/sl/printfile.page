@@ -4,21 +4,23 @@
   <info>
     <link type="guide" xref="index#usage"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>Kako natisnemo svoje nalepke, kartončke in vizitke.</desc>
+    <desc>
+      How to print your labels and cards.
+    </desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
-      <p>Creative Commons Share Alike 3.0</p>
+      <p>Creative Commons - deljenje pod enakimi pogoji 3.0</p>
     </license>    
   </info>
 
-    <title>Tiskanje nalepk, kartončkov in vizitk</title>
+    <title>To print labels and cards</title>
 
       <p>To print labels or cards, choose
         <guiseq><gui>File</gui><gui>Print</gui>
@@ -27,10 +29,11 @@
         to print the labels or cards.  To simply preview the results,
         click <gui>Print Preview</gui> instead.</p>
 
-      <p>Pogovorno okno <gui>Natisni</gui> ponuja določitev naslednjih možnosti tiskanja:</p>
+      <p>The <gui>Print</gui> dialog allows you to specify the
+        following print options:</p>
 
       <section>
-	<title>Zavihek Nalepke pogovornega okna Natisni</title>
+	<title>The Labels Tab of the Print Dialog</title>
 
 	<section>
             <title>Print control (Simple)</title>
@@ -74,7 +77,9 @@
                 same record grouped together) or un-collated (one copy
                 each record is printed before next copy).</p>
 
-	      <p>Tiskanje lahko pričnete pri poljubni nalepki na prvi strani. Slednjo izberete s sukalnim gumbom <gui>Začni z nalepko</gui>.</p>
+	      <p>Printing can begin on any label on the first sheet.
+                This can be selected with the <gui>Start on
+                label</gui> spinbutton.</p>
 
 	      <p>The mini-preview can also be used to graphically select
                 this first label, by clicking on the desired label in the
@@ -84,7 +89,7 @@
 
 	  <section> 
 	  <title>Možnosti</title>
-	      <p>Izberete lahko tudi naslednje možnosti.</p>
+	      <p>The following options can also be selected.</p>
 	      <list>
 		<item>
 		  <p><gui>print outlines</gui></p>
@@ -93,11 +98,16 @@
 		</item>
 		<item>
 		  <p><gui>print in reverse</gui></p>
-		  <p>Natisne nalepke zrcalno. To je uporabno pri tiskanju prosojnih nalepk, ki bodo vidne z druge strani (npr. na vetrobranskem steklu).</p>
+		  <p>Prints the labels as mirror images.  This option is
+                    useful for printing on clear labels that will be viewed
+                    from the reverse side (e.g. in a car window).</p>
 		</item>
 		<item>
-		  <p><gui>natisni oznake obrezave</gui></p>
-		  <p>Natisne oznake za obrezavo na robu lista. Uporabno za tiskanje na prazen papir, ki ga je potrebno po tiskanju obrezati. Ta možnost ni enako primerna za vse predloge.</p>
+		  <p><gui>print crop marks</gui></p>
+		  <p>Prints crop marks along the edge of the sheet.
+                    This option is useful for printing on blank stock, to
+                    be cut after printing.  This option does not work well
+                    with all templates.</p>
 		</item>
 	      </list>
 	</section>
