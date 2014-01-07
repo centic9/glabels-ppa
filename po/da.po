@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: glabels glabels_2_2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-21 17:36+0200\n"
+"POT-Creation-Date: 2012-04-21 17:35+0200\n"
 "PO-Revision-Date: 2012-04-14 14:52+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -562,7 +562,7 @@ msgstr "gLabels - fatal fejl!"
 msgid "New Label or Card"
 msgstr "Ny etiket eller kort"
 
-#: ../src/file.c:175 ../src/label.c:601 ../src/label.c:645
+#: ../src/file.c:175 ../src/label.c:602 ../src/label.c:646
 msgid "Label properties"
 msgstr "Etiketegenskaber"
 
@@ -789,94 +789,94 @@ msgid "Create box object"
 msgstr "Opret boksobjekt"
 
 #: ../src/label-box.c:230 ../src/label-ellipse.c:232
-#: ../data/ui/property-bar.ui.h:3
+#: ../data/ui/property-bar.ui.h:5
 msgid "Fill color"
 msgstr "Fyld farve"
 
 #: ../src/label-box.c:261 ../src/label-ellipse.c:261 ../src/label-line.c:212
-#: ../data/ui/property-bar.ui.h:8
+#: ../data/ui/property-bar.ui.h:10
 msgid "Line color"
 msgstr "Linjefarve"
 
 #: ../src/label-box.c:289 ../src/label-ellipse.c:290 ../src/label-line.c:241
-#: ../data/ui/property-bar.ui.h:9
+#: ../data/ui/property-bar.ui.h:11
 msgid "Line width"
 msgstr "Linjebredde"
 
-#: ../src/label.c:405
+#: ../src/label.c:406
 msgid "Untitled"
 msgstr "Uden titel"
 
-#: ../src/label.c:719 ../src/ui.c:420
+#: ../src/label.c:720 ../src/ui.c:420
 msgid "Merge properties"
 msgstr "Sammenføj egenskaber"
 
-#: ../src/label.c:1215 ../src/ui.c:213
+#: ../src/label.c:1216 ../src/ui.c:213
 msgid "Delete"
 msgstr "Slet"
 
-#: ../src/label.c:1248 ../src/ui.c:322
+#: ../src/label.c:1249 ../src/ui.c:322
 msgid "Bring to front"
 msgstr "Hent frem"
 
-#: ../src/label.c:1284 ../src/ui.c:329
+#: ../src/label.c:1285 ../src/ui.c:329
 msgid "Send to back"
 msgstr "Send tilbage"
 
-#: ../src/label.c:1325
+#: ../src/label.c:1326
 msgid "Rotate"
 msgstr "Roter"
 
-#: ../src/label.c:1360 ../src/ui.c:336
+#: ../src/label.c:1361 ../src/ui.c:336
 msgid "Rotate left"
 msgstr "Roter mod venstre"
 
-#: ../src/label.c:1393 ../src/ui.c:343
+#: ../src/label.c:1394 ../src/ui.c:343
 msgid "Rotate right"
 msgstr "Roter til højre"
 
-#: ../src/label.c:1428 ../src/ui.c:350
+#: ../src/label.c:1429 ../src/ui.c:350
 msgid "Flip horizontally"
 msgstr "Vend vandret"
 
-#: ../src/label.c:1463 ../src/ui.c:357
+#: ../src/label.c:1464 ../src/ui.c:357
 msgid "Flip vertically"
 msgstr "Vend lodret"
 
-#: ../src/label.c:1503 ../src/ui.c:364
+#: ../src/label.c:1504 ../src/ui.c:364
 msgid "Align left"
 msgstr "Juster venstre"
 
-#: ../src/label.c:1560 ../src/ui.c:378
+#: ../src/label.c:1561 ../src/ui.c:378
 msgid "Align right"
 msgstr "Juster højre"
 
-#: ../src/label.c:1621
+#: ../src/label.c:1622
 msgid "Align horizontal center"
 msgstr "Juster vandret centrum"
 
-#: ../src/label.c:1697
+#: ../src/label.c:1698
 msgid "Align tops"
 msgstr "Juster øverst"
 
-#: ../src/label.c:1754
+#: ../src/label.c:1755
 msgid "Align bottoms"
 msgstr "Juster nederste kanter"
 
 # openoffice: juster lodret centreret
-#: ../src/label.c:1815
+#: ../src/label.c:1816
 msgid "Align vertical center"
 msgstr "Juster lodret centreret"
 
-#: ../src/label.c:1893 ../src/ui.c:406
+#: ../src/label.c:1894 ../src/ui.c:406
 msgid "Center horizontally"
 msgstr "Centrer vandret"
 
-#: ../src/label.c:1940 ../src/ui.c:413
+#: ../src/label.c:1941 ../src/ui.c:413
 msgid "Center vertically"
 msgstr "Centrer lodret"
 
-#: ../src/label.c:2628 ../src/label.c:2670 ../src/label.c:2696 ../src/ui.c:206
+#: ../src/label.c:2662 ../src/label.c:2704 ../src/label.c:2730 ../src/ui.c:206
 msgid "Paste"
 msgstr "Indsæt"
 
@@ -905,61 +905,65 @@ msgstr "Flyt"
 msgid "Resize"
 msgstr "Omdan"
 
-#: ../src/label-object.c:1217
+#: ../src/label-object.c:1263
 msgid "Shadow state"
 msgstr "Skyggetilstand"
 
-#: ../src/label-object.c:1260
+#: ../src/label-object.c:1306
 msgid "Shadow offset"
 msgstr "Skyggeforskydning"
 
-#: ../src/label-object.c:1308
+#: ../src/label-object.c:1354
 msgid "Shadow color"
 msgstr "Skyggefarve"
 
-#: ../src/label-object.c:1351
+#: ../src/label-object.c:1397
 msgid "Shadow opacity"
 msgstr "Skyggeuigennemsigtighed"
 
-#: ../src/label-text.c:281 ../src/ui.c:282
+#: ../src/label-text.c:290 ../src/ui.c:282
 msgid "Create text object"
 msgstr "Opret tekstobjekt"
 
-#: ../src/label-text.c:453
+#: ../src/label-text.c:464
 msgid "Typing"
 msgstr "Indtastning"
 
 # skrifttypefamilie
-#: ../src/label-text.c:586 ../data/ui/property-bar.ui.h:4
+#: ../src/label-text.c:597 ../data/ui/property-bar.ui.h:6
 msgid "Font family"
 msgstr "Skriftfamilie"
 
 # skrifttypestørrelse
-#: ../src/label-text.c:624 ../data/ui/property-bar.ui.h:5
+#: ../src/label-text.c:635 ../data/ui/property-bar.ui.h:7
 msgid "Font size"
 msgstr "Skriftstørrelse"
 
-#: ../src/label-text.c:657
+#: ../src/label-text.c:668
 msgid "Font weight"
 msgstr "Skrifttypevægt"
 
-#: ../src/label-text.c:690 ../data/ui/property-bar.ui.h:6
+#: ../src/label-text.c:701 ../data/ui/property-bar.ui.h:8
 msgid "Italic"
 msgstr "Kursiv"
 
-#: ../src/label-text.c:723
+#: ../src/label-text.c:734
 msgid "Align text"
 msgstr "Juster tekst"
 
-#: ../src/label-text.c:756
+#: ../src/label-text.c:767
+msgid "Vertically align text"
+msgstr ""
+
+#: ../src/label-text.c:800
 msgid "Line spacing"
 msgstr "Linjemellemrum"
 
-#: ../src/label-text.c:789 ../data/ui/property-bar.ui.h:11
+#: ../src/label-text.c:833 ../data/ui/property-bar.ui.h:13
 msgid "Text color"
 msgstr "Tekstfarve"
 
-#: ../src/label-text.c:933
+#: ../src/label-text.c:993
 msgid "Auto shrink"
 msgstr "Formindsk automatisk"
 
@@ -1119,8 +1123,8 @@ msgid "Review"
 msgstr "Gennemse"
 
 #: ../src/object-editor-bc-page.c:97 ../src/object-editor-shadow-page.c:93
-#: ../src/object-editor-text-page.c:97 ../src/prefs-dialog.c:335
-#: ../src/ui-property-bar.c:277
+#: ../src/object-editor-text-page.c:102 ../src/prefs-dialog.c:335
+#: ../src/ui-property-bar.c:288
 msgid "Default"
 msgstr "Standard"
 
@@ -1157,7 +1161,7 @@ msgid "Insert merge field"
 msgstr "Indsæt sammenføjningsfelt"
 
 #: ../src/object-editor-fill-page.c:79 ../src/prefs-dialog.c:341
-#: ../src/ui-property-bar.c:287
+#: ../src/ui-property-bar.c:298
 msgid "No Fill"
 msgstr "Ingen fyld"
 
@@ -1175,7 +1179,7 @@ msgid "%s (*.%s)"
 msgstr "%s (*.%s)"
 
 #: ../src/object-editor-line-page.c:79 ../src/prefs-dialog.c:338
-#: ../src/ui-property-bar.c:297
+#: ../src/ui-property-bar.c:308
 msgid "No Line"
 msgstr "Ingen linje"
 
@@ -1767,13 +1771,13 @@ msgstr "diameter"
 #. the CSS2 Specification (Section 4.3.2)
 #. This table must be sorted exactly as the enumerations in lglUnits
 #. [LGL_UNITS_POINT]
-#: ../libglabels/lgl-units.c:65 ../data/ui/object-editor.ui.h:42
+#: ../libglabels/lgl-units.c:65 ../data/ui/object-editor.ui.h:43
 #: ../data/ui/prefs-dialog.ui.h:22
 msgid "points"
 msgstr "punkter"
 
 #. [LGL_UNITS_INCH]
-#: ../libglabels/lgl-units.c:66 ../data/ui/object-editor.ui.h:40
+#: ../libglabels/lgl-units.c:66 ../data/ui/object-editor.ui.h:41
 #: ../data/ui/template-designer.ui.h:66
 msgid "inches"
 msgstr "tommer"
@@ -2001,44 +2005,49 @@ msgstr "Stil"
 msgid "Style:"
 msgstr "Stil:"
 
-#: ../data/ui/object-editor.ui.h:31 ../data/ui/prefs-dialog.ui.h:20
+#: ../data/ui/object-editor.ui.h:31
+#, fuzzy
+msgid "Vertical alignment:"
+msgstr "Justering:"
+
+#: ../data/ui/object-editor.ui.h:32 ../data/ui/prefs-dialog.ui.h:20
 #: ../data/ui/template-designer.ui.h:65
 msgid "Width:"
 msgstr "Bredde:"
 
-#: ../data/ui/object-editor.ui.h:32
+#: ../data/ui/object-editor.ui.h:33
 msgid "X Offset:"
 msgstr "X-forskydning:"
 
-#: ../data/ui/object-editor.ui.h:33
+#: ../data/ui/object-editor.ui.h:34
 msgid "X:"
 msgstr "X:"
 
-#: ../data/ui/object-editor.ui.h:34
+#: ../data/ui/object-editor.ui.h:35
 msgid "Y Offset:"
 msgstr "Y-forskydning:"
 
-#: ../data/ui/object-editor.ui.h:35
+#: ../data/ui/object-editor.ui.h:36
 msgid "Y:"
 msgstr "Y:"
 
-#: ../data/ui/object-editor.ui.h:36
+#: ../data/ui/object-editor.ui.h:37
 msgid "degrees"
 msgstr "grader"
 
-#: ../data/ui/object-editor.ui.h:37
+#: ../data/ui/object-editor.ui.h:38
 msgid "dialog1"
 msgstr "dialog 1"
 
-#: ../data/ui/object-editor.ui.h:38
+#: ../data/ui/object-editor.ui.h:39
 msgid "digits:"
 msgstr "tal:"
 
-#: ../data/ui/object-editor.ui.h:39
+#: ../data/ui/object-editor.ui.h:40
 msgid "format:"
 msgstr "format:"
 
-#: ../data/ui/object-editor.ui.h:41
+#: ../data/ui/object-editor.ui.h:42
 msgid "key:"
 msgstr "nøgle:"
 
@@ -2099,16 +2108,30 @@ msgid "Bold"
 msgstr "Fed"
 
 #: ../data/ui/property-bar.ui.h:2
+msgid "Bottom vertical align"
+msgstr ""
+
+#: ../data/ui/property-bar.ui.h:3
 msgid "Center align"
 msgstr "Centrumjustering"
 
-#: ../data/ui/property-bar.ui.h:7
+#: ../data/ui/property-bar.ui.h:4
+#, fuzzy
+msgid "Center vertical align"
+msgstr "Centrer lodret"
+
+#: ../data/ui/property-bar.ui.h:9
 msgid "Left align"
 msgstr "Venstrejustering"
 
-#: ../data/ui/property-bar.ui.h:10
+#: ../data/ui/property-bar.ui.h:12
 msgid "Right align"
 msgstr "Højrejustering"
+
+#: ../data/ui/property-bar.ui.h:14
+#, fuzzy
+msgid "Top vertical align"
+msgstr "Vend lodret"
 
 #: ../data/ui/template-designer.ui.h:1
 msgid "(e.g., \"Mailing Labels,\" \"Business Cards,\" ...)"

@@ -4,21 +4,23 @@
   <info>
     <link type="guide" xref="index#usage"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>Kako izberemo predmete.</desc>
+    <desc>
+      How to select objects.
+    </desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
-      <p>Creative Commons Share Alike 3.0</p>
+      <p>Creative Commons - deljenje pod enakimi pogoji 3.0</p>
     </license>    
   </info>
 
-    <title>Izbiranje predmetov</title>
+    <title>To select objects</title>
 
       <p>A prerequisite for performing operations on objects is the
         selection of individual objects or groups of objects.  The
@@ -31,7 +33,7 @@
         Toolbar</gui>.</p>
 
       <section>
-	  <title>Izbor posameznega predmeta</title>
+	  <title>Selecting a single object</title>
 	    <p>A single object can be selected simply by clicking
              on the desired object in the display area.
              Once selected the object will be highlighted with a set of
@@ -53,7 +55,7 @@
 	</section>
 
 	<section>
-	  <title>Area selections</title>
+	  <title>Izbor površine</title>
 	  
 	    <p>Multiple objects can also be selected by clicking an empty
               area and dragging to form a rectangular area.  When released,
@@ -65,7 +67,7 @@
 	</section>
 
 	<section>
-	  <title>Preklic izbora predmetov</title>
+	  <title>Odstranjevanje izbora predmetov</title>
 	  
 	    <p>Individual objects can be removed from an existing
               selection by holding the <key>Ctrl</key> key while
@@ -87,30 +89,37 @@
         and <gui>Delete</gui>.</p>
 
 	<section>
-	  <title><gui>Izreži</gui> (<keyseq><key>Ctrl</key><key>X</key></keyseq>)</title>
+	  <title><gui>Cut</gui> (<keyseq><key>Ctrl</key><key>X</key></keyseq>)</title>
 	  
-	    <p>Premakne izbrane predmete na odložišče. Predmeti so tako na voljo za lepljenje v trenutni ali drug dokument.</p>
-	  
-	</section>
-
-	<section>
-	  <title><gui>Kopiraj</gui> (<keyseq><key>Ctrl</key><key>C</key></keyseq>)</title>
-	  
-	    <p>Kopira izbrane predmete na odložišče brez brisanja. Predmeti so tako na voljo za lepljenje v trenutni ali drug dokument.</p>
+	    <p>Moves selected objects to the clipboard.  The objects are
+              then available for pasting back into the current document or
+              another document.</p>
 	  
 	</section>
 
 	<section>
-	  <title><gui>Prilepi</gui> (<keyseq><key>Ctrl</key><key>V</key></keyseq>)</title>
+	  <title><gui>Copy</gui> (<keyseq><key>Ctrl</key><key>C</key></keyseq>)</title>
 	  
-	    <p>Prilepi izbrane predmete z odložišča v trenutni dokument.  <app>gLabels</app> lahko lepi le predmete iz drugih dokumentov <app>gLabels</app>.</p>
+	    <p>Copies selected objects to the clipboard without deleting
+              them.  The objects are then available for pasting back into
+              the current document or another document.</p>
 	  
 	</section>
 
 	<section>
-	  <title><gui>Izbriši</gui> (<key>Del</key>)</title>
+	  <title><gui>Paste</gui> (<keyseq><key>Ctrl</key><key>V</key></keyseq>)</title>
 	  
-	    <p>Izbriše izbrane predmete, pri čemer jih ne pusti na odložišču.</p>
+	    <p>Pastes objects from the clipboard into the current document.
+              <app>gLabels</app> can only paste objects from
+              another <app>gLabels</app> document.</p>
+	  
+	</section>
+
+	<section>
+	  <title><gui>Delete</gui> (<key>Del</key>)</title>
+	  
+	    <p>Deletes selected objects without placing them on the
+              clipboard.</p>
 	  
 	</section>
        </section>

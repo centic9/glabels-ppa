@@ -16,6 +16,12 @@
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2008-2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Info zu <app>gLabels</app></title>
@@ -23,5 +29,5 @@
     <p><app>gLabels</app> wurde von <link href="mailto:evins@snaught.com">Jim Evins</link> geschrieben. Weitere Informationen zu <app>gLabels</app> finden Sie auf der <link href="http://glabels.org" type="http"><app>gLabels</app>-Webseite</link>.</p>
     <p>Um einen Fehler zu melden oder einen Vorschlag zur Anwendung <app>gLabels</app> oder zu diesem Handbuch zu machen, folgen Sie den Anweisungen auf der <link href="http://glabels.org/contact/" type="http"><app>gLabels</app>-Kontaktseite</link>.</p>
 
-    <p>Dieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren Version. Eine Kopie der GNU General Public License finden Sie unter diesem <link href="ghelp:gpl" type="help">Link</link> oder in der Datei COPYING, die im Quellcode dieses Programms enthalten ist.</p>
+    <p>Dieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren Version. Eine Kopie der GNU General Public License finden Sie unter diesem <link href="help:gpl" type="help">Link</link> oder in der Datei COPYING, die im Quellcode dieses Programms enthalten ist.</p>
 </page>

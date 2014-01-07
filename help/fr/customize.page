@@ -11,17 +11,41 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervans@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Géode</mal:name>
+      <mal:email>Geodebay@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
   </info>
     
   <!-- ============= Customization ============================= -->
   <!-- Use this section to describe how to customize the application. -->
     <title>Paramétrage</title> 
-    <p>Pour configurer <app>gLabels</app>, allez dans le menu <guiseq><gui>Édition</gui><gui>Préférences</gui></guiseq>. La boîte de dialogue <gui>Préférences</gui> contient les onglets suivants :</p>
+    <p>Pour configurer <app>gLabels</app>, allez dans le menu <guiseq><gui>Édition</gui> <gui>Préférences</gui></guiseq>. La boîte de dialogue <gui>Préférences</gui> contient les onglets suivants :</p>
 
   <section id="prefs-locale" style="2column">
     <title>Localisation</title>
@@ -54,7 +78,7 @@
 		<p>Si la plupart de vos supports sont au format de lettre US (8.5 x 11 pouces).</p>
 		</item>
 		<item>
-		<p><gui>ISO A4</gui></p>
+		<p><gui>A4 ISO</gui></p>
 		<p>Si la plupart de vos supports sont au format ISO A4 (210 x 297 mm).</p>
 		</item>
 	   </list>

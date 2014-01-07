@@ -4,21 +4,23 @@
   <info>
     <link type="guide" xref="index#usage"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>Ustvarite nove predmete v svojem dokumentu.</desc>
+    <desc>
+      Create new objects within your document.
+    </desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
-      <p>Creative Commons Share Alike 3.0</p>
+      <p>Creative Commons - deljenje pod enakimi pogoji 3.0</p>
     </license>    
   </info>
 
-    <title>Kako ustvarimo nov predmet</title>
+    <title>To create new objects</title>
 
       <p>Objects are created by choosing the appropriate selection under
         the <guiseq><gui>Objects</gui><gui>Create Object</gui></guiseq> submenu
@@ -28,7 +30,8 @@
         <guiseq><gui>Objects</gui><gui>Select Mode</gui></guiseq>.  This will
         return the display area's cursor to the default selection arrow.</p>
 
-      <p>Naslednje opisuje način ustvarjanja predmetov za vsako vrsto predmetov posebej:</p>
+      <p>The following describes the object creation mode for each object
+        type:</p>
 
 	<section>
 	  <title>Besedilo</title>
@@ -39,7 +42,7 @@
 	</section>
 
 	<section>
-	  <title>Okvir</title>
+	  <title>Škatla</title>
 	    <p>Click the desired location of the upper left corner of the
               box object and drag to the desired location of the lower right
               corner.  If you simply click in a single location, a square

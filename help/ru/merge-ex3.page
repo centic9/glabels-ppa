@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Марио Блатерман (Mario Blättermann)</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -28,7 +28,13 @@
 	<p>Если в вашем пакете <app>gLabels</app> отсутствует поддержка этой возможности, вы можете обратиться к сопровождающему пакета или создать отчёт с просьбой добавить эту возможность.</p>
       </note>
 
-      <p>Мы создали новый документ с помощью шаблона Avery 5512 "Address Labels". Далее, с помощью меню <guiseq><gui>Объекты</gui><gui>Заполнить поля данным</gui></guiseq> открываем диалоговое окно свойств. Используя этот диалог, выберите тип источника данных (в нашем случае — адресная книга Evolution) и имя файла.</p>
+      <p>In <app>glabels</app> we have created a new <app>gLabels</app>
+        document using the Avery 5512 "Address Labels" template. Next we use the
+        <guiseq> <gui>Objects</gui>
+        <gui>Merge Properties</gui></guiseq> menu item to display
+        the <gui>Merge properties</gui> dialog. We use this dialog to
+        select the source type (in our case <gui>Data from default Evolution
+	addressbook</gui>) as shown.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-1.png" mime="image/png" style="right">
@@ -50,7 +56,10 @@
 
       <p>В этом примере у нас есть один текстовый объект. В этом текстовом объекте находятся все наши поля, разбитые на несколько строк.</p>
 
-      <p>Теперь мы можем распечатать наши этикетки, выбрав в меню <guiseq><gui>Файл</gui><gui>Печать</gui></guiseq>. Появится диалоговое окно печати.</p>
+      <p>Now we can print our address labels by selecting the
+        <guiseq> <gui>File</gui>
+        <gui>Print</gui> </guiseq> menu item. This will display
+        the print dialog as shown below.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-3.png" mime="image/png" style="right">

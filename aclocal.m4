@@ -1,4 +1,4 @@
-# generated automatically by aclocal 1.11.3 -*- Autoconf -*-
+# generated automatically by aclocal 1.11.6 -*- Autoconf -*-
 
 # Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004,
 # 2005, 2006, 2007, 2008, 2009, 2010, 2011 Free Software Foundation,
@@ -14,8 +14,8 @@
 
 m4_ifndef([AC_AUTOCONF_VERSION],
   [m4_copy([m4_PACKAGE_VERSION], [AC_AUTOCONF_VERSION])])dnl
-m4_if(m4_defn([AC_AUTOCONF_VERSION]), [2.68],,
-[m4_warning([this file was generated for autoconf 2.68.
+m4_if(m4_defn([AC_AUTOCONF_VERSION]), [2.69],,
+[m4_warning([this file was generated for autoconf 2.69.
 You have another version of autoconf.  It may work, but is not guaranteed to.
 If you have problems, you may need to regenerate the build system entirely.
 To do so, use the procedure documented by the package, typically `autoreconf'.])])
@@ -597,68 +597,6 @@ AC_DEFUN([GNOME_CXX_WARNINGS],[
 
   WARN_CXXFLAGS="$CXXFLAGS $warnCXXFLAGS $complCXXFLAGS"
   AC_SUBST(WARN_CXXFLAGS)
-])
-
-dnl Do not call GNOME_DOC_DEFINES directly.  It is split out from
-dnl GNOME_DOC_INIT to allow gnome-doc-utils to bootstrap off itself.
-AC_DEFUN([GNOME_DOC_DEFINES],
-[
-AC_ARG_WITH([help-dir],
-  AC_HELP_STRING([--with-help-dir=DIR], [path to help docs]),,
-  [with_help_dir='${datadir}/gnome/help'])
-HELP_DIR="$with_help_dir"
-AC_SUBST(HELP_DIR)
-
-AC_ARG_WITH([omf-dir],
-  AC_HELP_STRING([--with-omf-dir=DIR], [path to OMF files]),,
-  [with_omf_dir='${datadir}/omf'])
-OMF_DIR="$with_omf_dir"
-AC_SUBST(OMF_DIR)
-
-AC_ARG_WITH([help-formats],
-  AC_HELP_STRING([--with-help-formats=FORMATS], [list of formats]),,
-  [with_help_formats=''])
-DOC_USER_FORMATS="$with_help_formats"
-AC_SUBST(DOC_USER_FORMATS)
-
-AC_ARG_ENABLE([scrollkeeper],
-	[AC_HELP_STRING([--disable-scrollkeeper],
-			[do not make updates to the scrollkeeper database])],,
-	enable_scrollkeeper=yes)
-AM_CONDITIONAL([ENABLE_SK],[test "$gdu_cv_have_gdu" = "yes" -a "$enable_scrollkeeper" = "yes"])
-
-dnl disable scrollkeeper automatically for distcheck
-DISTCHECK_CONFIGURE_FLAGS="--disable-scrollkeeper $DISTCHECK_CONFIGURE_FLAGS"
-AC_SUBST(DISTCHECK_CONFIGURE_FLAGS)
-
-AM_CONDITIONAL([HAVE_GNOME_DOC_UTILS],[test "$gdu_cv_have_gdu" = "yes"])
-])
-
-# GNOME_DOC_INIT ([MINIMUM-VERSION],[ACTION-IF-FOUND],[ACTION-IF-NOT-FOUND])
-#
-AC_DEFUN([GNOME_DOC_INIT],
-[AC_REQUIRE([AC_PROG_LN_S])dnl
-
-if test -z "$AM_DEFAULT_VERBOSITY"; then
-  AM_DEFAULT_VERBOSITY=1
-fi
-AC_SUBST([AM_DEFAULT_VERBOSITY])
-
-ifelse([$1],,[gdu_cv_version_required=0.3.2],[gdu_cv_version_required=$1])
-
-AC_MSG_CHECKING([gnome-doc-utils >= $gdu_cv_version_required])
-PKG_CHECK_EXISTS([gnome-doc-utils >= $gdu_cv_version_required],
-	[gdu_cv_have_gdu=yes],[gdu_cv_have_gdu=no])
-
-if test "$gdu_cv_have_gdu" = "yes"; then
-	AC_MSG_RESULT([yes])
-	ifelse([$2],,[:],[$2])
-else
-	AC_MSG_RESULT([no])
-	ifelse([$3],,[AC_MSG_ERROR([gnome-doc-utils >= $gdu_cv_version_required not found])],[$3])
-fi
-
-GNOME_DOC_DEFINES
 ])
 
 dnl GLIB_GSETTINGS
@@ -2346,7 +2284,14 @@ s390*-*linux*|s390*-*tpf*|sparc*-*linux*)
 	    LD="${LD-ld} -m elf_i386_fbsd"
 	    ;;
 	  x86_64-*linux*)
-	    LD="${LD-ld} -m elf_i386"
+	    case `/usr/bin/file conftest.o` in
+	      *x86-64*)
+		LD="${LD-ld} -m elf32_x86_64"
+		;;
+	      *)
+		LD="${LD-ld} -m elf_i386"
+		;;
+	    esac
 	    ;;
 	  ppc64-*linux*|powerpc64-*linux*)
 	    LD="${LD-ld} -m elf32ppclinux"
@@ -2710,7 +2655,8 @@ AC_CACHE_VAL([lt_cv_sys_max_cmd_len], [dnl
     ;;
   *)
     lt_cv_sys_max_cmd_len=`(getconf ARG_MAX) 2> /dev/null`
-    if test -n "$lt_cv_sys_max_cmd_len"; then
+    if test -n "$lt_cv_sys_max_cmd_len" && \
+	test undefined != "$lt_cv_sys_max_cmd_len"; then
       lt_cv_sys_max_cmd_len=`expr $lt_cv_sys_max_cmd_len \/ 4`
       lt_cv_sys_max_cmd_len=`expr $lt_cv_sys_max_cmd_len \* 3`
     else
@@ -3534,17 +3480,6 @@ freebsd* | dragonfly*)
   esac
   ;;
 
-gnu*)
-  version_type=linux # correct to gnu/linux during the next big refactor
-  need_lib_prefix=no
-  need_version=no
-  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}${major} ${libname}${shared_ext}'
-  soname_spec='${libname}${release}${shared_ext}$major'
-  shlibpath_var=LD_LIBRARY_PATH
-  shlibpath_overrides_runpath=no
-  hardcode_into_libs=yes
-  ;;
-
 haiku*)
   version_type=linux # correct to gnu/linux during the next big refactor
   need_lib_prefix=no
@@ -3661,7 +3596,7 @@ linux*oldld* | linux*aout* | linux*coff*)
   ;;
 
 # This must be glibc/ELF.
-linux* | k*bsd*-gnu | kopensolaris*-gnu)
+linux* | k*bsd*-gnu | kopensolaris*-gnu | gnu*)
   version_type=linux # correct to gnu/linux during the next big refactor
   need_lib_prefix=no
   need_version=no
@@ -4277,10 +4212,6 @@ freebsd* | dragonfly*)
   fi
   ;;
 
-gnu*)
-  lt_cv_deplibs_check_method=pass_all
-  ;;
-
 haiku*)
   lt_cv_deplibs_check_method=pass_all
   ;;
@@ -4319,7 +4250,7 @@ irix5* | irix6* | nonstopux*)
   ;;
 
 # This must be glibc/ELF.
-linux* | k*bsd*-gnu | kopensolaris*-gnu)
+linux* | k*bsd*-gnu | kopensolaris*-gnu | gnu*)
   lt_cv_deplibs_check_method=pass_all
   ;;
 
@@ -5071,7 +5002,7 @@ m4_if([$1], [CXX], [
 	    ;;
 	esac
 	;;
-      linux* | k*bsd*-gnu | kopensolaris*-gnu)
+      linux* | k*bsd*-gnu | kopensolaris*-gnu | gnu*)
 	case $cc_basename in
 	  KCC*)
 	    # KAI C++ Compiler
@@ -5370,7 +5301,7 @@ m4_if([$1], [CXX], [
       _LT_TAGVAR(lt_prog_compiler_static, $1)='-non_shared'
       ;;
 
-    linux* | k*bsd*-gnu | kopensolaris*-gnu)
+    linux* | k*bsd*-gnu | kopensolaris*-gnu | gnu*)
       case $cc_basename in
       # old Intel for x86_64 which still supported -KPIC.
       ecc*)
@@ -7259,9 +7190,6 @@ if test "$_lt_caught_CXX_error" != yes; then
         _LT_TAGVAR(ld_shlibs, $1)=yes
         ;;
 
-      gnu*)
-        ;;
-
       haiku*)
         _LT_TAGVAR(archive_cmds, $1)='$CC -shared $libobjs $deplibs $compiler_flags ${wl}-soname $wl$soname -o $lib'
         _LT_TAGVAR(link_all_deplibs, $1)=yes
@@ -7423,7 +7351,7 @@ if test "$_lt_caught_CXX_error" != yes; then
         _LT_TAGVAR(inherit_rpath, $1)=yes
         ;;
 
-      linux* | k*bsd*-gnu | kopensolaris*-gnu)
+      linux* | k*bsd*-gnu | kopensolaris*-gnu | gnu*)
         case $cc_basename in
           KCC*)
 	    # Kuck and Associates, Inc. (KAI) C++ Compiler
@@ -9827,6 +9755,201 @@ else
 fi[]dnl
 ])# PKG_CHECK_MODULES
 
+AC_DEFUN([YELP_HELP_INIT],
+[
+AC_REQUIRE([AC_PROG_LN_S])
+m4_pattern_allow([AM_V_at])
+m4_pattern_allow([AM_V_GEN])
+m4_pattern_allow([AM_DEFAULT_VERBOSITY])
+AC_ARG_WITH([help-dir],
+            AC_HELP_STRING([--with-help-dir=DIR],
+                           [path where help files are installed]),,
+            [with_help_dir='${datadir}/help'])
+HELP_DIR="$with_help_dir"
+AC_SUBST(HELP_DIR)
+
+AC_ARG_VAR([ITSTOOL], [Path to the `itstool` command])
+AC_CHECK_PROG([ITSTOOL], [itstool], [itstool])
+if test x"$ITSTOOL" = x; then
+  AC_MSG_ERROR([itstool not found])
+fi
+
+AC_ARG_VAR([XMLLINT], [Path to the `xmllint` command])
+AC_CHECK_PROG([XMLLINT], [xmllint], [xmllint])
+if test x"$XMLLINT" = x; then
+  AC_MSG_ERROR([xmllint not found])
+fi
+
+YELP_HELP_RULES='
+HELP_ID ?=
+HELP_POT ?=
+HELP_FILES ?=
+HELP_EXTRA ?=
+HELP_MEDIA ?=
+HELP_LINGUAS ?=
+
+_HELP_LINGUAS = $(if $(filter environment,$(origin LINGUAS)),$(filter $(LINGUAS),$(HELP_LINGUAS)),$(HELP_LINGUAS))
+_HELP_POTFILE = $(if $(HELP_POT),$(HELP_POT),$(if $(HELP_ID),$(HELP_ID).pot))
+_HELP_POFILES = $(if $(HELP_ID),$(foreach lc,$(_HELP_LINGUAS),$(lc)/$(lc).po))
+_HELP_MOFILES = $(patsubst %.po,%.mo,$(_HELP_POFILES))
+_HELP_C_FILES = $(foreach f,$(HELP_FILES),C/$(f))
+_HELP_C_EXTRA = $(foreach f,$(HELP_EXTRA),C/$(f))
+_HELP_C_MEDIA = $(foreach f,$(HELP_MEDIA),C/$(f))
+_HELP_LC_FILES = $(foreach lc,$(_HELP_LINGUAS),$(foreach f,$(HELP_FILES),$(lc)/$(f)))
+_HELP_LC_STAMPS = $(foreach lc,$(_HELP_LINGUAS),$(lc)/$(lc).stamp)
+
+_HELP_DEFAULT_V = $(if $(AM_DEFAULT_VERBOSITY),$(AM_DEFAULT_VERBOSITY),1)
+_HELP_V = $(if $(V),$(V),$(_HELP_DEFAULT_V))
+_HELP_LC_VERBOSE = $(_HELP_LC_VERBOSE_$(_HELP_V))
+_HELP_LC_VERBOSE_ = $(_HELP_LC_VERBOSE_$(_HELP_DEFAULT_V))
+_HELP_LC_VERBOSE_0 = @echo "  GEN    "$(dir [$]@);
+
+all: $(_HELP_C_FILES) $(_HELP_C_EXTRA) $(_HELP_C_MEDIA) $(_HELP_LC_FILES) $(_HELP_POFILES)
+
+.PHONY: pot
+pot: $(_HELP_POTFILE)
+$(_HELP_POTFILE): $(_HELP_C_FILES) $(_HELP_C_EXTRA) $(_HELP_C_MEDIA)
+	$(AM_V_GEN)$(ITSTOOL) -o "[$]@" $(_HELP_C_FILES)
+
+.PHONY: repo
+repo: $(_HELP_POTFILE)
+	$(AM_V_at)for po in $(_HELP_POFILES); do \
+	  if test "x[$](_HELP_V)" = "x0"; then echo "  GEN    $${po}"; fi; \
+	  msgmerge -q -o "$${po}" "$${po}" "$(_HELP_POTFILE)"; \
+	done
+
+$(_HELP_POFILES):
+	$(AM_V_at)if ! test -d "$(dir [$]@)"; then mkdir "$(dir [$]@)"; fi
+	$(AM_V_at)if test ! -f "[$]@" -a -f "$(srcdir)/[$]@"; then cp "$(srcdir)/[$]@" "[$]@"; fi
+	$(AM_V_GEN)if ! test -f "[$]@"; then \
+	  (cd "$(dir [$]@)" && \
+	    $(ITSTOOL) -o "$(notdir [$]@).tmp" $(_HELP_C_FILES) && \
+	    mv "$(notdir [$]@).tmp" "$(notdir [$]@)"); \
+	else \
+	  (cd "$(dir [$]@)" && \
+	    $(ITSTOOL) -o "$(notdir [$]@).tmp" $(_HELP_C_FILES) && \
+	    msgmerge -o "$(notdir [$]@)" "$(notdir [$]@)" "$(notdir [$]@).tmp" && \
+	    rm "$(notdir [$]@).tmp"); \
+	fi
+
+$(_HELP_MOFILES): %.mo: %.po
+	$(AM_V_at)if ! test -d "$(dir [$]@)"; then mkdir "$(dir [$]@)"; fi
+	$(AM_V_GEN)msgfmt -o "[$]@" "$<"
+
+$(_HELP_LC_FILES): $(_HELP_LINGUAS)
+$(_HELP_LINGUAS): $(_HELP_LC_STAMPS)
+$(_HELP_LC_STAMPS): %.stamp: %.mo
+$(_HELP_LC_STAMPS): $(_HELP_C_FILES) $(_HELP_C_EXTRA)
+	$(AM_V_at)if ! test -d "$(dir [$]@)"; then mkdir "$(dir [$]@)"; fi
+	$(_HELP_LC_VERBOSE)if test -d "C"; then d="../"; else d="$(abs_srcdir)/"; fi; \
+	mo="$(dir [$]@)$(patsubst %/$(notdir [$]@),%,[$]@).mo"; \
+	if test -f "$${mo}"; then mo="../$${mo}"; else mo="$(abs_srcdir)/$${mo}"; fi; \
+	(cd "$(dir [$]@)" && $(ITSTOOL) -m "$${mo}" $(foreach f,$(_HELP_C_FILES),$${d}/$(f))) && \
+	touch "[$]@"
+
+.PHONY: clean-help
+mostlyclean-am: $(if $(HELP_ID),clean-help)
+clean-help:
+	rm -f $(_HELP_LC_FILES) $(_HELP_LC_STAMPS) $(_HELP_MOFILES)
+
+EXTRA_DIST ?=
+EXTRA_DIST += $(_HELP_C_EXTRA) $(_HELP_C_MEDIA)
+EXTRA_DIST += $(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).stamp)
+EXTRA_DIST += $(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).po)
+EXTRA_DIST += $(foreach f,$(HELP_MEDIA),$(foreach lc,$(HELP_LINGUAS),$(wildcard $(lc)/$(f))))
+
+distdir: distdir-help-files
+distdir-help-files:
+	@for lc in C $(HELP_LINGUAS); do \
+	  $(MKDIR_P) "$(distdir)/$$lc"; \
+	  for file in $(HELP_FILES); do \
+	    if test -f "$$lc/$$file"; then d=./; else d=$(srcdir)/; fi; \
+	    cp -p "$$d$$lc/$$file" "$(distdir)/$$lc/" || exit 1; \
+	  done; \
+	done; \
+
+.PHONY: check-help
+check: check-help
+check-help:
+	for lc in C $(_HELP_LINGUAS); do \
+	  if test -d "$$lc"; \
+	    then d=; \
+	    xmlpath="$$lc"; \
+	  else \
+	    d="$(srcdir)/"; \
+	    xmlpath="$$lc:$(srcdir)/$$lc"; \
+	  fi; \
+	  for page in $(HELP_FILES); do \
+	    echo "$(XMLLINT) --noout --noent --path $$xmlpath --xinclude $$d$$lc/$$page"; \
+	    $(XMLLINT) --noout --noent --path "$$xmlpath" --xinclude "$$d$$lc/$$page"; \
+	  done; \
+	done
+
+
+.PHONY: install-help
+install-data-am: $(if $(HELP_ID),install-help)
+install-help:
+	@for lc in C $(_HELP_LINGUAS); do \
+	  $(mkinstalldirs) "$(DESTDIR)$(HELP_DIR)/$$lc/$(HELP_ID)" || exit 1; \
+	done
+	@for lc in C $(_HELP_LINGUAS); do for f in $(HELP_FILES); do \
+	  if test -f "$$lc/$$f"; then d=; else d="$(srcdir)/"; fi; \
+	  helpdir="$(DESTDIR)$(HELP_DIR)/$$lc/$(HELP_ID)/"; \
+	  if ! test -d "$$helpdir"; then $(mkinstalldirs) "$$helpdir"; fi; \
+	  echo "$(INSTALL_DATA) $$d$$lc/$$f $$helpdir`basename $$f`"; \
+	  $(INSTALL_DATA) "$$d$$lc/$$f" "$$helpdir`basename $$f`" || exit 1; \
+	done; done
+	@for f in $(_HELP_C_EXTRA); do \
+	  lc=`dirname "$$f"`; lc=`basename "$$lc"`; \
+	  if test -f "$$f"; then d=; else d="$(srcdir)/"; fi; \
+	  helpdir="$(DESTDIR)$(HELP_DIR)/$$lc/$(HELP_ID)/"; \
+	  if ! test -d "$$helpdir"; then $(mkinstalldirs) "$$helpdir"; fi; \
+	  echo "$(INSTALL_DATA) $$d$$f $$helpdir`basename $$f`"; \
+	  $(INSTALL_DATA) "$$d$$f" "$$helpdir`basename $$f`" || exit 1; \
+	done
+	@for f in $(HELP_MEDIA); do \
+	  for lc in C $(_HELP_LINGUAS); do \
+	    if test -f "$$lc$$f"; then d=; else d="$(srcdir)/"; fi; \
+	    helpdir="$(DESTDIR)$(HELP_DIR)/$$lc/$(HELP_ID)/"; \
+	    mdir=`dirname "$$f"`; \
+	    if test "x$mdir" = "x."; then mdir=""; fi; \
+	    if ! test -d "$$helpdir$$mdir"; then $(mkinstalldirs) "$$helpdir$$mdir"; fi; \
+	    if test -f "$$d$$lc/$$f"; then \
+	      echo "$(INSTALL_DATA) $$d$$lc/$$f $$helpdir$$f"; \
+	      $(INSTALL_DATA) "$$d$$lc/$$f" "$$helpdir$$f" || exit 1; \
+	    elif test "x$$lc" != "xC"; then \
+	      echo "$(LN_S) -f $(HELP_DIR)/C/$(HELP_ID)/$$f $$helpdir$$f"; \
+	      $(LN_S) -f "$(HELP_DIR)/C/$(HELP_ID)/$$f" "$$helpdir$$f" || exit 1; \
+	    fi; \
+	  done; \
+	done
+
+.PHONY: uninstall-help
+uninstall-am: $(if $(HELP_ID),uninstall-help)
+uninstall-help:
+	for lc in C $(_HELP_LINGUAS); do for f in $(HELP_FILES); do \
+	  helpdir="$(DESTDIR)$(HELP_DIR)/$$lc/$(HELP_ID)/"; \
+	  echo "rm -f $$helpdir`basename $$f`"; \
+	  rm -f "$$helpdir`basename $$f`"; \
+	done; done
+	@for f in $(_HELP_C_EXTRA); do \
+	  lc=`dirname "$$f"`; lc=`basename "$$lc"`; \
+	  helpdir="$(DESTDIR)$(HELP_DIR)/$$lc/$(HELP_ID)/"; \
+	  echo "rm -f $$helpdir`basename $$f`"; \
+	  rm -f "$$helpdir`basename $$f`"; \
+	done
+	@for f in $(HELP_MEDIA); do \
+	  for lc in C $(_HELP_LINGUAS); do \
+	    helpdir="$(DESTDIR)$(HELP_DIR)/$$lc/$(HELP_ID)/"; \
+	    echo "rm -f $$helpdir$$f"; \
+	    rm -f "$$helpdir$$f"; \
+	  done; \
+	done;
+'
+AC_SUBST([YELP_HELP_RULES])
+m4_ifdef([_AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE([YELP_HELP_RULES])])
+])
+
 # Copyright (C) 2002, 2003, 2005, 2006, 2007, 2008, 2011 Free Software
 # Foundation, Inc.
 #
@@ -9845,7 +9968,7 @@ AC_DEFUN([AM_AUTOMAKE_VERSION],
 [am__api_version='1.11'
 dnl Some users find AM_AUTOMAKE_VERSION and mistake it for a way to
 dnl require some minimum version.  Point them to the right macro.
-m4_if([$1], [1.11.3], [],
+m4_if([$1], [1.11.6], [],
       [AC_FATAL([Do not call $0, use AM_INIT_AUTOMAKE([$1]).])])dnl
 ])
 
@@ -9861,7 +9984,7 @@ m4_define([_AM_AUTOCONF_VERSION], [])
 # Call AM_AUTOMAKE_VERSION and AM_AUTOMAKE_VERSION so they can be traced.
 # This function is AC_REQUIREd by AM_INIT_AUTOMAKE.
 AC_DEFUN([AM_SET_CURRENT_AUTOMAKE_VERSION],
-[AM_AUTOMAKE_VERSION([1.11.3])dnl
+[AM_AUTOMAKE_VERSION([1.11.6])dnl
 m4_ifndef([AC_AUTOCONF_VERSION],
   [m4_copy([m4_PACKAGE_VERSION], [AC_AUTOCONF_VERSION])])dnl
 _AM_AUTOCONF_VERSION(m4_defn([AC_AUTOCONF_VERSION]))])

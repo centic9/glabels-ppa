@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -90,18 +90,18 @@
 	      <p>The following options can also be selected.</p>
 	      <list>
 		<item>
-		  <p><gui>cetak kerangka</gui></p>
+		  <p><gui>print outlines</gui></p>
 		  <p>Print outlines of labels.  This option is useful for
                     dry-runs, to test printer alignment.</p>
 		</item>
 		<item>
-		  <p><gui>cetak dibalik</gui></p>
+		  <p><gui>print in reverse</gui></p>
 		  <p>Prints the labels as mirror images.  This option is
                     useful for printing on clear labels that will be viewed
                     from the reverse side (e.g. in a car window).</p>
 		</item>
 		<item>
-		  <p><gui>cetak tanda potong</gui></p>
+		  <p><gui>print crop marks</gui></p>
 		  <p>Prints crop marks along the edge of the sheet.
                     This option is useful for printing on blank stock, to
                     be cut after printing.  This option does not work well

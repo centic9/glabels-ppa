@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -131,17 +131,40 @@
       <section id="other-stacking-order">
 	<title>Αλλαγή σειράς στοίβαξης</title>
 
-	<p>Η σειρά στοίβαξης αναφέρεται σε σχετική θέση του άξονα z των αντικειμένων. Αυτό γίνεται όταν τα αντικείμενα επικαλύπτονται, πιο αντικείμενο θα εμφανιστεί στην κορυφή του άλλου. Από προεπιλογή, τα νεότερα αντικείμενα θα εμφανίζονται πάνω από παλαιότερα αντικείμενα. Για να αλλάξετε αυτή τη σειρά, επιλέξτε ένα ή περισσότερα αντικείμενα και επιλέξτε <guiseq><gui>Αντικείμενα</gui><gui>Διάταξη</gui><gui>Σε πρώτο πλάνο</gui></guiseq> για να ανεβάσετε την επιλογή στην κορυφή της σειράς στοίβαξης, ή επιλέξτε <guiseq><gui>Αντικείμενα</gui><gui>Διάταξη</gui><gui>Μεταφορά στο φόντο</gui></guiseq> για να κατεβάσετε την επιλογή στο κάτω μέρος της σειράς στοίβαξης. Αυτά τα στοιχεία του μενού είναι επίσης διαθέσιμα κάνοντας δεξί κλικ στην περιοχή οθόνης που υπάρχει μια μη-κενή επιλογή.</p>
+	<p>Stacking order refers to relative position in the z-axis of
+          objects.  That is when objects overlap, which object will appear
+          on top of the other.  By default, newer objects will appear above
+          older objects.  To change this order, select one or more objects
+          and choose <guiseq> <gui>Objects</gui>
+          <gui>Order</gui>
+          <gui>Bring to Front</gui> </guiseq>
+          to raise the selection to the top of the stacking
+          order, or choose <guiseq> <gui>Objects</gui>
+          <gui>Order</gui>
+          <gui>Send to Back</gui> </guiseq>
+          to lower the selection to the bottom of the
+          stacking order.  These menuitems are also available by right-clicking
+          the display area when there is a non-empty selection.</p>
 
       </section>
 
       <section id="other-rotating-flipping">
 	<title>Περιστροφή και αναστροφή αντικειμένων</title>
 
-	<p>Τα αντικείμενα μπορούν να περιστραφούν κατά 90 μοίρες προς οποιαδήποτε κατεύθυνση, είτε να αναστραφούν οριζόντια ή κάθετα, επιλέγοντας το κατάλληλο στοιχείο από το  υπο-μενού <guiseq><gui>Αντικείμενα</gui><gui>Περιστροφή/Αναστροφή</gui></guiseq>. Αυτά τα στοιχεία είναι επίσης διαθέσιμα κάνοντας δεξί κλικ στην περιοχή οθόνης που υπάρχει μια μη-κενή επιλογή.</p>
+	<p>Objects can be rotated 90 degrees in either direction, or flipped
+          horizontally or vertically, by choosing the appropriate menuitem
+          in the  <guiseq> <gui>Objects</gui>
+          <gui>Rotate/Flip</gui> </guiseq> sub-menu.  These
+          menuitems are also available by right-clicking
+          the display area when there is a non-empty selection.</p>
 
          <note>
-         <p>Αυτό το χαρακτηριστικό θα μπορούσε να είναι χρήσιμο όταν σχεδιάζετε ένθετα κουτιού CD. Για τη λεζάντα της κεντρικής στήλης, χρειάζεστε ένα κάθετα ευθυγραμμισμένο κείμενο. Αφού έχετε δημιουργήσει ένα βασικό πλαίσιο κειμένου, επιλέξτε <guiseq><gui>Αντικείμενα</gui><gui>Περιστροφή/Αναστροφή</gui></guiseq> για να περιστρέψετε το πλαίσιο κειμένου σύμφωνα με τις ανάγκες σας.</p>
+         <p>
+	  This feature could be useful when you are designing CD box inlays. For 
+          the spine caption, you need vertical aligned text. After you have created
+          a basic text box, choose <guiseq> <gui>Objects</gui><gui>Rotate/Flip</gui> </guiseq>
+          to rotate the text box according to your needs.
+         </p>
          </note>
 
       </section>
@@ -149,7 +172,15 @@
       <section id="other-alignment">
 	<title>Στοίχιση αντικειμένων</title>
 
-	<p>Τα αντικείμενα μπορούν να ευθυγραμμιστούν οριζόντια ή κάθετα, σχετικά μεταξύ τους, ή σε σχέση με την κεντρική γραμμή της ετικέτας, επιλέγοντας το κατάλληλο στοιχείο από το υπο-μενού <guiseq><gui>Αντικείμενα</gui><gui>Στοίχιση Οριζόντια</gui></guiseq> ή <guiseq><gui>Αντικείμενα</gui><gui>Στοίχιση Κατακόρυφα</gui></guiseq>. Αυτά τα στοιχεία είναι επίσης διαθέσιμα κάνοντας δεξί κλικ στην περιοχή οθόνης που υπάρχει μια μη-κενή επιλογή.</p>
+	<p>Objects can be aligned horizontally or vertically, relative to
+          one another, or relative to the center line of the label, by
+          choosing the appropriate menuitem from the  <guiseq>
+          <gui>Objects</gui>
+          <gui>Align Horizontal</gui>
+          </guiseq> or  <guiseq> <gui>Objects</gui>
+          <gui>Align Vertical</gui> </guiseq> sub-menus.
+          These menuitems are also available by right-clicking
+          the display area when there is a non-empty selection.</p>
 
       </section>
 

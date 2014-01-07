@@ -13,7 +13,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -27,7 +27,9 @@
         a command line, type the following command, then press
         <key>Return</key>:</p>
 
-      <p><cmd>glabels <var>file1.glabels file2.glabels file3.glabels</var></cmd></p>
+      <p><cmd>glabels
+      <var>file1.glabels file2.glabels file3.glabels</var>
+      </cmd></p>
 
       <p>When the application starts, the files that you specify are
 	displayed in separate <app>gLabels</app> windows.</p>

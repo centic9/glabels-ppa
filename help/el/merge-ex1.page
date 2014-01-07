@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -30,7 +30,13 @@ Name,Department,SN
 "Montgomery Scott",Engineering,SE-197-54T
       </code>
 
-      <p>Στο <app>glabels</app> έχουμε δημιουργήσει ένα νέο έγγραφο <app>glabels</app> χρησιμοποιώντας το πρότυπο Avery 5395 "Ετικέτες διευθύνσεων" . Στη συνέχεια χρησιμοποιούμε το στοιχείο μενού <guiseq><gui>Αντικείμενα</gui><gui>Ιδιότητες συγχώνευσης</gui></guiseq> για να εμφανιστεί ο διάλογος <gui>ιδιότητες συγχώνευσης</gui> . Θα χρησιμοποιήσουμε αυτό το παράθυρο για να επιλέξουμε τον τύπο της πηγής (στη περίπτωσή μας CSV με τα κλειδιά στη γραμμή 1) και την πηγή συγχώνευσης (όνομα αρχείου) όπως φαίνεται.</p>
+      <p>In <app>gLabels</app> we have created a new <app>glabels</app>
+        document using the Avery 5395 "Name Badge Labels" template.  Next we use the
+        <guiseq> <gui>Objects</gui>
+        <gui>Merge Properties</gui> </guiseq> menu item to display
+        the <gui>merge properties</gui> dialog.  We use this dialog to
+        select the source type (in our case CSV with keys on line 1) and the merge
+	source (filename) as shown.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex1-1.png" mime="image/png" style="right">
@@ -50,7 +56,10 @@ Name,Department,SN
 
       <p>Σε αυτό το παράδειγμα έχουμε προσθέσει τρία αντικείμενα κειμένου και ένα αντικείμενο ραβδοκώδικα barcode. Το πρώτο αντικείμενο κειμένου περιέχει μόνο απλό κείμενο κατά γράμμα ("Hello, my name is"). Το δεύτερο αντικείμενο κειμένου περιέχει ένα πεδίο συγχώνευσης ("${Name}") που αντιστοιχεί στο πρώτο πεδίο μιας εγγραφής (πρώτη στήλη της γραμμής) , η οποία περιλαμβάνει το πλήρες όνομα του νέου μέλους του πληρώματος. Το τρίτο πεδίο κειμένου περιέχει τόσο κυριολεκτικό κείμενο ("Department: ") που ακολουθείται από ένα πεδίο συγχώνευσης ("${Department}") που αντιστοιχεί στο δεύτερο πεδίο ή τμήμα των μελών του πληρώματος. Το αντικείμενο barcode έχει ρυθμιστεί να χρησιμοποιεί τομέα (ή κλειδί) "SN" που περιέχει τον αριθμό σειράς Starfleet μέλους του πληρώματος μας.</p>
 
-      <p>Τώρα μπορούμε να τυπώσουμε τις ετικέτες ονομάτων μας επιλέγοντας το στοιχείο μενού <guiseq><gui>Αρχείο</gui><gui>Εκτύπωση</gui></guiseq>. Αυτό θα εμφανίσει το πλαίσιο διαλόγου εκτύπωσης όπως φαίνεται παρακάτω.</p>
+      <p>Now we can print our name tags by selecting the
+        <guiseq> <gui>File</gui>
+        <gui>Print</gui> </guiseq> menu item.  This will display
+        print dialog as shown below.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex1-3.png" mime="image/png" style="right">

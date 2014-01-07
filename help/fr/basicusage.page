@@ -11,11 +11,35 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervans@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Géode</mal:name>
+      <mal:email>Geodebay@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
   </info>
 
    <title>Utilisation élémentaire</title>
@@ -33,7 +57,7 @@
      <section id="closefile">
     <title>Fermeture d'un fichier</title>
 
-      <p>Pour fermer le document en cours, choisissez <guiseq><gui>Fichier</gui><gui>Fermer</gui></guiseq>. Si le document a été modifié, vous devez confirmer dans une boîte de dialogue si vous souhaitez enregistrer les modifications avant de quitter ou si vous souhaitez annuler la commande. S'il n'y a qu'une seule fenêtre active, <app>gLabels</app> se ferme.</p>
+      <p>Pour fermer le document en cours, choisissez <guiseq><gui>Fichier</gui> <gui>Fermer</gui></guiseq>. Si le document a été modifié, vous devez confirmer dans une boîte de dialogue si vous souhaitez enregistrer les modifications avant de quitter ou si vous souhaitez annuler la commande. S'il n'y a qu'une seule fenêtre active, <app>gLabels</app> se ferme.</p>
      </section>
      
      <section>
@@ -43,12 +67,12 @@
 
       <list><item>
 
-	  <p>Pour enregistrer les modifications d'un fichier existant, choisissez <guiseq><gui>Fichier</gui><gui>Enregistrer</gui></guiseq>.</p>
+	  <p>Pour enregistrer les modifications d'un fichier existant, choisissez <guiseq><gui>Fichier</gui> <gui>Enregistrer</gui></guiseq>.</p>
 
 	</item>
         <item>
 
-	  <p>Pour enregistrer un nouveau fichier ou changer le nom d'un fichier existant, choisissez <guiseq><gui>Fichier</gui><gui>Enregistrer sous...</gui></guiseq>. Saisissez un nom de fichier dans la boîte de dialogue <gui>Enregistrer sous</gui> et cliquez sur <gui>Valider</gui>.</p>
+	  <p>Pour enregistrer un nouveau fichier ou changer le nom d'un fichier existant, choisissez <guiseq><gui>Fichier</gui> <gui>Enregistrer sous...</gui></guiseq>. Saisissez un nom de fichier dans la boîte de dialogue <gui>Enregistrer sous</gui> et cliquez sur <gui>Valider</gui>.</p>
 
 	</item>
       </list>
@@ -57,6 +81,6 @@
      <section>
     <title>Arrêt de <app>gLabels</app></title>
 
-      <p>Pour quitter <app>gLabels</app>, choisissez <guiseq><gui>Fichier</gui><gui>Quitter</gui></guiseq>. Cette commande équivaut à fermer toutes les fenêtres ouvertes. Consultez la section <link xref="basicusage#closefile"/>.</p>
+      <p>Pour quitter <app>gLabels</app>, choisissez <guiseq><gui>Fichier</gui> <gui>Quitter</gui></guiseq>. Cette commande équivaut à fermer toutes les fenêtres ouvertes. Consultez la section <link xref="basicusage#closefile"/>.</p>
      </section>
 </page>

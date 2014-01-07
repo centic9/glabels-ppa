@@ -60,6 +60,7 @@ struct _glLabelTextPrivate {
 	PangoWeight      font_weight;
 	gboolean         font_italic_flag;
 	PangoAlignment   align;
+	glValignment     valign;
 	glColorNode     *color_node;
 	gdouble          line_spacing;
 	gboolean         auto_shrink;
@@ -116,6 +117,10 @@ static void set_text_alignment          (glLabelObject    *object,
 					 PangoAlignment    text_alignment,
                                          gboolean          checkpoint);
 
+static void set_text_valignment         (glLabelObject    *object,
+					 glValignment      text_valignment,
+                                         gboolean          checkpoint);
+
 static void set_text_line_spacing       (glLabelObject    *object,
 					 gdouble           text_line_spacing,
                                          gboolean          checkpoint);
@@ -134,14 +139,17 @@ static gboolean        get_font_italic_flag        (glLabelObject    *object);
 
 static PangoAlignment  get_text_alignment          (glLabelObject    *object);
 
+static glValignment    get_text_valignment         (glLabelObject    *object);
+
 static gdouble         get_text_line_spacing       (glLabelObject    *object);
 
 static glColorNode*    get_text_color              (glLabelObject    *object);
 
-static void            set_text_path               (glLabelText      *this,
+static void            layout_text                 (glLabelText      *this,
                                                     cairo_t          *cr,
                                                     gboolean          screen_flag,
-                                                    glMergeRecord    *record);
+                                                    glMergeRecord    *record,
+                                                    gboolean          path_only_flag);
 
 static void            draw_object                 (glLabelObject    *object,
                                                     cairo_t          *cr,
@@ -164,8 +172,10 @@ static gdouble         auto_shrink_font_size       (cairo_t          *cr,
                                                     gdouble           size,
                                                     PangoWeight       weight,
                                                     PangoStyle        style,
+                                                    gdouble           line_spacing,
                                                     gchar            *text,
-                                                    gdouble           width);
+                                                    gdouble           width,
+                                                    gdouble           height);
 
 static gboolean        object_at                   (glLabelObject    *object,
                                                     cairo_t          *cr,
@@ -202,6 +212,7 @@ gl_label_text_class_init (glLabelTextClass *class)
 	label_object_class->set_font_weight       = set_font_weight;
 	label_object_class->set_font_italic_flag  = set_font_italic_flag;
 	label_object_class->set_text_alignment    = set_text_alignment;
+	label_object_class->set_text_valignment   = set_text_valignment;
 	label_object_class->set_text_line_spacing = set_text_line_spacing;
 	label_object_class->set_text_color        = set_text_color;
 	label_object_class->get_font_family       = get_font_family;
@@ -209,6 +220,7 @@ gl_label_text_class_init (glLabelTextClass *class)
 	label_object_class->get_font_weight       = get_font_weight;
 	label_object_class->get_font_italic_flag  = get_font_italic_flag;
 	label_object_class->get_text_alignment    = get_text_alignment;
+	label_object_class->get_text_valignment   = get_text_valignment;
 	label_object_class->get_text_line_spacing = get_text_line_spacing;
 	label_object_class->get_text_color        = get_text_color;
         label_object_class->draw_object           = draw_object;
@@ -290,6 +302,7 @@ gl_label_text_new (glLabel *label,
                 ltext->priv->font_weight      = gl_label_get_default_font_weight (label);
                 ltext->priv->font_italic_flag = gl_label_get_default_font_italic_flag (label);
                 ltext->priv->align            = gl_label_get_default_text_alignment (label);
+                ltext->priv->valign           = gl_label_get_default_text_valignment (label);
 		ltext->priv->color_node       = color_node;	  
                 ltext->priv->line_spacing     = gl_label_get_default_text_line_spacing (label);
 
@@ -328,6 +341,7 @@ copy (glLabelObject *dst_object,
 	new_ltext->priv->font_italic_flag = ltext->priv->font_italic_flag;
 	set_text_color (dst_object, text_color_node, FALSE);
 	new_ltext->priv->align            = ltext->priv->align;
+	new_ltext->priv->valign           = ltext->priv->valign;
 	new_ltext->priv->line_spacing     = ltext->priv->line_spacing;
 	new_ltext->priv->auto_shrink      = ltext->priv->auto_shrink;
 
@@ -518,7 +532,7 @@ get_size (glLabelObject *object,
 
 	
 	fontmap = pango_cairo_font_map_new ();
-	context = pango_cairo_font_map_create_context (PANGO_CAIRO_FONT_MAP (fontmap));
+	context = pango_font_map_create_context (PANGO_FONT_MAP (fontmap));
 	options = cairo_font_options_create ();
         cairo_font_options_set_hint_style (options, CAIRO_HINT_STYLE_NONE);
         cairo_font_options_set_hint_metrics (options, CAIRO_HINT_METRICS_OFF);
@@ -735,6 +749,39 @@ set_text_alignment (glLabelObject    *object,
 
 
 /*****************************************************************************/
+/* Set vertical text alignment method.                                       */
+/*****************************************************************************/
+static void
+set_text_valignment (glLabelObject    *object,
+		     glValignment      text_valignment,
+                     gboolean          checkpoint)
+{
+	glLabelText    *ltext = (glLabelText *)object;
+        glLabel        *label;
+
+	gl_debug (DEBUG_LABEL, "START");
+
+	g_return_if_fail (ltext && GL_IS_LABEL_TEXT (ltext));
+
+	if (ltext->priv->valign != text_valignment)
+        {
+                if ( checkpoint )
+                {
+                        label = gl_label_object_get_parent (GL_LABEL_OBJECT (ltext));
+                        gl_label_checkpoint (label, _("Vertically align text"));
+                }
+
+                ltext->priv->size_changed = TRUE;
+
+		ltext->priv->valign = text_valignment;
+		gl_label_object_emit_changed (GL_LABEL_OBJECT(ltext));
+	}
+
+	gl_debug (DEBUG_LABEL, "END");
+}
+
+
+/*****************************************************************************/
 /* Set text line spacing method.                                             */
 /*****************************************************************************/
 static void
@@ -881,6 +928,22 @@ get_text_alignment (glLabelObject    *object)
 
 
 /*****************************************************************************/
+/* Get vertical text alignment method.                                       */
+/*****************************************************************************/
+static glValignment
+get_text_valignment (glLabelObject    *object)
+{
+	glLabelText    *ltext = (glLabelText *)object;
+
+	gl_debug (DEBUG_LABEL, "");
+
+	g_return_val_if_fail (ltext && GL_IS_LABEL_TEXT (ltext), GTK_JUSTIFY_LEFT);
+
+	return ltext->priv->valign;
+}
+
+
+/*****************************************************************************/
 /* Get text line spacing method.                                             */
 /*****************************************************************************/
 static gdouble
@@ -957,7 +1020,7 @@ gl_label_text_get_auto_shrink (glLabelText      *ltext)
 
 
 /*****************************************************************************/
-/* Automatically shrink text size to fit within horizontal width.            */
+/* Automatically shrink text size to fit within bounding box.                */
 /*****************************************************************************/
 static gdouble
 auto_shrink_font_size (cairo_t     *cr,
@@ -965,14 +1028,16 @@ auto_shrink_font_size (cairo_t     *cr,
                        gdouble      size,
                        PangoWeight  weight,
                        PangoStyle   style,
+                       gdouble      line_spacing,
                        gchar       *text,
-                       gdouble      width)
+                       gdouble      width,
+                       gdouble      height)
 {
         PangoLayout          *layout;
         PangoFontDescription *desc;
         gint                  iw, ih;
-        gdouble               layout_width;
-        gdouble               new_size;
+        gdouble               layout_width, layout_height;
+        gdouble               new_wsize, new_hsize;
 
         layout = pango_cairo_create_layout (cr);
 
@@ -985,35 +1050,50 @@ auto_shrink_font_size (cairo_t     *cr,
         pango_layout_set_font_description (layout, desc);
         pango_font_description_free       (desc);
 
-        pango_layout_set_text (layout, text, -1);
+        pango_layout_set_spacing (layout, size * (line_spacing-1) * PANGO_SCALE);
         pango_layout_set_width (layout, -1);
+        pango_layout_set_text (layout, text, -1);
         pango_layout_get_size (layout, &iw, &ih);
         layout_width = (gdouble)iw / (gdouble)PANGO_SCALE;
+        layout_height = (gdouble)ih / (gdouble)PANGO_SCALE;
 
         g_object_unref (layout);
 
         g_print ("Object w = %g, layout w = %g\n", width, layout_width);
+        g_print ("Object h = %g, layout h = %g\n", height, layout_height);
 
+        new_wsize = new_hsize = size;
         if ( layout_width > width )
         {
                 /* Scale down. */
-                new_size = size * (width-2*GL_LABEL_TEXT_MARGIN)/layout_width;
+                new_wsize = size * (width-2*GL_LABEL_TEXT_MARGIN) / layout_width;
 
                 /* Round down to nearest 1/2 point */
-                new_size = (int)(new_size*2.0) / 2.0;
+                new_wsize = (int)(new_wsize*2.0) / 2.0;
 
                 /* don't get ridiculously small. */
-                if (new_size < 1.0)
+                if (new_wsize < 1.0)
                 {
-                        new_size = 1.0;
+                        new_wsize = 1.0;
                 }
         }
-        else
+
+        if ( layout_height > height )
         {
-                new_size = size;
+                /* Scale down. */
+                new_hsize = size * height / layout_height;
+
+                /* Round down to nearest 1/2 point */
+                new_hsize = (int)(new_hsize*2.0) / 2.0;
+
+                /* don't get ridiculously small. */
+                if (new_hsize < 1.0)
+                {
+                        new_hsize = 1.0;
+                }
         }
 
-        return new_size;
+        return (new_wsize < new_hsize ? new_wsize : new_hsize);
 }
 
 
@@ -1021,11 +1101,13 @@ auto_shrink_font_size (cairo_t     *cr,
 /* Update pango layout.                                                      */
 /*****************************************************************************/
 static void
-set_text_path (glLabelText      *this,
-               cairo_t          *cr,
-               gboolean          screen_flag,
-               glMergeRecord    *record)
+layout_text (glLabelText      *this,
+             cairo_t          *cr,
+             gboolean          screen_flag,
+             glMergeRecord    *record,
+             gboolean          path_only_flag)
 {
+        gint                  iw, ih, y;
         gdouble               object_w, object_h;
         gdouble               raw_w, raw_h;
         gchar                *text;
@@ -1035,13 +1117,24 @@ set_text_path (glLabelText      *this,
         PangoLayout          *layout;
         PangoStyle            style;
         PangoFontDescription *desc;
+        gdouble               scale_x, scale_y;
         cairo_font_options_t *font_options;
         PangoContext         *context;
 
 
         gl_debug (DEBUG_LABEL, "START");
 
+        /*
+         * Workaround for pango Bug#700592, which is a regression of Bug#341481.
+         * Render font at device scale and scale font size accordingly.
+         */
+        scale_x = 1.0;
+        scale_y = 1.0;
+        cairo_device_to_user_distance (cr, &scale_x, &scale_y);
+        scale_x = fabs (scale_x);
+        scale_y = fabs (scale_y);
         cairo_save (cr);
+        cairo_scale (cr, scale_x, scale_y);
 
         gl_label_object_get_size (GL_LABEL_OBJECT (this), &object_w, &object_h);
         gl_label_object_get_raw_size (GL_LABEL_OBJECT (this), &raw_w, &raw_h);
@@ -1060,8 +1153,10 @@ set_text_path (glLabelText      *this,
                                                    font_size,
                                                    this->priv->font_weight,
                                                    style,
+                                                   this->priv->line_spacing,
                                                    text,
-                                                   object_w);
+                                                   object_w,
+                                                   object_h);
         }
 
 
@@ -1077,27 +1172,47 @@ set_text_path (glLabelText      *this,
         desc = pango_font_description_new ();
         pango_font_description_set_family (desc, this->priv->font_family);
         pango_font_description_set_weight (desc, this->priv->font_weight);
-        pango_font_description_set_size   (desc, font_size * PANGO_SCALE);
+        pango_font_description_set_size   (desc, font_size * PANGO_SCALE / scale_x);
         pango_font_description_set_style  (desc, style);
         pango_layout_set_font_description (layout, desc);
         pango_font_description_free       (desc);
 
         pango_layout_set_text (layout, text, -1);
-        pango_layout_set_spacing (layout, font_size * (this->priv->line_spacing-1) * PANGO_SCALE);
+        pango_layout_set_spacing (layout, font_size * (this->priv->line_spacing-1) * PANGO_SCALE / scale_x);
         if (raw_w == 0.0)
         {
                 pango_layout_set_width (layout, -1);
         }
         else
         {
-                pango_layout_set_width (layout, object_w * PANGO_SCALE);
+                pango_layout_set_width (layout, object_w * PANGO_SCALE / scale_x);
         }
         pango_layout_set_wrap (layout, PANGO_WRAP_WORD);
         pango_layout_set_alignment (layout, this->priv->align);
+        pango_layout_get_pixel_size (layout, &iw, &ih);
 
+        switch (this->priv->valign)
+        {
+        case GL_VALIGN_VCENTER:
+                y = (object_h/scale_x - ih) / 2;
+                break;
+        case GL_VALIGN_BOTTOM:
+                y = object_h/scale_x - ih;
+                break;
+        default:
+                y = 0;
+                break;
+        }
 
-        cairo_move_to (cr, GL_LABEL_TEXT_MARGIN, 0);
-        pango_cairo_layout_path (cr, layout);
+        cairo_move_to (cr, GL_LABEL_TEXT_MARGIN/scale_x, y);
+        if ( path_only_flag )
+        {
+                pango_cairo_layout_path (cr, layout);
+        }
+        else
+        {
+                pango_cairo_show_layout (cr, layout);
+        }
 
         g_object_unref (layout);
         gl_text_node_lines_free (&lines);
@@ -1188,10 +1303,8 @@ draw_text_real (glLabelObject *object,
 {
         gl_debug (DEBUG_LABEL, "START");
 
-        set_text_path (GL_LABEL_TEXT (object), cr, screen_flag, record);
-
         cairo_set_source_rgba (cr, GL_COLOR_RGBA_ARGS (color));
-        cairo_fill (cr);
+        layout_text (GL_LABEL_TEXT (object), cr, screen_flag, record, FALSE);
 
         gl_debug (DEBUG_LABEL, "END");
 }
@@ -1214,7 +1327,7 @@ object_at (glLabelObject *object,
         if ( (x >= 0) && (x <= w) && (y >= 0) && (y <= h) )
         {
                 cairo_new_path (cr);
-                set_text_path (GL_LABEL_TEXT (object), cr, TRUE, NULL);
+                layout_text (GL_LABEL_TEXT (object), cr, TRUE, NULL, TRUE);
                 if (cairo_in_fill (cr, x, y))
                 {
                         return TRUE;

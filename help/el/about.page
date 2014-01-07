@@ -23,5 +23,10 @@
     <p>Το <app>gLabels</app> γράφτηκε από τον <link href="mailto:evins@snaught.com">Jim Evins</link>. Για να βρείτε περισσότερες πληροφορίες σχετικά με το <app>gLabels</app>, παρακαλώ επισκεφθείτε την <link href="http://glabels.org" type="http">ιστοσελίδα του <app>gLabels</app></link>.</p>
     <p>Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με την εφαρμογή ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες στο <link href="http://glabels.org/contact/" type="http">Σελίδα Επικοινωνίας του <app>gLabels</app></link>.</p>
 
-    <p>Αυτό το πρόγραμμα διανέμεται υπό τους όρους της GNU General Public license όπως έχει δημοσιευτεί από το Ίδρυμα Ελεύθερου λογισμικού είτε τηn 3η έκδοση της άδειας, είτε (κατ επιλογή σας) οποιασδήποτε νεότερης έκδοσης. Μπορείτε να βρείτε αντίγραφο αυτής της άδειας στον ακόλουθο <link href="ghelp:gpl" type="help">link</link>, ή στο αρχείο COPYING που περιλαμβάνεται στον πηγαίο κώδικα αυτού του προγράμματος.</p>
+    <p> This program is distributed under the terms of the GNU
+      General Public license as published by the Free Software
+      Foundation; either version 3 of the License, or (at your option)
+      any later version. A copy of this license can be found at this
+      <link href="help:gpl" type="help">link</link>, or in the file
+      COPYING included with the source code of this program. </p>
 </page>

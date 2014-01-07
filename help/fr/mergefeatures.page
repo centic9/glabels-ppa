@@ -11,20 +11,56 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervans@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Géode</mal:name>
+      <mal:email>Geodebay@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
   </info>
 
     <title>Réalisation d'une fusion de documents</title>
 
       <p>La fusion de documents (aussi appelée « Publipostage ») est un outil performant capable d'imprimer une étiquette ou une carte pour chaque enregistrement d'une source de données externe.</p>
 
-      <p>La première étape pour effectuer une fusion de document est de préparer le document source où figurent les données de cette fusion. Ce sont des adresses postales ou autres données pour lesquelles vous souhaitez créer une étiquette ou carte particulière. Pour l'instant, les seules sources possibles sont des fichiers texte ou le carnet d'adresses d'Evolution — d'autres sont prévues. Le format texte actuellement géré est très simple : chaque ligne est un enregistrement ; les champs sont séparés par des virgules (CSV), des tabulations ou le signe deux-points ; des sauts de lignes peuvent être placés à l'intérieur d'un champ en utilisant l'expression « \n ». Ce fichier peut être créé à l'aide de n'importe quel éditeur de texte ou généré par un autre programme ou script. Une méthode courante pour créer des fichiers CSV consiste à les exporter à partir d'un tableur.</p>
+      <p>La première étape pour effectuer une fusion de document est de préparer le document source où figurent les données de cette fusion. Ce sont des adresses postales ou autres données pour lesquelles vous souhaitez créer une étiquette ou carte particulière. Pour l'instant, les seules sources possibles sont des fichiers texte ou le carnet d'adresses d'Evolution — d'autres sont prévues. Le format texte actuellement géré est très simple : chaque ligne est un enregistrement ; les champs sont séparés par des virgules (CSV), des tabulations ou le signe deux-points ; des sauts de lignes peuvent être placés à l'intérieur d'un champ en utilisant l'expression « \n ». Ce fichier peut être créé à l'aide de n'importe quel éditeur de texte ou généré par un autre programme ou script. Une méthode courante pour créer des fichiers CSV consiste à les exporter à partir d'un tableur ou d'applications de carnet d'adresses.</p>
+	
+	<note style="advanced">
+         <p>Pour exporter un fichier CSV de <app>kaddressbook</app>, sélectionnez d'abord les contacts que vous souhaitez exporter. Cliquez sur le premier contact, puis cliquez sur les autres contacts souhaités en laissant appuyée la touche <key>Ctrl</key> pour en sélectionner plusieurs. Ensuite, choisissez <guiseq><gui>Fichier</gui> <gui>Exporter</gui> <gui>Exporter un fichier CSV</gui></guiseq>.</p>
+	 
+	 <p>Dans la fenêtre <gui>Sélection de contacts</gui>, activez le bouton <gui>Contacts sélectionnés</gui> (qui devrait de toute façon être actif par défaut). Puis cliquez sur <gui>Valider</gui>. Dans la boîte de dialogue <gui>Enregistrer sous</gui>, choisissez le dossier souhaité, nommez le fichier et cliquez sur <gui>Enregistrer</gui>.</p>
+        </note>
+	
+	<note style="advanced">
+         <p>Pour exporter un fichier CSV depuis <app>Thunderbird</app>, cliquez sur le bouton de barre d'outils <gui>Carnet d'adresses</gui> ou choisissez <guiseq><gui>Outils</gui> <gui>Carnet d'adresses</gui></guiseq> dans le menu. Puis sélectionnez les contacts que vous souhaitez exporter. Cliquez sur le premier contact, puis cliquez sur les autres contacts souhaités en laissant appuyée la touche <key>Ctrl</key> pour en sélectionner plusieurs. Ensuite, choisissez <guiseq><gui>Outils</gui> <gui>Exporter</gui></guiseq>.</p>
+	 
+	 <p>Dans la fenêtre de sélection de fichiers, choisissez le dossier souhaité, nommez le fichier à exporter et changez la valeur de la liste déroulante dans le coin inférieur droit en <gui>Séparés par des virgules</gui>. Pour terminer, cliquez sur <gui>Enregistrer</gui>.</p>
+        </note>
 
-      <p>Une étiquette doit ensuite être configurée pour « pointer » vers ce fichier de données. Pour configurer les propriétés de fusion d'un document, choisissez <guiseq><gui>Objets</gui><gui>Propriétés de fusion</gui></guiseq> pour afficher la boîte de dialogue <gui>Propriétés de fusion</gui>. Cette boîte de dialogue sert à définir exactement le format du fichier de données pour la fusion, ainsi que son nom et son emplacement.</p>
+      <p>Une étiquette doit ensuite être configurée pour « pointer » vers ce fichier de données. Pour configurer les propriétés de fusion d'un document, choisissez <guiseq><gui>Objets</gui> <gui>Propriétés de fusion</gui></guiseq> pour afficher la boîte de dialogue <gui>Propriétés de fusion</gui>. Cette boîte de dialogue sert à définir exactement le format du fichier de données pour la fusion, ainsi que son nom et son emplacement.</p>
 
       <p>Pour terminer, une fois l'étiquette associée au fichier de données, les champs clés peuvent être insérés dans des objets texte et utilisés comme source ou données pour des objets code-barre ou bien encore comme noms de fichiers image dans les objets image. Consultez <link xref="editprop"/> pour de plus amples informations sur l'utilisation des données de fusion pour ces types d'objets.</p>
 

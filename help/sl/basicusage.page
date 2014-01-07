@@ -13,17 +13,17 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
-      <p>Creative Commons Share Alike 3.0</p>
+      <p>Creative Commons - deljenje pod enakimi pogoji 3.0</p>
     </license>    
   </info>
 
-   <title>Osnovna raba</title>
+   <title>Osnovna uporaba</title>
     
     <section>
-    <title>Kako odpremo datoteko</title>
+    <title>To open a file</title>
 
       <p>To open a file, choose 
         <guiseq><gui>File</gui><gui>Open</gui>
@@ -43,7 +43,7 @@
      </section>
 
      <section id="closefile">
-    <title>Kako zapremo datoteko</title>
+    <title>To close a file</title>
 
       <p>To close the current document, choose
         <guiseq><gui>File</gui>
@@ -55,9 +55,9 @@
      </section>
      
      <section>
-    <title>Kako shranimo datoteko</title>
+    <title>To save a file</title>
 
-      <p>Datoteke lahko shranjujete na sledeče načine:</p>
+      <p>Datoteke je mogoče shraniti na naslednje načine:</p>
 
       <list><item>
 
@@ -79,7 +79,7 @@
      </section>
 
      <section>
-    <title>Izhod iz <app>gLabels</app></title>
+    <title>To quit <app>gLabels</app></title>
 
       <p>To quit <app>gLabels</app>, choose <guiseq><gui>File</gui>
         <gui>Quit</gui></guiseq>. This is equivalent to closing all open windows. 

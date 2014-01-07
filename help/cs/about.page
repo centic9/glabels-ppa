@@ -16,12 +16,18 @@
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2010 – 2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>O aplikaci <application>gLabels</application></title>
 
-    <p>Aplikaci <app>gLabels</app> napsal <link href="mailto:evins@snaught.com">Jim Evins</link>. Pokud o ní chcete najít více informací, navštivte prosím <link href="http://glabels.org" type="http">webovou stránku <app>gLabels</app>.</link></p>
-    <p>Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k této aplikaci nebo této příručce, postupujte dle instrukcí na <link href="http://glabels.org/contact/" type="http">kontaktní stránce <app>gLabels</app>.</link></p>
+    <p>Aplikaci <app>gLabels</app> napsal <link href="mailto:evins@snaught.com">Jim Evins</link>. Pokud o ní chcete najít více informací, navštivte prosím <link href="http://glabels.org" type="http">webovou stránku <app>gLabels</app></link>.</p>
+    <p>Pokud chcete oznámit chybu nebo navrhnout vylepšení vztahující se k této aplikaci nebo této příručce, postupujte dle instrukcí na <link href="http://glabels.org/contact/" type="http">kontaktní stránce <app>gLabels</app></link>.</p>
 
-    <p>Tento program je šířen podle ustanovení GNU General Public License, vydávané Free Software Foundation; a to buď verze 3 této licence anebo (podle vlastního uvážení) kterékoliv pozdější verze. Kopii této licence naleznete pod tímto <link href="ghelp:gpl" type="help">odkazem</link> nebo v souboru COPYING přiloženém ke zdrojovým kódům tohoto programu. </p>
+    <p>Tento program je šířen podle ustanovení GNU General Public License, vydávané Free Software Foundation; a to buď verze 3 této licence anebo (podle vlastního uvážení) kterékoliv pozdější verze. Kopii této licence naleznete pod tímto <link href="help:gpl" type="help">odkazem</link> nebo v souboru COPYING přiloženém ke zdrojovým kódům tohoto programu. </p>
 </page>

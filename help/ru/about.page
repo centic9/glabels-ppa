@@ -23,5 +23,10 @@
     <p>Приложение <app>gLabels</app> было написано <link href="mailto:evins@snaught.com">Джимом Эвинсом (Jim Evins)</link>. Подробнее о <app>gLabels</app> можно узнать на <link href="http://glabels.org" type="http">веб-странице <app>gLabels</app></link>.</p>
     <p>Чтобы сообщить об ошибке или внести предложение по этому приложению или руководству, см. информацию на <link href="http://glabels.org/contact/" type="http">этой веб-странице</link>.</p>
 
-    <p>Эта программа распространяется на условиях лицензии GNU General Public license, опубликованной Фондом свободного программного обеспечения, либо версии 3, либо (на ваше усмотрение) любой более поздней версии. Копию этой лицензии можно найти <link href="ghelp:gpl" type="help">здесь</link> или в файле COPYING, включённым в исходный код этой программы.</p>
+    <p> This program is distributed under the terms of the GNU
+      General Public license as published by the Free Software
+      Foundation; either version 3 of the License, or (at your option)
+      any later version. A copy of this license can be found at this
+      <link href="help:gpl" type="help">link</link>, or in the file
+      COPYING included with the source code of this program. </p>
 </page>

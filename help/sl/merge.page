@@ -13,14 +13,14 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
-      <p>Creative Commons Share Alike 3.0</p>
+      <p>Creative Commons - deljenje pod enakimi pogoji 3.0</p>
     </license>    
   </info>
 
-    <title>Vodnik za spajanje dokumentov</title>
+    <title>Document merge tutorial</title>
 
     <p>Document Merge (sometimes called "Mail Merge") is a powerful
       feature that allows a unique label or card to be printed for each

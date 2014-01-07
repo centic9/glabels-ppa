@@ -5,8 +5,8 @@ dnl ---------------------------------------------------------------------------
 dnl - GLABELS version
 dnl ---------------------------------------------------------------------------
 m4_define([glabels_major_version], [3])
-m4_define([glabels_minor_version], [0])
-m4_define([glabels_micro_version], [1])
+m4_define([glabels_minor_version], [2])
+m4_define([glabels_micro_version], [0])
 
 m4_define([glabels_version],
           [glabels_major_version.glabels_minor_version.glabels_micro_version])
@@ -34,7 +34,7 @@ PKG_PROG_PKG_CONFIG
 
 LT_INIT
 
-GNOME_DOC_INIT
+YELP_HELP_INIT
 GTK_DOC_CHECK(1.0)
 
 GLIB_GSETTINGS
@@ -327,6 +327,7 @@ src/Makefile
 src/cursors/Makefile
 src/pixmaps/Makefile
 data/Makefile
+data/appdata/Makefile
 data/desktop/Makefile
 data/icons/Makefile
 data/icons/16x16/Makefile
@@ -334,6 +335,7 @@ data/icons/22x22/Makefile
 data/icons/24x24/Makefile
 data/icons/32x32/Makefile
 data/icons/48x48/Makefile
+data/icons/scalable/Makefile
 data/man/Makefile
 data/mime/Makefile
 data/pixmaps/Makefile

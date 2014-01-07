@@ -11,16 +11,22 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2010 – 2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Vytvoření vlastní šablony</title>
 
-      <p>Když chcete vytvořit novou vlastní šablonu, zvolte <guiseq><gui>Soubor</gui><gui>Návrhář šablon…</gui></guiseq> a zobrazí se dialogové okno <gui>Návrhář šablon gLabels</gui>. Toto dialogové okno vás provede vytvořením vlastní šablony pro většinu typů etiket nebo vizitek, se kterými se můžete setkat.</p>
+      <p>Když chcete vytvořit novou vlastní šablonu, zvolte <guiseq><gui>Soubor</gui> <gui>Návrhář šablon…</gui></guiseq> a zobrazí se dialogové okno <gui>Návrhář šablon gLabels</gui>. Toto dialogové okno vás provede vytvořením vlastní šablony pro většinu typů etiket nebo vizitek, se kterými se můžete setkat.</p>
 
       <p>Pokud dáváte přednost ručnímu vytvoření šablon, přečtěte si <link xref="mancreate"/></p>
 

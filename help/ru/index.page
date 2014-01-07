@@ -2,8 +2,8 @@
 <page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="index" xml:lang="ru">
 
   <info>
-    <title type="link">Дизайнер этикеток и визиток gLabels</title>
-    <title type="text">Дизайнер этикеток и визиток gLabels</title>
+    <title type="link">gLabels label and business card designer</title>
+    <title type="text">gLabels label and business card designer</title>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
     <credit type="author">
       <name>Джим Эвинс (Jim Evins)</name>
@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Марио Блатерман (Mario Blättermann)</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>

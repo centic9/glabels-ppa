@@ -11,16 +11,22 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2010 – 2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Výběr objektů</title>
 
-      <p>Předpokladem k provádění operací s objekty je výběr jednoho objektu či skupiny více objektů. Aby bylo možné výběr provést, musí být zobrazovací oblast v režimu výběru objektů, což je signalizováno kurzorem v podobě šipky. Režim výběru objektů se zvolí pomocí <guiseq><gui>Objekty</gui><gui>Režim výběru</gui></guiseq> nebo odpovídajícím příkazem na <gui>Liště kreslení</gui>.</p>
+      <p>Předpokladem k provádění operací s objekty je výběr jednoho objektu či skupiny více objektů. Aby bylo možné výběr provést, musí být zobrazovací oblast v režimu výběru objektů, což je signalizováno kurzorem v podobě šipky. Režim výběru objektů se zvolí pomocí <guiseq><gui>Objekty</gui> <gui>Režim výběru</gui></guiseq> nebo odpovídajícím příkazem na <gui>Liště kreslení</gui>.</p>
 
       <section>
 	  <title>Výběr jednoho objektu</title>
@@ -29,7 +35,7 @@
 
 	<section>
 	  <title>Přidávání objektů do výběru</title>
-	    <p>Více objektů můžete vybrat tak, že vyberete první dříve uvedeným způsobem a po té budete držet klávesu <key>Ctrl</key> a vybírat další objekty. Jednotlivé objekty lze přidat do stávajícího výběru kdykoliv držením klávesy <key>Ctrl</key> během vybírání požadovaných objektů. Všechny objekty můžete vybrat pomocí položky nabídky <guiseq><gui>Upravit</gui><gui>Vybrat vše</gui></guiseq>. Všechny objekty ve výběru jsou zvýrazněné.</p>
+	    <p>Více objektů můžete vybrat tak, že vyberete první dříve uvedeným způsobem a po té budete držet klávesu <key>Ctrl</key> a vybírat další objekty. Jednotlivé objekty lze přidat do stávajícího výběru kdykoliv držením klávesy <key>Ctrl</key> během vybírání požadovaných objektů. Všechny objekty můžete vybrat pomocí položky nabídky <guiseq><gui>Upravit</gui> <gui>Vybrat vše</gui></guiseq>. Všechny objekty ve výběru budou zvýrazněné.</p>
 	</section>
 
 	<section>
@@ -42,7 +48,7 @@
 	<section>
 	  <title>Zrušení výběru objektů</title>
 	  
-	    <p>Jednotlivé objekty lze z výběru odebrat podržením klávesy <key>Ctrl</key> a klikáním na označené objekty. Veškerý výběr můžete zrušit pomocí nabídky <guiseq><gui>Upravit</gui><gui>Zrušit výběr</gui></guiseq> nebo jednoduchým kliknutím na prázdné místo v zobrazovací oblasti. Jakmile je u objektu zrušen výběr, zmizí i jeho zvýraznění.</p>
+	    <p>Jednotlivé objekty lze z výběru odebrat podržením klávesy <key>Ctrl</key> a klikáním na označené objekty. Veškerý výběr můžete zrušit pomocí nabídky <guiseq><gui>Upravit</gui> <gui>Zrušit výběr</gui></guiseq> nebo jednoduchým kliknutím na prázdné místo v zobrazovací oblasti. Jakmile je u objektu zrušen výběr, zmizí i jeho zvýraznění.</p>
 	  
 	</section>
 

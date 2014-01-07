@@ -11,11 +11,17 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2008-2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Ausführung einer Dokumentmischung</title>
@@ -23,6 +29,18 @@
       <p>Dokumentmischung ist ein mächtiges Funktionsmerkmal, das es Ihnen ermöglicht, ein einzelnes Etikett oder eine einzelne Karte für jeden Datensatz aus einer externen Datenquelle zu erstellen.</p>
 
       <p>Der erste Schritt zur Ausführung einer Dokumentmischung ist die Vorbereitung eines Quelldokuments, welches die Daten zum Mischen enthält. Diese Daten können aus E-Mail-Adressen oder anderen Daten bestehen, aus denen Sie die einzelnen Etiketten oder Karten erstellen wollen. Gegenwärtig können als Datenquellen entweder Textdateien oder die Daten des Evolution-Adressbuchs verwendet werden, andere sind bereits in Planung. Das derzeit unterstützte Textformat ist recht einfach: Jede Zeile stellt einen Datensatz dar, wobei die einzelnen Felder durch Kommata (CSV), Tabulatoren oder Semikola getrennt werden. Neue Zeilen werden durch einen Zeilenumbruch »\n« erzeugt. Diese Datei kann mit einem Texteditor, einem anderen Programm oder einem Skript erstellt werden. Ein üblicher Weg der Erstellung ist der Export einer CSV-Datei aus einer Tabellenkalkulation.</p>
+	
+	<note style="advanced">
+         <p>Um eine CSV-Datei aus <app>kaddressbook</app> zu exportieren, wählen Sie zuerst die Kontakte aus, die Sie exportieren wollen. Klicken Sie auf den ersten Kontakt, halten Sie dann die <key>Strg</key>-Taste gedrückt und klicken Sie auf weitere Kontakte, um diese auszuwählen. Wählen Sie anschließend <guiseq><gui>Datei</gui><gui>Exportieren</gui> <gui>CSV-Datei exportieren</gui></guiseq>.</p>
+	 
+	 <p>Im Fenster <gui>Kontakte auswählen</gui> aktivieren Sie den Knopf <gui>Ausgewählte Kontakte</gui> (welcher sowieso bereits ausgewählt sein sollte). Dann klicken Sie auf <gui>OK</gui>. Wählen Sie im <gui>Speichern unter</gui>-Dialog den gwünschten Ordner und einen Namen für die Datei aus und klicken Sie anschließend auf <gui>Speichern</gui>.</p>
+        </note>
+	
+	<note style="advanced">
+         <p>Um eine CSV-Datei aus <app>Thunderbird</app> zu exportieren, klicken Sie auf den <gui>Adressbuch</gui>-Knopf in der Werkzeugleiste oder wählen Sie <guiseq><gui>Extras</gui><gui>Adressbuch</gui></guiseq> aus dem Menü. Wählen Sie anschließend die zu exportierenden Kontakte aus. Klicken Sie auf den ersten Kontakt, halten Sie die <key>Strg</key>-Taste gedrückt und klicken Sie auf weitere Kontakte, um diese auszuwählen. Wählen Sie dann <guiseq><gui>Extras</gui><gui>Exportieren</gui> </guiseq>.</p>
+	 
+	 <p>Wählen Sie im Dateiauswahlfenster den gewünschten Ordner und einen Namen für die Datei aus und ändern Sie den Wert der Auswahlliste in der rechten unteren Ecke auf <gui>Komma getrennt</gui>. Anschließend klicken Sie auf <gui>Speichern</gui>.</p>
+        </note>
 
       <p>Ein Etikett muss erstellt werden, das auf diese Datenquelle »zeigt«. Um die Mischeigenschaften für ein Dokument festzulegen, wählen Sie <guiseq><gui>Objekte</gui><gui>Mischeinstellungen</gui></guiseq>. Der Dialog <gui>Mischeigenschaften</gui> wird geöffnet. In diesem Dialog wählen Sie das genaue Dateiformat und den Dateinamen (den Ort) der einzumischenden Daten aus.</p>
 

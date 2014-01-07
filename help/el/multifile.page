@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -22,7 +22,9 @@
 
       <p>Μπορείτε να εκτελέσετε το <app>gLabels</app> από τη γραμμή εντολών και να ανοίξετε ένα ή περισσότερα αρχεία. Για να ανοίξετε πολλά αρχεία από τη γραμμή εντολών, πληκτρολογήστε την ακόλουθη εντολή και πατήστε <key>Return</key>:</p>
 
-      <p><cmd>glabels <var>αρχείο1.glabels αρχείο2.glabels αρχείο3.glabels</var></cmd></p>
+      <p><cmd>glabels
+      <var>file1.glabels file2.glabels file3.glabels</var>
+      </cmd></p>
 
       <p>Όταν ξεκινά η εφαρμογή, τα αρχεία που έχετε καθορίσει εμφανίζονται σε ξεχωριστά <app>gLabels</app> παράθυρα.</p>
 

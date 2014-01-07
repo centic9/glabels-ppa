@@ -11,17 +11,23 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2010 – 2013</mal:years>
+    </mal:credit>
   </info>
     
   <!-- ============= Customization ============================= -->
   <!-- Use this section to describe how to customize the application. -->
     <title>Nastavení</title> 
-    <p>Když chcete v aplikaci <app>gLabels</app> změnit nastavení, zvolte <guiseq><gui>Upravit</gui><gui>Předvolby</gui></guiseq>. Dialogové okno <gui>Předvolby gLabels</gui> obsahuje následující karty:</p>
+    <p>Když chcete v aplikaci <app>gLabels</app> změnit nastavení, zvolte <guiseq><gui>Upravit</gui> <gui>Předvolby</gui></guiseq>. Dialogové okno <gui>Předvolby gLabels</gui> obsahuje následující karty:</p>
 
   <section id="prefs-locale" style="2column">
     <title>Národní prostředí</title>

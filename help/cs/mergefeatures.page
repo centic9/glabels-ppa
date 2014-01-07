@@ -11,20 +11,38 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2010 – 2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Provádění slučování dokumentů</title>
 
       <p>Slučování dokumentů (někdy také nazývané „hromadná korespondence“) je mocná funkce, která umožňuje vytisknout na etikety nebo vizitky různé texty podle jednotlivých záznamů v externím zdroji dat.</p>
 
-      <p>Prvním krokem při slučování dokumentů je příprava zdrojového dokumentu, který má obsahovat slučovaná data. Tato data mohou být poštovní adresy nebo jakákoliv jiná data, pro která si přejete vytvořit jedinečné etikety nebo vizitky. V současnosti jsou zatím jako zdroje podporované pouze textové soubory a datový server Evolution, jiné jsou v plánu. Současně podporovaný formát textových souborů je velmi jednoduchý: co řádek, to záznam; pole jsou oddělená čárkami (CSV), tabulátory nebo dvojtečkami; řádky jsou zakončené pomocí znaku „\n“. Takovýto soubor jde vytvořit v libovolném textovém editoru nebo jiným programem nebo skriptem. Obvyklým způsobem vytváření souborů CSV je jejich export z tabulkového kalkulátoru.</p>
+      <p>Prvním krokem při slučování dokumentů je příprava zdrojového dokumentu, který má obsahovat slučovaná data. Tato data mohou být poštovní adresy nebo jakákoliv jiná data, pro která si přejete vytvořit jedinečné etikety nebo vizitky. V současnosti jsou zatím jako zdroje podporované pouze textové soubory a datový server Evolution, jiné jsou v plánu. Současně podporovaný formát textových souborů je velmi jednoduchý: co řádek, to záznam; pole jsou oddělená čárkami (CSV), tabulátory nebo dvojtečkami; řádky jsou zakončené pomocí znaku „\n“. Takovýto soubor jde vytvořit v libovolném textovém editoru nebo jiným programem nebo skriptem. Obvyklým způsobem vytváření souborů CSV je jejich export z tabulkového kalkulátoru nebo z aplikace s adresářem.</p>
+	
+	<note style="advanced">
+         <p>Jestli chcete exportovat soubor CSV z aplikace <app>kaddressbook</app>, nejprve vyberte kontakty, které si přejete exportovat. Klikněte na první kontakt, po té zmáčkněte a držte <key>Ctrl</key> a klikejte na další požadované kontakty, které se tímto vyberou. Nakonec zvolte <guiseq><gui>Soubor</gui><gui>Export</gui> <gui>Export do souboru CSV</gui></guiseq>.</p>
+	 
+	 <p>V okně <gui>Výběr kontaktů</gui> zapněte tlačítko <gui>Vybrané kontakty</gui> (které by stejně mělo být standardně zapnuté). Pak klikněte na <gui>OK</gui>. V dialogovém okně <gui>Uložit jako</gui> zvolte požadovnanou složku a název pro soubor a klikněte na <gui>Uložit</gui>.</p>
+        </note>
+	
+	<note style="advanced">
+         <p>Jestli chcete exportovat soubor CSV z aplikace <app>Thunderbird</app>, klikněte na tlačítko <gui>Adresář</gui> na liště nástrojů nebo zvolte <guiseq><gui>Nástroje</gui><gui>Adresář</gui></guiseq> z nabídky. Po té vyberte kontakty, které si přejete exportovat. Klikněte na první kontakt, zmáčkněte a držte <key>Ctrl</key> a klikejte na ostatní kontakty, které chcete vybrat. Nakonec zvolte <guiseq><gui>Nástroje</gui><gui>Exportovat</gui></guiseq>.</p>
+	 
+	 <p>V okně pro výběr souboru zvolte požadovanou složku a název pro soubor a v rozbalovacím seznamu v pravém dolním rohu změňte hodnotu na <gui>Oddělený čárkou</gui>. Nakonec klikněte na <gui>Uložit</gui>.</p>
+        </note>
 
-      <p>Etiketa musí být nastavená tak, aby „ukazovala na“ takovýto datový soubor. Abyste nastavili vlastnosti slučování dokumentu, zvolte položku nabídky <guiseq><gui>Objekty</gui><gui>Vlastnosti slučování</gui></guiseq> a zobrazí se dialogové okno <gui>vlastnosti slučování</gui>. Toto dialogové okno slouží k výběru přesného formátu datového souboru a názvu (umístění) souboru se slučovanými daty.</p>
+      <p>Etiketa musí být nastavená tak, aby „ukazovala na“ takovýto datový soubor. Abyste nastavili vlastnosti slučování dokumentu, zvolte položku nabídky <guiseq><gui>Objekty</gui> <gui>Vlastnosti slučování</gui></guiseq> a zobrazí se dialogové okno <gui>vlastnosti slučování</gui>. Toto dialogové okno slouží k výběru přesného formátu datového souboru a názvu (umístění) souboru se slučovanými daty.</p>
 
       <p>Nakonec, až je etiketa nastavená pro datový soubor, je zapotřebí vložit klíče polí do textových objektů a použít klíče polí jako zdroje nebo data pro objekty čárových kódů a jako názvy souborů pro obrázkové objekty. Více informací o použití slučovaných dat pro tyto typy objektů viz <link xref="editprop"/>.</p>
 

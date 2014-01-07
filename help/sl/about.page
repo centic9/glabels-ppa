@@ -4,7 +4,9 @@
   <info>
     <link type="seealso" xref="index"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>Podatki o <app>gLabels</app>.</desc>
+    <desc>
+      Information about <app>gLabels</app>.
+    </desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
@@ -14,11 +16,11 @@
       <email>mariobl@gnome.org</email>
     </credit>
     <license>
-      <p>Creative Commons Share Alike 3.0</p>
+      <p>Creative Commons - deljenje pod enakimi pogoji 3.0</p>
     </license>    
   </info>
 
-    <title>O programu <app>gLabels</app></title>
+    <title>About <app>gLabels</app></title>
 
     <p> <app>gLabels</app> was written by <link href="mailto:evins@snaught.com">Jim Evins</link>.
       To find more information about <app>gLabels</app>, please visit the 
@@ -30,5 +32,10 @@
       <link href="http://glabels.org/contact/" type="http"><app>gLabels</app> Contact Page</link>.
     </p>
 
-    <p>Ta program je prosta programska oprema; lahko ga razširjate in/ali spreminjate pod pogoji dovoljenja GNU General Public Licence, kot jo je objavila Free Software Foundation; ali različico 3 licence ali (na vašo željo) katerokoli kasnejšo različico. Kopijo tega dovoljenja lahko najdete na tej <link href="ghelp:gpl" type="help">povezavi</link> ali v datoteki COPYING, ki je vključena v izvorno kodo tega programa.</p>
+    <p> This program is distributed under the terms of the GNU
+      General Public license as published by the Free Software
+      Foundation; either version 3 of the License, or (at your option)
+      any later version. A copy of this license can be found at this
+      <link href="help:gpl" type="help">link</link>, or in the file
+      COPYING included with the source code of this program. </p>
 </page>

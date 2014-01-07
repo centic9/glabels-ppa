@@ -11,11 +11,17 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2010 – 2013</mal:years>
+    </mal:credit>
   </info>
 
     <title>Příklad 2: Adresní štítky</title>
@@ -32,7 +38,7 @@ Bůček,Alexandr,Lexa,"U Jezevce","Nitranská 7",Praha,"160 13"
 Bůčková,Alexandra,,"Korunní 18",,Praha,"100 24"
       </code>
 
-      <p>V aplikaci <app>gLabels</app> vytvoříme nový dokument ze šablony Avery L7162 „Poštovní etikety“. Následně použijeme položku nabídky <guiseq><gui>Objekty</gui><gui>Vlastnosti slučování</gui></guiseq> a zobrazí se nám dialogové okno <gui>vlastností slučování</gui>. V tomto dialogovém okně vybereme typ zdroje (v našem případě CSV s klíči na 1. řádku) a konkrétní zdroj (název souboru) pro slučování, jak můžete vidět na následujícím obrázku.</p>
+      <p>V aplikaci <app>gLabels</app> vytvoříme nový dokument ze šablony Avery L7162 „Poštovní etikety“. Následně použijeme položku nabídky <guiseq><gui>Objekty</gui> <gui>Vlastnosti slučování</gui></guiseq> a zobrazí se nám dialogové okno <gui>vlastností slučování</gui>. V tomto dialogovém okně vybereme typ zdroje (v našem případě CSV s klíči na 1. řádku) a konkrétní zdroj (název souboru) pro slučování, jak můžete vidět na následujícím obrázku.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex2-1.png" mime="image/png" style="right">
@@ -54,7 +60,7 @@ Bůčková,Alexandra,,"Korunní 18",,Praha,"100 24"
 
       <p>V tomto příkladu máme jen jeden textový objekt. Tento textový objekt obsahuje všechna slučovaná pole uspořádaná v několika řádcích představujících poštovní adresu. Všimněte si, že pole ${ADR1} a ${ADR2} jsou umístěná na samostatných řádcích bez jakéhokoliv dalšího textu. Pokud aplikace <app>gLabels</app> narazí na pole, které je jediným textem na řádku a toto pole je prázdné, řádek nebude ve výsledku zabírat žádné místo.</p>
 
-      <p>Nyní se můžeme pustit do tisku adresních štítků pomocí volby <guiseq><gui>Soubor</gui><gui>Tisk</gui></guiseq> v nabídce. Zobrazí se dialogové okno tisku jako na následujícím obrázku.</p>
+      <p>Nyní se můžeme pustit do tisku adresních štítků pomocí volby <guiseq><gui>Soubor</gui> <gui>Tisk</gui></guiseq> v nabídce. Zobrazí se dialogové okno tisku jako na následujícím obrázku.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex2-3.png" mime="image/png" style="right">

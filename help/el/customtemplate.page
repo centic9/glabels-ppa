@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -20,7 +20,12 @@
 
     <title>Για να δημιουργήσετε ενα προσαρμοσμένο πρότυπο</title>
 
-      <p>Για να δημιουργήσετε ένα νέο προσαρμοσμένο πρότυπο, επιλέξτε <guiseq><gui>Αρχείο</gui><gui>Σχεδιαστής προτύπου ...</gui></guiseq> για να εμφανίσετε το παράθυρο <gui>Σχεδιαστής προτύπου</gui> . Αυτός ο διάλογος θα σας βοηθήσει να δημιουργείτε ένα προσαρμοσμένο πρότυπο για τα περισσότερα είδη της ετικέτας ή κάρτας που μπορεί να συναντήσετε.</p>
+      <p>To create a new custom template, choose 
+        <guiseq><gui>File</gui>
+	<gui>Template Designer ...</gui></guiseq>
+	to display the <gui>Template Designer</gui> dialog.
+        This dialog will assist you in creating a custom template for
+        most types of label or card stationery that you may encounter.</p>
 
       <p>Αν προτιμάτε, μπορείτε να δημιουργήσετε τα πρότυπά σας χειροκίνητα. Για αυτή την επιλογή δείτε το <link xref="mancreate"/></p>
 

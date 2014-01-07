@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Марио Блатерман (Mario Blättermann)</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -22,7 +22,9 @@
 
       <p><app>gLabels</app> можно запустить из командной строки, открыв один или несколько файлов. Чтобы открыть несколько файлов из командной строки, введите следующую команду и нажмите <key>Return</key>:</p>
 
-      <p><cmd>glabels <var>файл1.glabels файл2.glabels файл3.glabels</var></cmd></p>
+      <p><cmd>glabels
+      <var>file1.glabels file2.glabels file3.glabels</var>
+      </cmd></p>
 
       <p>Когда приложение запустится, указанные файлы будут открыты в отдельных окнах <app>gLabels</app>.</p>
 

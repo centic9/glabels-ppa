@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Марио Блатерман (Mario Blättermann)</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -20,7 +20,12 @@
 
     <title>Печать этикеток и визиток</title>
 
-      <p>Чтобы распечатать этикетки или визитки, выберите <guiseq><gui>Файл</gui><gui>Печать</gui></guiseq>. Появится диалоговое окно <gui>Печать</gui>. Выберите параметры печати и нажмите <gui>Печать</gui>. Чтобы выполнить предварительный просмотр, нажмите <gui>Просмотр печати</gui>.</p>
+      <p>To print labels or cards, choose
+        <guiseq><gui>File</gui><gui>Print</gui>
+	</guiseq> to display the <gui>Print</gui> dialog.
+        Once print options have been selected, click <gui>Print</gui>
+        to print the labels or cards.  To simply preview the results,
+        click <gui>Print Preview</gui> instead.</p>
 
       <p>В диалоговом окне <gui>Печать</gui> можно указать следующие параметры печати:</p>
 
@@ -68,15 +73,15 @@
 	      <p>Можно выбрать следующие параметры.</p>
 	      <list>
 		<item>
-		  <p><gui>печатать контуры этикеток</gui></p>
+		  <p><gui>print outlines</gui></p>
 		  <p>Печатать контуры этикеток. Этот параметр полезен для проверки выравнивания печати.</p>
 		</item>
 		<item>
-		  <p><gui>печатать  в зеркальном отображении</gui></p>
+		  <p><gui>print in reverse</gui></p>
 		  <p>Печатает этикеты в зеркальном отображении. Этот параметр полезен для печати этикеток, которые должны читаться в отображённом виде (например, на стекле машины).</p>
 		</item>
 		<item>
-		  <p><gui>печатать метки под обрез</gui></p>
+		  <p><gui>print crop marks</gui></p>
 		  <p>Печатает метки вдаль границы листа. Этот параметр полезен для печати на бумаге, которая будет впоследствии обрезана. Этот параметр может не работать с некоторыми шаблонами.</p>
 		</item>
 	      </list>

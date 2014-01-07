@@ -11,11 +11,35 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Paternité-Partage des Conditions Initiales à l'Identique 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervans@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Géode</mal:name>
+      <mal:email>Geodebay@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
   </info>
 
     <title>Exemple 2 : étiquettes d'adresses</title>
@@ -32,7 +56,7 @@ McGarret,Steve,O,"404 Piikoi Street",,Honolulu,HI,96813
 Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
       </code>
 
-      <p>Dans <app>gLabels</app>, nous créons un nouveau document sur le modèle des « Étiquettes adresses » AVERY 5512. Puis, avec l'élément de menu <guiseq><gui>Objets</gui><gui>Propriétés de fusion</gui></guiseq>, nous affichons la boîte de dialogue <gui>Propriétés de fusion</gui> ; nous sélectionnons le type de source (dans notre cas CVS avec en-têtes en première ligne) et son emplacement (nom de fichier) comme sur l'illustration ci-dessous.</p>
+      <p>Dans <app>gLabels</app>, nous créons un nouveau document sur le modèle des « Étiquettes adresses » AVERY 5512. Puis, avec l'élément de menu <guiseq><gui>Objets</gui> <gui>Propriétés de fusion</gui></guiseq>, nous affichons la boîte de dialogue <gui>Propriétés de fusion</gui> ; nous sélectionnons le type de source (dans notre cas CVS avec en-têtes en première ligne) et son emplacement (nom de fichier) comme sur l'illustration ci-dessous.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex2-1.png" mime="image/png" style="right">
@@ -54,7 +78,7 @@ Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
 
       <p>Dans cet exemple, nous avons un seul objet texte. Celui-ci contient tous nos champs de fusion agencés sur plusieurs lignes comme le sont les adresses postales. Notez que les champs ${ADR1} et ${ADR2} ont été disposés sans aucune autre mention sur leur ligne. Lorsque <app>gLabels</app> rencontre un champ occupant à lui seul toute une ligne, il ne génère pas de ligne si le champ est vide.</p>
 
-      <p>Nous pouvons maintenant imprimer les étiquettes d'adresses en cliquant l'élément de menu <guiseq><gui>Fichier</gui><gui>Imprimer</gui></guiseq>. Cette commande ouvre la boîte de dialogue « Imprimer » comme illustré ci-dessous.</p>
+      <p>Nous pouvons maintenant imprimer les étiquettes d'adresses en cliquant l'élément de menu <guiseq><gui>Fichier</gui> <gui>Imprimer</gui></guiseq>. Cette commande ouvre la boîte de dialogue « Imprimer » comme illustré ci-dessous.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex2-3.png" mime="image/png" style="right">

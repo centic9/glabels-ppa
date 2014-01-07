@@ -11,7 +11,7 @@
     </credit>
     <credit type="author">
       <name>Mario Blättermann</name>
-      <email>mariobl@gnome.org</email>
+      <email>mario.blaettermann@gmail.com</email>
     </credit>
     <license>
       <p>Creative Commons Share Alike 3.0</p>
@@ -28,7 +28,13 @@
 	<p>Εάν απο το πακέτο <app>gLabels</app> της διανομής σας λείπει αυτή η υποστήριξη, μπορεί να θελήσετε να επικοινωνήσετε με το συντηρητή πακέτου ή συντάξτε μια αναφορά σφάλματος για το πακέτο για να το ζητήσετε.</p>
       </note>
 
-      <p>Στο <app>glabels</app> έχουμε δημιουργήσει ένα νέο έγγραφο <app>glabels</app> χρησιμοποιώντας το πρότυπο Avery 5512 "Ετικέτες διευθύνσεων" . Στη συνέχεια χρησιμοποιούμε το στοιχείο μενού <guiseq><gui>Αντικείμενα</gui><gui>Ιδιότητες συγχώνευσης</gui></guiseq> για να εμφανίσουμε το διάλογο <gui>ιδιότητες συγχώνευσης</gui> . Χρησιμοποιούμε αυτό το παράθυρο για να επιλέξουμε τον τύπο της πηγής (σε περίπτωση μας από <gui>Data from default Evolution addressbook</gui>) όπως φαίνεται.</p>
+      <p>In <app>glabels</app> we have created a new <app>gLabels</app>
+        document using the Avery 5512 "Address Labels" template. Next we use the
+        <guiseq> <gui>Objects</gui>
+        <gui>Merge Properties</gui></guiseq> menu item to display
+        the <gui>Merge properties</gui> dialog. We use this dialog to
+        select the source type (in our case <gui>Data from default Evolution
+	addressbook</gui>) as shown.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-1.png" mime="image/png" style="right">
@@ -50,7 +56,10 @@
 
       <p>Σε αυτό το παράδειγμα έχουμε ένα μόνο αντικείμενο κειμένου πάλι. Αυτό το αντικείμενο κειμένου περιέχει όλα τα πεδία συγχώνευσης μας οργανωμένα σε πολλές γραμμές, ως διευθύνσεις αλληλογραφίας.</p>
 
-      <p>Τώρα μπορούμε να τυπώσουμε τις ετικέτες διευθύνσεων μας επιλέγοντας το στοιχείο μενού <guiseq><gui>Αρχείο</gui><gui>Εκτύπωση</gui></guiseq>. Αυτό θα εμφανιστεί το πλαίσιο διαλόγου εκτύπωσης, όπως φαίνεται παρακάτω.</p>
+      <p>Now we can print our address labels by selecting the
+        <guiseq> <gui>File</gui>
+        <gui>Print</gui> </guiseq> menu item. This will display
+        the print dialog as shown below.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-3.png" mime="image/png" style="right">
