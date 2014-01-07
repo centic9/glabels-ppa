@@ -4,9 +4,8 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>
-      Create your templates manually.
-    </desc>
+    <revision pkgversion="3.0.1" version="0.1" date="2011-06-20" status="incomplete"/>
+    <desc>Ustvarite predloge ročno.</desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
@@ -20,7 +19,7 @@
     </license>    
   </info>
 
-  <title>Manually creating new templates</title>
+  <title>Ročna izdelava novih predlog</title>
 
 
 
@@ -39,8 +38,8 @@
     <p><app>gLabels</app> searches for templates in several other locations as defined here:</p>
     <table frame="all" rules="rows">
       <tr>
-        <td><p>Location</p></td>
-        <td><p>Description</p></td>
+        <td><p>Mesto</p></td>
+        <td><p>Opis</p></td>
       </tr>
       <tr>
         <td><p/></td>
@@ -48,7 +47,7 @@
       </tr>
       <tr>
         <td><p><file>${prefix}/share/libglabels-3.0/templates</file></p></td>
-        <td><p>Predefined templates distributed with <app>gLabels</app>.</p>
+        <td><p>Vnaprej določene predloge, vključene v <app>gLabels</app>.</p>
             <p><file>${prefix}</file> is usually <file>/usr</file> or <file>/usr/local</file>,
             depending on where <app>gLabels</app> was installed.</p></td>
       </tr>
@@ -112,7 +111,7 @@
   <!-- BEGIN Template Files -->
   <!-- ******************** -->
   <section id="template-file">
-    <title>Template Files</title>
+    <title>Datoteke predlog</title>
 
     <p>A template file contains a single <code translate="no">Glabels-templates</code> top-level
     node.</p>
@@ -126,7 +125,7 @@
 &lt;/Glabels-templates&gt;</code>
 
     <listing>
-      <title>Example Template</title>
+      <title>Primer predloge</title>
       <desc>Example <app>gLabels</app> template file containing a single
             <code translate="no">Template</code> node.</desc>
       <code mime="text/xml" translate="no">
@@ -167,13 +166,13 @@
 
     <table frame="all" rules="rows">
       <tr>
-        <td><p>Property</p></td>  <td><p>Description</p></td>
+        <td><p>Lastnost</p></td>  <td><p>Opis</p></td>
       </tr>
       <tr>
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
-        <td><p><code translate="no">brand</code></p></td>  
+        <td><p><code translate="no">Znamka</code></p></td>  
         <td><p>Brand or manufacturer of stationery product. E.g. "Avery"</p></td>
       </tr>
       <tr>
@@ -181,27 +180,27 @@
         <td><p>Part number or name of stationery product. E.g. "8160"</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">size</code></p></td>
+        <td><p><code translate="no">Velikost</code></p></td>
         <td><p>Size of sheet.
                E.g., "<code translate="no">US-Letter</code>", "<code translate="no">A4</code>", ...
             </p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">description</code></p></td>
+        <td><p><code translate="no">Opis</code></p></td>
         <td><p>Description of stationery product.  E.g, "Mailing Labels."</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">_description</code></p></td>
+        <td><p><code translate="no">_Opis</code></p></td>
         <td><p>Translatable description of stationery product. E.g, "Mailing Labels."
             (Only useful for predefined templates)</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">width</code></p></td>
-        <td><p>Page width.  Only valid if size="Other"</p></td>
+        <td><p><code translate="no">Širina</code></p></td>
+        <td><p>Širina strani. Veljavno le, če je velikost="Drugo"</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">height</code></p></td>
-        <td><p>Page height.  Only valid if size="Other"</p></td>
+        <td><p><code translate="no">Višina</code></p></td>
+        <td><p>Višina strani. Veljavno le, če je velikost="Drugo"</p></td>
       </tr>
       <tr>
         <td><p><code translate="no">equiv</code></p></td>
@@ -231,13 +230,13 @@
 
     <table frame="all" rules="rows">
       <tr>
-        <td><p>Subnode</p></td>  <td><p>Description</p></td>
+        <td><p>Podvozlišče</p></td>  <td><p>Opis</p></td>
       </tr>
       <tr>
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
-        <td><p><code translate="no">category</code></p></td>
+        <td><p><code translate="no">Kategorija</code></p></td>
         <td><p>A category for the template.
             A template can belong to multiple categories by simply adding multiple
             <code translate="no">Meta</code> nodes to the parent
@@ -249,17 +248,17 @@
             the file <file>${prefix}/libglabels-3.0/templates/categories.xml</file>.
 	      Currently defined category IDs include:</p>
             <list>
-              <item><p><code translate="no">label</code></p></item>
-              <item><p><code translate="no">round-label</code></p></item>
-              <item><p><code translate="no">elliptical-label</code></p></item>
-              <item><p><code translate="no">square-label</code></p></item>
-              <item><p><code translate="no">rectangle-label</code></p></item>
-              <item><p><code translate="no">card</code></p></item>
-              <item><p><code translate="no">business-card</code></p></item>
+              <item><p><code translate="no">Nalepke</code></p></item>
+              <item><p><code translate="no">Okrogle nalepke</code></p></item>
+              <item><p><code translate="no">Eliptične nalepke</code></p></item>
+              <item><p><code translate="no">Kvadratne nalepke</code></p></item>
+              <item><p><code translate="no">Pravokotne nalepke</code></p></item>
+              <item><p><code translate="no">Kartončki</code></p></item>
+              <item><p><code translate="no">Vizitke</code></p></item>
               <item><p><code translate="no">media</code></p></item>
-              <item><p><code translate="no">mail</code></p></item>
-              <item><p><code translate="no">foldable</code></p></item>
-              <item><p><code translate="no">photo</code></p></item>
+              <item><p><code translate="no">Pošta</code></p></item>
+              <item><p><code translate="no">Zloženka</code></p></item>
+              <item><p><code translate="no">Fotografija</code></p></item>
             </list>
 
 
@@ -295,36 +294,35 @@
 
     <table frame="all" rules="rows">
       <tr>
-        <td><p>Property</p></td>  <td><p>Description</p></td>
+        <td><p>Lastnost</p></td>  <td><p>Opis</p></td>
       </tr>
       <tr>
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
         <td><p><code translate="no">id</code></p></td>
-        <td><p>Reserved for future use.  Should always be 0.</p></td>
+        <td><p>Rezervirano za kasnejšo uporabo. Naj bo vedno 0.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">width</code></p></td>
-        <td><p>Width of label/card</p></td>
+        <td><p><code translate="no">Širina</code></p></td>
+        <td><p>Širina nalepke/kartončka/vizitke</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">height</code></p></td>
-        <td><p>Heigth of label/card</p></td>
+        <td><p><code translate="no">Višina</code></p></td>
+        <td><p>Višina nalepke/kartončka/vizitke</p></td>
       </tr>
       <tr>
         <td><p><code translate="no">round</code></p></td>
-        <td><p>Radius of corners.  For items with square edges (business cards),
-               the radius should be 0.</p></td>
+        <td><p>Polmer kotov. Pri elementih s pravimi koti (vizitke) mora biti polmer 0.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">x_waste</code></p></td>
+        <td><p><code translate="no">Odpadek x</code></p></td>
         <td><p>Amount of horizontal waste (over-print) to allow.  This is useful
                       for minimizing alignment problems when using non-white
                       backgrounds (e.g. images).</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">y_waste</code></p></td>
+        <td><p><code translate="no">Odpadek y</code></p></td>
         <td><p>Amount of vertical waste (over-print) to allow.  This is useful
                       for minimizing alignment problems when using non-white
                       backgrounds (e.g. images).</p></td>
@@ -358,25 +356,25 @@
 
     <table frame="all" rules="rows">
       <tr>
-        <td><p>Property</p></td>  <td><p>Description</p></td>
+        <td><p>Lastnost</p></td>  <td><p>Opis</p></td>
       </tr>
       <tr>
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
         <td><p><code translate="no">id</code></p></td>
-        <td><p>Reserved for future use.  Should always be 0.</p></td>
+        <td><p>Rezervirano za kasnejšo uporabo. Naj bo vedno 0.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">width</code></p></td>
-        <td><p>Width of the ellipse</p></td>
+        <td><p><code translate="no">Širina</code></p></td>
+        <td><p>Širina elipse</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">height</code></p></td>
-        <td><p>Heigth of the ellipse</p></td>
+        <td><p><code translate="no">Višina</code></p></td>
+        <td><p>Višina elipse</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">waste</code></p></td>
+        <td><p><code translate="no">Odpadek</code></p></td>
         <td><p>Amount of waste (over-print) to allow.  This is useful
             for minimizing alignment problems when using non-white
             backgrounds (e.g. images).</p></td>
@@ -409,21 +407,21 @@
 
     <table frame="all" rules="rows">
       <tr>
-        <td><p>Property</p></td>  <td><p>Description</p></td>
+        <td><p>Lastnost</p></td>  <td><p>Opis</p></td>
       </tr>
       <tr>
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
         <td><p><code translate="no">id</code></p></td>
-        <td><p>Reserved for future use.  Should always be 0.</p></td>
+        <td><p>Rezervirano za kasnejšo uporabo. Naj bo vedno 0.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">radius</code></p></td>
-        <td><p>Radius (1/2 diameter) of label</p></td>
+        <td><p><code translate="no">Polmer</code></p></td>
+        <td><p>Polmer (polovica premera) nalepke</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">waste</code></p></td>
+        <td><p><code translate="no">Odpadek</code></p></td>
         <td><p>Amount of waste (over-print) to allow.  This is useful
                 for minimizing alignment problems when using non-white
                 backgrounds (e.g. images).</p></td>
@@ -456,35 +454,35 @@
 
     <table frame="all" rules="rows">
       <tr>
-        <td><p>Property</p></td>  <td><p>Description</p></td>
+        <td><p>Lastnost</p></td>  <td><p>Opis</p></td>
       </tr>
       <tr>
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
         <td><p><code translate="no">id</code></p></td>
-        <td><p>Reserved for future use.  Should always be 0.</p></td>
+        <td><p>Rezervirano za kasnejšo uporabo. Naj bo vedno 0.</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">radius</code></p></td>
-        <td><p>Outer radius of label</p></td>
+        <td><p><code translate="no">Polmer</code></p></td>
+        <td><p>Zunanji polmer nalepke</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">hole</code></p></td>
-        <td><p>Radius of concentric hole</p></td>
+        <td><p><code translate="no">Luknja</code></p></td>
+        <td><p>Polmer koncentrične luknje</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">width</code></p></td>
+        <td><p><code translate="no">Širina</code></p></td>
         <td><p>If present, the label is clipped to the given width.
                       (Useful for "business card CDs").</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">height</code></p></td>
+        <td><p><code translate="no">Višina</code></p></td>
         <td><p>If present, the label is clipped to the given height.
                       (Useful for "business card CDs").</p></td>
       </tr>
       <tr>
-        <td><p><code translate="no">waste</code></p></td>
+        <td><p><code translate="no">Odpadek</code></p></td>
         <td><p>Amount of waste (over-print) to allow.  This is useful
                       for minimizing alignment problems when using non-white
                       backgrounds (e.g. images).</p></td>
@@ -495,7 +493,7 @@
     <figure>
       <desc><span translate="no">Label-cd</span> parameters</desc>
       <media type="image" src="figures/glabels-template-cd-label.png" mime="image/png" style="right">
-        <p>CD label parameters</p>
+        <p>Lastnosti nalepke za zgoščenko</p>
       </media>
     </figure>
     <!-- ==== End of Figure ==== -->
@@ -529,13 +527,13 @@
 
       <table frame="all" rules="rows">
         <tr>
-          <td><p>Property</p></td>  <td><p>Description</p></td>
+          <td><p>Lastnost</p></td>  <td><p>Opis</p></td>
         </tr>
         <tr>
           <td><p/></td>  <td><p/></td>
         </tr>
         <tr>
-          <td><p><code translate="no">size</code></p></td>
+          <td><p><code translate="no">Velikost</code></p></td>
           <td><p>Size of the margin.  I.e. the distance of the margin
                         line from the edge of the card/label.</p></td>
         </tr>
@@ -556,26 +554,26 @@
 
       <table frame="all" rules="rows">
         <tr>
-          <td><p>Property</p></td>  <td><p>Description</p></td>
+          <td><p>Lastnost</p></td>  <td><p>Opis</p></td>
         </tr>
         <tr>
           <td><p/></td>  <td><p/></td>
         </tr>
         <tr>
           <td><p><code translate="no">x1</code></p></td>
-          <td><p>x coordinate of 1st endpoint of the line segment.</p></td>
+          <td><p>Koordinata x prve končne točke odseka črte.</p></td>
         </tr>
         <tr>
           <td><p><code translate="no">y1</code></p></td>
-          <td><p>y coordinate of 1st endpoint of the line segment.</p></td>
+          <td><p>Koordinata y prve končne točke odseka črte.</p></td>
         </tr>
         <tr>
           <td><p><code translate="no">x2</code></p></td>
-          <td><p>x coordinate of 2st endpoint of the line segment.</p></td>
+          <td><p>Koordinata x druge končne točke odseka črte.</p></td>
         </tr>
         <tr>
           <td><p><code translate="no">y2</code></p></td>
-          <td><p>y coordinate of 2st endpoint of the line segment.</p></td>
+          <td><p>Koordinata y druge končne točke odseka črte.</p></td>
         </tr>
       </table>
     </section>
@@ -594,22 +592,22 @@
 
       <table frame="all" rules="rows">
         <tr>
-          <td><p>Property</p></td>  <td><p>Description</p></td>
+          <td><p>Lastnost</p></td>  <td><p>Opis</p></td>
         </tr>
         <tr>
           <td><p/></td>  <td><p/></td>
         </tr>
         <tr>
           <td><p><code translate="no">x0</code></p></td>
-          <td><p>x coordinate of circle origin (center).</p></td>
+          <td><p>Koordinata x središča kroga.</p></td>
         </tr>
         <tr>
           <td><p><code translate="no">y0</code></p></td>
-          <td><p>y coordinate of circle origin (center).</p></td>
+          <td><p>Koordinata y središča kroga.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">radius</code></p></td>
-          <td><p>Radius of circle.</p></td>
+          <td><p><code translate="no">Polmer</code></p></td>
+          <td><p>Polmer kroga.</p></td>
         </tr>
       </table>
     </section>
@@ -628,30 +626,30 @@
 
       <table frame="all" rules="rows">
         <tr>
-          <td><p>Property</p></td>  <td><p>Description</p></td>
+          <td><p>Lastnost</p></td>  <td><p>Opis</p></td>
         </tr>
         <tr>
           <td><p/></td>  <td><p/></td>
         </tr>
         <tr>
           <td><p><code translate="no">x1</code></p></td>
-          <td><p>x coordinate of upper left corner of rectangle.</p></td>
+          <td><p>Koordinata x levega zgornjega kota pravokotnika.</p></td>
         </tr>
         <tr>
           <td><p><code translate="no">y1</code></p></td>
-          <td><p>y coordinate of upper left corner of rectangle.</p></td>
+          <td><p>Koordinata y levega zgornjega kota pravokotnika.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">w</code></p></td>
-          <td><p>Width of rectangle.</p></td>
+          <td><p><code translate="no">š</code></p></td>
+          <td><p>Širina pravokotnika.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">h</code></p></td>
-          <td><p>Height of rectangle.</p></td>
+          <td><p><code translate="no">v</code></p></td>
+          <td><p>Višina pravokotnika.</p></td>
         </tr>
         <tr>
           <td><p><code translate="no">r</code></p></td>
-          <td><p>Radius of rounded corners of rectangle.</p></td>
+          <td><p>Polmer zaobljenih robov pravokotnika.</p></td>
         </tr>
       </table>
     </section>
@@ -670,26 +668,26 @@
 
       <table frame="all" rules="rows">
         <tr>
-          <td><p>Property</p></td>  <td><p>Description</p></td>
+          <td><p>Lastnost</p></td>  <td><p>Opis</p></td>
         </tr>
         <tr>
           <td><p/></td>  <td><p/></td>
         </tr>
         <tr>
           <td><p><code translate="no">x1</code></p></td>
-          <td><p>x coordinate of upper left corner of ellipse.</p></td>
+          <td><p>Koordinata x levega zgornjega kota elipse.</p></td>
         </tr>
         <tr>
           <td><p><code translate="no">y1</code></p></td>
-          <td><p>y coordinate of upper left corner of ellipse.</p></td>
+          <td><p>Koordinata y levega zgornjega kota elipse.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">w</code></p></td>
-          <td><p>Width of ellipse.</p></td>
+          <td><p><code translate="no">š</code></p></td>
+          <td><p>Širina elipse.</p></td>
         </tr>
         <tr>
-          <td><p><code translate="no">h</code></p></td>
-          <td><p>Height of ellipse.</p></td>
+          <td><p><code translate="no">v</code></p></td>
+          <td><p>Višina elipse.</p></td>
         </tr>
       </table>
     </section>
@@ -714,24 +712,51 @@
       one layout is needed.  However, if labels are arranged in multiple
       grids, such as a running bond pattern, multiple
       <code translate="no">Layout</code> tags can be used. </p>
+    <p>A common example for multiple layouts is a sheet with three
+       CD labels:</p>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>List nalepk za zgoščenko</desc>
+      <media type="image" src="figures/layouts-cdlabel.png" mime="image/png" style="right">
+        <p>List nalepk za zgoščenko</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+    <p>The two labels on the left edge can be assigned to a grid, assuming we
+       can define the coordinates for the top left label and the distance to
+       the second label properly. The distance to the left edge is common to
+       these labels. The third one on the right edge has no common distance
+       values with the other ones, that's why we have to define a second layout,
+       with unique coordinates for the top left corner of that label.</p>
+
+	<note style="tip">
+	<p>You can define multiple layouts only if the labels on the sheet
+        have the same shape. If your sheet contains different shapes, you have
+        to define each shape in another template seperately. Future versions
+        of <app>gLabels</app> will probably be able to concatenate such sheets
+        with different shapes within a single template.</p>
+      </note>
+
 	<note style="tip">
 	<p>A single label can always be treated as a grid of one.</p>
       </note>
 
     <table frame="all" rules="rows">
       <tr>
-        <td><p>Property</p></td>  <td><p>Description</p></td>
+        <td><p>Lastnost</p></td>  <td><p>Opis</p></td>
       </tr>
       <tr>
         <td><p/></td>  <td><p/></td>
       </tr>
       <tr>
         <td><p><code translate="no">nx</code></p></td>
-        <td><p>Number of labels/cards across in the grid (horizontal)</p></td>
+        <td><p>Število nalepk/kartončkov/vizitk v vrsti (vodoravno)</p></td>
       </tr>
       <tr>
         <td><p><code translate="no">ny</code></p></td>
-        <td><p>Number of labels/cards across in the grid (vertical)</p></td>
+        <td><p>Število nalepk/kartončkov/vizitk v vrsti (navpično)</p></td>
       </tr>
       <tr>
         <td><p><code translate="no">x0</code></p></td>
@@ -745,11 +770,11 @@
       </tr>
       <tr>
         <td><p><code translate="no">dx</code></p></td>
-        <td><p>Horizontal pitch of grid.</p></td>
+        <td><p>Vodoravna razdalja mreže</p></td>
       </tr>
       <tr>
         <td><p><code translate="no">dy</code></p></td>
-        <td><p>Vertical pitch of grid.</p></td>
+        <td><p>Navpična razdalja mreže</p></td>
       </tr>
     </table>
 

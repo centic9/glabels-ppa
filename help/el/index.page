@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="index" xml:lang="el">
+
+  <info>
+    <title type="link">Σχεδιαστής ετικετών και επιχειρηματικών καρτών gLabels</title>
+    <title type="text">Σχεδιαστής ετικετών και επιχειρηματικών καρτών gLabels</title>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title><media type="image" mime="image/png" src="figures/glabels-logo.png">λογότυπο του gLabels</media> Εγχειρίδιο του gLabels </title>
+
+  <p>Η εφαρμογή <app>gLabels</app> είναι ένα ελαφρύ πρόγραμμα για τη δημιουργία ετικετών και επαγγελματικών καρτών για το περιβάλλον GNOME. Έχει σχεδιαστεί για να λειτουργεί με διάφορα αυτοκόλλητες ετικέτες λέιζερ/ink-jet και φύλλα επαγγελματικών καρτών που θα βρείτε στα περισσότερα καταστήματα ειδών γραφείου.</p>
+ 
+  <p>Η εφαρμογή <app>gLabels</app> μπορεί να χρησιμοποιηθεί για την σχεδίαση ετικετών διευθύνσεων, ετικετών ονομάτων, ετικετών τιμών, ετικετών CD/DVD, ή οτιδήποτε άλλου που διοργανώνεται σε μια οργανωμένη δομή ενός φύλλου χαρτιού. Οι ετικέτες (ή κάρτες) μπορεί να περιέχουν κείμενο, εικόνες, γραμμές, σχήματα, και barcodes. Το <app>gLabels</app> περιλαμβάνει επίσης το χαρακτηριστικό συγχώνευσης εγγραφου το οποίο σας επιτρέπει να εκτυπώσετε μια μοναδική ετικέτα για κάθε εγγραφή από μια εξωτερική πηγή δεδομένων, όπως ένα αρχείο CSV ή <app>Evolution</app> βιβλίου διευθύνσεων.</p>
+
+  <figure>
+    <title>Το κύριο παράθυρο του <app>gLabels</app></title>
+    <desc>Το κύριο παράθυρο του <app>gLabels</app></desc>
+    <media type="image" src="figures/introduction-glabels-main-window.png" mime="image/png" style="right">
+      <p>Το κύριο παράθυρο του <app>gLabels</app>.</p>
+    </media>
+  </figure>
+
+  <section id="usage" style="2column">
+    <title>Χρήση</title>
+  </section>
+
+  <section id="merging" style="2column">
+    <title>Συγχώνευση εγγράφων</title>
+  </section>
+
+  <section id="advanced" style="2column">
+    <title>Χρήση για προχωρημένους</title>
+  </section>
+
+</page>

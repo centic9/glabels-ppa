@@ -4,6 +4,7 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <revision pkgversion="3.0.1" version="0.1" date="2011-06-20" status="incomplete"/>
     <desc>Vytvářejte své šablony ručně.</desc>
     <credit type="author">
       <name>Jim Evins</name>
@@ -638,6 +639,23 @@
     <title>Uzel <span translate="no">Layout</span></title>
 
     <p>Uzel typu Label může obsahovat více potomků <code translate="no">Layout</code>. V případě, že jsou etikety rozmístěné do jednoduché pravidelné mřížky, postačuje jeden uzel Layout. Pokud jsou ale etikety rozmístěné ve více mřížkách, např. mají podobu cihlové zdi, musí se použít více značek <code translate="no">Layout</code>.</p>
+    <p>Typický příklad pro více rozvržení Layout je list se třemi etiketami na CD:</p>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>List s etiketami na CD</desc>
+      <media type="image" src="figures/layouts-cdlabel.png" mime="image/png" style="right">
+        <p>List s etiketami na CD</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+    <p>Dvě etikety na levé straně jde zarovnat do mřížky, což předpokládá správně nadefinovat souřadnice pro levou horní etiketu a vzdálenost ke druhé etiketě. Vzdálenost od levého okraje je pro tyto etikety společná. Třetí etiketa na pravé straně nemá s ostatními tuto vzdálenost společnou, takže musíme nadefinovat druhé rozvržení s odlišnými souřadnicemi pro levý horní roh této etikety.</p>
+
+	<note style="tip">
+	<p>Více rozvržení pomocí uzlu Layout můžete nadefinovat jen za předpokladu, že etikety na listě jsou tvarově a velikostně totožné. Pokud se na jednom listě liší, musíte pro každý druh nadefinovat šablonu zvlášť. Budoucí verze <app>gLabels</app> bude toto pravděpodobně řešit spojováním takových listů s různými etiketami do jedné šablony.</p>
+      </note>
+
 	<note style="tip">
 	<p>Jedna etiketa může být vždy považována za mřížku s jednou buňkou.</p>
       </note>

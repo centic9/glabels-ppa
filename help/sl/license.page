@@ -4,10 +4,10 @@
   <info>
     <link type="seealso" xref="index"/>
     <revision pkgversion="2.30" version="0.1" date="2009-12-28" status="draft"/>
-    <desc>Legal information.</desc>
+    <desc>Pravne informacije.</desc>
   </info>
 
-  <title>License</title>
+  <title>Dovoljenje</title>
   <p>
     
     This work is distributed under a CreativeCommons Attribution-Share Alike
@@ -26,9 +26,7 @@
       <p>To adapt the work.</p> 
     </item>
   </terms>
-  <p>
-    Under the following conditions:
-  </p>
+  <p>Pod naslednjimi pogoji:</p>
   <terms>
     <item>
       <title><em>Attribution</em></title>

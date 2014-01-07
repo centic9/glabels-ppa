@@ -4,6 +4,7 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <revision pkgversion="3.0.1" version="0.1" date="2011-06-20" status="incomplete"/>
     <desc>Erstellen Sie Ihre Vorlagen manuell.</desc>
     <credit type="author">
       <name>Jim Evins</name>
@@ -638,6 +639,23 @@
     <title><span translate="no">Layout</span>-Knoten</title>
 
     <p>Ein Label-Knoten kann mehrere <code translate="no">Layout</code>-Unterknoten enthalten. Wenn die Etiketten in einem einfachen rechteckigen Raster angeordnet sind, dann wird nur ein Layout benötigt. Falls die Etiketten jedoch in komplizierteren Rasteranordnungen vorliegen, können mehrere <code translate="no">Layout</code></p>
+    <p>Ein gutes Beispiel für mehrere Layouts ist ein Blatt mit drei CD-Etiketten:</p>
+
+    <!-- ==== Figure ==== -->
+    <figure>
+      <desc>Bogen mit CD-Etiketten</desc>
+      <media type="image" src="figures/layouts-cdlabel.png" mime="image/png" style="right">
+        <p>Bogen mit CD-Etiketten</p>
+      </media>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+    <p>Die zwei Etiketten am linken Rand können einem Raster zugeordnet werden, vorausgesetzt sie lassen sich über die Koordinaten des linken oberen Etiketts und den Abstand zum zweiten Etikett sauber definieren. Diese zwei Etiketten haben den Abstand zum linken Rand gemeinsam. Das dritte Etikett am rechten Rand hat keine gemeinsamen Randabstände mit den anderen, so dass ein zweites Layout mit eindeutigen Koordinaten der linken oberen Ecke des Etiketts angegeben werden muss.</p>
+
+	<note style="tip">
+	<p>Sie können mehrere Layouts nur dann definieren, wenn die Etiketten auf dem Blatt die gleiche Form aufweisen. Falls Ihr Blatt unterschiedliche Formen enthält, dann müssen Sie für jede Form eine separate Vorlage anlegen. Zukünftige Versionen von <app>gLabels</app> werden wahrscheinlich in der Lage sein, solche Bögen mit verschiedenen Formen in einer einzigen Vorlage zusammenzufassen.</p>
+      </note>
+
 	<note style="tip">
 	<p>Beachten Sie, dass ein einzelnes Etikett immer auch als ein Raster aus Etiketten betrachtet werden kann.</p>
       </note>

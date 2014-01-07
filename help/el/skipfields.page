@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="mergeskipfields" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Πως να παρακάμψετε τις κενές γραμμές διευθύνσεων όταν κάνετε μια συγχώνευση εγγράφου.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title>Παράκαμψη κενών γραμμών διευθύνσεων</title>
+
+  <p>Αυτό το χαρακτηριστικό μπορεί να περιγραφεί καλύτερα από ένα απλό παράδειγμα. Στο παρακάτω αρχείο CSV, στήλη 5 (ADDR2) περιέχεται δεύτερη γραμμή διευθύνσεων για κάθε εγγραφή. Το πεδίο αυτό είναι κενό στα βιβλία 1 και 2, αλλά όχι στο αρχείο 3. (Για να λειτουργήσει αυτό το χαρακτηριστικό, το πεδίο πρέπει να είναι εντελώς άδειο - κάθε κείμενοσυμπεριλαμβανομένων των διαστημάτων θα απενεργοποιήσει αυτή τη δυνατότητα.)</p>
+
+  <code>
+  LAST,FIRST,MI,ADDR1,ADDR2,CITY,STATE,ZIP
+  Summers,Joyce,,"1630 Revello Dr",,Sunnydale,CA,95037
+  McGarret,Steve,O,"404 Piikoi Street",,Honolulu,HI,96813
+  Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
+  </code>
+
+  <p>Στο παρακάτω στιγμιότυπο, ένα μόνο αντικείμενο κειμένου πολλών γραμμών έχει δημιουργηθεί για να διαμορφώσετε αυτές τις διευθύνσεις. Παρατηρήστε ότι το ${ADDR2} που αντιπροσωπεύει τη δεύτερη γραμμή διεύθυνσης είναι σε μια γραμμή από μόνη της. (Κάθε πρόσθετο κείμενο σε αυτή τη γραμμή συμπεριλαμβανομένων των διαστημάτων θα απενεργοποιήσει αυτή τη δυνατότητα.)</p>
+
+  <media type="image" src="figures/skip-fields-screenshot.png" mime="image/png" style="right">
+  <p>Διεύθυνση πολλαπλών γραμμών</p>
+  </media>
+
+  <p>Η εκτύπωση αυτής της ετικέτας έχει ως αποτέλεσμα την ακόλουθη έξοδο. Παρατηρήστε ότι η γραμμή που περιέχει το ${ADDR2} πεδίο παραλείπεται εντελώς για τα δύο πρώτα βιβλία, χωρίς να εκτυπώσετε μια κενή γραμμή.</p>
+
+  <media type="image" src="figures/skip-fields-output.png" mime="image/png" style="right">
+  <p>Αποτέλεσμα</p>
+  </media>
+
+</page>

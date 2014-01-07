@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="basicusage" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Διαχείριση αρχείων και έξοδος της εφαρμογής.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+   <title>Βασική χρήση</title>
+    
+    <section>
+    <title>Για το άνοιγμα ενός αρχείου</title>
+
+      <p>Για να ανοίξετε ένα αρχείο, επιλέξτε <guiseq><gui>Αρχείο</gui><gui>Άνοιγμα</gui></guiseq> για να εμφανίσετε το παράθυρο <gui>Άνοιγμα Αρχείου</gui>. Επιλέξτε το αρχείο που θέλετε να ανοίξετε, κάντε κλικ στο <gui>ΟΚ</gui> . Το αρχείο εμφανίζεται στην οθόνη του παράθυρο <app>gLabels</app>.</p>
+
+      <p>Μπορείτε επίσης να ανοίξετε πολλά αρχεία στο <app>gLabels</app>. Η εφαρμογή δημιουργεί ένα ξεχωριστό παράθυρο της εφαρμογής για κάθε ανοιχτό αρχείο.</p>
+
+      <p>Η εφαρμογή καταγράφει τις διαδρομές και τα ονόματα των πιο πρόσφατων αρχείων που έχετε επεξεργαστεί και εμφανίζει τα αρχεία και τα στοιχεία του μενού στο <guiseq><gui>Αρχείο</gui><gui>Πρόσφατα αρχεία</gui></guiseq> μενού.</p>
+     </section>
+
+     <section id="closefile">
+    <title>Για το κλείσιμο ενός αρχείου</title>
+
+      <p>Για να κλείσετε το τρέχον έγγραφο, επιλέξτε <guiseq><gui>Αρχείο</gui><gui>Κλείσιμο</gui></guiseq> για να κλείσετε το παράθυρο της εφαρμογής. Εάν το τρέχον έγγραφο έχει τροποποιηθεί, ένα πλαίσιο διαλόγου επιβεβαίωσης θα παρουσιασθεί, επιτρέποντας σας να αποθηκεύσετε το έγγραφο ή να ακυρώσετε την εντολή. Αν το παράθυρο που κλείνει είναι το μόνο ανοικτό παράθυρο, Το <app>gLabels</app> θα κλείσει.</p>
+     </section>
+     
+     <section>
+    <title>Για την αποθήκευση ενός αρχείου</title>
+
+      <p>Μπορείτε να αποθηκεύετε αρχεία με τους εξής τρόπους:</p>
+
+      <list><item>
+
+	  <p>Για να αποθηκεύσετε τις αλλαγές σε ένα υπάρχον αρχείο, επιλέξτε <guiseq><gui>Αρχείο</gui><gui>Αποθήκευση</gui></guiseq>.</p>
+
+	</item>
+        <item>
+
+	  <p>Για να αποθηκεύσετε ένα νέο αρχείο ή να αποθηκεύσετε ένα υπάρχον αρχείο υπό ένα νέο όνομα αρχείου, επιλέξτε <guiseq><gui>Αρχείο</gui><gui>Αποθήκευση ως</gui></guiseq>. Πληκτρολογήστε ένα όνομα για το αρχείο στο παράθυρο διαλόγου <gui>Αποθήκευση ως</gui>, στη συνέχεια κάντε κλικ στο <gui>ΟΚ</gui>.</p>
+
+	</item>
+      </list>
+     </section>
+
+     <section>
+    <title>Για την έξοδο από το <app>gLabels</app></title>
+
+      <p>Για την έξοδο από το <app>gLabels</app>, επιλέξετε <guiseq><gui>Αρχείο</gui><gui>Έξοδος</gui></guiseq>. Αυτό είναι ισοδύναμο με το κλείσιμο όλων των ανοιχτών παραθύρων. Δείτε το <link xref="basicusage#closefile"/>.</p>
+     </section>
+</page>

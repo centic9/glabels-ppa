@@ -4,9 +4,7 @@
   <info>
     <link type="guide" xref="merge#merge-ex"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>
-       Create address labels from a CSV file.
-    </desc>
+    <desc>Ustvari nalepke z naslovi iz datoteke CSV.</desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
@@ -20,7 +18,7 @@
     </license>    
   </info>
 
-    <title>Example 2: Address labels</title>
+    <title>Primer 2: nalepke naslovov</title>
 
       <p>In this example we are going to throw a party and need to print mailing
         address labels for our invitations.  We have a list of our closest friends
@@ -66,7 +64,7 @@ Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex2-2.png" mime="image/png" style="right">
-      		<p>Adding objects</p>
+      		<p>Dodajanje predmetov</p>
     		</media>
       <!-- ==== End of Figure ==== -->
 
@@ -84,7 +82,7 @@ Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex2-3.png" mime="image/png" style="right">
-      		<p>Printing address labels</p>
+      		<p>Tiskanje nalepk naslovov</p>
     		</media>
       <!-- ==== End of Figure ==== -->
 
@@ -95,7 +93,7 @@ Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex2-4.png" mime="image/png" style="right">
-      		<p>Address labels preview</p>
+      		<p>Predogled nalepk naslovov</p>
     		</media>
       <!-- ==== End of Figure ==== -->
 

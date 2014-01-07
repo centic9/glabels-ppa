@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="customize" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Изменение параметров <app>gLabels</app> под свои нужды.</desc>
+    <credit type="author">
+      <name>Джим Эвинс (Jim Evins)</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Марио Блатерман (Mario Blättermann)</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+    
+  <!-- ============= Customization ============================= -->
+  <!-- Use this section to describe how to customize the application. -->
+    <title>Параметры</title> 
+    <p>Чтобы настроить <app>gLabels</app>, выберите <guiseq><gui>Настройки</gui><gui>Параметры</gui></guiseq>. Появится диалоговое окно <gui>Параметры</gui> со следующими вкладками:</p>
+
+  <section id="prefs-locale" style="2column">
+    <title>Региональные параметры</title>
+	<section>
+	<title>Единицы измерения</title>
+	<p>Используйте группу переключателей, чтобы указать предпочтительные единицы измерения. Выберите один из следующих параметров:</p>
+	   <list>
+		<item>
+		<p><gui>Точки</gui></p>
+		<p>Использовать точки (1 точка = 0.352778 мм = 1/72 дюйма).</p>
+		</item>
+		<item>
+		<p><gui>Дюймы</gui></p>
+		<p>Использовать дюймы.</p>
+		</item>
+		<item>
+		<p><gui>Милиметры</gui></p>
+		<p>Использовать милиметры.</p>
+		</item>
+	   </list>
+	   <p>По умолчанию:  <gui>Дюймы</gui>.</p>
+	</section>
+
+	<section>
+	<title>Размер страницы по умолчанию</title>
+	<p>Используйте группу переключателей, чтобы указать предпочтительный размер страницы.</p>
+	   <list>
+		<item>
+		<p><gui>US Letter</gui></p>
+		<p>Большинство документов будут использовать размер бумаги US Letter (210 x 297 мм).</p>
+		</item>
+		<item>
+		<p><gui>ISO A4</gui></p>
+		<p>Большинство документов будут использовать размер бумаги ISO A4 (210 x 297 мм).</p>
+		</item>
+	   </list>
+	   <p>По умолчанию <gui>US Letter</gui>.</p>		
+	</section>
+    </section>
+
+  <section id="prefs-defaults" style="2column">
+    <title>Свойства объекта по умолчанию</title>
+
+	<section>
+	<title>Текст</title>
+	<p>Используйте эти элементы управления для установки свойств по умолчанию. Список доступных свойств: </p>
+	   <list>
+		<item>
+		<p><gui>Шрифт</gui></p>
+		<p>Эти элементы управления использовать для выбора семейства шрифта и размера шрифта, а также стиля шрифта (полужирный, наклонный).</p>
+		</item>
+		<item>
+		<p><gui>Цвет</gui></p>
+		<p>Этот параметр выбирает цвет текста по умолчанию.</p>
+		</item>
+		<item>
+		<p><gui>Выравнивание</gui></p>
+		<p>Эти параметры используются для выбора выравнивания текста по умолчанию (слева, по центру или справа).</p>
+		</item>
+	   </list>
+	</section>
+
+	<section>
+	<title>Линия</title>
+	<p>Эти элементы управления используются для установки свойств линий и контуров новых объектов. Список свойств:</p>
+	   <list>
+		<item>
+		<p><gui>Ширина</gui></p>
+		<p>Этот параметры выбирает ширину линии по умолчанию.</p>
+		</item>
+		<item>
+		<p><gui>Цвет</gui></p>
+		<p>Этот параметр выбирает цвет линии по умолчанию.</p>
+		</item>
+	   </list>
+	</section>
+
+	<section>
+	<title>Заливка</title>
+	<p>Эти элементы управления используются для установки свойств заливки новых объектов. Свойство:</p>
+	   <list>
+		<item>
+		<p><gui>Цвет</gui></p>
+		<p>Этот параметр выбирает цвет заливки по умолчанию.</p>
+		</item>
+	   </list>
+	</section>
+	</section>
+
+</page>

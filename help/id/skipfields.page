@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="mergeskipfields" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#merging"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Bagaimana melewati baris alamat kosong ketika melakukan penggabungan dokumen.</desc>
+    <credit type="author">
+      <name>Jim Evins</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Mario Blättermann</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title>Melewati baris alamat kosong</title>
+
+  <p>This feature can be best described by a simple example.  In the
+  following CSV file, column 5 (ADDR2) contains the second address line
+  for each record.  This field is empty in records 1 and 2, but not in
+  record 3. (For this feature to work, the field must be completely
+  empty -- any text, including spaces will defeat this feature.)</p>
+
+  <code>
+  BELAKANG,DEPAN,TENGAH,ALAMAT1,ALAMAT2,KOTA,STATE,KODEPOS
+  Summers,Joyce,,"1630 Revello Dr",,Sunnydale,CA,95037
+  McGarret,Steve,O,"404 Piikoi Street",,Honolulu,HI,96813
+  Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
+  </code>
+
+  <p>Pada cuplikan layar berikut, suatu objek teks mutlibaris tunggal telah dibuat untuk memformat alamat-alamat ini. Perhatikan bahwa ${ALAMAT2} yang mewakili baris alamat kedua berada pada suatu baris sendiri. (Sebarang teks tambahan pada baris ini, termasuk spasi, akan menggagalkan fitur ini)</p>
+
+  <media type="image" src="figures/skip-fields-screenshot.png" mime="image/png" style="right">
+  <p>Alamat multi baris</p>
+  </media>
+
+  <p>Mencetak label ini menghasilkan keluaran berikut. Perhatikan bahwa baris yang memuat ruas ${ALAMAT2} dilewati sepenuhnya bagi dua record pertama, tanpa mencetak suatu baris kosong.</p>
+
+  <media type="image" src="figures/skip-fields-output.png" mime="image/png" style="right">
+  <p>Keluaran</p>
+  </media>
+
+</page>

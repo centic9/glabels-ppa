@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="newlabel" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Создание новых этикеток и визиток в <app>gLabels</app>.</desc>
+    <credit type="author">
+      <name>Джим Эвинс (Jim Evins)</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Марио Блатерман (Mario Blättermann)</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Создание новой этикетки или визитки</title>
+
+    <p>Чтобы создать новую этикетку или визитку, выберите <guiseq><gui>Файл</gui><gui>Создать</gui></guiseq>. Появится диалоговое окно <gui>Новая этикетка или визитка</gui>. Выберите тип и положение нового документа и нажмите <gui>OK</gui>. Новый документ откроется в области просмотра <app>gLabels</app>.</p>
+
+</page>

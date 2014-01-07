@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="multifile" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Открытие нескольких файлов из командной строки</desc>
+    <credit type="author">
+      <name>Джим Эвинс (Jim Evins)</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Марио Блатерман (Mario Blättermann)</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Открытие нескольких файлов из командной строки</title>
+
+      <p><app>gLabels</app> можно запустить из командной строки, открыв один или несколько файлов. Чтобы открыть несколько файлов из командной строки, введите следующую команду и нажмите <key>Return</key>:</p>
+
+      <p><cmd>glabels <var>файл1.glabels файл2.glabels файл3.glabels</var></cmd></p>
+
+      <p>Когда приложение запустится, указанные файлы будут открыты в отдельных окнах <app>gLabels</app>.</p>
+
+</page>

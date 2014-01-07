@@ -11,7 +11,6 @@ DOC_FIGURES = \
 	figures/glabels-template-layout.png		\
 	figures/glabels-template-rect-label.png		\
 	figures/introduction-glabels-main-window.png	\
-	figures/main-window-empty.png			\
 	figures/merge-ex1-1.png				\
 	figures/merge-ex1-2.png				\
 	figures/merge-ex1-3.png				\
@@ -49,4 +48,4 @@ DOC_PAGES = \
 	select.page		\
 	skipfields.page
 
-DOC_LINGUAS = cs de es fr nl sl
+DOC_LINGUAS = cs de el es fr id nl ru sl

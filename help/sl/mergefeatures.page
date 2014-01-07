@@ -4,9 +4,7 @@
   <info>
     <link type="guide" xref="index#merging"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
-    <desc>
-       What you may expect from a document merge.
-    </desc>
+    <desc>Kaj lahko pričakujete od spajanja dokumentov.</desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>
@@ -20,7 +18,7 @@
     </license>    
   </info>
 
-    <title>Performing a document merge</title>
+    <title>Izvajanje spajanja dokumentov</title>
 
       <p>Document Merge (sometimes called "Mail Merge") is a powerful
         feature that allows a unique label or card to be printed for each

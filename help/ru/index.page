@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="index" xml:lang="ru">
+
+  <info>
+    <title type="link">Дизайнер этикеток и визиток gLabels</title>
+    <title type="text">Дизайнер этикеток и визиток gLabels</title>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <credit type="author">
+      <name>Джим Эвинс (Jim Evins)</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Марио Блатерман (Mario Blättermann)</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+  <title><media type="image" mime="image/png" src="figures/glabels-logo.png">Логотип gLabels</media> Руководство gLabels</title>
+
+  <p><app>gLabels</app> — это простое приложение среды рабочего стола GNOME для создания этикетов и визиток. Приложение создавалось для работы с различными типами бумаги, которые можно приобрести в магазинах для офисных принадлежностей.</p>
+ 
+  <p><app>gLabels</app> можно использовать для создания адресных этикеток, ценников, вкладышей для CD и DVD, а также для любой другой информации, которая может быть размещена на листе бумаги, используя обычные шаблоны. Этикетки могут содержать текст, изображения, линии, фигуры и штрих-коды. В <app>gLabels</app> имеется возможность заполнения полей документов, с помощью которой можно печатать отдельные этикетки для каждой записи из внешнего источника данных, например из файла CSV или из адресной книги <app>Evolution</app>.</p>
+
+  <figure>
+    <title>Главное окно <app>gLabels</app></title>
+    <desc>Главное окно <app>gLabels</app></desc>
+    <media type="image" src="figures/introduction-glabels-main-window.png" mime="image/png" style="right">
+      <p>Главное окно <app>gLabels</app>.</p>
+    </media>
+  </figure>
+
+  <section id="usage" style="2column">
+    <title>Использование</title>
+  </section>
+
+  <section id="merging" style="2column">
+    <title>Автоматическое создание документов</title>
+  </section>
+
+  <section id="advanced" style="2column">
+    <title>Дополнительные возможности</title>
+  </section>
+
+</page>

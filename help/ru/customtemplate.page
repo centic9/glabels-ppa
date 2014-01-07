@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="customtemplate" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#usage"/>
+    <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
+    <desc>Создание собственных шаблонов для канцелярских изделий.</desc>
+    <credit type="author">
+      <name>Джим Эвинс (Jim Evins)</name>
+      <email>evins@snaught.com</email>
+    </credit>
+    <credit type="author">
+      <name>Марио Блатерман (Mario Blättermann)</name>
+      <email>mariobl@gnome.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>    
+  </info>
+
+    <title>Создание собственного шаблона</title>
+
+      <p>Чтобы создать свой собственный шаблон, выберите <guiseq><gui>Файл</gui><gui>Дизайнер шаблонов...</gui></guiseq>. Появившееся диалоговое окно поможет вам создать шаблон для этикеток и бланков.</p>
+
+      <p>При желании вы можете создать шаблон вручную. Подробнее см. <link xref="mancreate"/></p>
+
+</page>
