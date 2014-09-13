@@ -1,5 +1,5 @@
-0001-menu.patch
+# applied upstream: 0001-menu.patch
 0002-manpage.patch
 0003-Ignore-license.page.patch
-0004-unbreak-with-evolution-data-server-3.6.0.patch
+# applied upstream: 0004-unbreak-with-evolution-data-server-3.6.0.patch
 0005-fix-pl.po-encoding.diff

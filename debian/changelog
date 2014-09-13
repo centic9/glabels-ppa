@@ -1,3 +1,15 @@
+glabels (3.2.0-0ubuntu0~ppa2) trusty; urgency=medium
+
+  * Adjust glabels-data packaging.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sat, 13 Sep 2014 11:50:35 +0200
+
+glabels (3.2.0-0ubuntu0~ppa1) trusty; urgency=medium
+
+  * Update to latest upstream release.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sat, 13 Sep 2014 10:07:18 +0200
+
 glabels (3.0.1-4build1) trusty; urgency=low
 
   * No-change rebuild for new e-d-s
