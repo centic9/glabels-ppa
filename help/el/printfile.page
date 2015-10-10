@@ -16,16 +16,23 @@
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013, 2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κωνσταντίνος Χόρτης</mal:name>
+      <mal:email>cograss@yahoo.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
     <title>Για να εκτυπώσετε τις ετικέτες και τις κάρτες σας</title>
 
-      <p>To print labels or cards, choose
-        <guiseq><gui>File</gui><gui>Print</gui>
-	</guiseq> to display the <gui>Print</gui> dialog.
-        Once print options have been selected, click <gui>Print</gui>
-        to print the labels or cards.  To simply preview the results,
-        click <gui>Print Preview</gui> instead.</p>
+      <p>Για να εκτυπώσετε ετικέτες ή κάρτες, επιλέξτε <guiseq><gui>Αρχείο</gui><gui>Εκτύπωση</gui></guiseq> για να εμφανίσετε τον διάλογο <gui>Εκτύπωση</gui>. Μόλις οι επιλογές εκτύπωσης έχουν επιλεγεί, πατήστε στην επιλογή <gui>Εκτύπωση</gui> για να εκτυπώσετε τις ετικέτες ή τις κάρτες. Για να κάνετε προεπισκόπηση των αποτελεσμάτων, πατήστε στην επιλογή <gui>Προεπισκόπηση εκτύπωσης</gui>.</p>
 
       <p>Ο διάλογος <gui>Εκτύπωση</gui> σας επιτρέπει να ορίσετε τις ακόλουθες επιλογές εκτύπωσης:</p>
 
@@ -73,15 +80,15 @@
 	      <p>Οι ακόλουθες επιλογές μπορούν επίσης να επιλεγούν.</p>
 	      <list>
 		<item>
-		  <p><gui>print outlines</gui></p>
+		  <p><gui>εκτύπωση περιγραμμάτων</gui></p>
 		  <p>Εκτύπωση περιγραμμάτων των ετικετών. Αυτή η επιλογή είναι χρήσιμη για να ελέγξετε την ευθυγράμμιση του εκτυπωτή.</p>
 		</item>
 		<item>
-		  <p><gui>print in reverse</gui></p>
+		  <p><gui>εκτύπωση με αντιστροφή</gui></p>
 		  <p>Εκτυπώνει τις ετικέτες ως εικόνες καθρέφτη. Αυτή η επιλογή είναι χρήσιμη για την εκτύπωση σε διαφανείς ετικέτες που θα προβάλονται από την ανάποδη πλευρά (π.χ. σε ένα παράθυρο του αυτοκινήτου).</p>
 		</item>
 		<item>
-		  <p><gui>print crop marks</gui></p>
+		  <p><gui>εκτύπωση σημείων κοπής</gui></p>
 		  <p>Εκτυπώνει σημάδια κοπής κατά μήκος της άκρης του φύλλου. Αυτή η επιλογή είναι χρήσιμη για την εκτύπωση σε λευκό υλικό, ώστε να κοπεί μετά από την εκτύπωση. Αυτή η επιλογή δεν λειτουργεί καλά με όλα τα πρότυπα.</p>
 		</item>
 	      </list>

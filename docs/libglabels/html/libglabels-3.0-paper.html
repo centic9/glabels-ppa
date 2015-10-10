@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>The lglPaper Structure</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<title>LibGlabels 3.0 Reference Manual: The lglPaper Structure</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="LibGlabels 3.0 Reference Manual">
 <link rel="up" href="ch01.html" title="Basic LibGlabels Usage">
 <link rel="prev" href="libglabels-3.0-template.html" title="The lglTemplate Structure">
 <link rel="next" href="libglabels-3.0-category.html" title="The lglCategory Structure">
-<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="libglabels-3.0-template.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">LibGlabels 3.0 Reference Manual</th>
-<td><a accesskey="n" href="libglabels-3.0-category.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#libglabels-3.0-paper.synopsis" class="shortcut">Top</a>
-                   | 
-                  <a href="#libglabels-3.0-paper.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#libglabels-3.0-paper.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
+                  <a href="#libglabels-3.0-paper.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libglabels-3.0-template.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libglabels-3.0-category.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="libglabels-3.0-paper"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -33,21 +30,64 @@
 <h2><span class="refentrytitle"><a name="libglabels-3.0-paper.top_of_page"></a>The lglPaper Structure</span></h2>
 <p>The lglPaper Structure — Paper size definitions</p>
 </td>
-<td valign="top" align="right"></td>
+<td class="gallery_image" valign="top" align="right"></td>
 </tr></table></div>
-<div class="refsynopsisdiv">
-<a name="libglabels-3.0-paper.synopsis"></a><h2>Synopsis</h2>
-<pre class="synopsis">
-#include &lt;libglabels/lgl-paper.h&gt;
-
-struct              <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper">lglPaper</a>;
-<a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *          <a class="link" href="libglabels-3.0-paper.html#lgl-paper-new" title="lgl_paper_new ()">lgl_paper_new</a>                       (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> width</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> height</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *pwg_size</code></em>);
-<a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *          <a class="link" href="libglabels-3.0-paper.html#lgl-paper-dup" title="lgl_paper_dup ()">lgl_paper_dup</a>                       (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> *orig</code></em>);
-<span class="returnvalue">void</span>                <a class="link" href="libglabels-3.0-paper.html#lgl-paper-free" title="lgl_paper_free ()">lgl_paper_free</a>                      (<em class="parameter"><code><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> *paper</code></em>);
+<div class="refsect1">
+<a name="libglabels-3.0-paper.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libglabels-3.0-paper.html#lgl-paper-new" title="lgl_paper_new ()">lgl_paper_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libglabels-3.0-paper.html#lgl-paper-dup" title="lgl_paper_dup ()">lgl_paper_dup</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libglabels-3.0-paper.html#lgl-paper-free" title="lgl_paper_free ()">lgl_paper_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libglabels-3.0-paper.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper">lglPaper</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libglabels-3.0-paper.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">
+</pre>
+</div>
+<div class="refsect1">
+<a name="libglabels-3.0-paper.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libglabels/lgl-paper.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -58,7 +98,112 @@ and related functions.
 </p>
 </div>
 <div class="refsect1">
-<a name="libglabels-3.0-paper.details"></a><h2>Details</h2>
+<a name="libglabels-3.0-paper.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="lgl-paper-new"></a><h3>lgl_paper_new ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *
+lgl_paper_new (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
+               <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+               <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> width</code></em>,
+               <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> height</code></em>,
+               <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *pwg_size</code></em>);</pre>
+<p>Allocates and constructs a new <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</p>
+<div class="refsect3">
+<a name="id-1.2.4.8.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>id</p></td>
+<td class="parameter_description"><p>Id of paper definition. (E.g. US-Letter, A4, etc.)  Should be
+unique.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>name</p></td>
+<td class="parameter_description"><p>Localized name of paper.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>width</p></td>
+<td class="parameter_description"><p>Width of paper in points.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>height</p></td>
+<td class="parameter_description"><p>Height of paper in points.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pwg_size</p></td>
+<td class="parameter_description"><p>PWG 5101.1-2002 size name.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.8.2.6"></a><h4>Returns</h4>
+<p> a pointer to a newly allocated <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-paper-dup"></a><h3>lgl_paper_dup ()</h3>
+<pre class="programlisting"><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *
+lgl_paper_dup (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> *orig</code></em>);</pre>
+<p>Duplicates an existing <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</p>
+<div class="refsect3">
+<a name="id-1.2.4.8.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>orig</p></td>
+<td class="parameter_description"><p><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure to be duplicated.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.4.8.3.6"></a><h4>Returns</h4>
+<p> a pointer to a newly allocated <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="lgl-paper-free"></a><h3>lgl_paper_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+lgl_paper_free (<em class="parameter"><code><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> *paper</code></em>);</pre>
+<p>Free all memory associated with an existing <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</p>
+<div class="refsect3">
+<a name="id-1.2.4.8.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>paper</p></td>
+<td class="parameter_description"><p>pointer to <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure to be freed.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libglabels-3.0-paper.other_details"></a><h2>Types and Values</h2>
 <div class="refsect2">
 <a name="lglPaper"></a><h3>struct lglPaper</h3>
 <pre class="programlisting">struct lglPaper {
@@ -72,115 +217,48 @@ and related functions.
 <p>
 This structure defines a paper (page) size.
 </p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
+<div class="refsect3">
+<a name="id-1.2.4.9.2.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
 <tbody>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.id"></a>id</code></em>;</span></p></td>
-<td>Paper size ID.</td>
+<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.id"></a>id</code></em>;</p></td>
+<td class="struct_member_description"><p>Paper size ID.</p></td>
+<td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.name"></a>name</code></em>;</span></p></td>
-<td>Localized paper size name.</td>
+<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.name"></a>name</code></em>;</p></td>
+<td class="struct_member_description"><p>Localized paper size name.</p></td>
+<td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglPaper.width"></a>width</code></em>;</span></p></td>
-<td>Width of paper in points.</td>
+<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglPaper.width"></a>width</code></em>;</p></td>
+<td class="struct_member_description"><p>Width of paper in points.</p></td>
+<td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglPaper.height"></a>height</code></em>;</span></p></td>
-<td>Height of paper in points.</td>
+<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglPaper.height"></a>height</code></em>;</p></td>
+<td class="struct_member_description"><p>Height of paper in points.</p></td>
+<td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.pwg-size"></a>pwg_size</code></em>;</span></p></td>
-<td>Paper size string as defined in PWG 5101.1-2002.</td>
+<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.pwg-size"></a>pwg_size</code></em>;</p></td>
+<td class="struct_member_description"><p>Paper size string as defined in PWG 5101.1-2002.</p></td>
+<td class="struct_member_annotations"> </td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<hr>
-<div class="refsect2">
-<a name="lgl-paper-new"></a><h3>lgl_paper_new ()</h3>
-<pre class="programlisting"><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *          lgl_paper_new                       (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> width</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> height</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *pwg_size</code></em>);</pre>
-<p>
-Allocates and constructs a new <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
-<td>Id of paper definition. (E.g. US-Letter, A4, etc.)  Should be
-unique.</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
-<td>Localized name of paper.</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
-<td>Width of paper in points.</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
-<td>Height of paper in points.</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>pwg_size</code></em> :</span></p></td>
-<td>PWG 5101.1-2002 size name.</td>
-</tr>
-<tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>a pointer to a newly allocated <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</td>
-</tr>
-</tbody>
-</table></div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="lgl-paper-dup"></a><h3>lgl_paper_dup ()</h3>
-<pre class="programlisting"><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *          lgl_paper_dup                       (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> *orig</code></em>);</pre>
-<p>
-Duplicates an existing <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>orig</code></em> :</span></p></td>
-<td>
-<a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure to be duplicated.</td>
-</tr>
-<tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>a pointer to a newly allocated <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</td>
-</tr>
-</tbody>
-</table></div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="lgl-paper-free"></a><h3>lgl_paper_free ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>                lgl_paper_free                      (<em class="parameter"><code><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> *paper</code></em>);</pre>
-<p>
-Free all memory associated with an existing <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody><tr>
-<td><p><span class="term"><em class="parameter"><code>paper</code></em> :</span></p></td>
-<td>pointer to <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure to be freed.</td>
-</tr></tbody>
-</table></div>
 </div>
 </div>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.18</div>
+          Generated by GTK-Doc V1.20</div>
 </body>
 </html>

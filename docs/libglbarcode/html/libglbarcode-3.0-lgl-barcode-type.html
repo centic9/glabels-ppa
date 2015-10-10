@@ -2,29 +2,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Barcode Types</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<title>LibGlbarcode 3.0 Reference Manual: Barcode Types</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="LibGlbarcode 3.0 Reference Manual">
 <link rel="up" href="api.html" title="API Reference">
 <link rel="prev" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html" title="Cairo Renderer">
-<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="api.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">LibGlbarcode 3.0 Reference Manual</th>
-<td> </td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#libglbarcode-3.0-lgl-barcode-type.synopsis" class="shortcut">Top</a>
-                   | 
-                  <a href="#libglbarcode-3.0-lgl-barcode-type.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#libglbarcode-3.0-lgl-barcode-type.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
+                  <a href="#libglbarcode-3.0-lgl-barcode-type.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><img src="right-insensitive.png" width="16" height="16" border="0"></td>
+</tr></table>
 <div class="refentry">
 <a name="libglbarcode-3.0-lgl-barcode-type"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -32,14 +29,29 @@
 <h2><span class="refentrytitle"><a name="libglbarcode-3.0-lgl-barcode-type.top_of_page"></a>Barcode Types</span></h2>
 <p>Barcode Types — Enumeration of supported barcode types</p>
 </td>
-<td valign="top" align="right"></td>
+<td class="gallery_image" valign="top" align="right"></td>
 </tr></table></div>
-<div class="refsynopsisdiv">
-<a name="libglbarcode-3.0-lgl-barcode-type.synopsis"></a><h2>Synopsis</h2>
-<pre class="synopsis">
-#include &lt;libglbarcode/lgl-barcode-type.h&gt;
-
-enum                <a class="link" href="libglbarcode-3.0-lgl-barcode-type.html#lglBarcodeType" title="enum lglBarcodeType">lglBarcodeType</a>;
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-type.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="libglbarcode-3.0-lgl-barcode-type.html#lglBarcodeType" title="enum lglBarcodeType">lglBarcodeType</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-type.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">
+</pre>
+</div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-type.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libglbarcode/lgl-barcode-type.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -49,75 +61,88 @@ This section describes an enumeration for selecting one of the barcode types sup
 </p>
 </div>
 <div class="refsect1">
-<a name="libglbarcode-3.0-lgl-barcode-type.details"></a><h2>Details</h2>
+<a name="libglbarcode-3.0-lgl-barcode-type.functions_details"></a><h2>Functions</h2>
+</div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-type.other_details"></a><h2>Types and Values</h2>
 <div class="refsect2">
 <a name="lglBarcodeType"></a><h3>enum lglBarcodeType</h3>
-<pre class="programlisting">typedef enum {
-        LGL_BARCODE_TYPE_POSTNET,        /* USPS Postnet Barcode (5, 9, or 11 digits) */
-        LGL_BARCODE_TYPE_POSTNET_5,      /* USPS Postnet Barcode (5 digits) */
-        LGL_BARCODE_TYPE_POSTNET_9,      /* USPS Postnet Barcode (9 digits) */
-        LGL_BARCODE_TYPE_POSTNET_11,     /* USPS Postnet Barcode (11 digits) */
-        LGL_BARCODE_TYPE_CEPNET,         /* Brazilian Postal Code */
-
-        LGL_BARCODE_TYPE_ONECODE,        /* USPS Intelligent Mail Barcode */
-
-        LGL_BARCODE_TYPE_CODE39,         /* Code 39 */
-        LGL_BARCODE_TYPE_CODE39_EXT,     /* Extended Code 39 (Supports full ASCII character set) */
-} lglBarcodeType;
-</pre>
 <p>
 This enumeration is used to select a built-in barcode type.  The currently supported barcode types are
 </p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
+<div class="refsect3">
+<a name="id-1.3.5.8.2.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
 <tbody>
 <tr>
-<td><p><a name="LGL-BARCODE-TYPE-POSTNET:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_POSTNET</code></span></p></td>
-<td>    USPS Postnet Barcode (5, 9, or 11 digits)
+<td class="enum_member_name"><p><a name="LGL-BARCODE-TYPE-POSTNET:CAPS"></a>LGL_BARCODE_TYPE_POSTNET</p></td>
+<td class="enum_member_description">
+<p>    USPS Postnet Barcode (5, 9, or 11 digits)</p>
 </td>
+<td class="enum_member_annotations"> </td>
 </tr>
 <tr>
-<td><p><a name="LGL-BARCODE-TYPE-POSTNET-5:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_POSTNET_5</code></span></p></td>
-<td>  USPS Postnet Barcode (5 digits)
+<td class="enum_member_name"><p><a name="LGL-BARCODE-TYPE-POSTNET-5:CAPS"></a>LGL_BARCODE_TYPE_POSTNET_5</p></td>
+<td class="enum_member_description">
+<p>  USPS Postnet Barcode (5 digits)</p>
 </td>
+<td class="enum_member_annotations"> </td>
 </tr>
 <tr>
-<td><p><a name="LGL-BARCODE-TYPE-POSTNET-9:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_POSTNET_9</code></span></p></td>
-<td>  USPS Postnet Barcode (9 digits)
+<td class="enum_member_name"><p><a name="LGL-BARCODE-TYPE-POSTNET-9:CAPS"></a>LGL_BARCODE_TYPE_POSTNET_9</p></td>
+<td class="enum_member_description">
+<p>  USPS Postnet Barcode (9 digits)</p>
 </td>
+<td class="enum_member_annotations"> </td>
 </tr>
 <tr>
-<td><p><a name="LGL-BARCODE-TYPE-POSTNET-11:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_POSTNET_11</code></span></p></td>
-<td> USPS Postnet Barcode (11 digits)
+<td class="enum_member_name"><p><a name="LGL-BARCODE-TYPE-POSTNET-11:CAPS"></a>LGL_BARCODE_TYPE_POSTNET_11</p></td>
+<td class="enum_member_description">
+<p> USPS Postnet Barcode (11 digits)</p>
 </td>
+<td class="enum_member_annotations"> </td>
 </tr>
 <tr>
-<td><p><a name="LGL-BARCODE-TYPE-CEPNET:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_CEPNET</code></span></p></td>
-<td>     Brazilian Postal Code
+<td class="enum_member_name"><p><a name="LGL-BARCODE-TYPE-CEPNET:CAPS"></a>LGL_BARCODE_TYPE_CEPNET</p></td>
+<td class="enum_member_description">
+<p>     Brazilian Postal Code</p>
 </td>
+<td class="enum_member_annotations"> </td>
 </tr>
 <tr>
-<td><p><a name="LGL-BARCODE-TYPE-ONECODE:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_ONECODE</code></span></p></td>
-<td>    USPS Intelligent Mail Barcode
+<td class="enum_member_name"><p><a name="LGL-BARCODE-TYPE-ONECODE:CAPS"></a>LGL_BARCODE_TYPE_ONECODE</p></td>
+<td class="enum_member_description">
+<p>    USPS Intelligent Mail Barcode</p>
 </td>
+<td class="enum_member_annotations"> </td>
 </tr>
 <tr>
-<td><p><a name="LGL-BARCODE-TYPE-CODE39:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_CODE39</code></span></p></td>
-<td>     Code 39
+<td class="enum_member_name"><p><a name="LGL-BARCODE-TYPE-CODE39:CAPS"></a>LGL_BARCODE_TYPE_CODE39</p></td>
+<td class="enum_member_description">
+<p>     Code 39</p>
 </td>
+<td class="enum_member_annotations"> </td>
 </tr>
 <tr>
-<td><p><a name="LGL-BARCODE-TYPE-CODE39-EXT:CAPS"></a><span class="term"><code class="literal">LGL_BARCODE_TYPE_CODE39_EXT</code></span></p></td>
-<td> Extended Code 39 (Supports full ASCII character set)
+<td class="enum_member_name"><p><a name="LGL-BARCODE-TYPE-CODE39-EXT:CAPS"></a>LGL_BARCODE_TYPE_CODE39_EXT</p></td>
+<td class="enum_member_description">
+<p> Extended Code 39 (Supports full ASCII character set)</p>
 </td>
+<td class="enum_member_annotations"> </td>
 </tr>
 </tbody>
 </table></div>
 </div>
 </div>
 </div>
+</div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.18</div>
+          Generated by GTK-Doc V1.20</div>
 </body>
 </html>

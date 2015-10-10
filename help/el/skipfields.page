@@ -16,6 +16,18 @@
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013, 2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κωνσταντίνος Χόρτης</mal:name>
+      <mal:email>cograss@yahoo.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
   <title>Παράκαμψη κενών γραμμών διευθύνσεων</title>

@@ -1,6 +1,236 @@
+commit a49a569d043ca6529b765181ba92e74b2f94c411
+Author: Jim Evins <evins@snaught.com>
+Date:   2014-11-09
+
+    Final preparation for 3.2.1.
+
+M	NEWS
+
+commit d6eff0d17c2b65524ff39484210258585b85f741
+Author: Rūdolfs Mazurs <rudolfsm@src.gnome.org>
+Date:	2014-11-01
+
+    Updated Latvian translation
+
+M	po/lv.po
+
+commit 56e0713c35d2deb8eecf162b8104788833965a4d
+Author: Jim Evins <evins@snaught.com>
+Date:	2014-10-23
+
+    Preparation for 3.2.1
+
+M	NEWS
+M	configure.ac
+
+commit 165f372e3b0d3bcd1088feac3ba3ab0aa8257777
+Author: Jim Evins <evins@snaught.com>
+Date:	2014-10-23
+
+    Removed obsolete tab-hborder property from media-select UI file.
+
+    Unfortunately, beginning with gtk 3.14, rather than ignoring this
+    obsolete
+    property, having it in a UI file is considered a critical error,
+    thus crashing
+    glabels on newer distributions.
+
+M	data/ui/media-select.ui
+
+commit cd9a551899ea66a5083e68b23992a39b68e13b94
+Author: Jim Evins <evins@snaught.com>
+Date:	2014-10-23
+
+    Added dummy window as parent in warning and critical error handlers.
+
+    In gtk 3.14, creating a message dialog without a parent window
+    causes a crash.  Unfortunately this causes the original error or
+    warning message from being seen by the user.
+
+M	src/critical-error-handler.c
+M	src/warning-handler.c
+
+commit add35e12d1082e37d60a821edfb918ffdcd54eda
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2014-10-05
+
+    Removed Polish translation
+
+    Last updated in 2002 (that's 12 years ago) and with 68 strings
+    translated,
+    it's doing more harm than good at this point. It can always be
+    brought back
+    from git, but it's probably easier to just start from scratch,
+    if anyone's
+    interested.
+
+M	po/LINGUAS
+D	po/pl.po
+
+commit e1decb5f24d1dbd0a3c441961ae032c6312a8d73
+Author: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>
+Date:	2014-09-17
+
+    Finnish translation update
+
+M	po/fi.po
+
+commit 5521455d4d262a7f6c52d3b7ca2083ecb5910f55
+Author: Andika Triwidada <andika@gmail.com>
+Date:	2014-09-15
+
+    Updated Indonesian translation
+
+M	po/id.po
+
+commit 29299784bab3290d6cbed6d25b27efc821f5324a
+Author: Lasse Liehu <lasse.liehu@gmail.com>
+Date:	2014-05-30
+
+    Finnish translation update
+
+M	po/fi.po
+
+commit 58044cd419bd8e52ffa992b7a740ddd631c851ee
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2014-04-15
+
+    [l10n] Updated German translation
+
+M	po/de.po
+
+commit 3f2f50d9dd36eefce8a71394894caaceb0da8c39
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2014-04-15
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit 0354020ee833f275e06a155a2ac1eae7282c5484
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2014-03-24
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit 63d9bd9e61c6f13587f59396feb9578082b29bd5
+Author: Matej Urbančič <mateju@svn.gnome.org>
+Date:	2014-03-21
+
+    Updated Slovenian translation
+
+M	po/sl.po
+
+commit 6e94c99d66831bff854d6a8bed52c87092b5fd43
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2014-03-10
+
+    Fix a tag in French help translation
+
+M	help/fr/fr.po
+
+commit e77daa118370676556fbb27119c817492b141377
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2014-02-14
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit 8b2c53cbdbf6c2d251056c284d92a3aad3e4b6f9
+Author: Marek Černocký <marek@manet.cz>
+Date:	2014-02-13
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit 6cdc7484ffc4de7ade70aff8700269764c89c8dd
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2014-02-11
+
+    Updated POTFILES.in
+
+M	po/POTFILES.in
+
+commit ec145fd643e21e9f640e809b44c1d45591c682d4
+Author: Jim Evins <evins@snaught.com>
+Date:	2014-02-09
+
+    Added Canon Type J CD/DVD Tray template.
+
+M	AUTHORS
+M	templates/Makefile.am
+A	templates/canon-other-templates.xml
+M	templates/vendors.xml
+
+commit 2421012aabfe8667be83e5f307b4a147c2d70dbe
+Author: Jim Evins <evins@snaught.com>
+Date:	2014-01-25
+
+    Fix layout problems with center and right text alignment to text box.
+
+    Pango layout width should be 6 pts smaller than text object width
+    to account
+    for a 3 pt margin around layout.
+
+M	src/label-text.c
+
+commit 24efc3b2e33a23ee19315910619b49af8d8286ec
+Author: Dimitris Spingos <dmtrs32@gmail.com>
+Date:	2014-01-07
+
+    Updated Greek translation of help
+
+M	help/el/el.po
+
+commit 119b9f222803d6af816037d4f6d0cc421a99d286
+Author: Dimitris Spingos <dmtrs32@gmail.com>
+Date:	2014-01-07
+
+    Updated Greek translation
+
+M	po/el.po
+
+commit a3a084a722ff02a6d69f6a814aa0be950d9ea4e6
+Author: Marek Černocký <marek@manet.cz>
+Date:	2013-12-27
+
+    Updated Czech translation
+
+M	help/cs/cs.po
+
+commit 1f08c64b20171e47c0cef1b9f9c2ce081d413c6c
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2013-12-19
+
+    Updated Spanish translation
+
+M	help/es/es.po
+
+commit bc97c62fd56fdd83aaf0151d678ff26322775f01
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2013-11-18
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit e852d3973a1f05af2ee6a4ff76a5a6bc1e086a46
+Author: Martin Srebotnjak <miles@filmsi.net>
+Date:	2013-10-29
+
+    Updated Slovenian translation
+
+M	po/sl.po
+
 commit 37829049642492bdf38dc07f5e5cfe2058251583
 Author: Jim Evins <evins@snaught.com>
-Date:   2013-10-28
+Date:	2013-10-28
 
     Preparation for 3.2.0.
 

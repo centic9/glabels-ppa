@@ -16,6 +16,18 @@
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013, 2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κωνσταντίνος Χόρτης</mal:name>
+      <mal:email>cograss@yahoo.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
     <title>Παράδειγμα 3: Ετικέτες διευθύνσεων από καταχωρήσεις του βιβλίου διευθύνσεων του <app>Evolution</app></title>
@@ -28,13 +40,7 @@
 	<p>Εάν απο το πακέτο <app>gLabels</app> της διανομής σας λείπει αυτή η υποστήριξη, μπορεί να θελήσετε να επικοινωνήσετε με το συντηρητή πακέτου ή συντάξτε μια αναφορά σφάλματος για το πακέτο για να το ζητήσετε.</p>
       </note>
 
-      <p>In <app>glabels</app> we have created a new <app>gLabels</app>
-        document using the Avery 5512 "Address Labels" template. Next we use the
-        <guiseq> <gui>Objects</gui>
-        <gui>Merge Properties</gui></guiseq> menu item to display
-        the <gui>Merge properties</gui> dialog. We use this dialog to
-        select the source type (in our case <gui>Data from default Evolution
-	addressbook</gui>) as shown.</p>
+      <p>Στο <app>glabels</app> έχουμε δημιουργήσει ένα νέο έγγραφο <app>glabels</app> χρησιμοποιώντας το πρότυπο Avery 5512 "Ετικέτες διευθύνσεων". Στη συνέχεια χρησιμοποιούμε το στοιχείο μενού <guiseq><gui>Αντικείμενα</gui><gui>Ιδιότητες συγχώνευσης</gui></guiseq> για να εμφανίσουμε το διάλογο <gui>ιδιότητες συγχώνευσης</gui>. Χρησιμοποιούμε αυτόν τον διάλογο για να επιλέξουμε τον τύπο της πηγής (σε περίπτωση μας από <gui>Data from default Evolution addressbook</gui>) όπως φαίνεται.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-1.png" mime="image/png" style="right">
@@ -56,10 +62,7 @@
 
       <p>Σε αυτό το παράδειγμα έχουμε ένα μόνο αντικείμενο κειμένου πάλι. Αυτό το αντικείμενο κειμένου περιέχει όλα τα πεδία συγχώνευσης μας οργανωμένα σε πολλές γραμμές, ως διευθύνσεις αλληλογραφίας.</p>
 
-      <p>Now we can print our address labels by selecting the
-        <guiseq> <gui>File</gui>
-        <gui>Print</gui> </guiseq> menu item. This will display
-        the print dialog as shown below.</p>
+      <p>Τώρα μπορούμε να τυπώσουμε τις ετικέτες διευθύνσεων μας επιλέγοντας το στοιχείο μενού <guiseq><gui>Αρχείο</gui><gui>Εκτύπωση</gui></guiseq>. Αυτό θα εμφανίσει τον διάλογο εκτύπωσης όπως φαίνεται παρακάτω.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-3.png" mime="image/png" style="right">

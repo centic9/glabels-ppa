@@ -16,15 +16,25 @@
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013, 2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κωνσταντίνος Χόρτης</mal:name>
+      <mal:email>cograss@yahoo.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
     <title>Για να ανοίξετε πολλά αρχεία ταυτόχρονα με χρήση της γραμμής εντολών</title>
 
       <p>Μπορείτε να εκτελέσετε το <app>gLabels</app> από τη γραμμή εντολών και να ανοίξετε ένα ή περισσότερα αρχεία. Για να ανοίξετε πολλά αρχεία από τη γραμμή εντολών, πληκτρολογήστε την ακόλουθη εντολή και πατήστε <key>Return</key>:</p>
 
-      <p><cmd>glabels
-      <var>file1.glabels file2.glabels file3.glabels</var>
-      </cmd></p>
+      <p><cmd>glabels <var>file1.glabels file2.glabels file3.glabels</var> </cmd></p>
 
       <p>Όταν ξεκινά η εφαρμογή, τα αρχεία που έχετε καθορίσει εμφανίζονται σε ξεχωριστά <app>gLabels</app> παράθυρα.</p>
 

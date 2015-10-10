@@ -1,8 +1,37 @@
-glabels (3.0.1-4build1) trusty; urgency=low
+glabels (3.2.1-2) unstable; urgency=medium
 
-  * No-change rebuild for new e-d-s
+  * Call ldconfig in postrm to make lintian happy
+  * Remove menu file (See ctte #741573)
+  * Recommend atril as alternative to evince (Closes: #795372)
 
- -- Iain Lane <iain@orangesquash.org.uk>  Wed, 13 Nov 2013 13:14:43 +0000
+ -- Jakob Haufe <sur5r@sur5r.net>  Sat, 10 Oct 2015 21:16:16 +0200
+
+glabels (3.2.1-1) unstable; urgency=medium
+
+  * Ack NMU
+  * New upstream version
+  * Drop 0001-menu.patch (applied upstream)
+  * Drop cherry-picked 0004-unbreak-with-evolution-data-server-3.6.0.patch
+  * Drop 0005-fix-pl.po-encoding.diff as upstream dropped incomplete and
+    outdated pl.po
+  * Bump Standards-Version (no changes needed)
+  * Update Homepage field
+  * Debhelper compatibility: 9
+
+ -- Jakob Haufe <sur5r@sur5r.net>  Sat, 03 Oct 2015 16:19:23 +0200
+
+glabels (3.0.1-4.1) unstable; urgency=medium
+
+  [ Hilko Bengen ]
+  * Non-maintainer upload.
+
+  [ gregor herrmann ]
+  * Fix "glabels exists with "Abort" when creating a new document".
+    Add patches for two commits (66c007, 3700cd8) from upstream git for Gtk+
+    3.14 compatibility.
+    (Closes: #763769)
+
+ -- Hilko Bengen <bengen@debian.org>  Fri, 31 Oct 2014 10:00:59 +0100
 
 glabels (3.0.1-4) unstable; urgency=low
 

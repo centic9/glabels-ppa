@@ -17,6 +17,18 @@
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013, 2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κωνσταντίνος Χόρτης</mal:name>
+      <mal:email>cograss@yahoo.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
   <title>Χειροκίνητη δημιουργία νέων προτύπων</title>
@@ -48,16 +60,12 @@
       </tr>
       <tr>
         <td its:translate="no"><p><file>${XDG_CONFIG_HOME}/libglabels/templates</file></p></td>
-        <td><p>User defined templates created with the <app>gLabels</app> <gui>Template Designer</gui>.
-            <em>Do not put manually created templates in this directory.</em></p>
+        <td><p>Καθοριζόμενα από τον χρήστη πρότυπα με το <app>gLabels</app><gui>Σχεδιαστής προτύπου</gui>. <em>Μην βάζετε χειροκίνητα δημιουργηθέντα πρότυπα σε αυτόν τον κατάλογο.</em></p>
             <p>Εάν το <file>${XDG_CONFIG_HOME}</file> δεν έχει ορισθεί, είναι εξ ορισμού το <file>${HOME}/.config</file>.</p></td>
       </tr>
       <tr>
         <td its:translate="no"><p><file>${HOME}/.glabels</file></p></td>
-        <td><p>User defined templates that have been created manually should be placed in this
-            directory.
-            Older versions of the <app>gLabels</app> <gui>Template Designer</gui> (prior to 3.0)
-            would also put templates in this directory.</p></td>
+        <td><p>Καθοριζόμενα από το χρήστη πρότυπα που έχουν δημιουργηθεί χειροκίνητα θα πρέπει να τοποθετούνται σε αυτόν τον κατάλογο. Παλαιότερες εκδόσεις του <app>gLabels</app><gui>Σχεδιαστής προτύπου</gui> (πριν από 3.0) θα θέσουν επίσης να τοποθετούν τα πρότυπα σε αυτόν τον κατάλογο.</p></td>
       </tr>
     </table>
   </note>
@@ -79,13 +87,7 @@
         <p>Ένα φύλλο περιέχει μόνο ένα μέγεθος ετικέτας ή κάρτας (εάν ένα φύλλο περιέχει περισσότερα από ένα μεγέθη του στοιχείου, μπορεί να χωριστεί σε πολλά πρότυπα για την εκτύπωση πολλαπλών εκτυπώσεων)</p>
       </item>
       <item>
-        <p>Distances can be expressed in units of <code>pt</code>, <code>in</code>,
-	  <code>mm</code>, <code>cm</code>, or <code>pc</code>.  For example:
-          "<code>1.0in</code>" or "<code>2.54cm</code>".  If no
-          units are specified, computer points (<code>pt</code>) will
-          be assumed (1 <em>pt</em> =
-          1/72 <em>in</em> = 0.352778 <em>mm</em>).
-          </p>
+        <p>Οι αποστάσεις μπορούν να εκφράζονται σε μονάδες <code>pt</code>, <code>in</code>, <code>mm</code>, <code>cm</code>, ή <code>pc</code>. Για παράδειγμα: "<code>1.0in</code>" ή "<code>2.54cm</code>". Αν δεν έχουν καθοριστεί μονάδες, θα χρησιμοποιηθούν οι στιγμές υπολογιστή (<code>pt</code>) (1 <em>pt</em> = 1/72 <em>in</em> = 0.352778 <em>mm</em>).</p>
       </item>
     </list>
   </section>
@@ -101,21 +103,19 @@
   <section id="template-file">
     <title>Αρχεία προτύπων</title>
 
-    <p>A template file contains a single <code>Glabels-templates</code> top-level
-    node.</p>
+    <p>Ένα αρχείο προτύπου περιέχει ένα μόνο κόμβο υψηλού επιπέδου<code>Glabels-templates</code>.</p>
 
     <code mime="text/xml">
 &lt;?xml version="1.0"?&gt;
 &lt;Glabels-templates&gt;
 
-   <var>...templates...</var>
+   <var its:translate="yes">...templates...</var>
 
 &lt;/Glabels-templates&gt;</code>
 
     <listing>
-      <title>Παράδειγμα Προτύπου</title>
-      <desc>Example <app>gLabels</app> template file containing a single
-            <code>Template</code> node.</desc>
+      <title>Παράδειγμα προτύπου</title>
+      <desc>Παράδειγμα ενός προτύπου <app>gLabels</app> που περιέχει ένα μόνο κόμβο <code>Template</code>.</desc>
       <code mime="text/xml" its:translate="no">
 &lt;?xml version="1.0"?&gt;
 &lt;Glabels-templates&gt;
@@ -144,13 +144,9 @@
   <!-- BEGIN Template Node  -->
   <!-- ******************** -->
   <section id="template-template-node">
-    <title><code>Template</code> Node</title>
+    <title>Κόμβος <code>Template</code></title>
 
-    <p>A <code>Template</code> node describes a single
-      stationery product.  It must contain one instance of any type of Label node
-      (<code>Label-rectangle</code>,
-      <code>Label-round</code>, or
-      <code>Label-cd</code>).</p>
+    <p>Ένας κόμβος <code>Template</code> περιγράφει ένα μόνο προϊόν γραφικής ύλης. Πρέπει να περιέχει ένα παράδειγμα για κάθε τύπο κόμβου ετικέτας (<code>Label-rectangle</code>, <code>Label-round</code>, ή <code>Label-cd</code>).</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -169,9 +165,7 @@
       </tr>
       <tr>
         <td its:translate="no"><p><code>size</code></p></td>
-        <td><p>Size of sheet.
-               E.g., "<code>US-Letter</code>", "<code>A4</code>", ...
-            </p></td>
+        <td><p>Το μέγεθος του φύλλου. Π.χ., "<code>US-Letter</code>", "<code>A4</code>", ...</p></td>
       </tr>
       <tr>
         <td its:translate="no"><p><code>description</code></p></td>
@@ -205,11 +199,9 @@
   <!-- BEGIN Meta Node      -->
   <!-- ******************** -->
   <section id="meta-template-node">
-    <title><code>Meta</code> Node</title>
+    <title>Κόμβος <code>Meta</code></title>
 
-    <p>A <code>Meta</code> node contains some additional
-         information about the template. A <code>Template</code>
-         node may contain zero or more <code>Meta</code> nodes.</p>
+    <p>Ένας κόμβος <code>Meta</code> περιέχει μερικές πρόσθετες πληροφορίες για το πρότυπο. Ένας κόμβος <code>Template</code> μπορεί να περιέχει μηδέν ή περισσότερους κόμβους <code>Meta</code>.</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -220,12 +212,7 @@
       </tr>
       <tr>
         <td its:translate="no"><p><code>category</code></p></td>
-        <td><p>A category for the template.
-            A template can belong to multiple categories by simply adding multiple
-            <code>Meta</code> nodes to the parent
-            <code>Template</code> node.
-            Template categories are used by the <app>gLabels</app> <gui>New Label
-            Dialog</gui> to filter the results of template searches.</p>
+        <td><p>Η κατηγορία του προτύπου. Ένα πρότυπο μπορεί να ανήκει σε πολλές κατηγορίες προσθέτοντας απλά πολλαπλούς κόμβους <code>Meta</code> στον μητρικό κόμβο <code>Template</code>. Οι κατηγορίες προτύπων χρησιμοποιούνται από το <app>gLabels</app><gui>Νέος διάλογος ετικέτας</gui> για να φιλτράρονται τα αποτελέσματα των αναζητήσεων προτύπου.</p>
 
             <p>Η τιμή αυτής της κατηγορίας πρέπει να ταιριάζει με ένα προκαθορισμένο αναγνωριστικό κατηγορίας που καθορίζεται στο αρχείο <file>${prefix}/libglabels-3.0/templates/categories.xml</file>. Επί του παρόντος τα καθορισμένα αναγνωριστικά κατηγοριών περιλαμβάνουν:</p>
             <list>
@@ -265,11 +252,9 @@
   <!-- BEGIN Label-rectangle Node -->
   <!-- ************************** -->
   <section id="template-label-rectangle-node">
-    <title><code>Label-rectangle</code> Node</title>
+    <title>Κόμβος <code>Label-rectangle</code></title>
 
-    <p>A <code>Label-rectangle</code> node describes the
-      dimensions of a single label or business card that is rectangular
-      in shape (may have rounded edges).</p>
+    <p>Ένας κόμβος <code>Label-rectangle</code> περιγράφει τις διαστάσεις μίας ετικέτας ή επιχειρηματικής κάρτας που είναι παραλληλόγραμμη στο σχήμα (μπορεί να έχει στρογγυλεμένες ακμές).</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -306,7 +291,7 @@
 
     <!-- ==== Figure ==== -->
     <figure>
-      <desc><code>Label-rectangle</code> parameters</desc>
+      <desc>Παράμετροι <code>Label-rectangle</code></desc>
       <media its:translate="no" type="image" src="figures/glabels-template-rect-label.png" mime="image/png" style="right">
         <p><code>Label-rectangle</code> parameters</p>
       </media>
@@ -323,11 +308,9 @@
   <!-- BEGIN Label-ellipse Node -->
   <!-- ************************ -->
   <section id="template-label-ellipse-node">
-    <title><code>Label-ellipse</code> Node</title>
+    <title>Κόμβος <code>Label-ellipse</code></title>
 
-    <p>A <code>Label-ellipse</code> node describes the
-      dimensions of a single label or business card that is elliptic
-      in shape.</p>
+    <p>Ένας κόμβος <code>Label-ellipse</code> περιγράφει τις διαστάσεις μίας ετικέτας ή επιχειρηματικής κάρτας που είναι ελλειπτική στο σχήμα.</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -356,9 +339,9 @@
 
     <!-- ==== Figure ==== -->
     <figure>
-      <desc><span>Label-ellipse</span> parameters</desc>
+      <desc>Παράμετροι <span>Label-ellipse</span></desc>
       <media type="image" src="figures/glabels-template-ellipse-label.png" mime="image/png" style="right">
-        <p><code>Label-ellipse</code> parameters</p>
+        <p>Παράμετροι <code>Label-ellipse</code></p>
       </media>
     </figure>
     <!-- ==== End of Figure ==== -->
@@ -373,10 +356,9 @@
   <!-- BEGIN Label-round Node -->
   <!-- ********************** -->
   <section id="template-label-round-node">
-    <title><code>Label-round</code> Node</title>
+    <title>Κόμβος <code>Label-round</code></title>
 
-    <p>A <code>Label-round</code> node describes the dimensions
-      of a simple round label (not a CD).</p>
+    <p>Ένας κόμβος <code>Label-round</code> περιγράφει τις διαστάσεις μιας απλής στρογγυλής ετικέτας (όχι ενός CD).</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -401,7 +383,7 @@
 
     <!-- ==== Figure ==== -->
     <figure>
-      <desc><code>Label-ellipse</code> parameters</desc>
+      <desc>Παράμετροι <code>Label-ellipse</code></desc>
       <media its:translate="no" type="image" src="figures/glabels-template-circle-label.png" mime="image/png" style="right">
         <p><code>Label-ellipse</code> parameters</p>
       </media>
@@ -418,10 +400,9 @@
   <!-- BEGIN Label-cd Node -->
   <!-- ******************* -->
   <section id="template-label-cd-node">
-    <title><code>Label-cd</code> Node</title>
+    <title>Κόμβος <code>Label-cd</code></title>
 
-    <p>A <code>Label-cd</code> node describes the dimensions
-      of a CD, DVD, or business card CD.</p>
+    <p>Ένας κόμβος <code>Label-cd</code> περιγράφει τις διαστάσεις ενός CD, DVD, CD επαγγελματικής κάρτας.</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -458,7 +439,7 @@
 
     <!-- ==== Figure ==== -->
     <figure>
-      <desc><code>Label-cd</code> parameters</desc>
+      <desc>Παράμετροι <code>Label-cd</code></desc>
       <media its:translate="no" type="image" src="figures/glabels-template-cd-label.png" mime="image/png" style="right">
         <p>CD label parameters</p>
       </media>
@@ -475,7 +456,7 @@
   <!-- BEGIN Markup Node -->
   <!-- ***************** -->
   <section id="template-markup">
-    <title><code>Markup</code> Nodes</title>
+    <title>Κόμβοι <code>Markup</code></title>
 
     <p>Τα πρότυπα μπορεί να περιέχουν προαιρετικά κόμβους σήμανσης. Αυτοί οι κόμβοι χρησιμοποιούνται για να περιγράψουν ένα απλό σύνολο των γραμμών σήμανσης που είναι ορατές στον καμβά σχεδίασης <app>glabels</app>, αλλά δεν είναι ορατές όταν εκτυπωθεί. Οι γραμμές αυτές μπορούν να αντιπροσωπεύουν περιθώρια, πτυχές, γραμμές κέντρου, ειδικές περιοχές, ή άλλες χρήσιμες υποδείξεις για τον χρήστη ενός προτύπου.</p>
 
@@ -484,10 +465,9 @@
     <!-- BEGIN Markup-margin Node -->
     <!-- ======================== -->
     <section id="template-markup-margin-node">
-      <title><code>Markup-margin</code> Node</title>
+      <title>Κόμβος <code>Markup-margin</code></title>
 
-      <p>A <code>Markup-margin</code> describes a margin along
-      all edges of a label.</p>
+      <p>Ένας <code>Markup-margin</code> περιγράφει ένα περιθώριο κατά μήκος όλων των άκρων μιας ετικέτας.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -511,9 +491,9 @@
     <!-- BEGIN Markup-line Node -->
     <!-- ====================== -->
     <section id="template-markup-line-node">
-      <title><code>Markup-line</code> Node</title>
+      <title>Κόμβος <code>Markup-line</code></title>
 
-      <p>A <code>Markup-line</code> node describes a markup line.</p>
+      <p>Ένας κόμβος <code>Markup-line</code> περιγράφει μια γραμμή σήμανσης.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -549,9 +529,9 @@
     <!-- BEGIN Markup-circle Node -->
     <!-- ======================== -->
     <section id="template-markup-circle-node">
-      <title><code>Markup-circle</code> Node</title>
+      <title>Κόμβος <code>Markup-circle</code></title>
 
-      <p>A <code>Markup-circle</code> describes a markup circle.</p>
+      <p>Ένα <code>Markup-circle</code> περιγράφει έναν κύκλο σήμανσης.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -583,9 +563,9 @@
     <!-- BEGIN Markup-rect Node -->
     <!-- ====================== -->
     <section id="template-markup-rect-node">
-      <title><code>Markup-rect</code> Node</title>
+      <title>Κόμβος <code>Markup-rect</code></title>
 
-      <p>A <code>Markup-rect</code> describes a markup rectangle.</p>
+      <p>Ένα <code>Markup-rect</code> περιγράφει ένα παραλληλόγραμμο σήμανσης.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -625,9 +605,9 @@
     <!-- BEGIN Markup-ellipse Node -->
     <!-- ========================= -->
     <section id="template-markup-ellipse-node">
-      <title><code>Markup-ellipse</code> Node</title>
+      <title>Κόμβος <code>Markup-ellipse</code></title>
 
-      <p>A <code>Markup-ellipse</code> describes a markup ellipse.</p>
+      <p>Ένα <code>Markup-ellipse</code> περιγράφει μία ελλειπτική σήμανση.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -668,13 +648,9 @@
   <!-- BEGIN Layout Node -->
   <!-- ***************** -->
   <section id="template-layout-node">
-    <title><code>Layout</code> Node</title>
+    <title>Κόμβος <code>Layout</code></title>
 
-    <p>A label node may contain multiple <code>Layout</code>
-      children.  If labels are arranged in a simple grid pattern, only
-      one layout is needed.  However, if labels are arranged in multiple
-      grids, such as a running bond pattern, multiple
-      <code>Layout</code> tags can be used.</p>
+    <p>Ένας κόμβος ετικέτας μπορεί να περιέχει πολλαπλές θυγατρικές <code>Layout</code> παιδιά. Αν οι ετικέτες είναι τοποθετημένες σε ένα απλό σχέδιο πλέγματος, μόνο μία διάταξη είναι αναγκαία. Ωστόσο, αν οι υποδείγματος ομολόγων, πολλαπλές ετικέτες <code>Layout</code> μπορούν να χρησιμοποιηθούν.</p>
     <p>Ένα κοινό παράδειγμα για πολλαπλές διατάξεις είναι ένα φύλλο με τρεις ετικέτες CD:</p>
 
     <!-- ==== Figure ==== -->
@@ -731,7 +707,7 @@
 
     <!-- ==== Figure ==== -->
     <figure>
-      <desc><code>Layout</code> parameters</desc>
+      <desc>Παράμετροι <code>Layout</code></desc>
       <media its:translate="no" type="image" src="figures/glabels-template-layout.png" mime="image/png" style="right">
         <p><span>Layout</span> Parameters</p>
       </media>

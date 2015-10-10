@@ -16,6 +16,18 @@
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013, 2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κωνσταντίνος Χόρτης</mal:name>
+      <mal:email>cograss@yahoo.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
     <title>Παράδειγμα 2: Ετικέτες διευθύνσεων</title>
@@ -32,13 +44,7 @@ McGarret,Steve,O,"404 Piikoi Street",,Honolulu,HI,96813
 Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
       </code>
 
-      <p>In <app>glabels</app> we have created a new <app>glabels</app>
-        document using the Avery 5512 "Address Labels" template.  Next we use the
-        <guiseq> <gui>Objects</gui>
-        <gui>Merge Properties</gui> </guiseq> menu item to display
-        the <gui>merge properties</gui> dialog.  We use this dialog to
-        select the source type (in our case CSV with keys on line 1) and the merge
-	source (filename) as shown.</p>
+      <p>Στο <app>glabels</app> έχουμε δημιουργήσει ένα νέο έγγραφο <app>glabels</app> χρησιμοποιώντας το πρότυπο Avery 5512 "Ετικέτες διευθύνσεων" . Στη συνέχεια χρησιμοποιούμε το στοιχείο μενού <guiseq><gui>Αντικείμενα</gui><gui>Ιδιότητες συγχώνευσης</gui></guiseq> για να εμφανιστεί ο διάλογος <gui>ιδιότητες συγχώνευσης</gui> . Θα χρησιμοποιήσουμε αυτόν τον διάλογο για να επιλέξουμε τον τύπο της πηγής (στη περίπτωσή μας CSV με τα κλειδιά στη γραμμή 1) και την πηγή συγχώνευσης (όνομα αρχείου) όπως φαίνεται.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex2-1.png" mime="image/png" style="right">
@@ -60,10 +66,7 @@ Kramer,Cosmo,,"Apt 5B","129 W. 81 St.","New York",NY,10024-7207
 
       <p>Σε αυτό το παράδειγμα έχουμε ένα μόνο αντικείμενο κειμένου. Αυτό το αντικείμενο κειμένου περιέχει όλα τα πεδία συγχώνευσης μας οργανωμένα σε πολλές γραμμές, ως μια ταχυδρομική διεύθυνση. Σημειώστε ότι τα πεδία ${ADDR1} και ${ADDR2} δεν έχει άλλο κείμενο μέσα στις δικές τους γραμμές. Όταν το <app>glabels</app> συναντά ένα πεδίο ως το μόνο κείμενο σε μια γραμμή, δεν θα επεκτείνει τη γραμμή αν το πεδίο είναι κενό.</p>
 
-      <p>Now we can print our address labels by selecting the
-        <guiseq> <gui>File</gui>
-        <gui>Print</gui> </guiseq> menu item.  This will display
-        print dialog as shown below.</p>
+      <p>Τώρα μπορούμε να τυπώσουμε τις ετικέτες διευθύνσεων μας επιλέγοντας το στοιχείο μενού <guiseq><gui>Αρχείο</gui><gui>Εκτύπωση</gui></guiseq>. Αυτό θα εμφανίσει τον διάλογο εκτύπωσης όπως φαίνεται παρακάτω.</p>
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex2-3.png" mime="image/png" style="right">
