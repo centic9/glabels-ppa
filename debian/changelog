@@ -1,3 +1,9 @@
+glabels (3.2.1-2build1) xenial; urgency=medium
+
+  * No change rebuild for the new e-d-s sonames
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 29 Oct 2015 10:51:43 +0100
+
 glabels (3.2.1-2) unstable; urgency=medium
 
   * Call ldconfig in postrm to make lintian happy
