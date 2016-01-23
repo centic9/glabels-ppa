@@ -100,7 +100,7 @@
 		  <p>Imprime les étiquettes en miroir. Cette option est utile pour imprimer sur des supports transparents destinés à être vus de l'extérieur (par ex. sur une vitre de voiture).</p>
 		</item>
 		<item>
-		  <p><gui>print crop marks</gui></p>
+		  <p><gui>imprimer les guides de coupe</gui></p>
 		  <p>Imprime les repères de massicot sur les bords de la feuille. Cette option est utile pour une impression sur feuilles blanches destinées à être découpées après impression. Elle ne fonctionne pas bien avec tous les modèles d'étiquette.</p>
 		</item>
 	      </list>

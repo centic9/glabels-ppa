@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cairo Renderer</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<title>LibGlbarcode 3.0 Reference Manual: Cairo Renderer</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="LibGlbarcode 3.0 Reference Manual">
 <link rel="up" href="api.html" title="API Reference">
 <link rel="prev" href="libglbarcode-3.0-lgl-barcode-create.html" title="Barcode Factory">
 <link rel="next" href="libglbarcode-3.0-lgl-barcode-type.html" title="Barcode Types">
-<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="libglbarcode-3.0-lgl-barcode-create.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="api.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">LibGlbarcode 3.0 Reference Manual</th>
-<td><a accesskey="n" href="libglbarcode-3.0-lgl-barcode-type.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#libglbarcode-3.0-lgl-barcode-render-to-cairo.synopsis" class="shortcut">Top</a>
-                   | 
-                  <a href="#libglbarcode-3.0-lgl-barcode-render-to-cairo.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
+                  <a href="#libglbarcode-3.0-lgl-barcode-render-to-cairo.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
+                  <a href="#libglbarcode-3.0-lgl-barcode-render-to-cairo.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libglbarcode-3.0-lgl-barcode-create.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libglbarcode-3.0-lgl-barcode-type.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="libglbarcode-3.0-lgl-barcode-render-to-cairo"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -33,17 +30,43 @@
 <h2><span class="refentrytitle"><a name="libglbarcode-3.0-lgl-barcode-render-to-cairo.top_of_page"></a>Cairo Renderer</span></h2>
 <p>Cairo Renderer — Render barcode to cairo context</p>
 </td>
-<td valign="top" align="right"></td>
+<td class="gallery_image" valign="top" align="right"></td>
 </tr></table></div>
-<div class="refsynopsisdiv">
-<a name="libglbarcode-3.0-lgl-barcode-render-to-cairo.synopsis"></a><h2>Synopsis</h2>
-<pre class="synopsis">
-#include &lt;libglbarcode/lgl-barcode-render-to-cairo.h&gt;
-
-<span class="returnvalue">void</span>                <a class="link" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html#lgl-barcode-render-to-cairo" title="lgl_barcode_render_to_cairo ()">lgl_barcode_render_to_cairo</a>         (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
-                                                         <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>);
-<span class="returnvalue">void</span>                <a class="link" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html#lgl-barcode-render-to-cairo-path" title="lgl_barcode_render_to_cairo_path ()">lgl_barcode_render_to_cairo_path</a>    (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
-                                                         <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>);
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-render-to-cairo.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html#lgl-barcode-render-to-cairo" title="lgl_barcode_render_to_cairo ()">lgl_barcode_render_to_cairo</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libglbarcode-3.0-lgl-barcode-render-to-cairo.html#lgl-barcode-render-to-cairo-path" title="lgl_barcode_render_to_cairo_path ()">lgl_barcode_render_to_cairo_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-render-to-cairo.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">
+</pre>
+</div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-render-to-cairo.includes"></a><h2>Includes</h2>
+<pre class="synopsis">#include &lt;libglbarcode/lgl-barcode-render-to-cairo.h&gt;
 </pre>
 </div>
 <div class="refsect1">
@@ -53,65 +76,84 @@ This section describes the cairo barcode renderer.
 </p>
 </div>
 <div class="refsect1">
-<a name="libglbarcode-3.0-lgl-barcode-render-to-cairo.details"></a><h2>Details</h2>
+<a name="libglbarcode-3.0-lgl-barcode-render-to-cairo.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
-<a name="lgl-barcode-render-to-cairo"></a><h3>lgl_barcode_render_to_cairo ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>                lgl_barcode_render_to_cairo         (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
-                                                         <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>);</pre>
-<p>
-Render barcode to cairo context.  Context should be prepared with desired
+<a name="lgl-barcode-render-to-cairo"></a><h3>lgl_barcode_render_to_cairo ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+lgl_barcode_render_to_cairo (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> *cr</code></em>);</pre>
+<p>Render barcode to cairo context.  Context should be prepared with desired
 translation and appropriate scale.  Context should be translated such that
 the origin is at the desired location of the upper left hand corner of the
 barcode bounding box.  Context should be scaled such that all dimensions
 are in points ( 1 point = 1/72 inch ) and that positive y coordinates
-go down the surface.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
+go down the surface.</p>
+<div class="refsect3">
+<a name="id-1.3.4.7.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
 <tbody>
 <tr>
-<td><p><span class="term"><em class="parameter"><code>bc</code></em> :</span></p></td>
-<td>An <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure</td>
+<td class="parameter_name"><p>bc</p></td>
+<td class="parameter_description"><p>An <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure</p></td>
+<td class="parameter_annotations"> </td>
 </tr>
 <tr>
-<td><p><span class="term"><em class="parameter"><code>cr</code></em> :</span></p></td>
-<td>A <span class="type">cairo_t</span> context</td>
+<td class="parameter_name"><p>cr</p></td>
+<td class="parameter_description"><p>A <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> context</p></td>
+<td class="parameter_annotations"> </td>
 </tr>
 </tbody>
 </table></div>
 </div>
+</div>
 <hr>
 <div class="refsect2">
-<a name="lgl-barcode-render-to-cairo-path"></a><h3>lgl_barcode_render_to_cairo_path ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>                lgl_barcode_render_to_cairo_path    (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
-                                                         <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>);</pre>
-<p>
-Render barcode to cairo context, but only create a path to be filled or
+<a name="lgl-barcode-render-to-cairo-path"></a><h3>lgl_barcode_render_to_cairo_path ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+lgl_barcode_render_to_cairo_path (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
+                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> *cr</code></em>);</pre>
+<p>Render barcode to cairo context, but only create a path to be filled or
 tested against.  Context should be prepared with desired
 translation and appropriate scale.  Context should be translated such that
 the origin is at the desired location of the upper left hand corner of the
 barcode bounding box.  Context should be scaled such that all dimensions
 are in points ( 1 point = 1/72 inch ) and that positive y coordinates
-go down the surface.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
+go down the surface.</p>
+<div class="refsect3">
+<a name="id-1.3.4.7.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
 <tbody>
 <tr>
-<td><p><span class="term"><em class="parameter"><code>bc</code></em> :</span></p></td>
-<td>An <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure</td>
+<td class="parameter_name"><p>bc</p></td>
+<td class="parameter_description"><p>An <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> structure</p></td>
+<td class="parameter_annotations"> </td>
 </tr>
 <tr>
-<td><p><span class="term"><em class="parameter"><code>cr</code></em> :</span></p></td>
-<td>A <span class="type">cairo_t</span> context</td>
+<td class="parameter_name"><p>cr</p></td>
+<td class="parameter_description"><p>A <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> context</p></td>
+<td class="parameter_annotations"> </td>
 </tr>
 </tbody>
 </table></div>
 </div>
 </div>
 </div>
+<div class="refsect1">
+<a name="libglbarcode-3.0-lgl-barcode-render-to-cairo.other_details"></a><h2>Types and Values</h2>
+</div>
+</div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.18</div>
+          Generated by GTK-Doc V1.20</div>
 </body>
 </html>

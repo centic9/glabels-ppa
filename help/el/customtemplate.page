@@ -16,16 +16,23 @@
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013, 2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κωνσταντίνος Χόρτης</mal:name>
+      <mal:email>cograss@yahoo.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
     <title>Για να δημιουργήσετε ενα προσαρμοσμένο πρότυπο</title>
 
-      <p>To create a new custom template, choose 
-        <guiseq><gui>File</gui>
-	<gui>Template Designer ...</gui></guiseq>
-	to display the <gui>Template Designer</gui> dialog.
-        This dialog will assist you in creating a custom template for
-        most types of label or card stationery that you may encounter.</p>
+      <p>Για να δημιουργήσετε ένα νέο προσαρμοσμένο πρότυπο, επιλέξτε <guiseq><gui>Αρχείο</gui><gui>Σχεδιαστής προτύπου ...</gui></guiseq> για να εμφανίσετε τον διάλογο <gui>Σχεδιαστής προτύπου</gui> . Αυτός ο διάλογος θα σας βοηθήσει να δημιουργείτε ένα προσαρμοσμένο πρότυπο για τα περισσότερα είδη της ετικέτας ή κάρτας που μπορεί να συναντήσετε.</p>
 
       <p>Αν προτιμάτε, μπορείτε να δημιουργήσετε τα πρότυπά σας χειροκίνητα. Για αυτή την επιλογή δείτε το <link xref="mancreate"/></p>
 

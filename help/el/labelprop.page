@@ -16,15 +16,22 @@
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013, 2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κωνσταντίνος Χόρτης</mal:name>
+      <mal:email>cograss@yahoo.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
     <title>Για να αλλάξετε τις ιδιότητες ετικέτας</title>
 
-      <p>To change the media type and/or orientation of a label, choose
-        <guiseq><gui>File</gui>
-        <gui>Properties</gui></guiseq> to display the
-        <gui>Label properties</gui> dialog.  Select the
-        new media type and orientation for the document, then click
-        <gui>OK</gui>.</p>
+      <p>Για να αλλάξετε τον τύπο μέσων και/ή τον προσανατολισμό της ετικέτας, επιλέξτε <guiseq><gui>Αρχείο</gui><gui>Ιδιότητες</gui></guiseq> για να εμφανίσετε τον διάλογο <gui>Ιδιότητες ετικέτας</gui> . Επιλέξτε τον νέο τύπο μέσων και τον προσανατολισμό για το έγγραφο, έπειτα πατήστε στο <gui>Εντάξει</gui>.</p>
 
 </page>

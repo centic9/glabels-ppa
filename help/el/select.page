@@ -16,19 +16,23 @@
     <license>
       <p>Creative Commons Share Alike 3.0</p>
     </license>    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013, 2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κωνσταντίνος Χόρτης</mal:name>
+      <mal:email>cograss@yahoo.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
     <title>Για να επιλέξετε αντικείμενα</title>
 
-      <p>A prerequisite for performing operations on objects is the
-        selection of individual objects or groups of objects.  The
-        display area must be in the object selection mode to create new
-        selections, as indicated by an arrow cursor.  The object
-        selection mode is selected by the
-        <guiseq><gui>Objects</gui>
-        <gui>Select Mode</gui></guiseq> menu item,
-        or the corresponding command on the <gui>Drawing
-        Toolbar</gui>.</p>
+      <p>Απαραίτητη προϋπόθεση της εκτέλεσης εργασιών για αντικείμενα είναι η επιλογή των επιμέρους αντικειμένων ή ομάδων αντικειμένων. Η περιοχή προβολής πρέπει να είναι σε κατάσταση επιλογής αντικειμένου για να δημιουργήσετε νέες επιλογές, όπως υποδεικνύεται από ένα βέλος δρομέα. Η κατάσταση επιλογής αντικειμένου μπορεί να επιλεγεί από το στοιχείο μενού <guiseq><gui>Αντικείμενα</gui><gui>Επιλογή κατάστασης</gui></guiseq>, ή την αντίστοιχη εντολή στην <gui>Εργαλειοθήκη σχεδίασης</gui>.</p>
 
       <section>
 	  <title>Επιλέγοντας ένα μεμονωμένο αντικείμενο</title>
@@ -37,16 +41,7 @@
 
 	<section>
 	  <title>Συγκεντρωτικές επιλογές αντικειμένου</title>
-	    <p>Multiple objects can be selected by first selecting the first
-              object as above and then by holding the <key>Ctrl</key>
-              key while selecting additional objects.
-              Individual objects can be added to an existing selection
-              at any time by holding the <key>Ctrl</key> key while
-              selecting the desired objects.  All objects can also be
-              selected by using the <guiseq><gui>Edit</gui>
-              <gui>Select All</gui></guiseq>
-              menu item.  All objects in an aggregate object selection will be
-              highlighted.</p>
+	    <p>Πολλαπλά αντικείμενα μπορούν να επιλεγούν επιλέγοντας πρώτα το πρώτο αντικείμενο όπως παραπάνω και στη συνέχεια κρατώντας πατημένο το πλήκτρο <key>Ctrl</key> για την επιλογή επιπλέον αντικειμένων. Μεμονωμένα αντικείμενα μπορούν να προστεθούν σε μια υπάρχουσα επιλογή οποτεδήποτε, κρατώντας πατημένο το <key>Ctrl</key> κατά την επιλογή των επιθυμητών αντικειμένων. Όλα τα αντικείμενα μπορούν επίσης να επιλεγούν με τη χρήση του στοιχείου μενού <guiseq><gui>Επεξεργασία</gui> <gui>Επιλογή όλων</gui></guiseq>. Όλα τα αντικείμενα στο σύνολο τους θα επισημανθούν.</p>
 	</section>
 
 	<section>
@@ -59,14 +54,7 @@
 	<section>
 	  <title>Αποεπιλογή αντικειμένων</title>
 	  
-	    <p>Individual objects can be removed from an existing
-              selection by holding the <key>Ctrl</key> key while
-              clicking on a previously selected object.  An entire selection
-              can be dismissed by using the <guiseq>
-	      <gui>Edit</gui> <gui>Un-select All</gui>
-              </guiseq> menu item
-              or by simply clicking any empty space in the display area.
-              Once an object is unselected its highlight is removed.</p>
+	    <p>Μεμονωμένα αντικείμενα μπορούν να αφαιρεθούν από μια υπάρχουσα επιλογή κρατώντας πατημένο το πλήκτρο <key>Ctrl</key> ενώ επιλέγετε ένα ήδη επιλεγμένο αντικείμενο. Μια πολλαπλή επιλογή μπορεί να απορριφθεί χρησιμοποιώντας το στοιχείο μενού <guiseq><gui>Επεξεργασία</gui><gui>Αποεπιλογή όλων</gui></guiseq> ή πατώντας απλώς σε οποιοδήποτε κενό χώρο στην περιοχή της οθόνης. Όταν ένα αντικείμενο αποεπιλέγεται ο τονισμός του αφαιρείται.</p>
 	  
 	</section>
 
