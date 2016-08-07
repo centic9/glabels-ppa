@@ -1,3 +1,10 @@
+glabels (3.4.0-0ubuntu0~ppa1) xenial; urgency=medium
+
+  * New upstream release.
+  * Update minimum version of dependencies.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sun, 07 Aug 2016 20:56:33 +0200
+
 glabels (3.2.1-2ubuntu0~ppa1) trusty; urgency=medium
 
   * Backport to trusty.
