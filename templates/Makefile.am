@@ -15,7 +15,9 @@ templates_DATA = \
 	avery-us-templates.xml \
 	avery-iso-templates.xml \
 	avery-other-templates.xml \
+	begalabel-templates.xml \
 	brother-other-templates.xml \
+	cablelabel-templates.xml \
 	canon-other-templates.xml \
 	databecker-iso-templates.xml \
 	dataline-iso-templates.xml	\
@@ -29,6 +31,7 @@ templates_DATA = \
 	igepa-templates.xml	\
 	jac-iso-templates.xml \
 	maco-us-templates.xml \
+	mayspies-templates.xml \
 	meritline-us-templates.xml \
 	microapp-templates.xml	\
 	misc-us-templates.xml \

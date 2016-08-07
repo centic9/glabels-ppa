@@ -21,7 +21,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010-2012</mal:years>
+      <mal:years>2010-2016</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -665,7 +665,7 @@
     <p>Las dos etiquetas del borde izquierdo se pueden asignar a una cuadrícula, asumiendo que se puede definir correctamente la coordenada de la etiqueta superior izquierda y la distancia hasta la segunda etiqueta. La distancia al borde izquierdo es común en estas etiquetas. La tercera en el borde derecho no tiene valores de distancias comunes con las demás, por lo que se debe definir un segundo diseño, con coordenadas únicas para la esquina superior izquierda de esa etiqueta.</p>
 
 	<note style="tip">
-	<p>Sólo puede definir varios diseños si las etiquetas en la hoja tienen la misma forma. si su hoja contiene diferentes formas, puede definir cada forma en otra plantilla aparte. Las versiones futuras de <app>gLabels</app>, probablemente podrán concatenar estas hojas con diferentes formas en una única plantilla.</p>
+	<p>Sólo puede definir varios diseños si las etiquetas en la hoja tienen la misma forma. Si su hoja contiene diferentes formas, puede definir cada forma en otra plantilla aparte. Las versiones futuras de <app>gLabels</app>, probablemente podrán concatenar estas hojas con diferentes formas en una única plantilla.</p>
       </note>
 
 	<note style="tip">

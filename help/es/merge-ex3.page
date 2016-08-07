@@ -20,7 +20,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010-2012</mal:years>
+      <mal:years>2010-2016</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -74,7 +74,7 @@
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-4.png" mime="image/png" style="right">
-      		<p>Vista previa de las etiquetas de dirección</p>
+		<p>Vista previa de las etiquetas de dirección</p>
     		</media>
       <!-- ==== End of Figure ==== -->
 

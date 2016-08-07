@@ -1,20 +1,1018 @@
-commit a49a569d043ca6529b765181ba92e74b2f94c411
+commit e57db9c16130658be12e57f81f41215de4e9d50d
 Author: Jim Evins <evins@snaught.com>
-Date:   2014-11-09
+Date:   2016-04-23
+
+    Some final preparation for 3.4.0.
+
+M	AUTHORS
+M	NEWS
+M	README
+M	configure.ac
+
+commit f09166de12e7a3113d234a2fccf30ec1358a4171
+Author: Rafael Fontenelle <rafaelff@gnome.org>
+Date:	2016-04-13
+
+    Updated Brazilian Portuguese translation
+
+M	po/pt_BR.po
+
+commit 151c7ccd501b4c5ea55da1394b5393d5f156e657
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-04-13
+
+    Updated Czech translation
+
+M	help/cs/cs.po
+M	po/cs.po
+
+commit c13334665d39fbd09e83d53fbbd4a084da8e0501
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-04-12
+
+    Updated German doc translation
+
+M	help/de/de.po
+
+commit d8be24be28be70bd1ea4581cbfd7de105dd60014
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-04-12
+
+    Fixed logical issue in German translation
+
+M	po/de.po
+
+commit 8b7724075ffd2e852617866a000f2eb0451bfee9
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2016-04-12
+
+    Updated Spanish translation
+
+M	help/es/es.po
+
+commit d7f901a7a2bc9bb24403bed9184762a9952c5b04
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2016-04-12
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit 6bc5aa0a09356039c4c36122ab0a92103562b386
+Author: Rafael Fontenelle <rafaelff@gnome.org>
+Date:	2016-04-12
+
+    Updated Brazilian Portuguese translation
+
+M	po/pt_BR.po
+
+commit e85cda0e27d7ec23ab733d43b9e91c0861bb38c6
+Author: Jim Evins <evins@snaught.com>
+Date:	2016-04-11
+
+    Updated manual page for the new Label properties dialog.
+
+M	help/C/labelprop.page
+
+commit ea0cef41ce6e18ae99a329b85080623f74ca64b2
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	2016-04-11
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit 05d49201e0b5549f0b556ee416c7671ac0711c47
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-04-11
+
+    Updated German translation
+
+M	po/de.po
+
+commit 26dbf498143e1a98146dff0cf5ce79565a127fd1
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-04-11
+
+    Added SheetLabels templates
+
+M	templates/sheetlabels-us-templates.xml
+
+commit 212cffd51f6eee69186f195098d6299ae6d261a7
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	2016-04-11
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit ed52a7ae4585751c659506805b6064208b32dbed
+Author: Jim Evins <evins@snaught.com>
+Date:	2016-03-31
+
+    Use pre-2.44 GObject boilerplate in new glLabelPropertiesDialog.
+
+    Maintains compatability with older or less bleeding-edge
+    distributions.
+
+M	src/label-properties-dialog.c
+M	src/label-properties-dialog.h
+
+commit dbd7de13a3c6d3d62d7f9cd245d3674d5410c88b
+Author: Balázs Meskó <meskobalazs@gmail.com>
+Date:	2016-03-31
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit cfb648be19b9fc82afeea91f9b9271f9e7d3b00d
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-03-30
+
+    Added a few SheetLabels templates
+
+M	templates/sheetlabels-us-templates.xml
+
+commit e30a5855354169b942c27d332f346cc8a61ae7c5
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-03-30
+
+    Updated German translation
+
+M	po/de.po
+
+commit 966a54971c015dacb123abab77ed5989f42c546f
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-03-30
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit b132259e00150627c23cbcb9ffdf8bff19e041bc
+Author: Jim Evins <evins@snaught.com>
+Date:	2016-03-29
+
+    Added Datamatrix with GS1 input mode barcode type to zint backend.
+
+M	src/bc-backends.c
+M	src/bc-zint.c
+
+commit d0282fa9043f5e5e1c5cd00ff8a4ec0eab29df98
+Author: Enrico Nicoletto <liverig@gmail.com>
+Date:	2016-03-24
+
+    Updated Brazilian Portuguese translation
+
+M	po/pt_BR.po
+
+commit 18b14950c2d929cdda40617bfef2da0aeadcbb16
+Author: GHPS <GHPS@users.noreply.github.com>
+Date:	2016-03-07
+
+    Unified description, fixed English translation, added filing-category
+
+M	templates/zweckform-iso-templates.xml
+
+commit c34d782e781f37a7b5086c35ec78ca40700267b2
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-03-12
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit 53362e5dbc67b05e7318de5240cadfdcdbd8f508
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-03-08
+
+    Updated German translation
+
+M	po/de.po
+
+commit e4f6a47abcab7fed87f198f3c62b6da4f1d5a311
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:	2016-03-06
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit ae4aad4994a8a355680c873923b84dd8231aba8d
+Author: Jim Evins <evins@snaught.com>
+Date:	2016-03-06
+
+    Added translation context for "Select Product" (Bug #763003).
+
+M	src/new-label-dialog.c
+
+commit 3c195d74dc71d4facc7c32a49f0219e368db5f0c
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:	2016-03-06
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit 4c4e9491e19bd0f0e102371913b96010d84126c3
+Author: GHPS <GHPS@users.noreply.github.com>
+Date:	2016-03-03
+
+    Update to new Dymo labels, pt -> mm (Dymo official dimensions),
+    file sorted
+
+M	templates/dymo-other-templates.xml
+
+commit 0526c761afa92ee7c008985b1234f1be4e70c8dc
+Author: GHPS <GHPS@users.noreply.github.com>
+Date:	2016-03-03
+
+    New categories for name badges (name-badge) and filing.
+
+M	templates/categories.xml
+
+commit fd29a33c46d4cd344a2e7b7c5864a88531d71e09
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:	2016-03-04
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit c7470d41b65c4d26846cf5ac2aa04189af690f93
+Author: Jim Evins <evins@snaught.com>
+Date:	2016-03-03
+
+    Removed laste vestiges of windowing system or dbus dependencies
+    from glabels-batch.
+
+M	src/font-history-model.c
+M	src/font-history-model.h
+M	src/font-history.c
+M	src/font-history.h
+M	src/glabels-batch.c
+M	src/prefs-model.c
+M	src/prefs.c
+M	src/prefs.h
+M	src/template-history-model.c
+M	src/template-history-model.h
+M	src/template-history.c
+M	src/template-history.h
+
+commit 138ff1b448ed1fe75e674d5006130652c289a8e1
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-03-03
+
+    Fixes for Begalabel templates
+
+M	po/POTFILES.in
+M	templates/Makefile.am
+M	templates/begalabel-templates.xml
+
+commit 193f0e3c97a102220585990d65a2a2a58971fd6b
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-03-03
+
+    Add new Begalabel templates
+
+A	templates/begalabel-templates.xml
+M	templates/vendors.xml
+
+commit 13e6059ad706c4b9c839f598df7a0a3e3bbbd06d
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	2016-03-03
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit aa254d8d573e1ace39cee5c7d1f65b8800835262
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:	2016-03-02
+
+    Updated Slovak translation
+
+M	po/sk.po
+
+commit 7a66286430281f7ea1fb1ccb3055fe293ae726ba
+Author: Jim Evins <evins@snaught.com>
+Date:	2016-02-28
+
+    Fix drawing beyond drawing area viewport (bug #762307).
+
+    Fixes Bug #762307.	Clip the drawing area's bin_window to a
+    viewport determined by the widget's physical window size and
+    current scroll adjustments.
+
+M	src/view.c
+
+commit 99b749f214affdb3d7fe590f675ea23ba9d7fb23
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-25
+
+    Show changes immediately after rotate/flip
+
+M	src/label.c
+
+commit 46d0313b58e5d0c18f6a1803b6940934c59db199
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-22
+
+    Fix crash on Select All
+
+M	src/object-editor.c
+
+commit 71a6570fad3df336c275f6dd1a12b1ee749d8333
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-25
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit ed04ee3f971c85073417b8a4f7f09078bd80d947
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-25
+
+    Fix typo
+
+M	src/label.c
+
+commit 71b63b09608b5bc1dfeb6037bcf0e9d21030d69f
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-02-24
+
+    Updated German translation
+
+M	po/de.po
+
+commit 215f105bfe9b5436e29873efefdb9ec8067366d2
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-24
+
+    Be more specific comments for translators
+
+M	src/label.c
+
+commit 29cdcc4644e6900fb0913dc37b6f21acc0f52b77
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-24
+
+    Fix typos
+
+M	src/label.c
+
+commit 085265d35e5f67a789ecca4056b66ba66c5ed06f
+Author: Rafael Fontenelle <rffontenelle@gmail.com>
+Date:	2016-02-23
+
+    Updated Brazilian Portuguese translation
+
+M	po/pt_BR.po
+
+commit 8b1e71279e63cfbd5f2f5f26ce6bc553dff91508
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2016-02-22
+
+    Updated POTFILES.in
+
+M	po/POTFILES.in
+
+commit c719015609b943decb76fbbdf18618227b6654a9
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-18
+
+    Add properties dialog
+
+M	data/ui/Makefile.am
+A	data/ui/label-properties-dialog.ui
+M	src/Makefile.am
+M	src/file.c
+M	src/file.h
+A	src/label-properties-dialog.c
+C058	src/file.h	src/label-properties-dialog.h
+M	src/label.c
+M	src/label.h
+
+commit a8fdd2ef48cd8bd832f6c85c8f2a2903ac39c346
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-14
+
+    Set path for Save As
+
+M	src/file.c
+
+commit c7004d7988d2b47d9f09226301bab2d21f1a12dd
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-17
+
+    Some dimension fixes
+
+M	templates/rayfilm-templates.xml
+
+commit bfd72b4fd652140f7987058e49bae2c62b44696a
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-17
+
+    Updated Czech translation
+
+M	help/cs/cs.po
+
+commit b5e16a792c68cdd5b809b878a4573db7ba83604f
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-13
+
+    Fix text and line shadow color from key
+
+M	src/color.c
+M	src/color.h
+M	src/label-line.c
+M	src/label-text.c
+
+commit cb06227147d7c6eda9074530baabe75307773883
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-13
+
+    Object dragging enhancement
+
+M	src/view-box.c
+M	src/view-box.h
+M	src/view-ellipse.c
+M	src/view-ellipse.h
+M	src/view-line.c
+M	src/view-line.h
+M	src/view.c
+M	src/view.h
+
+commit fbacfb3d00e89daffced4586f4654c65ce2111bd
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-11
+
+    Fix line handle P1 sensitive
+
+M	src/label-object.c
+
+commit aae4fee62cf98b130cfa25a056b35ad203fedb5c
+Author: Windel Bouwman <windel@windel.nl>
+Date:	2016-02-07
+
+    Add full page Bruna template for A4.
+
+M	templates/misc-iso-templates.xml
+
+commit d5ff2a4052fcc0c9b26e3410f69fd2903e704583
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-02-02
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit 6c9a0a990219d15eacefc873befe71b966678046
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-02-01
+
+    Updated German translation
+
+M	po/de.po
+
+commit 12aacd1a153b89e91081da811bc4b41235bd1cf9
+Author: Jim Evins <evins@snaught.com>
+Date:	2016-01-31
+
+    Bump version.
+
+M	configure.ac
+
+commit 5b6f8fb1f98967833b9954baa43d50750531d043
+Author: Jim Evins <evins@snaught.com>
+Date:	2016-01-31
+
+    Some cleanup to satisfy distcheck.
+
+M	.gitignore
+M	po/POTFILES.skip
+M	templates/Makefile.am
+
+commit e1a38920a8968afec6949759040f7f393fe5b2be
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-01-25
+
+    Update the AppData to spec version 0.7+
+
+M	data/appdata/glabels-3.appdata.xml.in
+
+commit 1f4d83785171ef57e1342dcfeed063c5a00b28d2
+Author: Richard Hughes <richard@hughsie.com>
+Date:	2016-01-25
+
+    Add a missing tag to the AppData file
+
+M	data/appdata/glabels-3.appdata.xml.in
+
+commit d68a06597d8ca19b654138001ee653fb9dd2f80e
+Author: Walter Cheuk <wwycheuk@gmail.com>
+Date:	2016-01-24
+
+    Updated Chinese (Hong Kong) translation
+    (cherry picked from commit 752f97a141e3613d2aeb4bbf30667716cd4e986f)
+
+M	po/zh_HK.po
+
+commit 419a15ed0b11cfe7a4eaa49f3cc8317a2cded728
+Author: Walter Cheuk <wwycheuk@gmail.com>
+Date:	2016-01-24
+
+    Updated Chinese (Taiwan) translation
+    (cherry picked from commit 861305ac11561bb1dab661d89de3f38db7f28815)
+
+M	po/zh_TW.po
+
+commit b3e7d28f699a196a37aa53fd345af8ef36b2718d
+Author: Marek Černocký <marek@manet.cz>
+Date:	2016-01-31
+
+    Udated Czech translation
+
+M	po/cs.po
+
+commit 626bf4f71bdeb977424a31145842cf58269b09c3
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2016-01-24
+
+    Updated German translation
+
+M	po/de.po
+
+commit 7a93d511a50d066409ddeac313e9a5bad277bd7e
+Author: Jim Evins <evins@snaught.com>
+Date:	2016-01-23
+
+    Fixes to doap file from master.
+
+M	glabels.doap
+
+commit 9b1aa2676512c1d4e2101847a1be38504bdda88a
+Author: Jim Evins <evins@snaught.com>
+Date:	2016-01-23
+
+    Update project meta data.
+
+M	.gitignore
+M	HACKING
+M	README
+M	data/desktop/glabels-3.0.desktop.in
+M	glabels.doap
+
+commit 6efdb7f35c3f0cf8b61178bde5a7912f627bdf7e
+Author: Jiri Grönroos <jiri.gronroos@iki.fi>
+Date:	2016-01-21
+
+    Updated Finnish translation
+
+M	po/fi.po
+
+commit f12018edd8857d91a5d4662fd8d8fbadd505a358
+Author: Enrico Nicoletto <liverig@gmail.com>
+Date:	2015-12-31
+
+    Updated Brazilian Portuguese translation
+
+M	po/pt_BR.po
+
+commit 41a843b11d604be1f76b03ec2c915112f3ce74ac
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2015-12-30
+
+    Updated German translation
+
+M	po/de.po
+
+commit 49d65be25f8eef69fd7b258db342dac07d56c002
+Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
+Date:	2015-12-30
+
+    Updated Serbian translation
+
+M	po/sr.po
+M	po/sr@latin.po
+
+commit 7fc57ed02d2b73badc789020ec9506ffac817ea9
+Author: Jim Evins <evins@snaught.com>
+Date:	2015-12-26
+
+    Reconcile whitespace styles.
+
+M	src/merge-text.c
+
+commit 641ac096f10a846f620551563327da67be16ae67
+Author: Jim Patterson <sf.rs9z@ncf.ca>
+Date:	2015-12-26
+
+    Auto-detect file encoding of CSV files and process accordingly.
+
+    Fixes sourceforge bug# 139. The changes scan any CSV file for a BOM
+    (Byte Order Mark) when it's opened. If one is found, then the getc
+    routine will use g_iconv to convert code sequences to utf-8 before
+    passing them up for processing. Since it checks for the UTF-8 BOM as
+    well as those for UTF-16 and UTF-32, this change also provides a way
+    in which a UTF-8 CSV file can be passed into GLabels on those systems
+    which aren't using UTF-8 as the system codeset. Currently, those
+    files are (it appears) assumed to be in the system code set, and so
+    are a bit problematic.
+
+M	src/merge-text.c
+
+commit 0f73a4fd412c9e4812926747ef8a0ed68d9096c8
+Author: Marek Černocký <marek@manet.cz>
+Date:	2015-12-20
+
+    Fixed typo mm8 -> 8mm
+
+M	templates/endisch-templates.xml
+
+commit c8be3946b6389beb51da7ecafe96854d20383369
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2015-12-17
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit 3b3ab61c724d0e83e5a826446642191df57f7a31
+Author: Muhammet Kara <muhammetk@gmail.com>
+Date:	2015-12-13
+
+    Updated Turkish translation
+
+M	po/tr.po
+
+commit f8adad57e31608beb9cca35de3cd0313facda856
+Author: Necdet Yücel <necdetyucel@gmail.com>
+Date:	2015-12-13
+
+    Updated Turkish translation
+    (cherry picked from commit 0d23cb983ceb1eb7fe49c8dd1297c13b8649e40b)
+
+M	po/tr.po
+
+commit 2e2474159e3b7e1f7dfcf778cedc7adbb5801298
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2015-12-13
+
+    Updated Spanish translation
+
+M	help/es/es.po
+
+commit fc69408fa71d9b13788b0fb45a93aaee452eaadb
+Author: Pedro Albuquerque <palbuquerque73@gmail.com>
+Date:	2015-12-13
+
+    Updated Portuguese translation
+
+M	po/pt.po
+
+commit 5dc90f7519e81ab21e04d5885618ea41a9e958c1
+Author: Marek Černocký <marek@manet.cz>
+Date:	2015-12-08
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit f1de8eb10559e97747ba75a0754d622c30a5739c
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	2014-12-15
+
+    Fix a typo
+
+    Signed-off-by: Marek Černocký <marek@manet.cz>
+
+M	src/bc-backends.c
+
+commit a393c8109108f04ae5e77b1fa3fa406e2f5c40a8
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2015-12-02
+
+    Updated Spanish translation
+
+M	po/es.po
+
+commit bb90018a24d222db468ee0fe5f2377a26ade10e8
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2015-11-21
+
+    Updated German doc translation
+
+M	help/de/de.po
+
+commit 470594f178029d92c77b3f8e221fcb689486aa90
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2015-11-21
+
+    Updated German translation
+
+M	po/de.po
+
+commit 19f231afa72c63c46b58293adc9c30663cd17338
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	2015-10-26
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit 3acce37267ce4fdeb978616a65a83c6784ae9255
+Author: Tom Tryfonidis <tomtryf@gmail.com>
+Date:	2015-10-18
+
+    Updated Greek translation
+
+M	po/el.po
+
+commit 5e6cc832e13669dc2e17e17c34208738d29c92d6
+Author: Marek Černocký <marek@manet.cz>
+Date:	2015-09-14
+
+    Updated Czech translation
+
+M	help/cs/cs.po
+
+commit a1c3cccdbb7c8c21f69694f55d06d10bb97b60b7
+Author: Dimitris Spingos <dmtrs32@gmail.com>
+Date:	2015-08-17
+
+    Updated Greek translation
+
+M	help/el/el.po
+
+commit bb3bd64bad2c7b8afcb601370ff065efc1a4c0d0
+Author: Alexandre Franke <alexandre.franke@gmail.com>
+Date:	2015-08-15
+
+    Updated French translation
+
+M	help/fr/fr.po
+
+commit b227668b1a477231a39cd95aab8549797a247032
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2015-08-08
+
+    Updated POTFILES.in
+
+M	po/POTFILES.in
+
+commit 982c22b9e923eca694d6482c42b6afde4a6c8302
+Author: Thomas Steinert <contact.steinert@gmail.com>
+Date:	2015-08-08
+
+    Add Avery L4730 and Cable Lable Co CableBug Labels.
+
+    - Includes some whitespace cleanup in vendor.xml and categories.xml.
+
+M	.gitignore
+M	templates/Makefile.am
+M	templates/avery-iso-templates.xml
+A	templates/cablelabel-templates.xml
+M	templates/categories.xml
+M	templates/vendors.xml
+
+commit a5a1d5e3ccc502d89ec224d4af67b5b1c75226b7
+Author: Anders Jonsson <anders.jonsson@norsjovallen.se>
+Date:	2015-08-07
+
+    Fix typos in manual
+
+M	help/C/customize.page
+M	help/C/mancreate.page
+M	help/C/merge-ex3.page
+
+commit 318e05e03840a452ae7b44f9576485d51bd6585f
+Author: Jim Evins <evins@snaught.com>
+Date:	2015-08-02
+
+    Fixed names of brother templates.
+
+M	templates/brother-other-templates.xml
+
+commit 15786d2aecdca97834ab6ed4f42d83d4592990b4
+Author: Marek Černocký <marek@manet.cz>
+Date:	2015-07-22
+
+    Updated Czech translation
+
+M	po/cs.po
+
+commit 8b6f024a6d81f10ca74c987571cd30ff55095d37
+Author: Pedro Albuquerque <palbuquerque73@gmail.com>
+Date:	2015-07-19
+
+    Updated Portuguese translation
+
+M	po/pt.po
+
+commit 3a57a96a64b4eb606434a524a85b136c188a12a1
+Author: Balázs Úr <urbalazs@gmail.com>
+Date:	2015-07-18
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit 149b37a7ddf58dd287426443fe9114a5209bca85
+Author: Jim Evins <evins@snaught.com>
+Date:	2015-07-17
+
+    Updated Brother QL-500/550/... templates.
+
+    Updated these templates to use the foomatic ptouch driver.	The
+    label sizes and measurements come directly from version 1.1 of
+    the 'Brother-QL-500-ptouch.ppd' file.
+
+    Kept old templates around for backwards compatability.
+
+M	templates/brother-other-templates.xml
+M	templates/vendors.xml
+
+commit 4f3e3e8e3ba98a27e8378fb2ffd38ae9f59d659a
+Author: Pedro Albuquerque <palbuquerque73@gmail.com>
+Date:	2015-07-07
+
+    Updated Portuguese translation
+
+M	po/pt.po
+
+commit 05c43afd5967c441c3568d49629824572745cd90
+Author: Piotr Drąg <piotrdrag@gmail.com>
+Date:	2015-06-27
+
+    Updated POTFILES.in
+
+M	po/POTFILES.in
+
+commit 074c6bb6a77d208568bf99a0c02ec01a66e98f18
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2015-06-27
+
+    Add Malte Skoruppa to AUTHORS
+
+M	AUTHORS
+
+commit cc3d2a9547e22d429691471198b45fca9e5ee666
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2015-06-27
+
+    Add Mayspies to vendors
+
+M	templates/vendors.xml
+
+commit 6e682a8b1573b4cff774377f114d5231a9c5b023
+Author: Malte Skoruppa <skoruppa@cs.uni-saarland.de>
+Date:	2015-06-27
+
+    Add new template file for Mayspies
+
+A	templates/mayspies-templates.xml
+
+commit 757777500e690976dabb2e5e4803fcdbf82326b5
+Author: Gábor Kelemen <kelemeng@openscope.org>
+Date:	2015-05-28
+
+    Updated Hungarian translation
+
+M	po/hu.po
+
+commit 2c5e4afcb665478cee337d2939a6a01ec3168d71
+Author: Gabor Kelemen <kelemeng@gnome.hu>
+Date:	2015-05-26
+
+    Initial Hungarian translation by Balazs UR <urbalazs at gmail dot
+    com>, corrections by me
+
+A	po/hu.po
+
+commit 31e12b92e72a93dd3e0a892cc5a4c1557fb7323d
+Author: Gabor Kelemen <kelemeng@gnome.hu>
+Date:	2015-05-26
+
+    Added hu to LINGUAS
+
+M	po/LINGUAS
+
+commit 3480159dacc5c7576562c1fff7bcdd8303347629
+Author: Jordi Mas <jmas@softcatala.org>
+Date:	2015-05-06
+
+    Fixes to Catalan translation
+
+M	po/ca.po
+
+commit d9b453d0b3a79ec74a8e35573ed23fda820f9c5d
+Author: Daniel Șerbănescu <daniel@serbanescu.dk>
+Date:	2015-04-06
+
+    Added Romanian Translation
+
+M	po/LINGUAS
+A	po/ro.po
+
+commit 6e3afc47ed6b8ca72393c740d5dfa489ca8163f2
+Author: Samir Ribic <samir.ribic@etf.unsa.ba>
+Date:	2015-03-13
+
+    Added Bosnian translation
+
+M	po/LINGUAS
+A	po/bs.po
+
+commit 5a6da4851e83b52ba56b3d59c652c29c229b7916
+Author: Dušan Kazik <prescott66@gmail.com>
+Date:	2015-03-11
+
+    Added Slovak translation
+
+M	po/LINGUAS
+A	po/sk.po
+
+commit abb54d7416428501e26f9a121135ddc043034b61
+Author: Tim Waugh <twaugh@redhat.com>
+Date:	2015-01-19
+
+    Handle vcard entries with addresses but no address labels (bug
+    #742441).
+
+    Fixes Bug #742441.	A vcard entry that has no address labels but
+    does include
+    structured address components can be handled by fabricating the
+    address label
+    from the address components.
+
+M	src/merge-vcard.c
+
+commit 1dd1d6e1697373140eea0373beb195c0ca4534c0
+Author: Tim Waugh <twaugh@redhat.com>
+Date:	2015-01-06
+
+    Fixed missing contacts when importing from vcard.
+
+    Fixes Bug #742440.	After checking for an END line, another line
+    was read
+    before breaking out of the loop. This could have been the BEGIN
+    line for
+    the next record, in which case that record will be lost.
+
+M	src/merge-vcard.c
+
+commit 42d630343f0da1ef616b6252e352e1602832e088
+Author: Åke Engelbrektson <eson57@gmail.com>
+Date:	2015-01-13
+
+    Updated Swedish translation
+
+M	po/sv.po
+
+commit f9ab70e76c6d0493ad388c30ba3d80d27bdb4487
+Author: Mario Blättermann <mario.blaettermann@gmail.com>
+Date:	2014-12-19
+
+    Add a few SheetLabels templates
+
+M	templates/sheetlabels-us-templates.xml
+
+commit bb7d492a4469a92e8d9f56912522c127505ca7cc
+Author: Bruce Dagel <bdagel@machlink.com>
+Date:	2014-12-18
+
+    Add SheetLabels SL 573 template
+
+M	templates/sheetlabels-us-templates.xml
+
+commit 6aab0235a879e6c9dff561a35335958ab056008a
+Author: Muhammet Kara <muhammetk@gmail.com>
+Date:	2014-12-11
+
+    Updated Turkish translation
+
+M	po/tr.po
+
+commit 3e7beab866edeb88bd87742eaa86ff3cb014f41b
+Author: Jim Evins <evins@snaught.com>
+Date:	2014-11-10
+
+    Post 3.2.1 preparation.
+
+M	configure.ac
+
+commit 7956897f0dec97f6297bd438a175e3934bf8ec5e
+Author: Jim Evins <evins@snaught.com>
+Date:	2014-11-09
 
     Final preparation for 3.2.1.
 
 M	NEWS
 
-commit d6eff0d17c2b65524ff39484210258585b85f741
-Author: Rūdolfs Mazurs <rudolfsm@src.gnome.org>
-Date:	2014-11-01
-
-    Updated Latvian translation
-
-M	po/lv.po
-
-commit 56e0713c35d2deb8eecf162b8104788833965a4d
+commit a3c7ddc68495c9391b2295c0806ce6dcadbaeac0
 Author: Jim Evins <evins@snaught.com>
 Date:	2014-10-23
 
@@ -23,7 +1021,23 @@ Date:	2014-10-23
 M	NEWS
 M	configure.ac
 
-commit 165f372e3b0d3bcd1088feac3ba3ab0aa8257777
+commit 60557cad418e0caf2687f8e365a9e7f7cf1e11ce
+Author: Alexandre Franke <alexandre.franke@gmail.com>
+Date:	2014-11-02
+
+    Updated French translation
+
+M	po/fr.po
+
+commit a19c15779d09aecc5f48556d5f531cf96694bd5d
+Author: Rūdolfs Mazurs <rudolfsm@src.gnome.org>
+Date:	2014-11-01
+
+    Updated Latvian translation
+
+M	po/lv.po
+
+commit 3700cd8f40e429bb9a562533493a352fc40c3d4e
 Author: Jim Evins <evins@snaught.com>
 Date:	2014-10-23
 
@@ -37,7 +1051,7 @@ Date:	2014-10-23
 
 M	data/ui/media-select.ui
 
-commit cd9a551899ea66a5083e68b23992a39b68e13b94
+commit b66c0076908a706235af21b2c1d3ef04a6ba1f7f
 Author: Jim Evins <evins@snaught.com>
 Date:	2014-10-23
 
@@ -50,7 +1064,7 @@ Date:	2014-10-23
 M	src/critical-error-handler.c
 M	src/warning-handler.c
 
-commit add35e12d1082e37d60a821edfb918ffdcd54eda
+commit 20975776a273e48bbd5d600cdff7040b159ba162
 Author: Piotr Drąg <piotrdrag@gmail.com>
 Date:	2014-10-05
 
@@ -67,31 +1081,7 @@ Date:	2014-10-05
 M	po/LINGUAS
 D	po/pl.po
 
-commit e1decb5f24d1dbd0a3c441961ae032c6312a8d73
-Author: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>
-Date:	2014-09-17
-
-    Finnish translation update
-
-M	po/fi.po
-
-commit 5521455d4d262a7f6c52d3b7ca2083ecb5910f55
-Author: Andika Triwidada <andika@gmail.com>
-Date:	2014-09-15
-
-    Updated Indonesian translation
-
-M	po/id.po
-
-commit 29299784bab3290d6cbed6d25b27efc821f5324a
-Author: Lasse Liehu <lasse.liehu@gmail.com>
-Date:	2014-05-30
-
-    Finnish translation update
-
-M	po/fi.po
-
-commit 58044cd419bd8e52ffa992b7a740ddd631c851ee
+commit 6f7078360ec06f2baab951c897c05b57dc6b4a42
 Author: Mario Blättermann <mario.blaettermann@gmail.com>
 Date:	2014-04-15
 
@@ -99,32 +1089,15 @@ Date:	2014-04-15
 
 M	po/de.po
 
-commit 3f2f50d9dd36eefce8a71394894caaceb0da8c39
-Author: Daniel Mustieles <daniel.mustieles@gmail.com>
-Date:	2014-04-15
+commit b1eae7c6d2430974c409c9a019f4d2b6b52a5628
+Author: Jordi Mas <jmas@softcatala.org>
+Date:	2014-04-06
 
-    Updated Spanish translation
+    Fix typos in Catalan translation
 
-M	po/es.po
+M	po/ca.po
 
-commit 0354020ee833f275e06a155a2ac1eae7282c5484
-Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
-Date:	2014-03-24
-
-    Updated Serbian translation
-
-M	po/sr.po
-M	po/sr@latin.po
-
-commit 63d9bd9e61c6f13587f59396feb9578082b29bd5
-Author: Matej Urbančič <mateju@svn.gnome.org>
-Date:	2014-03-21
-
-    Updated Slovenian translation
-
-M	po/sl.po
-
-commit 6e94c99d66831bff854d6a8bed52c87092b5fd43
+commit 099514976b443da7e26097e1df820c9295cb2acd
 Author: Piotr Drąg <piotrdrag@gmail.com>
 Date:	2014-03-10
 
@@ -132,15 +1105,15 @@ Date:	2014-03-10
 
 M	help/fr/fr.po
 
-commit e77daa118370676556fbb27119c817492b141377
-Author: Daniel Mustieles <daniel.mustieles@gmail.com>
-Date:	2014-02-14
+commit fcaf1b13e5f7d411a245c6cc682bb32f5bb002e4
+Author: Matej Urbančič <mateju@svn.gnome.org>
+Date:	2014-02-28
 
-    Updated Spanish translation
+    Updated Slovenian translation
 
-M	po/es.po
+M	po/sl.po
 
-commit 8b2c53cbdbf6c2d251056c284d92a3aad3e4b6f9
+commit 535782f91a75f0ad09bea38b373d09ffa1493ded
 Author: Marek Černocký <marek@manet.cz>
 Date:	2014-02-13
 
@@ -148,7 +1121,7 @@ Date:	2014-02-13
 
 M	po/cs.po
 
-commit 6cdc7484ffc4de7ade70aff8700269764c89c8dd
+commit bcd9e861895c8e10ba8f72e10230f73222bec888
 Author: Piotr Drąg <piotrdrag@gmail.com>
 Date:	2014-02-11
 
@@ -156,7 +1129,7 @@ Date:	2014-02-11
 
 M	po/POTFILES.in
 
-commit ec145fd643e21e9f640e809b44c1d45591c682d4
+commit 83f437bdae66b307066b5bc3a40e8b8ea03f1c51
 Author: Jim Evins <evins@snaught.com>
 Date:	2014-02-09
 
@@ -167,7 +1140,7 @@ M	templates/Makefile.am
 A	templates/canon-other-templates.xml
 M	templates/vendors.xml
 
-commit 2421012aabfe8667be83e5f307b4a147c2d70dbe
+commit a65a7dfee1053660679989a9a28ae10d4e589648
 Author: Jim Evins <evins@snaught.com>
 Date:	2014-01-25
 
@@ -179,23 +1152,23 @@ Date:	2014-01-25
 
 M	src/label-text.c
 
-commit 24efc3b2e33a23ee19315910619b49af8d8286ec
-Author: Dimitris Spingos <dmtrs32@gmail.com>
-Date:	2014-01-07
+commit 10eeb5e0e0edfacbd7c2bfb66855b46f02475e80
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2014-01-03
 
-    Updated Greek translation of help
+    Updated Spanish translation
 
-M	help/el/el.po
+M	po/es.po
 
-commit 119b9f222803d6af816037d4f6d0cc421a99d286
-Author: Dimitris Spingos <dmtrs32@gmail.com>
-Date:	2014-01-07
+commit 69feb397965f45985cf6128d46ba292b4944d115
+Author: Daniel Mustieles <daniel.mustieles@gmail.com>
+Date:	2014-01-03
 
-    Updated Greek translation
+    Updated Spanish translation
 
-M	po/el.po
+M	help/es/es.po
 
-commit a3a084a722ff02a6d69f6a814aa0be950d9ea4e6
+commit c2222b5dfa2865b9b38c43b6eb22368e1efa7d06
 Author: Marek Černocký <marek@manet.cz>
 Date:	2013-12-27
 
@@ -203,24 +1176,16 @@ Date:	2013-12-27
 
 M	help/cs/cs.po
 
-commit 1f08c64b20171e47c0cef1b9f9c2ce081d413c6c
-Author: Daniel Mustieles <daniel.mustieles@gmail.com>
-Date:	2013-12-19
-
-    Updated Spanish translation
-
-M	help/es/es.po
-
-commit bc97c62fd56fdd83aaf0151d678ff26322775f01
+commit b7081a1bacf28232c7342fdd12f9ec44b8d94f89
 Author: Мирослав Николић <miroslavnikolic@rocketmail.com>
-Date:	2013-11-18
+Date:	2013-11-26
 
-    Updated Serbian translation
+    [l10n] Updated Serbian translations
 
 M	po/sr.po
 M	po/sr@latin.po
 
-commit e852d3973a1f05af2ee6a4ff76a5a6bc1e086a46
+commit 5da2300ccdaa0bdb4d38e820cc6ab4f95c664b7f
 Author: Martin Srebotnjak <miles@filmsi.net>
 Date:	2013-10-29
 
@@ -228,7 +1193,7 @@ Date:	2013-10-29
 
 M	po/sl.po
 
-commit 37829049642492bdf38dc07f5e5cfe2058251583
+commit b315c9acd46d106710b318d54b8f752358744466
 Author: Jim Evins <evins@snaught.com>
 Date:	2013-10-28
 
@@ -236,23 +1201,7 @@ Date:	2013-10-28
 
 M	NEWS
 
-commit f83a7be3ae49998ae7707753689f3fb6d02f5f95
-Author: Daniel Mustieles <daniel.mustieles@gmail.com>
-Date:	2013-10-15
-
-    Updated Spanish translation
-
-M	help/es/es.po
-
-commit be522c6a8644dd93ce09d682e28d27f4639234fd
-Author: Daniel Mustieles <daniel.mustieles@gmail.com>
-Date:	2013-10-15
-
-    Updated Spanish translation
-
-M	po/es.po
-
-commit 8e199f487e6389d9b09c5b2cc08c788dc755a0d3
+commit 3185fe6c520ca2386bcbb0e4288cdd95c7c1c07e
 Author: Matej Urbančič <mateju@svn.gnome.org>
 Date:	2013-10-13
 
@@ -260,7 +1209,7 @@ Date:	2013-10-13
 
 M	po/sl.po
 
-commit cf13c952d484d553c68bc87d6c9064f22dc17427
+commit e60a0076cf975abc88ae24949867b340d430e678
 Author: Marek Černocký <marek@manet.cz>
 Date:	2013-10-13
 
@@ -268,7 +1217,7 @@ Date:	2013-10-13
 
 M	po/cs.po
 
-commit 78123e5af3fa9a3e1c7a7e23012dd960535b53db
+commit 6da1e7523a81fbf524e8c6c8ccf59c6566e0f3fb
 Author: Rūdolfs Mazurs <rudolfsm@src.gnome.org>
 Date:	2013-10-13
 
@@ -276,7 +1225,7 @@ Date:	2013-10-13
 
 M	po/lv.po
 
-commit 7581fcf2509fc7f73f81482a0ee6fa96efdd0d8e
+commit daaf0c74eac5498dffaf947742b91e6e681174bd
 Author: Enrico Nicoletto <liverig@gmail.com>
 Date:	2013-10-12
 
@@ -284,7 +1233,7 @@ Date:	2013-10-12
 
 M	po/pt_BR.po
 
-commit 0498e6ca94e28d39f9498bc433fb3d5ce262224e
+commit f07cd37c71d5a49443ced7f50c834905512922ac
 Author: Mario Blättermann <mario.blaettermann@gmail.com>
 Date:	2013-10-12
 
@@ -292,7 +1241,7 @@ Date:	2013-10-12
 
 M	po/de.po
 
-commit 94a070900b814f500f3da45e372e18c968a33825
+commit 89e0ba6d44387274aab5f512c7cb499b66a77871
 Author: Claude Paroz <claude@2xlibre.net>
 Date:	2013-10-12
 
@@ -300,7 +1249,7 @@ Date:	2013-10-12
 
 M	help/fr/fr.po
 
-commit a430c9937118bff27a7c24eb9d9c7b8eab723231
+commit f6c1d7ec099672a6dfa5dbae3f1ae9c0b2c39cda
 Author: Claude Paroz <claude@2xlibre.net>
 Date:	2013-10-12
 
@@ -6097,11 +7046,11 @@ M	.gitignore
 M	docs/libglabels/Makefile.am
 R094	docs/libglabels/libglabels-docs.sgml
 docs/libglabels/libglabels-3.0-docs.sgml
-R100	docs/libglabels/libglabels-overrides.txt
+R100	docs/libglabels/libglabels.types
 docs/libglabels/libglabels-3.0-overrides.txt
 R099	docs/libglabels/libglabels-sections.txt
 docs/libglabels/libglabels-3.0-sections.txt
-R100	docs/libglabels/libglabels.types
+R100	docs/libglabels/libglabels-overrides.txt
 docs/libglabels/libglabels-3.0.types
 R100	docs/libglabels/tmpl/libglabels-unused.sgml
 docs/libglabels/tmpl/libglabels-3.0-unused.sgml
@@ -8242,63 +9191,63 @@ R100	glabels2/NEWS	NEWS
 R100	glabels2/README README
 R100	glabels2/TODO	TODO
 R100	glabels2/autogen.sh	autogen.sh
-R100	glabels1/barcode-0.98/COPYING	barcode-0.98/COPYING
-R100	glabels1/barcode-0.98/ChangeLog barcode-0.98/ChangeLog
-R100	glabels1/barcode-0.98/INSTALL	barcode-0.98/INSTALL
+R100	glabels2/barcode-0.98/COPYING	barcode-0.98/COPYING
+R100	glabels2/barcode-0.98/ChangeLog barcode-0.98/ChangeLog
+R100	glabels2/barcode-0.98/INSTALL	barcode-0.98/INSTALL
 R100	glabels2/barcode-0.98/Makefile.am	barcode-0.98/Makefile.am
 R100	glabels2/barcode-0.98/Makefile.in.dist
 barcode-0.98/Makefile.in.dist
-R100	glabels1/barcode-0.98/README	barcode-0.98/README
+R100	glabels2/barcode-0.98/README	barcode-0.98/README
 R100	glabels2/barcode-0.98/README.glabels
 barcode-0.98/README.glabels
-R100	glabels1/barcode-0.98/TODO	barcode-0.98/TODO
-R100	glabels1/barcode-0.98/barcode.h barcode-0.98/barcode.h
-R100	glabels1/barcode-0.98/barcode.spec	barcode-0.98/barcode.spec
-R100	glabels1/barcode-0.98/bookland/bookland.py
+R100	glabels2/barcode-0.98/TODO	barcode-0.98/TODO
+R100	glabels2/barcode-0.98/barcode.h barcode-0.98/barcode.h
+R100	glabels2/barcode-0.98/barcode.spec	barcode-0.98/barcode.spec
+R100	glabels2/barcode-0.98/bookland/bookland.py
 barcode-0.98/bookland/bookland.py
-R100	glabels1/barcode-0.98/cmdline.c barcode-0.98/cmdline.c
-R100	glabels1/barcode-0.98/cmdline.h barcode-0.98/cmdline.h
-R100	glabels1/barcode-0.98/codabar.c barcode-0.98/codabar.c
-R100	glabels1/barcode-0.98/code128.c barcode-0.98/code128.c
-R100	glabels1/barcode-0.98/code39.c	barcode-0.98/code39.c
-R100	glabels1/barcode-0.98/code93.c	barcode-0.98/code93.c
-R100	glabels1/barcode-0.98/compat/getopt.c
+R100	glabels2/barcode-0.98/cmdline.c barcode-0.98/cmdline.c
+R100	glabels2/barcode-0.98/cmdline.h barcode-0.98/cmdline.h
+R100	glabels2/barcode-0.98/codabar.c barcode-0.98/codabar.c
+R100	glabels2/barcode-0.98/code128.c barcode-0.98/code128.c
+R100	glabels2/barcode-0.98/code39.c	barcode-0.98/code39.c
+R100	glabels2/barcode-0.98/code93.c	barcode-0.98/code93.c
+R100	glabels2/barcode-0.98/compat/getopt.c
 barcode-0.98/compat/getopt.c
-R100	glabels1/barcode-0.98/compat/getopt.h
+R100	glabels2/barcode-0.98/compat/getopt.h
 barcode-0.98/compat/getopt.h
 R100	glabels2/barcode-0.98/configure barcode-0.98/configure
 R100	glabels2/barcode-0.98/configure.in.dist
 barcode-0.98/configure.in.dist
-R100	glabels1/barcode-0.98/contrib/barcode-SVG.tar.gz
+R100	glabels2/barcode-0.98/contrib/barcode-SVG.tar.gz
 barcode-0.98/contrib/barcode-SVG.tar.gz
-R100	glabels1/barcode-0.98/contrib/barcode-SVG.tar.gz.README
+R100	glabels2/barcode-0.98/contrib/barcode-SVG.tar.gz.README
 barcode-0.98/contrib/barcode-SVG.tar.gz.README
-R100	glabels1/barcode-0.98/contrib/barcode-for-delphi.tar.gz
+R100	glabels2/barcode-0.98/contrib/barcode-for-delphi.tar.gz
 barcode-0.98/contrib/barcode-for-delphi.tar.gz
-R100	glabels1/barcode-0.98/contrib/barcode-for-delphi.tar.gz.README
+R100	glabels2/barcode-0.98/contrib/barcode-for-delphi.tar.gz.README
 barcode-0.98/contrib/barcode-for-delphi.tar.gz.README
-R100	glabels1/barcode-0.98/contrib/barcodeps-0.1.tgz
+R100	glabels2/barcode-0.98/contrib/barcodeps-0.1.tgz
 barcode-0.98/contrib/barcodeps-0.1.tgz
-R100	glabels1/barcode-0.98/contrib/barcodeps-0.1.tgz.README
+R100	glabels2/barcode-0.98/contrib/barcodeps-0.1.tgz.README
 barcode-0.98/contrib/barcodeps-0.1.tgz.README
-R100	glabels1/barcode-0.98/contrib/grab-0.0.4.tar.gz
+R100	glabels2/barcode-0.98/contrib/grab-0.0.4.tar.gz
 barcode-0.98/contrib/grab-0.0.4.tar.gz
-R100	glabels1/barcode-0.98/contrib/grab-0.0.4.tar.gz.README
+R100	glabels2/barcode-0.98/contrib/grab-0.0.4.tar.gz.README
 barcode-0.98/contrib/grab-0.0.4.tar.gz.README
-R100	glabels1/barcode-0.98/debian/README.debian
+R100	glabels2/barcode-0.98/debian/README.debian
 barcode-0.98/debian/README.debian
-R100	glabels1/barcode-0.98/debian/changelog
+R100	glabels2/barcode-0.98/debian/changelog
 barcode-0.98/debian/changelog
-R100	glabels1/barcode-0.98/debian/control
+R100	glabels2/barcode-0.98/debian/control
 barcode-0.98/debian/control
-R100	glabels1/barcode-0.98/debian/copyright
+R100	glabels2/barcode-0.98/debian/copyright
 barcode-0.98/debian/copyright
-R100	glabels1/barcode-0.98/debian/dirs	barcode-0.98/debian/dirs
-R100	glabels1/barcode-0.98/debian/info	barcode-0.98/debian/info
-R100	glabels1/barcode-0.98/debian/rules	barcode-0.98/debian/rules
-R100	glabels1/barcode-0.98/doc/Makefile.in
+R100	glabels2/barcode-0.98/debian/dirs	barcode-0.98/debian/dirs
+R100	glabels2/barcode-0.98/debian/info	barcode-0.98/debian/info
+R100	glabels2/barcode-0.98/debian/rules	barcode-0.98/debian/rules
+R100	glabels2/barcode-0.98/doc/Makefile.in
 barcode-0.98/doc/Makefile.in
-R100	glabels1/barcode-0.98/doc/README	barcode-0.98/doc/README
+R100	glabels2/barcode-0.98/doc/README	barcode-0.98/doc/README
 R100	glabels2/barcode-0.98/doc/barcode.info
 barcode-0.98/doc/barcode.info
 R100	glabels2/barcode-0.98/doc/barcode.pdf
@@ -8307,25 +9256,25 @@ R100	glabels2/barcode-0.98/doc/barcode.ps
 barcode-0.98/doc/barcode.ps
 R100	glabels2/barcode-0.98/doc/barcodedoc.txt
 barcode-0.98/doc/barcodedoc.txt
-R100	glabels1/barcode-0.98/doc/doc.barcode
+R100	glabels2/barcode-0.98/doc/doc.barcode
 barcode-0.98/doc/doc.barcode
-R100	glabels1/barcode-0.98/doc/infofilter
+R100	glabels2/barcode-0.98/doc/infofilter
 barcode-0.98/doc/infofilter
-R100	glabels1/barcode-0.98/doc/manpager	barcode-0.98/doc/manpager
-R100	glabels1/barcode-0.98/doc/mktxt barcode-0.98/doc/mktxt
-R100	glabels1/barcode-0.98/doc/texi2html	barcode-0.98/doc/texi2html
-R100	glabels1/barcode-0.98/ean.c	barcode-0.98/ean.c
-R100	glabels1/barcode-0.98/i25.c	barcode-0.98/i25.c
-R100	glabels1/barcode-0.98/install-sh	barcode-0.98/install-sh
-R100	glabels1/barcode-0.98/library.c barcode-0.98/library.c
-R100	glabels1/barcode-0.98/main.c	barcode-0.98/main.c
+R100	glabels2/barcode-0.98/doc/manpager	barcode-0.98/doc/manpager
+R100	glabels2/barcode-0.98/doc/mktxt barcode-0.98/doc/mktxt
+R100	glabels2/barcode-0.98/doc/texi2html	barcode-0.98/doc/texi2html
+R100	glabels2/barcode-0.98/ean.c	barcode-0.98/ean.c
+R100	glabels2/barcode-0.98/i25.c	barcode-0.98/i25.c
+R100	glabels2/barcode-0.98/install-sh	barcode-0.98/install-sh
+R100	glabels2/barcode-0.98/library.c barcode-0.98/library.c
+R100	glabels2/barcode-0.98/main.c	barcode-0.98/main.c
 R100	glabels2/barcode-0.98/missing	barcode-0.98/missing
-R100	glabels1/mkinstalldirs	barcode-0.98/mkinstalldirs
-R100	glabels1/barcode-0.98/msi.c	barcode-0.98/msi.c
-R100	glabels1/barcode-0.98/pcl.c	barcode-0.98/pcl.c
-R100	glabels1/barcode-0.98/plessey.c barcode-0.98/plessey.c
-R100	glabels1/barcode-0.98/ps.c	barcode-0.98/ps.c
-R100	glabels1/barcode-0.98/sample.c	barcode-0.98/sample.c
+R100	glabels2/barcode-0.98/mkinstalldirs	barcode-0.98/mkinstalldirs
+R100	glabels2/barcode-0.98/msi.c	barcode-0.98/msi.c
+R100	glabels2/barcode-0.98/pcl.c	barcode-0.98/pcl.c
+R100	glabels2/barcode-0.98/plessey.c barcode-0.98/plessey.c
+R100	glabels2/barcode-0.98/ps.c	barcode-0.98/ps.c
+R100	glabels2/barcode-0.98/sample.c	barcode-0.98/sample.c
 R100	glabels2/configure.in	configure.in
 R100	glabels2/data/Makefile.am	data/Makefile.am
 R100	glabels2/data/builder/Makefile.am	data/builder/Makefile.am
@@ -8424,13 +9373,61 @@ D	glabels1/TODO
 D	glabels1/acconfig.h
 D	glabels1/aclocal.m4
 D	glabels1/autogen.sh
+D	glabels1/barcode-0.98/COPYING
+D	glabels1/barcode-0.98/ChangeLog
+D	glabels1/barcode-0.98/INSTALL
 D	glabels1/barcode-0.98/Makefile.in
+D	glabels1/barcode-0.98/README
+D	glabels1/barcode-0.98/TODO
+D	glabels1/barcode-0.98/barcode.h
+D	glabels1/barcode-0.98/barcode.spec
+D	glabels1/barcode-0.98/bookland/bookland.py
+D	glabels1/barcode-0.98/cmdline.c
+D	glabels1/barcode-0.98/cmdline.h
+D	glabels1/barcode-0.98/codabar.c
+D	glabels1/barcode-0.98/code128.c
+D	glabels1/barcode-0.98/code39.c
+D	glabels1/barcode-0.98/code93.c
+D	glabels1/barcode-0.98/compat/getopt.c
+D	glabels1/barcode-0.98/compat/getopt.h
 D	glabels1/barcode-0.98/configure
 D	glabels1/barcode-0.98/configure.in
+D	glabels1/barcode-0.98/contrib/barcode-SVG.tar.gz
+D	glabels1/barcode-0.98/contrib/barcode-SVG.tar.gz.README
+D	glabels1/barcode-0.98/contrib/barcode-for-delphi.tar.gz
+D	glabels1/barcode-0.98/contrib/barcode-for-delphi.tar.gz.README
+D	glabels1/barcode-0.98/contrib/barcodeps-0.1.tgz
+D	glabels1/barcode-0.98/contrib/barcodeps-0.1.tgz.README
+D	glabels1/barcode-0.98/contrib/grab-0.0.4.tar.gz
+D	glabels1/barcode-0.98/contrib/grab-0.0.4.tar.gz.README
+D	glabels1/barcode-0.98/debian/README.debian
+D	glabels1/barcode-0.98/debian/changelog
+D	glabels1/barcode-0.98/debian/control
+D	glabels1/barcode-0.98/debian/copyright
+D	glabels1/barcode-0.98/debian/dirs
+D	glabels1/barcode-0.98/debian/info
+D	glabels1/barcode-0.98/debian/rules
+D	glabels1/barcode-0.98/doc/Makefile.in
+D	glabels1/barcode-0.98/doc/README
 D	glabels1/barcode-0.98/doc/barcode.info
 D	glabels1/barcode-0.98/doc/barcode.pdf
 D	glabels1/barcode-0.98/doc/barcode.ps
 D	glabels1/barcode-0.98/doc/barcodedoc.txt
+D	glabels1/barcode-0.98/doc/doc.barcode
+D	glabels1/barcode-0.98/doc/infofilter
+D	glabels1/barcode-0.98/doc/manpager
+D	glabels1/barcode-0.98/doc/mktxt
+D	glabels1/barcode-0.98/doc/texi2html
+D	glabels1/barcode-0.98/ean.c
+D	glabels1/barcode-0.98/i25.c
+D	glabels1/barcode-0.98/install-sh
+D	glabels1/barcode-0.98/library.c
+D	glabels1/barcode-0.98/main.c
+D	glabels1/barcode-0.98/msi.c
+D	glabels1/barcode-0.98/pcl.c
+D	glabels1/barcode-0.98/plessey.c
+D	glabels1/barcode-0.98/ps.c
+D	glabels1/barcode-0.98/sample.c
 D	glabels1/config.h.in
 D	glabels1/configure.in
 D	glabels1/data/predefined-labels.template
@@ -8495,6 +9492,7 @@ D	glabels1/macros/gnome.m4
 D	glabels1/macros/linger.m4
 D	glabels1/macros/need-declaration.m4
 D	glabels1/missing
+D	glabels1/mkinstalldirs
 D	glabels1/pixmaps/glabels-about-logo.png
 D	glabels1/pixmaps/glabels-icon.png
 D	glabels1/pixmaps/glabels-logo.png
@@ -8571,6 +9569,20 @@ D	glabels1/src/pixmaps/Makefile.am
 D	glabels1/src/pixmaps/arrow.xpm
 D	glabels1/src/pixmaps/barcode.xpm
 D	glabels1/src/pixmaps/box.xpm
+D	glabels1/src/pixmaps/checkerboard.xpm
+D	glabels1/src/pixmaps/collate.xpm
+D	glabels1/src/pixmaps/cursor_barcode.xbm
+D	glabels1/src/pixmaps/cursor_barcode_mask.xbm
+D	glabels1/src/pixmaps/cursor_box.xbm
+D	glabels1/src/pixmaps/cursor_box_mask.xbm
+D	glabels1/src/pixmaps/cursor_ellipse.xbm
+D	glabels1/src/pixmaps/cursor_ellipse_mask.xbm
+D	glabels1/src/pixmaps/cursor_image.xbm
+D	glabels1/src/pixmaps/cursor_image_mask.xbm
+D	glabels1/src/pixmaps/cursor_line.xbm
+D	glabels1/src/pixmaps/cursor_line_mask.xbm
+D	glabels1/src/pixmaps/cursor_text.xbm
+D	glabels1/src/pixmaps/cursor_text_mask.xbm
 D	glabels1/src/pixmaps/cursor_zoomin.xbm
 D	glabels1/src/pixmaps/cursor_zoomin_mask.xbm
 D	glabels1/src/pixmaps/cursor_zoomout.xbm
@@ -8579,6 +9591,7 @@ D	glabels1/src/pixmaps/ellipse.xpm
 D	glabels1/src/pixmaps/image.xpm
 D	glabels1/src/pixmaps/line.xpm
 D	glabels1/src/pixmaps/merge.xpm
+D	glabels1/src/pixmaps/nocollate.xpm
 D	glabels1/src/pixmaps/text.xpm
 D	glabels1/src/pixmaps/zoom1to1.xpm
 D	glabels1/src/pixmaps/zoomin.xpm
@@ -8630,76 +9643,15 @@ D	glabels1/src/tools.h
 D	glabels1/src/util.c
 D	glabels1/src/util.h
 D	glabels1/stamp-h.in
-D	glabels2/barcode-0.98/COPYING
-D	glabels2/barcode-0.98/ChangeLog
-D	glabels2/barcode-0.98/INSTALL
-D	glabels2/barcode-0.98/README
-D	glabels2/barcode-0.98/TODO
-D	glabels2/barcode-0.98/barcode.h
-D	glabels2/barcode-0.98/barcode.spec
-D	glabels2/barcode-0.98/bookland/bookland.py
-D	glabels2/barcode-0.98/cmdline.c
-D	glabels2/barcode-0.98/cmdline.h
-D	glabels2/barcode-0.98/codabar.c
-D	glabels2/barcode-0.98/code128.c
-D	glabels2/barcode-0.98/code39.c
-D	glabels2/barcode-0.98/code93.c
-D	glabels2/barcode-0.98/compat/getopt.c
-D	glabels2/barcode-0.98/compat/getopt.h
-D	glabels2/barcode-0.98/contrib/barcode-SVG.tar.gz
-D	glabels2/barcode-0.98/contrib/barcode-SVG.tar.gz.README
-D	glabels2/barcode-0.98/contrib/barcode-for-delphi.tar.gz
-D	glabels2/barcode-0.98/contrib/barcode-for-delphi.tar.gz.README
-D	glabels2/barcode-0.98/contrib/barcodeps-0.1.tgz
-D	glabels2/barcode-0.98/contrib/barcodeps-0.1.tgz.README
-D	glabels2/barcode-0.98/contrib/grab-0.0.4.tar.gz
-D	glabels2/barcode-0.98/contrib/grab-0.0.4.tar.gz.README
-D	glabels2/barcode-0.98/debian/README.debian
-D	glabels2/barcode-0.98/debian/changelog
-D	glabels2/barcode-0.98/debian/control
-D	glabels2/barcode-0.98/debian/copyright
-D	glabels2/barcode-0.98/debian/dirs
-D	glabels2/barcode-0.98/debian/info
-D	glabels2/barcode-0.98/debian/rules
-D	glabels2/barcode-0.98/doc/Makefile.in
-D	glabels2/barcode-0.98/doc/README
-D	glabels2/barcode-0.98/doc/doc.barcode
-D	glabels2/barcode-0.98/doc/infofilter
-D	glabels2/barcode-0.98/doc/manpager
-D	glabels2/barcode-0.98/doc/mktxt
-D	glabels2/barcode-0.98/doc/texi2html
-D	glabels2/barcode-0.98/ean.c
-D	glabels2/barcode-0.98/i25.c
-D	glabels2/barcode-0.98/install-sh
-D	glabels2/barcode-0.98/library.c
-D	glabels2/barcode-0.98/main.c
-D	glabels2/barcode-0.98/mkinstalldirs
-D	glabels2/barcode-0.98/msi.c
-D	glabels2/barcode-0.98/pcl.c
-D	glabels2/barcode-0.98/plessey.c
-D	glabels2/barcode-0.98/ps.c
-D	glabels2/barcode-0.98/sample.c
-D	glabels2/src/pixmaps/checkerboard.xpm
-D	glabels2/src/pixmaps/collate.xpm
-D	glabels2/src/pixmaps/cursor_barcode.xbm
-D	glabels2/src/pixmaps/cursor_barcode_mask.xbm
-D	glabels2/src/pixmaps/cursor_box.xbm
-D	glabels2/src/pixmaps/cursor_box_mask.xbm
-D	glabels2/src/pixmaps/cursor_ellipse.xbm
-D	glabels2/src/pixmaps/cursor_ellipse_mask.xbm
-D	glabels2/src/pixmaps/cursor_image.xbm
-D	glabels2/src/pixmaps/cursor_image_mask.xbm
-D	glabels2/src/pixmaps/cursor_line.xbm
-D	glabels2/src/pixmaps/cursor_line_mask.xbm
-D	glabels2/src/pixmaps/cursor_text.xbm
-D	glabels2/src/pixmaps/cursor_text_mask.xbm
-D	glabels2/src/pixmaps/nocollate.xpm
+D	glabels2/help/C/figures/glabels-template-cd.png
+D	glabels2/help/C/figures/glabels-template-label.png
+D	glabels2/help/C/figures/glabels-template-layout.png
 R100	glabels2/gtk-doc.make	gtk-doc.make
-R100	glabels2/help/C/figures/glabels-template-cd.png
+R100	web/doc/templates-2.2/glabels-template-cd.png
 help/C/figures/glabels-template-cd.png
-R100	glabels2/help/C/figures/glabels-template-label.png
+R100	web/doc/templates-2.2/glabels-template-label.png
 help/C/figures/glabels-template-label.png
-R100	glabels2/help/C/figures/glabels-template-layout.png
+R100	web/doc/templates-2.2/glabels-template-layout.png
 help/C/figures/glabels-template-layout.png
 R100	glabels2/help/C/figures/main-window-empty.png
 help/C/figures/main-window-empty.png
@@ -9049,33 +10001,33 @@ R100	glabels2/src/object-editor.h	src/object-editor.h
 R100	glabels2/src/pixbuf-cache.c	src/pixbuf-cache.c
 R100	glabels2/src/pixbuf-cache.h	src/pixbuf-cache.h
 R100	glabels2/src/pixmaps/Makefile.am	src/pixmaps/Makefile.am
-R100	glabels1/src/pixmaps/checkerboard.xpm
+R100	glabels2/src/pixmaps/checkerboard.xpm
 src/pixmaps/checkerboard.xpm
-R100	glabels1/src/pixmaps/collate.xpm	src/pixmaps/collate.xpm
-R100	glabels1/src/pixmaps/cursor_barcode.xbm
+R100	glabels2/src/pixmaps/collate.xpm	src/pixmaps/collate.xpm
+R100	glabels2/src/pixmaps/cursor_barcode.xbm
 src/pixmaps/cursor_barcode.xbm
-R100	glabels1/src/pixmaps/cursor_barcode_mask.xbm
+R100	glabels2/src/pixmaps/cursor_barcode_mask.xbm
 src/pixmaps/cursor_barcode_mask.xbm
-R100	glabels1/src/pixmaps/cursor_box.xbm	src/pixmaps/cursor_box.xbm
-R100	glabels1/src/pixmaps/cursor_box_mask.xbm
+R100	glabels2/src/pixmaps/cursor_box.xbm	src/pixmaps/cursor_box.xbm
+R100	glabels2/src/pixmaps/cursor_box_mask.xbm
 src/pixmaps/cursor_box_mask.xbm
-R100	glabels1/src/pixmaps/cursor_ellipse.xbm
+R100	glabels2/src/pixmaps/cursor_ellipse.xbm
 src/pixmaps/cursor_ellipse.xbm
-R100	glabels1/src/pixmaps/cursor_ellipse_mask.xbm
+R100	glabels2/src/pixmaps/cursor_ellipse_mask.xbm
 src/pixmaps/cursor_ellipse_mask.xbm
-R100	glabels1/src/pixmaps/cursor_image.xbm
+R100	glabels2/src/pixmaps/cursor_image.xbm
 src/pixmaps/cursor_image.xbm
-R100	glabels1/src/pixmaps/cursor_image_mask.xbm
+R100	glabels2/src/pixmaps/cursor_image_mask.xbm
 src/pixmaps/cursor_image_mask.xbm
-R100	glabels1/src/pixmaps/cursor_line.xbm
+R100	glabels2/src/pixmaps/cursor_line.xbm
 src/pixmaps/cursor_line.xbm
-R100	glabels1/src/pixmaps/cursor_line_mask.xbm
+R100	glabels2/src/pixmaps/cursor_line_mask.xbm
 src/pixmaps/cursor_line_mask.xbm
-R100	glabels1/src/pixmaps/cursor_text.xbm
+R100	glabels2/src/pixmaps/cursor_text.xbm
 src/pixmaps/cursor_text.xbm
-R100	glabels1/src/pixmaps/cursor_text_mask.xbm
+R100	glabels2/src/pixmaps/cursor_text_mask.xbm
 src/pixmaps/cursor_text_mask.xbm
-R100	glabels1/src/pixmaps/nocollate.xpm	src/pixmaps/nocollate.xpm
+R100	glabels2/src/pixmaps/nocollate.xpm	src/pixmaps/nocollate.xpm
 R100	glabels2/src/prefs-dialog.c	src/prefs-dialog.c
 R100	glabels2/src/prefs-dialog.h	src/prefs-dialog.h
 R100	glabels2/src/prefs-model.c	src/prefs-model.c
@@ -9255,9 +10207,6 @@ D	web/doc/templates-2.0/glabels-template-cd.png
 D	web/doc/templates-2.0/glabels-template-label.png
 D	web/doc/templates-2.0/glabels-template-layout.png
 D	web/doc/templates-2.0/index.php
-D	web/doc/templates-2.2/glabels-template-cd.png
-D	web/doc/templates-2.2/glabels-template-label.png
-D	web/doc/templates-2.2/glabels-template-layout.png
 D	web/doc/templates-2.2/index.php
 D	web/download/index.php
 D	web/faq/index.php

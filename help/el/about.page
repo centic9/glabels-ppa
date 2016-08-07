@@ -20,7 +20,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name> Δημήτρης Σπίγγος</mal:name>
       <mal:email>dmtrs32@gmail.com</mal:email>
-      <mal:years>2013, 2014</mal:years>
+      <mal:years>2013, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -35,5 +35,5 @@
     <p>Το <app>gLabels</app> γράφτηκε από τον <link href="mailto:evins@snaught.com">Jim Evins</link>. Για να βρείτε περισσότερες πληροφορίες σχετικά με το <app>gLabels</app>, παρακαλώ επισκεφθείτε την <link href="http://glabels.org" type="http">ιστοσελίδα του <app>gLabels</app></link>.</p>
     <p>Για να αναφέρετε ένα σφάλμα ή να κάνετε μια πρόταση σχετικά με την εφαρμογή ή αυτό το εγχειρίδιο, ακολουθήστε τις οδηγίες στο <link href="http://glabels.org/contact/" type="http">Σελίδα Επικοινωνίας του <app>gLabels</app></link>.</p>
 
-    <p>Αυτό το πρόγραμμα διανέμεται υπό τους όρους της GNU General Public license όπως έχει δημοσιευτεί από το Ίδρυμα Ελεύθερου λογισμικού είτε τηn 3η έκδοση της άδειας, είτε (κατ επιλογή σας) οποιασδήποτε νεότερης έκδοσης. Μπορείτε να βρείτε αντίγραφο αυτής της άδειας στον ακόλουθο <link href="help:gpl" type="help">link</link>, ή στο αρχείο COPYING που περιλαμβάνεται στον πηγαίο κώδικα αυτού του προγράμματος.</p>
+    <p>Αυτό το πρόγραμμα διανέμεται υπό τους όρους της GNU General Public license όπως έχει δημοσιευτεί από το Ίδρυμα Ελεύθερου λογισμικού είτε της 3ης έκδοσης της άδειας, είτε (κατ' επιλογή σας) οποιασδήποτε νεότερης έκδοσης. Μπορείτε να βρείτε αντίγραφο αυτής της άδειας στον ακόλουθο <link href="help:gpl" type="help">σύνδεσμος</link>, ή στο αρχείο COPYING που περιλαμβάνεται στον πηγαίο κώδικα αυτού του προγράμματος.</p>
 </page>

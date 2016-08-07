@@ -1,7 +1,6 @@
 <ANCHOR id="libglabels-3.0-db" href="libglabels-3.0/libglabels-3.0-db.html">
 <ANCHOR id="libglabels-3.0-db.functions" href="libglabels-3.0/libglabels-3.0-db.html#libglabels-3.0-db.functions">
 <ANCHOR id="libglabels-3.0-db.other" href="libglabels-3.0/libglabels-3.0-db.html#libglabels-3.0-db.other">
-<ANCHOR id="libglabels-3.0-db.object-hierarchy" href="libglabels-3.0/libglabels-3.0-db.html#libglabels-3.0-db.object-hierarchy">
 <ANCHOR id="libglabels-3.0-db.includes" href="libglabels-3.0/libglabels-3.0-db.html#libglabels-3.0-db.includes">
 <ANCHOR id="libglabels-3.0-db.description" href="libglabels-3.0/libglabels-3.0-db.html#libglabels-3.0-db.description">
 <ANCHOR id="libglabels-3.0-db.functions_details" href="libglabels-3.0/libglabels-3.0-db.html#libglabels-3.0-db.functions_details">
@@ -50,11 +49,18 @@
 <ANCHOR id="lgl-db-print-known-vendors" href="libglabels-3.0/libglabels-3.0-db.html#lgl-db-print-known-vendors">
 <ANCHOR id="libglabels-3.0-db.other_details" href="libglabels-3.0/libglabels-3.0-db.html#libglabels-3.0-db.other_details">
 <ANCHOR id="lglDbRegStatus" href="libglabels-3.0/libglabels-3.0-db.html#lglDbRegStatus">
+<ANCHOR id="LGL-DB-REG-OK:CAPS" href="libglabels-3.0/libglabels-3.0-db.html#LGL-DB-REG-OK:CAPS">
+<ANCHOR id="LGL-DB-REG-BAD-PAPER-ID:CAPS" href="libglabels-3.0/libglabels-3.0-db.html#LGL-DB-REG-BAD-PAPER-ID:CAPS">
+<ANCHOR id="LGL-DB-REG-BRAND-PART-EXISTS:CAPS" href="libglabels-3.0/libglabels-3.0-db.html#LGL-DB-REG-BRAND-PART-EXISTS:CAPS">
+<ANCHOR id="LGL-DB-REG-FILE-WRITE-ERROR:CAPS" href="libglabels-3.0/libglabels-3.0-db.html#LGL-DB-REG-FILE-WRITE-ERROR:CAPS">
 <ANCHOR id="lglDbDeleteStatus" href="libglabels-3.0/libglabels-3.0-db.html#lglDbDeleteStatus">
+<ANCHOR id="LGL-DB-DELETE-OK:CAPS" href="libglabels-3.0/libglabels-3.0-db.html#LGL-DB-DELETE-OK:CAPS">
+<ANCHOR id="LGL-DB-DELETE-DOES-NOT-EXIST:CAPS" href="libglabels-3.0/libglabels-3.0-db.html#LGL-DB-DELETE-DOES-NOT-EXIST:CAPS">
+<ANCHOR id="LGL-DB-DELETE-NOT-USER-DEFINED:CAPS" href="libglabels-3.0/libglabels-3.0-db.html#LGL-DB-DELETE-NOT-USER-DEFINED:CAPS">
+<ANCHOR id="LGL-DB-DELETE-FILE-ERROR:CAPS" href="libglabels-3.0/libglabels-3.0-db.html#LGL-DB-DELETE-FILE-ERROR:CAPS">
 <ANCHOR id="libglabels-3.0-template" href="libglabels-3.0/libglabels-3.0-template.html">
 <ANCHOR id="libglabels-3.0-template.functions" href="libglabels-3.0/libglabels-3.0-template.html#libglabels-3.0-template.functions">
 <ANCHOR id="libglabels-3.0-template.other" href="libglabels-3.0/libglabels-3.0-template.html#libglabels-3.0-template.other">
-<ANCHOR id="libglabels-3.0-template.object-hierarchy" href="libglabels-3.0/libglabels-3.0-template.html#libglabels-3.0-template.object-hierarchy">
 <ANCHOR id="libglabels-3.0-template.includes" href="libglabels-3.0/libglabels-3.0-template.html#libglabels-3.0-template.includes">
 <ANCHOR id="libglabels-3.0-template.description" href="libglabels-3.0/libglabels-3.0-template.html#libglabels-3.0-template.description">
 <ANCHOR id="libglabels-3.0-template.functions_details" href="libglabels-3.0/libglabels-3.0-template.html#libglabels-3.0-template.functions_details">
@@ -97,6 +103,10 @@
 <ANCHOR id="libglabels-3.0-template.other_details" href="libglabels-3.0/libglabels-3.0-template.html#libglabels-3.0-template.other_details">
 <ANCHOR id="lglTemplate" href="libglabels-3.0/libglabels-3.0-template.html#lglTemplate">
 <ANCHOR id="lglTemplateFrameShape" href="libglabels-3.0/libglabels-3.0-template.html#lglTemplateFrameShape">
+<ANCHOR id="LGL-TEMPLATE-FRAME-SHAPE-RECT:CAPS" href="libglabels-3.0/libglabels-3.0-template.html#LGL-TEMPLATE-FRAME-SHAPE-RECT:CAPS">
+<ANCHOR id="LGL-TEMPLATE-FRAME-SHAPE-ELLIPSE:CAPS" href="libglabels-3.0/libglabels-3.0-template.html#LGL-TEMPLATE-FRAME-SHAPE-ELLIPSE:CAPS">
+<ANCHOR id="LGL-TEMPLATE-FRAME-SHAPE-ROUND:CAPS" href="libglabels-3.0/libglabels-3.0-template.html#LGL-TEMPLATE-FRAME-SHAPE-ROUND:CAPS">
+<ANCHOR id="LGL-TEMPLATE-FRAME-SHAPE-CD:CAPS" href="libglabels-3.0/libglabels-3.0-template.html#LGL-TEMPLATE-FRAME-SHAPE-CD:CAPS">
 <ANCHOR id="lglTemplateFrame" href="libglabels-3.0/libglabels-3.0-template.html#lglTemplateFrame">
 <ANCHOR id="lglTemplateFrameAll" href="libglabels-3.0/libglabels-3.0-template.html#lglTemplateFrameAll">
 <ANCHOR id="lglTemplateFrameRect" href="libglabels-3.0/libglabels-3.0-template.html#lglTemplateFrameRect">
@@ -105,6 +115,11 @@
 <ANCHOR id="lglTemplateFrameCD" href="libglabels-3.0/libglabels-3.0-template.html#lglTemplateFrameCD">
 <ANCHOR id="lglTemplateLayout" href="libglabels-3.0/libglabels-3.0-template.html#lglTemplateLayout">
 <ANCHOR id="lglTemplateMarkupType" href="libglabels-3.0/libglabels-3.0-template.html#lglTemplateMarkupType">
+<ANCHOR id="LGL-TEMPLATE-MARKUP-MARGIN:CAPS" href="libglabels-3.0/libglabels-3.0-template.html#LGL-TEMPLATE-MARKUP-MARGIN:CAPS">
+<ANCHOR id="LGL-TEMPLATE-MARKUP-LINE:CAPS" href="libglabels-3.0/libglabels-3.0-template.html#LGL-TEMPLATE-MARKUP-LINE:CAPS">
+<ANCHOR id="LGL-TEMPLATE-MARKUP-CIRCLE:CAPS" href="libglabels-3.0/libglabels-3.0-template.html#LGL-TEMPLATE-MARKUP-CIRCLE:CAPS">
+<ANCHOR id="LGL-TEMPLATE-MARKUP-RECT:CAPS" href="libglabels-3.0/libglabels-3.0-template.html#LGL-TEMPLATE-MARKUP-RECT:CAPS">
+<ANCHOR id="LGL-TEMPLATE-MARKUP-ELLIPSE:CAPS" href="libglabels-3.0/libglabels-3.0-template.html#LGL-TEMPLATE-MARKUP-ELLIPSE:CAPS">
 <ANCHOR id="lglTemplateMarkup" href="libglabels-3.0/libglabels-3.0-template.html#lglTemplateMarkup">
 <ANCHOR id="lglTemplateMarkupMargin" href="libglabels-3.0/libglabels-3.0-template.html#lglTemplateMarkupMargin">
 <ANCHOR id="lglTemplateMarkupLine" href="libglabels-3.0/libglabels-3.0-template.html#lglTemplateMarkupLine">
@@ -115,7 +130,6 @@
 <ANCHOR id="libglabels-3.0-paper" href="libglabels-3.0/libglabels-3.0-paper.html">
 <ANCHOR id="libglabels-3.0-paper.functions" href="libglabels-3.0/libglabels-3.0-paper.html#libglabels-3.0-paper.functions">
 <ANCHOR id="libglabels-3.0-paper.other" href="libglabels-3.0/libglabels-3.0-paper.html#libglabels-3.0-paper.other">
-<ANCHOR id="libglabels-3.0-paper.object-hierarchy" href="libglabels-3.0/libglabels-3.0-paper.html#libglabels-3.0-paper.object-hierarchy">
 <ANCHOR id="libglabels-3.0-paper.includes" href="libglabels-3.0/libglabels-3.0-paper.html#libglabels-3.0-paper.includes">
 <ANCHOR id="libglabels-3.0-paper.description" href="libglabels-3.0/libglabels-3.0-paper.html#libglabels-3.0-paper.description">
 <ANCHOR id="libglabels-3.0-paper.functions_details" href="libglabels-3.0/libglabels-3.0-paper.html#libglabels-3.0-paper.functions_details">
@@ -127,7 +141,6 @@
 <ANCHOR id="libglabels-3.0-category" href="libglabels-3.0/libglabels-3.0-category.html">
 <ANCHOR id="libglabels-3.0-category.functions" href="libglabels-3.0/libglabels-3.0-category.html#libglabels-3.0-category.functions">
 <ANCHOR id="libglabels-3.0-category.other" href="libglabels-3.0/libglabels-3.0-category.html#libglabels-3.0-category.other">
-<ANCHOR id="libglabels-3.0-category.object-hierarchy" href="libglabels-3.0/libglabels-3.0-category.html#libglabels-3.0-category.object-hierarchy">
 <ANCHOR id="libglabels-3.0-category.includes" href="libglabels-3.0/libglabels-3.0-category.html#libglabels-3.0-category.includes">
 <ANCHOR id="libglabels-3.0-category.description" href="libglabels-3.0/libglabels-3.0-category.html#libglabels-3.0-category.description">
 <ANCHOR id="libglabels-3.0-category.functions_details" href="libglabels-3.0/libglabels-3.0-category.html#libglabels-3.0-category.functions_details">
@@ -139,7 +152,6 @@
 <ANCHOR id="libglabels-3.0-vendor" href="libglabels-3.0/libglabels-3.0-vendor.html">
 <ANCHOR id="libglabels-3.0-vendor.functions" href="libglabels-3.0/libglabels-3.0-vendor.html#libglabels-3.0-vendor.functions">
 <ANCHOR id="libglabels-3.0-vendor.other" href="libglabels-3.0/libglabels-3.0-vendor.html#libglabels-3.0-vendor.other">
-<ANCHOR id="libglabels-3.0-vendor.object-hierarchy" href="libglabels-3.0/libglabels-3.0-vendor.html#libglabels-3.0-vendor.object-hierarchy">
 <ANCHOR id="libglabels-3.0-vendor.includes" href="libglabels-3.0/libglabels-3.0-vendor.html#libglabels-3.0-vendor.includes">
 <ANCHOR id="libglabels-3.0-vendor.description" href="libglabels-3.0/libglabels-3.0-vendor.html#libglabels-3.0-vendor.description">
 <ANCHOR id="libglabels-3.0-vendor.functions_details" href="libglabels-3.0/libglabels-3.0-vendor.html#libglabels-3.0-vendor.functions_details">
@@ -150,7 +162,6 @@
 <ANCHOR id="lglVendor" href="libglabels-3.0/libglabels-3.0-vendor.html#lglVendor">
 <ANCHOR id="libglabels-3.0-xml-paper" href="libglabels-3.0/libglabels-3.0-xml-paper.html">
 <ANCHOR id="libglabels-3.0-xml-paper.functions" href="libglabels-3.0/libglabels-3.0-xml-paper.html#libglabels-3.0-xml-paper.functions">
-<ANCHOR id="libglabels-3.0-xml-paper.object-hierarchy" href="libglabels-3.0/libglabels-3.0-xml-paper.html#libglabels-3.0-xml-paper.object-hierarchy">
 <ANCHOR id="libglabels-3.0-xml-paper.includes" href="libglabels-3.0/libglabels-3.0-xml-paper.html#libglabels-3.0-xml-paper.includes">
 <ANCHOR id="libglabels-3.0-xml-paper.description" href="libglabels-3.0/libglabels-3.0-xml-paper.html#libglabels-3.0-xml-paper.description">
 <ANCHOR id="libglabels-3.0-xml-paper.functions_details" href="libglabels-3.0/libglabels-3.0-xml-paper.html#libglabels-3.0-xml-paper.functions_details">
@@ -160,7 +171,6 @@
 <ANCHOR id="libglabels-3.0-xml-paper.other_details" href="libglabels-3.0/libglabels-3.0-xml-paper.html#libglabels-3.0-xml-paper.other_details">
 <ANCHOR id="libglabels-3.0-xml-category" href="libglabels-3.0/libglabels-3.0-xml-category.html">
 <ANCHOR id="libglabels-3.0-xml-category.functions" href="libglabels-3.0/libglabels-3.0-xml-category.html#libglabels-3.0-xml-category.functions">
-<ANCHOR id="libglabels-3.0-xml-category.object-hierarchy" href="libglabels-3.0/libglabels-3.0-xml-category.html#libglabels-3.0-xml-category.object-hierarchy">
 <ANCHOR id="libglabels-3.0-xml-category.includes" href="libglabels-3.0/libglabels-3.0-xml-category.html#libglabels-3.0-xml-category.includes">
 <ANCHOR id="libglabels-3.0-xml-category.description" href="libglabels-3.0/libglabels-3.0-xml-category.html#libglabels-3.0-xml-category.description">
 <ANCHOR id="libglabels-3.0-xml-category.functions_details" href="libglabels-3.0/libglabels-3.0-xml-category.html#libglabels-3.0-xml-category.functions_details">
@@ -170,7 +180,6 @@
 <ANCHOR id="libglabels-3.0-xml-category.other_details" href="libglabels-3.0/libglabels-3.0-xml-category.html#libglabels-3.0-xml-category.other_details">
 <ANCHOR id="libglabels-3.0-xml-template" href="libglabels-3.0/libglabels-3.0-xml-template.html">
 <ANCHOR id="libglabels-3.0-xml-template.functions" href="libglabels-3.0/libglabels-3.0-xml-template.html#libglabels-3.0-xml-template.functions">
-<ANCHOR id="libglabels-3.0-xml-template.object-hierarchy" href="libglabels-3.0/libglabels-3.0-xml-template.html#libglabels-3.0-xml-template.object-hierarchy">
 <ANCHOR id="libglabels-3.0-xml-template.includes" href="libglabels-3.0/libglabels-3.0-xml-template.html#libglabels-3.0-xml-template.includes">
 <ANCHOR id="libglabels-3.0-xml-template.description" href="libglabels-3.0/libglabels-3.0-xml-template.html#libglabels-3.0-xml-template.description">
 <ANCHOR id="libglabels-3.0-xml-template.functions_details" href="libglabels-3.0/libglabels-3.0-xml-template.html#libglabels-3.0-xml-template.functions_details">
@@ -183,7 +192,6 @@
 <ANCHOR id="libglabels-3.0-xml-template.other_details" href="libglabels-3.0/libglabels-3.0-xml-template.html#libglabels-3.0-xml-template.other_details">
 <ANCHOR id="libglabels-3.0-xml-vendor" href="libglabels-3.0/libglabels-3.0-xml-vendor.html">
 <ANCHOR id="libglabels-3.0-xml-vendor.functions" href="libglabels-3.0/libglabels-3.0-xml-vendor.html#libglabels-3.0-xml-vendor.functions">
-<ANCHOR id="libglabels-3.0-xml-vendor.object-hierarchy" href="libglabels-3.0/libglabels-3.0-xml-vendor.html#libglabels-3.0-xml-vendor.object-hierarchy">
 <ANCHOR id="libglabels-3.0-xml-vendor.includes" href="libglabels-3.0/libglabels-3.0-xml-vendor.html#libglabels-3.0-xml-vendor.includes">
 <ANCHOR id="libglabels-3.0-xml-vendor.description" href="libglabels-3.0/libglabels-3.0-xml-vendor.html#libglabels-3.0-xml-vendor.description">
 <ANCHOR id="libglabels-3.0-xml-vendor.functions_details" href="libglabels-3.0/libglabels-3.0-xml-vendor.html#libglabels-3.0-xml-vendor.functions_details">
@@ -194,7 +202,6 @@
 <ANCHOR id="libglabels-3.0-xml" href="libglabels-3.0/libglabels-3.0-xml.html">
 <ANCHOR id="libglabels-3.0-xml.functions" href="libglabels-3.0/libglabels-3.0-xml.html#libglabels-3.0-xml.functions">
 <ANCHOR id="libglabels-3.0-xml.other" href="libglabels-3.0/libglabels-3.0-xml.html#libglabels-3.0-xml.other">
-<ANCHOR id="libglabels-3.0-xml.object-hierarchy" href="libglabels-3.0/libglabels-3.0-xml.html#libglabels-3.0-xml.object-hierarchy">
 <ANCHOR id="libglabels-3.0-xml.includes" href="libglabels-3.0/libglabels-3.0-xml.html#libglabels-3.0-xml.includes">
 <ANCHOR id="libglabels-3.0-xml.description" href="libglabels-3.0/libglabels-3.0-xml.html#libglabels-3.0-xml.description">
 <ANCHOR id="libglabels-3.0-xml.functions_details" href="libglabels-3.0/libglabels-3.0-xml.html#libglabels-3.0-xml.functions_details">
@@ -219,7 +226,6 @@
 <ANCHOR id="libglabels-3.0-units" href="libglabels-3.0/libglabels-3.0-units.html">
 <ANCHOR id="libglabels-3.0-units.functions" href="libglabels-3.0/libglabels-3.0-units.html#libglabels-3.0-units.functions">
 <ANCHOR id="libglabels-3.0-units.other" href="libglabels-3.0/libglabels-3.0-units.html#libglabels-3.0-units.other">
-<ANCHOR id="libglabels-3.0-units.object-hierarchy" href="libglabels-3.0/libglabels-3.0-units.html#libglabels-3.0-units.object-hierarchy">
 <ANCHOR id="libglabels-3.0-units.includes" href="libglabels-3.0/libglabels-3.0-units.html#libglabels-3.0-units.includes">
 <ANCHOR id="libglabels-3.0-units.description" href="libglabels-3.0/libglabels-3.0-units.html#libglabels-3.0-units.description">
 <ANCHOR id="libglabels-3.0-units.functions_details" href="libglabels-3.0/libglabels-3.0-units.html#libglabels-3.0-units.functions_details">
@@ -231,9 +237,16 @@
 <ANCHOR id="lgl-units-get-units-per-point" href="libglabels-3.0/libglabels-3.0-units.html#lgl-units-get-units-per-point">
 <ANCHOR id="libglabels-3.0-units.other_details" href="libglabels-3.0/libglabels-3.0-units.html#libglabels-3.0-units.other_details">
 <ANCHOR id="lglUnits" href="libglabels-3.0/libglabels-3.0-units.html#lglUnits">
+<ANCHOR id="LGL-UNITS-POINT:CAPS" href="libglabels-3.0/libglabels-3.0-units.html#LGL-UNITS-POINT:CAPS">
+<ANCHOR id="LGL-UNITS-INCH:CAPS" href="libglabels-3.0/libglabels-3.0-units.html#LGL-UNITS-INCH:CAPS">
+<ANCHOR id="LGL-UNITS-MM:CAPS" href="libglabels-3.0/libglabels-3.0-units.html#LGL-UNITS-MM:CAPS">
+<ANCHOR id="LGL-UNITS-CM:CAPS" href="libglabels-3.0/libglabels-3.0-units.html#LGL-UNITS-CM:CAPS">
+<ANCHOR id="LGL-UNITS-PICA:CAPS" href="libglabels-3.0/libglabels-3.0-units.html#LGL-UNITS-PICA:CAPS">
+<ANCHOR id="LGL-UNITS-FIRST:CAPS" href="libglabels-3.0/libglabels-3.0-units.html#LGL-UNITS-FIRST:CAPS">
+<ANCHOR id="LGL-UNITS-LAST:CAPS" href="libglabels-3.0/libglabels-3.0-units.html#LGL-UNITS-LAST:CAPS">
+<ANCHOR id="LGL-UNITS-INVALID:CAPS" href="libglabels-3.0/libglabels-3.0-units.html#LGL-UNITS-INVALID:CAPS">
 <ANCHOR id="libglabels-3.0-str" href="libglabels-3.0/libglabels-3.0-str.html">
 <ANCHOR id="libglabels-3.0-str.functions" href="libglabels-3.0/libglabels-3.0-str.html#libglabels-3.0-str.functions">
-<ANCHOR id="libglabels-3.0-str.object-hierarchy" href="libglabels-3.0/libglabels-3.0-str.html#libglabels-3.0-str.object-hierarchy">
 <ANCHOR id="libglabels-3.0-str.includes" href="libglabels-3.0/libglabels-3.0-str.html#libglabels-3.0-str.includes">
 <ANCHOR id="libglabels-3.0-str.description" href="libglabels-3.0/libglabels-3.0-str.html#libglabels-3.0-str.description">
 <ANCHOR id="libglabels-3.0-str.functions_details" href="libglabels-3.0/libglabels-3.0-str.html#libglabels-3.0-str.functions_details">

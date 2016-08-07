@@ -21,7 +21,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name> Δημήτρης Σπίγγος</mal:name>
       <mal:email>dmtrs32@gmail.com</mal:email>
-      <mal:years>2013, 2014</mal:years>
+      <mal:years>2013, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -60,12 +60,12 @@
       </tr>
       <tr>
         <td its:translate="no"><p><file>${XDG_CONFIG_HOME}/libglabels/templates</file></p></td>
-        <td><p>Καθοριζόμενα από τον χρήστη πρότυπα με το <app>gLabels</app><gui>Σχεδιαστής προτύπου</gui>. <em>Μην βάζετε χειροκίνητα δημιουργηθέντα πρότυπα σε αυτόν τον κατάλογο.</em></p>
+        <td><p>Πρότυπα από τον χρήστη που δημιουργούνται με το <app>gLabels</app><gui>Σχεδιαστής προτύπου</gui>. <em>Μην βάζετε χειροκίνητα δημιουργημένα πρότυπα σε αυτόν τον κατάλογο.</em></p>
             <p>Εάν το <file>${XDG_CONFIG_HOME}</file> δεν έχει ορισθεί, είναι εξ ορισμού το <file>${HOME}/.config</file>.</p></td>
       </tr>
       <tr>
         <td its:translate="no"><p><file>${HOME}/.glabels</file></p></td>
-        <td><p>Καθοριζόμενα από το χρήστη πρότυπα που έχουν δημιουργηθεί χειροκίνητα θα πρέπει να τοποθετούνται σε αυτόν τον κατάλογο. Παλαιότερες εκδόσεις του <app>gLabels</app><gui>Σχεδιαστής προτύπου</gui> (πριν από 3.0) θα θέσουν επίσης να τοποθετούν τα πρότυπα σε αυτόν τον κατάλογο.</p></td>
+        <td><p>Πρότυπα από το χρήστη που έχουν δημιουργηθεί χειροκίνητα θα πρέπει να τοποθετούνται σε αυτόν τον κατάλογο. Παλαιότερες εκδόσεις του <app>gLabels</app><gui>Σχεδιαστής προτύπου</gui> (πριν από 3.0) θα θέσουν επίσης τα πρότυπα σε αυτόν τον κατάλογο.</p></td>
       </tr>
     </table>
   </note>
@@ -87,7 +87,7 @@
         <p>Ένα φύλλο περιέχει μόνο ένα μέγεθος ετικέτας ή κάρτας (εάν ένα φύλλο περιέχει περισσότερα από ένα μεγέθη του στοιχείου, μπορεί να χωριστεί σε πολλά πρότυπα για την εκτύπωση πολλαπλών εκτυπώσεων)</p>
       </item>
       <item>
-        <p>Οι αποστάσεις μπορούν να εκφράζονται σε μονάδες <code>pt</code>, <code>in</code>, <code>mm</code>, <code>cm</code>, ή <code>pc</code>. Για παράδειγμα: "<code>1.0in</code>" ή "<code>2.54cm</code>". Αν δεν έχουν καθοριστεί μονάδες, θα χρησιμοποιηθούν οι στιγμές υπολογιστή (<code>pt</code>) (1 <em>pt</em> = 1/72 <em>in</em> = 0.352778 <em>mm</em>).</p>
+        <p>Οι αποστάσεις μπορούν να εκφράζονται σε μονάδες <code>pt</code>, <code>in</code>, <code>mm</code>, <code>cm</code>, ή <code>pc</code>. Για παράδειγμα: "<code>1.0in</code>" ή "<code>2.54cm</code>". Εάν δεν έχουν καθοριστεί μονάδα, θα χρησιμοποιηθούν οι στιγμές υπολογιστή(<code>pt</code>) (1 <em>pt</em> = 1/72 <em>in</em> = 0.352778 <em>mm</em>).</p>
       </item>
     </list>
   </section>
@@ -103,7 +103,7 @@
   <section id="template-file">
     <title>Αρχεία προτύπων</title>
 
-    <p>Ένα αρχείο προτύπου περιέχει ένα μόνο κόμβο υψηλού επιπέδου<code>Glabels-templates</code>.</p>
+    <p>Ένα αρχείο προτύπου περιέχει ένα μόνο κόμβο ανωτάτου επιπέδου <code>Glabels-templates</code>.</p>
 
     <code mime="text/xml">
 &lt;?xml version="1.0"?&gt;
@@ -114,8 +114,8 @@
 &lt;/Glabels-templates&gt;</code>
 
     <listing>
-      <title>Παράδειγμα προτύπου</title>
-      <desc>Παράδειγμα ενός προτύπου <app>gLabels</app> που περιέχει ένα μόνο κόμβο <code>Template</code>.</desc>
+      <title>Παράδειγμα Προτύπου</title>
+      <desc>Παράδειγμα ενός αρχείου προτύπου <app>gLabels</app> που περιέχει έναν μόνο κόμβο <code>Template</code>.</desc>
       <code mime="text/xml" its:translate="no">
 &lt;?xml version="1.0"?&gt;
 &lt;Glabels-templates&gt;
@@ -146,7 +146,7 @@
   <section id="template-template-node">
     <title>Κόμβος <code>Template</code></title>
 
-    <p>Ένας κόμβος <code>Template</code> περιγράφει ένα μόνο προϊόν γραφικής ύλης. Πρέπει να περιέχει ένα παράδειγμα για κάθε τύπο κόμβου ετικέτας (<code>Label-rectangle</code>, <code>Label-round</code>, ή <code>Label-cd</code>).</p>
+    <p>Ένας κόμβος <code>Template</code> περιγράφει ένα μόνο προϊόν γραφικής ύλης. Πρέπει να περιέχει ένα στιγμιότυπο για κάθε τύπο κόμβου ετικέτας (<code>Label-rectangle</code>, <code>Label-round</code>, ή <code>Label-cd</code>).</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -212,7 +212,7 @@
       </tr>
       <tr>
         <td its:translate="no"><p><code>category</code></p></td>
-        <td><p>Η κατηγορία του προτύπου. Ένα πρότυπο μπορεί να ανήκει σε πολλές κατηγορίες προσθέτοντας απλά πολλαπλούς κόμβους <code>Meta</code> στον μητρικό κόμβο <code>Template</code>. Οι κατηγορίες προτύπων χρησιμοποιούνται από το <app>gLabels</app><gui>Νέος διάλογος ετικέτας</gui> για να φιλτράρονται τα αποτελέσματα των αναζητήσεων προτύπου.</p>
+        <td><p>Η κατηγορία του προτύπου. Ένα πρότυπο μπορεί να ανήκει σε πολλές κατηγορίες προσθέτοντας απλά πολλαπλούς <code>Μετα</code> κόμβους στο μητρικό <code>Πρότυπο</code> κόμβο. Οι κατηγορίες προτύπων χρησιμοποιούνται από το <app>gLabels</app> <gui>Νέος διάλογος ετικέτας</gui> για να φιλτράρονται τα αποτελέσματα των αναζητήσεων προτύπου.</p>
 
             <p>Η τιμή αυτής της κατηγορίας πρέπει να ταιριάζει με ένα προκαθορισμένο αναγνωριστικό κατηγορίας που καθορίζεται στο αρχείο <file>${prefix}/libglabels-3.0/templates/categories.xml</file>. Επί του παρόντος τα καθορισμένα αναγνωριστικά κατηγοριών περιλαμβάνουν:</p>
             <list>
@@ -254,7 +254,7 @@
   <section id="template-label-rectangle-node">
     <title>Κόμβος <code>Label-rectangle</code></title>
 
-    <p>Ένας κόμβος <code>Label-rectangle</code> περιγράφει τις διαστάσεις μίας ετικέτας ή επιχειρηματικής κάρτας που είναι παραλληλόγραμμη στο σχήμα (μπορεί να έχει στρογγυλεμένες ακμές).</p>
+    <p>Ένας κόμβος <code>Label-rectangle</code> περιγράφει τις διαστάσεις μίας ετικέτας ή επιχειρηματικής κάρτας που είναι ορθογώνια (μπορεί να έχει στρογγυλεμένες ακμές).</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -310,7 +310,7 @@
   <section id="template-label-ellipse-node">
     <title>Κόμβος <code>Label-ellipse</code></title>
 
-    <p>Ένας κόμβος <code>Label-ellipse</code> περιγράφει τις διαστάσεις μίας ετικέτας ή επιχειρηματικής κάρτας που είναι ελλειπτική στο σχήμα.</p>
+    <p>Ένας κόμβος <code>Label-ellipse</code> περιγράφει τις διαστάσεις μίας ετικέτας ή επαγγελματικής κάρτας που είναι ελλειπτική στο σχήμα.</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -402,7 +402,7 @@
   <section id="template-label-cd-node">
     <title>Κόμβος <code>Label-cd</code></title>
 
-    <p>Ένας κόμβος <code>Label-cd</code> περιγράφει τις διαστάσεις ενός CD, DVD, CD επαγγελματικής κάρτας.</p>
+    <p>Ένας κόμβος <code>Label-cd</code> περιγράφει τις διαστάσεις ενός CD, DVD, ή CD επαγγελματικής κάρτας.</p>
 
     <table frame="all" rules="rows">
       <tr>
@@ -467,7 +467,7 @@
     <section id="template-markup-margin-node">
       <title>Κόμβος <code>Markup-margin</code></title>
 
-      <p>Ένας <code>Markup-margin</code> περιγράφει ένα περιθώριο κατά μήκος όλων των άκρων μιας ετικέτας.</p>
+      <p>Ένα <code>Markup-margin</code> περιγράφει ένα περιθώριο κατά μήκος όλων των άκρων μιας ετικέτας.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -512,11 +512,11 @@
         </tr>
         <tr>
           <td its:translate="no"><p><code>x2</code></p></td>
-          <td><p>x συντεταγμένη του 2ου τελικού σημείου του ευθύγραμμου τμήματος.</p></td>
+          <td><p>η x συντεταγμένη του 2ου τελικού σημείου του ευθύγραμμου τμήματος.</p></td>
         </tr>
         <tr>
           <td its:translate="no"><p><code>y2</code></p></td>
-          <td><p>y συντεταγμένη του 2ου τελικού σημείου του ευθύγραμμου τμήματος.</p></td>
+          <td><p>η y συντεταγμένη του 2ου τελικού σημείου του ευθύγραμμου τμήματος.</p></td>
         </tr>
       </table>
     </section>
@@ -565,7 +565,7 @@
     <section id="template-markup-rect-node">
       <title>Κόμβος <code>Markup-rect</code></title>
 
-      <p>Ένα <code>Markup-rect</code> περιγράφει ένα παραλληλόγραμμο σήμανσης.</p>
+      <p>Ένα <code>Markup-rect</code> περιγράφει ένα ορθογώνιο σήμανσης.</p>
 
       <table frame="all" rules="rows">
         <tr>
@@ -650,7 +650,7 @@
   <section id="template-layout-node">
     <title>Κόμβος <code>Layout</code></title>
 
-    <p>Ένας κόμβος ετικέτας μπορεί να περιέχει πολλαπλές θυγατρικές <code>Layout</code> παιδιά. Αν οι ετικέτες είναι τοποθετημένες σε ένα απλό σχέδιο πλέγματος, μόνο μία διάταξη είναι αναγκαία. Ωστόσο, αν οι υποδείγματος ομολόγων, πολλαπλές ετικέτες <code>Layout</code> μπορούν να χρησιμοποιηθούν.</p>
+    <p>Ένας κόμβος ετικέτας μπορεί να περιέχει πολλαπλές θυγατρικές <code>Layout</code>. Αν οι ετικέτες είναι τοποθετημένες σε ένα απλό σχέδιο πλέγματος, μόνο μία διάταξη είναι αναγκαία. Ωστόσο, αν οι ετικέτες είναι τοποθετημένες σε πολλαπλά πλέγματα, όπως το τρέξιμο του προτύπου ομολόγων, πολλαπλές ετικέτες <code>Layout</code> μπορούν να χρησιμοποιηθούν.</p>
     <p>Ένα κοινό παράδειγμα για πολλαπλές διατάξεις είναι ένα φύλλο με τρεις ετικέτες CD:</p>
 
     <!-- ==== Figure ==== -->

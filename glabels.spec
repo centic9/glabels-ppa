@@ -1,6 +1,6 @@
 Summary: glabels is a GNOME program to create labels and business cards
 Name:      glabels
-Version:   3.2.1
+Version:   3.4.0
 Release:   1
 License: GPL
 Group: Applications/Publishing
@@ -10,13 +10,13 @@ Source: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/root-%{name}-%{version}
 Prefix: %{_prefix}
 
-BuildRequires: gtk2-devel >= 3.0.9
-BuildRequires: libxml2-devel >= 2.7.8
+BuildRequires: gtk2-devel >= 3.14.0
+BuildRequires: libxml2-devel >= 2.9.0
 BuildRequires: libgnomeui-devel >= @LIBGNOMEUI_REQUIRED@
 BuildRequires: libglade2-devel >= @LIBGLADE_REQUIRED@
 
-Requires: gtk2 >= 3.0.9
-Requires: libxml2 >= 2.7.8
+Requires: gtk2 >= 3.14.0
+Requires: libxml2 >= 2.9.0
 Requires: libgnomeui >= @LIBGNOMEUI_REQUIRED@
 Requires: libglade2 >= @LIBGLADE_REQUIRED@
 

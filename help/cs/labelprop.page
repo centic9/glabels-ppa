@@ -24,8 +24,10 @@
     </mal:credit>
   </info>
 
-    <title>Změna vlastností etikety</title>
+    <title>Zobrazení nebo změna vlastností etikety</title>
 
-      <p>Pokud chcete změnit typ média a/nebo orientaci etiket, zvolte <guiseq><gui>Soubor</gui> <gui>Vlastnosti</gui></guiseq> a zobrazí se dialogové okno <gui>Vlastnosti etikety</gui>. Zvolte pro dokument nový typ média a orientaci a klikněte na <gui>OK</gui>.</p>
+      <p>Když si chcete zobrazit vlastnosti etikety, zvolte <guiseq><gui>Soubor</gui> <gui>Vlastnosti</gui></guiseq> a zobrazí se vám dialogové okno <gui>Vlastnosti etikety</gui>.</p>
+
+      <p>Jestliže chcete změnit otočení etikety, stačí kliknou buď na volbu <gui>Normální</gui> nebo <gui>Otočená</gui> v části <gui>Otočení</gui>. Pokud chcete vybrat jiný typ média, klikněte na tlačítko <gui>Vybrat jinou…</gui> v tomto dialogu. Spustí se průvodce, ve kterém si můžete pro aktuální etiketu vybrat nový typ média, včetně otočení.</p>
 
 </page>

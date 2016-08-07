@@ -2,21 +2,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>LibGlbarcode 3.0 Reference Manual: Cairo Renderer</title>
+<title>Cairo Renderer: LibGlbarcode 3.0 Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="LibGlbarcode 3.0 Reference Manual">
 <link rel="up" href="api.html" title="API Reference">
 <link rel="prev" href="libglbarcode-3.0-lgl-barcode-create.html" title="Barcode Factory">
 <link rel="next" href="libglbarcode-3.0-lgl-barcode-type.html" title="Barcode Types">
-<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
 <td width="100%" align="left" class="shortcuts">
-<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
-                  <a href="#libglbarcode-3.0-lgl-barcode-render-to-cairo.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
-                  <a href="#libglbarcode-3.0-lgl-barcode-render-to-cairo.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libglbarcode-3.0-lgl-barcode-render-to-cairo.description" class="shortcut">Description</a></span>
 </td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
 <td><a accesskey="u" href="api.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
@@ -60,11 +59,6 @@
 </table></div>
 </div>
 <div class="refsect1">
-<a name="libglbarcode-3.0-lgl-barcode-render-to-cairo.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">
-</pre>
-</div>
-<div class="refsect1">
 <a name="libglbarcode-3.0-lgl-barcode-render-to-cairo.includes"></a><h2>Includes</h2>
 <pre class="synopsis">#include &lt;libglbarcode/lgl-barcode-render-to-cairo.h&gt;
 </pre>
@@ -81,7 +75,7 @@ This section describes the cairo barcode renderer.
 <a name="lgl-barcode-render-to-cairo"></a><h3>lgl_barcode_render_to_cairo ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 lgl_barcode_render_to_cairo (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
-                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> *cr</code></em>);</pre>
+                             <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>);</pre>
 <p>Render barcode to cairo context.  Context should be prepared with desired
 translation and appropriate scale.  Context should be translated such that
 the origin is at the desired location of the upper left hand corner of the
@@ -89,7 +83,7 @@ barcode bounding box.  Context should be scaled such that all dimensions
 are in points ( 1 point = 1/72 inch ) and that positive y coordinates
 go down the surface.</p>
 <div class="refsect3">
-<a name="id-1.3.4.7.2.5"></a><h4>Parameters</h4>
+<a name="id-1.3.4.6.2.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -104,7 +98,7 @@ go down the surface.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>cr</p></td>
-<td class="parameter_description"><p>A <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> context</p></td>
+<td class="parameter_description"><p>A <span class="type">cairo_t</span> context</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -116,7 +110,7 @@ go down the surface.</p>
 <a name="lgl-barcode-render-to-cairo-path"></a><h3>lgl_barcode_render_to_cairo_path ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 lgl_barcode_render_to_cairo_path (<em class="parameter"><code>const <a class="link" href="libglbarcode-3.0-lgl-barcode.html#lglBarcode" title="lglBarcode"><span class="type">lglBarcode</span></a> *bc</code></em>,
-                                  <em class="parameter"><code><a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> *cr</code></em>);</pre>
+                                  <em class="parameter"><code><span class="type">cairo_t</span> *cr</code></em>);</pre>
 <p>Render barcode to cairo context, but only create a path to be filled or
 tested against.  Context should be prepared with desired
 translation and appropriate scale.  Context should be translated such that
@@ -125,7 +119,7 @@ barcode bounding box.  Context should be scaled such that all dimensions
 are in points ( 1 point = 1/72 inch ) and that positive y coordinates
 go down the surface.</p>
 <div class="refsect3">
-<a name="id-1.3.4.7.3.5"></a><h4>Parameters</h4>
+<a name="id-1.3.4.6.3.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -140,7 +134,7 @@ go down the surface.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>cr</p></td>
-<td class="parameter_description"><p>A <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> context</p></td>
+<td class="parameter_description"><p>A <span class="type">cairo_t</span> context</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -153,7 +147,6 @@ go down the surface.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.20</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

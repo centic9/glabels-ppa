@@ -20,12 +20,14 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Mario Blättermann</mal:name>
       <mal:email>mario.blaettermann@gmail.com</mal:email>
-      <mal:years>2008-2013</mal:years>
+      <mal:years>2008-2016</mal:years>
     </mal:credit>
   </info>
 
-    <title>Ändern der Eigenschaften eines Etiketts</title>
+    <title>Eigenschaften eines Etiketts anzeigen oder ändern</title>
 
-      <p>Um den Medientyp oder die Ausrichtung des Etiketts zu ändern, wählen Sie <guiseq><gui>Datei</gui><gui>Eigenschaften</gui></guiseq>, um den Dialog <gui>Etikett-Eigenschaften</gui> anzuzeigen. Wählen Sie den neuen Medientyp für das Dokument aus und klicken Sie anschließend auf <gui>OK</gui>.</p>
+      <p>Um die aktuellen Eigenschaften eines Etiketts anzuzeigen, wählen Sie <guiseq><gui>Datei</gui><gui>Eigenschaften</gui></guiseq>, um den Dialog <gui>Etikett-Eigenschaften</gui> anzuzeigen.</p>
+
+      <p>Um die Ausrichtung des Etiketts zu ändern, klicken Sie einfach auf eine der Optionen <gui>Normal</gui> oder <gui>Gedreht</gui> in diesem Dialog. Um einen neuen Medientyp auszuwählen, klicken Sie auf den Knopf <gui>Andere _wählen …</gui>. Dadurch wird ein weiterer Dialog geöffnet, in dem Sie einen neuen Medientyp und die Ausrichtung für das aktuelle Etikett wählen können.</p>
 
 </page>

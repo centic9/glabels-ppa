@@ -5,8 +5,8 @@ dnl ---------------------------------------------------------------------------
 dnl - GLABELS version
 dnl ---------------------------------------------------------------------------
 m4_define([glabels_major_version], [3])
-m4_define([glabels_minor_version], [2])
-m4_define([glabels_micro_version], [1])
+m4_define([glabels_minor_version], [4])
+m4_define([glabels_micro_version], [0])
 
 m4_define([glabels_version],
           [glabels_major_version.glabels_minor_version.glabels_micro_version])
@@ -116,15 +116,15 @@ dnl ---------------------------------------------------------------------------
 dnl - Library dependencies
 dnl ---------------------------------------------------------------------------
 dnl Required dependencies
-GLIB_REQUIRED=2.28.2
-GTK_REQUIRED=3.0.9
-LIBXML_REQUIRED=2.7.8
-LIBRSVG_REQUIRED=2.32.0
-CAIRO_REQUIRED=1.10.0
-PANGO_REQUIRED=1.28.1
+GLIB_REQUIRED=2.42.0
+GTK_REQUIRED=3.14.0
+LIBXML_REQUIRED=2.9.0
+LIBRSVG_REQUIRED=2.39.0
+CAIRO_REQUIRED=1.14.0
+PANGO_REQUIRED=1.36.0
 
 dnl Optional dependencies
-LIBEBOOK_REQUIRED=2.30.3
+LIBEBOOK_REQUIRED=3.12.0
 LIBBARCODE_REQUIRED=0.98
 LIBQRENCODE_REQUIRED=3.1.0
 LIBIEC16022_REQUIRED=0.2.4

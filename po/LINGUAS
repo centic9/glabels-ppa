@@ -3,6 +3,7 @@
 # please keep this list sorted alphabetically
 #
 ar
+bs
 ca
 ca@valencia
 cs
@@ -15,6 +16,7 @@ es
 fi
 fr
 gl
+hu
 id
 it
 ja
@@ -24,7 +26,9 @@ nb
 nl
 pt
 pt_BR
+ro
 ru
+sk
 sl
 sr
 sr@latin

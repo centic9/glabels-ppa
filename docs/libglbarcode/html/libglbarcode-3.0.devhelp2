@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
 <book xmlns="http://www.devhelp.net/book" title="LibGlbarcode 3.0 Reference Manual" link="index.html" author="" name="libglbarcode-3.0" version="2" language="c">
   <chapters>
     <sub name="LibGlbarcode Overview" link="overview.html">
@@ -35,5 +34,19 @@
     <keyword type="function" name="lgl_barcode_render_to_cairo ()" link="libglbarcode-3.0-lgl-barcode-render-to-cairo.html#lgl-barcode-render-to-cairo"/>
     <keyword type="function" name="lgl_barcode_render_to_cairo_path ()" link="libglbarcode-3.0-lgl-barcode-render-to-cairo.html#lgl-barcode-render-to-cairo-path"/>
     <keyword type="enum" name="enum lglBarcodeType" link="libglbarcode-3.0-lgl-barcode-type.html#lglBarcodeType"/>
+    <keyword type="constant" name="LGL_BARCODE_SHAPE_LINE" link="libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-LINE:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_SHAPE_BOX" link="libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-BOX:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_SHAPE_CHAR" link="libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-CHAR:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_SHAPE_STRING" link="libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-STRING:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_SHAPE_RING" link="libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-RING:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_SHAPE_HEXAGON" link="libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-HEXAGON:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_TYPE_POSTNET" link="libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-POSTNET:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_TYPE_POSTNET_5" link="libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-POSTNET-5:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_TYPE_POSTNET_9" link="libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-POSTNET-9:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_TYPE_POSTNET_11" link="libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-POSTNET-11:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_TYPE_CEPNET" link="libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-CEPNET:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_TYPE_ONECODE" link="libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-ONECODE:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_TYPE_CODE39" link="libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-CODE39:CAPS"/>
+    <keyword type="constant" name="LGL_BARCODE_TYPE_CODE39_EXT" link="libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-CODE39-EXT:CAPS"/>
   </functions>
 </book>

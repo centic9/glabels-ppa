@@ -2,7 +2,6 @@
 <ANCHOR id="libglbarcode-3.0-lgl-barcode" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode.functions" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#libglbarcode-3.0-lgl-barcode.functions">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode.other" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#libglbarcode-3.0-lgl-barcode.other">
-<ANCHOR id="libglbarcode-3.0-lgl-barcode.object-hierarchy" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#libglbarcode-3.0-lgl-barcode.object-hierarchy">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode.includes" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#libglbarcode-3.0-lgl-barcode.includes">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode.description" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#libglbarcode-3.0-lgl-barcode.description">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode.functions_details" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#libglbarcode-3.0-lgl-barcode.functions_details">
@@ -17,6 +16,12 @@
 <ANCHOR id="libglbarcode-3.0-lgl-barcode.other_details" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#libglbarcode-3.0-lgl-barcode.other_details">
 <ANCHOR id="lglBarcode" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#lglBarcode">
 <ANCHOR id="lglBarcodeShapeType" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeType">
+<ANCHOR id="LGL-BARCODE-SHAPE-LINE:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-LINE:CAPS">
+<ANCHOR id="LGL-BARCODE-SHAPE-BOX:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-BOX:CAPS">
+<ANCHOR id="LGL-BARCODE-SHAPE-CHAR:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-CHAR:CAPS">
+<ANCHOR id="LGL-BARCODE-SHAPE-STRING:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-STRING:CAPS">
+<ANCHOR id="LGL-BARCODE-SHAPE-RING:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-RING:CAPS">
+<ANCHOR id="LGL-BARCODE-SHAPE-HEXAGON:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#LGL-BARCODE-SHAPE-HEXAGON:CAPS">
 <ANCHOR id="lglBarcodeShape" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#lglBarcodeShape">
 <ANCHOR id="lglBarcodeShapeAny" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeAny">
 <ANCHOR id="lglBarcodeShapeLine" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeLine">
@@ -27,7 +32,6 @@
 <ANCHOR id="lglBarcodeShapeHexagon" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeHexagon">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-create" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-create.html">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-create.functions" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-create.html#libglbarcode-3.0-lgl-barcode-create.functions">
-<ANCHOR id="libglbarcode-3.0-lgl-barcode-create.object-hierarchy" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-create.html#libglbarcode-3.0-lgl-barcode-create.object-hierarchy">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-create.includes" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-create.html#libglbarcode-3.0-lgl-barcode-create.includes">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-create.description" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-create.html#libglbarcode-3.0-lgl-barcode-create.description">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-create.functions_details" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-create.html#libglbarcode-3.0-lgl-barcode-create.functions_details">
@@ -35,7 +39,6 @@
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-create.other_details" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-create.html#libglbarcode-3.0-lgl-barcode-create.other_details">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-render-to-cairo" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-render-to-cairo.html">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-render-to-cairo.functions" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-render-to-cairo.html#libglbarcode-3.0-lgl-barcode-render-to-cairo.functions">
-<ANCHOR id="libglbarcode-3.0-lgl-barcode-render-to-cairo.object-hierarchy" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-render-to-cairo.html#libglbarcode-3.0-lgl-barcode-render-to-cairo.object-hierarchy">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-render-to-cairo.includes" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-render-to-cairo.html#libglbarcode-3.0-lgl-barcode-render-to-cairo.includes">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-render-to-cairo.description" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-render-to-cairo.html#libglbarcode-3.0-lgl-barcode-render-to-cairo.description">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-render-to-cairo.functions_details" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-render-to-cairo.html#libglbarcode-3.0-lgl-barcode-render-to-cairo.functions_details">
@@ -44,9 +47,16 @@
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-render-to-cairo.other_details" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-render-to-cairo.html#libglbarcode-3.0-lgl-barcode-render-to-cairo.other_details">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-type" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-type.other" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#libglbarcode-3.0-lgl-barcode-type.other">
-<ANCHOR id="libglbarcode-3.0-lgl-barcode-type.object-hierarchy" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#libglbarcode-3.0-lgl-barcode-type.object-hierarchy">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-type.includes" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#libglbarcode-3.0-lgl-barcode-type.includes">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-type.description" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#libglbarcode-3.0-lgl-barcode-type.description">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-type.functions_details" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#libglbarcode-3.0-lgl-barcode-type.functions_details">
 <ANCHOR id="libglbarcode-3.0-lgl-barcode-type.other_details" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#libglbarcode-3.0-lgl-barcode-type.other_details">
 <ANCHOR id="lglBarcodeType" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#lglBarcodeType">
+<ANCHOR id="LGL-BARCODE-TYPE-POSTNET:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-POSTNET:CAPS">
+<ANCHOR id="LGL-BARCODE-TYPE-POSTNET-5:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-POSTNET-5:CAPS">
+<ANCHOR id="LGL-BARCODE-TYPE-POSTNET-9:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-POSTNET-9:CAPS">
+<ANCHOR id="LGL-BARCODE-TYPE-POSTNET-11:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-POSTNET-11:CAPS">
+<ANCHOR id="LGL-BARCODE-TYPE-CEPNET:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-CEPNET:CAPS">
+<ANCHOR id="LGL-BARCODE-TYPE-ONECODE:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-ONECODE:CAPS">
+<ANCHOR id="LGL-BARCODE-TYPE-CODE39:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-CODE39:CAPS">
+<ANCHOR id="LGL-BARCODE-TYPE-CODE39-EXT:CAPS" href="libglbarcode-3.0/libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-CODE39-EXT:CAPS">
