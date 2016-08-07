@@ -1,2 +1,4 @@
 0002-manpage.patch
 0003-Ignore-license.page.patch
+# applied upstream: 0004-unbreak-with-evolution-data-server-3.6.0.patch
+# file is gone: 0005-fix-pl.po-encoding.diff

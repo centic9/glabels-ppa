@@ -7,11 +7,11 @@ Forwarded: not-needed
  help/Makefile.am |    1 -
  1 file changed, 1 deletion(-)
 
-diff --git a/help/Makefile.am b/help/Makefile.am
-index 1185a90..1427128 100644
---- a/help/Makefile.am
-+++ b/help/Makefile.am
-@@ -34,7 +34,6 @@ DOC_PAGES = \
+Index: git/help/Makefile.am
+===================================================================
+--- git.orig/help/Makefile.am	2016-01-23 13:53:12.806496131 +0100
++++ git/help/Makefile.am	2016-01-23 13:53:12.802496083 +0100
+@@ -32,7 +32,6 @@
  	editprop.page		\
  	index.page		\
  	labelprop.page		\
