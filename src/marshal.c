@@ -67,9 +67,9 @@ gl_marshal_VOID__INT_INT (GClosure     *closure,
                                               gint         arg_1,
                                               gint         arg_2,
                                               gpointer     data2);
-  register GMarshalFunc_VOID__INT_INT callback;
-  register GCClosure *cc = (GCClosure*) closure;
-  register gpointer data1, data2;
+  GMarshalFunc_VOID__INT_INT callback;
+  GCClosure *cc = (GCClosure*) closure;
+  gpointer data1, data2;
 
   g_return_if_fail (n_param_values == 3);
 
@@ -104,9 +104,9 @@ gl_marshal_VOID__INT_UINT (GClosure     *closure,
                                                gint         arg_1,
                                                guint        arg_2,
                                                gpointer     data2);
-  register GMarshalFunc_VOID__INT_UINT callback;
-  register GCClosure *cc = (GCClosure*) closure;
-  register gpointer data1, data2;
+  GMarshalFunc_VOID__INT_UINT callback;
+  GCClosure *cc = (GCClosure*) closure;
+  gpointer data1, data2;
 
   g_return_if_fail (n_param_values == 3);
 
@@ -143,9 +143,9 @@ gl_marshal_VOID__DOUBLE_DOUBLE (GClosure     *closure,
                                                     gdouble      arg_1,
                                                     gdouble      arg_2,
                                                     gpointer     data2);
-  register GMarshalFunc_VOID__DOUBLE_DOUBLE callback;
-  register GCClosure *cc = (GCClosure*) closure;
-  register gpointer data1, data2;
+  GMarshalFunc_VOID__DOUBLE_DOUBLE callback;
+  GCClosure *cc = (GCClosure*) closure;
+  gpointer data1, data2;
 
   g_return_if_fail (n_param_values == 3);
 
@@ -184,9 +184,9 @@ gl_marshal_VOID__UINT_BOOLEAN (GClosure     *closure,
                                                    guint        arg_1,
                                                    gboolean     arg_2,
                                                    gpointer     data2);
-  register GMarshalFunc_VOID__UINT_BOOLEAN callback;
-  register GCClosure *cc = (GCClosure*) closure;
-  register gpointer data1, data2;
+  GMarshalFunc_VOID__UINT_BOOLEAN callback;
+  GCClosure *cc = (GCClosure*) closure;
+  gpointer data1, data2;
 
   g_return_if_fail (n_param_values == 3);
 

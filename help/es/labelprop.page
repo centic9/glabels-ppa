@@ -20,7 +20,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010-2012</mal:years>
+      <mal:years>2010-2016</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -30,8 +30,10 @@
     </mal:credit>
   </info>
 
-    <title>Cambiar las propiedades de la etiqueta</title>
+    <title>Para ver o cambiar las propiedades de la etiqueta</title>
 
-      <p>Para cambiar el tipo de medio y/o la orientación de una etiqueta, seleccione <guiseq><gui>Archivo</gui><gui>Propiedades</gui></guiseq> para mostrar el diálogo <gui>Propiedades de la etiqueta</gui>. Seleccione el tipo de medio y la orientación nuevas y pulse <gui>Aceptar</gui>.</p>
+      <p>Para ver las propiedades actuales de una etiqueta, elija <guiseq><gui>Archivo</gui> <gui>Propiedades</gui></guiseq> para mostrar el diálogo de the <gui>Propiedades de la etiqueta</gui>.</p>
+
+      <p>Para cambiar la orientación de la etiqueta, simplemente pulse en las opciones de orientación <gui>Normal</gui> o <gui>Rotada</gui> en este diálogo. PAra seleccionar un tipo de medio, pulse el botón <gui>Elegir otro...</gui> en este diálogo. Esto lanzará un segundo diálogo que permitirá seleccionar un nuevo tipo de medio y una orientación para la etiqueta actual.</p>
 
 </page>

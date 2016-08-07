@@ -5,7 +5,7 @@
     <link type="guide" xref="index#advanced"/>
     <revision pkgversion="3.0" version="0.1" date="2010-05-04" status="incomplete"/>
     <revision pkgversion="3.0.1" version="0.1" date="2011-06-20" status="incomplete"/>
-    <desc>Vytvářejte své šablony ručně.</desc>
+    <desc>Jak si vytvářit své šablony ručně.</desc>
     <credit type="author">
       <name>Jim Evins</name>
       <email>evins@snaught.com</email>

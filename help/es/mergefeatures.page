@@ -20,7 +20,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Daniel Mustieles</mal:name>
       <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010-2012</mal:years>
+      <mal:years>2010-2016</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -34,16 +34,16 @@
 
       <p>La combinación de documentos (llamada algunas veces «combinación de correo») es una potente característica que permite que una única tarjeta o etiqueta se impriman por cada registro de una fuente de datos externa.</p>
 
-      <p>El primer paso para combinar un documento es preparar un documento fuente que contenga su datos combinados. Estos datos pueden ser direcciones de correo o cualquier otro dato que quiera para crear etiquetas o tarjetas únicas. Los «back-end» actuales sólo existen para archivos de texto y el servidor de datos de Evolution (hay otros planificados). El formato de texto soportado actualmente es muy sencillo: cada línea es un registro; lo campos se delimitan por comas (CSV), tabuladores o dos puntos; y las líneas nuevas se pueden incrustar usando la entidad «\n». Este archivo se puede crear usando cualquier editor de texto u otro programa o script. Una manera habitual de crear archivos CSV es exportarlos desde un programa de hojas de cálculo.</p>
+      <p>El primer paso para combinar un documento es preparar un documento fuente que contenga su datos combinados. Estos datos pueden ser direcciones de correo o cualquier otro dato que quiera para crear etiquetas o tarjetas únicas. Los «back-end» actuales sólo existen para archivos de texto y el servidor de datos de Evolution (hay otros planificados). El formato de texto soportado actualmente es muy sencillo: cada línea es un registro; lo campos se delimitan por comas (CSV), tabuladores o dos puntos; y las líneas nuevas se pueden incrustar usando la entidad «\n». Este archivo se puede crear usando cualquier editor de texto u otro programa o script. Una manera habitual de crear archivos CSV es exportarlos desde un programa de hojas de cálculo.</p>
 	
 	<note style="advanced">
          <p>Para exportar a CSV un archivo desde <app>kaddressbook</app>, primero seleccione los contactos que quiere exportar. Pulse sobre el primer contacto y mantenga pulsada la tecla <key>Ctrl</key> mientras pulsa sobre los otros contactos para seleccionarlos. Luego elija <guiseq><gui>Archivo</gui><gui>Exportar</gui> <gui>Exportar archivo CSV</gui></guiseq>.</p>
 	 
-	 <p>En la ventana <gui>Seleccionar contactos</gui> active el botón <gui>Contactos seleccionados</gui> (que, en cualquier caso, debería estar activado de manera predeterminada). Pulse el botón <gui>Aceptar</gui>. En el diálogo <gui>Guardar como</gui> elija la carpeta que quiere y un nombre para el archivo y pulse en <gui>Guardar</gui>.</p>
+	 <p>En la ventana <gui>Seleccionar contactos</gui>, active el botón <gui>Contactos seleccionados</gui> (que, de todas maneras, debería estar activado). Luegio pulse en <gui>Aceptar</gui>. En el diálogo <gui>Guardar como</gui>, elija la carpeta que quiere y un nombre para el archivo y pulse en <gui>Guardar</gui>.</p>
         </note>
 	
 	<note style="advanced">
-         <p>Para exportar un archivo CSV desde <app>Thunderbird</app>, pulse en el botón de la <gui>Libreta de direcciones</gui> en la barra de herramientas o elija <guiseq><gui>Herramientas </gui><gui>Libreta de direcciones</gui></guiseq> en el menú. Seleccione los contactos que quiere exportar. Pulse sobre el primer contacto y mantenga pulsada la tecla <key>Ctrl</key> mientras pulsa sobre el resto de contactos para seleccionarlos. Cuando termine, elija <guiseq><gui>Herramientas</gui><gui>Exportar</gui> </guiseq>.</p>
+         <p>Para exportar un archivo CSV desde <app>Thunderbird</app>, pulse en el botón de la <gui>Libreta de direcciones</gui> en la barra de herramientas o elija <guiseq><gui>Herramientas </gui><gui>Libreta de direcciones</gui></guiseq> en el menú. Seleccione los contactos que quiere exportar. Pulse sobre el primer contacto y mantenga pulsada la tecla <key>Ctrl</key> mientras pulsa sobre el resto de contactos para seleccionarlos. Cuando termine, elija <guiseq><gui>Herramientas</gui><gui>Exportar</gui> </guiseq>.</p>
 	 
 	 <p>En la ventana del selector de archivos, elija la carpeta que quiere y un nombre para el archivo y cambie el valor en la lista desplegable en la esquina inferior derecha a <gui>Separado por comas</gui>. Para terminar, pulse en <gui>Guardar</gui>.</p>
         </note>

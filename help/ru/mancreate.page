@@ -288,7 +288,7 @@
       </tr>
       <tr>
         <td its:translate="no"><p><code>height</code></p></td>
-        <td><p>Высота этикетки/визитки</p></td>
+        <td><p>Height of label/card</p></td>
       </tr>
       <tr>
         <td its:translate="no"><p><code>round</code></p></td>
@@ -346,7 +346,7 @@
       </tr>
       <tr>
         <td its:translate="no"><p><code>height</code></p></td>
-        <td><p>Высота эллипса</p></td>
+        <td><p>Height of the ellipse</p></td>
       </tr>
       <tr>
         <td its:translate="no"><p><code>waste</code></p></td>
@@ -532,11 +532,11 @@
         </tr>
         <tr>
           <td its:translate="no"><p><code>x2</code></p></td>
-          <td><p>Координата по оси X второй точки линейного сегмента.</p></td>
+          <td><p>x coordinate of 2nd endpoint of the line segment.</p></td>
         </tr>
         <tr>
           <td its:translate="no"><p><code>y2</code></p></td>
-          <td><p>Координата по оси Y второй точки линейного сегмента.</p></td>
+          <td><p>y coordinate of 2nd endpoint of the line segment.</p></td>
         </tr>
       </table>
     </section>
@@ -689,7 +689,11 @@
     <p>Две этикетки с левой стороны могут быть включены в сетки, предположим, что мы можем определить координаты левой верхней этикетки и расстояние до второй этикетки. Расстояние до границы слева — общая величина для этих этикеток. У третьей этикетки справа нет общих значений расстояния с другими этикетками, поэтому необходимо задать второй слой со своими координатами для левого верхнего угла этикетки.</p>
 
 	<note style="tip">
-	<p>Установка нескольких слоёв возможна только в том случае, если этикетки на странице имеют одну и ту же форму. Если на странице расположены различные этикетки, для каждой формы необходимо определить свой отдельный шаблон. В будущих версиях <app>gLabels</app> может быть появится возможность объединять различные формы в одном шаблоне.</p>
+	<p>You can define multiple layouts only if the labels on the sheet
+        have the same shape. If your sheet contains different shapes, you have
+        to define each shape in another template separately. Future versions
+        of <app>gLabels</app> will probably be able to concatenate such sheets
+        with different shapes within a single template.</p>
       </note>
 
 	<note style="tip">

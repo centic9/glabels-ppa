@@ -9,7 +9,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name> Δημήτρης Σπίγγος</mal:name>
       <mal:email>dmtrs32@gmail.com</mal:email>
-      <mal:years>2013, 2014</mal:years>
+      <mal:years>2013, 2015</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -28,7 +28,7 @@
       <p>Να αντιγράψετε, να διανείμετε και να μεταδόσετε το έργο.</p>
     </item>
     <item>
-      <title><em>Για να τροποποιήσετε</em></title>
+      <title><em>Για να αναμείξετε</em></title>
       <p>Να προσαρμόσετε το έργο.</p> 
     </item>
   </terms>

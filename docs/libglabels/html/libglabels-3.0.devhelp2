@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
 <book xmlns="http://www.devhelp.net/book" title="LibGlabels 3.0 Reference Manual" link="index.html" author="" name="libglabels-3.0" version="2" language="c">
   <chapters>
     <sub name="Basic LibGlabels Usage" link="ch01.html">
@@ -174,5 +173,30 @@
     <keyword type="function" name="lgl_str_utf8_casecmp ()" link="libglabels-3.0-str.html#lgl-str-utf8-casecmp"/>
     <keyword type="function" name="lgl_str_part_name_cmp ()" link="libglabels-3.0-str.html#lgl-str-part-name-cmp"/>
     <keyword type="function" name="lgl_str_format_fraction ()" link="libglabels-3.0-str.html#lgl-str-format-fraction"/>
+    <keyword type="constant" name="LGL_DB_REG_OK" link="libglabels-3.0-db.html#LGL-DB-REG-OK:CAPS"/>
+    <keyword type="constant" name="LGL_DB_REG_BAD_PAPER_ID" link="libglabels-3.0-db.html#LGL-DB-REG-BAD-PAPER-ID:CAPS"/>
+    <keyword type="constant" name="LGL_DB_REG_BRAND_PART_EXISTS" link="libglabels-3.0-db.html#LGL-DB-REG-BRAND-PART-EXISTS:CAPS"/>
+    <keyword type="constant" name="LGL_DB_REG_FILE_WRITE_ERROR" link="libglabels-3.0-db.html#LGL-DB-REG-FILE-WRITE-ERROR:CAPS"/>
+    <keyword type="constant" name="LGL_DB_DELETE_OK" link="libglabels-3.0-db.html#LGL-DB-DELETE-OK:CAPS"/>
+    <keyword type="constant" name="LGL_DB_DELETE_DOES_NOT_EXIST" link="libglabels-3.0-db.html#LGL-DB-DELETE-DOES-NOT-EXIST:CAPS"/>
+    <keyword type="constant" name="LGL_DB_DELETE_NOT_USER_DEFINED" link="libglabels-3.0-db.html#LGL-DB-DELETE-NOT-USER-DEFINED:CAPS"/>
+    <keyword type="constant" name="LGL_DB_DELETE_FILE_ERROR" link="libglabels-3.0-db.html#LGL-DB-DELETE-FILE-ERROR:CAPS"/>
+    <keyword type="constant" name="LGL_TEMPLATE_FRAME_SHAPE_RECT" link="libglabels-3.0-template.html#LGL-TEMPLATE-FRAME-SHAPE-RECT:CAPS"/>
+    <keyword type="constant" name="LGL_TEMPLATE_FRAME_SHAPE_ELLIPSE" link="libglabels-3.0-template.html#LGL-TEMPLATE-FRAME-SHAPE-ELLIPSE:CAPS"/>
+    <keyword type="constant" name="LGL_TEMPLATE_FRAME_SHAPE_ROUND" link="libglabels-3.0-template.html#LGL-TEMPLATE-FRAME-SHAPE-ROUND:CAPS"/>
+    <keyword type="constant" name="LGL_TEMPLATE_FRAME_SHAPE_CD" link="libglabels-3.0-template.html#LGL-TEMPLATE-FRAME-SHAPE-CD:CAPS"/>
+    <keyword type="constant" name="LGL_TEMPLATE_MARKUP_MARGIN" link="libglabels-3.0-template.html#LGL-TEMPLATE-MARKUP-MARGIN:CAPS"/>
+    <keyword type="constant" name="LGL_TEMPLATE_MARKUP_LINE" link="libglabels-3.0-template.html#LGL-TEMPLATE-MARKUP-LINE:CAPS"/>
+    <keyword type="constant" name="LGL_TEMPLATE_MARKUP_CIRCLE" link="libglabels-3.0-template.html#LGL-TEMPLATE-MARKUP-CIRCLE:CAPS"/>
+    <keyword type="constant" name="LGL_TEMPLATE_MARKUP_RECT" link="libglabels-3.0-template.html#LGL-TEMPLATE-MARKUP-RECT:CAPS"/>
+    <keyword type="constant" name="LGL_TEMPLATE_MARKUP_ELLIPSE" link="libglabels-3.0-template.html#LGL-TEMPLATE-MARKUP-ELLIPSE:CAPS"/>
+    <keyword type="constant" name="LGL_UNITS_POINT" link="libglabels-3.0-units.html#LGL-UNITS-POINT:CAPS"/>
+    <keyword type="constant" name="LGL_UNITS_INCH" link="libglabels-3.0-units.html#LGL-UNITS-INCH:CAPS"/>
+    <keyword type="constant" name="LGL_UNITS_MM" link="libglabels-3.0-units.html#LGL-UNITS-MM:CAPS"/>
+    <keyword type="constant" name="LGL_UNITS_CM" link="libglabels-3.0-units.html#LGL-UNITS-CM:CAPS"/>
+    <keyword type="constant" name="LGL_UNITS_PICA" link="libglabels-3.0-units.html#LGL-UNITS-PICA:CAPS"/>
+    <keyword type="constant" name="LGL_UNITS_FIRST" link="libglabels-3.0-units.html#LGL-UNITS-FIRST:CAPS"/>
+    <keyword type="constant" name="LGL_UNITS_LAST" link="libglabels-3.0-units.html#LGL-UNITS-LAST:CAPS"/>
+    <keyword type="constant" name="LGL_UNITS_INVALID" link="libglabels-3.0-units.html#LGL-UNITS-INVALID:CAPS"/>
   </functions>
 </book>

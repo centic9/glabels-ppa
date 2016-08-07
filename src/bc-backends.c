@@ -260,13 +260,16 @@ static const Style styles[] = {
         { "zint", "Code128", N_("Code 128"), gl_barcode_zint_new,
           TRUE, TRUE, TRUE, FALSE, "0000000000", TRUE, 10},
           
-        { "zint", "Code128B", N_("Code 128 (Mode C supression)"), gl_barcode_zint_new,
+        { "zint", "Code128B", N_("Code 128 (Mode C suppression)"), gl_barcode_zint_new,
           TRUE, TRUE, TRUE, FALSE, "0000000000", TRUE, 10},
           
         { "zint", "DAFT", N_("DAFT Code"), gl_barcode_zint_new,
           FALSE, FALSE, FALSE, FALSE, "DAFTDAFTDAFTDAFT", TRUE, 16},
 
         { "zint", "DMTX", N_("Data Matrix"), gl_barcode_zint_new,
+          FALSE, FALSE, TRUE, FALSE, "0000000000", TRUE, 10},
+
+        { "zint", "DMTX-GS1", N_("Data Matrix (GS1)"), gl_barcode_zint_new,
           FALSE, FALSE, TRUE, FALSE, "0000000000", TRUE, 10},
 
         { "zint", "DPL", N_("Deutsche Post Leitcode"), gl_barcode_zint_new,

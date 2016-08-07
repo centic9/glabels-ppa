@@ -2,21 +2,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>LibGlabels 3.0 Reference Manual: The lglPaper Structure</title>
+<title>The lglPaper Structure: LibGlabels 3.0 Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="LibGlabels 3.0 Reference Manual">
 <link rel="up" href="ch01.html" title="Basic LibGlabels Usage">
 <link rel="prev" href="libglabels-3.0-template.html" title="The lglTemplate Structure">
 <link rel="next" href="libglabels-3.0-category.html" title="The lglCategory Structure">
-<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
 <td width="100%" align="left" class="shortcuts">
-<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
-                  <a href="#libglabels-3.0-paper.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
-                  <a href="#libglabels-3.0-paper.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libglabels-3.0-paper.description" class="shortcut">Description</a></span>
 </td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
 <td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
@@ -81,11 +80,6 @@
 </table></div>
 </div>
 <div class="refsect1">
-<a name="libglabels-3.0-paper.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">
-</pre>
-</div>
-<div class="refsect1">
 <a name="libglabels-3.0-paper.includes"></a><h2>Includes</h2>
 <pre class="synopsis">#include &lt;libglabels/lgl-paper.h&gt;
 </pre>
@@ -102,14 +96,14 @@ and related functions.
 <div class="refsect2">
 <a name="lgl-paper-new"></a><h3>lgl_paper_new ()</h3>
 <pre class="programlisting"><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="returnvalue">lglPaper</span></a> *
-lgl_paper_new (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
-               <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
-               <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> width</code></em>,
-               <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> height</code></em>,
-               <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *pwg_size</code></em>);</pre>
+lgl_paper_new (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
+               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> width</code></em>,
+               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> height</code></em>,
+               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *pwg_size</code></em>);</pre>
 <p>Allocates and constructs a new <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</p>
 <div class="refsect3">
-<a name="id-1.2.4.8.2.5"></a><h4>Parameters</h4>
+<a name="id-1.2.4.7.2.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -147,9 +141,8 @@ unique.</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.4.8.2.6"></a><h4>Returns</h4>
+<a name="id-1.2.4.7.2.6"></a><h4>Returns</h4>
 <p> a pointer to a newly allocated <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -159,7 +152,7 @@ unique.</p></td>
 lgl_paper_dup (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> *orig</code></em>);</pre>
 <p>Duplicates an existing <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</p>
 <div class="refsect3">
-<a name="id-1.2.4.8.3.5"></a><h4>Parameters</h4>
+<a name="id-1.2.4.7.3.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -174,9 +167,8 @@ lgl_paper_dup (<em class="parameter"><code>const <a class="link" href="libglabel
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.4.8.3.6"></a><h4>Returns</h4>
+<a name="id-1.2.4.7.3.6"></a><h4>Returns</h4>
 <p> a pointer to a newly allocated <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -186,7 +178,7 @@ lgl_paper_dup (<em class="parameter"><code>const <a class="link" href="libglabel
 lgl_paper_free (<em class="parameter"><code><a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> *paper</code></em>);</pre>
 <p>Free all memory associated with an existing <a class="link" href="libglabels-3.0-paper.html#lglPaper" title="struct lglPaper"><span class="type">lglPaper</span></a> structure.</p>
 <div class="refsect3">
-<a name="id-1.2.4.8.4.5"></a><h4>Parameters</h4>
+<a name="id-1.2.4.7.4.5"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -218,7 +210,7 @@ lgl_paper_free (<em class="parameter"><code><a class="link" href="libglabels-3.0
 This structure defines a paper (page) size.
 </p>
 <div class="refsect3">
-<a name="id-1.2.4.9.2.5"></a><h4>Members</h4>
+<a name="id-1.2.4.8.2.5"></a><h4>Members</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
@@ -227,27 +219,27 @@ This structure defines a paper (page) size.
 </colgroup>
 <tbody>
 <tr>
-<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.id"></a>id</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.id"></a>id</code></em>;</p></td>
 <td class="struct_member_description"><p>Paper size ID.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.name"></a>name</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.name"></a>name</code></em>;</p></td>
 <td class="struct_member_description"><p>Localized paper size name.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglPaper.width"></a>width</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglPaper.width"></a>width</code></em>;</p></td>
 <td class="struct_member_description"><p>Width of paper in points.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglPaper.height"></a>height</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="lglPaper.height"></a>height</code></em>;</p></td>
 <td class="struct_member_description"><p>Height of paper in points.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.pwg-size"></a>pwg_size</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglPaper.pwg-size"></a>pwg_size</code></em>;</p></td>
 <td class="struct_member_description"><p>Paper size string as defined in PWG 5101.1-2002.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
@@ -258,7 +250,6 @@ This structure defines a paper (page) size.
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.20</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

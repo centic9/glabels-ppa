@@ -53,7 +53,9 @@
 
 	<section>
 	<title>Размер страницы по умолчанию</title>
-	<p>Используйте группу переключателей, чтобы указать предпочтительный размер страницы.</p>
+	<p>Use this radio button group to specify your preferred page size.
+              This will make it quicker for you to locate media types when creating a new
+              label or card.</p>
 	   <list>
 		<item>
 		<p><gui>US Letter</gui></p>

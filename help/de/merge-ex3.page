@@ -20,7 +20,7 @@
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Mario Blättermann</mal:name>
       <mal:email>mario.blaettermann@gmail.com</mal:email>
-      <mal:years>2008-2013</mal:years>
+      <mal:years>2008-2016</mal:years>
     </mal:credit>
   </info>
 
@@ -68,7 +68,7 @@
 
       <!-- ==== Figure ==== -->
 		<media type="image" src="figures/merge-ex3-4.png" mime="image/png" style="right">
-      		<p>Adressetiketten-Vorschau</p>
+		<p>Adressetiketten-Vorschau</p>
     		</media>
       <!-- ==== End of Figure ==== -->
 

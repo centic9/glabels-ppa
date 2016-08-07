@@ -30,6 +30,7 @@
 #include "recent.h"
 #include "file-util.h"
 #include "window.h"
+#include "label-properties-dialog.h"
 #include "new-label-dialog.h"
 #include <libglabels.h>
 
@@ -57,7 +58,7 @@ static gchar *save_path = NULL;
 static void new_complete                     (GtkDialog         *dialog,
 					      gpointer           user_data);
 
-static void properties_complete              (GtkDialog         *dialog,
+static void properties_choose_complete       (GtkDialog         *dialog,
 					      gpointer           user_data);
 
 static void open_response                    (GtkDialog         *chooser,
@@ -153,13 +154,39 @@ new_complete (GtkDialog *dialog,
 	gl_debug (DEBUG_FILE, "END");
 }
 
-
 /*****************************************************************************/
 /* "Properties" menu callback.                                               */
 /*****************************************************************************/
 void
 gl_file_properties (glLabel   *label,
 		    glWindow  *window)
+{
+	GtkWidget *dialog;
+	gint       response;
+
+	gl_debug (DEBUG_FILE, "START");
+
+	g_return_if_fail (label && GL_IS_LABEL (label));
+	g_return_if_fail (window && GTK_IS_WINDOW (window));
+
+	dialog = gl_label_properties_dialog_new (label, GTK_WINDOW (window));
+	/*Translators: dialog title*/
+	gtk_window_set_title (GTK_WINDOW (dialog), _("Label properties"));
+
+	response = gtk_dialog_run (GTK_DIALOG (dialog));
+	gtk_widget_destroy (GTK_WIDGET (dialog));
+	if (response == GL_RESPONSE_SELECT_OTHER)
+		gl_file_choose_properties (label, window);
+
+	gl_debug (DEBUG_FILE, "END");
+}
+
+/*****************************************************************************/
+/* Choose properties assistent.                                              */
+/*****************************************************************************/
+void
+gl_file_choose_properties (glLabel   *label,
+                           glWindow  *window)
 {
         const lglTemplate *template;
         gboolean           rotate_flag;
@@ -172,11 +199,12 @@ gl_file_properties (glLabel   *label,
 	g_return_if_fail (window && GTK_IS_WINDOW (window));
 
 	dialog = gl_new_label_dialog_new (GTK_WINDOW (window));
-	gtk_window_set_title (GTK_WINDOW (dialog), _("Label properties"));
+	/*Translators: assistent dialog title*/
+	gtk_window_set_title (GTK_WINDOW (dialog), _("Choose label properties"));
 
 	g_object_set_data (G_OBJECT (dialog), "label", label);
 
-	g_signal_connect (G_OBJECT(dialog), "complete", G_CALLBACK (properties_complete), dialog);
+	g_signal_connect (G_OBJECT(dialog), "complete", G_CALLBACK (properties_choose_complete), dialog);
 
         template    = gl_label_get_template (label);
         rotate_flag = gl_label_get_rotate_flag (label);
@@ -201,11 +229,11 @@ gl_file_properties (glLabel   *label,
 
 
 /*---------------------------------------------------------------------------*/
-/* PRIVATE.  Properties "ok" button callback.                                */
+/* PRIVATE.  Properties assistant "OK" button callback.                                */
 /*---------------------------------------------------------------------------*/
 static void
-properties_complete (GtkDialog *dialog,
-                     gpointer   user_data)
+properties_choose_complete (GtkDialog *dialog,
+                            gpointer   user_data)
 {
 	lglTemplate *template;
 	glLabel     *label;
@@ -525,6 +553,8 @@ gl_file_save_as (glLabel   *label,
 	GtkFileFilter    *filter;
 	gboolean          saved_flag = FALSE;
 	gchar            *name, *title;
+	gchar            *filename = NULL;
+	gchar            *path;
 
 	gl_debug (DEBUG_FILE, "START");
 
@@ -547,9 +577,19 @@ gl_file_save_as (glLabel   *label,
 	g_free (title);
 
 	/* Recover proper state of save-as dialog */
-	if (save_path != NULL) {
+	filename = gl_label_get_filename (label);
+	if (filename != NULL)
+	{
+		path = g_path_get_dirname (filename);
 		gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER(chooser),
-						     save_path);
+		                                     path);
+		g_free (path);
+		g_free (filename);
+	}
+	else if (save_path != NULL)
+	{
+		gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER(chooser),
+		                                     save_path);
 	}
 
 	filter = gtk_file_filter_new ();
