@@ -1,8 +1,12 @@
-glabels (3.2.1-2build1) xenial; urgency=medium
+glabels (3.4.0-1) unstable; urgency=medium
 
-  * No change rebuild for the new e-d-s sonames
+  * New upstream version
+  * Drop now unneeded hardening-no-fortify-functions override
+  * Convert ldconfig call in postrm to trigger
+  * Bump Standards-Version (no changes needed)
+  * New patch: glabels/debian/patches/gnome-common-cleanup (Closes: #830033)
 
- -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 29 Oct 2015 10:51:43 +0100
+ -- Jakob Haufe <sur5r@sur5r.net>  Thu, 29 Dec 2016 21:30:59 +0100
 
 glabels (3.2.1-2) unstable; urgency=medium
 
