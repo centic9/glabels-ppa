@@ -1,0 +1,17 @@
+From: Jim Evins <evins@snaught.com>
+Subject: Added missing function prototype to header.
+Origin: upstream, https://github.com/jimevins/glabels/commit/01c80fc941cf5c8bf0d2b64a6a58cc3b5138f932
+Bug-Debian: http://bugs.debian.org/855604
+
+diff --git a/src/prefs-model.h b/src/prefs-model.h
+index 72efa84..10316a1 100644
+--- a/src/prefs-model.h
++++ b/src/prefs-model.h
+@@ -59,6 +59,7 @@ GType          gl_prefs_model_get_type                      (void) G_GNUC_CONST;
+ 
+ glPrefsModel  *gl_prefs_model_new                           (void);
+ 
++glPrefsModel  *gl_prefs_model_new_null                      (void);
+ 
+ void           gl_prefs_model_set_units                     (glPrefsModel     *this,
+                                                              lglUnits          units);

@@ -1,3 +1,11 @@
+glabels (3.4.0-2) unstable; urgency=medium
+
+  * Cherry-pick from upstream:
+    add-missing-prototype (Closes: #855604)
+    Thanks to Keith Packard for reporting this
+
+ -- Jakob Haufe <sur5r@sur5r.net>  Mon, 20 Feb 2017 23:52:38 +0100
+
 glabels (3.4.0-1) unstable; urgency=medium
 
   * New upstream version
