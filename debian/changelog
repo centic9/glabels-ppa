@@ -1,3 +1,9 @@
+glabels (3.4.0-2ubuntu0~ppa1) xenial; urgency=medium
+
+  * Rebase to latest version from Ubuntu/Debian.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sun, 11 Jun 2017 22:07:24 +0200
+
 glabels (3.4.0-2) unstable; urgency=medium
 
   * Cherry-pick from upstream:
