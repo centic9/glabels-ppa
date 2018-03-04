@@ -1,3 +1,15 @@
+glabels (3.4.0-2build2) bionic; urgency=medium
+
+  * No-change rebuild against latest evolution-data-server
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Sat, 03 Mar 2018 19:59:19 -0500
+
+glabels (3.4.0-2build1) artful; urgency=medium
+
+  * No-change rebuild against evolution-data-server 3.24
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 13 Jun 2017 13:11:03 -0400
+
 glabels (3.4.0-2) unstable; urgency=medium
 
   * Cherry-pick from upstream:
