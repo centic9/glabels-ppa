@@ -42,15 +42,10 @@
     </mal:credit>
   </info>
 
-    <title>To view or change label properties</title>
+    <title>Affichage ou modification des propriétés d'une étiquette</title>
 
-      <p>To view the current properties of a label, choose <guiseq><gui>File</gui>
-        <gui>Properties</gui></guiseq> to display the <gui>Label properties</gui> dialog.</p>
+      <p>Pour afficher les propriétés actuelles d'une étiquette, choisissez <guiseq><gui>Fichier</gui> <gui>Propriétés</gui></guiseq> pour afficher la boîte de dialogue <gui>Propriétés de l'étiquette</gui>.</p>
 
-      <p>To change the orientation of the label, simply click either the <gui>Normal</gui>
-	or <gui>Rotated</gui> Orientation options from this dialog.
-	To select a new media type, click the <gui>Choose other...</gui> button from this dialog.
-	This will launch a second dialog which will allow the selection of a new media type
-	and orientation for the current label.</p>
+      <p>Pour modifier l'orientation d'une étiquette, cliquez simplement sur l'une des options d'orientation <gui>Normale</gui> ou <gui>Pivotée</gui> de cette boîte de dialogue. Pour choisir un nouveau type de support, cliquez sur le bouton <gui>Sélectionner un autre…</gui>. Une nouvelle boîte de dialogue s'ouvre alors pour choisir un nouveau type de support et une orientation pour l'étiquette en cours.</p>
 
 </page>

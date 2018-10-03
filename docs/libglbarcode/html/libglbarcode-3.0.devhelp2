@@ -48,5 +48,37 @@
     <keyword type="constant" name="LGL_BARCODE_TYPE_ONECODE" link="libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-ONECODE:CAPS"/>
     <keyword type="constant" name="LGL_BARCODE_TYPE_CODE39" link="libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-CODE39:CAPS"/>
     <keyword type="constant" name="LGL_BARCODE_TYPE_CODE39_EXT" link="libglbarcode-3.0-lgl-barcode-type.html#LGL-BARCODE-TYPE-CODE39-EXT:CAPS"/>
+    <keyword type="member" name="lglBarcode.width" link="libglbarcode-3.0-lgl-barcode.html#lglBarcode.width"/>
+    <keyword type="member" name="lglBarcode.height" link="libglbarcode-3.0-lgl-barcode.html#lglBarcode.height"/>
+    <keyword type="member" name="lglBarcode.shapes" link="libglbarcode-3.0-lgl-barcode.html#lglBarcode.shapes"/>
+    <keyword type="member" name="lglBarcodeShapeLine.type" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeLine.type"/>
+    <keyword type="member" name="lglBarcodeShapeLine.x" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeLine.x"/>
+    <keyword type="member" name="lglBarcodeShapeLine.y" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeLine.y"/>
+    <keyword type="member" name="lglBarcodeShapeLine.length" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeLine.length"/>
+    <keyword type="member" name="lglBarcodeShapeLine.width" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeLine.width"/>
+    <keyword type="member" name="lglBarcodeShapeBox.type" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeBox.type"/>
+    <keyword type="member" name="lglBarcodeShapeBox.x" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeBox.x"/>
+    <keyword type="member" name="lglBarcodeShapeBox.y" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeBox.y"/>
+    <keyword type="member" name="lglBarcodeShapeBox.width" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeBox.width"/>
+    <keyword type="member" name="lglBarcodeShapeBox.height" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeBox.height"/>
+    <keyword type="member" name="lglBarcodeShapeChar.type" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeChar.type"/>
+    <keyword type="member" name="lglBarcodeShapeChar.x" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeChar.x"/>
+    <keyword type="member" name="lglBarcodeShapeChar.y" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeChar.y"/>
+    <keyword type="member" name="lglBarcodeShapeChar.fsize" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeChar.fsize"/>
+    <keyword type="member" name="lglBarcodeShapeChar.c" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeChar.c"/>
+    <keyword type="member" name="lglBarcodeShapeString.type" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeString.type"/>
+    <keyword type="member" name="lglBarcodeShapeString.x" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeString.x"/>
+    <keyword type="member" name="lglBarcodeShapeString.y" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeString.y"/>
+    <keyword type="member" name="lglBarcodeShapeString.fsize" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeString.fsize"/>
+    <keyword type="member" name="lglBarcodeShapeString.string" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeString.string"/>
+    <keyword type="member" name="lglBarcodeShapeRing.type" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeRing.type"/>
+    <keyword type="member" name="lglBarcodeShapeRing.x" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeRing.x"/>
+    <keyword type="member" name="lglBarcodeShapeRing.y" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeRing.y"/>
+    <keyword type="member" name="lglBarcodeShapeRing.radius" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeRing.radius"/>
+    <keyword type="member" name="lglBarcodeShapeRing.line-width" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeRing.line-width"/>
+    <keyword type="member" name="lglBarcodeShapeHexagon.type" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeHexagon.type"/>
+    <keyword type="member" name="lglBarcodeShapeHexagon.x" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeHexagon.x"/>
+    <keyword type="member" name="lglBarcodeShapeHexagon.y" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeHexagon.y"/>
+    <keyword type="member" name="lglBarcodeShapeHexagon.height" link="libglbarcode-3.0-lgl-barcode.html#lglBarcodeShapeHexagon.height"/>
   </functions>
 </book>

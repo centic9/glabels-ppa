@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>The lglCategory Structure: LibGlabels 3.0 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="LibGlabels 3.0 Reference Manual">
 <link rel="up" href="ch01.html" title="Basic LibGlabels Usage">
 <link rel="prev" href="libglabels-3.0-paper.html" title="The lglPaper Structure">
 <link rel="next" href="libglabels-3.0-vendor.html" title="The lglVendor Structure">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="libglabels-3.0-category.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -68,7 +68,7 @@
 </div>
 <div class="refsect1">
 <a name="libglabels-3.0-category.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -96,12 +96,12 @@ functions.
 <div class="refsect2">
 <a name="lgl-category-new"></a><h3>lgl_category_new ()</h3>
 <pre class="programlisting"><a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="returnvalue">lglCategory</span></a> *
-lgl_category_new (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>,
-                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+lgl_category_new (<em class="parameter"><code><span class="type">gchar</span> *id</code></em>,
+                  <em class="parameter"><code><span class="type">gchar</span> *name</code></em>);</pre>
 <p>Allocates and constructs a new <a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="type">lglCategory</span></a> structure.</p>
 <div class="refsect3">
-<a name="id-1.2.5.7.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="lgl-category-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -123,7 +123,7 @@ unique.</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.5.7.2.6"></a><h4>Returns</h4>
+<a name="lgl-category-new.returns"></a><h4>Returns</h4>
 <p> a pointer to a newly allocated <a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="type">lglCategory</span></a> structure.</p>
 </div>
 </div>
@@ -134,8 +134,8 @@ unique.</p></td>
 lgl_category_dup (<em class="parameter"><code>const <a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="type">lglCategory</span></a> *orig</code></em>);</pre>
 <p>Duplicates an existing <a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="type">lglCategory</span></a> structure.</p>
 <div class="refsect3">
-<a name="id-1.2.5.7.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="lgl-category-dup.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -149,7 +149,7 @@ lgl_category_dup (<em class="parameter"><code>const <a class="link" href="libgla
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.5.7.3.6"></a><h4>Returns</h4>
+<a name="lgl-category-dup.returns"></a><h4>Returns</h4>
 <p> a pointer to a newly allocated <a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="type">lglCategory</span></a> structure.</p>
 </div>
 </div>
@@ -160,8 +160,8 @@ lgl_category_dup (<em class="parameter"><code>const <a class="link" href="libgla
 lgl_category_free (<em class="parameter"><code><a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="type">lglCategory</span></a> *category</code></em>);</pre>
 <p>Free all memory associated with an existing <a class="link" href="libglabels-3.0-category.html#lglCategory" title="struct lglCategory"><span class="type">lglCategory</span></a> structure.</p>
 <div class="refsect3">
-<a name="id-1.2.5.7.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="lgl-category-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -189,8 +189,8 @@ lgl_category_free (<em class="parameter"><code><a class="link" href="libglabels-
 This structure defines a category.
 </p>
 <div class="refsect3">
-<a name="id-1.2.5.8.2.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="lglCategory.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -198,12 +198,12 @@ This structure defines a category.
 </colgroup>
 <tbody>
 <tr>
-<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglCategory.id"></a>id</code></em>;</p></td>
+<td class="struct_member_name"><p><span class="type">gchar</span> *<em class="structfield"><code><a name="lglCategory.id"></a>id</code></em>;</p></td>
 <td class="struct_member_description"><p>Category ID.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="lglCategory.name"></a>name</code></em>;</p></td>
+<td class="struct_member_name"><p><span class="type">gchar</span> *<em class="structfield"><code><a name="lglCategory.name"></a>name</code></em>;</p></td>
 <td class="struct_member_description"><p>Localized category name.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
@@ -214,6 +214,6 @@ This structure defines a category.
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>
