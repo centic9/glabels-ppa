@@ -1,3 +1,15 @@
+glabels (3.4.1-1.1build2) disco; urgency=medium
+
+  * No-change rebuild against latest evolution-data-server
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 07 Feb 2019 06:27:45 -0500
+
+glabels (3.4.1-1.1build1) disco; urgency=medium
+
+  * No-change rebuild against latest qrencode
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Sat, 10 Nov 2018 18:54:16 -0500
+
 glabels (3.4.1-1.1) unstable; urgency=medium
 
   * Non-maintainer upload.
