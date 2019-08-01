@@ -1,3 +1,9 @@
+glabels (3.4.1-1.1build3) eoan; urgency=medium
+
+  * No-change rebuild for e-d-s 3.33.4
+
+ -- Iain Lane <iain@orangesquash.org.uk>  Thu, 01 Aug 2019 17:34:23 +0100
+
 glabels (3.4.1-1.1build2) disco; urgency=medium
 
   * No-change rebuild against latest evolution-data-server
