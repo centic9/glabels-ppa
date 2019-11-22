@@ -1,20 +1,9 @@
-glabels (3.4.1-1.1build3) eoan; urgency=medium
+glabels (3.4.1-1.2) unstable; urgency=medium
 
-  * No-change rebuild for e-d-s 3.33.4
+  * Non-maintainer upload.
+  * Drop leftover gnome-doc-utils since conversion to yelp/itstool in 2012.
 
- -- Iain Lane <iain@orangesquash.org.uk>  Thu, 01 Aug 2019 17:34:23 +0100
-
-glabels (3.4.1-1.1build2) disco; urgency=medium
-
-  * No-change rebuild against latest evolution-data-server
-
- -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 07 Feb 2019 06:27:45 -0500
-
-glabels (3.4.1-1.1build1) disco; urgency=medium
-
-  * No-change rebuild against latest qrencode
-
- -- Jeremy Bicha <jbicha@ubuntu.com>  Sat, 10 Nov 2018 18:54:16 -0500
+ -- Andreas Henriksson <andreas@fatal.se>  Fri, 22 Nov 2019 16:55:55 +0100
 
 glabels (3.4.1-1.1) unstable; urgency=medium
 
