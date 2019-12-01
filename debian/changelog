@@ -1,3 +1,9 @@
+glabels (3.4.1-1.2ubuntu0~ppa1) bionic; urgency=medium
+
+  * Backport to Bionic
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sun, 01 Dec 2019 22:20:02 +0100
+
 glabels (3.4.1-1.2) unstable; urgency=medium
 
   * Non-maintainer upload.
