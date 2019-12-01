@@ -1,6 +1,6 @@
 Summary: glabels is a GNOME program to create labels and business cards
 Name:      glabels
-Version:   3.4.0
+Version:   3.4.1
 Release:   1
 License: GPL
 Group: Applications/Publishing

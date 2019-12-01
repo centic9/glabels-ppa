@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Units: LibGlabels 3.0 Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="LibGlabels 3.0 Reference Manual">
 <link rel="up" href="ch03.html" title="Miscellaneous">
 <link rel="prev" href="ch03.html" title="Miscellaneous">
 <link rel="next" href="libglabels-3.0-str.html" title="String Utility Functions">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,14 +33,14 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="libglabels-3.0-units.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
 </colgroup>
 <tbody>
 <tr>
-<td class="function_type">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<td class="function_type">const <span class="returnvalue">gchar</span> *
 </td>
 <td class="function_name">
 <a class="link" href="libglabels-3.0-units.html#lgl-units-get-id" title="lgl_units_get_id ()">lgl_units_get_id</a> <span class="c_punctuation">()</span>
@@ -55,7 +55,7 @@
 </td>
 </tr>
 <tr>
-<td class="function_type">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<td class="function_type">const <span class="returnvalue">gchar</span> *
 </td>
 <td class="function_name">
 <a class="link" href="libglabels-3.0-units.html#lgl-units-get-name" title="lgl_units_get_name ()">lgl_units_get_name</a> <span class="c_punctuation">()</span>
@@ -71,7 +71,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>
+<span class="returnvalue">gdouble</span>
 </td>
 <td class="function_name">
 <a class="link" href="libglabels-3.0-units.html#lgl-units-get-points-per-unit" title="lgl_units_get_points_per_unit ()">lgl_units_get_points_per_unit</a> <span class="c_punctuation">()</span>
@@ -79,7 +79,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>
+<span class="returnvalue">gdouble</span>
 </td>
 <td class="function_name">
 <a class="link" href="libglabels-3.0-units.html#lgl-units-get-units-per-point" title="lgl_units_get_units_per_point ()">lgl_units_get_units_per_point</a> <span class="c_punctuation">()</span>
@@ -90,7 +90,7 @@
 </div>
 <div class="refsect1">
 <a name="libglabels-3.0-units.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -117,15 +117,15 @@ supported by libglabels.  It also defines a set of related functions.
 <a name="libglabels-3.0-units.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
 <a name="lgl-units-get-id"></a><h3>lgl_units_get_id ()</h3>
-<pre class="programlisting">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
 lgl_units_get_id (<em class="parameter"><code><a class="link" href="libglabels-3.0-units.html#lglUnits" title="enum lglUnits"><span class="type">lglUnits</span></a> units</code></em>);</pre>
 <p>Return a unique ID string for the given units.  This ID is how units
 are encoded in libglabels XML files and will remain constant across
 all locales.  IDs are identical to the absolute length units supported
 in the CSS2 Specification (Section 4.3.2).</p>
 <div class="refsect3">
-<a name="id-1.4.2.7.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="lgl-units-get-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -139,7 +139,7 @@ in the CSS2 Specification (Section 4.3.2).</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.7.2.6"></a><h4>Returns</h4>
+<a name="lgl-units-get-id.returns"></a><h4>Returns</h4>
 <p> ID string.</p>
 </div>
 </div>
@@ -147,14 +147,14 @@ in the CSS2 Specification (Section 4.3.2).</p>
 <div class="refsect2">
 <a name="lgl-units-from-id"></a><h3>lgl_units_from_id ()</h3>
 <pre class="programlisting"><a class="link" href="libglabels-3.0-units.html#lglUnits" title="enum lglUnits"><span class="returnvalue">lglUnits</span></a>
-lgl_units_from_id (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *id</code></em>);</pre>
+lgl_units_from_id (<em class="parameter"><code>const <span class="type">gchar</span> *id</code></em>);</pre>
 <p>Return the unique <a class="link" href="libglabels-3.0-units.html#lglUnits" title="enum lglUnits"><span class="type">lglUnits</span></a> for the given ID string.
 This ID is how units are encoded in libglabels XML files and will remain
 constant across all locales.  IDs are identical to the absolute length
 units supported in the CSS2 Specification (Section 4.3.2).</p>
 <div class="refsect3">
-<a name="id-1.4.2.7.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="lgl-units-from-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -168,20 +168,20 @@ units supported in the CSS2 Specification (Section 4.3.2).</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.7.3.6"></a><h4>Returns</h4>
+<a name="lgl-units-from-id.returns"></a><h4>Returns</h4>
 <p> units (<a class="link" href="libglabels-3.0-units.html#lglUnits" title="enum lglUnits"><span class="type">lglUnits</span></a>).</p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="lgl-units-get-name"></a><h3>lgl_units_get_name ()</h3>
-<pre class="programlisting">const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
 lgl_units_get_name (<em class="parameter"><code><a class="link" href="libglabels-3.0-units.html#lglUnits" title="enum lglUnits"><span class="type">lglUnits</span></a> units</code></em>);</pre>
 <p>Return a unique name string for the given units.  This name is human
 readable and will be translated to the current locale.</p>
 <div class="refsect3">
-<a name="id-1.4.2.7.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="lgl-units-get-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -195,7 +195,7 @@ readable and will be translated to the current locale.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.7.4.6"></a><h4>Returns</h4>
+<a name="lgl-units-get-name.returns"></a><h4>Returns</h4>
 <p> name string.</p>
 </div>
 </div>
@@ -203,12 +203,12 @@ readable and will be translated to the current locale.</p>
 <div class="refsect2">
 <a name="lgl-units-from-name"></a><h3>lgl_units_from_name ()</h3>
 <pre class="programlisting"><a class="link" href="libglabels-3.0-units.html#lglUnits" title="enum lglUnits"><span class="returnvalue">lglUnits</span></a>
-lgl_units_from_name (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
+lgl_units_from_name (<em class="parameter"><code>const <span class="type">gchar</span> *name</code></em>);</pre>
 <p>Return the unique <a class="link" href="libglabels-3.0-units.html#lglUnits" title="enum lglUnits"><span class="type">lglUnits</span></a> for the given name string.  This name is
 human readable and is expected to be translated to the current locale.</p>
 <div class="refsect3">
-<a name="id-1.4.2.7.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="lgl-units-from-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -222,19 +222,19 @@ human readable and is expected to be translated to the current locale.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.7.5.6"></a><h4>Returns</h4>
+<a name="lgl-units-from-name.returns"></a><h4>Returns</h4>
 <p> units (<a class="link" href="libglabels-3.0-units.html#lglUnits" title="enum lglUnits"><span class="type">lglUnits</span></a>).</p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="lgl-units-get-points-per-unit"></a><h3>lgl_units_get_points_per_unit ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>
+<pre class="programlisting"><span class="returnvalue">gdouble</span>
 lgl_units_get_points_per_unit (<em class="parameter"><code><a class="link" href="libglabels-3.0-units.html#lglUnits" title="enum lglUnits"><span class="type">lglUnits</span></a> units</code></em>);</pre>
 <p>Return a scale factor for the given units in points/unit.</p>
 <div class="refsect3">
-<a name="id-1.4.2.7.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="lgl-units-get-points-per-unit.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -248,19 +248,19 @@ lgl_units_get_points_per_unit (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.7.6.6"></a><h4>Returns</h4>
+<a name="lgl-units-get-points-per-unit.returns"></a><h4>Returns</h4>
 <p> scale factor.</p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="lgl-units-get-units-per-point"></a><h3>lgl_units_get_units_per_point ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gdouble"><span class="returnvalue">gdouble</span></a>
+<pre class="programlisting"><span class="returnvalue">gdouble</span>
 lgl_units_get_units_per_point (<em class="parameter"><code><a class="link" href="libglabels-3.0-units.html#lglUnits" title="enum lglUnits"><span class="type">lglUnits</span></a> units</code></em>);</pre>
 <p>Return a scale factor for the given units in units/point.</p>
 <div class="refsect3">
-<a name="id-1.4.2.7.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="lgl-units-get-units-per-point.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -274,7 +274,7 @@ lgl_units_get_units_per_point (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.7.7.6"></a><h4>Returns</h4>
+<a name="lgl-units-get-units-per-point.returns"></a><h4>Returns</h4>
 <p> scale factor.</p>
 </div>
 </div>
@@ -287,8 +287,8 @@ lgl_units_get_units_per_point (<em class="parameter"><code><a class="link" href=
 This enumeration defines supported units of distance.
 </p>
 <div class="refsect3">
-<a name="id-1.4.2.8.2.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="lglUnits.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -358,6 +358,6 @@ This enumeration defines supported units of distance.
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

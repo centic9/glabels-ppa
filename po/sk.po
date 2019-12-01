@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: glabels master\n"
 "Report-Msgid-Bugs-To: http://sourceforge.net/tracker/?group_id=46122&ati\n"
-"POT-Creation-Date: 2016-02-22 19:23+0000\n"
-"PO-Revision-Date: 2016-03-02 19:49+0100\n"
+"POT-Creation-Date: 2016-07-17 14:57+0000\n"
+"PO-Revision-Date: 2016-08-10 09:29+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -16,559 +16,563 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.8\n"
 
 #: ../src/bc-backends.c:81
 msgid "Built-in"
-msgstr ""
+msgstr "Vstavaný"
 
 #: ../src/bc-backends.c:101
 msgid "POSTNET (any)"
-msgstr ""
+msgstr "POSTNET (akýkoľvek)"
 
 #: ../src/bc-backends.c:104
 msgid "POSTNET-5 (ZIP only)"
-msgstr ""
+msgstr "POSTNET-5 (iba PSČ)"
 
 #: ../src/bc-backends.c:107
 msgid "POSTNET-9 (ZIP+4)"
-msgstr ""
+msgstr "POSTNET-9 (PSČ+4)"
 
 #: ../src/bc-backends.c:110
 msgid "POSTNET-11 (DPBC)"
-msgstr ""
+msgstr "POSTNET-11 (DPBC)"
 
 #: ../src/bc-backends.c:113
 msgid "CEPNET"
-msgstr ""
+msgstr "CEPNET"
 
 #: ../src/bc-backends.c:116
 msgid "One Code"
-msgstr ""
+msgstr "One Code"
 
 #: ../src/bc-backends.c:119 ../src/bc-backends.c:175 ../src/bc-backends.c:248
 msgid "Code 39"
-msgstr ""
+msgstr "Code 39"
 
 #: ../src/bc-backends.c:122 ../src/bc-backends.c:251
 msgid "Code 39 Extended"
-msgstr ""
+msgstr "Code 39 rozšírený"
 
 #: ../src/bc-backends.c:127
 msgid "EAN (any)"
-msgstr ""
+msgstr "EAN (akýkoľvek)"
 
 #: ../src/bc-backends.c:130
 msgid "EAN-8"
-msgstr ""
+msgstr "EAN-8"
 
 #: ../src/bc-backends.c:133
 msgid "EAN-8 +2"
-msgstr ""
+msgstr "EAN-8 +2"
 
 #: ../src/bc-backends.c:136
 msgid "EAN-8 +5"
-msgstr ""
+msgstr "EAN-8 +5"
 
 #: ../src/bc-backends.c:139
 msgid "EAN-13"
-msgstr ""
+msgstr "EAN-13"
 
 #: ../src/bc-backends.c:142
 msgid "EAN-13 +2"
-msgstr ""
+msgstr "EAN-13 +2"
 
 #: ../src/bc-backends.c:145
 msgid "EAN-13 +5"
-msgstr ""
+msgstr "EAN-13 +5"
 
 #: ../src/bc-backends.c:148
 msgid "UPC (UPC-A or UPC-E)"
-msgstr ""
+msgstr "UPC (UPC-A alebo UPC-E)"
 
-#: ../src/bc-backends.c:151 ../src/bc-backends.c:395
+#: ../src/bc-backends.c:151 ../src/bc-backends.c:398
 msgid "UPC-A"
-msgstr ""
+msgstr "UPC-A"
 
 #: ../src/bc-backends.c:154
 msgid "UPC-A +2"
-msgstr ""
+msgstr "UPC-A +2"
 
 #: ../src/bc-backends.c:157
 msgid "UPC-A +5"
-msgstr ""
+msgstr "UPC-A +5"
 
-#: ../src/bc-backends.c:160 ../src/bc-backends.c:398
+#: ../src/bc-backends.c:160 ../src/bc-backends.c:401
 msgid "UPC-E"
-msgstr ""
+msgstr "UPC-E"
 
 #: ../src/bc-backends.c:163
 msgid "UPC-E +2"
-msgstr ""
+msgstr "UPC-E +2"
 
 #: ../src/bc-backends.c:166
 msgid "UPC-E +5"
-msgstr ""
+msgstr "UPC-E +5"
 
-#: ../src/bc-backends.c:169 ../src/bc-backends.c:332
+#: ../src/bc-backends.c:169 ../src/bc-backends.c:335
 msgid "ISBN"
-msgstr ""
+msgstr "ISBN"
 
 #: ../src/bc-backends.c:172
 msgid "ISBN +5"
-msgstr ""
+msgstr "ISBN +5"
 
 #: ../src/bc-backends.c:178 ../src/bc-backends.c:260
 msgid "Code 128"
-msgstr ""
+msgstr "Code 128"
 
 #: ../src/bc-backends.c:181
 msgid "Code 128C"
-msgstr ""
+msgstr "Code 128C"
 
 #: ../src/bc-backends.c:184
 msgid "Code 128B"
-msgstr ""
+msgstr "Code 128B"
 
-#: ../src/bc-backends.c:187 ../src/bc-backends.c:329
+#: ../src/bc-backends.c:187 ../src/bc-backends.c:332
 msgid "Interleaved 2 of 5"
-msgstr ""
+msgstr "Prekladaný 2 z 5"
 
 #: ../src/bc-backends.c:190 ../src/bc-backends.c:224
 msgid "Codabar"
-msgstr ""
+msgstr "Codabar"
 
 #: ../src/bc-backends.c:193
 msgid "MSI"
-msgstr ""
+msgstr "MSI"
 
 #: ../src/bc-backends.c:196
 msgid "Plessey"
-msgstr ""
+msgstr "Plessey"
 
 #: ../src/bc-backends.c:199 ../src/bc-backends.c:257
 msgid "Code 93"
-msgstr ""
+msgstr "Code 93"
 
 #: ../src/bc-backends.c:206
 msgid "Australia Post Standard"
-msgstr ""
+msgstr "Austrálsky poštový štandardný"
 
 #: ../src/bc-backends.c:209
 msgid "Australia Post Reply Paid"
-msgstr ""
+msgstr "Austrálsky poštový odpovedajúci"
 
 #: ../src/bc-backends.c:212
 msgid "Australia Post Route Code"
-msgstr ""
+msgstr "Austrálsky poštový smerový kód"
 
 #: ../src/bc-backends.c:215
 msgid "Australia Post Redirect"
-msgstr ""
+msgstr "Austrálsky poštový presmerovaný"
 
 #: ../src/bc-backends.c:218
 msgid "Aztec Code"
-msgstr ""
+msgstr "Aztec Code"
 
 #: ../src/bc-backends.c:221
 msgid "Aztec Rune"
-msgstr ""
+msgstr "Aztec Rune"
 
 #: ../src/bc-backends.c:227
 msgid "Code One"
-msgstr ""
+msgstr "Code One"
 
 #: ../src/bc-backends.c:230
 msgid "Code 11"
-msgstr ""
+msgstr "Code 11"
 
 #: ../src/bc-backends.c:233
 msgid "Code 16K"
-msgstr ""
+msgstr "Code 16K"
 
 #: ../src/bc-backends.c:236
 msgid "Code 2 of 5 Matrix"
-msgstr ""
+msgstr "Code 2 z 5 Matrix"
 
 #: ../src/bc-backends.c:239
 msgid "Code 2 of 5 IATA"
-msgstr ""
+msgstr "Code 2 z 5 IATA"
 
 #: ../src/bc-backends.c:242
 msgid "Code 2 of 5 Data Logic"
-msgstr ""
+msgstr "Code 2 z 5 Data Logic"
 
 #: ../src/bc-backends.c:245
 msgid "Code 32 (Italian Pharmacode)"
-msgstr ""
+msgstr "Code 32 (taliansky Pharmacode)"
 
 #: ../src/bc-backends.c:254
 msgid "Code 49"
-msgstr ""
+msgstr "Code 49"
 
 #: ../src/bc-backends.c:263
 msgid "Code 128 (Mode C suppression)"
-msgstr ""
+msgstr "Code 128 (potlačenie režimu C)"
 
 #: ../src/bc-backends.c:266
 msgid "DAFT Code"
-msgstr ""
+msgstr "DAFT Code"
 
 #: ../src/bc-backends.c:269
 msgid "Data Matrix"
-msgstr ""
+msgstr "Data Matrix"
 
 #: ../src/bc-backends.c:272
-msgid "Deutsche Post Leitcode"
-msgstr ""
+msgid "Data Matrix (GS1)"
+msgstr "Data Matrix (GS1)"
 
 #: ../src/bc-backends.c:275
-msgid "Deutsche Post Identcode"
-msgstr ""
+msgid "Deutsche Post Leitcode"
+msgstr "Nemecký poštový Leitcode"
 
 #: ../src/bc-backends.c:278
-msgid "Dutch Post KIX Code"
-msgstr ""
+msgid "Deutsche Post Identcode"
+msgstr "Nemecký poštový Identcode"
 
 #: ../src/bc-backends.c:281
-msgid "EAN"
-msgstr ""
+msgid "Dutch Post KIX Code"
+msgstr "Dánsky poštový KIX Code"
 
 #: ../src/bc-backends.c:284
-msgid "Grid Matrix"
-msgstr ""
+msgid "EAN"
+msgstr "EAN"
 
 #: ../src/bc-backends.c:287
-msgid "GS1-128"
-msgstr ""
+msgid "Grid Matrix"
+msgstr "Grid Matrix"
 
 #: ../src/bc-backends.c:290
-msgid "GS1 DataBar-14"
-msgstr ""
+msgid "GS1-128"
+msgstr "GS1-128"
 
-#: ../src/bc-backends.c:299
-msgid "GS1 DataBar-14 Stacked"
-msgstr ""
+#: ../src/bc-backends.c:293
+msgid "GS1 DataBar-14"
+msgstr "GS1 DataBar-14"
 
 #: ../src/bc-backends.c:302
+msgid "GS1 DataBar-14 Stacked"
+msgstr "GS1 DataBar-14 vrstvený"
+
+#: ../src/bc-backends.c:305
 msgid "GS1 DataBar-14 Stacked Omni."
 msgstr ""
 
-#: ../src/bc-backends.c:305
-msgid "GS1 DataBar Extended Stacked"
-msgstr ""
-
 #: ../src/bc-backends.c:308
-msgid "HIBC Code 128"
-msgstr ""
+msgid "GS1 DataBar Extended Stacked"
+msgstr "GS1 DataBar rozšírený vrstvený"
 
 #: ../src/bc-backends.c:311
-msgid "HIBC Code 39"
-msgstr ""
+msgid "HIBC Code 128"
+msgstr "HIBC Code 128"
 
 #: ../src/bc-backends.c:314
-msgid "HIBC Data Matrix"
-msgstr ""
+msgid "HIBC Code 39"
+msgstr "HIBC Code 39"
 
 #: ../src/bc-backends.c:317
-msgid "HIBC QR Code"
-msgstr ""
+msgid "HIBC Data Matrix"
+msgstr "HIBC Data Matrix"
 
 #: ../src/bc-backends.c:320
-msgid "HIBC PDF417"
-msgstr ""
+msgid "HIBC QR Code"
+msgstr "HIBC QR kód"
 
 #: ../src/bc-backends.c:323
-msgid "HIBC Micro PDF417"
-msgstr ""
+msgid "HIBC PDF417"
+msgstr "HIBC PDF417"
 
 #: ../src/bc-backends.c:326
-msgid "HIBC Aztec Code"
-msgstr ""
+msgid "HIBC Micro PDF417"
+msgstr "HIBC Micro PDF417"
 
-#: ../src/bc-backends.c:335
-msgid "ITF-14"
-msgstr ""
+#: ../src/bc-backends.c:329
+msgid "HIBC Aztec Code"
+msgstr "HIBC Aztec Code"
 
 #: ../src/bc-backends.c:338
-msgid "Japanese Postal"
-msgstr ""
+msgid "ITF-14"
+msgstr "ITF-14"
 
 #: ../src/bc-backends.c:341
-msgid "Korean Postal"
-msgstr ""
+msgid "Japanese Postal"
+msgstr "Japonský poštový"
 
 #: ../src/bc-backends.c:344
-msgid "LOGMARS"
-msgstr ""
+msgid "Korean Postal"
+msgstr "Kórejský poštový"
 
 #: ../src/bc-backends.c:347
-msgid "Maxicode"
-msgstr ""
+msgid "LOGMARS"
+msgstr "LOGMARS"
 
 #: ../src/bc-backends.c:350
-msgid "Micro PDF417"
-msgstr ""
+msgid "Maxicode"
+msgstr "Maxicode"
 
 #: ../src/bc-backends.c:353
-msgid "Micro QR Code"
-msgstr ""
+msgid "Micro PDF417"
+msgstr "Micro PDF417"
 
 #: ../src/bc-backends.c:356
-msgid "MSI Plessey"
-msgstr ""
+msgid "Micro QR Code"
+msgstr "Micro QR Code"
 
 #: ../src/bc-backends.c:359
-msgid "NVE-18"
-msgstr ""
+msgid "MSI Plessey"
+msgstr "MSI Plessey"
 
 #: ../src/bc-backends.c:362
-msgid "PDF417"
-msgstr ""
+msgid "NVE-18"
+msgstr "NVE-18"
 
 #: ../src/bc-backends.c:365
-msgid "PDF417 Truncated"
-msgstr ""
+msgid "PDF417"
+msgstr "PDF417"
 
 #: ../src/bc-backends.c:368
-msgid "PLANET"
-msgstr ""
+msgid "PDF417 Truncated"
+msgstr "PDF417 skrátený"
 
 #: ../src/bc-backends.c:371
-msgid "PostNet"
-msgstr ""
+msgid "PLANET"
+msgstr "PLANET"
 
 #: ../src/bc-backends.c:374
-msgid "Pharmacode"
-msgstr ""
+msgid "PostNet"
+msgstr "PostNet"
 
 #: ../src/bc-backends.c:377
-msgid "Pharmacode 2-track"
-msgstr ""
+msgid "Pharmacode"
+msgstr "Pharmacode"
 
 #: ../src/bc-backends.c:380
-msgid "Pharmazentral Nummer (PZN)"
-msgstr ""
+msgid "Pharmacode 2-track"
+msgstr "Pharmacode binárny"
 
 #: ../src/bc-backends.c:383
-msgid "QR Code"
-msgstr ""
+msgid "Pharmazentral Nummer (PZN)"
+msgstr "Pharmazentral Nummer (PZN)"
 
 #: ../src/bc-backends.c:386
-msgid "Royal Mail 4-State"
-msgstr ""
+msgid "QR Code"
+msgstr "QR kód"
 
 #: ../src/bc-backends.c:389
-msgid "Telepen"
-msgstr ""
+msgid "Royal Mail 4-State"
+msgstr "Royal Mail 4-stavový"
 
 #: ../src/bc-backends.c:392
-msgid "Telepen Numeric"
-msgstr ""
+msgid "Telepen"
+msgstr "Telepen"
 
-#: ../src/bc-backends.c:401
-msgid "USPS One Code"
-msgstr ""
+#: ../src/bc-backends.c:395
+msgid "Telepen Numeric"
+msgstr "Telepen číselný"
 
 #: ../src/bc-backends.c:404
+msgid "USPS One Code"
+msgstr "USPS One Code"
+
+#: ../src/bc-backends.c:407
 msgid "UK Plessey"
-msgstr ""
+msgstr "UK Plessey"
 
-#: ../src/bc-backends.c:411
+#: ../src/bc-backends.c:414
 msgid "IEC16022 (DataMatrix)"
-msgstr ""
+msgstr "IEC16022 (DataMatrix)"
 
-#: ../src/bc-backends.c:418
+#: ../src/bc-backends.c:421
 msgid "IEC18004 (QRCode)"
-msgstr ""
+msgstr "IEC18004 (QRCode)"
 
 #: ../src/color-combo-button.c:198 ../src/color-combo.c:178
 msgid "Default Color"
-msgstr ""
+msgstr "Predvolená farba"
 
 #: ../src/color-combo-menu.c:83
 msgid "Dark Red"
-msgstr ""
+msgstr "Tmavo červená"
 
 #: ../src/color-combo-menu.c:84
 msgid "Brown"
-msgstr ""
+msgstr "Hnedá"
 
 #: ../src/color-combo-menu.c:85
 msgid "Dark Goldenrod"
-msgstr ""
+msgstr "Tmavo zlatooranžová"
 
 #: ../src/color-combo-menu.c:86
 msgid "Dark Green"
-msgstr ""
+msgstr "Tmavo zelená"
 
 #: ../src/color-combo-menu.c:87
 msgid "Dark Cyan"
-msgstr ""
+msgstr "Tmavo azúrová"
 
 #: ../src/color-combo-menu.c:88
 msgid "Navy Blue"
-msgstr ""
+msgstr "Námornícka modrá"
 
 #: ../src/color-combo-menu.c:89
 msgid "Dark Violet"
-msgstr ""
+msgstr "Tmavo fialová"
 
 #: ../src/color-combo-menu.c:91
 msgid "Red"
-msgstr ""
+msgstr "Červená"
 
 #: ../src/color-combo-menu.c:92
 msgid "Orange"
-msgstr ""
+msgstr "Oranžová"
 
 #: ../src/color-combo-menu.c:93
 msgid "Dark Yellow"
-msgstr ""
+msgstr "Tmavo žltá"
 
 #: ../src/color-combo-menu.c:94
 msgid "Medium green"
-msgstr ""
+msgstr "Stredne zelená"
 
 #: ../src/color-combo-menu.c:95
 msgid "Turquoise"
-msgstr ""
+msgstr "Tyrkysová"
 
 #: ../src/color-combo-menu.c:96
 msgid "Blue"
-msgstr ""
+msgstr "Modrá"
 
 #: ../src/color-combo-menu.c:97
 msgid "Purple"
-msgstr ""
+msgstr "Purpurová"
 
 #: ../src/color-combo-menu.c:99
 msgid "Salmon"
-msgstr ""
+msgstr "Lososová"
 
 #: ../src/color-combo-menu.c:100
 msgid "Gold"
-msgstr ""
+msgstr "Zlatá"
 
 #: ../src/color-combo-menu.c:101
 msgid "Yellow"
-msgstr ""
+msgstr "Žltá"
 
 #: ../src/color-combo-menu.c:102
 msgid "Green"
-msgstr ""
+msgstr "Zelená"
 
 #: ../src/color-combo-menu.c:103
 msgid "Cyan"
-msgstr ""
+msgstr "Azúrová"
 
 #: ../src/color-combo-menu.c:104
 msgid "SkyBlue"
-msgstr ""
+msgstr "Nebesky modrá"
 
 #: ../src/color-combo-menu.c:105
 msgid "Violet"
-msgstr ""
+msgstr "Fialová"
 
 #: ../src/color-combo-menu.c:107
 msgid "Pink"
-msgstr ""
+msgstr "Ružová"
 
 #: ../src/color-combo-menu.c:108
 msgid "Khaki"
-msgstr ""
+msgstr "Kaki"
 
 #: ../src/color-combo-menu.c:109
 msgid "Light Yellow"
-msgstr ""
+msgstr "Svetlo žltá"
 
 #: ../src/color-combo-menu.c:110
 msgid "Light Green"
-msgstr ""
+msgstr "Svetlo zelená"
 
 #: ../src/color-combo-menu.c:111
 msgid "Light Cyan"
-msgstr ""
+msgstr "Svetlo azúrová"
 
 #: ../src/color-combo-menu.c:112
 msgid "Slate Gray"
-msgstr ""
+msgstr "Bridlicová"
 
 #: ../src/color-combo-menu.c:113
 msgid "Thistle"
-msgstr ""
+msgstr "Staroružová"
 
 #: ../src/color-combo-menu.c:115
 msgid "White"
-msgstr ""
+msgstr "Biela"
 
 #: ../src/color-combo-menu.c:117
 #, no-c-format
 msgid "10% Gray"
-msgstr ""
+msgstr "10% sivá"
 
 #: ../src/color-combo-menu.c:119
 #, no-c-format
 msgid "25% Gray"
-msgstr ""
+msgstr "25% sivá"
 
 #: ../src/color-combo-menu.c:121
 #, no-c-format
 msgid "40% Gray"
-msgstr ""
+msgstr "40% sivá"
 
 #: ../src/color-combo-menu.c:123
 #, no-c-format
 msgid "50% Gray"
-msgstr ""
+msgstr "50% sivá"
 
 #: ../src/color-combo-menu.c:125
 #, no-c-format
 msgid "60% Gray"
-msgstr ""
+msgstr "60% sivá"
 
 #: ../src/color-combo-menu.c:126
 msgid "Black"
-msgstr ""
+msgstr "Čierna"
 
 #: ../src/color-combo-menu.c:254 ../src/color-combo-menu.c:373
 msgid "Custom Color"
-msgstr ""
+msgstr "Vlastná farba"
 
 #: ../src/color-combo-menu.c:319
 #, c-format
 msgid "Custom Color #%u"
-msgstr ""
+msgstr "Vlastná farba č.%u"
 
 #: ../src/critical-error-handler.c:72
 msgid "gLabels Fatal Error!"
-msgstr ""
+msgstr "Závažná chyba programu gLabels!"
 
 #: ../src/file.c:85
 msgid "New Label or Card"
-msgstr ""
+msgstr "Nový štítok alebo vizitka"
 
 #. Translators: dialog title
 #: ../src/file.c:174 ../src/label.c:602 ../src/label.c:646
 msgid "Label properties"
-msgstr ""
+msgstr "Vlastnosti štítku"
 
 #. Translators: assistent dialog title
 #: ../src/file.c:203
 msgid "Choose label properties"
-msgstr ""
+msgstr "Voľba vlastností štítku"
 
 #: ../src/file.c:295 ../src/file.c:597
 msgid "All files"
-msgstr ""
+msgstr "Všetky súbory"
 
 #: ../src/file.c:300 ../src/file.c:602
 msgid "gLabels documents"
-msgstr ""
+msgstr "Dokumenty programu gLabels"
 
 #: ../src/file.c:347 ../src/file.c:660
 msgid "Empty file name selection"
-msgstr ""
+msgstr "Výber súboru s prázdnym názvom"
 
 #: ../src/file.c:350 ../src/file.c:366
 msgid "Please select a file or supply a valid file name"
@@ -658,7 +662,7 @@ msgstr "Aa"
 #: ../src/font-combo-menu-item.c:134
 msgctxt "Lower case sample text"
 msgid "abcdefghijklmnopqrstuvwxyz"
-msgstr "abcdefghijklmnopqrstuvwxyz"
+msgstr "aáäbcčdďdzdžeéfghchiíjklĺľmnňoóôpqrŕsštťuúvwxyýzž"
 
 #: ../src/font-combo-menu-item.c:136
 msgctxt "Upper case sample text"
@@ -676,51 +680,51 @@ msgstr "Vzorový text"
 
 #: ../src/glabels-batch.c:53
 msgid "set output filename (default=\"output.pdf\")"
-msgstr ""
+msgstr "nastaví názov výstupného súboru (predvolený=„output.pdf“)"
 
 #: ../src/glabels-batch.c:53 ../src/glabels-batch.c:67
 msgid "filename"
-msgstr ""
+msgstr "názov_súboru"
 
 #: ../src/glabels-batch.c:55
 msgid "number of sheets (default=1)"
-msgstr ""
+msgstr "počet listov (predvolený=1)"
 
 #: ../src/glabels-batch.c:55
 msgid "sheets"
-msgstr ""
+msgstr "listy"
 
 #: ../src/glabels-batch.c:57
 msgid "number of copies (default=1)"
-msgstr ""
+msgstr "počet kópií (predvolený=1)"
 
 #: ../src/glabels-batch.c:57
 msgid "copies"
-msgstr ""
+msgstr "kópie"
 
 #: ../src/glabels-batch.c:59
 msgid "first label on first sheet (default=1)"
-msgstr ""
+msgstr "prvý štítok na prvom liste (predvolený=1)"
 
 #: ../src/glabels-batch.c:59
 msgid "first"
-msgstr ""
+msgstr "prvý"
 
 #: ../src/glabels-batch.c:61 ../data/ui/print-op-dialog-custom-widget.ui.h:11
 msgid "print outlines (to test printer alignment)"
-msgstr ""
+msgstr "tlačiť obrysy (na vyskúšanie zarovnania tlačiarne)"
 
 #: ../src/glabels-batch.c:63 ../data/ui/print-op-dialog-custom-widget.ui.h:12
 msgid "print in reverse (i.e. a mirror image)"
-msgstr ""
+msgstr "tlačiť obrátene (napr. zrkadlový obrázok)"
 
 #: ../src/glabels-batch.c:65 ../data/ui/print-op-dialog-custom-widget.ui.h:13
 msgid "print crop marks"
-msgstr ""
+msgstr "tlačiť orezávacie značky"
 
 #: ../src/glabels-batch.c:67
 msgid "input file for merging"
-msgstr ""
+msgstr "vstupný súbor na zlúčenie"
 
 #: ../src/glabels-batch.c:69 ../src/glabels.c:63
 msgid "[FILE...]"
@@ -728,7 +732,7 @@ msgstr "[SÚBOR...]"
 
 #: ../src/glabels-batch.c:99
 msgid "Print files created with gLabels."
-msgstr ""
+msgstr "Tlač súborov vytvorených programom gLabels."
 
 #: ../src/glabels-batch.c:107 ../src/glabels.c:87
 #, c-format
@@ -736,36 +740,39 @@ msgid ""
 "%s\n"
 "Run '%s --help' to see a full list of available command line options.\n"
 msgstr ""
+"%s\n"
+"Spustite „%s --help“ na zobrazenie kompletného zoznamu dostupných volieb "
+"príkazového riadku.\n"
 
 #: ../src/glabels-batch.c:151
 #, c-format
 msgid "cannot perform document merge with glabels file %s\n"
-msgstr ""
+msgstr "nedá sa vykonať zlúčenie dokumentov so súborom programu glabels %s\n"
 
 #: ../src/glabels-batch.c:186
 #, c-format
 msgid "cannot open glabels file %s\n"
-msgstr ""
+msgstr "nedá sa otvoriť súbor programu glabels %s\n"
 
 #: ../src/glabels.c:79
 msgid "Launch gLabels label and business card designer."
-msgstr ""
+msgstr "Spustenie programu gLabels, nástroja na návrh štítkov a vizitiek."
 
 #: ../src/label-barcode.c:183 ../src/ui.c:317
 msgid "Create barcode object"
-msgstr ""
+msgstr "Vytvoriť objekt s čiarovým kódom"
 
 #: ../src/label-barcode.c:259 ../src/label-barcode.c:461
 msgid "Barcode data"
-msgstr ""
+msgstr "Údaje čiarového kódu"
 
 #: ../src/label-barcode.c:290
 msgid "Barcode property"
-msgstr ""
+msgstr "Vlastnosť čiarového kódu"
 
 #: ../src/label-barcode.c:684
 msgid "Barcode data empty"
-msgstr ""
+msgstr "Žiadne údaje čiarového kódu"
 
 #: ../src/label-barcode.c:688
 msgid "Invalid barcode data"
@@ -773,7 +780,7 @@ msgstr "Neplatné údaje čiarového kódu"
 
 #: ../src/label-box.c:156
 msgid "Create box object"
-msgstr ""
+msgstr "Vytvoriť štvorcový objekt"
 
 #: ../src/label-box.c:230 ../src/label-ellipse.c:232
 #: ../data/ui/property-bar.ui.h:12
@@ -794,34 +801,37 @@ msgstr "Šírka čiary"
 msgid "Untitled"
 msgstr "Nepomenovaný"
 
-#. Translators: first param is numeric value of width, second is numeric
-#. value of height and third is unit. Example:
-#. "60 mm × 22.5 mm (width / height)"
+#. Translators: A rectangular label dimensions. first param is numeric value
+#. of width, second is numeric value of height and third is unit. Example:
+#. "60 × 22.5 mm (width / height)"
+#. Translators: A elliptical label dimensions. first param is numeric value of
+#. width, second is numeric value of height and third is unit. Example:
+#. "60 × 22.5 mm (width / height)"
 #: ../src/label.c:751 ../src/label.c:776
 #, c-format
 msgid "%s × %s %s (width × height)"
 msgstr "%s × %s %s (šírka × výška)"
 
-#. Translators: first param is numeric value of width, second is numeric
-#. value of height, third is numeric value of round and fourth is unit.
-#. Example:
-#. "50 mm × 30 / 1.5 mm (width × height / round)"
+#. Translators: A rounded rectangular label dimensions. first param is numeric
+#. value of width, second is numeric value of height, third is numeric value
+#. of round and fourth is unit. Example:
+#. "50 × 30 / 1.5 mm (width × height / round)"
 #: ../src/label.c:758
 #, c-format
 msgid "%s × %s / %s %s (width × height / round)"
 msgstr "%s × %s / %s %s (šírka × výška /zaoblenie)"
 
-#. Translators: first param is numeric value of diameter and secons is
-#. unit. Example:
+#. Translators: A round label dimensions. first param is numeric value of
+#. diameter and second is unit. Example:
 #. "120.5 mm (diameter)"
 #: ../src/label.c:788
 #, c-format
 msgid "%s %s (diameter)"
 msgstr "%s %s (priemer)"
 
-#. Translators: first param is numeric value of diameter, second is numeric
-#. value of whole and third is unit. Example:
-#. "120.5 mm / 30 mm (diameter / hole)"
+#. Translators: A CD/DVD label dimensions. first param is numeric value of
+#. diameter, second is numeric value of hole and third is unit. Example:
+#. "120.5 / 30 mm (diameter / hole)"
 #: ../src/label.c:806
 #, c-format
 msgid "%s / %s %s (diameter / hole)"
@@ -833,7 +843,7 @@ msgstr "Vlastnosti zlúčenia"
 
 #: ../src/label.c:1331 ../src/ui.c:213
 msgid "Delete"
-msgstr ""
+msgstr "Odstrániť"
 
 #: ../src/label.c:1366 ../src/ui.c:322
 msgid "Bring to front"
@@ -845,63 +855,63 @@ msgstr "Preniesť do úzadia"
 
 #: ../src/label.c:1443
 msgid "Rotate"
-msgstr "Otočiť"
+msgstr "Otočenie"
 
-#: ../src/label.c:1478 ../src/ui.c:336
+#: ../src/label.c:1480 ../src/ui.c:336
 msgid "Rotate left"
 msgstr "Otočiť doľava"
 
-#: ../src/label.c:1511 ../src/ui.c:343
+#: ../src/label.c:1515 ../src/ui.c:343
 msgid "Rotate right"
 msgstr "Otočiť doprava"
 
-#: ../src/label.c:1546 ../src/ui.c:350
+#: ../src/label.c:1552 ../src/ui.c:350
 msgid "Flip horizontally"
 msgstr "Prevrátiť vodorovne"
 
-#: ../src/label.c:1581 ../src/ui.c:357
+#: ../src/label.c:1589 ../src/ui.c:357
 msgid "Flip vertically"
 msgstr "Prevrátiť zvisle"
 
-#: ../src/label.c:1621 ../src/ui.c:364
+#: ../src/label.c:1631 ../src/ui.c:364
 msgid "Align left"
 msgstr "Zarovnať vľavo"
 
-#: ../src/label.c:1678 ../src/ui.c:378
+#: ../src/label.c:1688 ../src/ui.c:378
 msgid "Align right"
 msgstr "Zarovnať vpravo"
 
-#: ../src/label.c:1739
+#: ../src/label.c:1749
 msgid "Align horizontal center"
-msgstr ""
+msgstr "Zarovnanie vodorovne na stred"
 
-#: ../src/label.c:1815
+#: ../src/label.c:1825
 msgid "Align tops"
-msgstr ""
+msgstr "Zarovnanie vrchov"
 
-#: ../src/label.c:1872
+#: ../src/label.c:1882
 msgid "Align bottoms"
-msgstr ""
+msgstr "Zarovnanie spodkov"
 
-#: ../src/label.c:1933
+#: ../src/label.c:1943
 msgid "Align vertical center"
-msgstr ""
+msgstr "Zarovnanie zvislo na stred"
 
-#: ../src/label.c:2011 ../src/ui.c:406
+#: ../src/label.c:2021 ../src/ui.c:406
 msgid "Center horizontally"
 msgstr "Centrovať vodorovne"
 
-#: ../src/label.c:2058 ../src/ui.c:413
+#: ../src/label.c:2068 ../src/ui.c:413
 msgid "Center vertically"
 msgstr "Centrovať zvislo"
 
-#: ../src/label.c:2779 ../src/label.c:2821 ../src/label.c:2847 ../src/ui.c:206
+#: ../src/label.c:2789 ../src/label.c:2831 ../src/label.c:2857 ../src/ui.c:206
 msgid "Paste"
 msgstr "Vložiť"
 
 #: ../src/label-ellipse.c:160
 msgid "Create ellipse object"
-msgstr "Vytvoriť objekt s elipsou"
+msgstr "Vytvorenie objektu s elipsou"
 
 #: ../src/label-image.c:199 ../src/ui.c:310
 msgid "Create image object"
@@ -913,7 +923,7 @@ msgstr "Nastaviť obrázok"
 
 #: ../src/label-line.c:147 ../src/ui.c:296
 msgid "Create line object"
-msgstr "Vytvorí čiarový objekt"
+msgstr "Vytvoriť čiarový objekt"
 
 #: ../src/label-object.c:392 ../src/label-object.c:423
 msgid "Move"
@@ -921,7 +931,7 @@ msgstr "Presunúť"
 
 #: ../src/label-object.c:474
 msgid "Resize"
-msgstr "Zmeniť veľkosť"
+msgstr "Zmena veľkosti"
 
 #: ../src/label-object.c:1258
 msgid "Shadow state"
@@ -940,29 +950,29 @@ msgid "Shadow opacity"
 msgstr "Krytie tieňa"
 
 #. Translators: Button label to choose different template
-#: ../src/label-properties-dialog.c:173
+#: ../src/label-properties-dialog.c:163
 msgid "Choose _other…"
 msgstr "Zvoliť _iný…"
 
-#: ../src/label-properties-dialog.c:174 ../src/ui.c:162
+#: ../src/label-properties-dialog.c:164 ../src/ui.c:162
 msgid "_Close"
 msgstr "_Zavrieť"
 
 #. Translators: first param is numeric value of horizontal margine, second
 #. is numeric value of vertical margine and third is unit. Example:
 #. "10 / 12.5 mm (horizontal / vertical)"
-#: ../src/label-properties-dialog.c:292
+#: ../src/label-properties-dialog.c:282
 #, c-format
 msgid "%s / %s %s (horizontal / vertical)"
 msgstr "%s / %s %s (vodorovne /zvislo)"
 
 #: ../src/label-text.c:293 ../src/ui.c:282
 msgid "Create text object"
-msgstr "Vytvorí textový objekt"
+msgstr "Vytvoriť textový objekt"
 
 #: ../src/label-text.c:467
 msgid "Typing"
-msgstr ""
+msgstr "Písanie"
 
 #: ../src/label-text.c:601 ../data/ui/property-bar.ui.h:1
 msgid "Font family"
@@ -978,19 +988,19 @@ msgstr "Výška písma"
 
 #: ../src/label-text.c:705 ../data/ui/property-bar.ui.h:4
 msgid "Italic"
-msgstr ""
+msgstr "Kurzíva"
 
 #: ../src/label-text.c:738
 msgid "Align text"
-msgstr ""
+msgstr "Zarovnanie textu"
 
 #: ../src/label-text.c:771
 msgid "Vertically align text"
-msgstr ""
+msgstr "Zvislé zarovnanie textu"
 
 #: ../src/label-text.c:804
 msgid "Line spacing"
-msgstr ""
+msgstr "Riadkovanie"
 
 #: ../src/label-text.c:837 ../data/ui/property-bar.ui.h:11
 msgid "Text color"
@@ -998,7 +1008,7 @@ msgstr "Farba textu"
 
 #: ../src/label-text.c:997
 msgid "Auto shrink"
-msgstr ""
+msgstr "Automatické zmenšenie"
 
 #: ../src/media-select.c:358 ../src/media-select.c:361
 #: ../src/media-select.c:506 ../src/media-select.c:723
@@ -1060,47 +1070,47 @@ msgstr ""
 #. * method has been selected.
 #: ../src/merge.c:171 ../src/merge.c:212 ../src/merge.c:376 ../src/merge.c:379
 msgid "None"
-msgstr ""
+msgstr "Žiadny"
 
 #: ../src/merge-init.c:57
 msgid "Text: Comma Separated Values (CSV)"
-msgstr ""
+msgstr "Text: Čiarkou oddelené hodnoty (CSV)"
 
 #: ../src/merge-init.c:64
 msgid "Text: Comma Separated Values (CSV) with keys on line 1"
-msgstr ""
+msgstr "Text: Čiarkami oddelené hodnoty (CSV) s kľúčmi na riadku č. 1"
 
 #: ../src/merge-init.c:72
 msgid "Text: Tab Separated Values (TSV)"
-msgstr ""
+msgstr "Text: Tabulátorom oddelené hodnoty (TSV)"
 
 #: ../src/merge-init.c:79
 msgid "Text: Tab Separated Values (TSV) with keys on line 1"
-msgstr ""
+msgstr "Text: Tabulátormi oddelené hodnoty (TSV) s kľúčmi na riadku č. 1"
 
 #: ../src/merge-init.c:87
 msgid "Text: Colon separated values"
-msgstr ""
+msgstr "Text: Dvojbodkou oddelené hodnoty"
 
 #: ../src/merge-init.c:94
 msgid "Text: Colon separated values with keys on line 1"
-msgstr ""
+msgstr "Text: Dvojbodkami oddelené hodnoty s kľúčmi na riadku č. 1"
 
 #: ../src/merge-init.c:102
 msgid "Text: Semicolon separated values"
-msgstr ""
+msgstr "Text: Bodkočiarkou oddelené hodnoty"
 
 #: ../src/merge-init.c:109
 msgid "Text: Semicolon separated values with keys on line 1"
-msgstr ""
+msgstr "Text: Bodkočiarkami oddelené hodnoty s kľúčmi na riadku č. 1"
 
 #: ../src/merge-init.c:119
 msgid "Evolution Addressbook"
-msgstr ""
+msgstr "Adresár kontaktov programu Evolution"
 
 #: ../src/merge-init.c:125
 msgid "VCards"
-msgstr ""
+msgstr "Vizitky VCard"
 
 #: ../src/merge-properties-dialog.c:280
 msgid "Merge Properties"
@@ -1108,7 +1118,7 @@ msgstr "Vlastnosti zlúčenia"
 
 #: ../src/merge-properties-dialog.c:304 ../src/merge-properties-dialog.c:420
 msgid "Select merge-database source"
-msgstr ""
+msgstr "Vybrať zdroj pre zlúčenie databázy"
 
 #: ../src/merge-properties-dialog.c:315 ../src/merge-properties-dialog.c:446
 msgid "N/A"
@@ -1124,7 +1134,7 @@ msgstr "Záznam/pole"
 
 #: ../src/merge-properties-dialog.c:356 ../data/ui/object-editor.ui.h:24
 msgid "Data"
-msgstr ""
+msgstr "Údaje"
 
 #. Translators: "Fixed" here means that for the given document-merge method, there are
 #. * no further choices to further define the source of data.  E.g. if you select the
@@ -1132,23 +1142,24 @@ msgstr ""
 #.
 #: ../src/merge-properties-dialog.c:439
 msgid "Fixed"
-msgstr ""
+msgstr "Pevné"
 
 #. Translators: "Up" refers to the direction towards the top of a label.
 #: ../src/mini-preview.c:1051
 msgid "Up"
-msgstr ""
+msgstr "Vrch"
 
 # DK:https://bugzilla.gnome.org/show_bug.cgi?id=763003
-#: ../src/new-label-dialog.c:212 ../data/ui/new-label-dialog.ui.h:1
+#: ../src/new-label-dialog.c:214
+msgctxt "Title of dialog page to select a stationary product"
 msgid "Select Product"
 msgstr "Výber produktu"
 
-#: ../src/new-label-dialog.c:225 ../data/ui/new-label-dialog.ui.h:3
+#: ../src/new-label-dialog.c:227 ../data/ui/new-label-dialog.ui.h:3
 msgid "Choose Orientation"
 msgstr "Voľba orientácie"
 
-#: ../src/new-label-dialog.c:240
+#: ../src/new-label-dialog.c:242
 msgid "Review"
 msgstr "Zhodnotenie"
 
@@ -1156,9 +1167,9 @@ msgstr "Zhodnotenie"
 #: ../src/object-editor-text-page.c:102 ../src/prefs-dialog.c:335
 #: ../src/ui-property-bar.c:289
 msgid "Default"
-msgstr ""
+msgstr "Predvolené"
 
-#: ../src/object-editor.c:161 ../src/object-editor.c:470
+#: ../src/object-editor.c:161 ../src/object-editor.c:472
 msgid "Object properties"
 msgstr "Vlastnosti objektu"
 
@@ -1188,7 +1199,7 @@ msgstr "Vlastnosti objektu s čiarovým kódom"
 
 #: ../src/object-editor-edit-page.c:76
 msgid "Insert merge field"
-msgstr ""
+msgstr "Vložiť pole zlúčenia"
 
 #: ../src/object-editor-fill-page.c:79 ../src/prefs-dialog.c:341
 #: ../src/ui-property-bar.c:299
@@ -1226,11 +1237,11 @@ msgstr "Nastavenia aplikácie gLabels"
 #: ../data/ui/print-op-dialog-custom-widget.ui.h:2
 #: ../templates/misc-iso-templates.xml.h:28
 msgid "Labels"
-msgstr ""
+msgstr "Štítky"
 
 #: ../src/template-designer.c:429
 msgid "New gLabels Template"
-msgstr ""
+msgstr "Nová šablóna programu gLabels"
 
 #: ../src/template-designer.c:487
 msgid "Welcome"
@@ -1246,15 +1257,15 @@ msgstr "Veľkosť papiera"
 
 #: ../src/template-designer.c:642
 msgid "Label or Card Shape"
-msgstr "Tvar štítku alebo karty"
+msgstr "Tvar štítku alebo vizitky"
 
 #: ../src/template-designer.c:689 ../src/template-designer.c:790
 msgid "Label or Card Size"
-msgstr "Veľkosť štítku alebo karty"
+msgstr "Veľkosť štítku alebo vizitky"
 
 #: ../src/template-designer.c:873
 msgid "Label Size (round)"
-msgstr ""
+msgstr "Veľkosť štítku (zaobleného)"
 
 #: ../src/template-designer.c:954
 msgid "Label Size (CD/DVD)"
@@ -1272,13 +1283,14 @@ msgstr "Rozloženie(a)"
 msgid "Design Completed"
 msgstr "Návrh dokončený"
 
+# dialog title
 #: ../src/template-designer.c:1246
 msgid "Edit gLabels Template"
-msgstr ""
+msgstr "Úprava šablóny programu gLabels"
 
 #: ../src/template-designer.c:1549
 msgid "Brand and part# match an existing template!"
-msgstr "Značka a číslo dielu sa zhoduje s existujúcou šablónou!"
+msgstr "Značka a výrobné číslo sa zhoduje s existujúcou šablónou!"
 
 #. Menu entries.
 #: ../src/ui.c:91
@@ -1299,15 +1311,15 @@ msgstr "_Zobraziť"
 
 #: ../src/ui.c:95
 msgid "Customize Main Toolbar"
-msgstr ""
+msgstr "Prispôsobiť hlavný panel nástrojov"
 
 #: ../src/ui.c:96
 msgid "Customize Drawing Toolbar"
-msgstr ""
+msgstr "Prispôsobiť panel s kresliacimi nástrojmi"
 
 #: ../src/ui.c:97
 msgid "Customize Properties Toolbar"
-msgstr ""
+msgstr "Prispôsobiť panel nástrojov s vlastnosťami"
 
 #: ../src/ui.c:98
 msgid "_Objects"
@@ -1492,11 +1504,11 @@ msgstr "Obnoví mierku na 100%"
 
 #: ../src/ui.c:264
 msgid "Zoom to fit"
-msgstr ""
+msgstr "Priblížiť na veľkosť okna"
 
 #: ../src/ui.c:266
 msgid "Set scale to fit window"
-msgstr ""
+msgstr "Nastaví mierku podľa veľkosti okna"
 
 #: ../src/ui.c:273
 msgid "Select Mode"
@@ -1542,75 +1554,75 @@ msgstr "Čiarový kód"
 
 #: ../src/ui.c:324
 msgid "Raise object to top"
-msgstr ""
+msgstr "Prenesie objekt na vrch"
 
 #: ../src/ui.c:331
 msgid "Lower object to bottom"
-msgstr ""
+msgstr "Prenesie objekt na spodok"
 
 #: ../src/ui.c:338
 msgid "Rotate object 90 degrees counter-clockwise"
-msgstr ""
+msgstr "Otočí objekt o 90 stupňov v protismere ručičkových hodiniek"
 
 #: ../src/ui.c:345
 msgid "Rotate object 90 degrees clockwise"
-msgstr ""
+msgstr "Otočí objekt o 90 stupňov v smere ručičkových hodiniek"
 
 #: ../src/ui.c:352
 msgid "Flip object horizontally"
-msgstr ""
+msgstr "Prevráti objekt vodorovne"
 
 #: ../src/ui.c:359
 msgid "Flip object vertically"
-msgstr ""
+msgstr "Prevráti objekt zvislo"
 
 #: ../src/ui.c:366
 msgid "Align objects to left edges"
-msgstr ""
+msgstr "Zarovná objekty k ľavému okraju"
 
 #: ../src/ui.c:371
 msgid "Align center"
-msgstr ""
+msgstr "Zarovnať na stred"
 
 #: ../src/ui.c:373
 msgid "Align objects to horizontal centers"
-msgstr ""
+msgstr "Zarovná objekty k stredu vodorovne"
 
 #: ../src/ui.c:380
 msgid "Align objects to right edges"
-msgstr ""
+msgstr "Zarovná objekty k pravému okraju"
 
 #: ../src/ui.c:385
 msgid "Align top"
-msgstr ""
+msgstr "Zarovnať na vrch"
 
 #: ../src/ui.c:387
 msgid "Align objects to top edges"
-msgstr ""
+msgstr "Zarovná objekty k hornému okraju"
 
 #: ../src/ui.c:392
 msgid "Align middle"
-msgstr ""
+msgstr "Zarovnať na prostred"
 
 #: ../src/ui.c:394
 msgid "Align objects to vertical centers"
-msgstr ""
+msgstr "Zarovná objekty k zvislému stredu"
 
 #: ../src/ui.c:399
 msgid "Align bottom"
-msgstr ""
+msgstr "Zarovnať na spodok"
 
 #: ../src/ui.c:401
 msgid "Align objects to bottom edges"
-msgstr ""
+msgstr "Zarovná objekty k spodnému okraju"
 
 #: ../src/ui.c:408
 msgid "Center objects to horizontal label center"
-msgstr ""
+msgstr "Vycentruje objekty na stred štítku vo vodorovnom smere"
 
 #: ../src/ui.c:415
 msgid "Center objects to vertical label center"
-msgstr ""
+msgstr "Vycentruje objekty na stred štítku v zvislom smere"
 
 #: ../src/ui.c:422
 msgid "Edit merge properties"
@@ -1618,11 +1630,11 @@ msgstr "Upraví vlastnosti zlúčenia"
 
 #: ../src/ui.c:429
 msgid "Contents"
-msgstr ""
+msgstr "Obsah"
 
 #: ../src/ui.c:431
 msgid "Open glabels manual"
-msgstr ""
+msgstr "Otvorí príručku k programu glabels"
 
 #: ../src/ui.c:436
 msgid "About..."
@@ -1634,59 +1646,59 @@ msgstr "O programe gLabels"
 
 #: ../src/ui.c:448
 msgid "Property toolbar"
-msgstr ""
+msgstr "Panel s vlastnosťami"
 
 #: ../src/ui.c:450
 msgid "Change the visibility of the property toolbar in the current window"
-msgstr ""
+msgstr "Zmení viditeľnosť panelu s vlastnosťami v aktuálnom okne"
 
 #: ../src/ui.c:456
 msgid "Grid"
-msgstr ""
+msgstr "Mriežka"
 
 #: ../src/ui.c:458
 msgid "Change the visibility of the grid in the current window"
-msgstr ""
+msgstr "Zmení viditeľnosť mriežky v aktuálnom okne"
 
 #: ../src/ui.c:464
 msgid "Markup"
-msgstr ""
+msgstr "Značky"
 
 #: ../src/ui.c:466
 msgid "Change the visibility of markup lines in the current window"
-msgstr ""
+msgstr "Zmení viditeľnosť značkovacích čiar v aktuálnom okne"
 
 #: ../src/ui.c:477
 msgid "Main toolbar"
-msgstr ""
+msgstr "Hlavný panel nástrojov"
 
 #: ../src/ui.c:479
 msgid "Change the visibility of the main toolbar in the current window"
-msgstr ""
+msgstr "Zmení viditeľnosť hlavného panelu nástorjov v aktuálnom okne"
 
 #: ../src/ui.c:485
 msgid "Drawing toolbar"
-msgstr ""
+msgstr "Panel s kresliacimi nástrojmi"
 
 #: ../src/ui.c:487
 msgid "Change the visibility of the drawing toolbar in the current window"
-msgstr ""
+msgstr "Zmení viditeľnosť panelu s kresliacimi nástrojmi v aktuálnom okne"
 
 #: ../src/ui-commands.c:1135
 msgid "Glabels includes contributions from:"
-msgstr ""
+msgstr "Program Glabels zahŕňa príspevky od:"
 
 #: ../src/ui-commands.c:1144
 msgid "See the file AUTHORS for additional credits,"
-msgstr ""
+msgstr "Pre dodatočné poďakovanie si prezrite súbor AUTHORS,"
 
 #: ../src/ui-commands.c:1145
 msgid "or visit http://glabels.org/"
-msgstr ""
+msgstr "alebo navštívte adresu http://glabels.org/"
 
 #: ../src/ui-commands.c:1162
 msgid "A label and business card creation program.\n"
-msgstr ""
+msgstr "Program na tvorbu štítkov a vizitiek.\n"
 
 #: ../src/ui-commands.c:1166
 msgid "translator-credits"
@@ -1707,15 +1719,15 @@ msgstr ""
 
 #: ../src/warning-handler.c:71
 msgid "gLabels Error!"
-msgstr ""
+msgstr "Chyba programu gLabels!"
 
 #: ../src/window.c:281
 msgid "(none) - gLabels"
-msgstr ""
+msgstr "(nič) - gLabels"
 
-#: ../src/window.c:482
+#: ../src/window.c:484
 msgid "(modified)"
-msgstr ""
+msgstr "(upravené)"
 
 #. Create and append an "Other" entry.
 #. Translators: "Other" here means other page size.  Meaning a page size
@@ -1723,35 +1735,41 @@ msgstr ""
 #. * "letter", "A4", etc.
 #: ../libglabels/lgl-db.c:267
 msgid "Other"
-msgstr ""
+msgstr "Ostatné"
 
 #. Create and append a "User defined" entry.
 #: ../libglabels/lgl-db.c:276
 msgid "User defined"
-msgstr ""
+msgstr "Užívateľská"
 
 #: ../libglabels/lgl-db.c:663
 msgid ""
 "Unable to locate paper size definitions.  Libglabels may not be installed "
 "correctly!"
 msgstr ""
+"Nie je možné lokalizovať definície veľkostí papiera. Knižnica libglabels asi "
+"nie je nainštalovaná správne!"
 
 #: ../libglabels/lgl-db.c:1062
 msgid ""
 "Unable to locate category definitions.  Libglabels may not be installed "
 "correctly!"
 msgstr ""
+"Nie je možné lokalizovať definície kategórií. Knižnica libglabels asi nie je "
+"nainštalovaná správne!"
 
 #: ../libglabels/lgl-db.c:1989
 msgid ""
 "Unable to locate any template files.  Libglabels may not be installed "
 "correctly!"
 msgstr ""
+"Nie je možné lokalizovať žiadne súbory šablón. Knižnica glabels asi nie je "
+"nainštalovaná správne!"
 
 #: ../libglabels/lgl-db.c:2056
 #, c-format
 msgid "%s full page label"
-msgstr ""
+msgstr "Štítok na celú stranu %s"
 
 #.
 #. * Translators: 1st %d = number of labels across a page,
@@ -1767,12 +1785,12 @@ msgstr "%d × %d (%d na list)"
 #: ../libglabels/lgl-template.c:678
 #, c-format
 msgid "%d per sheet"
-msgstr ""
+msgstr "%d na list"
 
 #: ../libglabels/lgl-template.c:759 ../libglabels/lgl-template.c:767
 #: ../libglabels/lgl-template.c:779 ../libglabels/lgl-template.c:787
 msgid "diameter"
-msgstr ""
+msgstr "priemer"
 
 #. The ids are identical to the absolute length units supported in
 #. the CSS2 Specification (Section 4.3.2)
@@ -1781,23 +1799,23 @@ msgstr ""
 #: ../libglabels/lgl-units.c:65 ../data/ui/object-editor.ui.h:15
 #: ../data/ui/prefs-dialog.ui.h:19
 msgid "points"
-msgstr ""
+msgstr "bodov"
 
 #. [LGL_UNITS_INCH]
 #: ../libglabels/lgl-units.c:66 ../data/ui/object-editor.ui.h:28
 #: ../data/ui/template-designer.ui.h:15
 msgid "inches"
-msgstr ""
+msgstr "palcov"
 
 #. [LGL_UNITS_MM]
 #: ../libglabels/lgl-units.c:67
 msgid "mm"
-msgstr ""
+msgstr "mm"
 
 #. [LGL_UNITS_CM]
 #: ../libglabels/lgl-units.c:68
 msgid "cm"
-msgstr ""
+msgstr "cm"
 
 #. [LGL_UNITS_PICA]
 #: ../libglabels/lgl-units.c:69
@@ -1814,7 +1832,7 @@ msgstr ""
 #.
 #: ../data/ui/label-properties-dialog.ui.h:1
 msgid "Label"
-msgstr ""
+msgstr "Štítok"
 
 #: ../data/ui/label-properties-dialog.ui.h:2
 #: ../data/ui/new-label-dialog.ui.h:15
@@ -1824,7 +1842,7 @@ msgstr "Výrobca:"
 #: ../data/ui/label-properties-dialog.ui.h:3
 #: ../data/ui/new-label-dialog.ui.h:14 ../data/ui/template-designer.ui.h:6
 msgid "Part #:"
-msgstr "Číslo dielu:"
+msgstr "Výrobné číslo:"
 
 #: ../data/ui/label-properties-dialog.ui.h:4 ../data/ui/new-label-dialog.ui.h:9
 #: ../data/ui/template-designer.ui.h:9
@@ -1864,12 +1882,11 @@ msgstr "Orientácia:"
 
 #: ../data/ui/label-properties-dialog.ui.h:12
 msgid "_Normal"
-msgstr ""
+msgstr "_Normálna"
 
 #: ../data/ui/label-properties-dialog.ui.h:13
-#, fuzzy
 msgid "_Rotated"
-msgstr "O_točiť/prevrátiť"
+msgstr "O_točená"
 
 #: ../data/ui/media-select.ui.h:1
 msgid "Recent"
@@ -1906,27 +1923,32 @@ msgstr "Umiestnenie:"
 
 #: ../data/ui/merge-properties-dialog.ui.h:3
 msgid "Source"
-msgstr ""
+msgstr "Zdroj"
 
 #: ../data/ui/merge-properties-dialog.ui.h:4
 msgid "Select all"
-msgstr ""
+msgstr "Vybrať všetko"
 
 #: ../data/ui/merge-properties-dialog.ui.h:5
 msgid "Unselect all"
-msgstr ""
+msgstr "Zrušiť výber"
 
 #: ../data/ui/merge-properties-dialog.ui.h:6
 msgid "Record selection/preview"
-msgstr ""
+msgstr "Výber/náhľad záznamov"
+
+# DK:https://bugzilla.gnome.org/show_bug.cgi?id=763003
+#: ../data/ui/new-label-dialog.ui.h:1
+msgid "Select Product"
+msgstr "Výber produktu"
 
 #: ../data/ui/new-label-dialog.ui.h:2
 msgid ""
 "Choose label or card product from hundreds of predefined templates or define "
 "your own."
 msgstr ""
-"Zvoľte produkt štítku alebo karty zo stoviek preddefinovaných šablón, alebo "
-"definujte svoju vlastnú."
+"Zvoľte produkt štítku alebo vizitky zo stoviek preddefinovaných šablón, "
+"alebo definujte svoju vlastnú."
 
 #: ../data/ui/new-label-dialog.ui.h:4
 msgid "Select orientation of label content."
@@ -1978,7 +2000,7 @@ msgstr ""
 
 #: ../data/ui/object-editor.ui.h:8
 msgid "key:"
-msgstr ""
+msgstr "kľúč:"
 
 #: ../data/ui/object-editor.ui.h:9 ../data/ui/prefs-dialog.ui.h:15
 msgid "Alignment:"
@@ -1990,11 +2012,11 @@ msgstr "Zvislé zarovnanie:"
 
 #: ../data/ui/object-editor.ui.h:11 ../data/ui/prefs-dialog.ui.h:16
 msgid "Line Spacing:"
-msgstr ""
+msgstr "Riadkovanie:"
 
 #: ../data/ui/object-editor.ui.h:12
 msgid "Allow merge to automatically shrink text"
-msgstr ""
+msgstr "Povoliť zlúčenie na automatické zmenšenie textu"
 
 #: ../data/ui/object-editor.ui.h:13
 msgid "Style"
@@ -2007,11 +2029,11 @@ msgstr "Šírka:"
 
 #: ../data/ui/object-editor.ui.h:16
 msgid "Key:"
-msgstr ""
+msgstr "Kľúč:"
 
 #: ../data/ui/object-editor.ui.h:18 ../data/ui/prefs-dialog.ui.h:21
 msgid "Fill"
-msgstr ""
+msgstr "Výplň"
 
 #: ../data/ui/object-editor.ui.h:19
 msgid "File:"
@@ -2019,39 +2041,39 @@ msgstr "Súbor:"
 
 #: ../data/ui/object-editor.ui.h:21
 msgid "Literal:"
-msgstr ""
+msgstr "Znaky:"
 
 #: ../data/ui/object-editor.ui.h:22
 msgid "format:"
-msgstr ""
+msgstr "formát:"
 
 #: ../data/ui/object-editor.ui.h:23
 msgid "digits:"
-msgstr ""
+msgstr "číslice:"
 
 #: ../data/ui/object-editor.ui.h:25
 msgid "Backend:"
-msgstr ""
+msgstr "Podklad:"
 
 #: ../data/ui/object-editor.ui.h:26
 msgid "Checksum"
-msgstr ""
+msgstr "Kontrolný medzisúčet"
 
 #: ../data/ui/object-editor.ui.h:27 ../data/ui/template-designer.ui.h:14
 msgid "Height:"
-msgstr ""
+msgstr "Výška:"
 
 #: ../data/ui/object-editor.ui.h:29
 msgid "Reset image size"
-msgstr ""
+msgstr "Obnoviť veľkosť obrázku"
 
 #: ../data/ui/object-editor.ui.h:30
 msgid "Size"
-msgstr ""
+msgstr "Veľkosť"
 
 #: ../data/ui/object-editor.ui.h:31
 msgid "Length:"
-msgstr ""
+msgstr "Dĺžka:"
 
 #: ../data/ui/object-editor.ui.h:32
 msgid "Angle:"
@@ -2059,7 +2081,7 @@ msgstr "Uhol:"
 
 #: ../data/ui/object-editor.ui.h:33
 msgid "degrees"
-msgstr ""
+msgstr "stupňov"
 
 #: ../data/ui/object-editor.ui.h:34
 msgid "X:"
@@ -2075,7 +2097,7 @@ msgstr "Pozícia"
 
 #: ../data/ui/object-editor.ui.h:37
 msgid "Enable shadow"
-msgstr ""
+msgstr "Povoliť tieň"
 
 #: ../data/ui/object-editor.ui.h:38
 msgid "X Offset:"
@@ -2164,11 +2186,11 @@ msgstr "do:"
 
 #: ../data/ui/print-op-dialog-custom-widget.ui.h:5
 msgid "Copies"
-msgstr ""
+msgstr "Kópie"
 
 #: ../data/ui/print-op-dialog-custom-widget.ui.h:6
 msgid "Start on label"
-msgstr ""
+msgstr "Začať so štítkom"
 
 #: ../data/ui/print-op-dialog-custom-widget.ui.h:7
 msgid "on 1st sheet"
@@ -2180,39 +2202,39 @@ msgstr "Kópie:"
 
 #: ../data/ui/print-op-dialog-custom-widget.ui.h:9
 msgid "Collate"
-msgstr ""
+msgstr "Zoradiť"
 
 #: ../data/ui/print-op-dialog-custom-widget.ui.h:10
 msgid "Merge Control"
-msgstr ""
+msgstr "Ovládanie zlúčenia"
 
 #: ../data/ui/property-bar.ui.h:3
 msgid "Bold"
-msgstr ""
+msgstr "Tučné"
 
 #: ../data/ui/property-bar.ui.h:5
 msgid "Left align"
-msgstr ""
+msgstr "Zarovná vľavo"
 
 #: ../data/ui/property-bar.ui.h:6
 msgid "Center align"
-msgstr ""
+msgstr "Zarovná na stred"
 
 #: ../data/ui/property-bar.ui.h:7
 msgid "Right align"
-msgstr ""
+msgstr "Zarovná vpravo"
 
 #: ../data/ui/property-bar.ui.h:8
 msgid "Top vertical align"
-msgstr ""
+msgstr "Zarovná nahor v zvislom smere"
 
 #: ../data/ui/property-bar.ui.h:9
 msgid "Center vertical align"
-msgstr ""
+msgstr "Zarovná na stred v zvislom smere"
 
 #: ../data/ui/property-bar.ui.h:10
 msgid "Bottom vertical align"
-msgstr ""
+msgstr "zarovná nadol v zvislom smere"
 
 #: ../data/ui/template-designer.ui.h:1
 msgid ""
@@ -2220,12 +2242,17 @@ msgid ""
 "\n"
 "This dialog will assist you in the creation of a custom gLabels template."
 msgstr ""
+"Vitajte v návrhárovi šablón programu gLabels.\n"
+"\n"
+"Toto dialógové okno vám pomôže pri tvorbe vlastnej šablóny programu gLabels."
 
 #: ../data/ui/template-designer.ui.h:4
 msgid ""
 "Please enter the following identifying information about the template "
 "stationery."
 msgstr ""
+"Prosím, zadajte nasledovné identifikačné informácie o šablóne kancelárskej "
+"pomôcky."
 
 #: ../data/ui/template-designer.ui.h:5
 msgid "Brand/Manufacturer:"
@@ -2237,41 +2264,43 @@ msgstr "(napr. 8163A)"
 
 #: ../data/ui/template-designer.ui.h:8
 msgid "(e.g., Avery, Acme, ...)"
-msgstr ""
+msgstr "(napr. Avery, Acme, ...)"
 
 #: ../data/ui/template-designer.ui.h:10
 msgid "(e.g., \"Mailing Labels,\" \"Business Cards,\" ...)"
-msgstr ""
+msgstr "(napr. „Poštové štítky“, „Vizitky“ ...)"
 
 #: ../data/ui/template-designer.ui.h:11
 msgid "Please select the page size of the template stationery."
-msgstr ""
+msgstr "Prosím, vyberte veľkosť stránky šablóny kancelárskej pomôcky."
 
 #: ../data/ui/template-designer.ui.h:16
 msgid "Please select the basic shape of the labels or cards."
-msgstr ""
+msgstr "Prosím, vyberte základný tvar štítkov alebo vizitiek."
 
 #: ../data/ui/template-designer.ui.h:17
 msgid "Rectangular or square (can have rounded corners)"
-msgstr ""
+msgstr "Obdĺžnikový alebo štvorcový (môže mať zaoblené rohy)"
 
 #: ../data/ui/template-designer.ui.h:18
 msgid "Round"
-msgstr ""
+msgstr "Oblý"
 
 #: ../data/ui/template-designer.ui.h:19
 msgid "Elliptical"
-msgstr ""
+msgstr "Elipsový"
 
 #: ../data/ui/template-designer.ui.h:20
 msgid "CD/DVD (including credit card CDs)"
-msgstr ""
+msgstr "CD/DVD (vrátane CD o veľkosti kreditnej karty)"
 
 #: ../data/ui/template-designer.ui.h:21
 msgid ""
 "Please enter the following size parameters of a single label or card in your "
 "template."
 msgstr ""
+"Prosím, zadajte nasledovné parametre veľkosti jedného štítku alebo vizitky "
+"vo vašej šablóne."
 
 #: ../data/ui/template-designer.ui.h:22
 msgid "1. Width:"
@@ -2287,7 +2316,7 @@ msgstr "3. Zaoblenie (polomer rohu):"
 
 #: ../data/ui/template-designer.ui.h:25
 msgid "4. Horiz. waste (overprint allowed):"
-msgstr ""
+msgstr "4. Vod. odpad (povolená pretlač):"
 
 #: ../data/ui/template-designer.ui.h:26
 msgid "6. Margin"
@@ -2295,11 +2324,11 @@ msgstr "6. Okraj"
 
 #: ../data/ui/template-designer.ui.h:27
 msgid "5. Vert. waste (overprint allowed):"
-msgstr ""
+msgstr "5. Zvis. odpad (povolená pretlač):"
 
 #: ../data/ui/template-designer.ui.h:28
 msgid "3. Waste (overprint allowed):"
-msgstr ""
+msgstr "3. Odpad (povolená pretlač):"
 
 #: ../data/ui/template-designer.ui.h:29
 msgid "4. Margin"
@@ -2310,38 +2339,40 @@ msgid ""
 "Please enter the following size parameters of a single label in your "
 "template."
 msgstr ""
+"Prosím, zadajte nasledovné parametre veľkosti jedného štítku vo vašej "
+"šablóne."
 
 #: ../data/ui/template-designer.ui.h:31
 msgid "1. Radius:"
-msgstr ""
+msgstr "1. Polomer:"
 
 #: ../data/ui/template-designer.ui.h:32
 msgid "2. Waste (overprint allowed):"
-msgstr ""
+msgstr "2. Odpad (povolená pretlač):"
 
 #: ../data/ui/template-designer.ui.h:33
 msgid "3. Margin"
-msgstr ""
+msgstr "3. Okraj"
 
 #: ../data/ui/template-designer.ui.h:34
 msgid "1. Outer radius:"
-msgstr ""
+msgstr "1. Vonkajší polomer:"
 
 #: ../data/ui/template-designer.ui.h:35
 msgid "2. Inner radius:"
-msgstr ""
+msgstr "2. Vnútorný polomer:"
 
 #: ../data/ui/template-designer.ui.h:36
 msgid "3. Clipping width:"
-msgstr ""
+msgstr "3. Šírka orezania:"
 
 #: ../data/ui/template-designer.ui.h:37
 msgid "4. Clipping height:"
-msgstr ""
+msgstr "4. Výška orezania:"
 
 #: ../data/ui/template-designer.ui.h:38
 msgid "5. Waste (overprint allowed):"
-msgstr ""
+msgstr "5. Odpad (povolená pretlač):"
 
 #: ../data/ui/template-designer.ui.h:39
 msgid ""
@@ -2351,68 +2382,81 @@ msgid ""
 "Most templates only need one layout, as in the first example.\n"
 "The second example illustrates when two layouts are needed."
 msgstr ""
+"Koľko rozložení bude obsahovať vaša šablóna? \n"
+"\n"
+"Rozloženie je sada štítkov alebo vizitiek, ktorá môže byť usporiadaná v "
+"jednoduchej mriežke.\n"
+"Väčšina šablón vyžaduje iba jedno rozloženie, ako je zobrazené v prvom "
+"príklade.\n"
+"Druhý príklad zobrazuje, kedy sú potrebné dve rozloženia."
 
 #: ../data/ui/template-designer.ui.h:44
 msgid ""
 "Templates needing only\n"
 "one layout."
 msgstr ""
+"Šablóny vyžadujúce iba\n"
+"jedno rozloženie."
 
 #: ../data/ui/template-designer.ui.h:46
 msgid ""
 "Templates needing\n"
 "two layouts."
 msgstr ""
+"Šablóny vyžadujúce\n"
+"dve rozloženia."
 
 #: ../data/ui/template-designer.ui.h:48
 msgid ""
 "Note: if more than 2 layouts are required, the template must be edited "
 "manually."
 msgstr ""
+"Poznámka: Ak sú potrebné viac ako 2 rozloženia, šablóna musí byť upravená "
+"ručne."
 
 #: ../data/ui/template-designer.ui.h:49
 msgid "Number of layouts:"
-msgstr ""
+msgstr "Počet rozložení:"
 
 #: ../data/ui/template-designer.ui.h:50
 msgid "Please enter the following layout information."
-msgstr ""
+msgstr "Prosím, zadajte nasledovné informácie o rozložení."
 
 #: ../data/ui/template-designer.ui.h:51
 msgid "Layout #1"
-msgstr ""
+msgstr "Rozloženie č.1"
 
 #: ../data/ui/template-designer.ui.h:52
 msgid "Layout #2"
-msgstr ""
+msgstr "Rozloženie č.2"
 
 #: ../data/ui/template-designer.ui.h:53
 msgid "Number across (nx):"
-msgstr ""
+msgstr "Počet vodorovne (nx):"
 
 #: ../data/ui/template-designer.ui.h:54
 msgid "Number down (ny):"
-msgstr ""
+msgstr "Počet zvislo (ny):"
 
 #: ../data/ui/template-designer.ui.h:55
 msgid "Distance from left edge (x0):"
-msgstr ""
+msgstr "Vzdialenosť od ľavej hrany (x0):"
 
 #: ../data/ui/template-designer.ui.h:56
 msgid "Distance from top edge (y0):"
-msgstr ""
+msgstr "Vzdialenosť od hornej hrany (x0):"
 
 #: ../data/ui/template-designer.ui.h:57
 msgid "Horizontal pitch (dx):"
-msgstr ""
+msgstr "Vodorovný rozstup (dx):"
 
 #: ../data/ui/template-designer.ui.h:58
 msgid "Vertical pitch (dy):"
-msgstr ""
+msgstr "Zvislý rozstup (dy):"
 
 #: ../data/ui/template-designer.ui.h:59
 msgid "Print test sheet"
-msgstr ""
+msgstr "Vytlačiť skúšobný list"
 
 #: ../data/ui/template-designer.ui.h:60
 msgid ""
@@ -2424,6 +2468,14 @@ msgid ""
 "Otherwise, you may click \"Cancel\" to abandon your design\n"
 "or \"Back\" to continue editing this design."
 msgstr ""
+"Gratulujeme!\n"
+"\n"
+"Dokončili ste návrhára šablón programu gLabels.\n"
+"Ak si želáte prijať a uložiť váš návrh, kliknite na „Použiť“.\n"
+"\n"
+"V opačnom prípade môžete kliknúť na „Zrušiť“ a zahodíte\n"
+"váš návrh, alebo kliknite na „Späť“, ak chcete pokračovať\n"
+"v úprave tohto návrhu."
 
 #: ../data/appdata/glabels-3.appdata.xml.in.h:1
 msgid "gLabels"
@@ -2440,6 +2492,10 @@ msgid ""
 "to work with various laser/ink-jet peel-off label and business card sheets "
 "that you'll find at most office supply stores."
 msgstr ""
+"gLabels je program na vytváranie štítkov a vizitiek. Je navrhnutý tak, aby "
+"fungoval s rozličnými samolepiacimi hárkami so štítkami potlačiteľnými "
+"laserovými alebo atramentovými tlačiarňami, ktoré nájdete vo väčšine "
+"obchodov s kancelárskymi potrebami."
 
 #: ../data/appdata/glabels-3.appdata.xml.in.h:4
 msgid ""
@@ -2450,186 +2506,193 @@ msgid ""
 "lets you print a unique label for each record from an external data source, "
 "such as a CSV file or an Evolution address book."
 msgstr ""
+"Program gLabels môže byť použitý na navrhovanie adresných štítkov, menoviek, "
+"cenoviek, štítkov na cd/dvd, alebo na hocičo iné, čo je usporiadané v "
+"pravidelnom vzore na hárku papiera. Štítky (alebo vizitky) môžu obsahovať "
+"text, obrázky, čiary, tvary a čiarové kódy. Program gLabels tiež obsahuje "
+"funkciu na zlúčenie dokumentov, ktorý vám umožňuje tlačiť unikátnu menovku "
+"pre každý záznam z externého zdroja údajov, ako je súbor CSV alebo adresár "
+"kontaktov programu Evolution."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:1
 msgid "Show/hide main toolbar."
-msgstr ""
+msgstr "Zobraziť alebo skryť hlavný panel nástrojov."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:2
 msgid "Controls visibility of main toolbar."
-msgstr ""
+msgstr "Ovláda viditeľnosť hlavného panelu nástrojov."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:3
 msgid "Show/hide drawing toolbar."
-msgstr ""
+msgstr "Zobraziť alebo skryť panel s kresliacimi nástrojmi."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:4
 msgid "Controls visibility of drawing toolbar."
-msgstr ""
+msgstr "Ovláda viditeľnosť panelu s kresliacimi nástrojmi."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:5
 msgid "Show/hide property toolbar."
-msgstr ""
+msgstr "Zobraziť alebo skryť panel s vlastnosťami."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:6
 msgid "Controls visibility of property toolbar."
-msgstr ""
+msgstr "Ovláda viditeľnosť panelu s vlastnosťami."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:7
 msgid "Show/hide grid."
-msgstr ""
+msgstr "Zobraziť alebo skryť mriežku."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:8
 msgid "Controls visibility of grid."
-msgstr ""
+msgstr "Ovláda viditeľnosť mriežky."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:9
 msgid "Show/hide markup."
-msgstr ""
+msgstr "Zobraziť alebo skryť značky."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:10
 msgid "Controls visibility of markup lines."
-msgstr ""
+msgstr "Ovláda viditeľnosť značkovacích čiar."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:11
 msgid "Maximum recent files."
-msgstr ""
+msgstr "Maximálny počet nedávnych súborov."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:12
 msgid "Controls maximum number of recent files tracked."
-msgstr ""
+msgstr "Ovláda maximálny počet uložených nedávnych súborov."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:13
 msgid "Units."
-msgstr ""
+msgstr "Jednotky."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:14
 msgid "The default unit of measurement."
-msgstr ""
+msgstr "Predvolená jednotka merania."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:15
 msgid "Default page size."
-msgstr ""
+msgstr "Predvolená veľkosť stránky."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:16
 msgid "The preferred page size when searching templates."
-msgstr ""
+msgstr "Preferovaná veľkosť stránky pri hľadaní šablón."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:17
 msgid "Default font family."
-msgstr ""
+msgstr "Predvolená rodina písma."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:18
 msgid "The default font family for new text objects."
-msgstr ""
+msgstr "Predvolená rodina písma pre nové textové objekty."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:19
 msgid "Default font size."
-msgstr ""
+msgstr "Predvolená veľkosť písma."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:20
 msgid "The default font size for new text objects."
-msgstr ""
+msgstr "Predvolená veľkosť písma pre nové textové objekty."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:21
 msgid "Default font weight."
-msgstr ""
+msgstr "Predvolená výška písma."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:22
 msgid "The default font weight for new text objects."
-msgstr ""
+msgstr "Predvolená výška písma pre nové textové objekty."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:23
 msgid "Default font italic flag."
-msgstr ""
+msgstr "Predvolená značka kurzívy."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:24
 msgid "The default font italic state for new text objects."
-msgstr ""
+msgstr "Predvolený stav kurzívy pre nové textové objekty."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:25
 msgid "Default text color."
-msgstr ""
+msgstr "Predvolená farba textu."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:26
 msgid "The default color of text for new text objects (0xRRGGBBAA)."
-msgstr ""
+msgstr "Predvolená farba textu pre nové textové objekty (0xRRGGBBAA)."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:27
 msgid "Default text alignment."
-msgstr ""
+msgstr "Predvolené zarovnanie textu."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:28
 msgid "The default text alignment for new text objects."
-msgstr ""
+msgstr "Predvolené zarovnanie textu pre nové textové objekty."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:29
 msgid "Default text line spacing."
-msgstr ""
+msgstr "Predvolené riadkovanie textu."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:30
 msgid "The default line spacing for new text objects."
-msgstr ""
+msgstr "Predvolené riadkovanie pre nové textové objekty."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:31
 msgid "Default line width."
-msgstr ""
+msgstr "Predvolená šírka čiary."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:32
 msgid "The default line width for new objects."
-msgstr ""
+msgstr "Predvolená šírka čiary pre nové objekty."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:33
 msgid "Default line color."
-msgstr ""
+msgstr "Predvolená farba čiary."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:34
 msgid "The default line color new objects (0xRRGGBBAA)."
-msgstr ""
+msgstr "Predvolená farba čiary pre nové objekty (0xRRGGBBAA)."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:35
 msgid "Default fill color."
-msgstr ""
+msgstr "Predvolená farba výplne."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:36
 msgid "The default fill color new objects (0xRRGGBBAA)."
-msgstr ""
+msgstr "Predvolená farba výplne pre nové objekty (0xRRGGBBAA)."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:37
 msgid "Recent templates."
-msgstr ""
+msgstr "Nedávne šablóny."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:38
 msgid "Recently used templates."
-msgstr ""
+msgstr "Nedávno použité šablóny."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:39
 msgid "Recent fonts."
-msgstr ""
+msgstr "Nedávne písma."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:40
 msgid "Recently used font families."
-msgstr ""
+msgstr "Nedávno použité rodiny písiem."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:41
 msgid "Recent colors."
-msgstr ""
+msgstr "Nedávne farby."
 
 #: ../data/schemas/org.gnome.glabels-3.gschema.xml.in.in.h:42
 msgid "Recently created custom colors."
-msgstr ""
+msgstr "Nedávno vytvorené vlastné farby."
 
 #: ../data/desktop/glabels-3.0.desktop.in.h:1
 msgid "gLabels Label Designer 3"
-msgstr ""
+msgstr "gLabels - Návrhár štítkov 3"
 
 #: ../data/desktop/glabels-3.0.desktop.in.h:3
 msgid "label;card;print;office;barcode;"
-msgstr ""
+msgstr "štítok;vizitka;tlač;kancelária;čiarový kód;ean;"
 
 #: ../data/mime/glabels-3.0.xml.in.h:1
 msgid "gLabels Project File"
-msgstr ""
+msgstr "Súbor s projektom programu gLabels"
 
 #. Most popular (at top of list)
 #: ../templates/paper-sizes.xml.h:2
@@ -2795,31 +2858,33 @@ msgstr "SRA4"
 
 #: ../templates/categories.xml.h:1
 msgid "Any label"
-msgstr ""
+msgstr "Akýkoľvek štítok"
 
 #. ====================================================================
 #. ===================================================================
-#: ../templates/categories.xml.h:2 ../templates/endisch-templates.xml.h:1
+#: ../templates/categories.xml.h:2 ../templates/begalabel-templates.xml.h:3
+#: ../templates/endisch-templates.xml.h:1
 #: ../templates/hama-iso-templates.xml.h:4
 #: ../templates/pearl-iso-templates.xml.h:4
 #: ../templates/rayfilm-templates.xml.h:8
 #: ../templates/sheetlabels-us-templates.xml.h:16
 msgid "Round labels"
-msgstr ""
+msgstr "Okrúhle štítky"
 
 #. ===================================================================
-#: ../templates/categories.xml.h:3 ../templates/endisch-templates.xml.h:2
+#: ../templates/categories.xml.h:3 ../templates/begalabel-templates.xml.h:4
+#: ../templates/endisch-templates.xml.h:2
 #: ../templates/pearl-iso-templates.xml.h:58
 #: ../templates/rayfilm-templates.xml.h:9
 msgid "Elliptical labels"
-msgstr ""
+msgstr "Elipsové štítky"
 
 #. ====================================================================
 #: ../templates/categories.xml.h:4 ../templates/endisch-templates.xml.h:4
 #: ../templates/hama-iso-templates.xml.h:41
 #: ../templates/rayfilm-templates.xml.h:2
 msgid "Square labels"
-msgstr ""
+msgstr "Štvorcové štítky"
 
 #. ===================================================================
 #. ====================================================================
@@ -2827,6 +2892,7 @@ msgstr ""
 #. ********************************************************************
 #. ===================================================================
 #: ../templates/categories.xml.h:5 ../templates/ascom-iso-templates.xml.h:4
+#: ../templates/begalabel-templates.xml.h:2
 #: ../templates/endisch-templates.xml.h:3
 #: ../templates/hama-iso-templates.xml.h:27
 #: ../templates/herma-iso-templates.xml.h:20
@@ -2834,11 +2900,11 @@ msgstr ""
 #: ../templates/rayfilm-templates.xml.h:1
 #: ../templates/sheetlabels-us-templates.xml.h:2
 msgid "Rectangular labels"
-msgstr ""
+msgstr "Obdĺžnikové štítky"
 
 #: ../templates/categories.xml.h:6
 msgid "Any card"
-msgstr ""
+msgstr "Akákoľvek vizitka"
 
 #. ===================================================================
 #. ====================================================================
@@ -2848,23 +2914,32 @@ msgstr ""
 #: ../templates/hama-iso-templates.xml.h:8
 #: ../templates/pearl-iso-templates.xml.h:38
 msgid "Business cards"
-msgstr ""
+msgstr "Vizitky"
 
 #: ../templates/categories.xml.h:8
-msgid "CD/DVD or other media"
+msgid "Name Badge"
 msgstr ""
 
 #: ../templates/categories.xml.h:9
-msgid "Mailing/shipping products"
-msgstr ""
+msgid "CD/DVD or other media"
+msgstr "CD/DVD alebo iné médium"
 
 #: ../templates/categories.xml.h:10
+msgid "Mailing/shipping products"
+msgstr "Poštové/doručovacie produkty"
+
+#: ../templates/categories.xml.h:11
 msgid "Foldable cards"
 msgstr ""
 
-#: ../templates/categories.xml.h:11
+#: ../templates/categories.xml.h:12
 msgid "Photo products"
-msgstr ""
+msgstr "Fotografické produkty"
+
+#: ../templates/categories.xml.h:13
+#, fuzzy
+msgid "Filing labels"
+msgstr "gLabels"
 
 #. TODO: Is this the real part #?
 #. ============================================================
@@ -2881,7 +2956,7 @@ msgstr ""
 #: ../templates/misc-iso-templates.xml.h:2
 #: ../templates/zweckform-iso-templates.xml.h:6
 msgid "Rectangular Labels"
-msgstr ""
+msgstr "Obdĺžnikové štítky"
 
 #. ===================================================================
 #: ../templates/ascom-iso-templates.xml.h:6
@@ -2896,7 +2971,7 @@ msgstr ""
 #. ===============================================================
 #: ../templates/ascom-iso-templates.xml.h:8
 #: ../templates/avery-iso-templates.xml.h:26
-#: ../templates/zweckform-iso-templates.xml.h:28
+#: ../templates/zweckform-iso-templates.xml.h:26
 msgid "CD Inlet"
 msgstr ""
 
@@ -2913,14 +2988,14 @@ msgstr ""
 #. ===================================================================
 #: ../templates/avery-us-templates.xml.h:6
 msgid "Large Round Labels"
-msgstr ""
+msgstr "Veľké zaoblené štítky"
 
 #. ===================================================================
 #: ../templates/avery-us-templates.xml.h:8
 #: ../templates/avery-other-templates.xml.h:2
 #: ../templates/worldlabel-us-templates.xml.h:5
 msgid "File Folder Labels"
-msgstr ""
+msgstr "Štítky na priečinky kartoték"
 
 #. ===================================================================
 #. ********************************************************************
@@ -2931,7 +3006,7 @@ msgstr ""
 #: ../templates/uline-us-templates.xml.h:2
 #: ../templates/worldlabel-us-templates.xml.h:4
 msgid "Shipping Labels"
-msgstr ""
+msgstr "Doručovacie štítky"
 
 #. ===================================================================
 #. ********************************************************************
@@ -2939,7 +3014,7 @@ msgstr ""
 #: ../templates/avery-us-templates.xml.h:12
 #: ../templates/avery-iso-templates.xml.h:14
 #: ../templates/databecker-iso-templates.xml.h:6
-#: ../templates/dymo-other-templates.xml.h:4
+#: ../templates/dymo-other-templates.xml.h:14
 #: ../templates/geha-iso-templates.xml.h:25
 #: ../templates/maco-us-templates.xml.h:2
 #: ../templates/meritline-us-templates.xml.h:4
@@ -2948,17 +3023,17 @@ msgstr ""
 #: ../templates/worldlabel-us-templates.xml.h:3
 #: ../templates/zweckform-iso-templates.xml.h:4
 msgid "Address Labels"
-msgstr ""
+msgstr "Adresné štítky"
 
 #. ===================================================================
 #. ********************************************************************
 #: ../templates/avery-us-templates.xml.h:14
-#: ../templates/dymo-other-templates.xml.h:6
+#: ../templates/dymo-other-templates.xml.h:2
 #: ../templates/meritline-us-templates.xml.h:8
 #: ../templates/sheetlabels-us-templates.xml.h:8
 #: ../templates/worldlabel-us-templates.xml.h:2
 msgid "Return Address Labels"
-msgstr ""
+msgstr "Štítky spiatočnej adresy"
 
 #. ===================================================================
 #: ../templates/avery-us-templates.xml.h:16
@@ -2968,7 +3043,7 @@ msgstr ""
 #: ../templates/sheetlabels-us-templates.xml.h:10
 #: ../templates/worldlabel-us-templates.xml.h:9
 msgid "Round Labels"
-msgstr "Okrúhle etikety"
+msgstr "Okrúhle štítky"
 
 #. ===================================================================
 #: ../templates/avery-us-templates.xml.h:18
@@ -2977,7 +3052,7 @@ msgstr "Okrúhle etikety"
 #: ../templates/sheetlabels-us-templates.xml.h:18
 #: ../templates/worldlabel-us-templates.xml.h:8
 msgid "Diskette Labels"
-msgstr "Etikety na diskety"
+msgstr "Štítky na diskety"
 
 #. ===================================================================
 #: ../templates/avery-us-templates.xml.h:20
@@ -3004,7 +3079,7 @@ msgstr ""
 #: ../templates/misc-us-templates.xml.h:25
 #: ../templates/misc-iso-templates.xml.h:4
 #: ../templates/rayfilm-templates.xml.h:15
-#: ../templates/zweckform-iso-templates.xml.h:30
+#: ../templates/zweckform-iso-templates.xml.h:28
 msgid "Business Cards"
 msgstr "Vizitky"
 
@@ -3030,6 +3105,7 @@ msgstr ""
 #. ===================================================================
 #: ../templates/avery-us-templates.xml.h:32
 #: ../templates/avery-iso-templates.xml.h:6
+#: ../templates/begalabel-templates.xml.h:5
 #: ../templates/geha-iso-templates.xml.h:10
 #: ../templates/herma-iso-templates.xml.h:14
 #: ../templates/igepa-templates.xml.h:5 ../templates/jac-iso-templates.xml.h:2
@@ -3043,7 +3119,7 @@ msgstr ""
 #: ../templates/worldlabel-us-templates.xml.h:12
 #: ../templates/zweckform-iso-templates.xml.h:8
 msgid "CD/DVD Labels"
-msgstr "Etikety na CD/DVD"
+msgstr "Štítky na CD/DVD"
 
 #. ===================================================================
 #: ../templates/avery-us-templates.xml.h:34
@@ -3060,7 +3136,7 @@ msgstr ""
 #: ../templates/avery-us-templates.xml.h:38
 #: ../templates/geha-iso-templates.xml.h:17
 #: ../templates/meritline-us-templates.xml.h:16
-#: ../templates/sheetlabels-us-templates.xml.h:22
+#: ../templates/sheetlabels-us-templates.xml.h:24
 #: ../templates/worldlabel-us-templates.xml.h:10
 msgid "Video Tape Face Labels"
 msgstr ""
@@ -3108,6 +3184,7 @@ msgstr ""
 
 #. ===================================================================
 #: ../templates/avery-iso-templates.xml.h:12
+#: ../templates/dymo-other-templates.xml.h:6
 #: ../templates/misc-iso-templates.xml.h:12
 msgid "Address labels"
 msgstr ""
@@ -3115,7 +3192,7 @@ msgstr ""
 #. ===================================================================
 #: ../templates/avery-iso-templates.xml.h:16
 msgid "Shipping labels"
-msgstr ""
+msgstr "Doručovacie štítky"
 
 #. ===============================================================
 #. ===================================================================
@@ -3124,14 +3201,14 @@ msgstr ""
 #: ../templates/herma-iso-templates.xml.h:8
 #: ../templates/misc-us-templates.xml.h:21
 #: ../templates/misc-iso-templates.xml.h:6
-#: ../templates/sheetlabels-us-templates.xml.h:24
+#: ../templates/sheetlabels-us-templates.xml.h:28
 #: ../templates/zweckform-iso-templates.xml.h:10
 msgid "Mailing Labels"
 msgstr ""
 
 #. ===============================================================
 #: ../templates/avery-iso-templates.xml.h:24
-#: ../templates/zweckform-iso-templates.xml.h:26
+#: ../templates/zweckform-iso-templates.xml.h:24
 msgid "CD Booklet"
 msgstr ""
 
@@ -3150,6 +3227,14 @@ msgstr ""
 #: ../templates/avery-iso-templates.xml.h:32
 #: ../templates/hama-iso-templates.xml.h:31
 msgid "Diskette labels"
+msgstr ""
+
+#: ../templates/begalabel-templates.xml.h:1
+msgid "Rounded rectangular labels"
+msgstr ""
+
+#: ../templates/begalabel-templates.xml.h:6
+msgid "Cassette Tape Face"
 msgstr ""
 
 #.
@@ -3173,15 +3258,15 @@ msgstr ""
 
 #: ../templates/brother-other-templates.xml.h:17
 msgid "Shipping Labels 62mm x 100mm"
-msgstr ""
+msgstr "Doručovacie štítky 62mm x 100mm"
 
 #: ../templates/brother-other-templates.xml.h:18
 msgid "Multi Purpose Labels 17mm x 54mm"
-msgstr ""
+msgstr "Viacúčelové štítky 17mm x 54mm"
 
 #: ../templates/brother-other-templates.xml.h:19
 msgid "Standard Address Labels 38mm x 90mm"
-msgstr ""
+msgstr "Štandardné adresné štítky 38mm x 90mm"
 
 #.
 #. *********************************************************************
@@ -3202,19 +3287,19 @@ msgstr ""
 #.
 #: ../templates/brother-other-templates.xml.h:37
 msgid "Standard Address Labels 29mm x 90mm (Old)"
-msgstr ""
+msgstr "Štandardné adresné štítky 29mm x 90mm (Staré)"
 
 #: ../templates/brother-other-templates.xml.h:38
 msgid "Shipping Labels 62mm x 100mm (Old)"
-msgstr ""
+msgstr "Doručovacie štítky 62mm x 100mm (Staré)"
 
 #: ../templates/brother-other-templates.xml.h:39
 msgid "Multi Purpose Labels 17mm x 54mm (Old)"
-msgstr ""
+msgstr "Viacúčelové štítky 17mm x 54mm (Staré)"
 
 #: ../templates/brother-other-templates.xml.h:40
 msgid "Standard Address Labels 38mm x 90mm (Old)"
-msgstr ""
+msgstr "Štandardné adresné štítky 38mm x 90mm (Staré)"
 
 #. ===================================================================
 #: ../templates/canon-other-templates.xml.h:2
@@ -3233,7 +3318,7 @@ msgstr ""
 #: ../templates/desmat-templates.xml.h:2
 #: ../templates/misc-iso-templates.xml.h:22
 msgid "CD Labels"
-msgstr ""
+msgstr "Štítky na CD"
 
 #. ===================================================================
 #. ====================================================================
@@ -3242,7 +3327,7 @@ msgstr ""
 #: ../templates/hama-iso-templates.xml.h:35
 #: ../templates/misc-iso-templates.xml.h:34
 msgid "CD/DVD labels"
-msgstr ""
+msgstr "Štítky na CD/DVD"
 
 #. ===================================================================
 #: ../templates/dataline-iso-templates.xml.h:8
@@ -3251,19 +3336,18 @@ msgid "Membership cards"
 msgstr ""
 
 #. ===================================================================
-#: ../templates/dymo-other-templates.xml.h:2
-#: ../templates/geha-iso-templates.xml.h:23
-msgid "Large Address Labels"
+#: ../templates/dymo-other-templates.xml.h:4
+msgid "Multipurpose Labels"
 msgstr ""
 
 #. ===================================================================
 #: ../templates/dymo-other-templates.xml.h:8
-msgid "Shipping Address Labels"
-msgstr ""
+msgid "File Folder"
+msgstr "Priečinok kartotéky"
 
 #. ===================================================================
 #: ../templates/dymo-other-templates.xml.h:10
-msgid "File Folder"
+msgid "Name Badges"
 msgstr ""
 
 #. ===================================================================
@@ -3272,23 +3356,29 @@ msgid "Hanging Folder"
 msgstr ""
 
 #. ===================================================================
-#: ../templates/dymo-other-templates.xml.h:14
-msgid "3.5in Diskette"
+#: ../templates/dymo-other-templates.xml.h:16
+#: ../templates/geha-iso-templates.xml.h:23
+msgid "Large Address Labels"
 msgstr ""
+
+#. ===================================================================
+#: ../templates/dymo-other-templates.xml.h:18
+msgid "Shipping Address Labels"
+msgstr "Štítky pre doručovaciu adresu"
 
 #. ===================================================================
 #: ../templates/endisch-templates.xml.h:5
 #: ../templates/pearl-iso-templates.xml.h:20
 #: ../templates/rayfilm-templates.xml.h:3
 msgid "Labels A6"
-msgstr ""
+msgstr "Štítky A6"
 
 #. ===================================================================
 #: ../templates/endisch-templates.xml.h:6
 #: ../templates/pearl-iso-templates.xml.h:22
 #: ../templates/rayfilm-templates.xml.h:4
 msgid "Labels A5"
-msgstr ""
+msgstr "Štítky A5"
 
 #. *******************************************************************
 #. ===================================================================
@@ -3297,17 +3387,17 @@ msgstr ""
 #: ../templates/pearl-iso-templates.xml.h:6
 #: ../templates/rayfilm-templates.xml.h:5
 msgid "Labels A4"
-msgstr ""
+msgstr "Štítky A4"
 
 #: ../templates/endisch-templates.xml.h:8
 #: ../templates/rayfilm-templates.xml.h:6
 msgid "Labels A3"
-msgstr ""
+msgstr "Štítky A3"
 
 #: ../templates/endisch-templates.xml.h:9
 #: ../templates/rayfilm-templates.xml.h:7
 msgid "Labels SRA3"
-msgstr ""
+msgstr "Štítky SRA3"
 
 #. ===================================================================
 #: ../templates/geha-iso-templates.xml.h:2
@@ -3319,7 +3409,7 @@ msgstr ""
 #: ../templates/geha-iso-templates.xml.h:6
 #: ../templates/hama-iso-templates.xml.h:25
 msgid "Greeting cards"
-msgstr ""
+msgstr "Pohľadnice"
 
 #. ===================================================================
 #: ../templates/geha-iso-templates.xml.h:8
@@ -3439,7 +3529,7 @@ msgstr ""
 
 #. ===================================================================
 #: ../templates/herma-iso-templates.xml.h:10
-#: ../templates/zweckform-iso-templates.xml.h:20
+#: ../templates/zweckform-iso-templates.xml.h:18
 msgid "Allround Labels"
 msgstr ""
 
@@ -3457,7 +3547,7 @@ msgstr ""
 #: ../templates/igepa-templates.xml.h:2
 #: ../templates/pearl-iso-templates.xml.h:18
 msgid "Floppy disk labels"
-msgstr ""
+msgstr "Štítky na diskety"
 
 #. ===================================================================
 #: ../templates/igepa-templates.xml.h:4
@@ -3468,17 +3558,17 @@ msgstr ""
 #. *******************************************************************
 #: ../templates/jac-iso-templates.xml.h:8
 msgid "PVC labels"
-msgstr ""
+msgstr "Štítky PVC"
 
 #. ===================================================================
 #: ../templates/meritline-us-templates.xml.h:2
 msgid "Mini-CD Labels"
-msgstr ""
+msgstr "Štítky na Mini-CD"
 
 #. ===================================================================
 #: ../templates/microapp-templates.xml.h:2
 msgid "Standard Labels"
-msgstr ""
+msgstr "Štandardné štítky"
 
 #. ===================================================================
 #. TODO: Is this the actual part #?
@@ -3495,7 +3585,7 @@ msgstr ""
 #. TODO: Is this the actual part #?
 #: ../templates/misc-us-templates.xml.h:6
 msgid "Cassette Labels"
-msgstr ""
+msgstr "Štítky na kazety"
 
 #. ===================================================================
 #: ../templates/misc-us-templates.xml.h:10
@@ -3514,7 +3604,7 @@ msgstr ""
 #. ===================================================================
 #: ../templates/misc-us-templates.xml.h:15
 msgid "Business Card CD"
-msgstr ""
+msgstr "CD vizitka"
 
 #. ===================================================================
 #: ../templates/misc-us-templates.xml.h:17
@@ -3524,7 +3614,7 @@ msgstr ""
 #. ===================================================================
 #: ../templates/misc-us-templates.xml.h:19
 msgid "DLT Labels"
-msgstr ""
+msgstr "Štítky DLT"
 
 #. ===================================================================
 #. TODO: Is this the actual part #?
@@ -3551,18 +3641,18 @@ msgstr ""
 #. ===================================================================
 #: ../templates/misc-iso-templates.xml.h:8
 msgid "General Labels"
-msgstr ""
+msgstr "Všeobecné štítky"
 
 #. ===================================================================
 #: ../templates/misc-iso-templates.xml.h:10
 #: ../templates/pearl-iso-templates.xml.h:28
 msgid "Self-adhesive labels"
-msgstr ""
+msgstr "Samolepiace štítky"
 
 #. ===================================================================
 #: ../templates/misc-iso-templates.xml.h:16
 msgid "Fridge Magnet Stickers"
-msgstr ""
+msgstr "Štítky na magnetky na chladničku"
 
 #. ===================================================================
 #: ../templates/misc-iso-templates.xml.h:18
@@ -3577,13 +3667,14 @@ msgstr ""
 #. ===================================================================
 #: ../templates/misc-iso-templates.xml.h:32
 msgid "Universal Labels"
-msgstr ""
+msgstr "Univerzálne štítky"
 
 #. ===================================================================
 #: ../templates/misc-iso-templates.xml.h:36
 #: ../templates/pearl-iso-templates.xml.h:16
+#: ../templates/sheetlabels-us-templates.xml.h:26
 msgid "Bottle labels"
-msgstr ""
+msgstr "Štítky na fľaše"
 
 #. ===================================================================
 #: ../templates/misc-iso-templates.xml.h:40
@@ -3618,7 +3709,7 @@ msgstr ""
 #. ===================================================================
 #: ../templates/pearl-iso-templates.xml.h:30
 msgid "SD card labels"
-msgstr ""
+msgstr "Štítky na SD karty"
 
 #. ===================================================================
 #: ../templates/pearl-iso-templates.xml.h:40
@@ -3676,7 +3767,7 @@ msgstr ""
 
 #: ../templates/rayfilm-templates.xml.h:12
 msgid "Mini CD Labels"
-msgstr ""
+msgstr "Štítky na Mini CD"
 
 #: ../templates/rayfilm-templates.xml.h:13
 msgid "Triangular labels"
@@ -3687,31 +3778,148 @@ msgid "Trapezoid labels"
 msgstr ""
 
 #. ===================================================================
+#: ../templates/sheetlabels-us-templates.xml.h:22
+msgid "Oval bottle labels"
+msgstr "Oválne štítky na fľaše"
+
+#. ===================================================================
 #: ../templates/zweckform-iso-templates.xml.h:12
 msgid "QSL-Karten Etiketten 70mm x 50,8mm"
 msgstr ""
 
 #. ===================================================================
 #: ../templates/zweckform-iso-templates.xml.h:14
-msgid "File Back Labels"
-msgstr ""
-
-#. ===================================================================
-#: ../templates/zweckform-iso-templates.xml.h:16
 msgid "Multi-purpose Stick+Lift Labels"
 msgstr ""
 
 #. ===================================================================
-#: ../templates/zweckform-iso-templates.xml.h:18
+#: ../templates/zweckform-iso-templates.xml.h:16
 msgid "Video Labels (back)"
 msgstr ""
 
 #. ===================================================================
-#: ../templates/zweckform-iso-templates.xml.h:22
+#: ../templates/zweckform-iso-templates.xml.h:20
 msgid "Rectangular Copier Labels"
 msgstr ""
 
 #. ===================================================================
-#: ../templates/zweckform-iso-templates.xml.h:24
+#: ../templates/zweckform-iso-templates.xml.h:22
 msgid "Correction and Cover-up Labels"
 msgstr ""
+
+#~ msgid "Jar labels, candle labels"
+#~ msgstr "Štítky na poháre, štítky na sviečky"
+
+#~ msgid "Barcode labels"
+#~ msgstr "Štítky s čiarovým kódom"
+
+#~ msgid "Water bottle labels"
+#~ msgstr "Štítky na fľaše od vody"
+
+#, fuzzy
+#~ msgid "Lip balm tube labels"
+#~ msgstr "O programe gLabels"
+
+#~ msgid "Return address labels"
+#~ msgstr "Štítky spiatočnej adresy"
+
+#~ msgid "Jar labels"
+#~ msgstr "Štítky na poháre"
+
+#, fuzzy
+#~ msgid "Digital video labels"
+#~ msgstr "gLabels"
+
+#~ msgid "File folder labels"
+#~ msgstr "Štítky na priečinky kartoték"
+
+#, fuzzy
+#~ msgid "Amazon FBA shipping labels"
+#~ msgstr "gLabels"
+
+#~ msgid "Digital media labels"
+#~ msgstr "Štítky na digitálne nosiče"
+
+#~ msgid "Wine bottle labels"
+#~ msgstr "Štítky na fľaše na víno"
+
+#~ msgid "Liquor bottle labels"
+#~ msgstr "Štítky na fľaše od alkoholu"
+
+#, fuzzy
+#~ msgid "Metal tin container labels"
+#~ msgstr "Začať so štítkom"
+
+#~ msgid "USPS® shipping labels"
+#~ msgstr "Doručovacie štítky spoločnosti USPS®"
+
+#, fuzzy
+#~ msgid "Jar labels, water bottle labels"
+#~ msgstr "O programe gLabels"
+
+#~ msgid "PayPal® label"
+#~ msgstr "Štítok spoločnosti PayPal®"
+
+#~ msgid "Nutritional labels"
+#~ msgstr "Štítky s nutričnými hodnotami"
+
+#~ msgid "CD case labels"
+#~ msgstr "Štítky na obal CD"
+
+#~ msgid "Business card size labels"
+#~ msgstr "Štítky s veľkosťou vizitky"
+
+#~ msgid "Wine bottle labels, shipping labels, UPS® WorldShip® labels"
+#~ msgstr ""
+#~ "Štítky na fľaše na víno, doručovacie štítky, štítky typu WorldShip® "
+#~ "spoločnosti UPS®"
+
+#~ msgid "Coffee and tea labels"
+#~ msgstr "Kávové a čajové štítky"
+
+#~ msgid "Water bottle labels, shipping labels"
+#~ msgstr "Štítky na fľaše od vody, doručovacie štítky"
+
+#~ msgid "VICS labels"
+#~ msgstr "Štítky VICS"
+
+#, fuzzy
+#~ msgid "Full sheet labels"
+#~ msgstr "gLabels"
+
+#~ msgid "Lip balm labels"
+#~ msgstr "Štítky na balzam na pery"
+
+#~ msgid "Candle labels, lip balm labels"
+#~ msgstr "Štítky na sviečky, štítky na balzam na pery"
+
+#, fuzzy
+#~ msgid "Seal labels"
+#~ msgstr "gLabels"
+
+#~ msgid "Jar labels, candle labels, lip balm labels"
+#~ msgstr "Štítky na poháre, štítky na sviečky, štítky na balzam na pery"
+
+#, fuzzy
+#~ msgid "CD/DVD center hub labels"
+#~ msgstr "Etikety na CD/DVD"
+
+#, fuzzy
+#~ msgid "Business card CD labels"
+#~ msgstr "Vizitky"
+
+#~ msgid "Mini CD labels"
+#~ msgstr "Štítky na Mini CD"
+
+#, fuzzy
+#~ msgid "Full face CD/DVD labels"
+#~ msgstr "Etikety na CD/DVD"
+
+#~ msgid "eBay® shipping labels"
+#~ msgstr "Doručovacie štítky spoločnosti eBay®"
+
+#~ msgid "Jar labels, nutritional labels"
+#~ msgstr "Štítky na poháre, štítky s nutričnými hodnotami"
+
+#~ msgid "Wine bottle labels, nutritional labels"
+#~ msgstr "Štítky na fľaše na víno, štítky s nutričnými hodnotami"
