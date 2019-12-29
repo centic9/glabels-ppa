@@ -1,3 +1,9 @@
+glabels (3.4.1-1.2ubuntu0~ppa2) bionic; urgency=medium
+
+  * Rebuild for newer qrencode version.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sun, 29 Dec 2019 10:58:10 +0100
+
 glabels (3.4.1-1.2ubuntu0~ppa1) bionic; urgency=medium
 
   * Backport to Bionic

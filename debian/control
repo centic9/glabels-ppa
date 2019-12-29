@@ -18,7 +18,7 @@ Build-Depends: autotools-dev,
                libpango1.0-dev (>= 1.28.1),
                libebook1.2-dev (>= 3.6.0),
                barcode (>= 0.98),
-               libqrencode-dev (>= 3.1.0),
+               libqrencode-dev (>= 4.0.2),
                libiec16022-dev (>= 0.2.4)
 Standards-Version: 3.9.8
 Homepage: http://glabels.org/
