@@ -1,3 +1,16 @@
+glabels (3.4.1-1.2ubuntu1) groovy; urgency=medium
+
+  * debian/patches/gcc10_build_fix.patch:
+    - use a gitlab submitted patch to fix the build with gcc10
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 12 Aug 2020 23:32:48 +0200
+
+glabels (3.4.1-1.2build1) groovy; urgency=medium
+
+  * Rebuild with the new libedataserver soname
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 12 Aug 2020 16:58:23 +0200
+
 glabels (3.4.1-1.2) unstable; urgency=medium
 
   * Non-maintainer upload.

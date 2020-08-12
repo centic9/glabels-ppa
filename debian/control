@@ -1,7 +1,8 @@
 Source: glabels
 Section: gnome
 Priority: optional
-Maintainer: Jakob Haufe <sur5r@sur5r.net>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Jakob Haufe <sur5r@sur5r.net>
 Build-Depends: autotools-dev,
                autoconf-archive,
                cdbs,

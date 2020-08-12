@@ -2,3 +2,4 @@
 0003-Ignore-license.page.patch
 gnome-common-cleanup
 add-missing-prototype
+gcc10_build_fix.patch
