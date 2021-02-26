@@ -1,3 +1,9 @@
+glabels (3.4.1-1.3build1) hirsute; urgency=medium
+
+  * Rebuild with the new libedataserver soname
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 26 Feb 2021 08:20:50 +0100
+
 glabels (3.4.1-1.3) unstable; urgency=medium
 
   * Non-maintainer upload.
