@@ -1,8 +1,13 @@
-glabels (3.4.1-1.3build1) hirsute; urgency=medium
+glabels (3.4.1-2) experimental; urgency=medium
 
-  * Rebuild with the new libedataserver soname
+  * Restore a non-bouncing maintainer address
+  * Update watchfile
+  * Clean up trailing whitespace in d/changelog
+  * Bump Standards-Version (no changes needed)
+  * Add Vcs-* fields
+  * Drop explicit trigger, dh_makeshlibs handles this
 
- -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 26 Feb 2021 08:20:50 +0100
+ -- Jakob Haufe <sur5r@debian.org>  Sat, 24 Apr 2021 19:35:22 +0000
 
 glabels (3.4.1-1.3) unstable; urgency=medium
 
@@ -269,11 +274,11 @@ glabels (2.2.5-1) unstable; urgency=low
     + Add missing build-dependencies. Closes: #536923.
 
   [ Josselin Mouette ]
-  * watch: use sf.net virtual address to make uupdate work, thanks 
+  * watch: use sf.net virtual address to make uupdate work, thanks
     Raphael Geissert. Closes: #449720.
 
   [ Sven Arvidsson ]
-  * Mention barcode functionality in the long description, 
+  * Mention barcode functionality in the long description,
     thanks Dieter Faulbaum. (Closes: #466816)
   * Fix Homepage field in debian/control.
 
@@ -427,7 +432,7 @@ glabels (2.0.2-3) unstable; urgency=medium
  -- Andrew Lau <netsnipe@users.sourceforge.net>  Mon, 21 Mar 2005 01:07:25 +1100
 
 glabels (2.0.2-2) unstable; urgency=medium
-   
+
   * [debian/rules]:
     - Deflate dependencies via ld's --as-needed option.
       This also removes dependency against non-free libhowl0.
@@ -436,7 +441,7 @@ glabels (2.0.2-2) unstable; urgency=medium
       (closes: #295274)
   * Text object properties now display.
       (closes: #296846)
-  
+
  -- Andrew Lau <netsnipe@users.sourceforge.net>  Wed, 16 Mar 2005 15:47:19 +1100
 
 glabels (2.0.2-1) unstable; urgency=medium
@@ -452,7 +457,7 @@ glabels (2.0.2-1) unstable; urgency=medium
  -- Andrew Lau <netsnipe@users.sourceforge.net>  Fri, 28 Jan 2005 01:06:03 +1100
 
 glabels (2.0.1-1) unstable; urgency=medium
-  
+
   * New upstream release.
   * Remove locally generated shared-mime-info files during build which break
     the system MIME database. Run update-mime-database in postinst/postrm.
@@ -499,13 +504,13 @@ glabels (1.93.2-2) unstable; urgency=low
 
 glabels (1.93.1-3) unstable; urgency=low
 
-  * In fact scrollkeeper was added to Depends and not Build-Depends, and 
-    is moved to Suggests now since it seems to not be necessary. 
+  * In fact scrollkeeper was added to Depends and not Build-Depends, and
+    is moved to Suggests now since it seems to not be necessary.
   * debian/rules:
     + dh_scrollkeeper should not generate postinst and postrm scripts
   * debian/postinst, debian/postrm:
     + new scripts since we don't use dh_scrollkeeper to manage them.
-  
+
  -- Sebastien Bacher <seb128@debian.org>  Sun, 28 Dec 2003 18:53:41 +0100
 
 glabels (1.93.1-2) unstable; urgency=low
@@ -537,7 +542,7 @@ glabels (1.92.2-1) unstable; urgency=low
     Thanks to Shell Hung <shell@debian.org> for maintaining GNOME 1.x branch.
     (closes: #195861)
   * Patches:
-    - 00_destdir.patch: Fixed installation path for data files.      
+    - 00_destdir.patch: Fixed installation path for data files.
 
  -- Andrew Lau <netsnipe@users.sourceforge.net>  Mon, 10 Nov 2003 15:30:04 +1100
 
@@ -549,7 +554,7 @@ glabels (0.4.6-1) unstable; urgency=low
 
 glabels (0.4.4-2) unstable; urgency=low
 
-  * Add glabels.menu (Closes: #149413) 
+  * Add glabels.menu (Closes: #149413)
 
  -- Shell Hung <shell@debian.org>  Mon, 15 Jul 2002 14:09:31 +0800
 

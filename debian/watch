@@ -1,2 +1,2 @@
-version=3
-http://glabels.org/pages/download.html .*glabels-(.*)\.tar\..*
+version=4
+opts="uversionmangle=s/_/./g" https://github.com/jimevins/glabels/releases .*/glabels-(.*)\.tar\..*

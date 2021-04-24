@@ -1,8 +1,7 @@
 Source: glabels
 Section: gnome
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
-XSBC-Original-Maintainer: Jakob Haufe <sur5r@sur5r.net>
+Maintainer: Jakob Haufe <sur5r@debian.org>
 Build-Depends: autotools-dev,
                autoconf-archive,
                cdbs,
@@ -21,8 +20,10 @@ Build-Depends: autotools-dev,
                barcode (>= 0.98),
                libqrencode-dev (>= 3.1.0),
                libiec16022-dev (>= 0.2.4)
-Standards-Version: 3.9.8
+Standards-Version: 4.5.1
 Homepage: http://glabels.org/
+Vcs-Git: https://salsa.debian.org/Debian/glabels.git
+Vcs-Browser: https://salsa.debian.org/Debian/glabels
 
 Package: glabels
 Architecture: any
