@@ -11,14 +11,14 @@ Build-Depends: autotools-dev,
                gtk-doc-tools (>= 1.0),
                yelp-tools,
                libglib2.0-dev (>= 2.28.2),
-               libgtk-3-dev (>= 3.0.9),
-               libxml2-dev (>= 2.7.8),
-               librsvg2-dev (>= 2.32.0),
+               libgtk-3-dev (>= 3.14.0),
+               libxml2-dev (>= 2.9.0),
+               librsvg2-dev (>= 2.39.0),
                libcairo2-dev (>= 1.10.0),
                libpango1.0-dev (>= 1.28.1),
                libebook1.2-dev (>= 3.6.0),
                barcode (>= 0.98),
-               libqrencode-dev (>= 3.1.0),
+               libqrencode-dev (>= 4.0.2),
                libiec16022-dev (>= 0.2.4)
 Standards-Version: 4.5.1
 Homepage: http://glabels.org/
