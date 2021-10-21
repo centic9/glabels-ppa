@@ -1,3 +1,9 @@
+glabels (3.4.1-3ubuntu0~ppa1) focal; urgency=medium
+
+  * Backport to Focal
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Thu, 21 Oct 2021 21:03:52 +0200
+
 glabels (3.4.1-3) unstable; urgency=medium
 
   * Upload to unstable (Closes: #988295)
