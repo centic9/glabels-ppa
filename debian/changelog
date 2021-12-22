@@ -1,3 +1,9 @@
+glabels (3.4.1-4~ppa2) focal; urgency=medium
+
+  * Increase version to be higher than "+b3"
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Wed, 22 Dec 2021 20:14:26 +0100
+
 glabels (3.4.1-3ubuntu0~ppa1) focal; urgency=medium
 
   * Backport to Focal
