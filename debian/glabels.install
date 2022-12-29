@@ -1,6 +1,6 @@
 ../../debian/glabels.xpm usr/share/pixmaps
 usr/bin
-usr/lib/*.so.*
-../../debian/glabels-3.0.desktop usr/share/applications
+usr/lib/*/*.so.*
 usr/share/man
-usr/share/appdata
+usr/share/appdata/* usr/share/metainfo
+usr/share/applications/glabels-3.0.desktop
