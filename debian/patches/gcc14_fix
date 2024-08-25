@@ -1,0 +1,48 @@
+From: Jakob Haufe <sur5r@debian.org>
+Date: Tue, 20 Aug 2024 23:18:51 +0200
+Subject: GCC 14 fixes
+Forwarded: no
+
+--- a/src/pixbuf-cache.c
++++ b/src/pixbuf-cache.c
+@@ -125,7 +125,7 @@ gl_pixbuf_cache_add_pixbuf (GHashTable *
+ 	record = g_new0 (CacheRecord, 1);
+ 	record->key        = g_strdup (name);
+ 	record->references = 0; /* Nobody has referenced it yet. */
+-	record->pixbuf     = g_object_ref (G_OBJECT (pixbuf));
++	record->pixbuf     = g_object_ref (pixbuf);
+ 
+ 	g_hash_table_insert (pixbuf_cache, record->key, record);
+ 
+--- a/src/merge-properties-dialog.c
++++ b/src/merge-properties-dialog.c
+@@ -222,15 +222,15 @@ gl_merge_properties_dialog_finalize (GOb
+ /*****************************************************************************/
+ /* NEW merge properties dialog.                                              */
+ /*****************************************************************************/
+-GtkWidget*
++glMergePropertiesDialog*
+ gl_merge_properties_dialog_new (glLabel   *label,
+ 	                        GtkWindow *window)
+ {
+-	GtkWidget *dialog;
++	glMergePropertiesDialog *dialog;
+ 
+ 	gl_debug (DEBUG_MERGE, "START");
+ 
+-	dialog = GTK_WIDGET (g_object_new (GL_TYPE_MERGE_PROPERTIES_DIALOG, NULL));
++	dialog = g_object_new (GL_TYPE_MERGE_PROPERTIES_DIALOG, NULL);
+ 
+ 	gl_merge_properties_dialog_construct (GL_MERGE_PROPERTIES_DIALOG (dialog),
+ 					      label, window);
+--- a/src/merge-properties-dialog.h
++++ b/src/merge-properties-dialog.h
+@@ -59,7 +59,7 @@ struct  _glMergePropertiesDialogClass
+ 
+ GType      gl_merge_properties_dialog_get_type    (void) G_GNUC_CONST;
+ 
+-GtkWidget *gl_merge_properties_dialog_new         (glLabel   *label,
++glMergePropertiesDialog* gl_merge_properties_dialog_new         (glLabel   *label,
+ 	                                           GtkWindow *window);
+ 
+ G_END_DECLS

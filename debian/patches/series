@@ -3,3 +3,4 @@
 gnome-common-cleanup
 add-missing-prototype
 gcc10_build_fix.patch
+gcc14_fix
