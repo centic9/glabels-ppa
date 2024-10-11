@@ -1,16 +1,20 @@
-<<<<<<< HEAD
+glabels (3.4.1-5ubuntu0~ppa1) noble; urgency=medium
+
+  * Backport to Noble
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Fri, 11 Oct 2024 12:08:13 +0200
+
 glabels (3.4.1-5) unstable; urgency=medium
 
   * Add fix for GCC 14 (Closes: #1075009)
 
  -- Jakob Haufe <sur5r@debian.org>  Sun, 25 Aug 2024 18:00:26 +0200
-=======
+
 glabels (3.4.1-4ubuntu0~ppa1) jammy; urgency=medium
 
   * Backport to Jammy
 
  -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sun, 12 Feb 2023 14:39:26 +0100
->>>>>>> ppa/3.4.1-4
 
 glabels (3.4.1-4) unstable; urgency=medium
 
