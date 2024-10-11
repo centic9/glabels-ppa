@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 glabels (3.4.1-5) unstable; urgency=medium
 
   * Add fix for GCC 14 (Closes: #1075009)
 
  -- Jakob Haufe <sur5r@debian.org>  Sun, 25 Aug 2024 18:00:26 +0200
+=======
+glabels (3.4.1-4ubuntu0~ppa1) jammy; urgency=medium
+
+  * Backport to Jammy
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sun, 12 Feb 2023 14:39:26 +0100
+>>>>>>> ppa/3.4.1-4
 
 glabels (3.4.1-4) unstable; urgency=medium
 
@@ -28,11 +36,35 @@ glabels (3.4.1-4) unstable; urgency=medium
 
  -- Jakob Haufe <sur5r@debian.org>  Thu, 29 Dec 2022 01:32:24 +0100
 
+glabels (3.4.1-4~ppa3) jammy; urgency=medium
+
+  * Update to Jammy
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sat, 17 Sep 2022 11:39:29 +0200
+
+glabels (3.4.1-4~ppa2) focal; urgency=medium
+
+  * Increase version to be higher than "+b3"
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Wed, 22 Dec 2021 20:14:26 +0100
+
+glabels (3.4.1-3ubuntu0~ppa1) focal; urgency=medium
+
+  * Backport to Focal
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Thu, 21 Oct 2021 21:03:52 +0200
+
 glabels (3.4.1-3) unstable; urgency=medium
 
   * Upload to unstable (Closes: #988295)
 
  -- Jakob Haufe <sur5r@debian.org>  Mon, 10 May 2021 06:28:16 +0000
+
+glabels (3.4.1-2ubuntu0~ppa1) focal; urgency=medium
+
+  * Backport to Focal
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Wed, 28 Apr 2021 17:03:24 +0200
 
 glabels (3.4.1-2) experimental; urgency=medium
 
@@ -53,6 +85,18 @@ glabels (3.4.1-1.3) unstable; urgency=medium
 
  -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 18 Nov 2020 15:38:01 +0100
 
+glabels (3.4.1-1.2ubuntu0~ppa2) bionic; urgency=medium
+
+  * Rebuild for newer qrencode version.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sun, 29 Dec 2019 10:58:10 +0100
+
+glabels (3.4.1-1.2ubuntu0~ppa1) bionic; urgency=medium
+
+  * Backport to Bionic
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sun, 01 Dec 2019 22:20:02 +0100
+
 glabels (3.4.1-1.2) unstable; urgency=medium
 
   * Non-maintainer upload.
@@ -70,6 +114,12 @@ glabels (3.4.1-1.1) unstable; urgency=medium
 
  -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 03 Oct 2018 15:09:10 -0300
 
+glabels (3.4.0-2ubuntu0~ppa1) xenial; urgency=medium
+
+  * Rebase to latest version from Ubuntu/Debian.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sun, 11 Jun 2017 22:07:24 +0200
+
 glabels (3.4.0-2) unstable; urgency=medium
 
   * Cherry-pick from upstream:
@@ -77,6 +127,12 @@ glabels (3.4.0-2) unstable; urgency=medium
     Thanks to Keith Packard for reporting this
 
  -- Jakob Haufe <sur5r@sur5r.net>  Mon, 20 Feb 2017 23:52:38 +0100
+
+glabels (3.4.0-1ubuntu0~ppa1) xenial; urgency=medium
+
+  * Backport to Xenial.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sat, 11 Feb 2017 20:39:31 +0100
 
 glabels (3.4.0-1) unstable; urgency=medium
 
@@ -87,6 +143,21 @@ glabels (3.4.0-1) unstable; urgency=medium
   * New patch: glabels/debian/patches/gnome-common-cleanup (Closes: #830033)
 
  -- Jakob Haufe <sur5r@sur5r.net>  Thu, 29 Dec 2016 21:30:59 +0100
+
+glabels (3.4.0-0ubuntu0~ppa1) xenial; urgency=medium
+
+  * New upstream release.
+  * Update minimum version of dependencies.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sun, 07 Aug 2016 20:56:33 +0200
+
+glabels (3.2.1-2ubuntu0~ppa1) trusty; urgency=medium
+
+  * Backport to trusty.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sat, 23 Jan 2016 13:50:34 +0100
+
+glabels (3.2.1-2build1) xenial; urgency=medium
 
 glabels (3.2.1-2) unstable; urgency=medium
 
@@ -110,7 +181,31 @@ glabels (3.2.1-1) unstable; urgency=medium
 
  -- Jakob Haufe <sur5r@sur5r.net>  Sat, 03 Oct 2015 16:19:23 +0200
 
-glabels (3.0.1-4.1) unstable; urgency=medium
+glabels (3.2.0-0ubuntu0~ppa4) trusty; urgency=medium
+
+  * Add yelp-tools which is required for help integration.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sat, 13 Sep 2014 20:59:19 +0200
+
+glabels (3.2.0-0ubuntu0~ppa3) trusty; urgency=medium
+
+  * Rebuild with correctly compiled barcode libaries.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sat, 13 Sep 2014 12:56:27 +0200
+
+glabels (3.2.0-0ubuntu0~ppa2) trusty; urgency=medium
+
+  * Adjust glabels-data packaging.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sat, 13 Sep 2014 11:50:35 +0200
+
+glabels (3.2.0-0ubuntu0~ppa1) trusty; urgency=medium
+
+  * Update to latest upstream release.
+
+ -- Dominik Stadler (Ubuntu key) <dominik.stadler@gmx.at>  Sat, 13 Sep 2014 10:07:18 +0200
+
+glabels (3.0.1-4build1) trusty; urgency=low
 
   [ Hilko Bengen ]
   * Non-maintainer upload.
